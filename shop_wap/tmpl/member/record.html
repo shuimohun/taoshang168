@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>交易记录</title>
+  <link rel="stylesheet" href="../../css/money/record.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <link rel="stylesheet" type="text/css" href="../../css/money/manhuaDate.css">
+  <link rel="stylesheet" type="text/css" href="../../css/money/scrollbar.css">
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/record.js'></script>
+  <script type="application/javascript" src="../../js/tmpl/money/iscroll.js"></script>
+</head>
+<body style="background-color:#fff;margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../../images/money/back.png" alt=""></a>
+      <span>交易记录</span>
+      <a href="./recycle.html"><img src="../../images/money/recycle@3x.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+    
+
+    <ul class='zuijin'>
+      <li class='cur' data-type=" ">最近交易</li>
+      <li data-type="3">充值记录</li>
+      <li data-type="2">转账记录</li>
+      <li data-type="4">提现记录</li>
+    </ul>
+
+  <div id="wrapper">
+    <div id="scroller">
+
+      <div id="pullDown">
+      <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新页面...</span>
+      </div>
+
+      <ul class='item' id="thelist"></ul>
+
+      <div id="pullUp">
+      <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+    </div>
+    </div>
+    </div>
+  <script type="text/html" id="list">
+    <% if(consume_record_list.items){ %>
+    <% var items = consume_record_list.items %>
+    <% for(var i in items){ %>
+    <li>
+      <span>￥<%=items[i].record_money %>元</span>
+      <del>来自订单<%=items[i].order_id %></del>
+      <em><%=items[i].record_title %><%=items[i].record_status_con %></em>
+      <div></div>
+      <u><%=items[i].record_date %></u>
+      <b><%=items[i].record_time.substr(11) %></b>
+    </li>
+    <% } %>
+  <% } %>
+  </script>
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src="../../js/record.js"></script>
+</body>
+
+</html>

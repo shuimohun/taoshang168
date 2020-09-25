@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="telephone=no" name="format-detection" />
+  <title>我的收入</title>
+  <link rel="stylesheet" href="../../css/income.css">
+  <link rel="stylesheet" href="../../css/directseller_base.css">
+
+</head>
+<body>
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../../images/icon_back.png" alt=""></a>
+      <span>我的收入</span>
+    </div>
+  </header>
+  <!--头部部分-->
+  
+    <ul class="income_title">
+      <li class="cur">全部</li>
+      <li>老板</li>
+      <li>店长</li>
+      <li>促销员</li>
+    </ul>
+
+    <div class="survey_title">概况</div>
+    
+
+    <ul class="survey">
+        <li>
+          <span>0</span>
+          <p>当天收入（元）</p>
+        </li>
+        <li>
+          <span>0</span>
+          <p>当周收入（元）</p>
+        </li>
+        <li>
+          <span>0</span>
+          <p>当月收入（元）</p>
+        </li>
+        <li>
+          <span>0</span>
+          <p>累积收入（元）</p>
+        </li>
+    </ul>
+
+
+    <div class="other">
+        <p class="balance">可提现余额：<span style="color:#e45050;">0.00</span>元</p>
+        <p class="mybalance">我的余额：0.00元</p>
+        <p class="cash">请输入提现金额，最低1.00元</p>
+        <a href="./money_index.html">
+        <button class="cur">申请提现</button><br>
+        <button>提现记录</button><br>
+        <button>我的银行卡</button>
+        </a>
+    </div>
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='../../js/income.js'></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" id="detail">
+    <li>
+    <span><%= day?day:0 %></span>
+    <p>当天收入（元）</p>
+    </li>
+    <li>
+    <span><%= week?week:0 %></span>
+    <p>当周收入（元）</p>
+    </li>
+    <li>
+    <span><%= month?month:0 %></span>
+    <p>当月收入（元）</p>
+    </li>
+    <li>
+    <span><%= total?total:0 %></span>
+    <p>累积收入（元）</p>
+    </li>
+</script>
+<script type="text/javascript" id="tixian">
+        <p class="balance">可提现余额：<span style="color:#e45050;"><%= tixian%></span>元</p>
+        <p class="mybalance">我的余额：<%= money %>元</p>
+        <p class="cash">请输入提现金额，最低1.00元</p>
+        <a href="./money_index.html">
+        <button class="cur">申请提现</button><br>
+        <button>提现记录</button><br>
+        <button>我的银行卡</button>
+        </a>
+</script>
+<script>
+    function getMoney() {
+        $.post(PayCenterWapUrl+'/index.php?ctl=Info&met=getTotalMoney&typ=json',function(result) {
+            var s = template.render("tixian", result.data);
+            $(".other").html(s);        })
+    }
+    getMoney();
+</script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>加一购</title>
+	<link rel="stylesheet" href="../css/andone_shop.css">
+	<link rel="stylesheet" href="../css/base_index.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/zepto.min.js'></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src='../js/config.php'></script>
+	<script type="text/javascript" src='../js/swipe.js'></script>
+	<script type="text/javascript" src="../js/swiper.min.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src='../js/andone_shop.js'></script>
+
+</head>
+<body style="background-color:#f7f7f7;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../images/icon_back.png" alt=""></a>
+			<span>加一购</span>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<div id="topNav" class="swiper-container">
+    <div class="swiper-wrapper">
+    </div>
+	</div>
+
+	<div class="good_list"></div>
+
+	<div class="plus_good"></div>
+
+	<script type="text/html" id="goods">
+		<% if(items.goods){ %>
+		<% var items = items.goods %>
+		<% for(var i in items){ %>
+		<div class="buy_goods<% if(items[i].is_share){ %>_over<% } %>">
+			<div class="goods_img">
+				<a href="product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="<%=items[i].goods_image %>" alt=""></a>
+			</div>
+			<span class='buy_title'><%=items[i].goods_name %></span><br>
+			<div class="bg1">立省￥<%=items[i].goods_share_price %></div>
+			<div class="bg2">立赚￥<%=items[i].goods_promotion_price %></div>
+			<div class='cuxiao'>促销
+				<% if(is_man){ %>
+				<i>满减送</i>
+				<% } %>
+				<% if(items[i].is_jia == '1'){ %>
+				<i>加</i>
+				<% } %>
+				<% if(items[i].promotion_type == '1'){ %>
+				<i>惠</i>
+				<% }else if(items[i].promotion_type == '2'){ %>
+				<i>限</i>
+				<% }else if(items[i].promotion_type == '3'){ %>
+				<i>手机专享</i>
+				<% }else if(items[i].promotion_type == '4'){ %>
+				<i>新</i>
+				<% } %>
+			</div>
+			<span class='price'>￥<%=items[i].goods_price %></span>
+			<span class="bar">分享后:￥<%=items[i].goods_shared_price %></span>
+			<% if(items[i].is_share){ %>
+			<button>已分享</button>
+			<% }else{ %>
+			<button>分享立省</button>
+			<% } %>
+			<% if(items[i].is_favorite){ %>
+			<img src="../images/liked@2x.png" alt="" class='shoucang' data-id="<%=items[i].goods_id %>" onclick="favor(this)">
+			<% }else{ %>
+			<img src="../images/like@2x.png" alt="" class='shoucang' data-id="<%=items[i].goods_id %>" onclick="favor(this)">
+			<% } %>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="rule">
+		<% if(items.rule){ %>
+		<% var items = items.rule %>
+		<% for(var i in items){ %>
+		<div class='title_bg'>
+			<span>活动商品满￥<%=items[i].rule_price %>可换购以下商品</span>
+		</div>
+		<% for(var k in items[i].redemption_goods){ %>
+		<div class="buy_goods_change">
+			<div class="goods_img">
+				<a href="product_detail.html?goods_id=<%=items[i].redemption_goods[k].goods_id %>"><img src="<%=items[i].redemption_goods[k].goods_image %>" alt=""></a>
+			</div>
+			<span class='buy_title'><%=items[i].redemption_goods[k].goods_name %></span><br>
+
+			<span class='price'>￥<%=items[i].redemption_goods[k].redemp_price %></span>
+			<del class="bar">￥<%=items[i].redemption_goods[k].goods_price %></del>
+		</div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+</body>
+
+</html>

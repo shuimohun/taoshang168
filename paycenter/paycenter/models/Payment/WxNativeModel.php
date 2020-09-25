@@ -1,0 +1,509 @@
+<?php if (!defined('ROOT_PATH'))
+{
+    exit('No Permission');
+}
+
+require_once LIB_PATH . '/Api/wx/lib/WxPay.Api.php';
+require_once LIB_PATH . '/Api/wx/lib/WxPay.Notify.php';
+
+/**
+ * @author     WenQingTeng
+ */
+class Payment_WxNativeModel extends WxPayNotify implements Payment_Interface {
+    /**
+     * 支付接口标识
+     *
+     * @var string
+     */
+    private $code = 'wx_native';
+    
+    /**
+     * 支付接口配置信息
+     *
+     * @var array
+     */
+    public $payment;
+    
+    /**
+     * 订单信息
+     *
+     * @var array
+     */
+    public $order;
+    
+    /**
+     * 发送至支付宝的参数
+     *
+     * @var array
+     */
+    private $parameter;
+    
+    /**
+     * 订单类型 buy商品购买,   deposit预存款充值
+     * @var unknown
+     */
+    private $order_type;
+    
+    
+    /**
+     * 通知结果
+     * @var unknown
+     */
+    private $verifyResult = false;
+    private $verifyData   = array();
+    
+    private $returnResult = false;
+    private $returnData   = array();
+    
+    /**
+     * Constructor
+     *
+     * @param  array $payment_row 支付平台信息
+     * @param  array $order_row   订单信息
+     *
+     * @access public
+     */
+    public function __construct($payment_row = array(), $order_row = array())
+    {
+        $this->payment = $payment_row;
+        $this->order   = $order_row;
+        
+        
+        /**
+         * TODO: 修改这里配置为您自己申请的商户信息
+         * 微信公众号信息配置
+         *
+         * APPID：绑定支付的APPID（必须配置，开户邮件中可查看）
+         *
+         * MCHID：商户号（必须配置，开户邮件中可查看）
+         *
+         * KEY：商户支付密钥，参考开户邮件设置（必须配置，登录商户平台自行设置）
+         * 设置地址：https://pay.weixin.qq.com/index.php/account/api_cert
+         *
+         * APPSECRET：公众帐号secert（仅JSAPI支付的时候需要配置， 登录公众平台，进入开发者中心可设置），
+         * 获取地址：https://mp.weixin.qq.com/advanced/advanced?action=dev&t=advanced/dev&token=2005451881&lang=zh_CN
+         * @var string
+         */
+        $this->payment['appid']     = $payment_row['appid'];
+        $this->payment['mchid']     = $payment_row['mchid'];
+        $this->payment['key']       = $payment_row['key'];
+        $this->payment['appsecret'] = $payment_row['appsecret'];
+        
+        //=======【证书路径设置】=====================================
+        /**
+         * TODO：设置商户证书路径
+         * 证书路径,注意应该填写绝对路径（仅退款、撤销订单时需要，可登录商户平台下载，
+         * API证书下载地址：https://pay.weixin.qq.com/index.php/account/api_cert，下载之前需要安装商户操作证书）
+         * @var path
+         */
+        $this->payment['sslcert_path'] = LIB_PATH . '/Api/wx/cert/apiclient_cert.pem';
+        $this->payment['sslkey_path']  = LIB_PATH . '/Api/wx/cert/apiclient_key.pem';
+        
+        
+        //=======【curl代理设置】===================================
+        /**
+         * TODO：这里设置代理机器，只有需要代理的时候才设置，不需要代理，请设置为0.0.0.0和0
+         * 本例程通过curl使用HTTP POST方法，此处可修改代理服务器，
+         * 默认CURL_PROXY_HOST=0.0.0.0和CURL_PROXY_PORT=0，此时不开启代理（如有需要才设置）
+         * @var unknown_type
+         */
+        
+        $this->payment['curl_proxy_host'] = "0.0.0.0";//"10.152.18.220";
+        $this->payment['curl_proxy_port'] = 0;//8080;
+        
+        //=======【上报信息配置】===================================
+        /**
+         * TODO：接口调用上报等级，默认紧错误上报（注意：上报超时间为【1s】，上报无论成败【永不抛出异常】，
+         * 不会影响接口调用流程），开启上报之后，方便微信监控请求调用的质量，建议至少
+         * 开启错误上报。
+         * 上报等级，0.关闭上报; 1.仅错误出错上报; 2.全量上报
+         * @var int
+         */
+        $this->payment['report_levenl'] = 1;
+        
+        
+        //↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+        // 支付类型 ，无需修改
+        $this->payment['payment_type'] = "NATIVE";
+        
+        //服务器异步通知页面路径
+        $this->payment['notify_url'] = YLB_Registry::get('base_url') . "/paycenter/api/payment/wx/notify_url.php";
+        //需http://格式的完整路径，不允许加?id=123这类自定义参数
+        
+        //页面跳转同步通知页面路径
+        $this->payment['return_url'] = YLB_Registry::get('base_url') . "/paycenter/api/payment/wx/return_url.php";
+        //需http://格式的完整路径，不允许加?id=123这类自定义参数
+
+        //检测订单状态url
+        $this->payment['check_url'] = YLB_Registry::get('base_url') . "/paycenter/api/payment/wx/check_url.php";
+        
+        //操作中断返回地址
+        $this->payment['merchant_url'] = YLB_Registry::get('base_url') . "/paycenter/api/payment/wx/merchant_url.php";
+
+        $this->payment['order_url'] = YLB_Registry::get('shop_api_url') . '?ctl=Buyer_Order&met=physical';
+    }
+    
+    /**
+     * 支付
+     *
+     * @access public
+     */
+    public function pay($order_row)
+    {
+        $typ = request_string('typ');
+        $type = request_string('type');
+        if ($order_row)
+        {
+            $this->order = $order_row;
+        }
+        
+        //1 == order_state_id  待付款状态
+        if (1 != $this->order['order_state_id'])
+        {
+            throw new Exception('订单状态不为待付款状态');
+        }
+        
+        //商户订单号
+        $out_trade_no = $this->order['union_order_id'];
+        //商户网站订单系统中唯一订单号，必填
+        
+        //订单名称
+        //$body = mb_substr($this->order['trade_title'], 0, 42, 'utf-8');
+        $body = "支付单号-$out_trade_no";
+
+        //$detail       = isset($this->order['trade_desc']) ? $this->order['trade_desc'] : '';
+        $trade_remark = isset($this->order['trade_remark']) ? $this->order['trade_remark'] : '';
+
+        //付款金额
+        $total_fee = $this->order['union_online_pay_amount'];
+        
+        $quantity = isset($this->order['quantity']) ? $this->order['quantity'] : 1;
+        
+        $extra_common_param = '';
+        
+        $time = time();
+        include_once LIB_PATH . '/Api/wx/WxPay.NativePay.php';
+
+        $notify = new NativePay();
+        
+        $input = new WxPayUnifiedOrder();
+        $input->SetBody($body);
+        $input->SetAttach($extra_common_param);
+        $input->SetOut_trade_no($out_trade_no);
+        $input->SetTotal_fee($total_fee * 100);
+        $input->SetTime_start(date("YmdHis"), $time);
+        $input->SetTime_expire(date("YmdHis", $time + 60 * 10));
+        $input->SetGoods_tag($trade_remark);
+        $input->SetNotify_url($this->payment['notify_url']);
+        if($type == 'wap')
+        {
+            $input->SetTrade_type("MWEB");
+        }
+        else
+        {
+            $input->SetTrade_type("NATIVE");
+        }
+        $input->SetProduct_id($out_trade_no);
+
+        $result = $notify->GetPayUrl($input);
+        if ($result && 'SUCCESS' == $result['result_code'])
+        {
+            //统一下单成功
+            if($typ == 'json')
+            {
+                if($type == "wap" && $input->GetTrade_type() == "MWEB")
+                {
+                    //非微信内置H5页面 调用格式?typ=json&type=wap
+                    $mweb_url = $result['mweb_url'];
+                    $mweb_url .= "&&redirect_url=".urlencode($this->payment['order_url']);
+                    header("location:$mweb_url");return;
+                }
+                else
+                {
+                    //app调用 返回二次签名 调用格式?typ=json
+                    $t_s['appid']     = $result['appid'];
+                    $t_s['partnerid'] = $result['mch_id'];
+                    $t_s['prepayid']  = $result['prepay_id'];
+                    $t_s['noncestr']  = $result['nonce_str'];
+                    $t_s['timestamp'] = $time;
+                    $t_s['package']   = 'Sign=WXPay';
+
+                    ksort($t_s);
+                    $string = '';
+                    foreach ($t_s as $k => $v)
+                    {
+                        $string .= $k . "=" . $v . "&";
+                    }
+                    $string = $string . "key=".WxPayConfig::KEY;;
+                    $string = md5($string);
+                    $t_s['sign'] = strtoupper($string);
+
+                    echo encode_json($t_s);die;
+                }
+            }
+        }
+        else
+        {
+            YLB_Log::log('GetPayUrl RES:=' . encode_json($result), YLB_Log::INFO, 'pay_wx_info');
+            throw new Exception(encode_json($result));
+        }
+        
+        $code_url = $result["code_url"];
+        $url_data = urlencode($code_url);
+        $check_url = $this->payment['check_url'];
+        $jump_url  = $this->payment['return_url'];
+        
+        $app_id = $this->order['app_id'];
+        
+        //查找回调地址
+        $User_AppModel = new User_AppModel();
+        $user_app      = $User_AppModel->getOne($app_id);
+        $return_url    = $user_app['app_url'].'?ctl=Buyer_Order&met=physical';
+        
+        $res_row                 = array();
+        $res_row['out_trade_no'] = $out_trade_no;
+        $res_row['total_fee']    = $total_fee;
+        $res_row['time']         = date('Y-m-d H:i:s',$time);
+        $res_row['url_data']     = $url_data;
+        $res_row['check_url']    = $check_url;
+        $res_row['return_url']   = $return_url;
+
+        return $res_row;
+    }
+    
+    /**
+     *
+     * 取得订单支付状态，成功或失败
+     *
+     * @param array $param
+     *
+     * @return array
+     */
+    public function getPayResult($param)
+    {
+        return $param['trade_status'] == 'TRADE_SUCCESS';
+    }
+    
+    /**
+     * 通知验证
+     *
+     * @access public
+     */
+    public function verifyNotify()
+    {
+        $this->Handle(false);
+        
+        return $this->verifyResult;
+    }
+    
+    /**
+     * 通知验证
+     *
+     * @access public
+     */
+    public function verifyReturn()
+    {
+        $this->Handle(false);
+        
+        return $this->returnResult;
+    }
+    
+    public function sign($parameter)
+    {
+        $sign_str = '';
+        
+        $sign_str = $this->getSignature($parameter, $parameter['key']);
+        
+        return $sign_str;
+    }
+    
+    public function getSignature($parameter, $cp_key = null)
+    {
+    }
+    
+    /**
+     * 制作支付接口的请求地址 发送请求
+     *
+     * @access public
+     */
+    public function request()
+    {
+    }
+    
+    /**
+     * 得到异步返回数据
+     *
+     * @access public
+     */
+    public function getNotifyData()
+    {
+        $notify_row = $this->getReturnData();
+        
+        $notify_row['deposit_async'] = 1;
+        
+        return $notify_row;
+    }
+    
+    /**
+     * 得到同步返回数据
+     *
+     * @access public
+     */
+    public function getReturnData($Consume_TradeModel = null)
+    {
+        $notify_param = $this->verifyData;
+        
+        if (!$Consume_TradeModel)
+        {
+            $notify_row       = array();
+            $Union_OrderModel = new Union_OrderModel();
+            
+            $order_id               = $notify_param['out_trade_no'];
+            $notify_row             = $Union_OrderModel->getOne($order_id);
+            $notify_row['order_id'] = $notify_param['out_trade_no'];
+            $notify_row['deposit_trade_no'] = $notify_param['transaction_id'];
+        }
+        else
+        {
+            //插入充值记录, 如果同步数据没有,从订单数据中读取过来
+            $notify_row = array();
+            
+            $notify_row['order_id']         = $notify_param['out_trade_no'];
+            $notify_row['deposit_trade_no'] = $notify_param['transaction_id'];
+            
+            $notify_row['deposit_quantity']    = isset($notify_param['quantity']) ? $notify_param['quantity'] : '0';
+            $notify_row['deposit_notify_time'] = date('Y-m-d H:i:s');
+            $notify_row['deposit_seller_id']   = $notify_param['mch_id'];
+            
+            $notify_row['deposit_is_total_fee_adjust'] = isset($notify_param['is_total_fee_adjust']) ? $notify_param['is_total_fee_adjust'] : 0;
+            $notify_row['deposit_total_fee']           = $notify_param['total_fee'] / 100;
+            
+            $notify_row['deposit_price']        = isset($notify_param['cash_fee']) ? $notify_param['cash_fee'] / 100 : '0';
+            $notify_row['deposit_buyer_id']     = $notify_param['openid'];
+            $notify_row['deposit_payment_type'] = $notify_param['bank_type'] . '|' . $notify_param['fee_type'];
+            
+            $notify_row['deposit_service'] = isset($notify_param['trade_type']) ? $notify_param['trade_type'] : '';
+            $notify_row['deposit_sign']    = isset($notify_param['sign']) ? $notify_param['sign'] : '';
+            
+            $notify_row['deposit_extra_param'] = encode_json($notify_param);
+        }
+        
+        //根据$notify_param['payment_type']  || $_REQUEST['service']可以判断其它类型
+        $notify_row['payment_channel_id'] = Payment_ChannelModel::WECHAT;
+        return $notify_row;
+    }
+    
+    //查询订单
+    public function Queryorder($transaction_id)
+    {
+        $input = new WxPayOrderQuery();
+        $input->SetTransaction_id($transaction_id);
+        $result = WxPayApi::orderQuery($input);
+        
+        YLB_Log::log("query:" . json_encode($result), YLB_Log::INFO, 'pay_wxnative_notify');
+        
+        if (array_key_exists("return_code", $result) && array_key_exists("result_code",
+                $result) && $result["return_code"] == "SUCCESS" && $result["result_code"] == "SUCCESS"
+        )
+        {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    //重写回调处理函数
+    public function NotifyProcess($data, &$msg)
+    {
+        YLB_Log::log("call back:" . json_encode($data), YLB_Log::INFO, 'pay_wxnative_notify');
+        $notfiyOutput = array();
+        
+        if (!array_key_exists("transaction_id", $data))
+        {
+            $msg = "输入参数不正确";
+            
+            return false;
+        }
+        //查询订单，判断订单真实性
+        if (!$this->Queryorder($data["transaction_id"]))
+        {
+            $msg = "订单查询失败";
+            
+            return false;
+        }
+        
+        $this->verifyResult = true;
+        $this->verifyData   = $data;
+        
+        YLB_Log::log('$data:' . encode_json($data), YLB_Log::INFO, 'pay_wxnative_notify');
+        
+        return true;
+    }
+
+    /**
+     * 退款 Zhenzh 20180130
+     *
+     * @param $union_order 支付订单
+     * @param $return_code 退款单号
+     * @param $refund_fee  退款金额
+     * @return 成功时返回
+     */
+    public function refund($union_order,$return_code,$refund_fee)
+    {
+        $out_trade_no = $union_order["union_order_id"];
+        $total_fee    = $union_order["trade_payment_amount"];
+
+        $input = new WxPayRefund();
+        $input->SetOut_trade_no($out_trade_no);
+        $input->SetTotal_fee($total_fee * 100);
+        $input->SetRefund_fee($refund_fee * 100);
+        $input->SetOut_refund_no($return_code);
+        $input->SetOp_user_id(WxPayConfig::MCHID);
+
+        $result = WxPayApi::refund($input);
+        return $result;
+
+        //成功
+        /*Array
+        (
+            [appid] => wxee7946a24513bafd
+            [cash_fee] => 1
+            [cash_refund_fee] => 1
+            [coupon_refund_count] => 0
+            [coupon_refund_fee] => 0
+            [mch_id] => 1400575902
+            [nonce_str] => OZAhNn9xYJu02adI
+            [out_refund_no] => TD-10079-0-102-20180130-0036   //退款单号
+            [out_trade_no] => U20180130030409436              //商户单号
+            [refund_channel] => Array
+            (
+            )
+
+            [refund_fee] => 1
+            [refund_id] => 50000605652018013003347211516
+            [result_code] => SUCCESS
+            [return_code] => SUCCESS
+            [return_msg] => OK
+            [sign] => 0F8C1DE69C76DE0E8B008EEDFC83BCD0
+            [total_fee] => 1
+            [transaction_id] => 4200000078201801303560776534 //支付单号
+        )*/
+
+        //失败
+        /*Array
+        (
+            [appid] => wxee7946a24513bafd
+            [err_code] => ORDERNOTEXIST
+            [err_code_des] => 订单不存在
+            [mch_id] => 1400575902
+            [nonce_str] => qhpxqpZHZo52dmam
+            [result_code] => FAIL
+            [return_code] => SUCCESS
+            [return_msg] => OK
+            [sign] => DA2C8B1A5594B178AA593416B4ADB74C
+        )*/
+    }
+}
+
+?>
+

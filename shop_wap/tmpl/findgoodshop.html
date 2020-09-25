@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>发现好店</title>
+	<link rel="stylesheet" href="../css/activity/findgoodshop.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+	<style type="text/css">
+		.footer_div_wrap{height:1.2rem !important;}
+	</style>
+</head>
+</head>
+<body style="margin-top:1.55rem;background-color:#eeeeee;">
+	<header class="person"  style="background-color:#e45050">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/findgoodshop_img/back.png" alt=""></a>
+			<span>发现好店</span>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list">
+
+		        </div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/activity/daily_buy_img/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list" ></div>
+	<!--主图轮播图-->
+
+	<div class="shop_and_good"></div>
+
+	<!--超nice掌柜title-->
+	<div class="nice_title">
+		<img src="../images/activity/findgoodshop_img/title_nice.png" alt="">
+	</div>
+	<!--超nice掌柜title-->
+
+	<!--超nice掌柜contain-->
+	<div class="nice_contain"></div>
+	<!--超nice掌柜contain-->
+
+	<!--定是好店title-->
+	<div class="shop_title">
+		<img src="../images/activity/findgoodshop_img/title_shop.png" alt="">
+	</div>
+	<!--定是好店title-->
+
+	<!--定是好店contain-->
+	<div class="good_shop"></div>
+	<!--定是好店contain-->
+
+	<div class='fix_footer'></div>
+	<script type="text/html" id="nav">
+		<% if(cat){ %>
+		<ul>
+			<li data-id="0" class="find_nav_cur"><a href="javascript:void(0)">精选</a></li>
+			<% for(var i in cat){ %>
+			<li data-id="<%=cat[i].id %>"><a href="javascript:void(0)"><%=cat[i].shop_class_name %></a></li>
+			<% } %>
+			<li class="sideline"></li>
+		</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="slider">
+		<% if(nav.items){ %>
+		<% var items = nav.items %>
+		<div class="swipe-wrap" >
+			<% for(var i in items){ %>
+			<div class="item" >
+				<a href="<%=items[i].wap_url %>">
+					<img src="<%=items[i].pic_url %>" alt="">
+				</a>
+			</div>
+			<% } %>
+		</div>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="shop_and_good">
+		<% if(items){ %>
+		<div class="nice_contain_add">
+			<ul>
+				<li>
+					<a href="store.html?shop_id=<%=items.shop_id %>">
+						<img src="<%=items.shop_logo_wap %>" alt="">
+						<u><%=items.shop_name%></u>
+					</a>
+				</li>
+				<% if(items.goods){ %>
+				<% var goods = items.goods %>
+				<% for(var i in goods){ %>
+				<li>
+					<a href="product_detail.html?cid=<%=goods[i].common_id %>">
+						<img src="<%=goods[i].common_image %>" alt="">
+						<u><%=goods[i].common_name %></u>
+					</a>
+				</li>
+				<% } %>
+				<% } %>
+			</ul>
+		</div>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="nice">
+		<% if(items){ %>
+		<ul>
+			<% for(var i in items){ %>
+			<li>
+				<a href="store.html?shop_id=<%=items[i].shop_id %>">
+					<img src="<%=items[i].shop_logo_wap %>" alt="">
+					<u><%=items[i].shop_name %></u>
+					<span><b><%=items[i].ove_me %>%</b>超满意</span><img src="../images/activity/findgoodshop_img/icon_smile.png" class="smile">
+					<img src="../images/activity/findgoodshop_img/enter.png" alt="" class="enter">
+				</a>
+			</li>
+			<% } %>
+		</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="goodShop">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="shop_contain">
+			<a href=""><img src="<%=items[i].shop_logo_wap %>" alt=""></a>
+			<div class="shop_word">
+				<a href=""><span><%=items[i].shop_name %></span></a>
+				<a href=""><i>共<%=items[i].shop_collect %>人收藏</i></a>
+			</div>
+			<a href="store.html?shop_id=<%=items[i].shop_id %>&tab=.goods"><img src="../images/activity/findgoodshop_img/allgoods.png" alt="" class="allgoods"></a>
+		</div>
+		<div class="shop_goods">
+
+			<ul>
+				<% for(var k in items[i].common_goods){ %>
+				<li>
+					<a href="product_detail.html?cid=<%=items[i].common_goods[k].common_id %>">
+						<img src="<%=items[i].common_goods[k].common_image %>" alt="">
+						<span><%=items[i].common_goods[k].common_name %></span><br>
+						<i><%=items[i].common_goods[k].common_collect %>人收藏</i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+			<a href="store.html?shop_id=<%=items[i].shop_id %>&tab=.new"><img src="../images/activity/findgoodshop_img/new.png" alt="" class="new"></a>
+
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/findshop.js"></script>
+	<script>
+		$(function(){
+	        $('.fix_footer').load('./common_footer.html');
+	    });
+	</script>
+</body>
+</html>

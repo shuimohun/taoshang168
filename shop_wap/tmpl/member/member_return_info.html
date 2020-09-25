@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+    <title>退货详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+    <style>
+        #express_id,#return_shipping_code{
+            border: 0 none;
+            appearance: none;
+            -webkit-appearance: none;
+            margin: 0 0.5rem;
+            line-height: 1rem;
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+<header id="header">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+    <span class="header-title">
+    <h1>退货详情</h1>
+    </span>
+    </div>
+</header>
+<div class="nctouch-main-layout" id="return-info-div"> </div>
+<footer id="footer"></footer>
+<script type="text/html" id="return-info-script">
+    <h3 class="nctouch-default-list-tit">我的退货申请</h3>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>退货编号</h4>
+            <span class="num"><%=return_code%></span> </li>
+        <li>
+            <h4>退货原因</h4>
+            <span class="num"><%=return_reason%></span></li>
+        <li>
+            <h4>退货金额</h4>
+            <span class="num"><%=return_cash%></span></li>
+        <li>
+            <h4>退货说明</h4>
+            <span class="num"><%=return_message%></span></li>
+    </ul>
+    <h3 class="nctouch-default-list-tit">商家退货处理</h3>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>审核状态</h4>
+            <span class="num">
+                <%=return_shop_state_con%>
+            </span>
+        </li>
+        <li>
+            <h4>商家备注</h4>
+            <span class="num"><%=return_shop_message%></span>
+        </li>
+    </ul>
+
+    <% if(return_platform_state > 0){ %>
+    <h3 class="nctouch-default-list-tit">平台处理结果</h3>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>审核状态</h4>
+            <span class="num"><%=return_platform_state_con%></span>
+        </li>
+        <li>
+            <h4>平台备注</h4>
+            <span class="num"><%=return_platform_message%></span>
+        </li>
+    </ul>
+    <% } %>
+
+    <% if(return_express > 0){ %>
+    <h3 class="nctouch-default-list-tit">退货给商家</h3>
+    <% if(return_shipping_code){ %>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>物流单号</h4>
+            <span class="num"><%=return_shipping_code%></span>
+        </li>
+    </ul>
+    <% }else{ %>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>物流公司</h4>
+            <div class="input-box">
+            <select id="express_id" class="select" name="express_id">
+                <% for(var i in express){%>
+                <option value="<%=express[i].express_id%>"><%=express[i].express_name%></option>
+                <% } %>
+            </select>
+            </div>
+        </li>
+        <li>
+            <h4>物流单号</h4>
+            <div class="input-box">
+                <input type="text" class="inp" id="return_shipping_code" name="return_shipping_code" placeholder="物流单号！">
+            </div>
+        </li>
+    </ul>
+    <div class="form-btn"><a id="return_shipping" href="javascript:;" class="btn-l">提交</a></div>
+    <% } %>
+    <% } %>
+
+    <% if(return_collect_state > 0){ %>
+    <h3 class="nctouch-default-list-tit">商家处理结果</h3>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>审核状态</h4>
+            <span class="num"><%=return_collect_state_con%></span>
+        </li>
+        <li>
+            <h4>商家备注</h4>
+            <span class="num"><%=return_collect_state_message%></span>
+        </li>
+    </ul>
+    <% } %>
+
+    <% if(return_recheck_state > 0){ %>
+    <h3 class="nctouch-default-list-tit">平台处理结果</h3>
+    <ul class="nctouch-default-list">
+        <li>
+            <h4>审核状态</h4>
+            <span class="num"><%=return_recheck_state_con%></span>
+        </li>
+        <li>
+            <h4>平台备注</h4>
+            <span class="num"><%=return_recheck_message%></span>
+        </li>
+    </ul>
+    <% } %>
+
+    <% if(return_plat > 0){ %>
+    <div class="form-btn"><a id="return_plat" href="javascript:;" class="btn-l">平台申诉</a></div>
+    <% } %>
+</script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../../js/tmpl/member_return_info.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+@charset "utf-8";
+body,html{
+	background-color: #f2f2f2;
+}
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+	border-bottom: .02rem solid #eee;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+section{
+	width:100%;
+	height:.7rem;
+	background-color: #fff;
+	margin-top: .1rem;
+	font-size: 0;
+}
+section .icon{
+	width:.44rem;
+	height:.44rem;
+	line-height:.7rem;
+	display:inline-block;
+	margin-top: .13rem;
+	margin-left:.1rem;
+}
+section span{
+	font-size: .26rem;
+	color:#666;
+	display:inline-block;
+	line-height:.7rem;
+	margin-left:.1rem;
+}
+section .right{
+	width:.16rem;
+	height:.28rem;
+	line-height:.7rem;
+	display:inline-block;
+	margin-top: .22rem;
+	margin-right:.2rem;
+	float: right;
+}

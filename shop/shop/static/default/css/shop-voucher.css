@@ -1,0 +1,70 @@
+.lf   {float:left;}
+.rt  {float:right;}
+a{outline: none;}
+.clear  {clear:both;}
+.w-130{width:130px;}
+.orflow{overflow:hidden;}
+.icon{display:inline-block;}
+.text1{overflow:hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;white-space: nowrap;}
+.text2{overflow:hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2}
+
+
+/*代金券  背景图部分 start*/
+.wrap .voucher-wrap{width:1200px;margin:5px auto 0;}
+.wrap .voucher-wrap-inner{position: relative;}
+.wrap .voucher-wrap .voucher-bg{background: url(../images/voucher_bg.png) no-repeat;width:1200px;height: 500px;}
+.wrap .voucher-wrap .btns{position: absolute;bottom:50px;left:50%;margin-left: -190px;}
+.wrap .voucher-wrap .btns a{display: inline-block;height: 32px;line-height: 32px;margin:0 30px;color:#fff;font-size:16px;background-color:#ff4553;width:128px;text-align: center;border-radius: 8px;-webkit-border-radius: 8px;-moz-border-radius: 8px;-ms-border-radius: 8px;-o-border-radius: 8px;}
+.wrap .voucher-wrap .voucher-text{position: absolute;bottom:119px;left:338px;width:524px;height:108px;text-align: center;}
+.wrap .voucher-wrap .voucher-text1{color: #e7182f;font-size: 30px;margin-top:8px;}
+.wrap .voucher-wrap .voucher-text2{color: #825a2c;font-size: 14px;margin-top:6px;}
+.wrap .voucher-wrap .voucher-explain{background-color:#fffff0;padding:12px 0 4px;padding-left:100px;}
+.wrap .voucher-wrap .voucher-explain p,.wrap .voucher-wrap .voucher-explain span{color:#333;font-weight: 600;font-size: 12px;}
+.wrap .voucher-wrap .voucher-explain p{margin-bottom:16px;}
+.wrap .voucher-wrap .voucher-explain .explain-text{margin:8px 0;}
+.wrap .voucher-wrap .voucher-explain .explain-text a{color:#e45050;font-size: 12px;}
+
+.wrap .voucher-wrap .have-snatched .voucher-text1{font-size: 22px;height: 60px;line-height: 60px;}
+
+/*代金券  背景图部分 end*/
+
+/*本店热卖 start*/
+.shop-sells-hot{width:1200px;margin:0 auto;}
+.shop-sells-hot .shop-sells-hot-title{position: relative;font-size: 26px;color:#333;text-align: center;height:80px;line-height: 80px;}
+.shop-sells-hot .shop-sells-hot-title:after{content:"";position: absolute;top:42px;right:0;width:525px;border-top:2px #999 dotted;}
+.shop-sells-hot .shop-sells-hot-title:before{content:"";position: absolute;top:42px;left:0;width:525px;border-top:2px #999 dotted;}
+
+/*分享立减 立赚  start*/
+.share-wrap{margin: 4px auto;height:18px;line-height: 18px;margin-bottom: 10px;}
+.share-wrap .share{border:1px solid #c51e1e;}
+.share-wrap .share span{float:left;color:#c51e1e;font-size: 12px;display: inline-block;line-height:21px;padding:0 2px;text-align: center;}
+.share-wrap .share .save{background-color:#c51e1e;color: #fff;float:right;}
+/*分享立减 立赚  end*/
+
+/*现价  原价  start*/
+.price-wrap{font-size: 12px;}
+.price-wrap .new-price{font-size: 14px;color:#c31f20;font-weight: 600;}
+.price-wrap .new-price em{font-size: 20px;color:#c31f20;}
+.price-wrap .old-price{text-decoration: line-through;}
+/*现价  原价  end*/
+
+/*godds-detail  商品文字描述 start*/
+.goods-detail{color:#666;font-size: 14px;line-height: 18px;height:36px;margin:8px 0;}	
+.goods-detail a{color:#666;}
+/*godds-detail  商品文字描述 end*/
+
+	/*---------*/
+.shop-sells-hot .li-5-list .li-5-item{width:240px;}
+.shop-sells-hot .li-5-list .li-5-item .item-top{padding:4px;padding-bottom: 0;}
+.shop-sells-hot .li-5-list .li-5-item .item-top .img-center{width:232px;height:232px;}
+.shop-sells-hot .li-5-list .li-5-item .item-top .img-center img{width:100%;height:100%;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom{width:228px;border:1px solid #eee;border-top:none;padding:0 5px;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .sales-promotion-wrap{color:#c61e1e;margin-bottom: 8px;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .sales-promotion-wrap .sales-key{color:#c61e1e;margin-right:5px;border:1px solid #c61e1e;border-radius: 6px;-webkit-border-radius: 6px;-ms-border-radius: 6px;-moz-border-radius: 6px;-o-border-radius: 6px;padding:0 4px;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .say-good-wrap{margin:20px 0 5px;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .say-good-wrap .say-good{font-size: 12px;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .say-good-wrap .say-good .icon{width:18px;height:18px;background:url(../images/goods/book_s.png) no-repeat;vertical-align: sub;}
+.shop-sells-hot .li-5-list .li-5-item .item-bottom .say-good-wrap .monthly-sales-wrap{font-size: 12px;}
+	/*-----------*/
+
+/*本店热卖  end*/

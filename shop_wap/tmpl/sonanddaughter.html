@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>家有儿女</title>
+	<link rel="stylesheet" href="../css/sonanddaughter.css">
+	<link rel="stylesheet" href="../css/andone/base.css">
+	<!--右上角弹框css引用-->
+	<link rel="stylesheet" href="../css/common_alert.css">
+    <link rel="stylesheet" href="../css/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/tmpl/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/tmpl/swipe.js"></script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src='../js/tmpl/swiper.min.js'></script>
+	<script type="text/javascript" src='../js/tmpl/sonanddaughter.js'></script>
+	<script src="../js/config.js"></script>
+	<!--右上角弹框js引用-->
+	<script type="text/javascript" src="../js/common_alert.js"></script>
+	<style type="text/css">
+		.footer_div_wrap{height:1rem !important;}
+	</style>
+</head>
+
+<body style="margin-top:1.55rem;background-color:#eeeeee;">
+<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="../index.html"><img src="../images/andone_img/back.png" alt=""></a>
+			<span>家有儿女</span>
+			<a><img src="../images/andone_img/info.png" alt="" onclick="common_index_alert(this)"  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+			<div class="find_nav_left">
+				<div class="find_nav_list">
+
+				</div>
+			</div>
+			<div class="nav_header_img an">
+				<img src="../images/andone_img/icon_an.png" alt="">
+			</div>
+		</div>
+
+		<!--滚动导航栏部分-->
+
+	</header>
+<div class="info_alert">
+
+	<img src="../images/user_img/choose_gray@3x.png" alt="">
+
+</div>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list" >
+	</div>
+	<!--主图轮播图-->
+
+	<!--优选好货title-->
+	<div style="width:100%;height:.8rem;background-color:#f2f2f2;text-align:center;font-size:0">
+		<span style="font-size:.28rem;color:#333;display:inline-block;margin-top:.05rem">今日疯抢</span><br>
+		<span style="font-size:.24rem;color:#666;display:inline-block">看好就下手</span>
+	</div>
+	<!--优选好货title-->
+
+	<!--优选好货contain-->
+	<div class="swiper-container">
+
+	</div>
+
+	<!--优选好货contain-->
+
+	<!--优选推介title-->
+	<div class="goodselect">
+		<img src='../images/selectgoods_img/recommend.png' alt="">
+	</div>
+	<!--优选推介title-->
+
+
+	<div class="proprietary_goods"></div>
+
+
+	<!--优选推介title-->
+	<div class="goodselect">
+		<img src='../images/selectgoods_img/goodgoodstitle.png' alt="">
+	</div>
+	<!--优选推介title-->
+
+
+
+
+	<section class="contain">
+		<div class="contain_goods">
+		</div>
+	</section>
+
+	<div class='fix_footer'></div>
+
+<script type="text/html" id="nav">
+	<ul>
+		<li class="find_nav_cur" ><a href="javascript:void(0)" id="0">精选</a></li>
+		<% if(nav.items) { %>
+		<% var items = nav.items %>
+		<% for(var i in items) { %>
+		<li ><a href="javascript:void(0)" id="<%=items[i].cat_id %>"><%=items[i].name %></a></li>
+		<% } %>
+		<% } %>
+		<li class="sideline"></li>
+	</ul>
+</script>
+<script type="text/html" id="adv">
+	<div class="swipe-wrap" >
+		<% if(adv.items){ %>
+		<% var items = adv.items %>
+		<% for(var i in items){ %>
+		<div class="item" >
+			<a href="<%=items[i].wap_url %>">
+				<img src="<%=items[i].pic_url %>" alt="">
+			</a>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+</script>
+<script type="text/html" id="sc_res">
+	<ul class="wall">
+		<% if(sc_res.items){ %>
+		<% var items = sc_res.items %>
+		<% for(var i in items){ %>
+		<li>
+			<div class="goods_img">
+				<a href="./product_detail.html?cid=<%=items[i].common_id%>"><img src="<%=items[i].common_image %>" alt=""></a>
+				<a href=""><span>分享后：￥<%=items[i].common_shared_price %></span></a>
+				<u><%=items[i].common_name %></u><br>
+				<div class="bg">分享立省￥<%=items[i].common_share_price %></div>
+				<div class="bg">立赚￥<%=items[i].common_promotion_price %></div>
+				<% if(items[i].common_is_jia==1 || items[i].common_promotion_type==1 || items[i].common_promotion_type==2 ||items[i].common_promotion_type==3 || items[i].common_promotion_type==4){ %>
+					<i>促销：</i>
+					<% if(items[i].common_is_jia==1){ %>
+					<del>加</del>
+					<% } %>
+					<% if(items[i].common_promotion_type==1){ %>
+					<del>惠</del>
+					<% }else if(items[i].common_promotion_type==2){ %>
+					<del>限</del>
+					<% }else if(items[i].common_promotion_type==3){ %>
+					<del>手机</del>
+					<% }else if(items[i].common_promotion_type==4){ %>
+					<del>新</del>
+					<% }%>
+				<% }else{ %>
+				<span style="height: .29rem;"></span>
+				<% } %>
+				<br>
+				<% if(items[i].sc_status==1){ %>
+				<div style="width: .4rem;height: .1rem;"><img src="../images/heart.png" alt="" onclick="clle(this)" goods_id="<%=items[i].goods_id%>" class='shoucang'></div>
+				<% }else{ %>
+				<div style="width: .4rem;height: .1rem;"><img src="../images/like@2x.png" alt=""onclick="clle(this)" goods_id="<%=items[i].goods_id%>" class='shoucang'></div>
+				<% } %>
+				<button onclick="coty('<%=items[i].common_id %>')"  class='sheng'>分享立省</button>
+			</div>
+		</li>
+		<% } %>
+		<% } %>
+	</ul>
+</script>
+<script type="text/html" id="pl_res">
+	<ul>
+		<% if(pl_res.items){ %>
+		<% var items = pl_res.items %>
+		<% for(var i in items){ %>
+		<li>
+			<a href="./product_detail.html?cid=<%=items[i].common_id%>"><img src="<%=items[i].goods_image %>" alt=""></a>
+			<div class="good_word">
+				<span>分享后：￥<%=items[i].common_shared_price %></span>
+				<u><%=items[i].goods_name %></u><br>
+				<div class="bg">立省￥<%=items[i].common_share_price %></div><br>
+				<div class="bg">立赚￥<%=items[i].common_promotion_price %></div><br>
+				<% if( items[i].common_is_jia==1 || items[i].common_promotion_type==1 || items[i].common_promotion_type==2 ||items[i].common_promotion_type==3 || items[i].common_promotion_type==4){ %>
+					<i>促销：</i>
+					<% if(items[i].common_is_jia==1){ %>
+					<del>加</del>
+					<% } %>
+					<% if(items[i].common_promotion_type==1){ %>
+					<del>惠</del>
+					<% }else if(items[i].common_promotion_type==2){ %>
+					<del>限</del>
+					<% }else if(items[i].common_promotion_type==3){ %>
+					<del>手机</del>
+					<% }else if(items[i].common_promotion_type==4){ %>
+					<del>新</del>
+					<% }%>
+				<% }else{ %>
+				<span style="height: .5rem;"></span>
+				<% } %>
+				<br/>
+				<em><img src="../images/heart.png" alt=""><%=items[i].scores %>人都说好</em><br>
+				<% if(items[i].pl_status==1){ %>
+				<div style="width: .4rem;height: .1rem;"><img src="../images/heart.png" alt="" onclick="clle(this)" goods_id="<%=items[i].goods_id%>" class='shoucang2'></div>
+				<% }else{ %>
+				<div style="width: .4rem;height: .1rem;"><img src="../images/like@2x.png" alt=""onclick="clle(this)" goods_id="<%=items[i].goods_id%>" class='shoucang2'></div>
+				<% } %>
+				<button onclick="coty('<%=items[i].common_id %>')" class='sheng'>分享立省</button>
+			</div>
+		</li>
+		<% } %>
+		<% } %>
+	</ul>
+</script>
+<script type="text/html" id="xl_res">
+	<div class="swiper-wrapper">
+	<% if(xl_res.items){ %>
+	<% var items = xl_res.items %>
+	<% for(var i in items){ %>
+	<div class="swiper-slide"><a href="./product_detail.html?cid=<%=items[i].common_id%>"><img src='<%=items[i].common_image %>' alt=""></a></div>
+	<% } %>
+	<% } %>
+	</div>
+</script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script  type="text/javascript" src="../js/tmpl/andone/jaliswall.js"></script>
+<script type="text/javascript"  src="../js/config.php"></script>
+<script type="text/javascript"  src="../js/template.js"></script>
+<script type="text/javascript"  src="../js/common.js"></script>
+<script  type="text/javascript" src="../js/tmpl/sonanddaughter_row.js"></script>
+<script>
+	$(function(){
+        $('.fix_footer').load('./common_footer.html');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="telephone=no" name="format-detection" />
+    <title>封顶一元包邮</title>
+    <link rel="stylesheet" href="../css/newbuyer.css">
+    <link rel="stylesheet" href="../css/andone/base.css">
+    <link rel="stylesheet" href="../css/common_alert.css">
+
+</head>
+<style>
+    .footer_div_wrap{width:100%;height:1rem!important}
+    .footer{width:100%;height:.98rem;position:fixed;bottom:0;font-size:0;z-index:101}
+    .footer li{text-align:center;width:33.333333333%;height:100%;display:inline-block;position:relative}
+    .footer li:nth-child(1) img,.footer li:nth-child(3) img{width:.42rem;height:.5rem;position:relative;top:-10%}
+    .footer li:nth-child(2) img{width:1.02rem;height:.98rem;position:absolute;left:121%;top:-10%}
+    .footer li span{font-size:.24rem;color:#fff;position:relative;top:-10%}
+    .footer_div_wrap{width:100%;height:3rem}
+    .footer_div{width:100%;height:3rem;background:url(../images/bg@2x.png) no-repeat left top;background-size:100% 100%;background-color:#fff;position:fixed;bottom:0;display:none;font-size:0;z-index:102;border-top:.02rem solid #ddd}
+    .footer_div li{width:33.3333333333333%;height:33.3333333333333%;display:inline-block;text-align:center}
+    .footer_div li .div_img{width:1.8rem;height:.48rem;margin-top:.2rem;background:url(../images/GO-@3x.png);background-size:100% 100%;margin-left:.2rem}
+    .footer_div li .div_img span{display:inline-block;color:#e45050;font-size:.24rem;margin-left:-20%;margin-top:.06rem}
+    .bg_page{width:100%;height:100%;background-color:#000;opacity:.3;position:fixed;top:0;left:0;display:none;z-index:100}
+    .main{position:relative}
+</style>
+<body style="background:url(../images/newbuyer_bg.png)">
+<!--头部部分-->
+<header class="person">
+    <div class="title">
+        <a href="javascript:history.go(-1)"><img src="../images/icon_back.png" alt=""></a>
+        <span>封顶一元包邮</span>
+        <a onclick="common_index_alert(this)">
+            <img src="../images/icon_share.png" alt=""  class="info">
+        </a>
+    </div>
+</header>
+<div class="info_alert">
+
+</div>
+<!--头部部分-->
+
+
+<!--轮播图-->
+<div class='main'>
+</div>
+<!--轮播图-->
+
+
+<ul class='three'>
+    <li class="newbuyer_type" data-type="1">
+        <div class='li_inner'>
+            <img src="../images/yifen@3x.png" alt="">
+        </div>
+        <span>1分包邮</span>
+    </li>
+    <li class="newbuyer_type" data-type="2">
+        <div class='li_inner'>
+            <img src="../images/yimao@3x.png" alt="">
+        </div>
+        <span>1毛包邮</span>
+    </li>
+    <li class="newbuyer_type" data-type="3">
+        <div class='li_inner'>
+            <img src="../images/yiyuan@3x.png" alt="">
+        </div>
+        <span>1元包邮</span>
+    </li>
+    <li class="newbuyer_type more_newer_shop" data-type="3">
+        <div class='li_inner'>
+            <img src="../images/yimoreshop@3x.png" alt="">
+        </div>
+        <span>更多店铺</span>
+    </li>
+</ul>
+
+
+<div class="main_content"></div>
+<ul class='footer'>
+        <li style="display:none">
+            <a href="./../index.html">
+            <img src="../images/icon1@3x.png" alt=""><br>
+            <span>首页</span>
+            </a>
+        </li>
+        <li class='li_2'>
+            <a href="javascript:void(0)">
+            <img src="../images/gengduohuodong.png" alt="">
+            </a>
+        </li>
+        <li style="display:none">
+            <a href="./newbuyer.html">
+            <img src="../images/icon2@3x.png" alt=""><br>
+            <span>1分抢</span>
+            </a>
+        </li>
+    </ul>
+<div class="footer_div_wrap">
+        <ul class='footer_div'>
+            <a href="./daily_buy.html"><li><div class="div_img"><span>每日必BUY</span></div></li></a>
+            <a href="./opening.html"><li><div class="div_img"><span>开业庆典</span></div></li></a>
+<!--            <a href=""><li><div class="div_img"><span>遇见好货</span></div></li></a> -->
+            <a href="./scarebuy.html"><li><div class="div_img"><span>惠抢购</span></div></li></a>
+            <a href="./sonanddaughter.html"><li><div class="div_img"><span>家有儿女</span></div></li></a>
+            <a href="./findgoodshop.html"><li><div class="div_img"><span>发现好店</span></div></li></a>
+            <a href="./goodgoods.html"><li><div class="div_img"><span>遇见好货</span></div></li></a>
+            <a href=""><li><div class="div_img"><span>单品爆款日</span></div></li></a>
+            <a href="./cheap9.html"><li><div class="div_img"><span>9块9抢</span></div></li></a>
+        </ul>
+    </div>
+<div class='bg_page'></div>
+<div class="more_shop_wrap">
+    <ul class="shop_list_ul">
+    </ul>
+</div>
+
+
+<script type="text/html" id="main">
+    <img src="../images/newbuyer_banner1@2x.png" alt="">
+    <%if(guanggao){%>
+    <a href="product_detail.html?goods_id=<%=guanggao.goods_id%>">
+        <div class="main_wrap">
+            <img src="<%=guanggao.goods_image%>" alt="<%=guanggao.goods_name%>" class="main_block"><br>
+            <span class="mainprice">￥<%= guanggao.shared_price %></span>
+            <u class="maintxt"><%=  guanggao.goods_name %></u>
+        </div>
+    </a>
+    <%}%>
+</script>
+<script type="text/html" id="content_item">
+    <% for(var i in items){%>
+    <div class='item'>
+        <div><a class="shop_name" href="store_newbuyer.html?shop_id=<%=items[i].shop_id%>"><%=items[i].shop_name%></a></div>
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><span><%=items[i].goods_name%></span></a><br>
+        <i><%=items[i].newbuyer_name%></i><br>
+        <u>新人：<u>￥<%=items[i].shared_price%>包邮</u></u><br>
+        <b>专柜价：<del>￥<%=items[i].goods_price%></del></b>
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="../images/newbuyer_buy.png" alt="" class='buy'></a>
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="<%=items[i].goods_image%>" alt="" class='main_img'></a>
+    </div>
+    <% } %>
+</script>
+<script type="text/html" id="shop_list">
+    <% for(var i in data){ %>
+        <li>
+            <p class="shop_title">
+                <%=data[i].shop_class_name%>
+                <% if(data[i].shop_list && data[i].shop_list.length > 9){ %>
+                <span class="shop_slide">展开</span>
+                <% } %>
+            </p>
+            <div class="shop_list shop_list_v2">
+                <ul class="clearfix">
+                    <% if(data[i].shop_list){shop_list = data[i].shop_list;} %>
+                    <% for(var j in shop_list){ %>
+                    <li>
+                        <a href="store_newbuyer.html?shop_id=<%=shop_list[j].shop_id%>">
+                            <img class="shop_img" src="<%=shop_list[j].shop_logo%>" alt="">
+                            <span class="shop_name"><%=shop_list[j].shop_name%></span>
+                            <span class="shop_score"><i>100%</i>超满意</span>
+                            <span href="store_newbuyer.html?shop_id=<%=shop_list[j].shop_id%>" class="goto_shop">进店看看</span>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </li>
+    <% } %>
+</script>
+
+
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src='../js/swipe.js'></script>
+<script type="text/javascript" src='../js/newbuyer.js'></script>
+<script>
+    function common_index_alert(){
+        if ($('.info_alert').css('display') == 'none'){
+            $('.info_alert').css({'display': 'block'});
+            var $el = '<img src="../images/user_img/choose_gray@3x.png" alt=""> <a href="../index.html"><span><img src="../images/user_img/more_home@2x.png" alt=""><u>商城首页</u></span></a><a href="../tmpl/cart_list.html"><span><img src="../images/user_img/more_cart@2x.png" alt=""><u>购物车</u></span></a><a href="../tmpl/member/order_list.html"><span><img src="../images/user_img/more_form@2x.png" alt=""><u>我的订单</u></span></a><a href="../tmpl/member/chat_list.html"><span><img src="../images/bbc-bg36.png" alt=""><u>消息</u></span></a>'
+            $('.info_alert').html($el);
+        }
+        else{
+            $('.info_alert').css({'display': 'none'});
+        }
+    }
+</script>
+
+</body>
+</html>

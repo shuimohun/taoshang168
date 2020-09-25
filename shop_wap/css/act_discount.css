@@ -1,0 +1,187 @@
+@charset "utf-8";
+/***************头部部分**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #e45050;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:32%;
+}
+/***************头部部分**************************************/
+
+/**************主图轮播图*************************/
+  .slider_list { position: relative; z-index: 1; overflow: hidden;clear:both;height:2.6rem;}
+  .swipe { position: relative; overflow: hidden; visibility: hidden; }
+  .swipe-wrap { overflow: hidden; position: relative; height:2.6rem;}
+  .swipe-wrap > div { float: left; width: 100%; height:100%;position: relative; }
+  .swipe-wrap img { width: 100%;height:100%;}
+/**************主图轮播图*************************/
+
+/********优选好货title********/
+
+.buy_goods{
+    width:100%;
+    height:2.84rem;
+    border-bottom:.01rem solid #f2f2f2;
+    padding-top:.2rem;
+    padding-left:.2rem;
+    background-color: #fff;
+    overflow:hidden;
+}
+.buy_goods .goods_img{
+    width:2.44rem;
+    height:2.44rem;
+    display:inline-block;
+    vertical-align:top;
+    position:relative;
+}
+.buy_goods .goods_img img{
+    width:100%;
+    height:100%;
+}
+.buy_goods .goods_img .sellout{
+    width:1.48rem;
+    height:.46rem;
+    position:absolute;
+    left:0%;
+    top:73%;
+}
+.buy_goods .goods_contain{
+    display:inline-block;
+    width:55%;
+    height:2.64rem;
+    margin-left:.12rem;
+    position:relative;
+    font-size: 0;
+}
+.buy_goods .goods_contain span{
+    display:inline-block;
+    font-size: .28rem;
+    color:#394766;
+    width:3.26rem;
+    height:.32rem;
+    overflow:hidden;
+}
+.buy_goods .goods_contain u{
+    font-size:.22rem;
+    color:#9aa1b0;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:.08rem;
+}
+.buy_goods .goods_contain .bar{
+    display:inline-block;
+    width:1.6rem;
+    height:.19rem;
+    background-color: #e6e6e6;
+    margin-top:.05rem;
+    position:absolute;
+    top:57%;
+    left:0;
+}
+.buy_goods .goods_contain .bar img{
+    height:100%;
+}
+.buy_goods .goods_contain b{
+    font-weight: normal;
+    font-size: .16rem;
+    color:#999999;
+    display:inline-block;
+    position:absolute;
+    top:57%;
+    right:7%;
+}
+.buy_goods .goods_contain .C66{
+    color: #666666;
+    position: absolute;
+    right: 0;
+}
+.buy_goods .goods_contain .C66 span{
+    display: inline;
+    color: #ff1c59;
+    font-size: .14rem;
+}
+.buy_goods .goods_contain .button{
+    width:1.96rem;
+    height:.54rem;
+    position:absolute;
+    top:71%;
+    right:7%;
+}
+.buy_goods .goods_contain .bg{
+    display:inline-block;
+    margin-left: .1rem;
+    width:auto;
+    height:auto;
+    background:url(../images/share_bg@2x.png);
+    background-size:100% 100%;
+    margin-top: .1rem;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+}
+.buy_goods .goods_contain i{
+    display:inline-block;    
+    font-size: .22rem;
+    color:#e45050;
+    font-style:normal;
+    margin-left: .1rem;
+    margin-top:.1rem;
+}
+.buy_goods .goods_contain del{
+    display:inline-block;
+    font-size: .2rem;
+    color:#e45050;
+    font-style:normal;
+    margin-left:.1rem;
+    border:.01rem solid #e45050;
+    border-radius:.05rem;
+    text-decoration: none;
+}
+.buy_goods .goods_contain .word{
+    display:inline-block;
+    font-size: .22rem;
+    color:#383838;
+    margin-top:.1rem;
+    width:2.5rem;
+    height:.3rem;
+    overflow:hidden;
+    margin-left: .1rem;
+    position:absolute;
+    top:43%;
+    left:0;
+}
+.buy_goods .goods_contain .word1{
+    display:inline-block;
+    font-size: .22rem;
+    color:#383838;
+    margin-top:.1rem;
+    width:2rem;
+    height:.3rem;
+    overflow:hidden;
+    position:absolute;
+    top:43%;
+    right:-10%;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>添加银行卡</title>
+  <link rel="stylesheet" href="../../css/money/addcard2.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <link href="../../css/money/layout.min.css" rel="stylesheet" />
+    <link href="../../css/money/scs.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!--头部-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1);"><img src="../../images/money/icon_back.png" alt=""></a>
+      <span>添加银行卡</span>
+       <a href="#" class="next">提交</a>
+    </div>
+  </header>
+  <!--头部-->
+
+  <!--地址部分-->
+  <form action='http://www.taoshang168.com' class="info_add">
+    <ul>
+      <li>
+        <span>预留手机号：</span><input type="number" oninput="if(value.length>11)value.slice(0,11)" id="phone" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+      </li>
+      <li>
+        <label style="letter-spacing:.09rem">验 证 码</label>
+        <input type="text" value="" id="verificationcode" style="width:2.5rem;" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" >
+        <input type="button" class="gain" value="点击获取" data-type="mobile">
+      </li>
+    </ul>
+  </form>
+
+  <!--地址部分-->
+  <script type="text/javascript" src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/addcard2.js'></script>
+  <script type="text/javascript" src="../../js/addcard2.js"></script>
+</body>
+</html>

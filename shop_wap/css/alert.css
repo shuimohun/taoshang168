@@ -1,0 +1,66 @@
+.tanchuang{
+	display:none;
+}
+.alert_tanchuang{
+	width:6rem;
+	height:2.9rem;
+	background-color: pink;
+	border-radius:.1rem;
+	position:fixed;
+	left:4.5%;
+	top:50%;
+	z-index:106;
+}
+.alert_tanchuang .sharetitle{
+	width:100%;
+	height:.5rem;
+	background-color: #fff;
+	line-height:.5rem;
+	font-size: .24rem;
+	color:#666;
+	border-radius:.1rem;
+	padding-left: .15rem;
+}
+.tanchuang_wrap{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: #000;
+	opacity: .3;
+	z-index:105;
+}
+.alert_tanchuang ul{
+	font-size: 0;
+	background-color: #fff;
+	width:100%;
+	height:1.7rem;
+}
+.alert_tanchuang ul li{
+	display: inline-block;
+	width:20%;
+	height:100%;
+	text-align: center;
+}
+.alert_tanchuang ul li img{
+	width:.72rem;
+	height:.72rem;
+	margin-bottom: .1rem;
+	margin-top: .3rem;
+}
+.alert_tanchuang ul li span{
+	display:inline-block;
+	font-size: .2rem;
+	color:#333;
+}
+.alert_tanchuang .sharebottom{
+	height:.7rem;
+	width:100%;
+	text-align: center;
+	font-size: .26rem;
+	background-color: #fff;
+	border-radius:.1rem;
+	line-height:.7rem;
+	color:#666;
+}

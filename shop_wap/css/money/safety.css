@@ -1,0 +1,70 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #FFF;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#3D3430;
+    vertical-align: top;
+    font-weight: bold;
+}
+.person .title span{
+    margin-left:32%;
+}
+/***************头部部分结束**************************************/
+
+/*************地址部分**********************/
+.info_add{
+    width:100%;
+    height:5.31rem;
+    border-top:.01rem solid #cccccc;
+    margin-top: .3rem;
+}
+.info_add ul{
+    width:100%;
+    height:5.31rem;
+    background-color: #fff;
+}
+.info_add ul li{
+    width:100%;
+    height:.885rem;
+    line-height:.885rem;
+    border-bottom:.01rem solid #cccccc;
+    color: #999999;
+    padding-left: .2rem;
+    font-size:.32rem;
+}
+.info_add ul li input{
+    display:inline-block;
+    border:0 none;
+    font-size:.32rem;
+    color: #999999;
+    width:40%;
+    outline:none;
+}
+.info_add ul li span{
+    color:#666;
+}
+.info_add ul li img{
+    width:.25rem;
+    height:.25rem;
+    float: right;  
+    margin-top: 5%;
+    margin-right:3%;
+}
+.info_add ul span.tit{
+    color:#ddd;
+    font-size: .16rem;
+    margin-left: .2rem;
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html  style="font-size: 181.333px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
+    <title>聚划算</title>
+    <style>
+        html{color:#000;overflow-y:scroll;overflow-x:hidden;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-size:100px;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
+        .link,.link:hover,.link:visited,a{color:#333}
+        body,html{font-family:"PingFang SC","Heiti SC","SF UI Text","Helvetica Neue",Roboto,"Droid Sans Fallback",arial,sans-serif;font-weight:400}
+        body{font-size:.12rem;line-height:1.5}
+        *{margin:0;padding:0;outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:transparent}
+        input,select,textarea{font-size:100%}
+        table{border-collapse:collapse;border-spacing:0}
+        img{border:0}
+        del{text-decoration:line-through}
+        .link:active,a{text-decoration:none}
+        ol,ul{list-style:none}
+        caption,th{text-align:left}
+        h1,h2,h3,h4,h5,h6{font-weight:500}
+        h1{font-size:.36rem}
+        h2{font-size:.28rem}
+        h3{font-size:.24rem}
+        h4{font-size:.2rem;line-height:.26rem}
+        h5{font-size:.18rem;line-height:.24rem}
+        h6{font-size:.16rem;line-height:.2rem}
+        q:after,q:before{content:''}
+        sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+        sup{top:-.5em}
+        sub{bottom:-.25em}
+        .link:active{color:#e61414}
+        ins,u{text-decoration:underline;text-decoration-color:#eee}
+        .jx-imgwp{overflow:hidden}
+
+    </style>
+    <style>
+        .jx-reward{z-index:1}
+        .jx-slider{z-index:2}
+        body{background:#f5f5f5}
+        @media (device-width:100vw) and (device-height:100vh){body::before{display:block;height:.2rem;background:#E61414;content:""}
+            .jx-menuwp,.jx-navbar{top:.2rem}
+        }
+        .jx-navbar-bg{height:.4rem}
+        .jx-row{box-sizing:border-box;width:100%}
+        .jx-menuwp{position:fixed;top:-2.6rem;right:0;bottom:0;left:0;z-index:99999;padding-top:3rem;padding-bottom:1rem;background:rgba(0,0,0,.85);-webkit-transition:-webkit-transform .4s ease-in;transition:transform .4s ease-in;-webkit-transform:translate(0,-100%);transform:translate(0,-100%)}
+        .jx-menuwp.menu-open{-webkit-transition:-webkit-transform .4s cubic-bezier(.175,.885,.32,1.1);transition:transform .4s cubic-bezier(.175,.885,.32,1.1);-webkit-transform:translate(0,0);transform:translate(0,0)}
+        .jx-menuwp .cats,.jx-menuwp .exts{box-sizing:border-box;padding:.1rem;font-size:.16rem}
+        .jx-menuwp .cats:after,.jx-menuwp .exts:after{clear:both;display:table;content:""}
+        .jx-menuwp .jx-sub{float:left;overflow:hidden;width:25%;height:.4rem;border:0;background:0 0;color:#fff;text-align:center;text-overflow:ellipsis;white-space:nowrap;font-size:.16rem;line-height:.4rem}
+        .jx-menuwp .jx-sub.jx-active{color:#E61414}
+        .jx-menuwp .jx-ext{float:left;width:33.33333333%;height:.4rem;color:#fff;text-align:center}
+        .jx-menuwp .ext{display:inline-block;padding:.02rem .05rem;min-width:.9rem;border:1px solid rgba(255,255,255,.3);border-radius:.03rem;font-style:normal}
+        .jx-menuwp .jx-btn-close{position:absolute;bottom:.2rem;left:50%;margin-left:-.2rem;width:.4rem;height:.4rem;border:0;background:0 0}
+        .jx-navbar{position:fixed;top:0;z-index:100000;box-sizing:border-box;padding-right:.4rem;padding-left:1rem;width:100%;height:.4rem;background:#E61414;box-shadow:0 1px 2px 0 rgba(0,0,0,.25)}
+        .jx-navbar .jx-nav{position:relative;display:inline-block;padding-right:.05rem;padding-left:.05rem;height:.4rem;border:none;background:0 0;color:#fff;font-size:.14rem;line-height:.4rem}
+        .jx-navbar .jx-nav::after{position:absolute;right:.05rem;bottom:0;left:.05rem;height:.02rem;background:#fff;content:"";-webkit-transition:-webkit-transform .4s ease;transition:transform .4s ease;-webkit-transform:scale(0);transform:scale(0)}
+        .jx-navbar .jx-nav.jx-active::after{-webkit-transform:scale(1);transform:scale(1)}
+        .jx-navbar .jx-nav-all{position:absolute;left:0;padding:0;width:1rem;height:.4rem;background:inherit}
+        .jx-navbar .jx-nav-all svg{height:.4rem}
+        .jx-navbar .jx-navwp{overflow:auto;overflow:hidden;white-space:nowrap}
+        .jx-navbar .jx-navcnt{display:inline-block}
+        .jx-navbar .jx-navwp::-webkit-scrollbar{display:none}
+        .jx-navbar .jx-drop-btn{position:absolute;top:0;right:0;z-index:21;width:.4rem;height:.4rem;border:0;background:0 0}
+        .jx-navbar .jx-drop-btn svg{width:.4rem;height:.4rem;-webkit-transition:-webkit-transform .4s linear;transition:transform .4s linear;-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
+        .jx-navbar .jx-nav-all:before{position:absolute;top:0;right:-.05rem;bottom:0;width:.05rem;height:.4rem;border-radius:0 100% 100% NaN 50% 50% 0;background-image:-wekbit-radial-gradient(ellipse at left,rgba(0,0,0,.2) 0,rgba(0,0,0,0) 55%);background-image:radial-gradient(ellipse at left,rgba(0,0,0,.2) 0,rgba(0,0,0,0) 55%);content:""}
+        .jx-navbar .jx-drop-btn:before{position:absolute;top:0;bottom:0;left:-.05rem;width:.05rem;height:.4rem;border-radius:100% 0 0 2% 0 0 50%;background-image:-wekbit-radial-gradient(ellipse at right,rgba(0,0,0,.2) 0,rgba(0,0,0,0) 55%);background-image:radial-gradient(ellipse at right,rgba(0,0,0,.2) 0,rgba(0,0,0,0) 55%);content:""}
+        .jx-navbar .jx-drop-btn.menu-open svg{-webkit-transform:rotate(0);transform:rotate(0)}
+        .jx-gotop,.jx-myhome{position:fixed;right:.1rem;bottom:.1rem;z-index:100000;width:.45rem;height:.45rem;border:0;border-radius:100%}
+        .jx-myhome{left:.1rem;background:#E61414}
+        .jx-myhome::after,.jx-myhome::before{position:absolute;left:50%;border:.015rem solid #fff;content:"";pointer-events:none}
+        .jx-myhome::before{top:.09rem;margin-left:-.055rem;width:.08rem;height:.08rem;border-radius:.08rem}
+        .jx-myhome::after{top:.185rem;margin-left:-.125rem;width:.22rem;height:.11rem;border-top-right-radius:.22rem;border-top-left-radius:.22rem}
+        .jx-myhome a{display:block;width:100%;height:100%}
+        .jx-gotop{opacity:0;-webkit-transition:opacity .4s ease .4s;transition:opacity .4s ease .4s}
+        .jx-gotop.show{opacity:1}
+        .loading{clear:both;display:block;margin:auto;width:100%;color:#999;text-align:center;font-size:.12rem}
+        .placeholder{height:.6rem}
+        .btn-link{display:inline-block;margin:.2rem auto .4rem;height:.4rem;min-width:2.1rem;border:1px solid #F61D4B;border-radius:.04rem;color:#E61414;text-decoration:none;font-weight:lighter;font-size:.14rem;line-height:.4rem}
+        .hot-recomand{position:relative;margin:.05rem auto;height:.2rem;color:#666;text-align:center;font-size:.14rem}
+        .hot-recomand::after,.hot-recomand::before{position:absolute;top:50%;right:0;width:40%;height:1px;background:#ddd;content:""}
+        .hot-recomand::before{left:0}
+        .jx-juapp .link{background-position:center bottom;background-repeat:no-repeat;-webkit-background-size:auto 100%}
+        .jx-juapp{font-size:0}
+        .jx-juapp-guid{display:block;text-align:center}
+        .jx-julist{position:relative;z-index:200;text-align:left}
+        .guid #J_JHSDownloadBar{top:auto!important;bottom:0;z-index:999;font-size:.12rem}
+        .guid #J_JHSDownloadBar span{height:.4rem;line-height:.4rem}
+        .guid #J_JHSDownloadBar .bar-item.downloadbar-close{width:.36rem}
+        .guid #J_JHSDownloadBar.not-closable span{padding-left:.36rem;height:.4rem;line-height:.4rem}
+        .guid #J_JHSDownloadBar.not-closable .downloadbar-logo{left:.06rem;width:.26rem}
+        .guid #J_JHSDownloadBar .bar-item.downloadbar-open{width:.7rem}
+        .guid #J_JHSDownloadBar .bar-item{height:.4rem;line-height:.4rem}
+        .guid .jx-gotop,.guid .jx-myhome{bottom:.5rem}
+        .guid .placeholder{height:1rem}
+        .loading{display:block;margin:auto;color:#999;text-align:center;font-size:.12rem}
+        #box-panel{position:relative;z-index:1;overflow:hidden;min-height:.05rem;-webkit-transform:translateZ(0);transform:translateZ(0)}
+        #box-panel img{width:100%;height:100%}
+        .env_os_android .jx-juitem .name{line-height:1.5}
+        .app-uc .jx-juitem{padding-bottom:74.5%;width:49.5%}
+        .app-uc .jx-juitem a{position:absolute;top:0;right:0;bottom:0;left:0}
+        .app-uc .jx-juitem:nth-child(even){margin-left:1%}
+        ul.jx-julist .name.short{height:.16rem}
+        ul.jx-julist .title-icons{margin-top:.05rem}
+        ul.jx-julist .jx-juitem .namewp{height:.36rem}
+        .jx-dialog{position:fixed;top:0;bottom:0;left:0;z-index:200000;display:block;width:100%;height:100%;background:rgba(0,0,0,0);-webkit-transition:background ease .4s;transition:background ease .4s}
+        .jx-dialog.hide{display:none}
+        .jx-dialog.go-show{background:rgba(0,0,0,.6)}
+        .jx-dialog.go-show .jx-content{-webkit-transform:scale(1);transform:scale(1)}
+        .jx-dialog.go-hide{background:rgba(0,0,0,0)}
+        .jx-dialog.go-hide .jx-content{-webkit-transform:scale(0);transform:scale(0)}
+        .jx-dialog .jx-content{position:absolute;top:.95rem;left:.225rem;width:3.3rem;height:3.5rem;background-position:center;background-repeat:no-repeat;-webkit-transition:-webkit-transform ease .4s;transition:transform ease .4s;-webkit-transform:scale(0);transform:scale(0);-webkit-background-size:contain}
+        .jx-dialog .jx-close{position:absolute;top:.78rem;right:.06rem;z-index:2;box-sizing:border-box;padding:.07rem;width:.4rem;height:.4rem}
+        .jx-dialog .jx-close .icon{width:.26rem;height:.26rem}
+
+    </style>
+
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <script src="../js/swiper.min.js"></script>
+
+
+    <div class="jx-fixed jx-menuwp " id="JX_Submenu">
+        <div class="submenu" data-spm="dropmenu-cats">
+            <div class="cats">
+
+                <a data-type="submenu" data-id="1000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_1000&amp;spm=a2147.7632989.dropmenu-cats.d1000" data-spm="d1000" class="jx-sub jx-sub-1000" on-tap="switchTo:1000">女装</a>
+
+                <a data-type="submenu" data-id="7000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_7000&amp;spm=a2147.7632989.dropmenu-cats.d7000" data-spm="d7000" class="jx-sub jx-sub-7000" on-tap="switchTo:7000">男装</a>
+
+                <a data-type="submenu" data-id="3000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_3000&amp;spm=a2147.7632989.dropmenu-cats.d3000" data-spm="d3000" class="jx-sub jx-sub-3000 jx-active" on-tap="switchTo:3000">鞋包</a>
+
+                <a data-type="submenu" data-id="38000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_38000&amp;spm=a2147.7632989.dropmenu-cats.d38000" data-spm="d38000" class="jx-sub jx-sub-38000" on-tap="switchTo:38000">运动</a>
+
+                <a data-type="submenu" data-id="4000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_4000&amp;spm=a2147.7632989.dropmenu-cats.d4000" data-spm="d4000" class="jx-sub jx-sub-4000" on-tap="switchTo:4000">内衣饰品</a>
+
+                <a data-type="submenu" data-id="2000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_2000&amp;spm=a2147.7632989.dropmenu-cats.d2000" data-spm="d2000" class="jx-sub jx-sub-2000" on-tap="switchTo:2000">美妆</a>
+
+                <a data-type="submenu" data-id="230000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_230000&amp;spm=a2147.7632989.dropmenu-cats.d230000" data-spm="d230000" class="jx-sub jx-sub-230000" on-tap="switchTo:230000">母婴童装</a>
+
+                <a data-type="submenu" data-id="5000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_5000&amp;spm=a2147.7632989.dropmenu-cats.d5000" data-spm="d5000" class="jx-sub jx-sub-5000" on-tap="switchTo:5000">食品</a>
+
+                <a data-type="submenu" data-id="225000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_225000&amp;spm=a2147.7632989.dropmenu-cats.d225000" data-spm="d225000" class="jx-sub jx-sub-225000" on-tap="switchTo:225000">家装家纺</a>
+
+                <a data-type="submenu" data-id="37000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_37000&amp;spm=a2147.7632989.dropmenu-cats.d37000" data-spm="d37000" class="jx-sub jx-sub-37000" on-tap="switchTo:37000">百货</a>
+
+                <a data-type="submenu" data-id="43000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_43000&amp;spm=a2147.7632989.dropmenu-cats.d43000" data-spm="d43000" class="jx-sub jx-sub-43000" on-tap="switchTo:43000">手机数码</a>
+
+                <a data-type="submenu" data-id="34000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_34000&amp;spm=a2147.7632989.dropmenu-cats.d34000" data-spm="d34000" class="jx-sub jx-sub-34000" on-tap="switchTo:34000">家电</a>
+
+                <a data-type="submenu" data-id="36000" type="button" name="button" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_36000&amp;spm=a2147.7632989.dropmenu-cats.d36000" data-spm="d36000" class="jx-sub jx-sub-36000" on-tap="switchTo:36000">汽车车品</a>
+
+            </div>
+
+            <div class="exts" data-spm="dropmenu-exts">
+
+                <a href="https://ju.taobao.com/m/jusp/nv/haiwaiju/mtp.htm" class="jx-ext jx-ext0"><em class="ext">全球精选</em></a>
+
+                <a href="https://pages.tmall.com/wow/jy/act/alone/brand" class="jx-ext jx-ext1"><em class="ext">品牌团</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/other/liangfan/mtp.htm" class="jx-ext jx-ext2"><em class="ext">量贩团</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/nv/mingpin2016/mtp.htm" class="jx-ext jx-ext3"><em class="ext">聚名品</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/shh/trip/mtp.htm" class="jx-ext jx-ext4"><em class="ext">旅游团</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/nv/xibao/mtp.htm?hongbao=true" class="jx-ext jx-ext5"><em class="ext">抽免单</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/other/qhb/mtp.htm" class="jx-ext jx-ext6"><em class="ext">抢红包</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/o/newfulishe/mtp.htm" class="jx-ext jx-ext7"><em class="ext">福利社</em></a>
+
+                <a href="https://ju.taobao.com/m/jusp/jj/jujiazhuangpindao/mtp.htm" class="jx-ext jx-ext8"><em class="ext">聚家装</em></a>
+
+            </div>
+
+            <button data-type="submenu" class="jx-btn-close" on-tap="closeMenu" data-spm-click="gostr=/jhs;locaid=closemenu">
+                <svg viewBox="-5 -5 40 40">
+                    <g fill="white">
+                        <path d="M1.97965508,3.4604441 L28.5870413,30.0678303 C28.9959499,30.4767389 29.6589217,30.4767389 30.0678303,30.0678303 C30.4767389,29.6589217 30.4767389,28.9959499 30.0678303,28.5870413 L3.4604441,1.97965508 C3.0515355,1.57074648 2.38856368,1.57074648 1.97965508,1.97965508 C1.57074648,2.38856368 1.57074648,3.0515355 1.97965508,3.4604441 L1.97965508,3.4604441 Z" id="Shape"></path>
+                        <path d="M28.5870413,1.97965508 L1.97965508,28.5870413 C1.57074648,28.9959499 1.57074648,29.6589217 1.97965508,30.0678303 C2.38856368,30.4767389 3.0515355,30.4767389 3.4604441,30.0678303 L30.0678303,3.4604441 C30.4767389,3.0515355 30.4767389,2.38856368 30.0678303,1.97965508 C29.6589217,1.57074648 28.9959499,1.57074648 28.5870413,1.97965508 L28.5870413,1.97965508 Z" id="Shape"></path>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="jx-navbar-bg"></div>
+    <div class="jx-navbar" id="JX_Navbar" data-spm="Topbar">
+        <a type="button" name="button" data-type="navbar" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_ALL&amp;spm=a2147.7632989.Topbar.dall" data-spm="dall" class="jx-nav jx-nav-all" data-spm-click="gostr=/jhs;locaid=catall" on-tap="switchTo:all">
+            <svg viewBox="-15 -10 125 50">
+                <g stroke="none" stroke-width="1" fill="#FFF">
+                    <g transform="translate(0, 0)">
+                        <path d="M29.7210264,12.7813911 L26.1517759,14.9358627 C26.1517759,14.9358627 24.4970145,12.3242999 21.4811361,11.1761518 C20.2904934,12.1084011 19.3006712,13.1065944 18.5491561,14.0876242 C21.2722827,14.3477868 23.8186873,14.6549232 25.5430665,15.0054201 C24.6889097,16.031617 23.7446069,18.1698284 23.7446069,18.1698284 C23.2180107,17.9539295 22.5780626,17.7479675 21.8560011,17.5510388 C22.8226174,18.0885276 23.7178308,18.6106594 24.5353936,19.1165312 C25.4038309,18.2809395 26.2597727,17.2944896 27.0130729,16.137308 C27.0130729,16.137308 28.7481624,17.467028 30.2511927,18.770551 C29.3479465,19.6052394 28.3438437,20.3658537 27.3317082,21.0433604 C28.2108559,21.7416441 28.8749025,22.403794 29.2694033,23.0234869 C29.9932499,24.1562782 29.8906082,25.028907 29.4157792,25.8572719 C28.6678342,27.1616983 27.1291025,27.7822945 24.895978,27.799458 C22.1826692,27.8211382 19.3934949,27.2068654 17.9734705,26.8437218 L17.9734705,28 L2.70575343,28 L2.70575343,25.6666667 L4.53188163,25.6666667 L4.53188163,19.2863595 C3.53670424,19.1906052 2.57455067,19.0822042 1.69004771,18.9566396 L2.94763062,15.8012647 C2.94763062,15.8012647 6.25804583,16.9385727 12.423683,17.532972 L12.423683,15.9277326 C9.3078406,15.5727191 6.31784573,15.3622403 4.36944012,15.3333333 L4.86390494,13.1427281 C4.86390494,13.1427281 7.26125605,13.2547425 10.5038385,13.4634146 C9.0534679,12.3739837 6.35711731,10.8003613 2.21664382,10.0894309 C2.21664382,10.0894309 2.9619112,8.98825655 3.18683021,8.33785005 C4.98350474,8.33785005 11.4517115,10.2231256 13.7883702,12.4236676 L12.7146497,13.6115628 C13.1020102,13.6395664 13.4956185,13.66757 13.8927969,13.6973803 L13.8927969,4 L18.3063863,4 L18.3063863,9.94850949 C19.7781778,8.25203252 22.363854,6.01445348 26.6989003,4.17434508 C27.3504514,4.90243902 29.8281307,7.34056007 29.8281307,7.34056007 C27.6182121,7.80036134 25.6412454,8.58717254 23.9320394,9.5501355 C26.94167,10.2466125 29.7210264,12.7813911 29.7210264,12.7813911 L29.7210264,12.7813911 Z M7.80927302,23.1508582 L12.423683,23.1508582 L12.423683,22.0406504 L7.80927302,22.0406504 L7.80927302,23.1508582 L7.80927302,23.1508582 Z M12.423683,25.6666667 L12.423683,24.66215 L7.80927302,24.66215 L7.80927302,25.6666667 L12.423683,25.6666667 L12.423683,25.6666667 Z M7.80927302,19.5447154 L7.80927302,20.5311653 L12.423683,20.5311653 L12.423683,19.7786811 C11.0018735,19.7244806 9.41494489,19.6495032 7.80927302,19.5447154 L7.80927302,19.5447154 Z M15.7555191,17.7768744 C16.4079627,17.8102981 17.0809347,17.8373984 17.7788977,17.8554652 L17.7788977,19.9132791 C17.7788977,19.9132791 17.0050692,19.9069557 15.7555191,19.8789521 L15.7555191,25.6666667 L17.4602624,25.6666667 L18.2233805,24.0948509 C18.2680073,24.1047877 20.5475437,25.8193315 24.3684894,25.8193315 C24.4122236,25.8193315 24.4577429,25.8220416 24.4979071,25.8193315 C25.5207531,25.7461608 26.19194,25.5474255 26.4623783,25.0135501 C26.6310676,24.6802168 26.5560946,24.2610659 26.2213936,23.8157182 C25.9143613,23.4092141 25.3975831,23.0054201 24.7451395,22.6052394 C22.3129795,23.9385727 20.3395828,24.6838302 20.3395828,24.6838302 L18.7419438,22.9385727 C18.7419438,22.9385727 20.1521503,22.4164408 21.9550726,21.200542 C20.7831731,20.6865402 19.5023843,20.1797651 18.2581894,19.6793135 L19.9299089,17.0921409 C18.6482275,16.8202349 17.2255255,16.5745257 15.7546265,16.3586269 L15.7546265,17.7768744 L15.7555191,17.7768744 Z M2.21575128,6.03974706 C2.21575128,6.03974706 2.96101866,4.93857272 3.18593768,4.28816621 C4.9826122,4.28816621 11.450819,6.17344173 13.7874777,8.37217706 L11.8096184,10.5627823 C11.8096184,10.561879 8.88299357,7.18428184 2.21575128,6.03974706 L2.21575128,6.03974706 Z" id="Shape" transform="translate(15.970620, 16.000000) scale(1, -1) translate(-15.970620, -16.000000) "></path>
+                    </g>
+                    <g transform="translate(32, 0)">
+                        <path d="M30.4951632,10.7008766 C30.5006006,11.683817 30.5006006,27.2683696 30.4897258,28.0643426 L25.9594298,28.0643426 L25.9594298,8.5144467 C25.8950867,6.70830498 24.3553842,6.21819617 22.8274628,6.19187551 C22.4432168,5.30332639 22.3226868,5.03739698 21.8895039,4.19241309 C23.1546156,3.99092391 27.5381006,3.77400538 29.3596439,5.20530463 C30.6619114,6.38882664 30.4897258,8.56345758 30.4951632,10.7008766 L30.4951632,10.7008766 Z M13.4904674,7.69033782 C14.645924,8.83664787 15.2467614,10.1063927 15.5585081,11.3906593 C15.9101294,12.8646162 16.6913087,18.8266991 16.6913087,18.8266991 L12.384854,18.8076393 C12.384854,18.8076393 12.3766979,15.8442962 12.0975758,12.8519097 C12.0024206,11.8217736 11.7196736,10.9368549 11.2810532,10.1726482 C10.7925896,11.1628495 10.5089363,12.3808606 10.5533421,13.8965675 C10.5886855,15.1871874 10.5750919,17.5034053 10.5433735,19.875895 C12.6694135,20.1372864 15.1914807,20.3496669 18.0724191,20.4249984 L18.0724191,22.4734717 C18.0724191,22.4734717 14.6223617,22.447151 10.5062176,22.2565532 C10.4572806,25.2117278 10.3965625,27.7185436 10.3965625,27.7185436 L5.72942418,27.7484947 L5.85267288,21.9742868 C4.31115788,21.8535748 2.81495489,21.704727 1.5,21.52139 L2.76511167,18.3810631 C2.76511167,18.3810631 3.86256885,18.7286773 5.91248475,19.1389166 L6.01307744,14.4229807 C6.01307744,14.4229807 6.04479586,10.416795 8.25783504,7.48431059 C7.02897299,6.87712024 5.56358218,6.46688101 3.93506809,6.20185921 L5.0443064,4 C7.2129398,4.41114683 8.94567154,4.95389696 10.3331257,5.5892232 C10.6802158,5.37775032 11.0517743,5.18624484 11.4577701,5.0292285 C14.2272409,4.04628805 18.7149436,4.04628805 18.7149436,4.04628805 L20.2845521,6.06934831 C20.2854583,6.06934831 16.3559997,5.78708194 13.4904674,7.69033782 L13.4904674,7.69033782 Z M19.9157122,24.9367223 L23.8614831,24.9367223 L23.8614831,10.1635721 L19.9157122,10.1635721 L19.9157122,24.9367223 L19.9157122,24.9367223 Z M14.5906433,23.2721675 C16.0904712,23.2721675 17.3075522,24.6517331 17.3075522,25.8897116 C17.3075522,27.1385815 16.0904712,28.5117938 14.5906433,28.5117938 C13.0799405,28.5117938 11.8664845,27.1385815 11.8664845,25.8897116 C11.8664845,24.6517331 13.0799405,23.2721675 14.5906433,23.2721675 L14.5906433,23.2721675 Z" id="Shape" transform="translate(16.000000, 16.255897) scale(1, -1) translate(-16.000000, -16.255897) "></path>
+                    </g>
+                    <g transform="translate(64, 0)">
+                        <path d="M24.9698897,12.3118071 C28.6801931,12.3227377 28.4046845,14.84224 28.4046845,17.6532248 L28.3938092,19.2281415 C28.3938092,20.7830187 27.5962843,21.8095838 25.6604738,22.2632035 L27.2654927,23.7479428 C27.2654927,23.7479428 26.589409,24.174236 25.4665302,24.7408052 C26.7190068,24.6998155 28.1038001,24.602351 29.6091284,24.4210853 C29.6091284,24.4210853 30.0559236,25.8602804 30.5,26.7210648 C27.836448,26.9178155 24.8729179,26.7666089 22.789384,26.5962738 C23.020485,26.9314787 23.1482703,27.1364274 23.1482703,27.1364274 L19.0011407,28.6375625 C19.0011407,28.6375625 17.7858214,24.4566097 15.2264915,22.5820126 C15.5001875,22.469974 15.7566643,22.3424503 15.9922966,22.2149267 C13.8353542,22.0509678 12.0055783,21.8615041 10.9497641,21.7440002 L12.7840714,23.6304389 C12.7840714,23.6304389 12.3209632,24.0303165 11.1690834,24.633321 C12.3508703,24.5950639 13.7030376,24.4975994 15.250961,24.3117793 C15.250961,24.3117793 15.7303822,25.4649572 16.1898653,26.3321177 C13.290681,26.6372635 10.7096003,26.4897005 8.97317104,26.2947715 C9.35471421,26.7957572 9.57584612,27.1245859 9.57584612,27.1245859 L5.31361918,28.4107527 C5.31361918,28.4107527 4.12730085,24.5977966 1.5,22.788783 C2.63828557,22.2914409 3.49471858,21.5217448 3.49471858,21.5217448 C4.75807056,22.0127107 5.98335885,23.0055731 6.99839057,24.0212076 C7.65634864,23.5812512 8.47834307,23.0055731 9.19883434,22.4253407 L5.37162099,22.4253407 L5.37162099,12.3118071 L8.47109285,12.3118071 L9.79063408,12.3118071 C9.79516547,11.977513 9.79697803,11.6541496 9.79063408,11.3426276 L2.43890434,11.3426276 L2.43890434,9.10914257 L9.49518735,9.10914257 C8.94417013,7.41945466 7.41437232,6.35463247 3.26180506,6.19522795 L4.33755742,4.20221602 C10.8237914,4.67860781 13.0912997,6.64611502 13.8752305,9.11005345 L20.5780649,9.11005345 L20.5780649,4 L24.970796,4 L24.970796,9.11005345 L30.4918435,9.11005345 L30.4918435,11.3435385 L24.970796,11.3435385 L24.970796,12.3118071 L24.9698897,12.3118071 Z M11.7808213,14.0333759 L11.1663646,14.0333759 L9.97732742,14.0333759 L9.97732742,14.6609743 L23.6920373,14.9989118 C23.4518735,14.5352724 22.9362011,14.032465 21.8142286,14.032465 L11.7808213,14.032465 L11.7808213,14.0333759 Z M23.6938498,19.5642573 L9.97732742,19.2217653 L9.97732742,19.8602942 C9.97732742,19.8602942 13.9867027,20.2692807 18.5153755,20.5443674 C22.0317354,20.7566031 23.2760555,20.3312207 23.6938498,19.5642573 L23.6938498,19.5642573 Z M9.97732742,17.3426137 L23.8923248,17.6841948 C23.8923248,17.402732 23.893231,17.1294671 23.8941373,16.8826178 L9.97732742,16.5383041 L9.97732742,17.3426137 L9.97732742,17.3426137 Z M20.8780431,24.1797013 C21.587659,23.7042204 22.4486234,23.1057703 23.1999281,22.5228052 C23.0295478,22.5255378 22.8600738,22.5291813 22.6797244,22.5273596 C21.4553424,22.5146072 20.203772,22.4690631 18.9830151,22.4053013 C19.6717866,22.9354352 20.3134317,23.5603009 20.8780431,24.1797013 L20.8780431,24.1797013 Z M10.0860808,21.6438031 C10.0181099,21.6356052 9.97823369,21.6310507 9.97823369,21.6310507 L9.97823369,21.7485546 C10.0153911,21.7130302 10.0516422,21.6784167 10.0860808,21.6438031 L10.0860808,21.6438031 Z M14.2504297,11.3417167 C14.2694615,11.6632584 14.2776181,11.9866219 14.2821494,12.3108962 L20.5780649,12.3108962 L20.5780649,11.3417167 L14.2504297,11.3417167 L14.2504297,11.3417167 Z" id="Shape" transform="translate(16.000000, 16.318781) scale(1, -1) translate(-16.000000, -16.318781) "></path>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div class="jx-navwp">
+            <div class="jx-navcnt" style="transform: translate(0px, 0px); transition: -webkit-transform 0.4s linear 0.4s;">
+                <a data-id="1000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat1000" data-opt-str="frontCatId:1000;itemType:0;" href="" data-spm="d1000" type="button" name="button" class="jx-nav jx-nav-1000" on-tap="switchTo:1000">女装</a>
+                <a data-id="7000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat7000" data-opt-str="frontCatId:7000;itemType:0;" href="" data-spm="d7000" type="button" name="button" class="jx-nav jx-nav-7000" on-tap="switchTo:7000">男装</a>
+                <a data-id="3000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat3000" data-opt-str="frontCatId:3000;itemType:0;" href="" data-spm="d3000" type="button" name="button" class="jx-nav jx-nav-3000 jx-active" on-tap="switchTo:3000">鞋包</a>
+                <a data-id="38000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat38000" data-opt-str="frontCatId:38000;itemType:0;" href="" data-spm="d38000" type="button" name="button" class="jx-nav jx-nav-38000" on-tap="switchTo:38000">运动</a>
+                <a data-id="4000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat4000" data-opt-str="frontCatId:4000;itemType:0;" href="" data-spm="d4000" type="button" name="button" class="jx-nav jx-nav-4000" on-tap="switchTo:4000">内衣饰品</a>
+                <a data-id="2000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat2000" data-opt-str="frontCatId:2000;itemType:0;" href="" data-spm="d2000" type="button" name="button" class="jx-nav jx-nav-2000" on-tap="switchTo:2000">美妆</a>
+                <a data-id="230000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat230000" data-opt-str="frontCatId:230000;itemType:0;" href="" data-spm="d230000" type="button" name="button" class="jx-nav jx-nav-230000" on-tap="switchTo:230000">母婴童装</a>
+                <a data-id="5000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat5000" data-opt-str="frontCatId:5000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_5000&amp;spm=a2147.7632989.Topbar.d5000" data-spm="d5000" type="button" name="button" class="jx-nav jx-nav-5000" on-tap="switchTo:5000">食品</a>
+                <a data-id="225000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat225000" data-opt-str="frontCatId:225000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_225000&amp;spm=a2147.7632989.Topbar.d225000" data-spm="d225000" type="button" name="button" class="jx-nav jx-nav-225000" on-tap="switchTo:225000">家装家纺</a>
+                <a data-id="37000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat37000" data-opt-str="frontCatId:37000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_37000&amp;spm=a2147.7632989.Topbar.d37000" data-spm="d37000" type="button" name="button" class="jx-nav jx-nav-37000" on-tap="switchTo:37000">百货</a>
+                <a data-id="43000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat43000" data-opt-str="frontCatId:43000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_43000&amp;spm=a2147.7632989.Topbar.d43000" data-spm="d43000" type="button" name="button" class="jx-nav jx-nav-43000" on-tap="switchTo:43000">手机数码</a>
+                <a data-id="34000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat34000" data-opt-str="frontCatId:34000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_34000&amp;spm=a2147.7632989.Topbar.d34000" data-spm="d34000" type="button" name="button" class="jx-nav jx-nav-34000" on-tap="switchTo:34000">家电</a>
+                <a data-id="36000" data-type="navbar" data-spm-click="gostr=/jhs;locaid=cat36000" data-opt-str="frontCatId:36000;itemType:0;" href="https://jhs.m.taobao.com/m/list.html?_loc=JU_WAP_CAT_36000&amp;spm=a2147.7632989.Topbar.d36000" data-spm="d36000" type="button" name="button" class="jx-nav jx-nav-36000" on-tap="switchTo:36000">汽车车品</a>
+            </div>
+            <!--<style>
+                #topNav {
+                    width: 100%;
+                    overflow: hidden;
+                    font: 16px/32px hiragino sans gb, microsoft yahei, simsun;
+                    border-bottom:1px solid #f8f8f8;
+                }
+                #topNav .swiper-slide {
+                    padding: 0;
+                    width:1rem;
+                    text-align:center;
+                    line-height: 1.1rem;
+                    height:auto;
+                }
+                #topNav .swiper-slide span{
+                    transition:all .3s ease;
+                    display:block;
+                }
+                #topNav .active span{
+                    transform:scale(1.1);
+                    color:#FF2D2D;
+                }
+                img{
+                    width:100%;
+                    line-height:0;
+                }
+            </style>
+            <div id="topNav" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active"><span>推荐</span></div>
+                    <div class="swiper-slide"><span>热点</span></div>
+                    <div class="swiper-slide"><span>深圳</span></div>
+                    <div class="swiper-slide"><span>视频</span></div>
+                    <div class="swiper-slide"><span>社会</span></div>
+                    <div class="swiper-slide"><span>娱乐</span></div>
+                    <div class="swiper-slide"><span>科技</span></div>
+                    <div class="swiper-slide"><span>问答</span></div>
+                    <div class="swiper-slide"><span>汽车</span></div>
+                    <div class="swiper-slide"><span>财经</span></div>
+                    <div class="swiper-slide"><span>军事</span></div>
+                    <div class="swiper-slide"><span>体育</span></div>
+                    <div class="swiper-slide"><span>段子</span></div>
+                    <div class="swiper-slide"><span>美女</span></div>
+                    <div class="swiper-slide"><span>国际</span></div>
+                    <div class="swiper-slide"><span>趣图</span></div>
+                    <div class="swiper-slide"><span>健康</span></div>
+                    <div class="swiper-slide"><span>特产</span></div>
+                    <div class="swiper-slide"><span>房产</span></div>
+                </div>
+            </div>-->
+        </div>
+        <button type="button" name="button" data-type="navbar" class="jx-btn jx-drop-btn" on-tap="toggleMenu" data-spm-click="gostr=/jhs;locaid=totalmenu">
+            <svg viewBox="-15 -15 60 60"><g fill="white">
+                <path d="M16.6785263,8.37109026 L15.5851824,8.37100716 L29.154493,21.9105606 C29.4527286,22.2054236 29.9392685,22.2083576 30.2412103,21.9171139 C30.5431521,21.6258702 30.5461565,21.1507368 30.2479209,20.8558738 L16.6786103,7.3163204 C16.3777998,7.01891162 15.8861243,7.01887425 15.5852664,7.3162373 L1.76989928,20.8622609 C1.47161668,21.1570786 1.47454541,21.6322124 1.77644078,21.923502 C2.07833615,22.2147916 2.56487653,22.2119316 2.86315913,21.9171139 L16.6785263,8.37109026 Z" id="Shape"></path>
+            </g></svg>
+        </button>
+    </div>
+
+    <div data-spm="icons">
+        <button type="button" name="button" class="jx-gotop show" data-spm-click="gostr=/jhs;locaid=backtop" id="JX_GoTop"></button>
+    </div>
+
+
+
+    <div id="box-panel" style="width: 680px; height: 1994px; transform: translateZ(0px); display: block;">
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+
+        $('.jx-drop-btn').click(function(){
+            if($(this).hasClass("menu-open")){
+                $(this).removeClass("menu-open");
+                $('#JX_Submenu').removeClass("menu-open");
+            }else{
+                $('#JX_Submenu').addClass('menu-open');
+                $(this).addClass('menu-open');
+            }
+
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+        var mySwiper = new Swiper('.jx-navwp', {
+            freeMode: true,
+            freeModeMomentumRatio: 0.5,
+            slidesPerView: 'auto',
+
+        });
+
+        swiperWidth = mySwiper.container[0].clientWidth;
+        maxTranslate = mySwiper.maxTranslate();
+        maxWidth = -maxTranslate + swiperWidth / 2;
+
+        $(".swiper-container").on('touchstart', function(e) {
+            e.preventDefault()
+        })
+
+        mySwiper.on('tap', function(swiper, e) {
+
+            e.preventDefault()
+
+            slide = swiper.slides[swiper.clickedIndex];
+            slideLeft = slide.offsetLeft;
+            slideWidth = slide.clientWidth;
+            slideCenter = slideLeft + slideWidth / 2;
+            // 被点击slide的中心点
+
+            mySwiper.setWrapperTransition(300)
+
+            if (slideCenter < swiperWidth / 2) {
+
+                mySwiper.setWrapperTranslate(0)
+
+            } else if (slideCenter > maxWidth) {
+
+                mySwiper.setWrapperTranslate(maxTranslate)
+
+            } else {
+
+                nowTlanslate = slideCenter - swiperWidth / 2
+
+                mySwiper.setWrapperTranslate(-nowTlanslate)
+
+            }
+
+            /*$("#topNav  .active").removeClass('active')
+
+            $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active')*/
+
+        })
+    </script>
+
+    </body>
+
+</html>

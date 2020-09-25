@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="telephone=no" name="format-detection" />
+	<title></title>
+	<link rel="stylesheet" href="./../css/base_index.css">
+	<link rel="stylesheet" href="./../css/help_center.css">
+</head>
+<body></body>
+<script type="text/html" id="cont">
+    <header class="person">
+        <div class="title">
+            <a href="javascript:history.go(-1)"><img src="img/icon_back.png" alt=""></a>
+            <span><%=parentTitle %></span>
+        </div>
+    </header>
+    <% if(items){ %>
+    <% for(var i in items){ %>
+    <section>
+        <a href="./help_detail.html?help_id=<%=items[i].help_id %>">
+            <span><%=items[i].help_title %></span>
+            <img src="img/more@3x.png" alt="" class="right">
+        </a>
+    </section>
+   <% } %>
+   <% } %>
+</script>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/help_center_content.js"></script>
+</html>

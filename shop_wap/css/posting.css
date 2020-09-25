@@ -1,0 +1,62 @@
+/*发帖 start*/
+body{ background: #fff;}
+.main{ width: 100%; margin-bottom: 1.5rem; margin-top: 0.75rem;}
+.posttitle{ width: 94%; margin: 0 auto;}
+.posttitle h4,.postcon h4,.tuijian h4,.add_wrap h4,.post_main_img h4{ width: 100%; font-size: 0.3rem; color: #333; font-weight: 600; padding: 0.15rem 0;}
+textarea.title_detail{ display: block; width: 100%; font-size: 0.24rem;color: #666; white-space: nowrap;}
+.post_main_img{ width: 94%; margin: 0 auto;}
+.main_img_wrap{ position: relative;}
+.main_img_wrap img{ width: 1.1rem; height: 1.1rem;}
+.m_img_container{ width: 1.1rem; height: 1.1rem; display: inline-block;}
+.m_img_container img{ width: 1.1rem; height: 1.1rem;}
+
+
+.post_person{ width: 100%; height: 0.75rem; line-height: 0.75rem; text-align: center; background: #dc143c; font-size: 0.35rem; color: #fff; position: fixed; top: 0; z-index: 10; border: none;}
+.post_back{position: absolute; left: 3%;top: 50%; width: 0.34rem; height: 0.34rem; margin-top: -0.17rem; background: url("../tmpl/img/back.png") no-repeat; background-size:100% 100%;}
+
+.postcon{width: 100%; border-bottom: 1px solid #e1e1e1; }
+.conwrap{ width:94%; margin: 0 auto; padding-bottom: 0.15rem; }
+.graybg{  background: #f2f2f2; width: 100%; border-radius: 0.05rem; padding: 0.15rem; }
+.conwrap textarea.title_detail{ background: #f2f2f2;}
+.img_wrapper{display: block;}
+.img_wrapper li{display: block; float: left;}
+.img_wrapper li img{display: block; width: 1.4rem; height: 1.4rem;}
+.postcon .img_wrapper li img{display: block; width: 1.4rem!important; height: 1.4rem!important;}
+.img_wrapper li p{ height: 1.4rem; line-height: 1.4rem; color: #999; font-size: 0.2rem; margin-left: 0.1rem;}
+.upload{ width: 1.4rem; height: 1.4rem;background: url(../images/uploadpic.png) no-repeat; background-size: 100%; position: relative;}
+.up_l_picbtn{display: block; position: absolute; left: 0; top: 0; width: 1.1rem; height: 1.1rem;  opacity: 0; }
+.tj_main{ width: 100%;border-bottom: 1px solid #e1e1e1;}
+.tuijian{ width: 94%; margin: 0 auto; margin-bottom: 0.3rem;}
+.tuijian h4 span{ font-size: 0.25rem; color: #999; margin-left: 0.1rem;}
+.tuijian .img_wrapper li{/* border:1px solid #EEEEEE;*/ width: 1.1rem; height: 1.1rem; margin-right: 0.1rem; margin-top: 0.1rem;}
+.tuijian .upload{ width: 100%; background: none; height: auto;}
+.tuijian .upload img{ width: 1.1rem;height: 1.1rem;}
+.tuijian .up_l_picbtn{ width: 100%;height: 100%;}
+.img_wrapper li img{width: 100%; height: auto;}
+
+.add_model{ width: 100%; border-bottom: 1px solid #e1e1e1; }
+.add_wrap{ width: 94%; margin: 0 auto;}
+.add_type_list{}
+.add_type_list li{ padding:0.05rem 0.15rem; border:1px solid #eeeeee; border-radius: 0.2rem; float: left; font-size: 0.24rem; margin: 0 0.15rem 0.15rem 0}
+.add_type_list li.on{ background: #1da2ff; color: #fff;}
+.share{ width: 100%;}
+.share_wrap{ width: 94%; margin: 0.3rem auto 0;}
+.share_wrap ul li{ float: left; width: 14%; margin: 0 3%; }
+.share_wrap ul li a img{ width: 100%;}
+.share_qq{ }
+.share_wx{ }
+.share_fc{ }
+.share_qz{ }
+.share_qb{ }
+.share_explain{ width: 100% ; text-align: center; font-size: 0.25rem; color: #999; margin-top: 0.2rem;}
+/*发帖 end*/
+.upload_img{width: 1.2rem; height: 1.2rem;}
+
+
+
+
+
+
+
+
+

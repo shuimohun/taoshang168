@@ -1,0 +1,152 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #fff;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#333;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+.list{
+    width:100%;
+    height:.57rem;
+    background-color:#f2f2f2;
+    padding-left: .2rem;
+}
+.list a{
+    display:inline-block;
+    width:1rem;
+    height:100%;
+    line-height:.57rem;
+    color:#808080;
+    font-size: .2rem;
+}
+.list a.cur{
+    color:#e45050;
+}
+.contain{
+    width:95%;
+    height:auto;
+    margin:0 auto;
+}
+.contain .title{
+    color:#333;
+    font-size: .3rem;
+    margin-top: .3rem;
+    width:100%;
+    height:.42rem;
+    overflow:hidden;
+}
+.contain .title_date{
+    font-size: .16rem;
+    color:#999;
+    margin-top: .14rem;
+}
+.contain .contain_img{
+    width:100%;
+    height:3.95rem;
+    margin-top: .32rem;
+
+}
+.contain .contain_img img{
+    width:100%;
+    height:100%;
+}
+.contain .contain_artical{
+    font-size: .2rem;
+    color:#333;
+    margin-top:.4rem;
+    margin-bottom: .55rem;
+}
+.contain span{
+    font-size: .2rem;
+    color:#666;
+    display:inline-block;
+    margin-bottom: .25rem;
+    margin-right: .1rem;
+}
+
+.comment{
+    width:100%;
+    height:1rem;
+    position:relative;
+}
+.comment .comment_img{
+    width:.5rem;
+    height:.5rem;
+    border-radius:50%;
+}
+.comment .comment_img img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    margin:.16rem 0 0 .2rem;
+}
+.comment span{
+    font-size: .24rem;
+    color:#333;
+    position:absolute;
+    top:12%;
+    left:13%;
+}
+.comment i{
+    font-size: .26rem;
+    color:#999;
+    height:.32rem;
+    width:5.4rem;
+    overflow:hidden;
+    font-style:normal;
+    position:absolute;
+    top:52%;
+    left:13%;
+}
+.comment em{
+     font-style:normal;
+     font-size: .22rem;
+     color:#666;
+     position:absolute;
+    top:12%;
+    right:5%;
+}
+.comment_input{
+    width:100%;
+    height:.82rem;
+    position:fixed;
+    bottom: 0;
+    border-top: .02rem solid #999;
+    text-align: center;
+    background-color: #fff;
+}
+.comment_input input{
+    width:6.12rem;
+    height:.55rem;
+    margin-top: .13rem;
+    outline: none;
+    border: 0 none;
+    color:#999;
+    border:.02rem solid #999;
+    border-radius:.3rem;
+}

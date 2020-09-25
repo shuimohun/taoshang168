@@ -1,0 +1,123 @@
+<!--评论弹框 start-->
+<div class="pl_style discuss pl">
+
+</div>
+<!--评论弹框 end-->
+
+
+<!--回复弹框 start-->
+<div class="pl_style relay_box hf">
+
+</div>
+<!--回复弹框 end-->
+
+<!--评论弹框渲染-->
+<script type="text/html" id="pl">
+
+    <div class="discuss_top"><%=data.replyNum%>评论</div>
+    <div class="discuss_close">X</div>
+    <div class="discuss_list discuss_list_pl">
+    <% if( data.reply.length > 0){%>
+        <% for( var i in data.reply ){ %>
+            <div class="discuss_item">
+                <div class="left_tx">
+                    <img src="<%=data.reply[i].user_logo%>" onerror="this.src='../img/robot-ss.png'" alt="">
+                </div>
+                <div class="right_main">
+                    <div class="right_main_top clearfix">
+                        <p class="user_name fleft"><%=data.reply[i].user_name%></p>
+                        <!--<p class="d_zan fright"><img src="../img/zan_white.png" alt="">130</p>-->
+                    </div>
+                    <div class="right_main_text">
+                        <p class="pl_text"><%=data.reply[i].article_reply_content%></p>
+                    </div>
+                    <div class="bottom_time clearfix">
+                        <span class="pl_time fleft"><%=data.reply[i].article_reply_time%></span>
+                        <a class="reply_btn fleft" data-replyId="<%=data.reply[i].article_reply_id%>" href="javascript:;"><%=data.reply[i].countReply%>回复</a>
+                        <% if( data.reply[i].is_userReply ==1 ){ %>
+                        <a href="javascript:;" onclick="remove(this,<%=data.reply[i].article_reply_id%>)" data-replyId="<%=data.reply[i].article_reply_id%>" class="delete_btn fright">删除</a>
+                        <% }%>
+                    </div>
+                </div>
+            </div>
+        <% }%>
+    </div>
+    <% }%>
+    <div class="pl_input_wrap">
+        <p>
+            <input type="text" class="pl_input pl_btn" id="pl_btn" value="" placeholder="写评论">
+            <a href="javascript:void (0);" class="pl_fb_btn pl_btn_a" data-ArtId="<%=data.article_id%>">发布</a>
+        </p>
+    </div>
+</script>
+
+<!--回复弹框渲染-->
+<script type="text/html" id="hf">
+
+    <% if( data ){ %>
+    <div class="discuss_top">评论回复</div>
+    <div class="discuss_close">X</div>
+    <div class="discuss_list">
+        <div class="discuss_item discuss_item_top"><!--这一条是评论-->
+            <div class="left_tx">
+                <img src="<%=data.parent_reply.user_logo%>" onerror="this.src='../img/robot-ss.png'" alt="">
+            </div>
+            <div class="right_main">
+                <div class="right_main_top clearfix">
+                    <p class="user_name fleft"><%=data.parent_reply.user_name%></p>
+                    <!--<p class="d_zan fright"><img src="../img/zan_white.png" alt="">130</p>-->
+                </div>
+                <div class="right_main_text">
+                    <p class="pl_text"><%=data.parent_reply.article_reply_content%></p>
+                </div>
+                <div class="bottom_time clearfix"><!--这一条是评论下回复的内容-->
+                    <!--<span class="pl_time fleft">2018.08.06</span><a class="reply_btn fleft" href="javascript:;">回复</a>--><!--<a
+                                href="javascript:;" class="delete_btn fright">删除</a>-->
+                </div>
+            </div>
+        </div>
+        <div class="discuss_list_hf">
+        <% if( data.childrenRely ){ %>
+        <% for( var i in data.childrenRely ){ %>
+
+            <div class="discuss_item">
+                <div class="left_tx">
+                    <img src="<%=data.childrenRely[i].user_logo%>" onerror="this.src='../img/robot-ss.png'"  alt="">
+                </div>
+                <div class="right_main">
+                    <div class="right_main_top clearfix">
+                        <p class="user_name fleft"><%=data.childrenRely[i].user_name%></p>
+                        <!--<p class="d_zan fright"><img src="../img/zan_white.png" alt="">130</p>-->
+                    </div>
+                    <div class="right_main_text">
+                        <p class="pl_text"><%=data.childrenRely[i].article_reply_content%></p>
+                    </div>
+                    <div class="bottom_time clearfix">
+                        <span class="pl_time fleft"><%=data.childrenRely[i].article_reply_time%></span>
+                        <!--<a class="reply_btn fleft" href="javascript:;">回复</a>-->
+                        <% if( data.childrenRely[i].is_userReply ==1 ){ %>
+                        <a href="javascript:;"  onclick="remove(this,<%=data.childrenRely[i].article_reply_id%>)" data-replyId="<%=data.childrenRely[i].article_reply_id%>" class="delete_btn fright">
+                            删除
+                        </a>
+                        <% }%>
+                    </div>
+                </div>
+            </div>
+
+        <% }%>
+        <% }%>
+        </div>
+    </div>
+    <div class="pl_input_wrap">
+        <p>
+            <input type="text" class="pl_input hf_btn" placeholder="回复">
+            <a href="javascript:void (0);" class="pl_fb_btn hf_btn_b" data-replyId="<%=data.parent_reply.article_reply_id%>" data-ArtId="<%=data.parent_reply.article_id%>">发布</a>
+        </p>
+    </div>
+
+<% }%>
+
+</script>
+
+<script type="text/javascript" src="../../js/template.min.js"></script>
+<script type="text/javascript" src="../../js/friendletter/pl_main.js"></script>

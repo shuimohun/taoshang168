@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>生鲜特产</title>
+	<link rel="stylesheet" href="../css/activity/fresh.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<link rel="stylesheet" href="../css/proprietary/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/swiper.min.js'></script>
+	<script type="text/javascript" src='../js/activity/fresh.js'></script>
+</head>
+<body style="margin-top:1.55rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/fresh_img/back.png" alt=""></a>
+			<span>生鲜特产</span>
+			<a href="javascript:;"><img src="../images/activity/fresh_img/info.png" alt=""  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list">
+					<ul>
+						<li class="find_nav_cur" data-type='0' ><a href="javascript:void(0)">精选</a></li>
+						<li data-type="1"><a href="javascript:void(0)">华北</a></li>
+						<li data-type="2"><a href="javascript:void(0)">东北</a></li>
+						<li data-type="3"><a href="javascript:void(0)">华东</a></li>
+						<li data-type="4"><a href="javascript:void(0)">华南</a></li>
+						<li data-type="5"><a href="javascript:void(0)">华中</a></li>
+						<li data-type="6"><a href="javascript:void(0)">西南</a></li>
+						<li data-type="7"><a href="javascript:void(0)">西北</a></li>
+						<li class="sideline"></li>
+					</ul>
+		        </div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/activity/fresh_img/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+
+	<div class="gundong_show"></div>
+	<!--滚动展示-->
+
+	<!--轮播图-->
+	<div class="slider_list" ></div>
+	<!--轮播图-->
+	<div class='gifts'></div>
+	<!--精选特产-->
+	<div class="gift_title">
+		<img src="../images/activity/fresh_img/title_special.png" alt="">
+	</div>
+	<!--精选特产-->
+
+	<!--特选种类-->
+	<div class="species"></div>
+	<!--特选种类-->
+
+	<div class="floor"></div>
+	<div class="all"></div>
+	<script type="text/html" id="slider">
+		<% if(slider){ %>
+		<% var items = slider %>
+		<div class="swipe-wrap" >
+			<% for(var i in items){ %>
+			<div class="item" >
+				<a href="<%=slider[i].wap_url %>">
+					<img src="<%=slider[i].pic_url %>" alt="">
+				</a>
+			</div>
+			<% } %>
+		</div>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="cat">
+		<% if(cat){ %>
+		<% var items = cat %>
+		<ul>
+			<% for(var i in items){ %>
+			<li>
+				<a href="product_list.html?cat_id=<%=items[i].goods_cat_id %>">
+					<img src="<%=items[i].cat_pic %>" alt="">
+					<span><%=items[i].goods_cat_nav_name %></span>
+				</a>
+			</li>
+			<% } %>
+		</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="gun">
+		<% if(cat){ %>
+		<% var items = cat %>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<% for(var i=0;i<(items.length/4);i++){ %>
+				<div class="swiper-slide">
+					<% for(var k=(i*4);k<(i*4)+4;k++){ %>
+					<% if(items[k]){ %>
+					<a href="product_list.html?cat_id=<%=items[k].goods_cat_id%>">
+						<img src="<%=items[k].cat_pic %>" alt="">
+						<span><%=items[k].goods_cat_nav_name %></span>
+					</a>
+					<% }else{ %>
+					<a href="#"></a>
+					<% } %>
+					<% } %>
+				</div>
+			<% } %>
+			</div>
+		</div>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="gifts">
+		<% if(gift){ %>
+		<% var items = gift %>
+		<!--佳节礼盒-->
+		<div class="gift_title">
+			<img src="../images/activity/fresh_img/title_gift.png" alt="">
+		</div>
+		<!--佳节礼盒-->
+		<div class="gift">
+			<ul>
+				<% for(var i in items){ %>
+				<li>
+					<a href="<%=items[i].url %>"><img src="<%=items[i].pic_url %>" alt=""></a>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+		<% } %>
+	</script>
+	<script type="text/html" id="floor">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<% if(items[i].goods_cont){ %>
+		<div class="fruit_title">
+			<img src="<%=items[i].goods_cat_nav_pic %>" alt="">
+		</div>
+		<div class="fresh_contain">
+			<ul>
+				<% for(var k in items[i].goods_cont){ %>
+				<li>
+					<a href="product_detail.html?cid=<%=items[i].goods_cont[k].common_id %>">
+						<img src="<%=items[i].goods_cont[k].common_image %>" alt="">
+						<div class="detail">
+							<!-- <button>快递</button>
+                            <button>闪送</button> -->
+							<span><%=items[i].goods_cont[k].common_name %></span>
+						</div>
+						<div class="bg1">分享立省￥<%=items[i].goods_cont[k].common_share_price %></div>
+						<% if(items[i].goods_cont[k].common_is_promotion){ %>
+						<div class="bg2">立赚￥<%=items[i].goods_cont[k].common_promotion_price %></div>
+						<% } %>
+						<div class="price">
+							<b>￥<%=items[i].goods_cont[k].common_price %></b>
+							<img src="../images/activity/fresh_img/buy.png" alt="">
+						</div>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+		<div class="box_empty"></div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/html" id="all">
+		<% if(items){ %>
+		<div class="everyone_title">
+			<img src="../images/activity/fresh_img/everyone.png" alt="">
+		</div>
+		<div class="everyone_contain">
+			<% for(var i in items){ %>
+			<div class="everyone_contain_item">
+				<a href="product_detail.html?goods_id=<%=items[i].goods_id.goods_id %>">
+					<img src="<%=items[i].common_image %>" alt="">
+					<div class="everyone_detail">
+						<!-- <button>快递</button>
+                        <button>闪送</button> -->
+						<span><%=items[i].common_name %></span>
+					</div>
+					<div class="bg1">分享立省￥<%=items[i].common_share_price %></div>
+					<% if(items[i].common_is_promotion){ %>
+					<div class="bg2">立赚￥<%=items[i].common_promotion_price %></div>
+					<% } %>
+					<div class="everyone_price">
+						<b>￥<%=items[i].common_price %></b>
+						<img src="../images/activity/fresh_img/buy.png" alt="">
+					</div>
+				</a>
+			</div>
+			<% } %>
+		</div>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/fresh.js"></script>
+</body>
+</html>

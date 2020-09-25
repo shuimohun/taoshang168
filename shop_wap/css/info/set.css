@@ -1,0 +1,72 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #1a1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+
+ul{
+	width:100%;
+	font-size: 0;
+}
+ul li{
+	border-bottom:.01rem solid #f1f1f1;
+	height:.79rem;
+	width:100%;
+	background-color:#fff;
+	line-height:.79rem;
+	position:relative;
+}
+ul .title .title_img{
+	width:.38rem;
+	height:.38rem;
+	line-height:.79rem;
+	position:static;
+	margin-top:.2rem;
+	margin-left: .25rem;
+}
+ul .title i{
+	font-size: .24rem;
+	color:#999;
+	font-style:normal;
+	line-height:.79rem;
+	margin-left: .1rem;
+}
+ul li span{
+	font-size: .24rem;
+	color:#333;
+	margin-left: .25rem;
+}
+ul li img{
+	width:.87rem;
+	height:.62rem;
+	position:absolute;
+	top:15%;
+	right: 5%;
+}

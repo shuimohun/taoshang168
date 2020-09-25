@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="telephone=no" name="format-detection" />
+  <title>淘金联盟</title>
+  <link rel="stylesheet" href="../../css/alliance.css">
+  <link rel="stylesheet" href="../../css/directseller_base.css">
+</head>
+<body style="background-color:#f5f5f5;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+      <span>淘金联盟</span>
+      <a href=""><img src="../../images/info.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+<div id="head_top">
+  <div class='bg'>
+    <div class='head'>
+      <img src="" alt=""><br>
+      <span class='welcome'></span>
+    </div>
+    <u>今日淘金： <span></span></u>
+    <i>今日完成淘金： <span></span></i>
+    <b>今日引荐淘金： <span></span></b>
+
+  </div>
+
+  <div class='statistical'>
+
+    <div class='login'>
+      <p><img src="../../images/cellphone@2x.png" alt="">手机号码</p>
+      <span></span>
+    </div>
+    <div class='login'>
+      <p><img src="../../images/day@2x.png" alt="">上次登陆时间</p>
+      <span></span>
+    </div>
+  </div>
+  </div>
+
+<div class="main">
+        <div class="main_title"><p><span class="yulan">|点击预览</span></p><img src="../../images/help@2x.png" alt=""></div>
+
+        <ul class="goods_option">
+          <li>
+            <img src="../../images/icon1@2x.png" alt=""><br>
+            <span>商品管理</span>
+          </li>
+          <li>
+            <img src="../../images/icon2@2x.png" alt=""><br>
+            <span>店铺管理</span>
+          </li>
+          <li>
+           <a href="./directseller_drp.html"> <img src="../../images/icon3@2x.png" alt=""><br>
+             <span>淘金管理</span></a>
+          </li>
+          <li>
+            <img src="../../images/icon4@2x.png" alt=""><br>
+            <span>交易管理</span>
+          </li>
+        </ul>
+
+        <ul class="goods_price">
+          <li>
+            <img src="../../images/icon5@2x.png" alt="">
+            <span>
+               <br>
+              <i>总共淘金</i>
+            </span>
+          </li>
+          <li>
+            <b><u></u><br><em>今日</em></b>
+            <b><u></u><br><em>昨日</em></b>
+          </li>
+        </ul>
+
+        <ul class="join">
+          <li>
+            <span></span><br>
+            <i>参与推广淘金</i>
+          </li>
+          <li>
+            <span></span><br>
+            <i>完成淘金</i>
+          </li>
+          <li>
+            <span></span><br>
+            <i>淘金商品</i>
+          </li>
+        </ul>
+
+        <ul class="people">
+          <li>
+            <span></span><br>
+            <i>引荐总数(人)</i>
+          </li>
+          <li>
+            <span></span><br>
+            <i>今日</i>
+          </li>
+          <li>
+            <span></span><br>
+            <i>昨日</i>
+          </li>
+          <li>
+            <span></span><br>
+            <i>本月</i>
+          </li>
+        </ul>
+
+  <a href="./directseller_market.html"> <img src="../../images/btn_add@2x.png" alt="" class="btn"></a>
+  </div>
+    <div class="foot">
+      <div>
+       <a href="./directseller_income.html"> <img src="../../images/action@2x.png">
+        <span>查看淘金行动</span><br>
+         <span class="active">行动明细</span></a>
+      </div>
+      <div>
+        <a href="./directseller_market.html"> <img src="../../images/goods@2x.png">
+        <span>查看淘金商品</span><br>
+        <span class="list">商品列表</span></a>
+      </div>
+    </div>
+</body>
+
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/html" id="userinfo">
+  <div class="bg">
+      <div class='head'>
+        <img src="<%= data.user_pic %>" alt=""><br>
+        <span class='welcome'><%= data.user_name %></span>
+      </div>
+      <u>今日淘金： <span><%= data.today_money%>元</span></u>
+      <i>今日完成淘金： <span><%= data.total_finish%>笔</span></i>
+      <b>今日引荐淘金： <span><%= data.totalsize%>笔</span></b>
+  </div>
+  <div class='statistical'>
+
+    <div class='login'>
+      <p><img src="../../images/cellphone@2x.png" alt="">手机号码</p>
+      <span><%= data.user_mobile%></span>
+    </div>
+    <div class='login'>
+      <p><img src="../../images/day@2x.png" alt="">上次登陆时间</p>
+      <span><%= data.login_time%></span>
+    </div>
+  </div>
+</script>
+<script type="text/html"  id="shopinfo">
+
+  <div class="main_title"><p><%if(data.shop_name){%><%= data.shop_name%><%}else{%><%= data.user_name %>的店<%}%><span class="yulan"></span></p><img src="../../images/help@2x.png" alt=""></div>
+
+  <ul class="goods_option">
+    <li>
+      <a href="directseller_shopself.html"> <img src="../../images/icon1@2x.png" alt=""><br>
+        <span>商品管理</span></a>
+    </li>
+    <li>
+      <a href="./directseller_storeManagement.html"> <img src="../../images/icon2@2x.png" alt=""><br>
+        <span>店铺管理</span></a>
+    </li>
+    <li>
+      <a href="./directseller_drp.html"><img src="../../images/icon3@2x.png" alt=""><br>
+        <span>淘金管理</span></a>
+    </li>
+    <li>
+      <a href="./directseller_drp_goods.html"> <img src="../../images/icon4@2x.png" alt=""><br>
+        <span>交易管理</span></a>
+    </li>
+  </ul>
+
+  <ul class="goods_price">
+    <li>
+      <img src="../../images/icon5@2x.png" alt="">
+      <a href="./directseller_income.html"> <span>  <%= data.moneysum%><br> <i>总共淘金</i>  </span></a>
+    </li>
+    <li>
+      <b><u><%= data.money_today%></u><br><em>今日</em></b>
+      <b><u><%= data.money_yesterday%></u><br><em>昨日</em></b>
+    </li>
+  </ul>
+
+  <ul class="join">
+    <li>
+      <span><%= data.directseller_sum%></span><br>
+      <i>参与推广淘金</i>
+    </li>
+    <a href="./directseller_complete.html">
+    <li>
+      <span><%= data.directseller_settlement%></span><br>
+      <i>完成淘金</i>
+    </li>
+    </a>
+    <li>
+      <a href="./directseller_drp_goods.html"> <span><%= data.goods%></span><br>
+        <i>淘金商品</i></a>
+    </li>
+  </ul>
+
+  <ul class="people">
+    <a href="./directseller_recommend.html">
+    <li>
+      <span><%= data.man_sum%></span><br>
+      <i>引荐总数(人)</i>
+    </li>
+    <li>
+      <span><%= data.man_today%></span><br>
+      <i>今日</i>
+    </li>
+    <li>
+      <span><%= data.man_yesterday%></span><br>
+      <i>昨日</i>
+    </li>
+    <li>
+      <span><%= data.man_month%></span><br>
+      <i>本月</i>
+    </li>
+    </a>
+  </ul>
+
+  <a href="./directseller_market.html">  <img src="../../images/btn_add@2x.png" alt="" class="btn"></a>
+</script>
+<script>
+    function userinfo() {
+        $.getJSON(ApiUrl + "?ctl=Distribution_Buyer_Index&met=directselleruser&typ=json",function (e) {
+            if(e.status == 200) {
+                var r = template.render("userinfo", e);
+                var s = template.render("shopinfo", e);
+                $('.main').html(s);
+                $("#head_top").html(r);
+            }
+        });
+    }
+    userinfo();
+</script>
+</html>

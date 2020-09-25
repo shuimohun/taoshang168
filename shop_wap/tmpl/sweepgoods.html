@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<link rel="stylesheet" href="../css/sweepgoods/base.css">
+	<link rel="stylesheet" href="../css/sweepgoods/sweepgoods_wap.css">
+</head>
+<style>
+	.nav_footer{
+  width:100%;
+  height:.85rem;
+  background-color: #fff;
+  position:fixed;
+  bottom:0;
+  border-top:.01rem solid #999999;
+  z-index:2;
+}
+.nav_footer ul{
+  width:100%;
+  height:.85rem;
+  font-size: 0;
+}
+
+.nav_footer ul li{
+  display:inline-block;
+  width:20%;
+  text-align: center;
+  margin-top:.1rem;
+  float: left;
+}
+.nav_footer ul li a{
+    color:#333;
+}
+.nav_footer ul li img{
+  width:.4rem;
+  height:.4rem;
+  display:block;
+  margin:0 auto;
+}
+.nav_footer ul li span{
+  display:block;
+  font-size: .20rem;
+}
+.nav_footer ul .pennygo{
+    width:1rem;
+    height:1rem;
+    margin-top: -.2rem;
+}
+.nav_footer ul .pennygo img{
+  width:100%;
+  height:100%;
+}
+</style>
+<body></body>
+<script type="text/html" id="cont">
+	<% if(wap_head_image.items){ %>
+	<a href="<%=wap_head_image.items.wap_url %>"><img src="<%=wap_head_image.items.pic_url %>" alt="" class="mainimg"></a>
+	<% }else{ %>
+	<img src="../images/sweepgoods/crazy_mainimg.png" alt="" class="mainimg">
+	<% } %>
+	<div class="title"><%=main_title[0] %></div>
+	<div class="main1">
+		<% if(goodslist){ %>
+		<% for(var i=0;i<4;i++){var items = goodslist[i] %>
+		<div class="main1_item">
+			<img src="<%=items.common_image %>" alt="">
+			<div class="text">
+				<span class="biaoti"><%=items.common_name %></span><br>
+				<i><%=items.common_promotion_tips %></i><br>
+				<del>分享立减：<span>￥<%=items.common_share_price %></span></del>
+				<del>分享立赚：<span>￥<%=items.common_promotion_price %></span></del>
+				<del class="act_price">活动价：<span>￥<%=items.common_shared_price %></span></del>
+				<a href="./product_detail.html?goods_id=<%=items.id_goods %>">立即抢购</a>
+			</div>
+		</div>
+		<% } %>
+	<% } %>
+	</div>
+	<div class="title2"><%=main_title[1] %></div>
+	<% if(goodslist){ %>
+	<% var num = (goodslist.length-4)/8;for(var i=0;i<num;i++){ %>
+	<div class="main2">
+		<div class="main2_inner">
+			<% var m = (i*8)+4 %>
+			<% if((m+8) < goodslist.length){ %>
+			<% for(var j=m;j<(m+8);j++){ %>
+			<% var items = goodslist[j] %>
+			<div class="main2_inner_item">
+				<img src="<%=items.common_image %>" alt="">
+				<span><%=items.common_name %></span>
+				<span class="act">活动价：<i>￥<%=items.common_shared_price %></i></span>
+				<a href="./product_detail.html?goods_id=<%=items.id_goods %>">立即抢购</a>
+			</div>
+			<% }}else{for(m;m<(goodslist.length);m++){var items = goodslist[m] %>
+			<div class="main2_inner_item">
+				<img src="<%=items.common_image %>" alt="">
+				<span><%=items.common_name %></span>
+				<span class="act">活动价：<i>￥<%=items.common_shared_price %></i></span>
+				<a href="./product_detail.html?goods_id=<%=items.id_goods %>">立即抢购</a>
+			</div>
+			<% }} %>
+
+		</div>
+	</div>
+	<% }} %>
+	<footer class="nav_footer">
+		<ul>
+			<li>
+                <a href="../index.html">
+				<img src="../images/PersonalCenter_img/tab_home_snormal@3x.png" alt="">
+				<span>首页</span>
+                </a>
+			</li>
+			<li>
+                <a href="./product_first_categroy.html">
+				<img src="../images/PersonalCenter_img/tab_classify_normal@2x.png" alt="">
+				<span>分类</span>
+                </a>
+			</li>
+			<li class='pennygo'>
+                <a href="./newbuyer.html">
+				<img src="../images/PersonalCenter_img/pennygo@2x.png" alt="">
+                </a>
+			</li>
+			<li>
+                <a href="./cart_list.html">
+				<img src="../images/PersonalCenter_img/tab_cart_normal@3x.png" alt="">
+				<span>购物车</span>
+                </a>
+			</li>
+			<li>
+                <a href="./member/member.html">
+				<img src="../images/PersonalCenter_img/person.png" alt="">
+				<span>我的</span>
+                </a>
+			</li>
+		</ul>
+	</footer>
+</script>
+
+<script type="text/javascript" src='../js/tmpl/jquery-1.8.3.min.js'></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/sweepgoods.js"></script>
+</html>

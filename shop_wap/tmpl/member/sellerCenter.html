@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>商家中心</title>
+	<link rel="stylesheet" href="../../css/sellerBase.css">
+	<link rel="stylesheet" href="../../css/sellerCenter.css">
+	<link rel="stylesheet" href="../../css/iconfont2/iconfont.css">
+</head>
+<body>
+	<!-- header头部部分开始 -->
+
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt="" class="prevpage"></a>
+			商家中心
+			<a href="javascript:void(0)"><img src="../../images/setting@3x.png" alt="" class="setting"></a>
+			<a href="javascript:void(0)"><img src="../../images/dialogbox.png" alt="" class='dialogbox'></a>
+		</div>
+		<div class="toggle">
+			<a href="./PersonalCenter.html">切换至个人版&nbsp;></a>
+		</div>
+		<div class="seller_infor clearfix" id="head_score">
+			<div class="seller_pic"><a href=""><img src="../../images/default_user_portrait.gif" alt=""></a></div>
+			<div class="seller_infor_detail clearfix">
+				<div class="seller_text">
+					<p class="seller_name">淘尚168自营超市</p>
+					<p class="all_score">总评分: <span>0</span></p>
+					<p class="goods_des">商品描述: <span>0</span><span>高于同行</span></p>
+					<p class="goods_des">商家服务: <span>0</span><span>高于同行</span></p>
+					<p class="goods_des">物流服务: <span>0</span><span>高于同行</span></p>
+				</div>
+				<div class="data_circle">
+					<div class="chart_wrap"><canvas id="myChart" width="80%" height="60%"></canvas></div>
+					<p class="seller_money_name">账户总财产：</p>
+					<p class="seller_money_num">￥1356.00</p>
+				</div>
+			</div>
+
+		</div>
+	</header>
+	<!-- 头部部分结束 -->
+	<div class="main">
+		<div class="data_wrap">
+			<!-- 今日数据开始 -->
+			<div class="shop_order today_data">
+				<div class="shop_order_title">
+					<span>今日数据</span>
+					<a href="" class="check_all_order">数据分析 ></a>
+				</div>
+				<div class="datamain">
+					<div class="data_item">
+						<ul class="clearfix">
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">访客</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">流量</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">今日订单数</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300.4610.0</p>
+									<span class="order_num_des">成交额</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">购物车</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">客单价</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">今日未付订单</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">未付款</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">已发货</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">未发货</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">今日退货数</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">退款额</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">店铺收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">宝贝收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">出售中</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">仓库中</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 今日数据结束 -->
+			<!-- 昨日数据开始 -->
+			<div class="shop_order yesterday_data">
+				<div class="shop_order_title">
+					<span>昨日数据</span>
+					<!--<a href="" class="check_all_order">数据分析 ></a>-->
+				</div>
+				<div class="datamain">
+					<div class="data_item">
+						<ul class="clearfix">
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">访客</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">流量</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">订单数</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300.4610.0</p>
+									<span class="order_num_des">成交额</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">购物车</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">客单价</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">未付订单</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">未付款</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">已发货</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">未发货</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">退货数</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">退款额</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">店铺收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">宝贝收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">3</p>
+									<span class="order_num_des">出售中</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="order_num">300</p>
+									<span class="order_num_des">仓库中</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 昨日数据结束 -->
+		</div>
+		<!-- 最后 更多其他链接 开始 -->
+		<div class="others_links"><!---->
+			<ul class="clearfix">
+				<li><a href="javascript:;"><i class="icon iconfont icon1">&#xe604;</i><span>商品管理</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon2">&#xe605;</i><span>淘金联盟</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon3">&#xe606;</i><span>一件代发</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon4">&#xe607;</i><span>代金券</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon5">&#xe608;</i><span>销售统计</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon6">&#xe609;</i><span>提现</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon7">&#xe60a;</i><span>结算</span></a></li>
+				<li><a href="javascript:;"><i class="icon iconfont icon8">&#xe617;</i><span>更多</span></a></li>
+			</ul>
+		</div>
+		<!--  最后  更多其他链接 结束 -->
+	</div>
+	<!--  插入脚部 开始 -->
+	<div id="foot"></div>
+	<!--  插入脚部 结束 -->
+	<script type="text/javascript" src="../../js/zepto.js"></script>
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src='../../js/sellerCenter.js'></script>
+	<!--<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/template.js"></script>-->
+	<script type="text/javascript" src='../../js/tmpl/money/Chart.js'></script>
+	<script>
+        //插入脚部
+        $("#foot").load("foot_member.html");
+        setTimeout(function(){
+            $(".footer .foot_item_wrap .foot_item").eq(0).addClass("on");//对应位置标红
+            $(".footer .foot_item_wrap .foot_item i.icon").eq(0).html("&#xe60c;");//对应为换icon
+        },100)
+	</script>
+	<script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var pieData = [
+            { value: 10, color:"#ff7f01" },
+            { value : 90, color : "#fed501" }
+        ]//动画效果的参数是如若需要可以自行定义
+        new Chart(ctx).Doughnut(
+            pieData,
+			{
+            segmentShowStroke : true,
+            segmentStrokeColor : "rgba(255,255,255,0.1)",
+            segmentStrokeWidth : 0,
+            percentageInnerCutout : 75,
+            animation : true,
+            animationSteps :100,
+            animationEasing : "easeOutBounce",
+            animateRotate : true,
+            animateScale : false,
+            onAnimationComplete : null
+			}
+		);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>修改登陆密码</title>
+	<link rel="stylesheet" href="../../css/user/login_change.css">
+	<link rel="stylesheet" href="../../css/user/base.css">
+</head>
+<body>
+	<!--头部-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../../images/user_img/icon_back.png" alt=""></a>
+			<span>修改登陆密码</span>
+		</div>
+	</header>
+	<!--头部-->
+	<!--修改登陆部分-->
+	<form  action="http://www.taoshang168.com" class="login_change">
+		<ul>
+			<li>
+				<span>登 陆 密 码</span>
+				<input type="text" value=" 请输入当前使用的密码" id="password">
+			</li>
+			<li>
+				<span style="letter-spacing:.09rem">新 密 码</span>
+				<input type="text" value="6-20个大小写英文字母、符号或数字" id="character">
+			</li>
+			<li>
+				<span>重复新密码</span>
+				<input type="text" value=" 请重复输入新密码" id="repeat">
+			</li>
+		</ul>
+		<button type="button" id="btn">完成</button>
+	</form>
+	<!--修改登陆部分-->
+	
+</body>
+	<script src="../../js/tmpl/user/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/user/login_change.js'></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/tmpl/user_login_change.js"></script>
+</html>

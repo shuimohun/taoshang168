@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Author" contect="U2FsdGVkX1+liZRYkVWAWC6HsmKNJKZKIr5plAJdZUSg1A==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+<title>送福购买详情</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" href="../css/nctouch_products_list.css">
+    <link rel="stylesheet" type="text/css" href="../css/sendbless/sendbless.css">
+    <script src="../js/config.js"></script>
+</head>
+<body>
+<header id="header" class="nctouch-product-header fixed">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+        <div class="head_title">送福详情</div>
+        <!--20180728 增加跳转链接-->
+        <a href="./sendbless_list.html" class="mian_btn">免单</a>
+    </div>
+</header>
+<div class="fu_main sendBless_detail">
+
+</div>
+<!--<div class="fix-block-r">
+    <a href="#" class="browse-btn"><i></i></a>
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>-->
+<script type="text/html" id="sendBless_detail">
+    <% if(data){ %>
+        <% for(var i in data){ %>
+        <div class="send_fu_main">
+            <div class="send_share_time clearfix">
+                <div class="s_time">分享时间: <span><%=data[i].fu_record_time%></span></div>
+            </div>
+            <div class="nctouch-main-layout">
+                <div class="list">
+                    <ul class="goods-secrch-list">
+                        <li class="goods-item">
+                            <span class="goods-pic">
+                                <a href="./product_detail.html?goods_id=<%=data[i].fu.goods_id%>">
+                                    <img src="<%=data[i].fu.goods_image%>"/>
+                                </a>
+                            </span>
+                            <dl class="goods-info">
+                                <dt class="goods-name">
+                                    <a href="./product_detail.html?goods_id=<%=data[i].fu.goods_id%>">
+                                        <h4><%=data[i].fu.goods_name%></h4>
+                                    </a>
+                                </dt>
+                                <dd class="bless_timedown"></dd>
+                                <dd class="get_bless_detail clearfix">
+                                    <span class="goods_price">￥0</span>
+                                    <span class="goods_price_fact">￥<%=data[i].fu.goods_price%></span>
+                                    <span class="free_btn"><a href="#"><i><%=data[i].total_Person%></i>人已免费领取</a></span>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bless_detail_timedown">
+                    <% if( data[i].status == 1){ %>
+                     <span class="fnTimeCountDown clearfix " data-end="<%=data[i].fu_end_time%>">
+                        <u class="hour">00</u><i>:</i>
+                         <u class="mini">00</u><i>:</i>
+                         <u class="sec">00</u>
+                    </span>
+                    <% }%>
+                    <span class="b_d_title font_red">
+                        <% if( data[i].status ){ %>
+                            <% if( data[i].status ==1 ){%>
+                                进行中
+                            <% }else if( data[i].status ==2 ){ %>
+                                成功未提交
+                            <% }else if( data[i].status ==3 ){ %>
+                                送福购买
+                            <% }else if( data[i].status ==4 ){%>
+                                免单成功
+                            <% }else if( data[i].status ==5 ){ %>
+                                送福失败
+                            <% }%>
+                        <% }%>
+                    </span>
+                </div>
+            </div>
+            <div class="bless_detail_main">
+                <div class="b_detail_title">
+                    <ul class="b_title_ul clearfix">
+                        <li>社交类型</li>
+                        <li>送福</li>
+                        <li>任务福</li>
+                        <li>福到</li>
+                        <li>合计送福</li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li><img src="img/sendbless/icon_1.png" alt="">微信好友</li>
+                        <li><%=data[i].fu.fu_price%></li>
+                        <li><%=data[i].fu.fu_base.weixin%></li>
+                        <li><%=data[i].fu_base.weixin%></li>
+                        <li>￥<%=( data[i].unitWeiXin )%></li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li><img src="img/sendbless/icon_2.png" alt="">微信朋友圈</li>
+                        <li><%=data[i].fu.fu_price%></li>
+                        <li><%=data[i].fu.fu_base.weixin_timeline%></li>
+                        <li><%=data[i].fu_base.weixin_timeline%></li>
+                        <li>￥<%=( data[i].unitweiXin_timeLine )%></li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li><img src="img/sendbless/icon_3.png" alt="">QQ好友</li>
+                        <li><%=data[i].fu.fu_price%></li>
+                        <li><%=data[i].fu.fu_base.sqq%></li>
+                        <li><%=data[i].fu_base.sqq%></li>
+                        <li>￥<%=( data[i].unitSqq )%></li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li><img src="img/sendbless/icon_4.png" alt="">QQ空间</li>
+                        <li><%=data[i].fu.fu_price%></li>
+                        <li><%=data[i].fu.fu_base.qzone%></li>
+                        <li><%=data[i].fu_base.qzone%></li>
+                        <li>￥<%=( data[i].unitQzone )%></li>
+                    </ul>
+                    <ul class="border_bottom clearfix">
+                        <li><img src="img/sendbless/icon_5.png" alt="">新浪微博</li>
+                        <li><%=data[i].fu.fu_price%></li>
+                        <li><%=data[i].fu.fu_base.tsina%></li>
+                        <li><%=data[i].fu_base.tsina%></li>
+                        <li>￥<%=( data[i].unitTsina )%></li>
+                    </ul>
+                    <% if( data[i].status != 5 ){ %>
+                        <ul class="border_bottom clearfix">
+                            <li>合计</li>
+                            <li> </li>
+                            <li><%=data[i].fu.fu_total_times%>福</li>
+                            <li> </li>
+                            <li class="font_red">￥<%=data[i].fu.goods_price%></li>
+                        </ul>
+                        <ul class="border_bottom clearfix">
+                            <% if( data[i].status == 1 ){ %>
+                                <li>福到优惠</li>
+                            <% }else if( data[i].status == 2 ){ %>
+                                <li>成功未提交</li>
+                            <% }else if(data[i].status == 3 ) {%>
+                                <li>送福购买</li>
+                            <% }%>
+                            <% if(data[i].status ==4 ){ %>
+                                <li></li>
+                                <li>免单成功</li>
+                                <li></li>
+                            <% }else{%>
+                                <li>￥<%=data[i].fu.fu_t_price%></li>
+                                <li></li>
+                                <li><%=data[i].click_count%>福</li>
+                            <% }%>
+                            <% if( data[i].status ==3 || data[i].status ==1 ){ %>
+                                <li class="font_red">￥-<%=data[i].HjPrice %></li>
+                            <% } %>
+                        </ul>
+                        <ul class="border_bottom clearfix">
+                            <li>合计</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="font_red">￥<%=data[i].now_buy_price%></li>
+                        </ul>
+                    <% }%>
+                </div>
+            </div>
+        </div>
+        <% }%>
+    <% }%>
+</script>
+<footer id="footer" class="bottom"></footer>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/sendbless/sendbless_detail.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>代金券</title>
+	<link rel="stylesheet" href="../css/goldegg/voucher.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+</head>
+<body style="margin-top:1.57rem; background-color: #ededed ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../images/goldegg/back.png" alt=""></a>
+			<span>代金券</span>
+			<a href="strategy.html"><img src="../images/goldegg/help@2x.png" alt=""  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list">
+
+		        </div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/goldegg/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+	<!--主图-->
+		<div class="slider_list" ></div>
+	<!--主图-->
+
+	<!--红包信息-->
+	<div class="redbag">
+		<div class="redbag_head">
+			<img src="" alt=""><br>
+			<span></span>
+		</div>
+		<ul class="redbag_info">
+			<li>
+				<b id="red"></b><br>
+				<span>红包</span>
+			</li>
+			<li>
+				<b id="ticket"></b><br>
+				<span>可用代金券</span>
+			</li>
+			<li>
+				<b id="egg"></b><br>
+				<span>金蛋</span>
+			</li>
+			<li>
+				<b id="gift"></b><br>
+				<span>已兑换礼品</span>
+			</li>
+		</ul>
+		<div class="redbag_div">
+			<span class="div_v"></span>
+			<span class="progress"><img src="../images/goldegg/line.png" alt="" width=""></span>
+			<span class="div_v n"></span>
+			<u class="div_right">还差<i></i>经验值升级</u>
+		</div>
+	</div>
+	<!--红包信息-->
+
+	<!--默认排序会员等级-->
+	<ul class="redbag_top">
+		<li>默认排序</li>
+		<li>代金券面额</li>
+		<li>筛选</li>
+		<ul class="redbag_item1_div">
+			<!--<li class="cur"><span>默认排序</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li1"></li>-->
+			<li onclick="init_get_list('order', 'exchangenumdesc')"><span>兑换量从高到低</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li2" ></li>
+			<li onclick="init_get_list('order', 'exchangenumasc')"><span>兑换量从低到高</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li3" ></li>
+			<li onclick="init_get_list('order', 'pointsdesc')"><span>金蛋值从高到低</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li4" ></li>
+			<li onclick="init_get_list('order', 'pointsasc')"><span>金蛋值从低到高</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li5"></li>
+		</ul>
+		<ul class="redbag_item2_div"></ul>
+		<!--从右到左划出弹窗-->
+		<div class="shaixuan-bottom"></div>
+		<div class="shaixuan-contain">
+			<u>所需金蛋</u>
+			<div class="shaixuan-number">
+				<input type="text"  id="points_min" nctype="points" pattern="[0-9]*" placeholder="最低金蛋">
+				<u>&nbsp;——</u>
+				<input type="text"  id="points_max" nctype="points" pattern="[0-9]*" placeholder="最高金蛋">
+			</div>
+
+			<button class="reset">重置</button>
+			<button class="ensure">确定</button>
+		</div>
+	</ul>
+	<!--默认排序会员等级-->
+		<div class="tanchuang">
+			<div class="tanchuang_top">每个用户限领一张</div>
+			<div class="tanchuang_bottom">
+				<button class="ensure">确定</button>
+				<button class="delete">取消</button>
+			</div>
+		</div>
+		<div class="bg_tanchuang"></div>
+	<!--代金券部分-->
+	<div class="chit"></div>
+	<!--代金券部分-->
+
+
+		<script type="text/html" id="pic">
+			<div class="swipe-wrap" >
+				<% if(picture.item) { %>
+				<% var items = picture.item %>
+				<% for(var i in items) { %>
+				<div class="item" >
+					<a href="<%=items[i].url %>">
+						<img src="<%=items[i].pic_url %>" alt="">
+					</a>
+				</div>
+				<% } %>
+				<% } %>
+			</div>
+			<a href="./member/signin.html"><span>签到+5</span></a>
+		</script>
+	<!--导航栏部分-->
+	<script type="text/html" id="nav">
+		<ul>
+			<li class="find_nav_cur" ><a href="javascript:void(0)" id="0">精选</a></li>
+			<% if(nav.items) { %>
+			<% var items = nav.items %>
+			<% for(var i in items) { %>
+			<li ><a href="javascript:void(0)" id="<%=items[i].id %>"><%=items[i].shop_class_name %></a></li>
+			<% } %>
+			<% } %>
+			<li class="sideline"></li>
+		</ul>
+	</script>
+
+		<!--代金券部分-->
+		<!--<script type="text/html" id="chits">-->
+			<!--<% if(voucher.items) { %>-->
+			<!--<% var items = voucher.items %>-->
+			<!--<% for(var i in items) { %>-->
+			<!--<div  class='chit_item'>-->
+				<!--<div class="chit_left">-->
+					<!--<span>￥<%=items[i].voucher_t_price %></span><br>-->
+					<!--<i>购满<%=items[i].voucher_t_limit %>元使用</i>-->
+				<!--</div>-->
+				<!--<div class="chit_right_top">-->
+					<!--<span><%=items[i].shop_name %></span>-->
+				<!--</div>-->
+				<!--<div class="chit_right_bottom">-->
+					<!--<span>有效期至:</span>-->
+					<!--<u><%=items[i].voucher_t_end_date %></u><br>-->
+					<!--<i><%=items[i].voucher_t_points  %>金蛋</i>-->
+					<!--<b><%=items[i].voucher_t_giveout %>人兑换</b>-->
+				<!--</div>-->
+				<!--<a href="javascript:void(0)" nctype="immed" data-vid="<%=items[i].id %>"> <img src="../images/goldegg/liji.png" alt=""> </a>-->
+			<!--</div>-->
+			<!--<% } %>-->
+			<!--<% } %>-->
+		<!--</script>-->
+			<script type="text/html" id="chits">
+				<% if(voucher.items){ %>
+				<% for(var i=0;i<(voucher.items.length);i++){var items = voucher.items[i] %>
+				<% if(items.voucher_t_access_method == 3 && items.voucher_t_unused != 1){ %>
+				<div  class='chit_item'>
+					<div class="chit_left">
+						<img src="<%=items.voucher_t_customimg %>" alt="">
+					</div>
+					<div class="chit_right_top">
+						<span><%=items.shop_name %></span>
+					</div>
+					<div class="chit_right_bottom">
+						<span>有效期至:</span>
+						<u><%=items.voucher_t_end_date %></u><br>
+						<i>￥<%=items.voucher_t_price %></i>
+						<b>购满<%=items.voucher_t_limit %>元使用</b>
+					</div>
+					<div class="circle">
+						<div class="pie_left"><div class="left"></div></div>
+						<div class="pie_right"><div class="right"></div></div>
+						<div class="mask"><span><%=items.voucher_t_percent %></span>%</div>
+					</div>
+					<a href="javascript:void(0);" nctype='immed' data-vid="<%=items.id %>"><button class="btn btn-liji">立即领取</button></a>
+				</div>
+				<% }else if(items.voucher_t_unused == 1){ %>
+				<div  class='chit_item'>
+					<% if(items.goodslist){ %>
+					<% for(var j in items.goodslist){ var item = items.goodslist[j] %>
+					<div class="chit_left">
+						<a href="product_detail.html?goods_id=<%=item.goods_id %>"><img src="<%=item.goods_image %>" alt=""></a>
+					</div>
+					<% } %>
+					<% } %>
+					<p style='font-size: .2rem;color: #fd114f;margin-left: 3%;'>购满<%=items.voucher_t_limit %>元减<%=items.voucher_t_price %>元 <span style='color: #666'><%=items.shop_name %></span></p>
+					<img src="../images/goldegg/geted_site@3x.png" alt="" class="position-ling">
+					<a href="store.html?shop_id=<%=items.shop_id %>"><button class="btn btn-shiyong">去使用</button></a>
+				</div>
+				<% }else if(items.voucher_t_access_method == 1 && items.voucher_t_unused != 1){ %>
+				<div  class='chit_item'>
+					<div class="chit_left">
+						<img src="<%=items.voucher_t_customimg %>" alt="">
+					</div>
+					<div class="chit_right_top">
+						<span><%=items.shop_name %></span>
+					</div>
+					<div class="chit_right_bottom">
+						<span>有效期至:</span>
+						<u><%=items.voucher_t_end_date %></u><br>
+						<i>￥<%=items.voucher_t_price %></i>
+						<b>购满<%=items.voucher_t_limit %>元使用</b>
+					</div>
+					<span class="xuyaojindan">需要金蛋</span>
+					<span class="xuyaojindan-number"> - <%=items.voucher_t_points %> - </span>
+					<a href="javascript:void(0);" nctype='immed' data-vid="<%=items.id %>"><button class="btn btn-liji">立即兑换</button></a>
+				</div>
+				<% }else if(items.voucher_t_total == items.voucher_t_giveout && items.voucher_t_access_method == 3 && items.voucher_t_unused != 1){ %>
+				<div  class='chit_item'>
+					<div class="chit_left">
+						<img src="<%=items.voucher_t_customimg %>" alt="">
+					</div>
+					<div class="chit_right_top">
+						<span><%=items.shop_name %></span>
+					</div>
+					<div class="chit_right_bottom">
+						<span>有效期至:</span>
+						<u><%=items.voucher_t_end_date %></u><br>
+						<i style="color:#b3b3b3;">￥<%=items.voucher_t_price %></i>
+						<b style="color:#b3b3b3;">购满<%=items.voucher_t_limit %>元使用</b>
+					</div>
+					<div class="qiangguang">
+						<img src="../images/goldegg/bar_02@3x.png" alt="">
+					</div>
+					<a href="store.html?shop_id=<%=items.shop_id %>"><button class="btn btn-jindian">进店看看</button></a>
+				</div>
+				<% }else if(items.voucher_t_total == items.voucher_t_giveout && items.voucher_t_access_method == 1 && items.voucher_t_unused != 1){ %>
+				<div  class='chit_item'>
+					<div class="chit_left">
+						<img src="<%=items.voucher_t_customimg %>" alt="">
+					</div>
+					<div class="chit_right_top">
+						<span><%=items.shop_name %></span>
+					</div>
+					<div class="chit_right_bottom">
+						<span>有效期至:</span>
+						<u><%=items.voucher_t_end_date %></u><br>
+						<i style="color:#b3b3b3;">￥<%=items.voucher_t_price %></i>
+						<b style="color:#b3b3b3;">购满<%=items.voucher_t_limit %>元使用</b>
+					</div>
+					<span class="xuyaojindan" style="color:#999;">需要金蛋</span>
+					<span class="xuyaojindan-number" style="color:#999;"> - <%=items.voucher_t_points %> - </span>
+					<button class="btn btn-qiangguang">已抢光</button>
+				</div>
+				<% }}} %>
+			</script>
+		<!--选项部分-->
+		<script type="text/html" id="option">
+			<% if(price_range) { %>
+			<% var items = price_range %>
+			<% for(var i in items ) { %>
+			<li onclick="init_get_list('price', '<%= items[i].voucher_price %>')"><span><%=items[i].voucher_price %>元代金券</span><img src="../images/goldegg/choose@3x.png" alt="" class="item2_li2"></li>
+			<% } %>
+			<% } %>
+		</script>
+		<!--js引入-->
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/swipe.js"></script>
+		<script type="text/javascript" src='../js/tmpl/goldegg/voucher.js'></script>
+		<script type="text/javascript" src="../js/tmpl/voucher.js"></script>
+</body>
+</html>

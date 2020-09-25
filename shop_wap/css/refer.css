@@ -1,0 +1,124 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #1a1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+.refer{
+    width:100%;
+    height:.73rem;
+    background-color:#fff;
+    font-size: 0;
+}
+.refer li{
+    display:inline-block;
+    width:33.3333333333%;
+    height:100%;
+    text-align: center;
+    line-height:.73rem;
+    color:#666;
+    font-size: .22rem;
+}
+.refer li.cur{
+    color:#e45050;
+}
+
+
+.contain{
+    width:100%;
+    height:2.72rem;
+    background-color:#fff;
+    margin-top:.15rem;
+}
+
+.contain .contain_top{
+    width:100%;
+    height:.95rem;
+    border-bottom: .01rem solid #eee;
+    position:relative;
+}
+.contain .contain_top .img{
+    display:inline-block;
+    font-size: .2rem;
+    color:#666;
+    margin-left: .15rem;
+    margin-top:.2rem;
+}
+.contain .contain_top .img img{
+    width:.03rem;
+    height:.2rem;
+    vertical-align:bottom;
+}
+.contain .contain_top .contain_contain{
+    height:.6rem;
+    width:4.75rem;
+    position:absolute;
+    top:22%;
+    left:20%;
+    font-size: .2rem;
+    color:#666;
+    overflow: hidden;
+}
+.contain .contain_middle{
+  width:100%;
+  height:1.1rem;
+  border-bottom:.01rem solid #eee;  
+}
+.contain .contain_middle .contain_contain{
+    height:.5rem;
+    width:6.15rem;
+    font-size: .2rem;
+    color:#999;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top:.15rem;
+}
+.contain .contain_middle .contain_refer{
+    height:.25rem;
+    width:6.15rem;
+    font-size: .2rem;
+    color:#999;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top:.15rem;
+}
+
+.contain .contain_bottom{
+    width:100%;
+    height:.6rem;
+    line-height:.6rem;
+    color:#999;
+    font-size: 0;
+}
+.contain .contain_bottom span{
+    display:inline-block;
+    width:50%;
+    height:100%;
+    text-align: center;
+    font-size: .18rem;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>淘金市场</title>
+	<link rel="stylesheet" href="../../css/market.css">
+	<link rel="stylesheet" href="../../css/directseller_base.css">
+
+</head>
+<body style="margin-bottom:1.55rem">
+<header class="person">
+	<div class="title">
+		<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+		<span>淘金市场</span>
+		<!--<a href=""><img src="../../images/search.png" alt=""  class="info"></a>-->
+		<!--<a href=""><img src="../../images/dialogbox.png" alt=""  class="dialogbox"></a>-->
+	</div>
+	<!--<span class="number">1</span>-->
+	<!--滚动导航栏部分-->
+	<div class="find_nav">
+		<div class="find_nav_left">
+			<div class="find_nav_list">
+
+			</div>
+		</div>
+		<div class="nav_header_img an">
+			<img src="../../images/icon_an.png" alt="">
+		</div>
+	</div>
+	<!--滚动导航栏部分-->
+</header>
+<div class="shaixuan">
+	<ul>
+		<li class="cur">销量</li>
+		<li>佣金</li>
+		<li>上新</li>
+	</ul>
+	<span>筛选</span>
+</div>
+<div id="goodslist">
+
+</div>
+
+
+<ul class="footer">
+	<li>
+			<a href="./directseller_shopself.html"> <img src="../../images/tabbar1@2x.png" alt=""><br>
+				<span>我的小店</span></a>
+	</li>
+	<li>
+		<a href="./directseller_market.html"> <img src="../../images/tabbar2_s@2x.png" alt=""><br>
+			<span>淘金市场</span></a>
+	</li>
+	<li>
+		<a href=""> <img src="../../images/tabbar3@2x.png" alt=""><br>
+			<span>私房钱</span></a>
+	</li>
+	<li>
+		<a href="./directseller_recommend.html"> <img src="../../images/tabbar4@2x.png" alt=""><br>
+			<span>我的小弟</span></a>
+	</li>
+</ul>
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/directseller_market.js'></script>
+
+<script id="one" type="text/html">
+	<ul>
+		<%for(var i in data) {%>
+		<li class = "goodlist" data-id="<%= data[i].cat_id%>"><a href="javascript:void(0)" ><%= data[i].nav_name%></a></li>
+		<%}%>
+	</ul>
+	<li class="sideline"></li>
+
+</script>
+<script id="two" type="text/html">
+	<%for(var i in items) {%>
+	<div class="item">
+		<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"> <img src= "<%=items[i].common_image%>" alt=""></a>
+		<div class="item_contain">
+			<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><span><%= items[i].common_name%></span></a><br>
+			<p>店铺：<%= items[i].shop_name%></p><br>
+			<i>￥<%= items[i].common_price%></i><br>
+			<em>销量：<%= items[i].common_salenum%></em>&nbsp;&nbsp;&nbsp;&nbsp;<em>收藏：<%= items[i].common_collect%></em><br>
+			<u>淘金赚：￥<%= items[i].common_cps_rate * items[i].common_price/100 %></u>
+			<% if(items[i].exist){ %>
+			<a href="directseller_shopself.html"> <button>推广商品</button></a>
+			<% }else{%>
+			<a href="directseller_apply.html"> <button>加入淘金</button></a>
+			<%}%>
+		</div>
+	</div>
+	<%}%>
+</script>
+</html>

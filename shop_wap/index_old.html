@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>首页</title>
+	<link rel="stylesheet" href="css/homepage.css">
+	<link rel="stylesheet" href="css/base_index.css">
+	<script type="text/javascript" src='js/jquery-1.11.3.min.js'></script>
+</head>
+<body style="background-color:#f2f2f2;">
+<!-- 头部搜索框部分 -->
+<header class="nav">
+	<div class="shangjia">
+		<img src="images/main_img/merchant.png" alt="">
+		<a><span>商家</span></a>
+	</div>
+	<div class="input">
+		<a href="tmpl/search.html">
+		<input type="text" name="">
+		<img src="images/main_img/search.png" alt="" class="search">
+		</a>
+	</div>
+	<div class="xiaoxi">
+		<img src="images/main_img/dialogbox.png" alt="">
+		<a href="./tmpl/member/chat_list.html"><span>消息</span></a>
+	</div>
+</header>
+<!-- 头部搜索框部分结束 -->
+<div id="main_content1" style="overflow: hidden;"></div>
+<!-- 活动部分选项开始 -->
+<section class="activity">
+	<ul>
+		<li>
+			<a href="./tmpl/proprietary.html">
+			<img src="images/main_img/proprietary.png" alt="">
+			</a>
+			<a>自营超市</a>
+
+		</li>
+		<li>
+			<a href="./tmpl/andone.html">
+			<img src="images/main_img/andone.png" alt="">
+			</a>
+			<a class="three">加一购</a>
+		</li>
+		<li>
+			<a href="#">
+			<img src="images/main_img/laiye.png" alt="">
+			</a>
+			<a class="three">券来也</a>
+		</li>
+		<li>
+			<a href="./tmpl/goldeggsbuy.html">
+			<img src="images/main_img/goldeneggs.png" alt="">
+			</a>
+			<a class="three">金蛋购</a>
+		</li>
+		<li>
+			<img src="images/main_img/timelimit.png" alt="">
+			<a class="three">限时秒杀</a>
+		</li>
+		<li>
+			<img src="images/main_img/free.png" alt="">
+			<a class="three">惠省钱</a>
+		</li>
+		<li>
+			<img src="images/main_img/brand.png" alt="">
+			<a class="three">品牌街</a>
+		</li>
+		<li>
+			<img src="images/main_img/fresh.png" alt="">
+			<a>生鲜特产</a>
+		</li>
+		<li>
+			<img src="images/main_img/neighbor.png" alt="">
+			<a class="three">邻家购</a>
+		</li>
+		<li>
+			<img src="images/main_img/class.png" alt="">
+			<a>商品分类</a>
+		</li>
+
+	</ul>
+</section>
+<!-- 活动部分选项结束 -->
+<!-- 文字信息部分开始 -->
+<div class="word">
+	<img src="images/main_img/news.png" alt="" class="word_img">
+	<div class="text_wrap">
+		<a href="" class="text">全国零售餐饮销售8400亿 网络消费突出|...</a><br>
+		<a href="" class="text_2">海底捞终于公布了它的销售培训体系！</a>
+	</div>
+</div>
+<!-- 文字信息部分结束 -->
+
+<div id="main_content2"></div>
+<!-- 底部固定导航栏开始 -->
+<footer class="nav_footer">
+	<ul>
+		<li>
+			<img src="images/PersonalCenter_img/homepage.png" alt="">
+			<span>首页</span>
+		</li>
+		<li>
+			<img src="images/PersonalCenter_img/shoppingguide.png" alt="">
+			<span>导购</span>
+		</li>
+		<li>
+			<a href="tmpl/cart_list.html"><img src="images/PersonalCenter_img/shoppingcart.png" alt=""></a>
+			<span>购物车</span>
+		</li>
+		<li>
+			<a href="tmpl/member/member.html"><img src="images/PersonalCenter_img/person_on.png" alt=""></a>
+			<span>我的</span>
+		</li>
+	</ul>
+</footer>
+<!-- 底部固定导航栏结束 -->
+
+<span id="time"></span>
+</body>
+<script>
+    $("input").focus(function(){
+        $(".search").hide();
+    });
+
+    $("input").blur(function(){
+        $(".search").show();
+    });
+</script>
+
+<script type="text/html" id="slider_list">
+	<div class="slider_list" >
+		<div class="swipe-wrap">
+			<% for (var i in item) { %>
+			<div class="item" >
+				<a href="#">
+					<img src="<%= item[i].image %>" alt="">
+				</a>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="slider_list2">
+	<div class="lunbo_footer">
+		<div class="slider_list" >
+			<div class="swipe-wrap">
+				<% for (var i in item) { %>
+				<div class="item" >
+					<a href="#">
+						<img src="<%= item[i].image %>" alt="">
+					</a>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="home1">
+	<img src="<%= image %>" alt="" class="newusers">
+</script>
+
+<script type="text/html" id="home3">
+	<section class="main_goods">
+		<ol>
+			<% for (var i in item) { %>
+			<li><img src="<%= item[i].image %>" alt="" class="main_img"></li>
+			<% } %>
+		</ol>
+		<p><b>02</b> :<u>30</u> :<i class="countdown_second">48</i></p>
+	</section>
+</script>
+
+<script type="text/html" id="home5">
+	<div class="new_img">
+		<ul>
+			<% for (var i in item) { %>
+			<li><a ><img src="<%= item[i].image %>" alt=""></a></li>
+			<% } %>
+		</ul>
+	</div>
+</script>
+
+<script type="text/html" id="shop">
+	<section class="find">
+		<ul>
+			<% for (var i in item) { %>
+			<li>
+				<a href="">
+				<div>
+					<% var num = 1%>
+					<% for (var j in item[i].goods) { %>
+					<img src="<%= item[i].goods[j].goods_image %>" class="goods<%= num%>">
+					<% num++%>
+					<% } %>
+				</div>
+				<span><%= item[i].shop_name %></span>
+				<b>七年老店良心承诺只做正品</b>
+				</a>
+			</li>
+			<% } %>
+		</ul>
+	</section>
+</script>
+
+<script type="text/html" id="goods">
+
+	<% if (title) { %>
+	<div class="guess"><span><%= title %></span></div>
+	<% } %>
+	<section class="guess-like">
+		<% for (var i in item) { %>
+		<div >
+		<a href="" >
+		<img src="<%= item[i].goods_image %>" alt="">
+		<h3><%= item[i].goods_name %></h3>
+		</a>
+		<b>￥<%= item[i].goods_promotion_price %></b>
+		<button>找相似</button>
+		</div>
+		<% } %>
+	</section>
+</script>
+
+
+<script type="text/javascript" src="js/config.php"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/tmpl/footer.js"></script>
+
+
+
+<script type="text/javascript" src="js/addtohomescreen.js"></script>
+<script>
+    addToHomescreen({
+        message:'如要把应用程式加至主屏幕,请点击%icon, 然后<strong>加至主屏幕</strong>'
+    });
+</script>
+</html>
+
+
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>商城触屏版</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/Group.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <script src="../js/swiper.min.js"></script>
+
+</head>
+
+<body>
+    <div class="integral-wap fixed-Width">
+        <div id="Group-head" class="clearfix">
+            <div class="back-icon">
+                <a href="javascript:history.go(-1)"> <i class="back"></i> </a>
+            </div>
+            <div class="swiper-container swiper-container-nav "></div>
+            <div class="righttubiao">
+                <a class="bottG"></a>
+            </div>
+        </div>
+        <div class="Group-banenr">
+            <div class="swiper-container    swiper-banner "></div>
+        </div>
+        <div class="Group-main"></div>
+        <div class="maskG"></div>
+        <footer id="footer" class="fixed-Width"></footer>
+    </div>
+
+    <script type="text/html" id="swiper-container-nav">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bor-2">全部</div>
+            <% if(cat.physical){ %>
+            <% var items = cat.physical %>
+            <% for( var i in items ){ %>
+                <div class="swiper-slide" onclick="location.href='group_buy_list.html?groupbuy_type=1&groupbuy_cat_id=<%= items[i].groupbuy_cat_id %>'"><%= items[i].groupbuy_cat_name %></div>
+            <% }} %>
+        </div>
+    </script>
+
+    <script type="text/html" id="swiper-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="<%= banner.slider1.live_link1 %>">
+                    <img src="<%= banner.slider1.slider1_image %>">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="<%= banner.slider2.live_link2 %>">
+                    <img src="<%= banner.slider2.slider2_image %>">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="<%= banner.slider3.live_link3 %>">
+                    <img src="<%= banner.slider3.slider3_image %>">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="<%= banner.slider4.live_link4 %>">
+                    <img src="<%= banner.slider4.slider4_image %>">
+                </a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </script>
+
+    <script type="text/html" id="maskG">
+        <div class="title">
+            <a href="group_buy_list.html?groupbuy_type=1">线上团</a>
+        </div>
+        <ul class="list clearfix">
+            <% if(cat.physical){ %>
+            <% var items = cat.physical %>
+            <% for( var i in items ){ %>
+            <li><a href="group_buy_list.html?groupbuy_type=1&groupbuy_cat_id=<%= items[i].groupbuy_cat_id %>"><%= items[i].groupbuy_cat_name %></a></li>
+            <% }} %>
+        </ul>
+        <div class="title">
+            <a href="group_buy_list.html?groupbuy_type=2">虚拟团</a>
+        </div>
+        <ul class="list clearfix">
+            <% if(cat.virtual){ %>
+            <% var items = cat.virtual %>
+            <% for( var i in items ){ %>
+            <li><a href="group_buy_list.html?groupbuy_type=2&groupbuy_cat_id=<%= items[i].groupbuy_cat_id %>"><%= items[i].groupbuy_cat_name %></a></li>
+            <% }} %>
+        </ul>
+        <div class="X righttubiao"></div>
+    </script>
+
+    <script type="text/html" id="Group-main">
+        <h3>
+            <a href="group_buy_list.html?groupbuy_type=1">线上团</a><i>每天整点开抢</i>
+            <span class="more"> <a href="group_buy_list.html?groupbuy_type=1">更多<i class="iconfont icon-iconjiantouyou"></i></a></span>
+        </h3>
+        <div class="hot">
+            <div class="hot-img">
+                <a href="group_buy_goods.html?groupbuy_id=<%= goods.physical.highly_recommend.groupbuy_id %>">
+                    <img src="<%= goods.physical.highly_recommend.groupbuy_image_rec %>">
+                </a>
+            </div>
+            <div class="content">
+                <div class="hot-title"><%= goods.physical.highly_recommend.groupbuy_name %></div>
+                <div class="hot-txt"><%= goods.physical.highly_recommend.groupbuy_remark %></div>
+            </div>
+            <div class="price clearfix">
+                <div class="num"><b><%= goods.physical.highly_recommend.groupbuy_virtual_quantity %></b>件已付款</div>
+                <div class="con clearfix">
+                    <div class="left">
+                        <div>
+                            <b>￥</b><%= goods.physical.highly_recommend.groupbuy_price %> <del><%= goods.physical.highly_recommend.goods_price %></del>
+                        </div>
+                        <div class="time fnTimeCountDown" data-end="<%= goods.physical.highly_recommend.groupbuy_endtime %>">
+                                <span><i class="iconfont icon-shijian2"></i>还剩
+                                    <span class="day" >00</span><strong>天</strong>
+                                    <span class="hour">00</span><strong>小时</strong>
+                                    <span class="mini">00</span><strong>分</strong>
+                                    <span class="sec" >00</span><strong>秒</strong>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="immediately" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= goods.physical.highly_recommend.groupbuy_id %>'">
+                            立即购买
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <% if(goods.physical.recommend.items){ %>
+                <% var items = goods.physical.recommend.items %>
+                <% for( var i in items ){ %>
+                <% if (i>=4) break; %>
+                <li>
+                    <div class="list-img" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= items[i].groupbuy_id %>'">
+                        <img src="<%= items[i].groupbuy_image %>">
+                        <div class="time fnTimeCountDown" data-end="<%= items[i].groupbuy_endtime %>">
+                                <span class="ts">
+                                    <span class="day" >00</span><strong>天</strong>
+                                    <span class="hour">00</span><strong>小时</strong>
+                                    <span class="mini">00</span><strong>分</strong>
+                                    <span class="sec" >00</span><strong>秒</strong>
+                                </span>
+                        </div>
+                    </div>
+
+                    <div class="txt" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= items[i].groupbuy_id %>'"><%= items[i].groupbuy_name %></div>
+                    <div class="content">
+                        <div class="price clearfix">
+                            <b>￥</b><%= items[i].groupbuy_price %>
+                        </div>
+                        <div class="ls">
+                            <div class="left">
+                                <a>立省<%= items[i].goods_price-items[i].groupbuy_price %></a>
+                            </div>
+                            <div class="right">已售<b><%= items[i].groupbuy_virtual_quantity %></b></div>
+                        </div>
+                    </div>
+                </li>
+                <% }} %>
+            </ul>
+
+        </div>
+        <h3>
+            <a href="group_buy_list.html?groupbuy_type=2">虚拟团</a><i>每天整点开抢</i>
+            <span class="more"> <a href="group_buy_list.html?groupbuy_type=2">更多<i class="iconfont icon-iconjiantouyou"></i></a></span>
+        </h3>
+        <div class="hot">
+            <div class="hot-img">
+                <a href="group_buy_goods.html?groupbuy_id=<%= goods.virtual.highly_recommend.groupbuy_id %>">
+                    <img src="<%= goods.virtual.highly_recommend.groupbuy_image_rec %>">
+                </a>
+            </div>
+            <div class="content">
+                <div class="hot-title"><%= goods.virtual.highly_recommend.groupbuy_name %></div>
+                <div class="hot-txt"><%= goods.virtual.highly_recommend.groupbuy_remark %></div>
+            </div>
+            <div class="price clearfix">
+                <div class="num"><b><%= goods.virtual.highly_recommend.groupbuy_virtual_quantity %></b>件已付款</div>
+                <div class="con clearfix">
+                    <div class="left">
+                        <div>
+                            <b>￥</b><%= goods.virtual.highly_recommend.groupbuy_price %> <del><%= goods.virtual.highly_recommend.goods_price %></del>
+                        </div>
+                        <div class="time fnTimeCountDown" data-end="<%= goods.virtual.highly_recommend.groupbuy_endtime %>">
+                                <span><i class="iconfont icon-shijian2"></i>还剩
+                                    <span class="day" >00</span><strong>天</strong>
+                                    <span class="hour">00</span><strong>小时</strong>
+                                    <span class="mini">00</span><strong>分</strong>
+                                    <span class="sec" >00</span><strong>秒</strong>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="immediately" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= goods.virtual.highly_recommend.groupbuy_id %>'">
+                            立即购买
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <% if(goods.virtual.recommend.items){ %>
+                <% var items = goods.virtual.recommend.items %>
+                <% for( var i in items ){ %>
+                <% if (i>=4) break; %>
+                <li>
+                    <div class="list-img" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= items[i].groupbuy_id %>'">
+                        <img src="<%= items[i].groupbuy_image %>">
+                        <div class="time fnTimeCountDown" data-end="<%= items[i].groupbuy_endtime %>">
+                                <span class="ts">
+                                    <span class="day" >00</span><strong>天</strong>
+                                    <span class="hour">00</span><strong>小时</strong>
+                                    <span class="mini">00</span><strong>分</strong>
+                                    <span class="sec" >00</span><strong>秒</strong>
+                                </span>
+                        </div>
+                    </div>
+
+                    <div class="txt" onclick="location.href='group_buy_goods.html?groupbuy_id=<%= items[i].groupbuy_id %>'"><%= items[i].groupbuy_name %></div>
+                    <div class="content">
+                        <div class="price clearfix">
+                            <b>￥</b><%= items[i].groupbuy_price %>
+                        </div>
+                        <div class="ls">
+                            <div class="left">
+                                <a>立省<%= items[i].goods_price-items[i].groupbuy_price %></a>
+                            </div>
+                            <div class="right">已售<b><%= items[i].groupbuy_virtual_quantity %></b></div>
+                        </div>
+                    </div>
+                </li>
+                <% }} %>
+            </ul>
+
+        </div>
+    </script>
+
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/group_buy.js"></script>
+    <script type="text/javascript" src="../js/tmpl/footer.js"></script>
+    <script type="text/javascript" src="../js/jquery.timeCountDown.js" ></script>
+</body>
+
+</html>

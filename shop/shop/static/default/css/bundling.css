@@ -1,0 +1,160 @@
+.no-promotion {
+    font-size: 0;
+    color: #27A9E3;
+    padding: 50px 0;
+}
+.no-promotion i.zh {
+    background-position: -200px -300px;
+}
+.no-promotion i {
+    background: url(../images/ncsc_bg_img.png) no-repeat;
+    vertical-align: middle;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+.no-promotion span {
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: left;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+}
+/*.ncbtn-aqua {
+    background: #e02222;
+    color: #fff !important;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+}
+.ncbtn-aqua:hover {
+    opacity: 0.8;
+}*/
+.mb15 {
+    margin-bottom: 15px;
+}
+.ncsc-default-table tbody td {
+    color: #999;
+    background-color: #FFF;
+    text-align: center;
+    padding: 10px 0;
+}
+.bd-line td {
+    border-bottom: solid 1px #DDD;
+}
+.div-goods-select-box {
+    position: relative;
+    z-index: 1;
+    zoom: 1;
+}
+.div-goods-select {
+    background-color: #FFF;
+    margin-bottom: 20px;
+    border: solid 1px #E6E6E6;
+    position: relative;
+    z-index: 1;
+    zoom: 1;
+}
+
+.div-goods-select .search-result .goods-list li {
+    font: 12px/32px arial,"宋体";
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    width: 149px;
+    padding: 10px 20px;
+    margin: 0 0 -1px 0;
+    border-style: solid;
+    border-color: #E6E6E6;
+    border-width: 0 1px 1px 0;
+    overflow: hidden;
+    zoom: 1;
+}
+.div-goods-select .search-result .goods-thumb {
+    line-height: 0;
+    background-color: #FFF;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 140px;
+    height: 140px;
+    padding: 4px;
+    overflow: hidden;
+}
+.div-goods-select .search-result .goods-thumb img {
+    max-width: 140px;
+    max-height: 140px;
+    margin-top: expression(140-this.height/2);
+}
+.ncsc-form-default dl {
+    font-size: 0;
+    line-height: 20px;
+    clear: both;
+    padding: 0;
+    margin: 0;
+    border-bottom: dotted 1px #E6E6E6;
+    overflow: hidden;
+}
+.div-goods-select .search-result .goods-info dt {
+    text-align: left;
+    width: auto;
+    display: block;
+    line-height: 16px;
+    height: 32px;
+    padding: 0;
+    overflow: hidden;
+}
+.div-goods-select .search-result .goods-info dd {
+    line-height: 20px;
+    height: auto !important;
+    padding: 5px 0;
+}
+.div-goods-select .search-result .goods-info dd {
+    line-height: 20px;
+    height: auto !important;
+    padding: 5px 0;
+}
+a.ncbtn-mint {
+    background-color: #48CFAE;
+}
+a.ncbtn-mini {
+    line-height: 16px;
+    height: 16px;
+    padding: 3px 7px;
+    border-radius: 2px;
+	    color: #FFF;
+}
+.icon-plus:before {
+    content: "\e6dd";
+}
+.div-goods-select .close, .div-goods-select-box .close {
+    font: lighter 18px/18px Verdana;
+    color: #E6E6E6;
+    background-color: #FFF;
+    text-align: center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #E6E6E6;
+    border-radius: 22px;
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    right: -11px;
+    cursor: pointer;
+}
+ a:hover.ncbtn-bittersweet {
+    background-color: #E9573E;
+}
+.icon-ban-circle:before {
+    content: "\f05e";
+}
+a.ncbtn-bittersweet {
+    background-color: #FB6E52;
+}

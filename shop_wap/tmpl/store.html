@@ -1,0 +1,689 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+    <title>店铺首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_store.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"><!-- Link Swiper's CSS -->
+    <style>
+        html {
+            font-size : 25px !important;
+        }
+        @media only screen and (min-width: 320px){
+            html {
+                font-size: 18.2px !important;
+            }
+        }
+        @media only screen and (min-width: 335px){
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 350px){
+            html {
+                font-size: 20.2px !important;
+            }
+        }
+        @media only screen and (min-width: 360px){
+            html {
+                font-size: 20.8px !important;
+            }
+        }
+        @media only screen and (min-width: 370px){
+            html {
+                font-size: 21.5px !important;
+            }
+        }
+        @media only screen and (min-width: 375px){
+            html {
+                font-size: 21.8px !important;
+            }
+        }
+        @media only screen and (min-width: 380px){
+            html {
+                font-size: 22.2px !important;
+            }
+        }
+        @media only screen and (min-width: 385px){
+            html {
+                font-size: 22.5px !important;
+            }
+        }
+        @media only screen and (min-width: 390px){
+            html {
+                font-size: 22.9px !important;
+            }
+        }
+        @media only screen and (min-width: 395px){
+            html {
+                font-size: 23.2px !important;
+            }
+        }
+        @media only screen and (min-width: 400px){
+            html {
+                font-size: 23.5px !important; 
+            }
+        }
+        @media only screen and (min-width: 410px){
+            html {
+                font-size: 24.1px !important; 
+            }
+        }
+        @media only screen and (min-width: 412px){
+            html {
+                font-size: 24.3px !important; 
+            }
+        }
+         @media only screen and (min-width: 414px){
+            html {
+                font-size: 24.4px !important; 
+            }
+        }
+        @media only screen and (min-width: 415px){
+            html {
+                font-size: 24.5px !important; 
+            }
+        }
+         @media only screen and (min-width: 420px){
+            html {
+                font-size: 24.8px !important; 
+            }
+        }
+         @media only screen and (min-width: 425px){
+            html {
+                font-size: 25.2px !important; 
+            }
+        }
+         @media only screen and (min-width: 430px){
+            html {
+                font-size: 25.5px !important; 
+            }
+        }
+        @media only screen and (min-width: 435px){
+            html {
+                font-size: 25.8px !important; 
+            }
+        }
+         @media only screen and (min-width: 440px){
+            html {
+                font-size: 26.2px !important; 
+            }
+        }
+         @media only screen and (min-width: 445px){
+            html {
+                font-size: 26.5px !important; 
+            }
+        }
+         @media only screen and (min-width: 450px){
+            html {
+                font-size: 26.8px !important; 
+            }
+        }
+        @media only screen and (min-width: 455px){
+            html {
+                font-size: 27.2px !important; 
+            }
+        }
+
+        /* pad */
+         @media only screen and (min-width: 760px){
+            html {
+                font-size: 39.4px !important; 
+            }
+        }
+        @media only screen and (min-width: 765px){
+            html {
+                font-size: 39.4px !important; 
+            }
+        }
+        @media only screen and (min-width: 768px){
+            html {
+                font-size: 39.4px !important; 
+            }
+        }
+        @media only screen and (min-width: 1024px){
+            html {
+                font-size: 39.4px !important; 
+            }
+        }
+
+
+        .main{
+        width:100%;
+        height:12.8rem;
+        }
+        .main img{
+            width:100%;
+            height:10.2rem;
+            margin-bottom: .4rem;
+        }
+        .main .word{
+            width:100%;
+            height:2.2rem;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .main .word .word-inner{
+            width:95%;
+            height:.96rem;
+            background-color: #fff;
+            margin:0 auto;
+            margin-top:.6rem;
+            border-left:.2rem solid #E13C3C;
+        }
+        .main .word .word-inner span{
+            font-size: .84rem;
+            margin-left:.4rem;
+            vertical-align:top;
+            color:#313131;
+        }
+        .grid .goods-secrch-list .goods-pic img{
+            width: 100%;
+            height: 9rem
+        }
+        .nctouch-store-goods-list .goods-item-name {
+            font-size: 0.6rem;
+            line-height: 0.7rem;
+            height: 1.32rem;
+            overflow: hidden;
+            margin-top: 0.2rem;
+        }
+        .nctouch-store-goods-list .goods-item-price {
+            font-size: 0.55rem;
+            line-height: 1rem;
+            color: #DB4453;
+            margin-top: 1rem;
+        }
+        .list .goods-secrch-list .goods-price {
+            color: #EC5464;
+            font-size: 0.6rem;
+            line-height: 0.9rem;
+            display: block;
+            float: left;
+            position: absolute;
+            right: 10%;
+            bottom: 6.2%;
+        }
+        .nctouch-store-sliders .swipe-wrap {
+            position: relative;
+            white-space: nowrap;
+            height: auto;
+            overflow: hidden;
+            font-size: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .nctouch-store-sliders .swipe-wrap li {
+            display: inline-block;
+            position: relative;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <header id="header" class="nctouch-store-header fixed-Width">
+        <div class="header-wrap">
+            <div class="header-l"><a href="javascript:history.go(-1)"><i class="back"></i></a></div>
+            <a class="header-inp" id="goods_search" href=""><i class="icon"></i><span class="search-input">搜索店铺内商品</span></a>
+            <div class="header-r"> <a id="store_categroy" href="" class="store-categroy"><i></i>
+      </a> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+        </div>
+        <div class="nctouch-nav-layout">
+            <div class="nctouch-nav-menu"> <span class="arrow"></span>
+                <ul>
+                    <li><a href="../index.html"><i class="home"></i>首页</a></li>
+                    <li><a href="../tmpl/search.html"><i class="search"></i>搜索</a></li>
+                    <li><a href="../tmpl/cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+                    <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="nctouch-main-layout fixed-Width mb25">
+        <div id="store-wrapper" class="nctouch-store-con">
+            <!-- banner -->
+            <div class="nctouch-store-top" id="store_banner"></div>
+            <!-- 导航条 -->
+            <div id="nav_tab_con" class="nctouch-single-nav nctouch-store-nav">
+                <ul id="nav_tab">
+                    <li class="selected"><a href="javascript: void(0);" data-type="storeindex"><i class="store"></i>店铺首页</a></li>
+                    <li><a href="javascript: void(0);" data-type="allgoods"><i class="goods"></i>全部商品</a></li>
+                    <li class="xxx"><a href="javascript: void(0);" data-type="newgoods"><i class="new"></i>商品上新</a></li>
+                    <li><a href="javascript: void(0);" data-type="storeactivity"><i class="sale"></i>店铺活动</a></li>
+                </ul>
+            </div>
+           <!--首页s-->
+            <div id="storeindex_con" style="position: relative; z-index: 1;">
+              <!--轮播图-->
+              <div class="nctouch-store-block">
+                  <div id="store_sliders" class="nctouch-store-wapper nctouch-store-sliders"></div>
+              </div>
+             <!--店铺排行榜-->
+              <div class="nctouch-store-block nctouch-store-ranking">
+                  <div class="title">店铺排行榜</div>
+                  <div class="nctouch-single-nav">
+                      <ul id="goods_rank_tab">
+                          <li><a href="javascript: void(0);" data-type="collect">收藏排行</a></li>
+                          <li><a href="javascript: void(0);" data-type="salenum">销量排行</a></li>
+                      </ul>
+                  </div>
+                  <div class="top-list" nc_type="goodsranklist" id="goodsrank_collect"></div>
+                  <div class="top-list visibility" nc_type="goodsranklist" id="goodsrank_salenum"></div>
+              </div>
+              <!--店主推荐-->
+              <div class="nctouch-store-block">
+                  <div class="title">掌柜推荐</div>
+                  <div class="nctouch-store-goods-list" id="goods_recommend"></div>
+              </div>
+                <div class="hot_goods"></div>
+                <div class="like_shop_goods"></div>
+            </div>
+            <!-- 首页e -->
+
+            <!-- 全部宝贝 -->
+            <div id="allgoods_con"></div>
+            <!-- 商品上新 -->
+            <div id="newgoods_con" class="nctouch-store-goods-list">
+                <section class="newgoods-like" id="newgoods"></section>
+            </div>
+            <!-- 店铺活动 -->
+            <div id="storeactivity_con"></div>
+        </div>
+    </div>
+    <div class="fix-block-r">
+        <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+    </div>
+    <div id="store_voucher_con"></div>
+    <div class="nctouch-store-bottom fixed-Width">
+        <ul>
+
+            <li><a id="goods_cla" href="javascript:void(0);">宝贝分类</a></li>
+            <li><a id="store_intro" href="javascript:void(0);">店铺介绍</a></li>
+            <li><a id="store_voucher" href="javascript: void(0);">免费领券</a></li>
+            <li><a id="store_kefu" class="kefu" href="javascript: void(0);">联系客服</a></li>
+        </ul>
+    </div>
+    </div>
+    <!-- banner tpl -->
+    <script type="text/html" id="store_banner_tpl">
+        <div class="store-top-bg"><span class="img" nc_type="store_banner_img"></span></div>
+        <div class="store-top-mask"></div>
+        <div class="store-avatar"><img src="<%= store_info.store_wap_avatar %>" /></div>
+        <div class="store-name">
+            <%= store_info.store_name %>
+        </div>
+        <div class="store-favorate"><a href="javascript:void(0);" id="store_collected" class="added">已收藏</a><a href="javascript:void(0);" id="store_notcollect">收藏</a><span class="num"><input type="hidden" id="store_favornum_hide" value="<%= store_info.store_collect %>"/><em id="store_favornum"><%= store_info.store_collect %></em><p>粉丝</p></span>
+        </div>
+    </script>
+    <!-- 轮播图 tpl -->
+    <script type="text/html" id="store_sliders_tpl">
+        <ul class="swipe-wrap">
+            <% for (var i in store_info.mb_sliders) { var s = store_info.mb_sliders[i]; %>
+                <li class="item">
+                    <% if (s.link) { %>
+                            <a href="<%= s.link %>"><img alt="" src="<%= s.imgUrl %>" /></a>
+                        <% } else { %>
+                            <a href="javascript:void(0);"><img alt="" src="<%= s.imgUrl %>" /></a>
+                        <% } %>
+                </li>
+                <% } %>
+        </ul>
+    </script>
+    <!-- 店铺排行榜_收藏排行 tpl -->
+    <script type="text/html" id="goodsrank_collect_tpl">
+        <% if(items){ %>
+       <div class="swiper-container">
+           <div class="swiper-wrapper">
+
+               <% for(var i in items){ %>
+               <div class="swiper-slide">
+                   <a href="product_detail.html?cid=<%=items[i].common_id %>">
+                   <img src="<%=items[i].common_image %>" alt="" class='main_img'>
+                   <span class='newprice'>￥<%=items[i].common_shared_price %></span>
+                   <span class='text'><%=items[i].common_name %></span>
+                   </a>
+                       <div class="bg1">分享立省￥<%=items[i].common_share_price %></div>
+                       <% if(items[i].common_is_promotion == '1'){ %>
+                       <div class="bg2">立赚￥<%=items[i].common_promotion_price %></div>
+                       <% } %>
+                   <span class='act'>
+                       <% if(items[i].is_man || items[i].common_is_jia == '1' || items[i].common_promotion_type != '0'){ %>
+                        <i>促销：</i>
+                        <% } %>
+                        <% if(items[i].is_man){ %>
+				            <b>满</b>
+				        <% } %>
+				        <% if(items[i].common_is_jia == '1'){ %>
+				            <b>加</b>
+				        <% } %>
+				        <% if(items[i].common_promotion_type == '1'){ %>
+                            <b>惠</b>
+                        <% }else if(items[i].common_promotion_type == '2'){ %>
+                            <b>限</b>
+                        <% }else if(items[i].common_promotion_type == '3'){ %>
+                            <b>手机专享</b>
+                        <% }else if(items[i].common_promotion_type == '4'){ %>
+                            <b>新</b>
+                        <% } %>
+                    </span>
+                   <% if(items[i].is_favorite){ %>
+                   <img src="../images/liked@2x.png" alt="" class='book_n' onclick="favor(this)" data-id="<%=items[i].goods_id %>">
+                   <% }else{ %>
+                   <img src="../images/like@2x.png" alt="" class='book_n' onclick="favor(this)" data-id="<%=items[i].goods_id %>">
+                   <% } %>
+               </div>
+               <% } %>
+               <!--<div class="swiper-slide"></div>-->
+           </div>
+       </div>
+        <% } %>
+    </script>
+    <!-- 店铺排行榜_销量排行 tpl -->
+    <script type="text/html" id="goodsrank_salenum_tpl">
+        <% if(items){ %>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <% for(var i in items){ %>
+                <div class="swiper-slide">
+                    <a href="product_detail.html?cid=<%=items.common_id %>">
+                    <img src="<%=items[i].common_image %>" alt="" class='main_img'>
+                    <span class='newprice'>￥<%=items[i].common_shared_price %></span>
+                    <span class='text'><%=items[i].common_name %></span>
+                    </a>
+                        <div class="bg1">立省￥<%=items[i].common_share_price %></div>
+                        <% if(items[i].common_is_promotion == '1'){ %>
+                        <div class="bg2">立赚￥<%=items[i].common_promotion_price %></div>
+                        <% } %>
+                    <span class='act'>
+                        <% if(items[i].is_man || items[i].common_is_jia == '1' || items[i].common_promotion_type != '0'){ %>
+                        <i>促销：</i>
+                        <% } %>
+                        <% if(items[i].is_man){ %>
+				            <b>满</b>
+				        <% } %>
+				        <% if(items[i].common_is_jia == '1'){ %>
+				            <b>加</b>
+				        <% } %>
+				        <% if(items[i].common_promotion_type == '1'){ %>
+                            <b>惠</b>
+                        <% }else if(items[i].common_promotion_type == '2'){ %>
+                            <b>限</b>
+                        <% }else if(items[i].common_promotion_type == '3'){ %>
+                            <b>手机专享</b>
+                        <% }else if(items[i].common_promotion_type == '4'){ %>
+                            <b>新</b>
+                        <% } %>
+                    </span>
+                    <% if(items[i].is_favorite){ %>
+                    <img src="../images/liked@2x.png" alt="" class='book_n' onclick="favor(this)" data-id="<%=items[i].goods_id %>">
+                    <% }else{ %>
+                    <img src="../images/like@2x.png" alt="" class='book_n' onclick="favor(this)" data-id="<%=items[i].goods_id %>">
+                    <% } %>
+                </div>
+                <% } %>
+                <!--<div class="swiper-slide"></div>-->
+            </div>
+        </div>
+        <% } %>
+    </script>
+    <!-- 店主推荐 tpl -->
+    <script type="text/html" id="goods_recommend_tpl">
+        <ul>
+            <% for (var i in rec_goods_list) { var g = rec_goods_list[i]; %>
+                <li class="goods-item">
+                    <a href="product_detail.html?goods_id=<%= g.goods_id %>">
+                        <div class="goods-item-pic">
+                            <img alt="" src="<%= g.common_image %>" />
+                        </div>
+                        <div class="goods-item-name">
+                            <%= g.common_name %>
+                        </div>
+                        <div class="bg1">分享立省￥<%=g.common_share_price %></div><br>
+                        <div class="bg2">立赚￥<%=g.common_promotion_price %></div>
+                        <div class="goods-item-price">￥<em><%= g.common_shared_price %></em></div>
+                    </a>
+                </li>
+                <% } %>
+        </ul>
+    </script>
+
+    <!--人气王-->
+    <script type="text/html" id="hot_goods">
+        <% if(hot_goods){ %>
+        <div class="renqiwang_title">人气王</div>
+        <% for(var i in hot_goods){ %>
+        <div class="renqiwang">
+            <a href="product_detail.html?goods_id=<%=hot_goods[i].id_goods %>">
+            <img src="<%=hot_goods[i].common_image %>" alt="" class="renqiwang_img">
+            <span><%=hot_goods[i].common_name %></span>
+            </a>
+            <div class="bg_all">
+                <div class="bg1">分享立省￥<%=hot_goods[i].common_share_price %></div>
+                <div class="bg2">立赚￥<%=hot_goods[i].common_promotion_price %></div>
+            </div>
+            <i>￥<%=hot_goods[i].common_shared_price %></i>
+            <u style="width: 100%;">销量:<%=hot_goods[i].common_salenum %></u>
+            <% if(hot_goods[i].is_favorite){ %>
+            <img src="../images/liked@2x.png" alt="" class='renqiwang_heart' onclick="favor(this)" data-id="<%=hot_goods[i].id_goods %>">
+            <% }else{ %>
+            <img src="../images/like@2x.png" alt="" class='renqiwang_heart' onclick="favor(this)" data-id="<%=hot_goods[i].id_goods %>">
+            <% } %>
+        </div>
+        <% } %>
+        <% } %>
+    </script>
+
+    <!--猜你喜欢-->
+    <script type="text/html" id="like_shop_goods">
+        <% if(like_goods && like_goods.length !=0){ %>
+        <div class="renqiwang_title">猜你喜欢</div>
+        <section class="guess-like" >
+            <% for(var i in like_goods){ %>
+            <div>
+                <a href="product_detail.html?cid=<%=like_goods[i].common_id %>">
+                    <img src="<%=like_goods[i].common_image %>"  alt="">
+                    <h3><%=like_goods[i].common_name %></h3>
+                </a>
+                <div class="bg">分享立省￥<%=like_goods[i].common_share_price %></div>
+                <div class="bg">立赚￥<%=like_goods[i].common_promotion_price %></div>
+                <b>￥<%=like_goods[i].common_shared_price %></b>
+                <a href="product_detail.html?cid=<%=like_goods[i].common_id %>"><button>购买</button></a>
+            </div>
+            <% } %>
+        </section>
+        <% } %>
+    </script>
+    <!-- 商品上新 tpl -->
+    <script type="text/html" id="newgoods_tpl">
+        <% var goods_list = items %>
+        <% if(goods_list.length > 0){ %>
+        <% for(var i in goods_list){  var v = goods_list[i]; %>
+        <div class="newgoods-like-item">
+            <a href="product_detail.html?goods_id=<%= v.goods_id %>">
+                <img src="<%= v.common_image %>"  alt="">
+                <h3><%=v.common_name %></h3>
+            </a>
+            <div class="bg">分享立省￥<%=v.common_share_price %></div>
+            <div class="bg">立赚￥<%=v.common_promotion_price %></div>
+            <b>￥<%=v.common_shared_price %></b>
+            <div class="heart_all">
+                <span>销量：<%=v.common_salenum %></span>
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+      <!--   <% var goods_list = items %>
+      <% if(goods_list.length >0){%>
+          <% for (var i in goods_list) { var v = goods_list[i]; %>
+              <% if(v.common_add_time){ %>
+                  <li class="addtime" addtimetext='<%=v.common_add_time %>'>
+                      <time>
+                          <%=v.common_add_time %>
+                      </time>
+                  </li>
+                  <% } %>
+                      <li class="goods-item">
+                          <a href="product_detail.html?goods_id=<%= v.goods_id %>">
+                              <div class="goods-item-pic">
+                                  <img alt="" src="<%= v.common_image %>" />
+                              </div>
+                              <div class="goods-item-name">
+                                  <%= v.goods_name %>
+                              </div>
+                              <div class="goods-item-price">￥<em><%= v.common_shared_price %></em></div>
+                          </a>
+                      </li>
+                      <% } %>
+                          <li class="loading">
+                              <div class="spinner"><i></i></div>商品数据读取中...</li>
+                          <% }else { %>
+                              <div class="nctouch-norecord search">
+                                  <div class="norecord-ico"><i></i></div>
+                                  <dl>
+                                      <dt>商铺最近没有新品上架</dt>
+                                      <dd>收藏店铺经常来逛一逛</dd>
+                                  </dl>
+                              </div>
+                              <% } %> -->
+    </script>
+
+
+    <!-- 店铺活动 tpl -->
+    <script type="text/html" id="storeactivity_tpl">
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>送福免单</span></div>
+            </div>
+            <a href="#"><img src="../images/activity/salespromotion_img/fu_banner.jpg" alt=""></a>
+        </section>
+        <% if(voucher){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>进店领券</span></div>
+            </div>
+            <a href="shopquan.html?shop_id=<%=voucher[0].shop_id %>"><img src="../images/activity/salespromotion_img/main1.png" alt=""></a>
+        </section>
+        <% } %>
+
+        <% if(scare && scare.length>0){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>今日疯抢</span></div>
+            </div>
+            <a href="crazyrob.html?shop_id=<%=scare[0].shop_id %>"><img src="../images/activity/salespromotion_img/main4.png" alt=""></a>
+        </section>
+        <% } %>
+
+        <% if(increase){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>加一购</span></div>
+            </div>
+            <a href="andone_shop.html?shop_id=<%=increase[0].shop_id %>"><img src="../images/activity/salespromotion_img/main2.png" alt=""></a>
+        </section>
+        <% } %>
+
+        <% if(mansong){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>满减送</span></div>
+            </div>
+            <a href="moneyoff.html?shop_id=<%=mansong.shop_id %>"><img src="../images/activity/salespromotion_img/main3.png" alt=""></a>
+        </section>
+        <% } %>
+
+        <% if(bundling){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>组合套装</span></div>
+            </div>
+            <a href="group_shop.html?shop_id=<%=bundling[0].shop_id %>"><img src="../images/activity/salespromotion_img/main5.png" alt=""></a>
+        </section>
+        <% } %>
+        <% if(discount && discount.length>0){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>劲爆折扣</span></div>
+            </div>
+            <a href="act_discount.html?shop_id=<%=discount[0].shop_id %>"><img src="../images/activity/salespromotion_img/main6.png" alt=""></a>
+        </section>
+        <% } %>
+        <% if(newbuyer){ %>
+        <section class="main">
+            <div class="word">
+                <div class="word-inner"><span>新人优惠</span></div>
+            </div>
+            <a href="store_newbuyer.html?shop_id=<%=newbuyer[0].shop_id %>"><img src="../images/activity/salespromotion_img/main7.png" alt=""></a>
+        </section>
+        <% } %>
+    </script>
+
+    <script type="text/html" id="store_voucher_con_tpl">
+        <div class="nctouch-bottom-mask">
+            <div class="nctouch-bottom-mask-bg"></div>
+            <div class="nctouch-bottom-mask-block">
+                <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+                <div class="nctouch-bottom-mask-top store-voucher">
+                    <i class="icon-store"></i>领取店铺代金券<a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+                </div>
+                <div class="nctouch-bottom-mask-rolling">
+                    <div class="nctouch-bottom-mask-con">
+                        <ul class="nctouch-voucher-list">
+                            <% var voucher_list = voucher.items %>
+                            <% if(voucher_list.length > 0){ %>
+                                <% for (var i=0; i < voucher_list.length; i++) { var v = voucher_list[i]; %>
+                                    <li>
+                                        <dl>
+                                            <dt class="money">面额<em><%=v.voucher_t_price %></em>元</dt>
+                                            <dd class="need">需消费
+                                                <%=v.voucher_t_limit %>元使用</dd>
+                                            <dd class="time">至
+                                                <%=v.voucher_t_end_date %>前使用</dd>
+                                        </dl>
+                                        <a href="javascript:void(0);" nc_type="getvoucher" class="btn" data-tid="<%=v.voucher_t_id%>">领取</a>
+                                    </li>
+                                    <% } %>
+                                        <% }else{ %>
+                                            <div class="nctouch-norecord voucher" style="position: relative; margin: 3rem auto; top: auto; left: auto; text-align: center;">
+                                                <div class="norecord-ico"><i></i></div>
+                                                <dl style="margin: 1rem 0 0;">
+                                                    <dt style="color: #333;">暂无代金券可以领取</dt>
+                                                    <dd>店铺代金券可享受商品折扣</dd>
+                                                </dl>
+                                            </div>
+                                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/swipe.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/simple-plugin.js"></script>
+    <script type="text/javascript" src="../js/zepto.waypoints.js"></script>
+    <script type="text/javascript" src="../js/ncscroll-load.js"></script>
+    <script type="text/javascript" src="../js/tmpl/store.js"></script>
+    <script type="text/javascript" src="../js/tmpl/footer.js"></script>
+    <script type="text/javascript" src='../js/swiper.min.js'></script>
+</body>
+
+</html>

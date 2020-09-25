@@ -1,0 +1,120 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+body,html{
+	background-color: #f2f2f2;
+}
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+	border-bottom: .02rem solid #eee;
+	position:fixed;
+	top:0;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+/***************头部部分结束**************************************/
+.fenxiaoshang{
+	width:100%;
+	height:1.2rem;
+	background-color: #fff;
+	margin-top:.8rem;
+	font-size: 0;
+}
+.fenxiaoshang .fenxiaoshang_item{
+	width:50%;
+	height:100%;
+	display:inline-block;
+	font-size: .26rem;
+	text-align: center;
+	color:#333;
+}
+.fenxiaoshang .fenxiaoshang_item span{
+	display:inline-block;
+	margin-top:.2rem;
+}
+.fenxiaoshang .fenxiaoshang_item i{
+	display:inline-block;
+	font-style:normal;
+	margin-top:.1rem;
+}
+.fenxiaoshang .cur{
+	border-bottom:.07rem solid #ff397a;
+}
+.leijixiaoshou{
+	width:100%;
+	height:1.5rem;
+	background-color: #fff;
+	margin-top:.35rem;
+	font-size: 0;
+	color:#333;
+	padding-left: .2rem;
+}
+.leijixiaoshou span{
+	display:inline-block;
+	font-size: .26rem;
+	margin-top:.3rem;
+}
+.leijixiaoshou i{
+	display:inline-block;
+	font-style:normal;
+	font-size: .32rem;
+	color:#e45050;
+	margin-top:.2rem;
+}
+.leijidingdan{
+	width:100%;
+	height:.85rem;
+	background: #fff;
+	margin-top:.35rem;
+	padding:0 .2rem 0 .2rem;
+}
+.leijidingdan span{
+	line-height: .85rem;
+	font-size: .24rem;
+	color:#333;
+}
+.leijidingdan span:nth-child(1){
+	float: left;
+}
+.leijidingdan span:nth-child(2){
+	float: right;
+}
+
+.button_wrap{
+	width:100%;
+	height:auto;
+	text-align: center;
+}
+.button_wrap button{
+	width:2.17rem;
+	height:.53rem;
+	border: .02rem solid #2d2348;
+	color:#2d2348;
+	background-color: #fff;
+	text-align: center;
+	line-height:.5rem;
+	border-radius: .3rem;
+	margin:0 auto;
+	margin-top:.55rem;
+	outline: none;
+	font-size: .22rem;
+}

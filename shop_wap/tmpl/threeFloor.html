@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/adaptation.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="../css/practical/common.css">
+    <link rel="stylesheet" href="../css/practical/practical.css">
+</head>
+<style>
+:root{
+    padding-bottom:3.5rem;
+}
+    .footer{
+    width:100%;
+    height:1.306667rem;
+    position:fixed;
+    bottom:0;
+    background-color: #fff;
+    z-index:200;
+}
+.footer ul{
+    font-size: 0;
+}
+.footer ul li{
+    width:20%;
+    height:100%;
+    display:inline-block;
+    text-align: center;
+    vertical-align:top;
+}
+.footer ul li img{
+    width:0.666667rem;
+    height:0.666667rem;
+    margin-top: 0.093333rem;
+}
+.footer ul li span{
+    display: block;
+    color:#333;
+    font-size: 0.293333rem;
+    margin-top: 0.066667rem;
+}
+.footer ul li:nth-child(3) img{
+    width:1.333333rem;
+    height:1.333333rem;
+    margin-top: -0.133333rem;
+}
+</style>
+<body></body>
+<script type="text/html" id="cont">
+    <div class="practical-container">
+        <div class="adv-wrap">
+            <% if(wap_head_image.items){ %>
+            <a href="<%=wap_head_image.items.wap_url %>"><img src="<%=wap_head_image.items.pic_url %>" alt=""></a>
+            <% }else{ %>
+            <img src="../images/practical/banner.png" alt="">
+            <% } %>
+        </div>
+        <!--main-->
+        <div class="practical-main">
+            <div class="main">
+                <!--秒杀区  start-->
+                <section class="main-top">
+                    <div class="title-m">
+                        <p class="title"><%=main_title[0] %></p>
+                        <span><%=assis_title[0] %></span>
+                    </div>
+                    <ul class="m-list clearfix">
+                        <% if(goodslist){ %>
+                        <% for(var i =0;i<4;i++){var items=goodslist[i] %>
+                        <li class="m-item lf">
+                            <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                <div class="img-wrap">
+                                    <img src="<%=items.common_image %>" alt="">
+                                </div>
+                                <p class="m-tobuy">
+                                    <span  class="m-price"><i>￥</i><span><%=items.common_shared_price %></span></span><span class="m-tobuyBtn">立即购买</span>
+                                </p>
+                            </a>
+                        </li>
+                       <% } %>
+                        <% } %>
+                    </ul>
+                </section>
+                <!--秒杀区  end-->
+
+                <div class="main-bottom">
+                    <!--虏获芳心-->
+                    <section class="panel-heart panel">
+                        <div class="title-panel">
+                            <p class="title"><%=main_title[1] %></p>
+                            <span><%=assis_title[i] %></span>
+                        </div>
+                        <div class="blockTow">
+                            <% if(goodslist){ %>
+                            <ul class="block-list clearfix">
+                                <li class="block-item clearfix lf b-shadow">
+                                    <a href="./product_detail.html?goods_id=<%=goodslist[4].id_goods %>">
+                                        <div class="block-b lf block">
+                                            <img src="<%=goodslist[4].common_image %>" alt="">
+                                        </div>
+                                        <div class="block-s lf block">
+                                            <div class="blocks-text">
+                                                <p class="title"><%=goodslist[4].common_name %></p>
+                                                <span class="sub-title"><%=goodslist[4].common_promotion_tips %></span>
+                                                <div class="share-wrap">
+                                                <span class="share-line">
+                                                    分享立减：<%=goodslist[4].common_share_price %>
+                                                </span>
+                                                    <span class="share-line">
+                                                    分享立减：<%=goodslist[4].common_promotion_price %>
+                                                </span>
+                                                </div>
+                                                <span class="to-b">立即抢购</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="block-item clearfix lf b-shadow">
+                                    <a href="./product_detail.html?goods_id=<%=goodslist[5].id_goods %>">
+                                        <div class="block-s lf block">
+                                            <div class="blocks-text">
+                                                <p class="title"><%=goodslist[5].common_name %></p>
+                                                <span class="sub-title"><%=goodslist[5].common_promotion_tips %></span>
+                                                <div class="share-wrap">
+                                                <span class="share-line">
+                                                    分享立减：<%=goodslist[5].common_share_price %>
+                                                </span>
+                                                    <span class="share-line">
+                                                    分享立减：<%=goodslist[5].common_promotion_price %>
+                                                </span>
+                                                </div>
+                                                <span class="to-b">立即抢购</span>
+                                            </div>
+                                        </div>
+                                        <div class="block-b lf block">
+                                            <img src="<%=goodslist[5].common_image %>" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <% } %>
+                        </div>
+                        <% if(goodslist){ %>
+                        <ul class="block-list clearfix">
+                            <% for(var i=6;i<14;i++){var items = goodslist[i] %>
+                            <li class="block-item lf b-shadow w-4">
+                                <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=items.common_image%>" alt="">
+                                    </div>
+                                    <div class="m-tobuy">
+                                        <p class="m-price"> <i>RMB:</i><span><%=items.common_shared_price %></span></p>
+                                        <p class="m-tobuyBtn">立即购买&gt;&gt;&gt;</p>
+                                    </div>
+                                </a>
+                            </li>
+                       <% } %>
+                        </ul>
+                        <% } %>
+                    </section>
+                    <!--虏获她的-->
+                    <section class="panel-it panel">
+                        <div class="title-panel">
+                            <p class="title"><%=main_title[2] %></i></p>
+                            <span><%=assis_title[2] %></span>
+                        </div>
+                        <% if(goodslist){ %>
+                        <ul class="block-list clearfix">
+                            <% for(var i =14;i<(goodslist.length);i++){var items = goodslist[i] %>
+                            <li class="block-item lf w-3">
+                                <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=items.common_image %>" alt="">
+                                    </div>
+                                    <div class="m-tobuy">
+                                        <p class="m-price"> <i>RMB:</i><span><%=items.common_shared_price %></span></p>
+                                        <p class="m-tobuyBtn">立即购买&gt;&gt;&gt;</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <% } %>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <img src="../images/opening/tab_home_snormal@3x.png" alt="">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="./product_first_categroy.html">
+                    <img src="../images/opening/tab_classify_normal@2x.png" alt="">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="./newbuyer.html"><img src="../images/opening/pennygo@2x.png" alt=""></a>
+            </li>
+            <li>
+                <a href="./cart_list.html">
+                    <img src="../images/opening/tab_cart_normal@3x.png" alt="">
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="./member/member.html">
+                    <img src="../images/opening/person.png" alt="">
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</script>
+<script type="text/javascript" src='../js/tmpl/jquery-1.8.3.min.js'></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/practical.js"></script>
+</html>

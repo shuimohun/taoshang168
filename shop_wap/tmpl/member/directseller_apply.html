@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+    <title>淘金申请</title>
+
+    <link rel="stylesheet" href="../../css/andone/base.css">
+    <link rel="stylesheet" href="../../css/member/applyfor.css">
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+
+    <style>
+        /*无数据信息为空提示*/
+        .nctouch-norecord { position: absolute; z-index: -1; top: 50%; left: 50%; width: 10rem; height: 8.2rem; margin: 0rem 0 0 -5rem; text-align: center; font-size: 0; }
+        .nctouch-norecord .norecord-ico {display: inline-block;width: 2.2rem;height: 2.2rem;padding: 0.4rem;margin: 0 auto;background-color: #DDD;border-radius: 100%;}
+        .nctouch-norecord .norecord-ico i { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: 80%; }
+        .nctouch-norecord dl { height: 2.75rem; margin-top: 0.75rem; }
+        .nctouch-norecord dl dt { display: block; height: 1rem; margin-bottom: 0.25rem; font-size: 0.35rem; line-height: 1rem; }
+        .nctouch-norecord dl dd { display: block; height: 1rem; margin-bottom: 0.5rem; font-size: 0.25rem; line-height: 1rem; color: #999; }
+        .btn { vertical-align: top; display: inline-block !important; height: 0.4rem; padding: 0 0.3rem; margin: 0 auto; font-size: 0.3rem; color: #555 !important; line-height: 0.4rem; text-align: center; background-color: #FFF; border: solid 1px #CCC; border-radius: 0.15rem }
+
+        /*操作提示弹出层*/
+        .s-dialog-mask { position: fixed; z-index: 999; top: 0; right: 0; bottom: 0; left: 0; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#BF000000', endColorstr='#BF000000');background:rgba(0,0,0,0.75);}
+        .s-dialog-wrapper { position: fixed; z-index: 9999;/* max-width: 12rem; min-width: 10rem;*/ margin-top: -2rem; border-radius: 0.08rem; left: 50%; top:62%;}
+        .s-dialog-skin-green { background-color: rgba(255,255,255,0.90); border: solid 0.05rem #000;}
+        .s-dialog-skin-block { background-color: rgba(255,255,255,0.90); border: solid 0.05rem #000;}
+        .s-dialog-skin-red { background-color: rgba(255,255,255,0.90); border: solid 0.01rem #000; padding: 0.3rem 0.8rem;}
+        .s-dialog-content { /*padding: 0.8rem 0.6rem;*/ text-align: center; font-size: 0.3rem; /*line-height: 0.9rem;*/}
+        .s-dialog-skin-green .s-dialog-content { color: #000;}
+        .s-dialog-skin-red .s-dialog-content { color: #000;}
+        .s-dialog-skin-block .s-dialog-content { color: #000;}
+        .s-dialog-content h6 { display: block; font-size: 0.55rem; line-height: 0.9rem; color: #333;}
+        .s-dialog-btn-wapper { display: block; padding: 0.6rem 0; border-top: solid 0.05rem rgba(0,0,0,0.15); font-size: 0; }
+        .s-dialog-btn-wapper a { display: inline-block; width: 49%; font-size: 0.7rem; font-weight: 600; line-height: 0.9rem; color: #0080FF; text-align: center;}
+        .s-dialog-btn-wapper a:last-child { border-left: solid 0.05rem rgba(0,0,0,0.15);}
+        .s-dialog-skin-block .s-dialog-btn-wapper a { color: #0080FF;}
+
+        #scroller { position: absolute; z-index: 1; -webkit-tap-highlight-color: rgba(0,0,0,0); width: 100%; -webkit-transform: translateZ(0); -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0); -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -o-text-size-adjust: none; text-size-adjust: none; }
+        #scroller ul { list-style: none; padding: 0; margin: 0; width: 100%; text-align: left; }
+        #scroller li { padding: 0 10px; height: 40px; line-height: 40px; border-bottom: 1px solid #ccc; border-top: 1px solid #fff; background-color: #fafafa; font-size: 14px; }
+
+    </style>
+
+</head>
+
+<body style="margin-bottom:1.55rem">
+<header class="person">
+    <div class="title">
+        <a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+        <span>淘金申请</span>
+        <a href=""><img src="../../images/search.png" alt=""  class="info"></a>
+        <a href=""><img src="../../images/dialogbox.png" alt=""  class="dialogbox"></a>
+    </div>
+    <span class="number">1</span>
+    <!--滚动导航栏部分-->
+    <div class="find_nav">
+        <div class="find_nav_left">
+            <div id="topNav" class="swiper-container">
+                <div class="swiper-wrapper" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--滚动导航栏部分-->
+</header>
+
+    <div id="info">
+
+    </div>
+</div>
+
+    <script type="text/html" id="apply-list-tmpl">
+        <% var applylist = data.class;  %>
+        <% if (applylist.length > 0){%>
+            <div class="swiper-slide active" id="abc" data-id="0"><span>全部分类</span></div>
+            <% for (var i in applylist) {%>
+                <div class="swiper-slide"  data-id="<%=applylist[i].shop_class_id %>"><span><%=applylist[i].shop_class_name %></span></div>
+            <%}%>
+        <% } %>
+    </script>
+
+    <script type="text/html" id="apply1-list-tmpl">
+        <% var applylist = data.items;  %>
+        <% if (applylist.length > 0){%>
+        <% for (var i in applylist) {%>
+            <div class="item">
+                <ul id="apply-list">
+                    <li>
+                        <span>店铺</span><br>
+                        <i><%=applylist[i].shop_name %></i>
+                    </li>
+                    <li>
+                        <span>消费金额</span><br>
+                        <i>
+                            <% if (applylist[i].expends){%>
+                               ￥<%=applylist[i].expends %>
+                            <% } else {%>
+                                ￥0.00
+                            <% } %>
+                        </i>
+                    </li>
+                    <li>
+                        <span>创建时间</span><br>
+                        <i>
+                            <% if (applylist[i].apply_enable) { %>
+                            <%=applylist[i].shop_create_time %>
+                            <% } else{%>
+
+                            <%}%>
+                        </i>
+                    </li>
+                </ul>
+                <div class="apply">
+                    <span>
+                         <% if (applylist[i].expenditure) { %>
+                               满￥<%=applylist[i].expenditure%>可申请
+                          <% } else{%>
+                           成功消费任意金额
+                         <%}%>
+                    </span>
+                    <button type="button">
+                        <% if(!applylist[i].status&&applylist[i].status!=''){	if(applylist[i].apply_enable){%>
+                        <a href="javascript:void(0);" onclick="apply('<%=applylist[i].shop_id%>')">申请淘金</a>
+                        <% }else{ %>
+                            <span class="tanchu">未满足条件</span>
+                        <% } %>
+
+                        <% }else{ if(applylist[i].status==0){%>
+                        等待审核
+                        <% }else{%>
+                        审核通过
+                        <% }}%>
+                    </button>
+                </div>
+            </div>
+        <%}%>
+        <%} else{%>
+                <div class="nctouch-norecord order">
+            <div class="norecord-ico"><i></i></div>
+            <dl>
+            <dt>您还没有相关的店铺</dt>
+            <dd>可以去看看哪些想要买的</dd>
+            </dl>
+            <a href="<%=WapSiteUrl%>" class="btn">随便逛逛</a>
+            </div>
+        <%}%>
+    </script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+<script type="text/javascript" src="../../js/tmpl/directseller_apply.js"></script>
+</body>
+
+</html>

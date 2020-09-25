@@ -1,0 +1,131 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #1a1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+.all{
+    width:60%;
+    height:.62rem;
+    font-size: 0;
+    background-color:#fff;
+    display:inline-block;
+    vertical-align:top;
+}
+.all li{
+    display: inline-block;
+    border-right: .01rem solid #eee;
+    width:33.3333333%;
+    height:.62rem;
+    text-align: center;
+    line-height: .62rem;
+    font-size:.22rem;
+    color:#666;
+}
+.all li.cur{
+    color:#e45050;
+}
+.all_right{
+    display:inline-block;
+    width:37%;
+    height:.62rem;
+    vertical-align:top;
+    font-size: 0;
+}
+.all_right span{
+    display:inline-block;
+    width:33.333333333%;
+    height:100%;
+    line-height:.62rem;
+    text-align: center;
+    font-size: .18rem;
+    color:#666;
+    position:relative;
+}
+.all_right span input{
+    display:inline-block;
+    border:0 none;
+    width:.25rem;
+    height:.25rem;
+    outline: none;
+    outline:none;
+    border-radius: 50%;
+    margin-top:.1rem;
+    position:absolute;
+    top:10%;
+    left:-10%;
+}
+.contain{
+    width:100%;
+    height:1.58rem;
+    background-color:#fff;
+}
+.contain .contain_top{
+    width:100%;
+    height:.48rem;
+    background-color:#fff;
+    margin-top:.1rem;
+    border-bottom: .01rem solid #eee;
+    line-height:.48rem;
+    font-size: .16rem;
+    position:relative;
+}
+.contain .contain_top input{
+    width:.2rem;
+    height:.2rem;
+    position:absolute;
+    top:23%;
+    left:3%;
+    outline:none;
+}
+.contain .contain_top label{
+    margin-left: .5rem;
+    color: #666;
+}
+.contain u{
+    display:block;
+    text-decoration: none;
+    font-size: .22rem;
+    color:#666;
+    border-left: .02rem solid #e45050;
+    margin-left: .2rem;
+    padding-left: .1rem;
+    margin-top:.1rem;
+}
+.contain b{
+    width:5.46rem;
+    height:.46rem;
+    display:block;
+    font-weight:normal;
+    color:#666;
+    font-size: .2rem;
+    margin-left: .2rem;
+    margin-top:.1rem;
+    overflow: hidden;
+}

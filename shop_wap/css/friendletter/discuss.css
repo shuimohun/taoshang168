@@ -1,0 +1,43 @@
+/* 评论样式*/
+.discuss{
+    width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+    position: fixed; left: 0; top:0; z-index: 1001;
+}
+.discuss .discuss_top{
+    width: 100%; height:0.7rem; line-height: 0.7rem; border-bottom: 1px solid #838383; font-size: 0.26rem; color: #fff; text-indent: 0.26rem;
+}
+.discuss .discuss_close{
+	width: 0.43rem; height:0.43rem; position:absolute; right: 1%; top:0.2rem; font-size: 0.3rem; color: #fff; text-align: center;
+}
+.discuss_list{ width: 94%; margin: 0 auto;}
+.discuss_item{ margin-top: 0.15rem; width: 100%; position: relative;}
+.discuss .left_tx{
+	width:0.86rem;height:0.86rem; overflow: hidden; border-radius: 50%; border: 1px solid #fff; position: absolute; left: 0; top: 0;
+}
+.discuss .left_tx img{
+	width:0.86rem;height:0.86rem;  border-radius: 50%;
+}
+.discuss .right_main{
+    margin-left:0.9rem;
+}
+.right_main_top{
+	
+}
+.right_main_top .user_name{
+
+}
+.right_main_top .d_zan{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

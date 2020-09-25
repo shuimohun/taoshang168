@@ -1,0 +1,134 @@
+﻿.left, .center, .l, .right, .r {
+    display: inline;
+    float: left;
+}
+#payrowB {
+    margin: 40px auto;
+    padding: 35px;
+    overflow: hidden;
+    border: 1px solid #D5E5F5;
+    border-radius: 5px;
+}
+#payrowB .left {
+    padding: 50px 0 80px 95px;
+    text-align: left;
+    width: 240px;
+}
+#payrowB .left .myerwmpic {
+    padding-bottom: 24px;
+}
+.feedbackpanel select, input, img {
+    vertical-align: middle;
+}
+#payrowB .left .price {
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+#payrowB .left .price strong {
+    font: 700 30px/40px '微软雅黑';
+}
+#payrowB .left .price i {
+    font-size: 24px;
+}
+#payrowB .left .order {
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 26px;
+}
+#payrowB .left .kefu {
+    padding-top: 20px;
+}
+#payrowB .left .kefu i {
+    background: url('../images/v1icon2.837b8713.png') no-repeat;
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin-right: 10px;
+}
+#payrowB .left .kefu p {
+    font: 700 18px/24px '微软雅黑';
+}
+
+.right, .r {
+    float: right;
+}
+#payrowB .right {
+    width: 600px;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+#payrowB .right .wtenpay {
+    text-align: left;
+    width: 267px;
+    margin-right: 20px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    top: 40px;
+    _top: 40px;
+    _padding-top: 30px;
+    _height: 340px;
+}
+    #payrowB .right .pic {
+        width: 267px;
+        height: 267px;
+        background: url('../images/loading-1.fc5463d2.gif') center center no-repeat;
+    }
+#payrowB .right .wtenpay img {
+    width: 265px;
+    height: 265px;
+    border: 1px solid #e7e7e7;
+}
+#payrowB .right .wtenpay .fb {
+    padding: 10px;
+    border-radius: 3px;
+    background: #f66;
+    font: 700 14px/20px '微软雅黑';
+    color: #fff;
+    margin-top: 20px;
+    width: 247px;
+}
+    #payrowB .right .wtenpay .fb i {
+        width: 34px;
+        height: 34px;
+        float: left;
+        background: url('../images/v1icon2.837b8713.png') 0 -40px no-repeat;
+        margin: 4px 20px 0;
+        display: inline;
+    }
+#payrowB .right .animation {
+    width: 260px;
+    height: 380px;
+    background: url('../images/v1icon3.142259b7.png') no-repeat;
+    _background: url('../images/v1icon3ie6.57712d61.png') no-repeat;
+    position: absolute;
+    top: 20px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    left: -20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

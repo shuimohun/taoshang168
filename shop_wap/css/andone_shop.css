@@ -1,0 +1,384 @@
+@charset "utf-8";
+
+/***********************头部部分***************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	/* position:fixed;
+	    top:0;
+	    left:0; */
+    z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:38%;
+}
+/***********************头部部分***************************/
+
+#topNav {
+        width: 100%;
+        overflow: hidden;
+        font-size: 0.4375rem;
+        border-bottom:1px solid #f8f8f8;
+        height:.77rem;
+    }
+    #topNav .swiper-slide {
+        padding: 0;
+        width:1.2rem;
+        text-align:center;
+        line-height: .77rem;
+        height:.77rem;
+    }
+    #topNav .swiper-slide span{
+        transition:all .3s ease;
+        display:block;
+        line-height: .77rem;
+        height:.77rem;
+        font-size: .26rem;
+    }
+    #topNav .active span{
+        color:#FF2D2D;
+        line-height: .77rem;
+        width:1.2rem;
+        height:.77rem;
+        font-size: .26rem;
+    }
+    #topNav .swiper-wrapper{
+        height:.77rem;
+    }
+
+.buy_goods{
+    width:100%;
+    height:2rem;
+    border-bottom:.01rem solid #f2f2f2;
+    background-color: #fff;
+    position:relative;
+}
+.buy_goods .goods_img{
+    width:2rem;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods .goods_img img{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods .buy_title{
+	display:inline-block;
+	width:3.7rem;
+	height:.3rem;
+	color:#333;
+	font-size: .24rem;
+	overflow:hidden;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
+
+.buy_goods .bg1{
+    display:inline-block;
+    width:auto;
+    height:auto;
+    background:url(../images/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:35%;
+
+}
+.buy_goods .bg2{
+    display:inline-block;
+    width:auto;
+    height:auto;
+    background:url(../images/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:55%;
+}
+.buy_goods .price{
+	color:#999;
+	font-size: .26rem;
+	position:absolute;
+    bottom:20%;
+	left:35%;
+}
+.buy_goods .cuxiao{
+	font-size: .18rem;
+	color:#e45050;
+	position:absolute;
+    bottom:38%;
+	left:35%;
+}
+.buy_goods .cuxiao i{
+	font-size: .18rem;
+	color:#e45050;
+	border-radius:.04rem;
+	border:.01rem solid #e45050;
+	font-style:normal;
+	padding:.01rem;
+	margin-left:.1rem;
+}
+.buy_goods .bar{
+	position:absolute;
+	bottom:5%;
+	left:35%;
+	font-size: .26rem;
+	font-size: #333;
+}
+.buy_goods button{
+	width:1.2rem;
+	height:.46rem;
+	display:inline-block;
+	border-radius:.3rem;
+	border: .01rem solid #e11222;
+	background-color:#fff;
+	text-align: center;
+	line-height:.46rem;
+	font-size: .2rem;
+	color:#e11222;
+	position:absolute;
+	bottom:10%;
+	right:5%;
+	outline:0 none;
+}
+.buy_goods .qiang{
+	font-size: .18rem;
+	color:#e11222;
+	position:absolute;
+	bottom:36%;
+	right:9%;
+}
+.buy_goods .shoucang{
+	width:.45rem;
+	height:.45rem;
+	position:absolute;
+	bottom:8%;
+	right:28%;
+}
+
+
+
+
+
+
+
+
+
+
+.buy_goods_over{
+    width:100%;
+    height:2rem;
+    border-bottom:.01rem solid #f2f2f2;
+    background-color: #fff;
+    position:relative;
+}
+.buy_goods_over .goods_img{
+    width:2rem;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_over .goods_img img{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_over .buy_title{
+	display:inline-block;
+	width:3.7rem;
+	height:.3rem;
+	color:#333;
+	font-size: .24rem;
+	overflow:hidden;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
+
+.buy_goods_over .bg1{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../images/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:35%;
+
+}
+.buy_goods_over .bg2{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../images/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:55%;
+}
+.buy_goods_over .price{
+	color:#999;
+	font-size: .26rem;
+	position:absolute;
+    bottom:20%;
+	left:35%;
+}
+.buy_goods_over .cuxiao{
+	font-size: .18rem;
+	color:#e45050;
+	position:absolute;
+    bottom:38%;
+	left:35%;
+}
+.buy_goods_over .cuxiao i{
+	font-size: .18rem;
+	color:#e45050;
+	border-radius:.04rem;
+	border:.01rem solid #e45050;
+	font-style:normal;
+	padding:.01rem;
+	margin-left:.1rem;
+}
+.buy_goods_over .bar{
+	position:absolute;
+	bottom:5%;
+	left:35%;
+	font-size: .26rem;
+	font-size: #333;
+}
+.buy_goods_over button{
+	width:1.2rem;
+	height:.46rem;
+	display:inline-block;
+	border-radius:.3rem;
+	border: .01rem solid #999;
+	background-color:#fff;
+	text-align: center;
+	line-height:.46rem;
+	font-size: .2rem;
+	color:#999;
+	position:absolute;
+	bottom:10%;
+	right:5%;
+	outline:0 none;
+}
+.buy_goods_over .qiang{
+	font-size: .18rem;
+	color:#e11222;
+	position:absolute;
+	bottom:36%;
+	right:9%;
+}
+.buy_goods_over .shoucang{
+	width:.45rem;
+	height:.45rem;
+	position:absolute;
+	bottom:8%;
+	right:28%;
+}
+.title_bg{
+	width:100%;
+	height:1rem;
+	background:url(../images/keguan@3x.png) no-repeat left top;
+	background-size:100% 100%;
+	text-align: center;
+}
+.title_bg span{
+	display:inline-block;
+	font-size: .2rem;
+	margin-top: .6rem;
+	color:#999;
+}
+
+
+
+.buy_goods_change{
+    width:100%;
+    height:2rem;
+    border-bottom:.01rem solid #f2f2f2;
+    background-color: #fff;
+    position:relative;
+}
+.buy_goods_change .goods_img{
+    width:2rem;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_change .goods_img img{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_change .buy_title{
+	display:inline-block;
+	width:3.7rem;
+	height:.3rem;
+	color:#333;
+	font-size: .24rem;
+	overflow:hidden;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
+
+.buy_goods_change .price{
+	color:#e45050;
+	font-size: .26rem;
+	position:absolute;
+    bottom:10%;
+	left:35%;
+}
+.buy_goods_change .cuxiao{
+	font-size: .18rem;
+	color:#999;
+	position:absolute;
+    bottom:53%;
+	left:35%;
+}
+.buy_goods_change .bar{
+	position:absolute;
+	bottom:10%;
+	left:50%;
+	font-size: .26rem;
+	color: #999;
+}
+.buy_goods_change .qiang{
+	font-size: .18rem;
+	color:#e11222;
+	position:absolute;
+	bottom:36%;
+	right:9%;
+}

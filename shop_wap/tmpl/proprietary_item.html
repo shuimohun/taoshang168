@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>今日上新</title>
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<link rel="stylesheet" href="../css/activity/proprietary_item.css">
+	<link rel="stylesheet" href="../css/activity/swiper.min.css">
+</head>
+<body style="margin-top: .8rem">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="img/icon_back.png" alt=""></a>
+			<span>今日上新</span>
+		</div>
+	</header>
+	<!--头部部分-->
+	<div class="getGoods"></div>
+
+	<script type="text/html" id="getGoods">
+		<% if(items){ %>
+		<% for(var i in items){var item = items[i]; %>
+		<div class="buy_goods">
+			<a href="product_detail.html?goods_id=<%=item.goods_id %>" style='color: #000'>
+				<div class="goods_img">
+					<img src="<%=item.common_image %>" alt="">
+				</div>
+				<span class='buy_title'><%=item.common_name %></span><br>
+				<div class="bg1">分享立省￥<%=item.common_share_price %></div>
+				<div class="bg2">分享立赚￥<%=item.common_promotion_price %></div>
+				<% if(item.common_promotion_type !='0' || item.common_is_jia !='0'){ %>
+				<div class='cuxiao'>
+					促销
+					<% if(item.common_promotion_type == '1'){ %>
+					<i>惠</i>
+					<% } %>
+					<% if(item.common_promotion_type == '2'){ %>
+					<i>限</i>
+					<% } %>
+					<% if(item.common_promotion_type == '3'){ %>
+					<i>手</i>
+					<% } %>
+					<% if(item.common_promotion_type == '4'){ %>
+					<i>新</i>
+					<% } %>
+					<% if(item.common_is_jia != '0'){ %>
+					<i>加</i>
+					<% } %>
+				</div>
+				<% } %>
+				<span class='price'><span style="color:#999">销量：</span><%=item.common_salenum %></span>
+				<span class="bar"><span style="color:#999">评论:</span><%=item.common_evaluate %></span>
+				<u>￥<%=item.common_shared_price %></u>
+			</a>
+			<%if(item.is_like > 0){%>
+			<img src="../images/activity/liked@2x.png" alt="" class='shoucang' onclick="clle(this)" goods-id="<%=item.goods_id %>">
+			<%}else{%>
+			<img src="../images/activity/like@2x.png" alt="" class='shoucang' onclick="clle(this)" goods-id="<%=item.goods_id %>">
+			<%}%>
+		</div>
+		<% }} %>
+	</script>
+
+	<script type="text/javascript" src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+	<script type="text/javascript" src='../js/activity/swiper.min.js'></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary_item.js'></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+	border-bottom: .01rem solid #e7e7e7;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title b{
+	font-size:.26rem;
+	line-height: .37rem;
+	color:#373737;
+	float: right;
+	margin-right: .2rem;
+}
+/***************头部部分结束**************************************/
+
+/****************修改部分******************/
+.change{
+	width:100%;
+	height:.75rem;
+	border-bottom:.01rem solid #eeeeee;
+}
+.change #name{
+	float: left;
+	font-size: .26rem;
+	line-height:.75rem;
+	margin-left:.18rem;
+	width:80%;
+	border:0 none;
+	outline:none;
+}
+.change img{
+	float: right;
+	width:.32rem;
+	height:.32rem;
+	margin:.2rem .18rem 0 0;
+}
+/****************修改部分******************/
+
+/**********提示部分**********/
+.prompt{
+	display: block;
+	font-size: .16rem;
+	color:#999999;
+	margin:.15rem 0 0 .18rem; 
+}
+/**********提示部分**********/
+
+
+/******修改名字确认弹窗*********/
+*{
+	margin:0;
+	padding:0;
+}
+.win-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.win-top{
+	width:5rem;
+	height:2.5rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-2.85rem;  */
+	left:50%;
+	margin-left:-2.5rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.win-top u{
+	text-align: center;
+	display:inline-block;
+	text-decoration:none;
+	font-size: .26rem;
+	color:#666;
+	display:block;
+}
+.win-top u:nth-child(1){
+	margin-top:.4rem;
+	margin-bottom: .1rem;
+}
+.win-top #cache_cancel{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:.01rem solid #666;
+	background-color: #fff;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#505050;
+	margin:.35rem 0 0 7%;
+}
+.win-top #cache_confirm{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:0 none;
+	background-color: #e45050;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#fff;
+	margin:.35rem 0 0 8%;
+}

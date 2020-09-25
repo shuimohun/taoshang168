@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>商家提现</title>
+	<link rel="stylesheet" href="../../css/money/merchant.css">
+	<link rel="stylesheet" href="../../css/money/base.css">
+	<script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/money/back.png" alt=""></a>
+			<span>商家提现</span>
+			<a href="#"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--账户余额-->
+	<div class="balance">
+		<span>账户余额(元)</span><br>
+		<h1></h1><br>
+		<u id="btn"><img src="../../images/money/eye_1@3x.png" alt=""> 余额可见</u>
+	</div>
+
+	<ul class="balance_list"></ul>
+	<!--账户余额-->
+
+	<!--表单-->
+	<form action="#" id="form" method="post">
+		<ul>
+			<li>
+				<label>银行开户名:</label>
+				<input id="bank_name" type="text" value="">
+			</li>
+			<li>
+				<label>法人代表:</label>
+				<input id="company_name" type="text" value="">
+			<li>
+				<label>公司银行账号:</label>
+				<input id="card_number"  type="text" value="">
+			</li>
+			<li>
+				<label>开户银行支行名称:</label>
+				<input id="bank_z_name" type="text" value="">
+			</li>
+			<li>
+				<label>开户银行支行联行号:</label>
+				<input id="late" type="text" value="">
+			</li>
+			<li>
+				<label>开户银行支行所在地:</label>
+				<input id="address" type="text" value="">
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<label>提现金额:</label>
+				<input id="with_money"  type="number" onkeyup="amount(this)" onblur="checkMoney(this)">
+				<p id="hint" style="display:none;"></p>
+			</li>
+			<li>
+				<label>服务费:</label>
+				<span>￥<i id="service_money">0</i>(付款总额￥<u id="acount_total">0</u>)</span>
+			</li>
+			<li>
+				<label>手机号码:</label>
+				<span class="nmb"></span>
+			</li>
+			<li>
+				<label>验 证 码</label>
+				<input type="text" value="" id="yzmval" onchange="javascript:checkyzm();">
+				<input type="button" value="获取手机验证码" class="yanzhengma" data-type="mobile">
+				<p id="yzm" style="display:none;"></p>
+			</li>
+			<li>
+				<label>支付密码:</label>
+				<input type="password" value="" id="password">
+			</li>
+			<li>
+				<label>提现说明:</label>
+				<input type="text" value="" id="con">
+			</li>
+			<input type="submit" value="确认提现" class="ensure"><a href="">提现记录</a>
+		</ol>
+	</form>
+	<!--表单-->
+
+	<img src="../../images/money/word.png" alt="" style='width: 100%;height: 100%;margin-top: .2rem;'>
+	<script type="text/html" id="fee">
+		<% if(service_fee_list) { %>
+		<% var items = service_fee_list %>
+		<% for(var i in items) { %>
+		<% if(i == 0){ %>
+		<li class="cur">
+			<% }else{ %>
+		<li>
+			<% } %>
+			<span><%=items[i].name %></span><br>
+			<u>(<%=items[i].fee_rates %>%服务费)</u>
+			<input type="hidden" value="<%=items[i].id %>" class="service_fee_id">
+			<input type="hidden" value="<%=items[i].fee_rates %>" class="service_fee_rates">
+			<input type="hidden" value="<%=items[i].fee_min %>" class="fee_min">
+			<input type="hidden" value="<%=items[i].fee_max %>" class="fee_max">
+		</li>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/template.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/swipe.js"></script>
+	<script type="text/javascript" src="../../js/validator/jquery.validator.js"></script>
+	<script type="text/javascript" src="../../js/validator/local/zh_CN.js"></script>
+	<script type="text/javascript" src="../../js/merchant_withdraw.js"></script>
+</body>
+</html>

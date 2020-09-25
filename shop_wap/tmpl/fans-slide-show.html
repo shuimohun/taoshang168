@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的晒图</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/fansBase.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/page.css">
+    <style>
+        .share_tanchuang{width:100%;/*height:13rem;*/background-color:#fff;bottom:0;z-index:1000}
+        .share_title_img{width:100%;height:15%}
+        .share_tanchuang .share_channel{width:100%;/*height:13%;*/font-size:0; margin-bottom: 0.3rem;}
+        .share_tanchuang .share_channel li{display:inline-block;font-size:.25rem;text-align:center;width:20%;vertical-align:top}
+        .share_tanchuang .share_channel li img{width:0.75rem;height:0.75rem;margin-top:.1rem}
+        .share_tanchuang .share_channel li span{display:block;color:#999;width: 100%; margin: 0.1rem auto; text-align: center; font-size: 0.2rem;}
+        .share_tanchuang .share_channel li i{color:#999; width: 100%; font-size: 0.23rem;}
+        .share_tanchuang .share_channel li i i{color:#e45050}
+        .share_tanchuang p{font-size:.22rem;color:#999;padding:0 5% 0 5%;margin-top:.1rem}
+        .share_tanchuang p span{font-size:.26rem;color:#666}
+        .nctouch-bottom-mask-top.share{padding:0!important}
+        .shared i{color:#e45050!important}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        .open{width:100%;height:2rem;z-index:1000000000;display:none;font-size:0;position:relative}
+        .open .open_title{width:70%;height:100%}
+        .open .open_click{width:30%;height:100%}
+        .open .open_close{position:absolute;left:3%;top:24%;width:1.1rem;height:1.1rem}
+        .transparent{margin-top:2rem}
+        .after_add{margin-top:0.395rem;position:relative; width: 100%;}
+        /*.after_add:after{content:'';display:table;clear:both}
+         .after_add:before{content:'';background-color:#eee;width:88%;height:.05rem;position:absolute;top:0;left:1rem}*/
+        .after_add span{float:left; text-align:center;font-size:.22rem;width:50%; display: block;}
+        .after_add span a{display:inline-block;width:100%;height:0.6rem;line-height:0.6rem}
+        .after_add span.cancel{color:#ED5564}
+        .after_add span.cancel a{color:#ED5564}
+        .after_add span.to_buy a{color:#fff;background-color:#ED5564;}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        /*20180503增加开始*/
+        .share_describe{ font-size: 0.5rem;}
+        .share_describe span{ font-size: 0.6rem;}
+        /*20180503增加结束*/
+        /*20180608*/
+        .nctouch-bottom-mask{ width: 100%; height: 100%;}
+        .nctouch-bottom-mask.up{display: block;}
+        .nctouch-bottom-mask.up .nctouch-bottom-mask-block{bottom: 0 ; animation: optionBlockUp 0.5s ease-in-out; -webkit-animation:optionBlockUp 0.5s ease-in-out;}
+        .nctouch-bottom-mask.down{display: none; }
+        .nctouch-bottom-mask.down .nctouch-bottom-mask-block{bottom:-4rem ;animation: optionBlockUp 0.5s ease-in-out; -webkit-animation:optionBlockUp 0.5s ease-in-out;}
+        .nctouch-bottom-mask-block{ min-height: 3.2rem}
+        .nctouch-bottom-mask-tip{ top: -0.7rem; font-size: 0.20rem }
+        .nctouch-bottom-mask-tip i{ width: 0.4rem;}
+        .nctouch-bottom-mask-close{ width: 0.45rem; height: 0.45rem; padding: 0.05rem; top: -0.2rem}
+        .share_tanchuang .share_channel li img{ width: 0.75rem; height: 0.75rem;}
+    </style>
+</head>
+<body>
+<header class="person">
+    <div class="title">
+        <a href="javascript:history.go(-1)"><img src="img/fans-circle/back.png" alt=""></a>
+        <span>我的晒图</span>
+        <a href="javascript:void(0);"><img src="img/fans-circle/dialogbox.png" alt=""  class="dialogbox"></a>
+    </div>
+    <!--<span class="number">16</span>-->
+</header>
+<!--粉丝圈内容区开始-->
+<div class="main">
+    <div class="fans-item">
+        <div class="fans-information fans-information-no-comment">
+            <img src="" class="fans-headpic user-logo" alt="">
+            <span class="fans-name user-name"></span>
+            <button class="fans-comment-btn">写评价</button>
+        </div>
+        <div class="no-comment-goods">
+            <p class="no-comment-text">没来得及评价的宝贝，还来得及哦</p>
+            <div class="no-comment-pic">
+                <script type="text/html" id="noContent">
+                    <%if(noContent.items){%>
+                    <ul class="clearfix">
+                        <%for(var i in noContent.items){%>
+                            <a href="./member/member_evaluation_again.html?order_id=<%=noContent.items[i].order_id%>"><li><img src="<%=noContent.items[i]['goods_image']%>" alt=""></li></a>
+                        <%}%>
+                    </ul>
+                    <%}%>
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="fans-comment-tab clearfix">
+        <a href="javascript:;" class="fans-comment-main cur hasAll">全部</a>
+        <a href="javascript:;" class="fans-comment-main hasImg">有图</a>
+    </div>
+    <div class="contentEval">
+
+    </div>
+
+</div>
+<!--分享弹框开始-->
+<div id="share_html" class="nctouch-bottom-mask down">
+
+</div>
+<!--分享弹框结束-->
+<script type="text/html" id="fansItem">
+    <%if(all){%>
+        <%for(var i in all.items){%>
+            <div class="fans-item all">
+                <div class="fans-information">
+                    <img src="<%=all.items[i][0]['user_logo']%>" class="fans-headpic" alt="">
+                    <span class="fans-name"><%=all.items[i][0]['member_name']%></span>
+                    <div class="fans-comment-date">
+                        <span><%=all.items[i][0]['create_time']%></span>
+                    </div>
+                </div>
+                <div class="fans-comment-result" data-id="<%=all.items[i][0].evaluation_goods_id%>"><p><%=all.items[i][0]['content']%></p></div>
+                <div class="fans-goods-detail">
+                    <a href="./product_detail.html?goods_id=<%=all.items[i][0]['goods_id']%>">
+                        <img src="<%=all.items[i][0]['goods_image']%>" alt="" class="fans-goods-pic">
+                        <div class="fans-goods-describe">
+                            <p class="fans-goods-title"><%=all.items[i][0]['goods_name']%></p>
+                            <div class="fans-goods-save"><%if(all.items[i][0]['goods_share_price']){%><span>分享立省<i><%=all.items[i][0]['goods_share_price']%></i>￥</span><%}%><%if(all.items[i][0]['goods_promotion_price']){%><span>分享立赚<i><%=all.items[i][0]['goods_promotion_price']%></i>￥</span><%}%></div>
+                            <div class="fans-goods-price">
+                                <p class="fans-goods-price-num">￥<span><%=all.items[i][0]['goods_price']%>元</span></p>
+                                <p class="fans-goods-score">商品评分:<%=all.items[i][0].scores%><span>好评率<i><%=all.items[i][0]['countGoodEvaluation']%>%</i></span></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="fans-goods-comment-num">
+                    <%if(all.items[i][0]['goods_click']){%>
+                        <span class="comment-num">浏览<%=all.items[i][0]['goods_click']%>次</span>
+                    <%}else{%>
+                        <span class="comment-num">浏览0次</span>
+                    <%}%>
+                    <%if(all.items[i][0]['countEvaluationTickle']){%>
+                        <span class="comment-num">点赞<%=all.items[i][0]['countEvaluationTickle']%>次</span>
+
+                    <%}else{%>
+                        <span class="comment-num">点赞0次</span>
+
+                    <%}%>
+                    <span class="comment-icon1 <%if(all.items[i][0].on){%> on <%}%>" onclick="tickle(this,<%=all.items[i][0].evaluation_goods_id%>)" data-id="<%=all.items[i][0].evaluation_goods_id%>"></span>
+
+                    <a href="./member/member_evaluation_again.html?order_id=<%=all.items[i][0].order_id%>"><span class="comment-icon2"></span></a>
+                    <span class="comment-icon3" data-id="<%=all.items[i][0].goods_id%>"></span>
+                </div>
+                <!--新增商品评价星星和图片-->
+                <div class="fans-goods-evaluate">
+                    <div class="evaluate-star">
+                        <%for(var j=1;j<=all.items[i][0]['goods_evaluation_good_star']; j++){%>
+                            <img src="img/star.png" alt="">
+                        <%}%>
+                    </div>
+                    <%if(all.items[i][0].image_row.length>0){%>
+                    <div class="fans-evaluate-pic">
+                        <ul class="clearfix">
+                            <%for(var k in all.items[i][0].image_row){%>
+                            <li><img src="<%=all.items[i][0].image_row[k]%>" alt=""></li>
+                            <%}%>
+                        </ul>
+                    </div>
+                    <%}%>
+                </div>
+                <div class="friend-comment">
+                    <%for(var j in all.items[i][0]['otherEvaluation']){%>
+                     <div class="fans-comment-result"><p><span><%=all.items[i][0]['otherEvaluation'][j][0]['member_name']%>：</span><%=all.items[i][0]['otherEvaluation'][j][0]['content']%></p></div>
+                    <%}%>
+                </div>
+            </div>
+        <%}%>
+    <%}%>
+</script>
+<script type="text/html" id="share_script">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block sharewechat_contain">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top share">
+            <i class="icon-store"></i>
+            <img src="../images/share_title_img.jpg" alt="" class='share_title_img'>
+            <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling nctouch-bottom-mask-rolling-share" id="share_roll">
+            <div class="nctouch-bottom-mask-con">
+                <div class='share_tanchuang'>
+                    <ul class='share_channel'>
+                        <li class="share_sqq">
+                            <a class="share" data-type="qqFriend" href="javascript:;">
+                                <img src="../images/share_g_1@3x.png" alt="">
+                            </a>
+                            <span>QQ</span>
+                        </li>
+                        <li class="share_qzone">
+                            <a class="share" data-type="qZone" href="javascript:;">
+                                <img src="../images/share_g_2@3x.png" alt="">
+                            </a>
+                            <span>QQ空间</span>
+                        </li>
+                        <li class="share_weixin">
+                            <a class="share" data-type="wechatFriend" href="javascript:;">
+                                <img src="../images/share_g_3@3x.png" alt="">
+                            </a>
+                            <span>微信</span>
+                        </li>
+                        <li class="share_weixin_timeline">
+                            <a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../images/share_g_4@3x.png" alt=""></a>
+                            <span>朋友圈</span><!-- <i>立省<i>0.6</i>元</i></li>-->
+                        <li class="share_tsina">
+                            <a class="share" data-type="weibo" href="javascript:;"><img src="../images/share_g_5@3x.png" alt=""></a>
+                            <span>新浪微博</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% if(isWx){ %>
+        <div class="sharewechat">
+            <img src="../images/____.png" alt=""><br>
+            <span style="margin-left:60px;padding-left:90px;font-size: 1em">点击分享到微信</span>
+        </div>
+        <% } %>
+    </div>
+</script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/page.js"></script>
+<script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>修改支付密码</title>
+	<link rel="stylesheet" href="../../css/user/pay_change.css">
+	<link rel="stylesheet" href="../../css/user/base.css">
+</head>
+<body>
+	<!--头部-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../../images/user_img/icon_back.png" alt=""></a>
+			<span>修改支付密码</span>
+		</div>
+	</header>
+	<!--头部-->
+	<!--修改登陆部分-->
+	<form  action="http://www.taoshang168.com" class="login_pay_change">
+		<ul>
+			<li>
+				<label>原支付密码</label>
+				<input type="text" value=" 请输入原始支付密码" id="pwd_primary">
+			</li>
+			<li>
+				<label>新支付密码</label>
+				<input type="text" value=" 请输入6位数字" id="pwd_new">
+			</li>
+			<li>
+				<label>重复新密码</label>
+				<input type="text" value=" 请再次输入新的密码" id="pwd_repeat">
+			</li>
+			<li>
+				<label style="letter-spacing:.09rem">验 证 码</label>
+				<input type="text" value=" 请输入短信验证码" id="verificationcode" style="width:2.5rem;">
+				<input type="button" class="gain" value="点击获取" id="getyzm">
+			</li>
+		</ul>
+		<input type="button" class="complete" value="完成">
+	</form>
+</body>
+	<script src="../../js/tmpl/user/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/user/pay_change.js'></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/tmpl/user_pay_change.js"></script>
+</html>

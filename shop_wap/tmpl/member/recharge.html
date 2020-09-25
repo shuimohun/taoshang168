@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户充值</title>
+    <link rel="stylesheet" href="../../css/surprise/common.css">
+    <link rel="stylesheet" href="../../css/recharge.css">
+    <script src="../../js/adaptation.js"></script>
+    <script src="../../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="header-wrap">
+    <header class="header clearfix">
+        <div class="header-10rem">
+            <div class="icon-wrap lf">
+                <a href="javascript:history.go(-1);"><i class="icon middle"></i></a>
+            </div>
+            <div class="header-name lf">账户充值</div>
+        </div>
+    </header>
+
+</div>
+<div class="main">
+    <form>
+        <div class="account-full">
+            账户充值
+        </div>
+        <div class="account_pay_sel">
+            <label>
+                <input type="radio" name="choice_btn" checked="true" class="money_box"><span class="exchage">账户充值</span>
+            </label>
+            <label>
+                <input type="radio" name="choice_btn" class="card_box"><span class="exchage">购物卡充值</span>
+            </label>
+        </div>
+        <div class="account_pay_option">
+            <div class="recharge3-content-center money_box">
+                <p class="recharge_mon">
+                    <span class="spanmt">充值金额 :&nbsp;</span>
+                    <input type="text" class="text text-1 deposit_amount">
+                </p>
+                <p class="err_msg"></p>
+                <p></p>
+
+                <div class="pc_trans_btn clearfix">
+                    <a class="btn_big btn_active fl submit_disable">确认信息并充值</a>
+                    <span class="onright"><a target="_blank" href="#">充值记录</a></span>
+                </div>
+            </div>
+            <div class="recharge3-content-center card_box"  style="display: none;">
+                <p class="recharge_mon">
+                    <span class="spanmt">购&nbsp;物&nbsp;卡&nbsp;号 :&nbsp;</span>
+                    <input type="text" class="text text-1 card_code">
+                </p>
+                <p class="recharge_mon">
+                    <span class="spanmt">购物卡密码 :&nbsp;</span>
+                    <input type="text" class="text text-1 card_password">
+                </p>
+                <p class="err_msg"></p>
+                <p></p>
+                <div class="pc_trans_btn clearfix">
+                    <a class="btn_big btn_active fl submit_disable">确认充值</a>
+                    <span class="onright"><a target="_blank" href="#">充值记录</a></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="recharge2-content-bottom">
+        <div class="theme">
+            <span class="title">充值遇到问题</span>
+        </div>
+        <div class="content">
+            <div class="one">
+                <h3> 1.我还能用信用卡进行网购么？ </h3>
+                <p class="texts">答：您在带有信用卡小标识的店铺购物，可以直接使用信用卡快捷（含卡通）、网银进行信用卡支付，支付限额为您的卡面额度。在没有信用卡标识的店铺购物 时，您可以使用信用卡快捷（含卡通）、网银进行信用卡支付，月累计支付限额不超过XXX元。
+                </p>
+            </div>
+            <div class="one">
+                <h3>2.没有网上银行，怎么用银行卡充值？</h3>
+                <p class="texts">答：储蓄卡用户，请使用储蓄卡快捷支付充值，开通后只需输入财付宝支付密码，即可完成充值。</p>
+            </div>
+            <div class="one">
+                <h3>3.怎样在网上开通储蓄卡快捷支付(含卡通)？ </h3>
+                <p class="texts">答：已支持国内大部分主流银行在线开通。在财付宝填写信息后，根据页面引导在网上银行完成开通。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/tmpl/recharge.js"></script>
+</body>
+</html>

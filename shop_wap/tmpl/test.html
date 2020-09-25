@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button onclick="call()">通用分享</button>
+    <button onclick="call('wechatFriend')">微信好友</button>
+    <button onclick="call('wechatTimeline')">朋友圈</button>
+    <button onclick="call('qqFriend')">QQ</button>
+    <button onclick="call('qZone')">QQ空间</button>
+    <button onclick="call('weibo')">微博</button>
+    <button onclick="setTitle('fa-ge NativeShare')">设置标题</button>
+</div>
+
+<script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+
+<script>
+    var desc = 'test';
+    var goods_id = 12;
+    var nativeShare = new NativeShare()
+    var shareData = {
+        title: '淘尚168商城',
+        desc: desc,
+        // 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+        link: '?ctl=Goods_Goods&met=goods&gid=' + goods_id,
+        icon: '',
+        // 不要过于依赖以下两个回调，很多浏览器是不支持的
+        success: function() {
+            alert('success')
+        },
+        fail: function() {
+            alert('fail')
+        }
+    }
+    nativeShare.setShareData(shareData)
+
+    function call(command) {
+        try {
+            nativeShare.call(command)
+        } catch (err) {
+            // 如果不支持，你可以在这里做降级处理
+            alert(err.message)
+        }
+    }
+
+    function setTitle(title) {
+        nativeShare.setShareData({
+            title: title,
+        })
+    }
+</script>
+</body>
+</html>

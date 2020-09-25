@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/*脚部样式    start*/
+.footer{ width: 100%; padding:0.1rem 0; position: fixed; bottom: 0; z-index: 10; border-top: 1px solid #ededed; text-align: center; background: #fff;}
+.footer a.foot_item{ width: 20%; float:left;}
+.footer a.foot_item .foot_icon{ width: 0.48rem; height:0.48rem; display: block; margin: 0 auto; }
+.footer a.foot_item span{ display: block; width: 100%; font-size: 0.22rem; color: #999999;}
+.footer a.foot_item .foot_icon.index{ background: url("../../tmpl/img/icon/index.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item .foot_icon.hot_tv{ background: url("../../tmpl/img/icon/hottv.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.fabu{ background: url("../../tmpl/img/icon/fabu.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.message{ background: url("../../tmpl/img/icon/youxin.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item .foot_icon.more{ background: url("../../tmpl/img/icon/more.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.index{ background: url("../../tmpl/img/icon/index_on.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item.on .foot_icon.hot_tv{ background: url("../../tmpl/img/icon/hottv_on.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.fabu{ background: url("../../tmpl/img/icon/fabu_on.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.message{ background: url("../../tmpl/img/icon/youxin_on.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item.on .foot_icon.more{ background: url("../../tmpl/img/icon/more_on.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on span{ color: #e45045;}
+.footer a.foot_item .foot_icon.a_book{ background: url("../../tmpl/img/icon/a_book.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.fans{ background: url("../../tmpl/img/icon/fans.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.faxian{ background: url("../../tmpl/img/icon/faxian.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item .foot_icon.my{ background: url("../../tmpl/img/icon/my.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.a_book{ background: url("../../tmpl/img/icon/a_book_on.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.fans{ background: url("../../tmpl/img/icon/fans_on.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item.on .foot_icon.faxian{ background: url("../../tmpl/img/icon/faxian_on.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item.on .foot_icon.my{ background: url("../../tmpl/img/icon/my_on.png") no-repeat; background-size: 100% ; }
+.more_win{ width: 100%; position: fixed; left: 0; bottom:-5rem; transition:0.3s all ease-in; border-bottom: 1px solid #a1a1a1; }
+.mask{ width: 100%; height: 100%; position: fixed; left: 0; top: 0;background: #000; opacity: 0; display: none;transition:0.3s all ease-in;}
+.more_win .close_btn{ width: 100%; }
+.more_win .close_btn img{ width: 0.5rem; height: 0.5rem; display: block; margin: 0 auto; }
+.more_win .more_main{ width: 100%;background: #fff;box-sizing: border-box; border-top: 1px solid #a1a1a1; border-top-left-radius: 0.3rem;border-top-right-radius: 0.3rem;}
+.more_win .more_main ul{ width: 94%; margin: 0 auto; padding-top: 0.2rem; padding-bottom: 0.5rem;}
+.more_win .more_main ul li{ float: left; width: 25%; text-align: center; margin-top: 0.15rem;}
+.more_win .more_main ul li i{display: inline-block; width: 0.6rem; height: 0.6rem;}
+.more_win .more_main ul li span{ display: block; width: 100%; text-align: center; font-size: 0.22rem; color:#999; }
+.icon_to_hide{ display: block; width: 0.5rem; height: 0.5rem;}
+.icon_to_hide{ display: block; width: 0.5rem; height: 0.5rem; background: url("../../tmpl/img/icon/to_hide.png") no-repeat; background-size: 100% 100%; margin: 0 auto;}
+.more_win .more_main ul li i.icon_interest{ background: url("../../tmpl/img/icon/interest.png") no-repeat; background-size: 100% 100%;}
+.more_win .more_main ul li i.icon_addressbook{background: url("../../tmpl/img/icon/addressbook.png") no-repeat; background-size: 100% 100%;}
+.more_win .more_main ul li i.icon_system_infor{background: url("../../tmpl/img/icon/system_infor.png") no-repeat; background-size: 100% 100%;}
+.more_win .more_main ul li i.icon_my_on{background: url("../../tmpl/img/icon/my_on.png") no-repeat; background-size: 100% 100%;}

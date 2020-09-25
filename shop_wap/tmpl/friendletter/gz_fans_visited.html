@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>个人中心</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/addfriend.css">
+</head>
+<body style="background: #fff;">
+	<!--头部 start-->
+	<header class="person black_bg">
+		<a href="javascript:history.go(-1);" class="back"></a>
+		<a href="#" class="addicon add_friend"></a>
+		<div class="search_box">
+			<ul class="top_tab_title clearfix">
+				<li>关注</li>
+				<li>粉丝</li>
+				<li>访客</li>
+			</ul>
+		</div>
+		<!--<div class="add_tips">
+			<i></i>
+			<ul>
+				<li><a href="#">发起群聊</a></li>
+				<li><a href="#">添加好友</a></li>
+			</ul>
+		</div>-->
+	</header>
+	<!--头部 end-->
+	<!--关注列表 start-->
+	<div class="main gz_fans_visited Gz">
+
+
+	</div>
+	<!--关注列表 end-->
+	<!--粉丝列表 start-->
+	<div class="main gz_fans_visited Fs hide">
+
+	</div>
+	<!--粉丝列表 end-->
+	<!--访客列表 start-->
+	<div class="main gz_fans_visited Fk hide">
+
+	</div>
+	<!--访客列表 end-->
+	<!--插入脚部 start-->
+	<div id="foot"></div>
+	<!--插入脚部 end-->
+
+
+	<!--关注列表渲染-->
+<script type="text/html" id="Gz">
+	<% if( data.G_data ){%>
+		<% for( var i in data.G_data.items){%>
+			<div class="fl_item">
+				<div class="fl_item_con clearfix">
+					<div class="fl_tx">
+						<img src="<%=data.G_data.items[i].user_info.user_logo%>" onerror="this.src='../img/robot-ss.png'" />
+					</div>
+					<div class="fl_infor">
+						<a href="javascript:void(0);">
+							<p class="user_name"><%=data.G_data.items[i].user_info.user_name%><span class="fans_name"><%=data.G_data.items[i].fans_count%>粉丝</span></p>
+							<p class="chat">时间停留,我不曾察觉</p>
+						</a>
+					</div>
+					<div class="fl_time"><p class="arrow_ico"></p></div>
+				</div>
+			</div>
+		<% }%>
+	<% }%>
+</script>
+	<!--粉丝列表渲染-->
+<script type="text/html" id="Fs">
+	<% if( data.F_data){ %>
+		<% for( var i in data.F_data.items ){ %>
+			<div class="fl_item fl_item_fans">
+				<div class="fl_item_con clearfix">
+					<div class="fl_tx">
+						<img src="<%=data.F_data.items[i].user_info.user_logo%>"  onerror="this.src='../img/robot-ss.png'"/>
+					</div>
+					<div class="fl_infor">
+						<a href="#">
+							<p class="user_name"><%=data.F_data.items[i].user_info.user_name%></p>
+							<p class="chat">时间停留,我不曾察觉</p>
+						</a>
+					</div>
+					<div  onclick="friendOn( this )" data-id="<%=data.F_data.items[i].qg_id%>" data-uid="<%=data.F_data.items[i].user_id%>" class="gz_btn <% if( data.F_data.items[i].friend_on == 1){%> on <%}%>"></div>
+					<div class="fl_time"><p class="arrow_ico"></p></div>
+				</div>
+			</div>
+		<% }%>
+	<% }%>
+</script>
+<!--访客列表渲染-->
+<script type="text/html" id="Fk">
+
+	<% if( data.foot_print ){ %>
+		<div class="visited_num">
+			<span>累计访问量 <i><%=data.foot_print.countFoot%>次</i></span>
+			<span>最近7天访问 <i><%=data.foot_print.sevenFoot%>次</i></span>
+		</div>
+		<div class="fl_item fl_item_fans fl_item_visited">
+			<% if( data.foot_print.items ){ %>
+				<% for( var i in data.foot_print.items ){ %>
+					<div class="fl_item_con clearfix">
+						<div class="fl_tx"><img src="<%=data.foot_print.items[i].user_info.user_logo%>"  onerror="this.src='../img/robot-ss.png'"/> </div>
+						<div class="fl_infor">
+							<a href="#">
+								<p class="user_name"><%=data.foot_print.items[i].user_info.user_name%></p>
+								<p class="chat">时间停留,我不曾察觉</p>
+							</a>
+						</div>
+						<div onclick="friendOn(this)" class="gz_btn <% if( data.foot_print.items[i].friend_on ==1 ){%> on <%}%>" data-id="<%=data.foot_print.items[i].qg_id%>" data-uid="<%=data.foot_print.items[i].user_id%>"></div>
+						<div class="fl_time"><p class="arrow_ico"></p></div>
+					</div>
+				<% }%>
+			<% }%>
+		</div>
+	<% }%>
+
+</script>
+	<!--加载关注渲染-->
+<script type="text/html" id="GzMore">
+	<% if( data.G_data ){%>
+	<% for( var i in data.G_data.items){%>
+	<div class="fl_item">
+		<div class="fl_item_con clearfix">
+			<div class="fl_tx">
+				<img src="<%=data.G_data.items[i].user_info.user_logo%>" onerror="this.src='../img/robot-ss.png'" />
+			</div>
+			<div class="fl_infor">
+				<a href="javascript:void(0);">
+					<p class="user_name"><%=data.G_data.items[i].user_info.user_name%><span class="fans_name"><%=data.G_data.items[i].fans_count%>粉丝</span></p>
+					<p class="chat">时间停留,我不曾察觉</p>
+				</a>
+			</div>
+			<div class="fl_time"><p class="arrow_ico"></p></div>
+		</div>
+	</div>
+	<% }%>
+	<% }%>
+
+</script>
+	<!--加载粉丝渲染-->
+<script type="text/html" id="FsMore">
+	<% if( data.F_data){ %>
+	<% for( var i in data.F_data.items ){ %>
+	<div class="fl_item fl_item_fans">
+		<div class="fl_item_con clearfix">
+			<div class="fl_tx">
+				<img src="<%=data.F_data.items[i].user_info.user_logo%>"  onerror="this.src='../img/robot-ss.png'"/>
+			</div>
+			<div class="fl_infor">
+				<a href="#">
+					<p class="user_name"><%=data.F_data.items[i].user_info.user_name%></p>
+					<p class="chat">时间停留,我不曾察觉</p>
+				</a>
+			</div>
+			<div  onclick="friendOn( this )" data-id="<%=data.F_data.items[i].qg_id%>" data-uid="<%=data.F_data.items[i].user_id%>" class="gz_btn <% if( data.F_data.items[i].friend_on == 1){%> on <%}%>"></div>
+			<div class="fl_time"><p class="arrow_ico"></p></div>
+		</div>
+	</div>
+	<% }%>
+	<% }%>
+
+</script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script type="text/javascript" src="../../js/friendletter/gz_fans_visited.js"></script>
+</body>
+</html>

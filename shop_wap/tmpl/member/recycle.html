@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回收站</title>
+  <link rel="stylesheet" href="../../css/money/recycle.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <link rel="stylesheet" type="text/css" href="../../css/money/date.css">
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/recycle.js'></script>
+  <script type="text/javascript" src="../../js/tmpl/money/date.js"></script>
+</head>
+<body style="background-color:#fff;margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../../images/money/back.png" alt=""></a>
+      <span>回收站</span>
+      <a href="./money_index.html"><img src="../../images/money/more_home@2x.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+
+    <ul class='leixing'>
+      <span>类型：</span>
+      <li data-type=" ">全部</li>
+      <li data-type="1">购物</li>
+      <li data-type="3">充值</li>
+      <li data-type="2">转账</li>
+      <li data-type="4">提现</li>
+      <li data-type="10">佣金</li>
+    </ul>
+
+    <ul class='zhuangtai'>
+      <span>状态：</span>
+      <li data-status=" ">全部</li>
+      <li data-status="doing">进行中</li>
+      <li data-status="waitpay">未付款</li>
+      <li data-status="waitsend">等待发货</li>
+      <li data-status="retund">退款</li>
+      <li data-status="waitconfirm">未确认收货</li>
+      <li data-status="success">成功</li>
+      <li data-status="cancel">取消</li>
+    </ul>
+
+    <ul class='shijian'>
+      <span>时间：</span>
+      <input type="text"  id='start_date' class="mh_date" readonly="true" /><em>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;</em><input type="text"  id="end_date" class="mh_date" readonly="true" /><b id="seek">搜索</b><br>
+      <span>今天 | 最近：</span>
+      <li data-time=" ">全部</li>
+      <li data-time="oneMonth">一个月</li>
+      <li data-time="thereMonth">三个月</li>
+      <li data-time="oneYear">一年</li>
+    </ul>
+
+    <ul class='item'></ul>
+
+    <div class="tanchuang">
+      <div class="tanchuang_top">是否还原此条记录</div>
+      <div class="tanchuang_bottom">
+        <button class="ensure">确定</button>
+        <button href="" class="delete">取消</button>
+      </div>
+  </div>
+  <div class="bg_tanchuang"></div>
+
+</body>
+<script>
+  $(function () {
+
+    $("input.mh_date").manhuaDate({
+    Event: "click", //可选    
+    Left: 0, //弹出时间停靠的左边位置
+    Top: -16, //弹出时间停靠的顶部边位置
+    fuhao: "-", //日期连接符默认为-
+    isTime: false, //是否开启时间值默认为false
+    beginY: 1949, //年份的开始默认为1949
+    endY: 2100//年份的结束默认为2049
+    });
+
+    
+});
+</script>
+<script type="text/html" id="list">
+  <% if(consume_record_list.items){ %>
+  <% var items = consume_record_list.items %>
+  <% for(var i in items){ %>
+  <li data-order="<%=items[i].consume_record_id %>">
+    <span>￥<%=items[i].record_money %>元</span><br>
+    <del>来自订单<%=items[i].order_id %></del><br>
+    <i><%=items[i].record_title %><%=items[i].record_status_con %></i>
+    <div class='item_img'>
+      <img src="<%=user_info.user_avatar %>" alt=""><br>
+      <u><%=items[i].record_date %></u><br>
+      <u><%=items[i].record_time.substr(11) %></u>
+    </div>
+  </li>
+  <% } %>
+  <% } %>
+
+</script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/swipe.js"></script>
+<script type="text/javascript" src="../../js/recycle.js"></script>
+</html>

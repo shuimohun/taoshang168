@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="plugin/js/adaptation.js"></script>   <!--此处为了尽早适配-->
+    <title></title>
+    <link rel="stylesheet" href="common/css/public.css" />
+    <link rel="stylesheet" href="plugin/css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="css/superGoods.css" />
+
+</head>
+<body>
+	<div class="header-wrap-container">
+		<div class="header-wrap">
+			<header class="header orflow ">
+				<div class="header-10rem">
+					<div class="icon-wrap lf">
+						<a href="javascript:history.go(-1)"><i class="icon middle"></i></a>
+					</div>
+					<div class="header-name lf">超级好货</div>
+				</div>
+			</header>
+			<!--小导航    start-->
+			<div class="s-nav-wrap">
+				<div class="nav orflow">
+					<div class="nav-wrap">
+						<div class="nav-bar lf">
+							<div class="nav-scroll-wrap">
+								<ul class="lf">
+
+								</ul>
+		
+							</div>
+						</div>
+						<div class="nav-right-icon rt">
+							<span class="icon pop-up-icon"></span>
+						</div>
+					</div>
+				</div>
+				<div class="s-nav">
+					<ul class="s-nav-list orflow">
+
+					</ul>
+				</div>
+			</div>	
+			<!--小导航    end-->
+		</div>
+	</div>
+
+	<div class="main-wrap">
+		<!--大轮播  start-->
+		<div class="swiper-container banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/banner@2x.png" alt="" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/banner@2x.png" alt="" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/banner@2x.png" alt="" />
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--大轮播   end-->
+
+		<!--排行榜导航 start-->
+		<div class="main-nav">
+			<ul class="main-nav-list">
+				<li class="main-nav-list-li lf">
+					<a href="superGoods_sale.html">热卖榜</a>
+				</li>
+				<li class="main-nav-list-li lf curr">
+					<a href="superGoods_shop.html">店铺榜</a>
+				</li>
+				<li class="main-nav-list-li lf">
+					<a href="superGoods_search.html">热搜榜</a>
+				</li>
+				<li class="main-nav-list-li lf">
+					<a href="superGoods_discount.html">折扣榜</a>
+				</li>
+			</ul>
+		</div>
+		<!--排行榜导航 end-->
+	
+		<!--主内容  start-->
+		<div class="swiper-container page">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="main">
+						<div class="hot-shop common-shop-search">
+	
+							<ul class="goods-ul orflow">				
+
+
+							</ul>
+							
+	
+						</div>		
+					</div>
+				</div>	
+				
+			</div>
+		</div>
+		<!--主内容  end-->
+	</div>
+	
+
+	<!--  页尾固定 导航  start-->
+	<footer class="nav-fixed">
+		<ul>
+			<li class="home-icon side-icon lf">
+				<a href="../index.html">
+					<i class="icon"></i>
+					<div>首页</div>
+				</a>
+			</li>
+			<li class="more-icon lf">
+				<i class="icon"></i>
+			</li>
+			<li class="one-short side-icon lf">
+				<a href="../tmpl/newbuyer.html">
+					<i class="icon"></i>
+					<div>一分抢</div>
+				</a>
+
+			</li>
+		</ul>
+	</footer>
+	<!--  页尾固定 导航  end-->
+	
+	<!--右侧 的弹出框   start-->
+	<div class="pop-up">
+		<div class="hot-search orflow">
+			热门搜索：
+			<div class="search">
+				<div class="keyW">
+					<span>服饰内衣</span>
+					<span>电子数码</span>
+					<span>生鲜水果</span>
+				</div>
+				<input style="width: 85%;" type="text" id="val" value="" />
+				<input style="text-align:center;width:13%;margin-left: 87%"; type="button" onclick="searchKey()" value="搜索" />
+			</div>
+
+		</div>
+		<div class="pop-up-content">
+			<ul class="search-results-list">
+
+
+			</ul>
+		</div>
+	</div>
+	<!--右侧 的弹出框   end-->
+	
+	<!--更多活动  弹框    start-->
+	<div class="more-activties-wrap">
+		<ul>
+			<a href="../tmpl/daily_buy.html"><li class="more-activity activity-icon1 lf"></li></a>
+			<a href="../tmpl/discount.html"><li class="more-activity activity-icon2 lf"></li></a>
+			<a href="../tmpl/goodgoods.html"><li class="more-activity activity-icon3 lf"></li></a>
+			<a href="../tmpl/scarebuy.html"><li class="more-activity activity-icon4 lf"></li></a>
+			<a href="../tmpl/sonanddaughter.html"><li class="more-activity activity-icon5 lf"></li></a>
+			<a href="../tmpl/findgoodshop.html"><li class="more-activity activity-icon6 lf"></li></a>
+			<a href="../tmpl/goodgoods.html"><li class="more-activity activity-icon7 lf"></li></a>
+			<a href="#"><li class="more-activity activity-icon8 lf"></li></a>
+			<a href="#"><li class="more-activity activity-icon9 lf"></li></a>
+		</ul>
+	</div>
+	<!--更多活动  弹框  end-->
+	
+	<!--  ui-mask  start-->
+	<div class="ui-mask"></div>
+	<!--  ui-mask  end-->
+	<script type="text/html" id="nav_list">
+
+
+		<%if(items){%>
+		<li class="s-nav-list-li lf curr" onclick='getGoodsSale("<%=subCatIds%>")'>
+			<a href="#">全部分类</a>
+		</li>
+		<%for(var i in items){%>
+		<li class="s-nav-list-li lf" onclick='getGoodsSale("<%=items[i].cat_id%>")'>
+			<a href="#"><%=items[i]['cat_name']%></a>
+		</li>
+		<%}%>
+		<%}%>
+
+	</script>
+	<!--店铺渲染-->
+	<script type="text/html" id="shop_list">
+		<% if(list_all){%>
+			<%for(var i=0;i<(list_all.length); i++){%>
+				<li class="goods lf">
+					<div class="shop-name-wrap">
+						<div class="rank-icon top-1">
+							<div class="top-color"><%=(i+1)%></div>
+							月销量:<span><%=list_all[i]['salenums']%></span></div>
+						<div class="shop-img">
+							<div class="img-center">
+								<a href="../tmpl/store.html?shop_id=<%=list_all[i]['shop_id']%>">
+									<img src="<%=list_all[i]['shop_logo']%>" alt="" />
+								</a>
+							</div>
+						</div>
+
+						<div class="shop-name">
+
+								<%=list_all[i]['shop_name']%><i class="icon"></i>
+						</div>
+					</div>
+					<%for(var j in list_all[i]['goods_list']){%>
+						<div class="part-wrap">
+							<div class="part lf">
+								<div class="img-center">
+									<a href="../tmpl/product_detail.html?cid=<%=list_all[i]['goods_list'][j]['common_id']%>">
+										<img class="middle" src="<%=list_all[i]['goods_list'][j]['common_image']%>" alt="" />
+									</a>
+
+									<div class="goods-price orflow">
+										<div class="price lf">
+											￥<span><%=list_all[i]['goods_list'][j]['common_price']%></span>
+										</div>
+									</div>
+								</div>
+								<div class="goods-detail">
+									<div class="goods-text txt"><%=list_all[i]['goods_list'][j]['common_name']%></div>
+									<div class="goods-share orflow">
+										<div class="share orflow">
+											<span class="lf">分享立省</span>
+											<div class="rt">
+												￥<span><%=list_all[i]['goods_list'][j]['common_share_price']%></span>
+											</div>
+										</div>
+									</div>
+									<div class="goods-share orflow">
+										<div class="share orflow">
+											<span class="lf">分享立赚</span>
+											<div class="rt">￥<span><%=list_all[i]['goods_list'][j]['common_promotion_price']%></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%}%>
+				</li>
+			<%}%>
+         <%}%>
+	</script>
+    <script type="text/html" id="sList"></script>
+    <script type="text/html" id="goods_sales"></script>
+    <script type="text/html" id="discount"></script>
+
+	<script type="text/javascript" src="plugin/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="plugin/js/swiper-3.4.2.jquery.min.js"></script>
+    <script type="text/javascript" src="js/superGoods.js"></script>
+
+</body>
+</html>
+
+

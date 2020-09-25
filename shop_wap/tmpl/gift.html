@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>礼品兑换</title>
+	<link rel="stylesheet" href="../css/goldegg/gift.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+</head>
+<body style="margin-top:1.57rem; background-color: #ededed ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../images/goldegg/back.png" alt=""></a>
+			<span>礼品兑换</span>
+			<a href="strategy.html"><img src="../images/goldegg/help@2x.png" alt=""  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+				<div class="find_nav_list">
+				</div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/goldegg/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+	<!--主图-->
+		<div class="slider_list" >
+
+		</div>
+	<!--主图-->
+
+	<!--红包信息-->
+	<div class="redbag">
+		<div class="redbag_head">
+			<img src="" alt=""><br>
+			<span></span>
+		</div>
+		<ul class="redbag_info">
+			<li>
+				<b id="red"></b><br>
+				<span>红包</span>
+			</li>
+			<li>
+				<b id="ticket"></b><br>
+				<span>可用代金券</span>
+			</li>
+			<li>
+				<b id="egg"></b><br>
+				<span>金蛋</span>
+			</li>
+			<li>
+				<b id="gift"></b><br>
+				<span>已兑换礼品</span>
+			</li>
+		</ul>
+	</div>
+	<!--红包信息-->
+
+	<!--默认排序会员等级-->
+	<ul class="redbag_top">
+		<li>默认排序</li>
+		<li>会员等级</li>
+		<li>筛选</li>
+
+		<ul class="redbag_item1_div">
+			<li class="cur" nctype="defPoin"><span>默认排序</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li1"></li>
+			<li nctype="tallPoin"><span>金蛋值从低到高</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li2"></li>
+			<li nctype="lowPoin"><span>金蛋值从高到低</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li3"></li>
+			<li nctype="newPoin"><span>最近上架</span><img src="../images/goldegg/choose@3x.png" alt="" id="item1_li4"></li>
+		</ul>
+		<ul class="redbag_item2_div">
+			<li class="cur" nctype="one"><span>V1</span><img src="../images/goldegg/choose@3x.png" alt="" id="item2_li1"></li>
+			<li nctype="two"><span>V2</span><img src="../images/goldegg/choose@3x.png" alt="" id="item2_li2"></li>
+			<li nctype="three"><span>V3</span><img src="../images/goldegg/choose@3x.png" alt="" id="item2_li3"></li>
+			<li nctype="four"><span>V4</span><img src="../images/goldegg/choose@3x.png" alt="" id="item2_li4"></li>
+			<li nctype="five"><span>V5</span><img src="../images/goldegg/choose@3x.png" alt="" id="item2_li5"></li>
+		</ul>
+		<!--从右到左划出弹窗-->
+		<div class="shaixuan-bottom"></div>
+		<div class="shaixuan-contain">
+			<u>所需金蛋</u>
+			<div class="shaixuan-number">
+				<input type="text"  id="lows"  value="40">
+				<u>&nbsp;——</u>
+				<input type="text"  id="talls"  value='80'>
+			</div>
+			<div class="shaixuan-number">
+				<span class="shaixuan-exchange " nctype="1">
+					<img src="../images/goldegg/choose@3x.png" alt="" id="exchange1">
+					全部礼品
+				</span>
+				<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+				<span class="shaixuan-exchange cur" nctype="2">
+					<img src="../images/goldegg/choose@3x.png" alt="">
+					我能兑换
+				</span>
+			</div>
+			<button class="reset">重置</button>
+			<button class="ensure">确定</button>
+		</div>
+	</ul>
+	<!--默认排序会员等级-->
+
+	<!--礼物部分-->
+	<div class="gift"></div>
+	<!--礼物部分-->
+
+
+
+		<script type="text/html" id="nav">
+
+				<ul>
+					<li class="find_nav_cur" ><a href="javascript:void(0)" id="0">精选</a></li>
+					<% if(nav.items) { %>
+					<% var items = nav.items %>
+					<% for(var i in items) { %>
+					<li ><a href="javascript:void(0)" id="<%=items[i].id %>"><%=items[i].shop_class_name %></a></li>
+					<% } %>
+					<% } %>
+					<li class="sideline"></li>
+				</ul>
+
+		</script>
+
+		<script type="text/html" id="pic">
+			<div class="swipe-wrap" >
+				<% if(picture.item) { %>
+				<% var items = picture.item %>
+				<% for(var i in items) { %>
+				<div class="item" >
+					<a href="<%=items[i].url %>">
+						<img src="<%=items[i].pic_url %>" alt="">
+					</a>
+				</div>
+				<% } %>
+				<% } %>
+			</div>
+			<a href="./member/signin.html"><span>签到+5</span></a>
+		</script>
+
+		<script type="text/html" id="gifts">
+
+			<div class="redbag_title">
+				<img src="../images/goldegg/voucher@2x.png" alt="">
+				<span>礼物</span>
+			</div>
+			<% if(points_goods) { %>
+			<% var item = points_goods %>
+			<% for(var i in item) { %>
+			<div class="gift_item">
+				<div class="gift_img">
+					<img src="<%=item[i].points_goods_image %>" alt="">
+					<div class="icon_v">V<%=item[i].points_goods_limitgrade %></div>
+				</div>
+				<span><%=item[i].points_goods_name  %></span><br>
+				<u>参考价格: ￥<%=item[i].points_goods_price %></u><br>
+				<del><%=item[i].points_goods_points %></del><i>金蛋</i>
+				<a href="integral_product_detail.html?id=<%=item[i].points_goods_id %>"><img src="../images/goldegg/duihuan.png" alt="" class="duihuan"></a>
+			</div>
+			<% } %>
+			<% } %>
+		</script>
+		<div style="width:100%;height:.5rem; background-color:#fff"></div>
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/zepto.min.js"></script>
+		<script type="text/javascript" src="../js/simple-plugin.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/swipe.js"></script>
+		<script type="text/javascript" src='../js/tmpl/goldegg/gift.js'></script>
+		<script type="text/javascript" src="../js/gifts.js"></script>
+</body>
+</html>

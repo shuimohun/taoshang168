@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>那个店铺</title>
+	<link rel="stylesheet" href="../../css/shopController.css">
+	<link rel="stylesheet" href="../../css/base_index.css">
+	<style>
+		.share_tanchuang{
+			width: 90%;
+			height: 2.25rem;
+			background-color: #ccc;
+			/*position: fixed;*/
+			bottom: 0;
+			display: none;
+			position: fixed;
+			top:60%;
+			left: 4%;
+			border-radius: .2rem;
+			z-index: 101;
+		}
+		.share_title_img{
+			width: 100%;
+			height: 15%;
+		}
+		.share_tanchuang .share_channel{
+			width: 100%;
+			height: 40%;
+			font-size: 0;
+		}
+		.share_tanchuang .share_channel li{
+			display: inline-block;
+			font-size:.24rem;
+			text-align: center;
+			width: 20%;
+			height: 100%;
+			vertical-align: top;
+		}
+		.share_tanchuang .share_channel li img{
+			width: 1rem;
+			height: 1rem;
+			margin-top: .2rem;
+		}
+		.share_tanchuang .share_channel li span{
+			display: inline-block;
+			color: #333;
+			line-height: 1rem;
+		}
+		.share_tanchuang .share_channel li i{
+			display: inline-block;
+			color: #999;
+		}
+		.share_tanchuang .share_channel li i i{
+			color: #e45050;
+		}
+		.share_tanchuang p{
+			font-size: .6rem;
+			color: #999;
+			padding:0 5% 0 5%;
+			margin-top: .1rem;
+		}
+		.share_tanchuang p span{
+			font-size: .7rem;
+			color: #666;
+		}
+		.nctouch-bottom-mask-top.share{padding:0 !important;}
+		.shared i{color: #e45050 !important;}
+
+		.sharewechat_contain .sharewechat{
+			position: absolute;
+			right: 7%;
+			bottom: 140%;
+		}
+		.sharewechat_contain .sharewechat img{
+			width: 5rem;
+			height: 3rem;
+			margin-left:2rem;
+		}
+		.sharewechat_contain .sharewechat span{
+			color: #fff;
+			font-size: 1rem;
+		}
+		.bg_contain{
+			background-color: black;
+			display: inline-block;
+			opacity: .3;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top:0;
+			left: 0;
+			z-index: 100;
+			display: none;
+		}
+
+		/*20180623 / by,Ji Zihe  样式修改*/
+		.clearfix { zoom: 1 }
+		.clearfix:after { display: block; clear: both; content: " "; }
+		.information_comment{ height: auto;}
+		.comment.information_comment .comment_img{ width: 94%; margin: 0 auto; height: auto; border-radius: inherit;}
+		.comment.information_comment .comment_img img{ width: 0.5rem; height: 0.5rem ; border-radius: 50%; display: inline-block; margin: 0; vertical-align: bottom;}
+		.comment.information_comment span{ position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem;}
+		.comment.information_comment em {position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem; float: right;}
+
+		.comment.information_comment i.comment_text{ display: block; width: 86%; margin-left: 10%; font-size: 0.22rem; color: #999;word-wrap: break-word; word-break: normal; position: inherit; left: inherit;top: inherit; height: auto; overflow:hidden;  font-style:normal;}
+
+		.main u{ right: 23%;}
+	</style>
+</head>
+<body style="">
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+			<span>那个店铺</span>
+			<a href=""><img src="../../images/search.png" alt=""  class="info"></a> 
+			<a href=""><img src="../../images/dialogbox.png" alt=""  class="dialogbox"></a>
+		</div>
+		<span class="number">1</span>
+	</header>
+	<div class="erweimawrap">
+		<span id="qrcode"></span><br>
+		<span>小店二维码</span>
+	</div>
+	<div class="shaixuan">
+		<ul>
+			<li class="cur">销量</li>
+			<li>佣金</li>
+			<li>上新</li>
+		</ul>
+		<!--<span>筛选</span>-->
+	</div>
+	<div id="template">
+	
+	</div>
+	<ul class="footer">
+		<li>
+			<a href="./directseller_shopself.html"> <img src="../../images/tabbar1_s@2x.png" alt=""><br>
+				<span>我的小店</span></a>
+		</li>
+		<li>
+			<a href="./directseller_market.html"> <img src="../../images/tabbar2@2x.png" alt=""><br>
+				<span>淘金市场</span></a>
+		</li>
+		<li>
+			<a href=""> <img src="../../images/tabbar3@2x.png" alt=""><br>
+				<span>私房钱</span></a>
+		</li>
+		<li>
+			<a href="./directseller_recommend.html"> <img src="../../images/tabbar4@2x.png" alt=""><br>
+				<span>我的小弟</span></a>
+		</li>
+	</ul>
+	<div class='share_tanchuang'>
+		<ul class='share_channel'>
+			<li class="share_sqq">
+				<a class="share" data-type="qqFriend" href="javascript:;">
+					<img src="../../images/share_g_1@3x.png" alt="">
+				</a><br>
+				<span>QQ</span>
+			</li>
+			<li class="share_qzone">
+				<a class="share" data-type="qZone" href="javascript:;">
+					<img src="../../images/share_g_2@3x.png" alt="">
+				</a><br>
+				<span>QQ空间</span>
+			</li>
+			<li class="share_weixin">
+				<a class="share" data-type="wechatFriend" href="javascript:;">
+					<img src="../../images/share_g_3@3x.png" alt="">
+				</a><br>
+				<span>微信</span>
+			</li>
+			<li class="share_weixin_timeline">
+				<a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../../images/share_g_4@3x.png" alt=""></a><br>
+				<span>朋友圈</span></li>
+			<li class="share_tsina">
+				<a class="share" data-type="weibo" href="javascript:;"><img src="../../images/share_g_5@3x.png" alt=""></a><br>
+				<span>新浪微博</span>
+			</li>
+		</ul>
+	</div>
+	<div class="bg_contain"></div>
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='../../js/shopController.js'></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/NativeShare.js"></script>
+<script type="text/html" id="list">
+	<%for(var i in items) {%>
+	<div class="item">
+		<a href="../product_detail.html?goods_id=<%= items[i].goods_id%>">
+		<img src="<%=items[i].common_image%>" alt="">
+		<div class="item_contain">
+			<span><%= items[i].common_name%></span><br>
+			<p>店铺：<%= items[i].shop_name%></p><br>
+			<i>￥<%= items[i].common_price%></i><br>
+			<em>销量：<%= items[i].common_salenum%></em>&nbsp;&nbsp;&nbsp;&nbsp;<em>收藏：<%= items[i].common_collect%></em><br>
+			<!--<u>淘金赚：￥<%=items[i].common_promotion_price%></u><u style="float:right;margin-left:.3rem;margin-right:.1rem;color:#333;">删除</u><u style="float:right;color:#333;">编辑</u>-->
+			<u>淘金赚：￥<%=items[i].common_promotion_price%></u></a>
+			<!--<button onclick="share(<%=items[i].shop_name%>,<%=items[i].goods_id%>,<%=items[i].shop_name%>,<%=items[i].common_image%>)" >分享</button>-->
+			<button class="tcdata" data-param='{"common_name":"<%=items[i].common_name%>","shop_name":"<%=items[i].shop_name%>","goods_id":"<%=items[i].goods_id%>","common_id":"<%=items[i].common_id%>","shop_id":"<%=items[i].shop_id%>","common_image":"<%=items[i].common_image%>"}'  >分享</button>
+		</div>
+	</div>
+	<%}%>
+</script>
+<script>
+	page =1;
+	rows =5;
+	keywords = null;
+	act = null;
+    var hasMore = true;
+    function usershop() {
+        $.getJSON(SiteUrl + "?ctl=Distribution_Buyer_Goods&met=index&typ=json",{page:page,rows:rows,act:act,keywords:keywords},function (e) {
+            if(e.status == 200) {
+                if(page == 1){
+                    $('#qrcode').html('');
+                    $('#qrcode').qrcode({
+                        width: 80, //宽度
+                        height: 80,
+                        text: WapSiteUrl+"/tmpl/member/directseller_store.html?uid="+e.data.user_id
+                    });
+                }
+                var s = template.render("list", e.data);
+                if (e.data.page == 1){
+                    $("#template").append(s);
+                    $("title").html('商城触屏版-'+e.data.shop_name);
+                    $('.title span').html(e.data.shop_name);
+				}
+                if (e.data.page < e.data.total) {
+                    hasMore = true;
+                    page++;
+                $("#template").append(s);
+                }
+                if (e.data.page == e.data.total){
+                    hasMore = false;
+				}
+
+                $('.tcdata').click(function () {
+                    $('.share_tanchuang').show();
+                    $('.bg_contain').show();
+                    param = $(this).data('param');
+					p_goods_name = param.common_name;
+					p_goods_id = param.goods_id;
+					p_common_id = param.common_id;
+					p_shop_id = param.shop_id;
+					p_common_image = param.common_image;
+					p_shop_name = param.shop_name;
+                    //分享
+                    var goods_id = p_goods_id;
+                    var desc = p_shop_name +'淘金店铺的'+ p_goods_name + '买就是赚,快来参与啊';
+                    var share_img = p_common_image;
+
+                    var id = getCookie('id'); //登录标记
+                    var suid = '';
+                    if (id) {
+                        suid = '&suid=' + id;
+                    }
+                    var title = '淘尚168商城';
+//                    var link = ApiUrl + '?ctl=Goods_Goods&met=goods&gid=' + goods_id + suid + '&type=app&from=';
+//                        $rec = 'u'.Perm::$userId.'s'.$val['shop_id'].'c'.$val['common_id'];
+//                    http://192.168.0.101/taoshang168/shop_wap/tmpl/product_detail.html?goods_id=26312&rec=u10079s8c15369
+                    var link = WapSiteUrl + '/tmpl/product_detail.html?goods_id='+p_goods_id+'&res=u'+id+'s'+p_shop_id+'c'+p_common_id;
+
+//                    if (data.wxConfig) {
+//                        //微信内分享
+//                        wx.config({
+//                            debug: false,
+//                            appId: data.wxConfig.appId,
+//                            timestamp: data.wxConfig.timestamp,
+//                            nonceStr: data.wxConfig.nonceStr,
+//                            signature: data.wxConfig.signature,
+//                            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone']
+//                        });
+//
+//                        //微信加载
+//                        wx.ready(function() {
+//                            //朋友圈
+//                            wx.onMenuShareTimeline({
+//                                title: title,
+//                                // 分享标题
+//                                desc: desc,
+//                                link: link + 'weixin_timeline',
+//                                // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+//                                imgUrl: share_img,
+//                                // 分享图标
+//                                success: function() {
+//                                    alert('分享成功');
+//                                },
+//                                cancel: function() {
+//                                    alert('分享失败');
+//                                }
+//                            });
+//                            //微信朋友
+//                            wx.onMenuShareAppMessage({
+//                                title: title,
+//                                // 分享标题
+//                                desc: desc,
+//                                // 分享描述
+//                                link: link + 'weixin',
+//                                // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+//                                imgUrl: share_img,
+//                                // 分享图标
+//                                success: function() {
+//                                    alert('分享成功');
+//                                },
+//                                cancel: function() {
+//                                    alert('分享失败');
+//                                }
+//                            });
+//
+//                            wx.onMenuShareQQ({
+//                                title: title,
+//                                // 分享标题
+//                                desc: desc,
+//                                // 分享描述
+//                                link: link + 'sqq',
+//                                // 分享链接
+//                                imgUrl: share_img,
+//                                // 分享图标
+//                                success: function() {
+//                                    alert('分享成功');
+//                                },
+//                                cancel: function() {
+//                                    alert('分享失败');
+//                                }
+//                            });
+//                            wx.onMenuShareQZone({
+//                                title: title,
+//                                // 分享标题
+//                                desc: desc,
+//                                // 分享描述
+//                                link: link + 'qzone',
+//                                // 分享链接
+//                                imgUrl: share_img,
+//                                // 分享图标
+//                                success: function() {
+//                                    alert('分享成功');
+//                                },
+//                                cancel: function() {
+//                                    alert('分享失败');
+//                                }
+//                            });
+//                        });
+//                    } else {
+                        var nativeShare = new NativeShare();
+                        var shareData = {
+                            title: title,
+                            desc: desc,
+                            // 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+                            link: link,
+                            icon: share_img,
+                            // 不要过于依赖以下两个回调，很多浏览器是不支持的
+                            success: function() {
+                                //alert('success')
+                            },
+                            fail: function() {
+                                //alert('fail')
+                            }
+                        };
+
+                        function call(command) {
+                            try {
+                                nativeShare.call(command)
+                            } catch (err) {
+                                // 如果不支持，你可以在这里做降级处理
+                                if (err.message) {
+                                    alert(err.message)
+                                } else {
+                                    alert('当前浏览器不支持此功能。')
+                                }
+                            }
+                        }
+
+                        $('.share').on('click', function() {
+                            var type = $(this).data('type');
+                            if (type) {
+                                //&type=app&from=
+                                stype = '';
+//                                if (type == 'qZone') {
+//                                    stype = 'qzone';
+//                                } else if (type == 'qqFriend') {
+//                                    stype = 'sqq';
+//                                } else if (type == 'wechatFriend') {
+//                                    stype = 'weixin';
+//                                } else if (type == 'wechatTimeline') {
+//                                    stype = 'weixin_timeline';
+//                                } else if (type == 'weibo') {
+//                                    stype = 'tsina';
+//                                }
+                                shareData.link = shareData.link + stype;
+                                nativeShare.setShareData(shareData);
+                                call(type);
+                            }
+                        });
+//                    }
+                })
+            }
+        });
+    }
+    usershop();
+    $(window).scroll(function() {
+        if(hasMore){
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
+                usershop();
+            }
+        }
+    });
+    $('.shaixuan ul li').click(function () {
+        $('#template').html("");
+ 		index = $(".shaixuan ul li").index(this);
+		    page =1;
+		if(index == 0){
+		  act = 'sales';
+		  usershop();
+		}
+		if(index == 1){
+		    act = 'commission';
+            usershop();
+		}
+		if(index ==2){
+		    act = 'uptime';
+            usershop();
+		}
+    })
+	function tcdata(a,b) {
+        $('.share_tanchuang').show();
+        $('.bg_contain').show();
+	};
+
+
+    $('.bg_contain').on('click',function () {
+        $('.share_tanchuang').hide();
+        $('.bg_contain').hide();
+    })
+</script>
+</html>

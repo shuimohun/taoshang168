@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Author" contect="U2FsdGVkX1+liZRYkVWAWC6HsmKNJKZKIr5plAJdZUSg1A==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+<title>送福免单</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+<link rel="stylesheet" href="../css/nctouch_products_list.css">
+<link rel="stylesheet" type="text/css" href="../css/sendbless/sendbless.css">
+</head>
+<body>
+<header id="header" class="nctouch-product-header fixed">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+        <div class="head_title">送福免单</div>
+    </div>
+</header>
+<!--送福免单  start-->
+<div class="bless_main">
+    <div class="belss_rule clearfix">
+        <a href="#" class="send_method">如何送福免单 <img src="img/sendbless/icon_wh.png" alt=""></a>
+        <a href="#" class="send_rule">规则></a>
+    </div>
+    <div class="bless_con">
+        <ul class="clearfix">
+            <li><a href="#"><img src="img/sendbless/sendbless1.png" alt=""><p>选择商品</p></a></li>
+            <li><a href="#"><img src="img/sendbless/sendbless2.png" alt=""><p>送福邀好友</p></a></li>
+            <li><a href="#"><img src="img/sendbless/sendbless3.png" alt=""><p>送福成功发货</p></a></li>
+        </ul>
+    </div>
+</div>
+<div class="nctouch-main-layout">
+    <div id="product_list" class="list fuGoods">
+
+    </div>
+</div>
+<!--送福免单  end-->
+<div class="fix-block-r my_free_order">
+    <!--<a href="#" class="browse-btn"><i></i></a>-->
+    <a href="./sendbless_detail.html" class="gotop-btn gotop hide" id="goTopBtn">我的<br/>免单</a>
+</div>
+<footer id="footer" class="bottom"></footer>
+<!--规则弹框start-->
+<div class="gz_pop">
+    <div class="gz_mask"></div>
+    <div class="gz_content">
+        <div class="gz_title">
+            <ul class="clearfix">
+                <li>免单攻略</li>
+                <li>活动规则</li>
+            </ul>
+            <span class="close_btn"><img src="../images/close_window.png" alt=""></span>
+        </div>
+        <div class="gz_text">
+            <ul>
+                <li><span>1</span>注册成为淘尚168会员，即可参加“送福免单”活动，选择“送福免单”商品，确认心目中能完成的送福任务。“送福免单”分两种形式：“ 送福”点击集福任务和“送福”注册集福任务。（点击集福任务：分享给自己的社交好友，只需好友点击你发的链接，就可以帮助你完 成集福任务。）（注册集福任务：必须让你的好友注册淘尚168会员，来完成你的集福任务。）</li>
+                <li><span>2</span>在规定时间内（24小时内完成），可邀请你的好友，帮助下载安装社交软件，来完成你的点击或注册任务。</li>
+                <li><span>3</span>完成“送福”任务的点击或注册次数，免单成功；如果不能完成“送福”任务，也可以选择购买该商品 （能买到非常便宜的“送福”商品）</li>
+            </ul>
+        </div>
+        <div class="gz_text">
+            <ul>
+                <li><span>1</span>每个新用户可帮助点击或注册，每个社交平台只能记录一次。</li>
+                <li><span>2</span>若发现用户存在刷单，虚假用户等违规行为，平台有权判定“送福”失败；</li>
+                <li><span>3</span>用户完成免单后，在48小时安排发货（特殊情况会通知买家）；</li>
+                <li><span>4</span>如修改收货地址，对物流和商品有疑问可联系客服。</li>
+                <li><span>5</span>商家限制会员免单商品数（即商家设定“送福免单”商品，限制参加“送福免单”会员的免单商品数量。例：商家设定“送福免单”商品数量为10个，允许每个淘尚168会员在店铺参加5个“送福免单”商品，如想参加更多免单活动，需要满足商家设定的最低消费金额，即可获取更多免单商品（限当天），不限送福成功购买的商品）。</li>
+                <li><span>6</span>设定单品送福免单次数（商家设定“送福免单”商品，每个商品允许淘尚168会员参加“送福免单”xx次。例：一个“送福免单”商品允许会员参加2次活动，如想继续获得该商品的免单活动，需要满足商家设定的最低消费金额，即可获取（限当天），不限送福成功购买的商品）</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--规则弹框end-->
+<!--送福商品渲染-->
+<script type="text/html" id="fuGoods">
+    <ul class="goods-secrch-list">
+        <% if(data.items){ %>
+            <% for(var i in data.items){ %>
+                <li class="goods-item">
+                        <span class="goods-pic">
+                            <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>">
+                                <img src="<%=data.items[i].goods_image%>"/>
+                            </a>
+                        </span>
+                    <dl class="goods-info">
+                        <dt class="goods-name">
+                            <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>"><h4><%=data.items[i].goods_name%></h4></a>
+                        </dt>
+                        <dd class="goods-sale">
+                            <a href="#">
+                                <% if(data.items[i].is_register == 1 ){ %>
+                                <span class="bless_num">需 <em><%=data.items[i].fu_total_times%></em>个新人注册福</span>
+                                <%}else{%>
+                                <span class="bless_num">需 <em><%=data.items[i].fu_total_times%></em>福</span>
+                                <% }%>
+                            </a>
+                        </dd>
+                        <dd class="price_wrap clearfix">
+                            <span class="goods_price">￥0</span>
+                            <span class="free_num">已免单<em><%=data.items[i].sale_countFu%></em>件</span>
+                            <span class="free_btn gaoqing_btn">
+
+                                    <% if( data.items[i].fu_state ==2 ){ %>
+                                        <img src="../images/gaoqing.png" />
+                                           <!-- <a  data-id="<%=data.items[i].goods_id%>">
+                                            已抢光>
+                                            </a>-->
+                                    <%}else{%>
+                                        <a  data-id="<%=data.items[i].goods_id%>" href="./sendbless_register.html?gid=<%=data.items[i].goods_id%>&fu_id=<%=data.items[i].fu_id%>">
+                                        <%if(data.items[i].fu_status ==0){ %>
+                                            送福免单>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==1){ %>
+                                            进行中>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==2 ){ %>
+                                            成功未提交>
+                                        <% }%>
+                                        <% if( data.items[i].fu_status ==3 ){ %>
+                                            送福购买>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==4){ %>
+                                            免单成功>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==5){ %>
+                                            送福失败>
+                                        <% }%>
+                                        </a>
+                                    <% }%>
+
+                            </span>
+                        </dd>
+                    </dl>
+                </li>
+            <% }%>
+        <% }%>
+    </ul>
+    <li class="loading" style="display: block;"><div class="spinner"><i></i></div>商品数据读取中...</li>
+</script>
+<!--送福免单追加渲染-->
+<script type="text/html" id="fuGoodsMore">
+    <% if(data.items){ %>
+    <% for(var i in data.items){ %>
+    <li class="goods-item">
+                        <span class="goods-pic">
+                            <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>">
+                                <img src="<%=data.items[i].goods_image%>"/>
+                            </a>
+                        </span>
+        <dl class="goods-info">
+            <dt class="goods-name">
+                <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>"><h4><%=data.items[i].goods_name%></h4></a>
+            </dt>
+            <dd class="goods-sale">
+                <a href="#">
+                    <% if(data.items[i].is_register == 1 ){ %>
+                    <span class="bless_num">需 <em><%=data.items[i].fu_total_times%></em>个新人注册福</span>
+                    <%}else{%>
+                    <span class="bless_num">需 <em><%=data.items[i].fu_total_times%></em>福</span>
+                    <% }%>
+                </a>
+            </dd>
+            <dd class="price_wrap clearfix">
+                <span class="goods_price">￥0</span>
+                <span class="free_num">已免单<em><%=data.items[i].sale_countFu%></em>件</span>
+                <span class="free_btn gaoqing_btn">
+
+                                    <% if( data.items[i].fu_state ==2 ){ %>
+                                        <img src="../images/gaoqing.png" />
+                    <!-- <a  data-id="<%=data.items[i].goods_id%>">
+                     已抢光>
+                     </a>-->
+                                    <%}else{%>
+                                        <a  data-id="<%=data.items[i].goods_id%>" href="./sendbless_register.html?gid=<%=data.items[i].goods_id%>&fu_id=<%=data.items[i].fu_id%>">
+                                        <%if(data.items[i].fu_status ==0){ %>
+                                            送福免单>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==1){ %>
+                                            进行中>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==2 ){ %>
+                                            成功未提交>
+                                        <% }%>
+                                        <% if( data.items[i].fu_status ==3 ){ %>
+                                            送福购买>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==4){ %>
+                                            免单成功>
+                                        <% }%>
+                                        <%if(data.items[i].fu_status ==5){ %>
+                                            送福失败>
+                                        <% }%>
+                                        </a>
+                                    <% }%>
+
+                            </span>
+            </dd>
+        </dl>
+    </li>
+    <% }%>
+    <% }%>
+</script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/sendbless/sendbless_list.js"></script>
+<script>
+    //规则弹框
+
+    $(".send_rule").click(function(){
+        $(".gz_pop").show();
+        var gz_pop_Height = $(".gz_content").height();
+        $(".gz_content").css({"margin-top":-gz_pop_Height/2+"px"});
+    })
+    $(".close_btn").click(function(){
+        $(".gz_pop").hide();
+    })
+    $(".gz_mask").click(function(){
+        $(".gz_pop").hide();
+    })
+    $(".gz_content .gz_title ul li").eq(1).addClass("on");
+    $(".gz_text").eq(1).show();
+    $(".gz_content .gz_title ul li").click(function () {
+        var this_num = $(this).index();
+        $(".gz_content .gz_title ul li").removeClass("on");
+        $(this).addClass("on");
+        $(".gz_text").hide();
+        $(".gz_text").eq(this_num).show();
+
+    })
+</script>
+</body>
+</html>

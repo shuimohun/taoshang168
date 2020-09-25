@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="telephone=no" name="format-detection" />
+  <title>淘金订单</title>
+  <link rel="stylesheet" href="../../css/drp_goods.css">
+  <link rel="stylesheet" href="../../css/directseller_base.css">
+</head>
+<body>
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../../images/icon_back.png" alt=""></a>
+      <span>淘金订单</span>
+    </div>
+  </header>
+  <!--头部部分-->
+  
+    <ul class="income_title">
+      <li class="cur">全部</li>
+      <li>老板</li>
+      <li>店长</li>
+      <li>促销员</li>
+    </ul>
+
+    <ul class="dingdan_list">
+      <li>
+        <span>0</span><br>
+        <i>全部订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>付款订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>待付款订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>待收货订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>完成订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>退款订单</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>销售金额</i>
+      </li>
+      <li>
+        <span>0</span><br>
+        <i>累计收入</i>
+      </li>
+    </ul>
+  <div id="order">
+      <div class="shuoming">买家下单交易成功后，显示佣金收入</div>
+
+      <div class="dingdan_title">全部订单（ ）</div>
+  </div>
+  <div id="orderList">
+      <div class="item">
+        <div class="item-top">
+          <span></span>
+          <u>交易成功</u>
+          <i>￥（）</i>
+        </div>
+        <time>0000/00/00 00:00:00</time>
+      </div>
+
+  </div>
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='../../js/drp_goods.js'></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" id="Top">
+    <li>
+    <span><%= top.all %></span><br>
+    <i>全部订单</i>
+    </li>
+    <li>
+    <span><%= top.fukuan?top.fukuan:0 %></span><br>
+    <i>付款订单</i>
+    </li>
+    <li>
+    <span><%= top.daifukuan?top.daifukuan:0 %></span><br>
+    <i>待付款订单</i>
+    </li>
+    <li>
+    <span><%= top.daishouhuo?top.daishouhuo:0%></span><br>
+    <i>待收货订单</i>
+    </li>
+    <li>
+    <span><%= top.wancheng?top.wancheng:0%></span><br>
+    <i>完成订单</i>
+    </li>
+    <li>
+    <span><%= top.tuikuan?top.tuikuan:0%></span><br>
+    <i>退款订单</i>
+    </li>
+    <li>
+    <span><%= top.total?top.total:0 %></span><br>
+    <i>销售金额</i>
+    </li>
+    <li>
+    <span><%= top.shouru?top.shouru:0%></span><br>
+    <i>累计收入</i>
+    </li>
+</script>
+<script type="text/javascript" id="List">
+    <% for (var i in items) {%>
+    <div class="item">
+        <div class="item-top">
+        <span><%= items[i].level%>   <%= items[i].user_name%>   淘金   <%= items[i].goods_name%></span>
+        <u><%= items[i].order_state_con%></u>
+        <i>￥（<%= items[i].directseller_commission %>）</i>
+    </div>
+    <time><%= items[i].order_create_time%></time>
+    </div>
+            <% }%>
+</script>
+<script type="text/javascript" id="Order">
+    <div class="shuoming">买家下单交易成功后，显示佣金收入</div>
+
+    <div class="dingdan_title">全部订单（<%= count%>）</div>
+</script>
+<script>
+  page =1 ;
+  function getTop() {
+      $.post(ApiUrl + "?ctl=Distribution_Buyer_Index&met=directOrder&typ=json",{status:status},function (e) {
+          if(e.status == 200) {
+              var r = template.render("Top", e.data);
+              $(".dingdan_list").html(r);
+              var s = template.render("List",e.data);
+              $('#orderList').html(s);
+              var t = template.render("Order",e.data);
+              $('#order').html(t);
+          }
+      })
+  }
+  getTop();
+  $('.income_title li').click(function () {
+      var index = $(".income_title li").index($(this));
+      if(index == 1) {
+          status = 'first';
+          getTop();
+      }else if(index==2){
+          status = 'second';
+          getTop();
+
+      }else if(index==3){
+          status = 'third';
+          getTop();
+
+      }else{
+          status = null;
+      getTop();
+      }
+  })
+
+</script>
+</html>

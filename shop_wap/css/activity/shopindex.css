@@ -1,0 +1,383 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.title{
+	width: 100%;
+	height: 4.1rem;
+	background-color: #E45050;
+}
+.title .icon{
+	width:90%;
+	height:.7rem;
+	margin:0 auto;
+}
+.title .icon img{
+	width:.35rem;
+	height:.35rem;
+}
+.title .icon .back{
+	float: left;
+	width:.35rem;
+	height:.35rem;
+	margin-top: .3rem;
+}
+.title .icon .search{
+	float: right;
+	width:.35rem;
+	height:.35rem;
+	margin-top: .3rem;
+}
+/*******************************/
+.title .head_img{
+	width:1.15rem;
+	height:1.15rem;
+	margin:0 auto;
+	margin-top:.25rem;
+}
+.title .head_img img{
+	width:1.15rem;
+	height:1.15rem;
+	border: .02rem solid #fff;
+	border-radius: .7rem;	
+}
+/******************************/
+.title .word{
+	width:3.3rem;
+	height:.75rem;
+	margin-top:.3rem;
+	margin-left: 2rem;
+	color: #fff;
+	position:relative;
+}
+.title .word div{
+	display:inline-block;
+}
+.title .word span{
+	font-size: .3rem;
+}
+.title .word ul{
+	display:inline-block;
+	position:absolute;
+	top:0;
+	left:75%;
+	white-space: nowrap;
+}
+.title .word ul li{
+	display:inline-block;
+	background-color: #fff;
+	width:.2rem;
+	height:.2rem;
+}
+.title .word u{
+	display:inline-block;
+	text-decoration: none;
+	font-size: .22rem;
+	margin-left:.6rem;
+	margin-top:.07rem;
+}
+/************************************/
+.title .footer{
+	width:93%;
+	height:.6rem;
+	margin:0 auto;
+	border-top:.01rem solid #D04949;
+	margin-top:.3rem;
+	font-size:0;
+}
+.title .footer div.left{
+	display:inline-block;
+	width:50%;
+	height:.6rem;
+	vertical-align: top;
+	border-right: .01rem solid #D04949;
+}
+.title .footer div.right{
+	display:inline-block;
+	width:50%;
+	height:.6rem;
+}
+.title .footer div img{
+	width:.4rem;
+	height:.4rem;
+	margin-right: .1rem;
+	margin-left:1rem;
+	margin-top:.1rem;
+}
+.title .footer div span{
+	display:inline-block;
+	font-size: .22rem;
+	color:#fff;
+	margin-top:.15rem;
+}
+/***************头部部分结束**************************************/
+
+/**********导航栏部分************************/
+	.nav{
+		width:100%;
+		height:.7rem;
+		background-color: #fff;
+	}
+	.nav ul{
+		display:inline-block;
+		width:100%;
+		height:.7rem;
+		background-color: #fff;
+	}
+	.nav ul li{
+		display:inline-block;
+		width:31.5%;
+		height:.7rem;
+		color:#1E1E1E;
+		font-size: .28rem;
+		text-align: center;
+		line-height: .7rem;
+	}
+/**********导航栏部分************************/
+
+/*********banner+导航栏部分********************/
+	.main{
+		width:100%;
+		height:3.2rem;
+	}
+	.main img{
+		width:100%;
+		height:2.65rem;
+	}
+	.main .word{
+		width:100%;
+		height:.55rem;
+		background-color:#eeeeee;
+		overflow: hidden;/*解决嵌套div margin不起作用问题*/
+	}
+	.main .word .word-inner{
+		width:95%;
+		height:.24rem;
+		background-color: #eeeeee;
+		margin:0 auto;
+		margin-top:.20rem;
+		border-left:.05rem solid #E13C3C;
+	}
+	.main .word .word-inner span{
+		font-size: .21rem;
+		margin-left:.1rem;
+		vertical-align:top;
+		color:#313131;
+	}
+	.main .word .word-inner i{
+		font-style: normal;
+		font-size: .19rem;
+		vertical-align:top;
+		color:#999999;
+		float: right;
+	}
+/*********banner+导航栏部分********************/
+
+/**************banner内容部分*****************************/
+	.recommended{
+		width:100%;
+		height:5.1rem;
+	}
+	.recommended .left{
+		width:3.8rem;
+		height:5.1rem;
+		float: left;
+	} 
+	.recommended .left img{
+		width:3.8rem;
+		height:3.8rem;
+		border-radius:.1rem;
+	}
+	.recommended .left .word{
+		width:100%;
+		height:1.24rem;
+		background-color: #fff;
+		margin-top:.06rem;
+		border-radius:.1rem;
+	}
+	.recommended .left .word span{
+		display:inline-block;
+		width:89%;
+		height:.6rem;
+		margin-top:.13rem;
+		margin-left:.2rem;
+		font-size: .24rem;
+		color:#343434;
+	}
+	.recommended .left .word div{
+		width:92%;
+		height:.45rem;
+		margin-left:.2rem;
+	}
+	.recommended .left .word div b{
+		font-weight: bold;
+		font-size: .24rem;
+		color:#E45050;
+		float: left;
+		margin-top:.08rem;
+	}
+	.recommended .left .word div del{
+		text-decoration:none;
+		font-size: .20rem;
+		color:#666666;
+		float: left;
+		margin-top:.095rem;
+		margin-left:1.63rem;
+	}
+	.recommended .left .word div img{
+		width:.32rem;
+		height:.32rem;
+		float: right;
+		margin-top:.05rem;
+	}
+	.recommended .right{
+		width:2.5rem;
+		height:5.1rem;
+		border-radius:.1rem;
+		float: right;
+		margin-left: .1rem;
+	}
+	.recommended .right img{
+		width:100%;
+		height:2.5rem;
+		border-radius:.1rem;
+	}
+	.recommended .right img.top_img{
+		margin-bottom: .1rem;
+	}
+/**************banner内容部分*****************************/
+
+
+/*****************主要部分********************************/
+	.contain{
+		width:100%;
+		height:3.9rem;
+	}
+	.contain .word{
+		width:100%;
+		height:.55rem;
+		background-color:#eeeeee;
+		overflow: hidden;/*解决嵌套div margin不起作用问题*/
+	}
+	.contain .word .word-inner{
+		width:95%;
+		height:.24rem;
+		background-color: #eeeeee;
+		margin:0 auto;
+		margin-top:.20rem;
+		border-left:.05rem solid #E13C3C;
+	}
+	.contain .word .word-inner span{
+		font-size: .21rem;
+		margin-left:.1rem;
+		vertical-align:top;
+		color:#313131;
+	}
+	.contain .word .word-inner i{
+		font-style: normal;
+		font-size: .19rem;
+		vertical-align:top;
+		color:#999999;
+		float: right;
+	}
+	.contain .contain_goods{
+		width:100%;
+		height:3.35rem;
+		background-color: #eeeeee;
+	}
+	.contain .contain_goods ul{
+		width:100%;
+		height:3.35rem;
+		font-size: 0;
+	}
+	.contain .contain_goods ul li{
+		display:inline-block;
+		width:32.5%;
+		height:3.35rem;
+		float: left;
+	}
+	.contain .contain_goods ul li:nth-child(2){
+		margin-left:.08rem;
+		margin-right:.08rem;
+	}
+	.contain .contain_goods ul li img{
+		width:100%;
+		height:2.1rem;
+		margin-bottom:.03rem;
+	}
+	.contain .contain_goods ul li .good_word{
+		width:100%;
+		height:1.25rem;
+		background-color: #fff;
+	}
+	.contain .contain_goods ul li .good_word span{
+		display:inline-block;
+		width:85%;
+		height:.52rem;
+		margin-left:.18rem;
+		margin-top:.1rem;
+		font-size: .20rem;
+		color:#616161;
+		letter-spacing: -.01rem;
+	}
+	.contain .contain_goods ul li .good_word div{
+		display:inline-block;
+		width:90%;
+		height:.3rem;
+		margin-left:.18rem;
+		margin-top:.14rem;
+	}
+	.contain .contain_goods ul li .good_word b{
+		display:inline-block;
+		font-size: .18rem;
+		margin-top:.05rem;
+		float: left;
+		color:#E45050;
+	}
+	.contain .contain_goods ul li .good_word i{
+		display:inline-block;
+		font-size: .18rem;
+		font-style: normal;
+		float: left;
+		color:#656565;
+		margin-top:.08rem;
+		float: right;
+	}
+	.contain .contain_goods ul li .good_word div img{
+		width:.3rem;
+		height:.3rem;
+		float: right;
+		margin-right: .1rem;
+		margin-top:.03rem;
+	}
+/*****************主要部分********************************/
+
+/****************************底部*********************************/
+	footer{
+		background-color: #fff;
+		margin-top:.1rem;
+		border-top:.01rem solid #D5D5D5;
+	}
+	footer .footernav{
+		width:100%;
+		height:.55rem;
+		font-size: 0;
+	}
+	footer .footernav div{
+		display:inline-block;
+		width:50%;
+		height:.55rem;
+		text-align: center;
+		line-height:.55rem;
+	}
+	footer .footernav div span{
+		font-size: .28rem;
+		color:#2B2B2B;
+	}
+	footer .footernav div.left{
+		border-right:.01rem solid #D5D5D5;
+	}
+	footer .footernav div.left img{
+		width:.43rem;
+		height:.43rem;
+		margin-top:.06rem;
+	}
+/****************************底部*********************************/

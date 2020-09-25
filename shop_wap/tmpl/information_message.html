@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>发帖</title>
+	<link rel="stylesheet" href="../css/information_message_base.css">
+	<link rel="stylesheet" href="../css/posting.css">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_products_list.css">
+    <link rel="stylesheet" type="text/css" href="../css/searchgoods.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+</head>
+<body>
+	<!--头部 start-->
+	<header class="post_person">
+		发帖
+		<a href="javascript:history.go(-1)" class="post_back"></a>
+	</header>
+	<!--头部 end-->
+	<!--发帖 start-->
+	<div class="main hide">
+		<!--帖子标题 start-->
+		<div class="posttitle">
+			<h4>帖子标题</h4>
+			<div>
+				<textarea class="title_detail" name="" placeholder="3-18字以内"></textarea>
+			</div>
+		</div>
+		<!--帖子标题 end-->
+		<!--帖子主图 start-->
+		<div class="post_main_img">
+			<h4>帖子主图</h4>
+			<div class="main_img_wrap">
+				<img src="../images/uploadpic.png" alt="" class="">
+				<input type="file" class="up_l_picbtn" name="upfile" multiple="multiple">
+				<div class="m_img_container"></div>
+			</div>
+		</div>
+		<!--帖子主图 end-->
+		<!--帖子内容 start-->
+		<div class="postcon">
+			<div class="conwrap">
+				<h4>帖子内容</h4>
+				<div class="graybg"><textarea id="container" name="detail" style="width:100%;height:2rem"></textarea></div>
+			</div>
+		</div>
+		<!--帖子内容 end-->
+		<!--推荐商品 start-->
+		<div class="tj_main">
+			<div class="tuijian">
+				<h4>推荐商品<span>添加4个商品</span></h4>
+				<div class="uploadpic clearfix">
+					<ul class="img_wrapper clearfix">
+						<li class="upload">
+						    <img src="../images/uploadpic.png" alt="" class="upload_file_img">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--推荐商品 end-->
+		<!--添加到模板 start-->
+		<div class="add_model">
+			<div class="add_wrap">
+				<h4>添加到模板</h4>
+				<ul class="add_type_list clearfix">
+				</ul>
+			</div>
+		</div>
+		<!--添加到模板 end-->
+		<!--分享 start-->
+		<div class="share">
+			<div class="share_wrap" data-selected="">
+				<ul class="clearfix">
+					<li data-type="qqFriend"><a href="javascript:;" class="share_qq"><img src="../images/icon_qq.png" alt=""></a></li>
+					<li data-type="wechatFriend"><a href="javascript:;" class="share_wx"><img src="../images/icon_wx.png" alt=""></a></li>
+					<li data-type="wechatTimeline"><a href="javascript:;" class="share_fc"><img src="../images/icon_wxx.png" alt=""></a></li>
+					<li data-type="qZone"><a href="javascript:;" class="share_qz"><img src="../images/icon_qz.png" alt=""></a></li>
+					<li data-type="weibo"><a href="javascript:;" class="share_qb"><img src="../images/icon_wb.png" alt=""></a></li>
+				</ul>
+				<div class="share_explain">发布前分享选一个</div>
+			</div>
+		</div>
+		<!--分享 end-->
+	</div>
+	<!--发帖 end-->
+	<footer class="foot hide">
+		<div class="footmain clearfix">
+			<!--<input type="button" class="savebtn" value="保存草稿">-->
+			<input type="button" class="releasebtn" value="发布">
+		</div>
+	</footer>
+	<!--搜索商品弹框 start-->
+	<div class="nctouch-full-mask pop_search"><!--hide-->
+        <input type="hidden" id="information_goods_recommend" value="">
+        <input type="hidden" id="information_goods_recommend_type" value="">
+		<div class="nctouch-full-mask-bg"></div>
+		<div class="nctouch-full-mask-block">
+			<div class="pop_head">
+				<a href="javascript:;"  class="back"></a>
+				搜索商品
+			</div>
+			<!--头部 start-->
+			<!--滚动导航栏部分开始-->
+			<!--滚动导航栏部分开始-->
+			<div class="find_nav">
+                <div id="topNav" class="swiper-container">
+                    <div class="swiper-wrapper">
+                    </div>
+                </div>
+			</div>
+			<!--滚动导航栏部分结束-->
+			<!--搜索框结束-->
+			<div class="search_good">
+				<input type="text" class="search_input" placeholder="请输入搜索关键词">
+				<a href="javascript:;" class="search_btn">搜索</a>
+			</div>
+			<!--搜索框结束-->
+			<!--把商品添加到这个位置 start-->
+			<div class="add_shop_to">
+				<ul id="goods-ul">
+
+				</ul>
+			</div>
+			<!--把商品添加到这个位置 end-->
+			<!--搜索弹框商品 列表 start-->
+			<div class="main ft_main">
+				<div class="nctouch-main-layout">
+					<div id="product_list" class="list">
+						<ul class="goods-secrch-list">
+						</ul>
+					</div>
+				</div>
+				<div class="more"></div>
+			</div>
+			<!--搜索弹框商品 列表 end-->
+			</div>
+			<!--滚动导航栏部分结束-->
+			<!--头部 end-->
+			<footer class="foot">
+				<div class="footmain search_foot clearfix">
+					<input type="button" class="surebtn" value="确定">
+				</div>
+			</footer>
+		</div>
+	<div class="nctouch-main-layout-a secreen-layout" id="list-items-scroll" style="top: 2rem;"><div></div></div>
+	<!--搜索商品弹框 end-->
+
+
+	<script type="text/html" id="nav">
+		<% for(var i in nav){%>
+		<div class="swiper-slide <% if(i==0){ %> active<% }%>" data-id="<%=nav[i].id%>"><a href="javascript:void(0)"><%=nav[i].title%></a></div>
+		<% } %>
+	</script>
+    <script type="text/html" id="goods-item-tpl">
+        <li class="goods-item-li goods-item-__id" data-id="__id" data-type="__type" data-price="__price">
+            <img  src="__src">
+        </li>
+    </script>
+    <script type="text/html" id="goods_list">
+        <% if(items){ for(var i in items){%>
+        <li class="goods-item">
+			<div class="pic_btn_wrap">
+            <div class="choosebtn cbtn-<%=items[i].goods_id%> <%=items[i].on%>" data-id="<%=items[i].goods_id%>" data-price="<%=items[i].goods_shared_price?items[i].goods_shared_price:items[i].goods_price%>" data-image="<%=items[i].goods_image%>"></div>
+            <span class="goods-pic">
+                <a href="javascript:;"><img src="<%=items[i].goods_image%>"></a>
+            </span>
+			</div>
+            <dl class="goods-info">
+                <dt class="goods-name">
+                    <a href="javascript:;">
+                        <h4><%=items[i].goods_name%></h4>
+                        <span class="bg_all clearfix">
+                            <span class="bg">分享立省￥<%=items[i].goods_share_price%></span>
+                            <% if(items[i].goods_is_promotion){ %>
+                            <span class="bg">立赚￥<%=items[i].goods_promotion_price%></span>
+                            <% } %>
+                        </span>
+                    </a>
+                </dt>
+                <dd class="goods-sale">
+                    <a href="javascript:;">
+                        <span class="goods-price">￥
+                            <em>
+								<%=items[i].goods_shared_price?items[i].goods_shared_price:items[i].goods_price%>
+                            </em>
+                        </span>
+                    </a>
+                </dd>
+                <dd class="goods-assist clearfix">
+                    <a href="javascript:;">
+                        <span class="goods-sold">销量<em><%=items[i].goods_salenum%></em></span>
+                    </a>
+                </dd>
+            </dl>
+        </li>
+        <% }} %>
+    </script>
+	<script type="text/html" id="group">
+		<% if(group){ for(var i in group){%>
+			<li data-id="<%=group[i].information_group_id%>"><%=group[i].information_group_title%></li>
+		<% }} %>
+	</script>
+
+    <script src="../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/simple-plugin.js"></script>
+	<script type="text/javascript" src="../js/tmpl/footer.js"></script>
+	<script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="../ueditor/ueditor.all.js"></script>
+	<script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+    <script type="text/javascript" src="../js/posting.js"></script>
+</body>
+</html>

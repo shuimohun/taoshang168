@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>淘金店铺</title>
+	<link rel="stylesheet" href="../../css/shopController.css">
+	<link rel="stylesheet" href="../../css/directseller_base.css">
+	<link rel="stylesheet" href="../../css/alert.css">
+</head>
+<body style="">
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+			<span>淘金店铺</span>
+			<a href=""><img src="../../images/search.png" alt=""  class="info"></a> 
+			<a href=""><img src="../../images/dialogbox.png" alt=""  class="dialogbox"></a>
+		</div>
+		<span class="number">1</span>
+	</header>
+	<div class="erweimawrap">
+        <span id="erweima"> </span><br>
+		<span>小店二维码</span>
+	</div>
+	<div class="shaixuan">
+		<ul>
+			<li class="cur">综合</li>
+			<li>最新</li>
+			<li>商城热销</li>
+		</ul>
+	</div>
+	<div id="shop_list">
+
+	</div>
+
+
+	
+
+	<!--<ul class="footer">-->
+		<!--<li>-->
+			<!--<img src="../../images/tabbar1@2x.png" alt=""><br>-->
+			<!--<span>我的小店</span>-->
+		<!--</li>-->
+		<!--<li>-->
+			<!--<img src="../../images/tabbar2_s@2x.png" alt=""><br>-->
+			<!--<span>淘金市场</span>-->
+		<!--</li>-->
+		<!--<li>-->
+			<!--<img src="../../images/tabbar3@2x.png" alt=""><br>-->
+			<!--<span>私房钱</span>-->
+		<!--</li>-->
+		<!--<li>-->
+			<!--<img src="../../images/tabbar4@2x.png" alt=""><br>-->
+			<!--<span>我的小弟</span>-->
+		<!--</li>-->
+	<!--</ul>-->
+        </body>
+	<script src="../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../../js/shopController.js'></script>
+	<script type="text/javascript" src="../../js/template.js"></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/html" id="erweima">
+	<img src="<%= shop_qrcode%>" alt=""><br>
+	<span>小店二维码</span>
+</script>
+<script type="text/html" id="list">
+	<% for(var i in items){ %>
+	<div class="item">
+		<a href="product_detail.html?goods_id=<%= items[i].goods_id.goods_id?items[i].goods_id.goods_id:items[i].goods_id[0].goods_id%>">
+		<img src="<%= items[i].common_image%>" alt="">
+		<div class="item_contain" style="position:relative">
+			 <span><%= items[i].common_name %></span><br>
+			<p>店铺：<%= items[i].shop_name %></p><br>
+			<i>￥<%= items[i].common_price %></i><br>
+			<div class="goods-detail-item">
+
+				<div class="share_sub">分享立减 ￥0.50</div>
+
+
+				<div class="share_sub">分享赚 ￥0.10</div>
+
+
+			</div>
+		</a>
+			<!--<em>分享减：<%= items[i].common_share_price%></em>&nbsp;&nbsp;&nbsp;&nbsp;<em>分享赚：<%= items[i].common_promotion_price%></em><br>-->
+			<button class="taojindianpugoumai"onclick="click_h(<%= items[i].goods_id.goods_id?items[i].goods_id.goods_id:items[i].goods_id[0].goods_id%>)">购买</button>
+		</div>
+	</div>
+	<% }%>
+</script>
+
+<script type="text/javascript" src="../../js/jquery.qrcode.min.js"></script>
+	<script>
+		function click_h(e) {
+            window.location.href = '../product_detail.html?goods_id='+e;
+        }
+        url = window.location.href;
+        url_n = url.indexOf('uid');
+        id = url.slice(url_n+4);
+        page =1;
+        rows =8;
+        keywords = null;
+        act = null;
+        hasMore = true;
+        function usershop() {
+            $.getJSON(SiteUrl + "?ctl=Goods_Goods&met=others&typ=json&uid="+id,{page:page,rows:rows,act:act,keywords:keywords},function (e) {
+                if(e.status == 200) {
+        			$('.title span').html(e.data.shop.directseller_shop_name);
+
+                    /*var erweima = template.render("erweima",e.data);
+                    $(".erweimawrap").html(erweima);*/
+
+                    if(page == 1){
+                        $('#erweima').html('');
+                        $('#erweima').qrcode({
+                            width: 80, //宽度
+                            height: 80,
+                            text: WapSiteUrl+"/tmpl/member/directseller_store.html?uid="+e.data.user_id
+                        });
+                    }
+
+                    var s = template.render("list", e.data);
+                    if (e.data.page == 1){
+                        $("#shop_list").html(s);
+                    }else if (e.data.page <= e.data.total) {
+                        hasMore = true;
+                        $("#shop_list").append(s);
+                    }
+                    if(e.data.page == e.data.total){
+                        hasMore = false;
+					}
+                }
+            });
+        }
+        usershop();
+        $('.shaixuan ul li').click(function () {
+            hasMore = true;
+            page =1;
+			act_n = $(this).index();
+			if(act_n == 0){
+                act = 'default';
+			}
+			if(act_n == 1){
+                act = 'uptime';
+			}
+			if(act_n == 2){
+                act = 'sales';
+			}
+			usershop();
+        })
+        $(window).scroll(function() {
+            if(hasMore){
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
+                    page++;
+                    usershop();
+                }
+            }
+        });
+	</script>
+
+
+</html>

@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+/***********************头部部分***************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	/* position:fixed;
+	    top:0;
+	    left:0; */
+    z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:38%;
+}
+/***********************头部部分***************************/
+.chit{
+    width:100%;
+    height:auto;
+    padding:.18rem;
+    background-color: #fee9f0;
+    
+}
+.chit .chit_item{
+    width:100%;
+   height:1.83rem;
+   background:url(../../images/goldegg/bg_01@3x.png);
+   background-size:100% 100%;
+    margin-bottom:.18rem;
+    position:relative;
+}
+.chit .chit_left{
+    width:1.3rem;
+    height:1.3rem;
+    display:inline-block;
+    color:#f23155;
+    font-size: 0;
+    margin-top:2%;
+    margin-left: 2%;
+    overflow:hidden;
+}
+.chit .chit_left img{
+    width:100%;
+    height:100%;
+}
+.chit .chit_right_top{
+    display:inline-block;
+    width:2.7rem;
+    height:auto;
+    border-bottom:.01rem dashed red;
+    font-size: .24rem;
+    color:#666;
+    vertical-align:top;
+    margin-top: .1rem;
+    margin-left: .25rem;
+}
+.chit .chit_right_top span{
+    display:inline-block;
+    margin-bottom: .03rem;
+}
+.chit .chit_right_bottom{
+    width:2.7rem;
+    margin-left: 2rem;
+    position:absolute;
+    top:31%;
+    left:-4%;
+    font-size: 0;
+}
+.chit .chit_right_bottom span{
+    display:inline-block;
+    font-size: .18rem;
+    color:#666666;
+}
+.chit .chit_right_bottom u{
+    display:inline-block;
+    font-size: .18rem;
+    color:#929393;
+    text-decoration:none;
+}
+.chit .chit_right_bottom i{
+    display:inline-block;
+    font-size: .4rem;
+    color:#fd114f;
+    font-style:normal;
+}
+.chit .chit_right_bottom b{
+    display:inline-block;
+    font-size: .18rem;
+   color:#fd114f;
+    font-weight: normal;
+    margin-top: .35rem;
+    margin-left: .1rem;
+}
+.circle {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            right: -.2rem;
+            top: -.4rem;
+            border-radius: 50%;
+            background: #f22e2e;
+            transform: scale(.46);
+        }
+        .pie_left, .pie_right {
+            width:2rem; 
+            height:2rem;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .left, .right {
+            width:2rem; 
+            height:2rem;
+            background:#ffe9f0;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .pie_right, .right {
+            clip:rect(0,auto,auto,1rem);
+        }
+        .pie_left, .left {
+            clip:rect(0,1rem,auto,0);
+        }
+        .mask {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            left: .25rem;
+            top: .25rem;
+            background: #FFF;
+            position: absolute;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: .34rem;
+            font-weight: bold;
+            color: #f22e2e;
+        }
+    .btn{
+        width:.88rem;
+        height:.25rem;
+        outline: none;
+        border:0 none;
+        font-size: .16rem;
+        color:white;
+        text-align: center;
+        line-height:.25rem;
+        border-radius:.3rem;
+        position:absolute;
+        right:5%;
+        bottom:5%;
+    }
+    .btn-liji{
+        background-color: #fd114f;
+    }
+    .btn-jindian{
+        background-color: #b3b3b3;
+    }
+    .btn-shiyong{
+        background-color: #ffa800;
+    }
+    .btn-qiangguang{
+        background-color: #999999;
+    }
+    .xuyaojindan{
+        position:absolute;
+        top:15%;
+        right:5%;
+        color:#e45050;
+        font-size: .24rem;
+    }
+    .xuyaojindan-number{
+        position:absolute;
+        top:45%;
+        right:9%;
+        color:#e45050;
+        font-size: .24rem;
+    }
+    .qiangguang{
+        width: 2rem;
+            height: 1.5rem;
+            position: absolute;
+            right: -.22rem;
+            top: -.2rem;
+            transform: scale(.46);
+    }
+    .qiangguang img{
+        width:100%;
+        height:100%
+    }
+    .position-ling{
+        width:1.2rem;
+        height:.9rem;
+        position:absolute;
+        right:0;
+        top:0;
+    }

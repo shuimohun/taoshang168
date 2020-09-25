@@ -1,0 +1,25 @@
+/* 搜索好友主内容区 start*/
+body{ background: #fff;}
+html,body{ height: auto;}
+.main{ width: 100%; margin-bottom: 1.5rem;}
+.fl_item{ width: 100%;border-bottom: 1px solid #ededed; }
+.fl_item:first-child{border-top: 1px solid #ededed; }
+.fl_item_con{width:96%; margin:0 auto; padding: 0.2rem 0; }
+.fl_tx{ float: left; }
+.fl_tx img{ width: 0.75rem;height: 0.75rem; border-radius: 50%;}
+.fl_infor{float: left; width: 56%; margin-left: 2%; margin-top: 0.25rem;}
+.fl_infor p{ width: 100%;}
+.fl_infor .user_name{ font-size: 0.22rem; color: #333; white-space: nowrap;overflow: hidden;  text-overflow: ellipsis; }
+.ad_btn{ float: right; background: #ff3300; color: #fff; font-size: 0.17rem; padding: 0.05rem 0.1rem; border-radius: 0.2rem; margin-top: 0.2rem;}
+.ad_btn.on{ background: #df2029;}
+/*搜索好友主内容区 end*/
+
+
+
+
+
+
+
+
+
+

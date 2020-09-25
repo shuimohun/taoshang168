@@ -1,0 +1,29 @@
+/*送福免单    start*/
+header.fixed{ background: #dc143b}
+.header-wrap .head_title{ color: #fff;}
+.header-l a i.back{ background-image:url(../../images/bbc-bg43.png);}
+.header-wrap .head_title{font-size:.75rem;height:1.95rem;line-height:1.95rem; }
+
+.list .goods-secrch-list .goods-name{ height: auto;}
+.list .goods-secrch-list .goods-info{ padding-bottom: 0.38rem}
+.bless_num,.free_num{display: inline-block; width: 48%; font-size: 0.5rem}
+.bless_num{ color: #dc143b;}
+.free_num{ text-align: right; color: #999;}
+.free_num em{ color: #333;}
+.goods_price,.free_btn,.goods_price_fact{ width: 33%; display: inline-block; font-size: 0.58rem;}
+.goods_price_fact{ font-size: 0.50rem; color: #333;}
+.goods_price{ color: #dc143b;}
+.free_btn{ text-align: right;}
+.free_btn a{ padding: 0.1rem 0.35rem; color: #fff!important; background: #dc143b; border-radius:0.5rem; display: inline!important; }
+
+/*送福免单  end*/
+
+
+
+
+
+
+
+
+
+

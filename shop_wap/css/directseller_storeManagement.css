@@ -1,0 +1,113 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+body,html{
+	background-color: #f2f2f2;
+}
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+	border-bottom: .02rem solid #eee;
+	position:fixed;
+	top:0;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+/***************头部部分结束**************************************/
+.titleContain{
+	width:100%;
+	height:1.3rem;
+	margin-bottom: .2rem;
+	background-color: #fff;
+}
+.titleContain img{
+	width:1rem;
+	height:1rem;
+	margin-left: .2rem;
+	margin-top: .2rem;
+}
+.titleContain span{
+	font-size: .24rem;
+	color:#999;
+	vertical-align:middle;
+	display:inline-block;
+	line-height:1.3rem;
+}
+.titleContain button{
+	width:1.2rem;
+	height:.38rem;
+	border:.02rem solid #e34f4f;
+	background-color: #fff;
+	font-size: .2rem;
+	color: #e34f4f;
+	border-radius:.2rem;
+	float: right;
+	margin-top: 6.5%;
+	margin-right: .1rem;
+}
+.shop{
+	width:100%;
+	height:1.5rem;
+	background-color: #fff;
+	font-size: 0;
+}
+.shop li{
+	width:33.3333%;
+	height:100%;
+	display:inline-block;
+	text-align: center;
+}
+.shop li img{
+	width:.48rem;
+	height:.48rem;
+	margin-top: .3rem;
+}
+.shop li span{
+	font-size: .24rem;
+	color:#333;
+	display:inline-block;
+	margin-top: .15rem;
+}
+.btn{
+	width:100%;
+	height:1.05rem;
+	font-size: 0;
+	background-color: #fff;
+	border-top: .02rem solid #eee;
+}
+.btn li{
+	width:50%;
+	height:100%;
+	text-align: center;
+	display:inline-block;
+}
+.btn li img{
+	width:.38rem;
+	height:.38rem;
+	margin-top: 9%;
+	margin-right: .1rem;
+}
+.btn li span{
+	font-size: .24rem;
+	color: #e34f4f;
+	line-height:1.05rem;
+	display:inline-block;
+}

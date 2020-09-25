@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>好友转账</title>
+  <link rel="stylesheet" href="../../css/money/transfer.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/transfer.js'></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="./money_index.html"><img src="../../images/money/back.png" alt=""></a>
+      <span>好友转账</span>
+      <a href="#"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+
+  
+
+  <div class="balance">
+    <span>账户余额(元)</span><br>
+    <h1></h1><br>
+    <u id="btn"><img src="../../images/money/eye_1@3x.png" alt=""> 余额可见</u>
+  </div>
+
+
+
+  <div class="operate">
+      <div class="cur" data-type="1">转账</div>
+      <div data-type="2">提现</div>
+  </div>
+  
+
+  <form id="form" action="#" method="post">
+      <ul>
+
+        <li>
+          <label for="">转账金额：</label><input type="text" id="trans_money" onkeyup="amount(this)" onblur="checkMoney(this)">
+          <p id="m_tip" style="display:none;"></p>
+        </li>
+
+        <li>
+          <label for="">收款账号：</label><input type="text" id="user_nickname" onblur="checkUser(this)" >
+          <p id="u_tip" style="display:none;"></p>
+        </li>
+
+        <li>
+          <label for="">付款说明：</label><input type="text" id="state" onblur="checkState(this)" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+          <p id="content" style="display:none;"></p>
+        </li>
+
+        <li>
+          <label for="">手机账号：</label><span class="nmb"></span>
+        </li>
+
+        <li>
+          <label>验 证 码：</label>
+          <input type="text" value="" id="yzmval" onchange="javascript:checkyzm();">
+          <input type="button" value="获取手机验证码" class="yanzhengma" data-type="mobile">
+          <p id="yzm" style="display:none;"></p>
+        </li>
+
+          <li>
+            <label for="">支付密码：</label><input type="password" id="password">
+        </li>
+      </ul>
+      <input type="submit" value="确认转账" class="ensure"><a href="./record.html?type=2">转账记录</a>
+  </form>
+
+  <img src="../../images/money/word.png" alt="" style='width: 100%;height: 100%;margin-top: .2rem;'>
+
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src="../../js/validator/jquery.validator.js"></script>
+  <script type="text/javascript" src="../../js/validator/local/zh_CN.js"></script>
+  <script type="text/javascript" src="../../js/transfer.js"></script>
+</body>
+</html>

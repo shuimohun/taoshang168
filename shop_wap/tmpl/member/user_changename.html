@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="telephone=no" name="format-detection"/>
+	<title>修改昵称</title>
+	<link rel="stylesheet" href="../../css/user/changename.css">
+	<link rel="stylesheet" href="../../css/user/base.css">
+	
+</head>
+<body>
+	<!--头部-->
+	<header class="person">
+		<div class="title">
+			<a href=""><img src="../../images/user_img/icon_back.png" alt=""></a>
+			<span>修改昵称</span>
+			<a href="http://www.taoshang168.com" id="refer"><b>确定</b></a> 
+		</div>
+	</header>
+	<!--头部-->
+
+	<!--修改部分-->
+	<form class="change">
+		<input type="text" value="马云" id="name">
+		<img src="../../images/user_img/icon_delete.png" alt="" id="delete">
+	</form>
+	<!--修改部分-->
+
+	<!--提示部分-->
+	<span class="prompt">3-20个字符, 可由中文、英文、数字以及“-”、“_”组成</span>
+	<!--提示部分-->
+</body>
+	<script src="../../js/tmpl/user/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/user/changename.js'></script>
+</html>
+
+<!--修改名字确认弹窗-->
+<div class="win-bottom"></div>
+	<div class="win-top">
+		<u>您当前对原有的昵称进行了修改,</u>
+		<u>是否放弃此修改?</u>
+		<button id="cache_cancel">取消</button>
+		<button id="cache_confirm">放弃</button>
+	</div>

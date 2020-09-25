@@ -1,0 +1,86 @@
+*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+*,*:after,*:before{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.clearfix:after{display: table;content: '';clear: both;}
+i{font-style: normal;}
+html {overflow-y: scroll;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;
+}
+body {max-width: 10rem;margin: 0 auto !important;}
+.lf{float: left;}
+.rt{float: right;}
+.surprise-container{width:10rem;height: auto;}
+.surprise-container .adv-wrap{width:10rem;height:4.2666666667rem; }
+.surprise-container .adv-wrap img{width:100%;height:100%;}
+.surprise-main{position: relative;}
+
+.surprise-bg{position: absolute;z-index: -2;top:0;left:0;width:10rem;height: 100%;background: url("../../images/surprise/bg@3x.png") repeat-y;}
+.surprise-tufu{position: absolute;background: url("../../images/surprise/bgRed@2x.png") no-repeat;width: 9.94666666666rem;height:9.74666666rem;z-index: -1;-webkit-background-size:cover;background-size:cover
+;}
+
+
+/*  title start */
+.surprise-main .surprise-title .title{text-align: center;padding-top: 0.32rem;padding-bottom:0.2666666rem;}
+.surprise-main .surprise-title .title h2{display:inline-block;position: relative;font-size: 0.6666666667rem;color:rgb(222, 81, 124);font-family: STKaiti;letter-spacing: 18px;font-weight: 200;}
+.surprise-main .surprise-title .title h2:before{content: '';position: absolute;width:0.4777777777rem;height: 0.0533333333rem;background-color: rgb(222, 81, 124);top:0.453333333rem;left:-1.13333333rem;}
+.surprise-main .surprise-title .title h2:after{content: '';position: absolute;width:0.4777777777rem;height: 0.0533333333rem;background-color: rgb(222, 81, 124);top:0.453333333rem;right:-1.13333333rem;}
+.surprise-main .surprise-title .title p span{font-size: 0.4rem;color: rgb(255, 255, 247);background-color:rgb(222, 81, 124);border-radius: 0.4rem;-webkit-border-radius: 0.4rem;-ms-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;display: inline-block;padding:0.02666666666rem 1.626666666666667rem;margin-top:0.266666rem;}
+/*  title end */
+
+
+ /*common start*/
+ .surprise-item .item-title{border-bottom:1px dashed #ccc;}
+ .surprise-item .img-title{color:rgb(131, 129, 129);text-align: center;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;padding:0 0.1rem;}
+ .surprise-item img{width:100%;height: 100%;}
+ .surprise-list .surprise-item .surprise-right span{font-size: 0.1333333rem;color:rgb(131, 129, 129);text-decoration: line-through;}
+.surprise-list .surprise-item .surprise-right .tobuyBtn {max-width:100%;color:#fff;background-color: rgb(227, 83, 89);text-align: center;}
+.surprise-list .surprise-item .surprise-left .price, .surprise-list .surprise-item .surprise-part .activity-price{color:rgb(227, 83, 89);}
+.surprise-list .surprise-item .surprise-part{font-size:0;}
+.surprise-list .surprise-item .surprise-part:after{content: '';display: table;clear:both;}
+.surprise-list:after{content: '';display: table;clear: both;}
+/*common end*/
+
+
+/*  part 1 start */
+.part-1 .surprise-panel{padding:0.1333333rem 0;margin-top:0.106666rem;}
+.part-1 .surprise-list{width:7.6rem;padding: 0.099999rem 0 0 0.133333rem;margin:0 auto;background: #fff;}
+.part-1 .surprise-item{margin-right:0.13333rem;width:3.6rem;margin-bottom:0.09999rem;}
+.part-1 .surprise-item .img-wrap{width:3.6rem;height:2.986666rem;}
+.part-1 .surprise-item .item-title{padding-bottom:0.0433333rem;margin-bottom:0.05699999rem;}
+.part-1 .surprise-item .img-title{font-size:0.133333rem;line-height: .3rem;}
+.part-1 .surprise-list .surprise-item .img-detail{width:2.6rem;margin: 0 auto;margin-top:0.099999rem;}
+.part-1 .surprise-list .surprise-item .surprise-part .activity-price{font-size: 0.133333rem;}
+.part-1 .surprise-list .surprise-item .surprise-left .price{font-size:0.13333rem;}
+.part-1 .surprise-list .surprise-item .surprise-left .price i{font-size: 0.36rem;}
+.part-1 .surprise-list .surprise-item .surprise-right .tobuyBtn {font-size: 0.133333rem;padding:0.02666rem 0;padding-top:0.04rem;}
+/*  part 1 end */
+
+/*  part 2 start */
+.part-2 {position:relative;width:9.4666666rem;/*height:3.78666666rem;*/border: 0.066666rem solid #d35e82;margin:0 auto;margin-top:0.66666666rem;/*padding:0.4333rem;*/}
+/*.part-2 .surprise-panel{padding:0.1333333rem 0;margin-top:0.106666rem;}*/
+.part-2 .surprise-list{width:100%;padding: 0.099999rem 0.173333rem 0.133333rem;margin:0 auto;}
+.part-2 .surprise-item{/*margin: 0 0.08rem;*/width:50%;/*margin-bottom:0.26rem;*/}
+.part-2 .surprise-item .img-wrap{width:3.5333rem;height:3rem;margin:0 auto;}
+.part-2 .surprise-item .item-title{padding-bottom:0.1rem;margin-bottom:0.1rem;}
+.part-2 .surprise-item .img-title{font-size:0.13333rem;line-height: .36rem;}
+.part-2 .surprise-list .surprise-item .img-detail{width:3rem;margin: 0 auto;margin-top:0.03333rem;}
+.part-2 .surprise-list .surprise-item .surprise-part .activity-price{font-size: 0.13333rem;}
+.part-2 .surprise-list .surprise-item .surprise-right span{font-size: 0.13333rem;}
+.part-2 .surprise-list .surprise-item .surprise-left .price{font-size:0.13333rem;}
+.part-2 .surprise-list .surprise-item .surprise-left .price i{font-size: 0.3333rem;}
+.part-2 .surprise-list .surprise-item .surprise-right .tobuyBtn {font-size: 0.13333rem;padding:.02rem 0;padding-top:.02rem;}
+/*  part 2 end */
+
+
+/*  part 3 start */
+.part-3 .surprise-panel{padding:0.1333333rem 0;margin-top:0.106666rem;}
+.part-3 .surprise-list{width:10rem;padding: 0.099999rem 0.173333rem 0.133333rem;margin:0 auto;}
+.part-3 .surprise-item{margin: 0 0.08rem;width:4.66666rem;margin-bottom:0.26rem;}
+.part-3 .surprise-item .img-wrap{width:4.66666rem;height:4.53333rem;}
+.part-3 .surprise-item .item-title{padding-bottom:0.1rem;margin-bottom:0.15699999rem;}
+.part-3 .surprise-item .img-title{font-size:0.2666rem;line-height: .36rem;}
+.part-3 .surprise-list .surprise-item .img-detail{width:3.53333rem;margin: 0 auto;margin-top:0.199999rem;}
+.part-3 .surprise-list .surprise-item .surprise-part .activity-price{font-size: 0.2666rem;}
+.part-3 .surprise-list .surprise-item .surprise-right span{font-size: 0.2666rem;}
+.part-3 .surprise-list .surprise-item .surprise-left .price{font-size:0.2666rem;}
+.part-3 .surprise-list .surprise-item .surprise-left .price i{font-size: 0.45rem;}
+.part-3 .surprise-list .surprise-item .surprise-right .tobuyBtn {font-size: 0.2666rem;padding:.04rem 0;padding-top:.04rem;}
+/*  part 3 end */

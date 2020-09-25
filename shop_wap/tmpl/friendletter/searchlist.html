@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>搜索好友列表</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/searchlist.css">
+</head>
+<style>
+	.msg{color: grey;width:100%; line-height:3rem;;text-align: center;vertical-align:middle;}
+</style>
+<body>
+	<!--头部 start-->
+	<header class="person">
+		添加好友
+		<a href="#" class="back"></a>
+	</header>
+	<!--头部 end-->
+	<!--搜索框 start-->
+	<div class="search">
+		<div class="searchwrap">
+			<input type="text" id="searchName" placeholder="输入会员名">
+			<a href="#" class="search_btn">搜索</a>
+		</div>
+	</div>
+	<!--搜索框 end-->
+	<!--友信列表 start-->
+	<div class="main userList">
+
+	</div>
+<!--搜索好友列表 end-->
+<!--搜索用户渲染-->
+<script type="text/html" id="userList">
+	<%if(data.user_list.items){%>
+		<% for(var i in data.user_list.items){%>
+			<div class="fl_item">
+				<div class="fl_item_con clearfix">
+					<div class="fl_tx"><img src="<%=data.user_list.items[i].user_logo%>" onerror="this.src='../img/robot-ss.png'"/> </div>
+					<div class="fl_infor">
+						<a href="#">
+							<p class="user_name"><%=data.user_list.items[i].user_name%></p>
+						</a>
+					</div>
+					<%if(data.user_list.items[i].status==1){%>
+					<div class="ad_btn on" data-id="<%=data.user_list.items[i].user_friend_id%>" onclick="friend(this,<%=data.user_list.items[i].user_id%>)">已关注</div>
+					<%}else{%>
+					<div class="ad_btn" data-id="<%=data.user_list.items[i].user_friend_id%>" onclick="friend(this,<%=data.user_list.items[i].user_id%>)">加关注</div>
+					<%}%>
+
+				</div>
+			</div>
+		<%}%>
+	<% }%>
+</script>
+	<!--搜索用户追加-->
+	<script type="text/html" id="userListMore">
+		<%if(data.user_list.items){%>
+		<% for(var i in data.user_list.items){%>
+		<div class="fl_item">
+			<div class="fl_item_con clearfix">
+				<div class="fl_tx"><img src="<%=data.user_list.items[i].user_logo%>" onerror="this.src='../img/robot-ss.png'"/> </div>
+				<div class="fl_infor">
+					<a href="#">
+						<p class="user_name"><%=data.user_list.items[i].user_name%></p>
+					</a>
+				</div>
+				<%if(data.user_list.items[i].status==1){%>
+				<div class="ad_btn on" data-id="<%=data.user_list.items[i].user_friend_id%>" onclick="friend(this,<%=data.user_list.items[i].user_id%>)">已关注</div>
+				<%}else{%>
+				<div class="ad_btn" data-id="<%=data.user_list.items[i].user_friend_id%>" onclick="friend(this,<%=data.user_list.items[i].user_id%>)">加关注</div>
+				<%}%>
+
+			</div>
+		</div>
+		<%}%>
+		<% }%>
+	</script>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script src="../../js/friendletter/zepto.min.js"></script>
+<script src="../../js/friendletter/searchlist.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+body,html{
+	background-color: #f2f2f2;
+}
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+	border-bottom: .02rem solid #eee;
+	position:fixed;
+	top:0;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+/***************头部部分结束**************************************/
+.fenxiaoshang{
+	width:100%;
+	height:1.2rem;
+	background-color: #fff;
+	margin-top:.8rem;
+	font-size: 0;
+}
+.fenxiaoshang .fenxiaoshang_item{
+	width:50%;
+	height:100%;
+	display:inline-block;
+	font-size: .26rem;
+	text-align: center;
+	color:#333;
+}
+.fenxiaoshang .fenxiaoshang_item span{
+	display:inline-block;
+	margin-top:.2rem;
+}
+.fenxiaoshang .fenxiaoshang_item i{
+	display:inline-block;
+	font-style:normal;
+	margin-top:.1rem;
+}
+.fenxiaoshang .cur{
+	border-bottom:.07rem solid #ff397a;
+}
+
+.item-top{
+	width:100%;
+	height:2.1rem;
+	background-color: #fff;
+	margin-top:.35rem;
+	position:relative;
+	border-bottom:.02rem solid #f2f2f2;
+}
+.item-top img{
+	width:1.54rem;
+	height:1.54rem;
+	margin-top:.3rem;
+	margin-left:.15rem;
+}
+.item-top .item-top-text{
+	position:absolute;
+	top:10%;
+	left: 30%;
+}
+.item-top .item-top-text span{
+	font-size: .26rem;
+	color:#333;
+	margin-top: .3rem;
+	display:inline-block;
+}
+.item-top .item-top-text i{
+	font-size: .22rem;
+	color:#999;
+	display:inline-block;
+	margin-top: .3rem;
+	font-style:normal;
+}
+.item-normal{
+	width:100%;
+	height:1.55rem;
+	background-color: #fff;
+	border-bottom:.01rem solid #fff;
+	position:relative;
+	border-bottom:.02rem solid #f2f2f2;
+}
+.item-normal img{
+	width:1.2rem;
+	height:1.2rem;
+	margin:.15rem 0 0 .15rem;
+}
+.item-normal .item-normal-text{
+	position:absolute;
+	top:10%;
+	left: 23%;
+}
+.item-normal .item-normal-text span,.item-normal .item-normal-text i,.item-normal .item-normal-text em{
+	display:inline-block;
+	font-size: .22rem;
+	color:#333;
+	margin-top: .07rem;
+	font-style:normal;
+}

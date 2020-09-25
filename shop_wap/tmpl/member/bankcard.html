@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>余额提现</title>
+  <link rel="stylesheet" href="../../css/money/bankcard.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <link rel="stylesheet" href="../../css/validator/jquery.validator.css?ver=1.02" type="text/css">
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/bankcard.js'></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href=""><img src="../../images/money/back.png" alt=""></a>
+      <span>余额提现</span>
+      <a href="javascript:history.go(-1)"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+
+  
+
+  <div class="balance">
+    <span>账户余额(元)</span><br>
+    <h1></h1><br>
+    <u id="btn"><img src="../../images/money/eye_1@3x.png" alt=""> 余额可见</u>
+  </div>
+
+
+
+  <div class="operate">
+      <div>转账</div>
+      <div class="cur n">提现</div>
+  </div>
+  
+
+  <ul class="account"></ul>
+
+  <form action="#" id="form" method="post">
+      <ul>
+
+      <li>
+          <label for="">提现到：</label><a href="./alipay.html"><img src="../../images/money/ap_n@3x.png" alt=""></a>
+                                      <a href="./wechat.html"><img src="../../images/money/wp_n@3x.png" alt=""></a>
+                                      <a href="./bankcard.html"><img src="../../images/money/up_s@3x.png" alt=""></a>
+      </li>
+        <!--银行卡号-->
+        <li id="card_cont"></li>
+
+        <li>
+          <label for="">提现金额：</label><input id="with_money"  type="number" onkeyup="amount(this)" onblur="checkMoney(this)">
+          <p >服务费：￥<span id="service_money">0.00</span></p>
+          <p id="hint" style="display:none;"></p>
+        </li>
+
+        <li>
+          <label for="">提现说明：</label><input type="text" id="con">
+        </li>
+
+        <li>
+          <label for="">手机账号：</label><span class="nmb"></span>
+        </li>
+
+        <li>
+          <label>验 证 码：</label>
+          <input type="text" value="" id="yzmval" onchange="javascript:checkyzm();">
+          <input type="button" value="获取手机验证码" class="yanzhengma" data-type="mobile">
+          <p id="yzm" style="display:none;"></p>
+        </li>
+
+          <li>
+            <label for="">支付密码：</label><input type="password" id="password">
+        </li>
+      </ul>
+      <input type="submit" value="确认提现" class="ensure"><a href="./record.html?type=4">提现记录</a>
+  </form>
+  <script type="text/html" id="fee">
+    <% if(service_fee_list) { %>
+    <% var items = service_fee_list %>
+    <% for(var i in items) { %>
+    <% if(i == 0){ %>
+    <li class="cur">
+      <% }else{ %>
+    <li>
+      <% } %>
+      <span><%=items[i].name %></span><br>
+      <i>(<%=items[i].fee_rates %>%服务费)</i>
+      <input type="hidden" value="<%=items[i].id %>" class="service_fee_id">
+      <input type="hidden" value="<%=items[i].fee_rates %>" class="service_fee_rates">
+      <input type="hidden" value="<%=items[i].fee_min %>" class="fee_min">
+      <input type="hidden" value="<%=items[i].fee_max %>" class="fee_max">
+    </li>
+    <% } %>
+    <% } %>
+  </script>
+  <script type="text/html" id="card">
+    <label for="">收款方：</label>
+    <select name="card_id" id="card_id">
+      <% if(user_card){ %>
+      <% var items = user_card %>
+      <% for(var i in items) { %>
+      <option value="<%=items[i].card_id %>"><%=items[i].bank.bank_name %><%=items[i].bank_account_number %></option>
+      <% } %>
+    <% } %>
+    </select>
+  </script>
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src="../../js/validator/jquery.validator.js"></script>
+  <script type="text/javascript" src="../../js/validator/local/zh_CN.js"></script>
+  <script type="text/javascript" src="../../js/bankcard_withdraw.js"></script>
+</body>
+</html>

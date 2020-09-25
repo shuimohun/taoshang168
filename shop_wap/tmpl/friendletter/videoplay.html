@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>视频播放</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/swiper.min.css">
+	<link rel="stylesheet" href="../../css/friendletter/video.css">
+</head>
+<body>
+<div class="swiper-container">
+	<div class="swiper-wrapper video">
+
+	</div>
+</div>
+<div class="player_btn"></div>
+    <!--插入脚部 start-->
+    <div id="foot"></div>
+    <!--插入脚部 end-->
+	<!--插入评论 start-->
+	<div class="pull_in_pl"></div>
+	<!--插入评论 end-->
+	<!--分享弹框 start-->
+	<div class="share_box">
+		<div class="share_title">分享至</div>
+		<div class="close_share_box">X</div>
+		<div class="share_icon_wrap">
+			<ul class="clearfix">
+				<li><img class="share_img" data-type="qqFriend" src="../../images/share_on1.png" alt=""></li>
+				<li><img class="share_img" data-type="qZone" src="../../images/share_on2.png" alt=""></li>
+				<li><img class="share_img" data-type="wechatFriend" src="../../images/share_on3.png" alt=""></li>
+				<li><img class="share_img" data-type="wechatTimeline" src="../../images/share_on4.png" alt=""></li>
+				<li><img class="share_img" data-type="weibo" src="../../images/share_on5.png" alt=""></li>
+				<li><img class="share_img" data-type="youxin" src="../../images/share_on6.png" alt=""></li>
+			</ul>
+		</div>
+		<a href="javascript:;" class="qx_share">取消分享</a>
+	</div>
+	<!--分享弹框 end-->
+<script type="text/html" id="video">
+
+	<% if( data.items ){ %>
+		<%for( var i in data.items ){ %>
+			<% if( data.items[i].information_video.video){ %>
+				<% for( var j in data.items[i].information_video.video ){%>
+					<div class="video_wrapper swiper-slide ">
+						<!--@好友消息图片地址-->
+						<img class="user_shared_img" style="display:none" src="<%=data.items[i].information_pic%>"  />
+						<div class="video_box">
+							<video  class="is_video" data-info="<%=data.items[i].information_id%>" src="<%=data.items[i].information_video.video[j].src%>" x-webkit-airplay="true" webkit-playsinline="true" playsinline="true">
+								浏览器不支持播放
+							</video>
+						</div>
+						<div class="video_mask">
+							<div class="right_icon">
+								<ul>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img class="icon_gift" onclick="gift(this)" data-id="<%=data.items[i].user_id%>" src="../img/fans-circle/gift.png" alt="">
+											</a>
+										</div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img class="icon_tx" onclick="userLogo(this)" data-id ="<%=data.items[i].user_id%>" src="<%=data.items[i].user_logo%>" onerror="this.src='../img/robot-ss.png'" alt="">
+											</a>
+										</div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<% if( data.items[i].is_Like == 0){%>
+													<img class="icon_p gz" onclick="like(this)" data-inforId="<%=data.items[i].information_id%>" data-id="<%=data.items[i].user_id%>"  src="../img/fans-circle/zan_white.png" alt="">
+												<% }else if( data.items[i].is_Like ==1){%>
+													<img class="icon_p gz" onclick="like(this)" data-inforId="<%=data.items[i].information_id%>" data-id="<%=data.items[i].user_id%>" src="../img/fans-circle/zan_red.png" alt="">
+												<% }%>
+											</a>
+										</div>
+										<div class="icon_text countLike" data-inforId="<%=data.items[i].information_id%>" ><%=data.items[i].countLike%></div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img  class="icon_p pl" onclick="pl(this)" data-inforId="<%=data.items[i].information_id%>" src="../img/fans-circle/pl.png" alt="">
+											</a>
+										</div>
+										<div class="icon_text"><%=data.items[i].countReply%></div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img  class="icon_p share " data-infoId="<%=data.items[i].information_id%>" src="../img/fans-circle/share.png" alt="">
+											</a>
+										</div>
+										<!--<div class="icon_text">9999</div>-->
+									</li>
+								</ul>
+							</div>
+							<!--视频文字描述和音乐-->
+							<div class="video_text">
+								<p class="video_text_title"><%=data.items[i].user_name%>
+									<% if( data.items[i].is_friend == 1){%>
+										<span class="gz_friend active" data-uid="<%=data.items[i].user_id%>" data-id="<%=data.items[i].friend_id%>" onclick="friendTig(this)">已关注</span>
+									<% }else{%>
+										<span class="gz_friend" data-uid="<%=data.items[i].user_id%>" onclick="friendTig(this)">关注</span>
+									<% }%>
+								</p>
+								<p class="video_text_con"><%=data.items[i].information_title%></p>
+								<!--<p class="video_text_music"><span>春风化雨暖透我的心春风化雨暖透我的心</span></p>-->
+							</div>
+						</div>
+					</div>
+				<% }%>
+			<% }%>
+		<% }%>
+	<% }%>
+
+</script>
+<script type="text/html" id="videoAppend">
+
+	<% if( data.items ){ %>
+		<%for( var i in data.items ){ %>
+			<% if( data.items[i].information_video.video){ %>
+				<% for( var j in data.items[i].information_video.video ){%>
+					<div class="video_wrapper swiper-slide">
+						<!--@好友消息图片地址-->
+						<img class="user_shared_img" style="display:none" src="<%=data.items[i].information_pic%>"  />
+						<div class="video_box">
+							<video class="is_video" src="<%=data.items[i].information_video.video[j].src%>" x-webkit-airplay="true" webkit-playsinline="true" playsinline="true">
+								浏览器不支持播放
+							</video>
+						</div>
+						<div class="video_mask">
+							<div class="right_icon">
+								<ul>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img class="icon_gift" onclick="gift(this)" data-id="<%=data.items[i].user_id%>" src="../img/fans-circle/gift.png" alt="">
+											</a>
+										</div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img class="icon_tx" onclick="userLogo(this)" data-id = "<%=data.items[i].user_id%>" src="<%=data.items[i].user_logo%>" onerror="this.src='../img/robot-ss.png'" alt="">
+											</a>
+										</div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<% if( data.items[i].is_Like == 0){%>
+												<img class="icon_p gz" onclick="like(this)" data-inforId="<%=data.items[i].information_id%>" data-id="<%=data.items[i].user_id%>"  src="../img/fans-circle/zan_white.png" alt="">
+												<% }else if( data.items[i].is_Like ==1){%>
+												<img class="icon_p gz" onclick="like(this)" data-inforId="<%=data.items[i].information_id%>" data-id="<%=data.items[i].user_id%>" src="../img/fans-circle/zan_red.png" alt="">
+												<% }%>
+											</a>
+										</div>
+										<div class="icon_text countLike" data-inforId="<%=data.items[i].information_id%>" ><%=data.items[i].countLike%></div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img  class="icon_p pl" onclick="pl(this)" data-inforId="<%=data.items[i].information_id%>" src="../img/fans-circle/pl.png" alt="">
+											</a>
+										</div>
+										<div class="icon_text"><%=data.items[i].countReply%></div>
+									</li>
+									<li class="r_v_item">
+										<div class="icon_box">
+											<a href="javascript:;">
+												<img  class="icon_p share" data-infoId="<%=data.items[i].information_id%>" src="../img/fans-circle/share.png" alt="">
+											</a>
+										</div>
+										<!--<div class="icon_text">9999</div>-->
+									</li>
+								</ul>
+							</div>
+
+							<!--视频文字描述和音乐-->
+							<div class="video_text">
+								<p class="video_text_title"><%=data.items[i].user_name%>
+									<% if( data.items[i].is_friend == 1){%>
+									<span class="gz_friend active" data-uid="<%=data.items[i].user_id%>" data-id="<%=data.items[i].friend_id%>" onclick="friendTig(this)" >已关注</span>
+									<% }else{%>
+									<span class="gz_friend" data-uid="<%=data.items[i].user_id%>" onclick="friendTig(this)">关注</span>
+									<% }%>
+								</p>
+								<p class="video_text_con"><%=data.items[i].information_title%></p>
+								<!--<p class="video_text_music"><span>春风化雨暖透我的心春风化雨暖透我的心</span></p>-->
+							</div>
+						</div>
+					</div>
+				<% }%>
+			<% }%>
+		<% }%>
+	<% }%>
+</script>
+<script type="text/javascript" src="../../js/zepto.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../../js/plugins/NativeShare.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../../js/friendletter/video.js"></script>
+<script type="text/javascript" src="../../js/friendletter/pl_main.js"></script>
+</body>
+</html>

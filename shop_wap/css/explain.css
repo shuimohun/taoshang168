@@ -1,0 +1,47 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #2d2348;
+/* 	position:fixed;
+top:0;
+left:0;
+z-index:100; */
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+/***************头部部分结束**************************************/
+.contain{
+	width:92%;
+	height:auto;
+	margin:0 auto;
+	margin-top: .27rem;
+}
+.contain p{
+	color:#0b0b0b;
+	font-size: .24rem;
+	margin-bottom: .23rem;
+}
+.contain span{
+	display:block;
+	font-size: .2rem;
+	margin-left:.2rem;
+	color:#6b6b6b;
+	margin-bottom:.48rem;
+	line-height:.4rem;
+}

@@ -1,0 +1,167 @@
+.mainimg{
+	width: 100%;
+	height: 2.35rem;
+}
+.title{
+	width:100%;
+	height:.45rem;
+	background: url(../../images/sweepgoods/crazy_title1.png);
+	background-size: 100% 100%;
+	text-align: center;
+	font-size: .2rem;
+	color: #fff;
+	line-height: .45rem;
+}
+.main1{
+	width:100%;
+	height:10.77rem;
+	background-color: #ff2353;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+.main1 .main1_item{
+	width:6.06rem;
+	height:2.56rem;
+	background-color: #fff;
+	margin:0 auto;
+	margin-top: .1rem;
+}
+.main1 .main1_item img{
+	width:55%;
+	height:100%;
+	float:left;
+}
+.main1 .main1_item .text{
+	width:40%;
+	height:100%;
+	float:left;
+	margin-left:2%;
+	font-size: 0;
+}
+.main1 .main1_item .text .biaoti{
+	font-size: .22rem;
+	width:2.5rem;
+	height:.56rem;
+	overflow:hidden;
+	display:inline-block;
+	color:#f95156;
+	margin-top:.2rem;
+}
+.main1 .main1_item .text i{
+	font-size: .2rem;
+	width:2.5rem;
+	height:.26rem;
+	overflow:hidden;
+	display:inline-block;
+	color:#b66030;
+	font-style:normal;
+	margin-top:.1rem
+}
+.main1 .main1_item .text u{
+	font-size: .2rem;
+	width:2.5rem;
+	height:.26rem;
+	overflow:hidden;
+	display:inline-block;
+	color:#666;
+	text-decoration:none;
+	margin-top:.1rem
+}
+.main1 .main1_item .text del{
+	font-size: .2rem;
+	width:2.5rem;
+	height:.26rem;
+	overflow:hidden;
+	display:inline-block;
+	color:#f95156;
+	text-decoration:none;
+}
+.main1 .main1_item .text del.act_price{
+	margin-top: .1rem;
+}
+.main1 .main1_item .text del span{
+	color:#ff2353;
+}
+.main1 .main1_item .text a.item_btn{
+	display: inline-block;
+    font-size: .18rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f7b444;
+    padding: .05rem;
+    border-radius: .3rem;
+    float: right;
+    margin-top: .15rem;
+}
+.title2{
+	width:100%;
+	height:.45rem;
+	background: url(../../images/sweepgoods/crazy_title2.png);
+	background-size: 100% 100%;
+	text-align: center;
+	font-size: .2rem;
+	color: #fff;
+	line-height: .45rem;
+}
+.main2{
+	width:100%;
+	height:17.65rem;
+	background:url(../../images/sweepgoods/bg_03_r2_c1.jpg);
+	background-size: 100% 100%;
+	overflow:hidden;
+}
+.main2 .main2_inner{
+	width:6.1rem;
+	height:auto;
+	margin: 0 auto;
+	margin-top:.1rem;
+}
+.main2 .main2_inner .main2_inner_item{
+	width:48.5%;
+	height:4.27rem;
+	background-color: #fff;
+	display:inline-block;
+	vertical-align: top;
+	margin-top:.1rem;
+	position:relative;
+}
+.main2 .main2_inner .main2_inner_item:nth-of-type(odd){
+	margin-right: .05%;
+}
+.main2 .main2_inner .main2_inner_item:nth-of-type(even){
+	margin-left: .05%;
+}
+.main2 .main2_inner .main2_inner_item img{
+	width:100%;
+	height:70%;
+}
+.main2 .main2_inner .main2_inner_item span{
+	font-size: .24rem;
+    color: #a75329;
+    width: 95%;
+    height: .62rem;
+    overflow: hidden;
+    display: block;
+    margin-left: .13rem;
+}
+.main2 .main2_inner .main2_inner_item .act{
+	display: inline-block;
+    font-size: .2rem;
+    color: #a75329;
+    margin-top: .3rem;
+}
+.main2 .main2_inner .main2_inner_item .act i{
+	font-size: .24rem;
+    color: #f10d00;
+}
+.main2 .main2_inner .main2_inner_item a.item_btn{
+	font-size: .2rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f7b444;
+    padding: .05rem .1rem .05rem .1rem;
+    border-radius: .2rem;
+    position: absolute;
+    bottom: .1rem;
+    right: .05rem;
+}

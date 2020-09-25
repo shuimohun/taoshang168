@@ -1,0 +1,360 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:2.8rem;
+	background-color: #e45050;
+	position:relative;
+	text-align: center;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 0;
+	position:relative;
+}
+.person .title .seller{
+	width:1.12rem;
+	height:.36rem;
+	position:absolute;
+	top:320%;
+	right:5%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.dialogbox{
+	margin-left:29%;
+}
+.person .title .number{
+	display: inline-block;
+	width:.25rem;
+	height:.25rem;
+	background-color:#fff;
+	border-radius: 50%;
+	font-size: .22rem;
+	text-align: center;
+	color:#e45050;
+	position:absolute;
+	top:30%;
+	left:60%;
+}
+.person .info img{
+	width:1.1rem;
+	height:1.1rem;
+	margin:5% 0 0 0;
+	border: .02rem solid #fff;
+	border-radius:50%;
+}
+.person .word{
+	display:inline-block;
+	font-size: .24rem;
+	color:#fff;
+	margin:2% 0 0 0;
+}
+.person .v{
+	display:inline-block;
+	width:.3rem;
+	height:.3rem;
+	background: url(../../images/user_img/me_icon_level@3x.png);
+	background-size:100% 100%;
+	position:absolute;
+	left:54%;
+	top:64%;
+	color:#fff;
+	font-size: .2rem;
+	line-height:.3rem;
+	text-align: center;
+}
+.info_alert{
+    width:2rem;
+    height:3rem;
+    background-color:#333333;
+    position:fixed;
+    top:9%;
+    right:4%;
+    border-radius:.2rem;
+    z-index: 103;
+    font-size: 0;
+    display:none;
+    opacity: .9;
+}
+.info_alert span{
+    display:inline-block;
+    width:100%;
+    font-size: .22rem;
+    height:25%;
+    line-height:.7rem;
+    color:#fff;
+    border-bottom:.02rem solid #fff;
+}
+.info_alert span:nth-last-child(4){
+    border:0 none;
+} 
+.info_alert span img{
+    width:.4rem;
+    height:.4rem;
+    position:static;
+    margin-top:.15rem;
+    margin-left: .15rem;
+}
+.info_alert img{
+    width:.15rem;
+    height:.08rem;
+    position:absolute;
+    right:10%;
+    top:-2.5%;
+}
+.info_alert u{
+    text-decoration:none;
+    display:inline-block;
+    margin-left: .2rem;
+} 
+/***************头部部分结束**************************************/
+
+/******************付款发货部分开始********************************************/
+.info_list_wrap{
+	width:100%;
+	height:1.3rem;
+	background-color: #fff;
+}
+.info_list{
+	height:1.3rem;
+	margin:0 .15rem 0 .15rem;
+	background-color: #fff;
+}
+.info_list ul{
+	font-size: 0;/*消除默认边距*/
+}
+.info_list ul li {
+	display:inline-block;
+	height:1.3rem;
+	width:20%;
+	font-size: .22rem;
+	text-align: center;
+	/*margin-left: 3%;*/
+}
+.info_list ul li.five_ {
+	width:20%;
+	margin-left: 0;
+}
+.info_list ul li img{
+	width:.44rem;
+	height:.44rem;
+	margin:18% 0  0 0;
+}
+.info_list ul li span{
+	display:block;
+	color:#666666;
+	font-size: .22rem;
+	margin:10% 0  0 0;
+}
+.info_list ul li a.aftersales{
+	letter-spacing: .02rem;
+}
+/******************付款发货部分结束********************************************/
+
+/***购物清单**/
+.buy_list{
+	width:100%;
+	height:auto;
+	background-color: #fff;
+	margin-top: .1rem;
+	margin-bottom: .1rem;
+}
+.buy_list_title{
+	width:100%;
+	height:.7rem;
+	border-bottom: .01rem solid #f2f2f2;
+	background-color: #fff;
+}
+.buy_list_title img{
+	width:.04rem;
+	height:.22rem;
+	margin-top: .25rem;
+	margin-left: .3rem;
+}
+.buy_list_title span{
+	display:inline-block;
+	font-size: .22rem;
+	color:#262626;
+	margin-top: .2rem;
+	margin-left: .05rem;
+}
+.buy_list_title u{
+	color:#a1a1a1;
+	text-decoration: none;
+	float: right;
+	margin-right: 5%;
+	font-size: .22rem;
+	margin-top: .2rem;
+}
+.buy_list ul{
+	width:100%;
+	height:1.1rem;
+	font-size: 0;
+}
+.buy_list ul li{
+	width:20%;
+	height:1.1rem;
+	display:inline-block;
+	text-align: center;
+	position: relative;
+}
+.buy_list ul li .number{
+	display: inline-block;
+	width:.25rem;
+	height:.25rem;
+	background-color:#e45050;
+	border-radius: 50%;
+	font-size: .22rem;
+	text-align: center;
+	color:#fff;
+	position:absolute;
+	top:-5%;
+	left:55%;
+}
+.buy_list ul li img{
+	width:.44rem;
+	height:.44rem;
+	margin-top: .1rem;
+}
+.buy_list ul li span{
+	font-size: .22rem;
+	text-align: center;
+	display:inline-block;
+	margin-top: .1rem;
+	color:#666666;
+} 
+/***购物清单**/
+
+/**财富宝*/
+.money_number{
+	width:100%;
+	height:1.1rem;
+	background-color: #fff;
+}
+.money_number .money_info{
+	height:1.1rem;
+	display:inline-block;
+	text-align: center;
+	margin-top:.2rem;
+	margin-left: 1rem;
+	font-size: 0;
+}
+.money_number .money_info b{
+	color:#e35151;
+	font-size: .3rem;
+}
+.money_number .money_info span{
+	color:#4d4d4d;
+	font-size: .2rem;
+	display:inline-block;
+	margin-top: .05rem;
+}
+.money_number .money_info2{
+	height:1.1rem;
+	display:inline-block;
+	text-align: center;
+	margin-left: 1rem;
+	font-size: 0;
+}
+.money_number .money_info2 b{
+	color:#e35151;
+	font-size: .3rem;
+}
+.money_number .money_info2 span{
+	color:#4d4d4d;
+	font-size: .2rem;
+	display:inline-block;
+	margin-top: .05rem;
+}
+.money_number .line{
+	width:.01rem;
+	height:.84rem;
+	margin-top: .1rem;
+	margin-left: .5rem;
+}
+.money_number .money_operate{
+	height:1.1rem;
+	display:inline-block;
+	text-align: center;
+	margin-left: 7%;
+	font-size: 0;
+}
+.money_number .money_operate img{
+	width:.3rem;
+	height:.2rem;
+	margin-top: -.4rem;
+}
+.money_number .money_operate span{
+	color:#4d4d4d;
+	font-size: .2rem;
+	display:inline-block;
+}
+/**财富宝*/
+
+/*********红包卡券********/
+.contain{
+	width:100%;
+	height:1.1rem;
+	font-size: 0;
+}
+.contain .contain_li{
+	display:inline-block;
+	width:25%;
+	height:1.1rem;
+	text-align: center;
+}
+.contain li b{
+	display:inline-block;
+	font-size:.3rem;
+	margin-top: .2rem;
+	color:#e35151;
+}
+.contain li span{
+	display:inline-block;
+	font-size: .2rem;
+	color:#4d4d4d;
+}
+/*********红包卡券********/
+/********************底部固定导航栏开始************************************************/
+.nav_footer{
+  width:100%;
+  height:.85rem;
+  background-color: #fff;
+  position:fixed;
+  bottom:0;
+  border-top:.01rem solid #999999;
+}
+.nav_footer ul{
+  width:100%;
+  height:.85rem;
+  font-size: 0;
+}
+.nav_footer ul li{
+  display:inline-block;
+ 	width:33.3333333333%;
+  text-align: center;
+  margin-top:.1rem;
+  float: left;
+}
+.nav_footer ul li img{
+  width:.4rem;
+  height:.4rem;
+  display:block;
+  margin:0 auto;
+}
+.nav_footer ul li span{
+  display:block;
+  font-size: .20rem;
+}
+/********************底部固定导航栏结束**************************************/

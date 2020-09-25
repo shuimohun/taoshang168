@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>汇省钱</title>
+	<link rel="stylesheet" href="../../css/money/savemoney.css">
+	<link rel="stylesheet" href="../../css/money/base.css">
+	<script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/money/savemoney.js'></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.js"></script>
+	<script type="text/javascript" src="../../js/template.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/plugins/jquery.timeCountDown.js"></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../../images/money/back.png" alt=""></a>
+			<span>汇省钱</span>
+			<a href="#"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--信息-->
+	<div class="share_info">
+		<span>目前为止省了</span><i>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</i><span id="one_day"></span><br>
+		<b id="total_money"></b><br>
+		<u>今天|最近:</u>
+		<ul>
+			<li data-time=" ">全部</li>
+			<li data-time="oneMonth">一个月</li>
+			<li data-time="thereMonth">三个月</li>
+			<li data-time="oneYear">一年</li>
+		</ul>
+	</div>	
+	<!--信息-->	
+
+	<!--内容-->
+	<div class="goods"></div>
+	<!--内容-->
+	<script type="text/html" id="goods">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="contain_wrap">
+			<div class="contain">
+				<div class="contain_top">
+					<p>分享时间 | 分享编号</p><br>
+					<span><%=items[i].share_date_str %> | <%=items[i].share_num %></span>
+				</div>
+
+				<div class='contain_middle'>
+					<div class="contain_img">
+						<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="<%=items[i].goods_image %>" alt=""></a>
+					</div>
+					<div class="contain_right">
+						<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><u><%=items[i].goods_name %></u></a>
+						<p>商品评分：
+							<% if(items[i].goods_evaluation_good_star){ %>
+							<% for(var k=0;k < items[i].goods_evaluation_good_star;k++){ %>
+							<img src="../../images/money/star.jpg" alt="">
+							<% } %>
+							<% }else{ %>
+							<% for(var k=0;k<5;k++){ %>
+							<img src="../../images/money/star2.jpg" alt="">
+							<% } %>
+							<% } %>
+						</p>
+						<i>分享价:<b>￥<%=items[i].promotion_price %></b> <del>￥<%=items[i].goods_price %></del></i>
+						<a href="../product_detail.html?goods_id=<%=items[i].goods_id %>"><input type="button" class="buy" value="点击购买"></a>
+					</div>
+				</div>
+
+				<ul class="contain_share">
+					<% if(items[i].share_base){ %>
+
+					<li>
+						<span>微信好友</span><br>
+						<% if(items[i].share_base.weixin){ %>
+						<u><%=items[i].share_base.weixin %>元</u>
+						<% }else{ %>
+						<u style="color:#CC3333;">X</u>
+						<% } %>
+					</li>
+					<li>
+						<span>微信朋友圈</span><br>
+						<% if(items[i].share_base.weixin_timeline){ %>
+						<u><%=items[i].share_base.weixin_timeline %>元</u>
+						<% }else{ %>
+						<u style="color:#CC3333;">X</u>
+						<% } %>
+					</li>
+					<li>
+						<span>QQ好友</span><br>
+						<% if(items[i].share_base.sqq){ %>
+						<u><%=items[i].share_base.sqq %>元</u>
+						<% }else{ %>
+						<u style="color:#CC3333;">X</u>
+						<% } %>
+					</li>
+					<li>
+						<span>QQ空间</span><br>
+						<% if(items[i].share_base.qzone){ %>
+						<u><%=items[i].share_base.qzone %>元</u>
+						<% }else{ %>
+						<u style="color:#CC3333;">X</u>
+						<% } %>
+					</li>
+					<li>
+						<span>新浪微博</span><br>
+						<% if(items[i].share_base.tsina){ %>
+						<u><%=items[i].share_base.tsina %>元</u>
+						<% }else{ %>
+						<u style="color:#CC3333;">X</u>
+						<% } %>
+					</li>
+					<% } %>
+				</ul>
+
+				<div class="contain_top" style="border:0 none">
+					<p>状态 | 交易号</p><br>
+					<span><%=items[i].order_status %> |
+						<% if(items[i].share_order_id == '0'){ %>
+							没有订单号
+						<% }else{ %>
+						<%=items[i].share_order_id %>
+						<% } %>
+					</span>
+					<% if(items[i].share_end_date){ %>
+					<span class="time" data-end="<%=items[i].share_end_date %>">距离结束&nbsp;&nbsp;
+						<u class="hour">00</u>
+						<i>&nbsp;:&nbsp;</i>
+						<u class="mini">00</u>
+						<i>&nbsp;:&nbsp;</i>
+						<u class="sec">00</u>
+					</span>
+					<% }else{ %>
+					<b>汇省钱小计：<u>￥<%=items[i].price %>元</u></b>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../../js/pay_savemoney.js"></script>
+</body>
+</html>

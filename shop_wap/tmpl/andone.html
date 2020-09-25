@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>加一购</title>
+	<link rel="stylesheet" href="../css/activity/andone2.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+	<script type="text/javascript" src='../js/activity/andone2.js'></script>
+</head>
+<body style="background-color:#ffffff;margin-top:1.55rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/andone_img/back.png" alt=""></a>
+			<span>加一购</span>
+			<a href="../index.html"><img src="../images/activity/andone_img/info.png" alt=""  class="info"></a>
+		</div>
+
+	<!--弹窗部分-->
+	<div class="win-bottom"></div>
+	<div class="win-top">
+		<span class="top">分享到</span>
+		<div class="middle">
+			<ul>
+				<li>
+					<img src="../images/activity/andone_img/wechat.png" alt="">
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../images/activity/andone_img/qq.png" alt="">
+					<span>qq好友</span>
+				</li>
+				<li>
+					<img src="../images/activity/andone_img/weibo.png" alt="">
+					<span>微博</span>
+				</li>
+				<li>
+					<img src="../images/activity/andone_img/link.png" alt="">
+					<span>复制链接</span>
+				</li>
+			</ul>
+		</div>
+		<span class="bottom">取消</span>
+	</div>
+	<!--弹窗部分-->
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list"></div>
+		    </div>
+
+		    <!--滚动下拉菜单-->
+		    <div class="nav_header_img an">
+				<img src="../images/activity/andone_img/icon_an.png" alt="">
+			</div>
+			</div>
+			<div class="head-top">
+				<div class="nav_contain">
+					<span>热门搜索:</span>
+					<button>服饰内衣</button>
+					<button>电子数码</button>
+					<button>生鲜水果</button>
+				</div>
+			<div class="nav_icon">
+			<ul>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_1.png" alt="">
+						<span>服饰内衣</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_2.png" alt="">
+						<span>电子数码</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_3.png" alt="">
+						<span>美妆饰品</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_4.png" alt="">
+						<span>鞋靴箱包</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_5.png" alt="">
+						<span>家电办公</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_6.png" alt="">
+						<span>食品茶酒</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_7.png" alt="">
+						<span>生鲜水果</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_8.png" alt="">
+						<span>运动户外</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_9.png" alt="">
+						<span>母婴玩具</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_10.png" alt="">
+						<span>日用百货</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_11.png" alt="">
+						<span>家具建材</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_12.png" alt="">
+						<span>生活服务</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../images/activity/andone_img/an_13.png" alt="">
+						<span>汽车汽配</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list n" ></div>
+	<!--主图轮播图-->
+	<div class="one"></div>
+
+	<div class="box"></div>
+
+	<div  class="there"></div>
+
+	<div class="box n"></div>
+
+	<div class="hot"></div>
+
+	<script type="text/html" id="nav">
+		<% if(items.cat){ %>
+		<% var items = items.cat %>
+		<ul>
+			<li  data-id=0 class="find_nav_cur"><a href="javascript:void(0)">精选</a></li>
+			<% for(var i in items){ %>
+			<li data-id="<%=items[i].goods_cat_id %>"><a href="javascript:void(0)"><%=items[i].goods_cat_nav_name %></a></li>
+			<% } %>
+			<li class="sideline"></li>
+		</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="slider">
+		<div class="swipe-wrap" >
+			<% if(items.nav.items){ %>
+			<% var items = items.nav.items %>
+			<% for(var i in items){ %>
+			<div class="item" >
+				<a href="<%=items[i].wap_url %>">
+					<img src="<%=items[i].pic_url %>" alt="">
+				</a>
+			</div>
+			<% } %>
+			<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="next_slider">
+		<div class="slider_list" >
+			<div class="swipe-wrap" >
+				<% if(items.next_nav.items){ %>
+				<% var items = items.next_nav.items %>
+				<% for(var i in items){ %>
+				<div class="item" >
+					<a href="<%=items[i].wap_url %>">
+						<img src="<%=items[i].pic_url %>" alt="">
+					</a>
+				</div>
+				<% } %>
+				<% } %>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="there_slider">
+		<div class="slider_list" >
+			<div class="swipe-wrap" >
+				<% if(items.there_nav.items){ %>
+				<% var items = items.there_nav.items %>
+				<% for(var i in items){ %>
+				<div class="item" >
+					<a href="<%=items[i].wap_url %>">
+						<img src="<%=items[i].pic_url %>" alt="">
+					</a>
+				</div>
+				<% } %>
+				<% } %>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="andOne">
+		<% if(items){ %>
+		<div class="andone_nav">
+			<img src="../images/activity/andone_img/andonenav.png" alt="">
+		</div>
+		<!--加1购nav-->
+
+		<!--加一购内容部分-->
+		<% for(var i in items){ %>
+		<% if(items[i].temp == 2){ %>
+		<div>
+			<section class="andone_contain_wrap">
+				<div class="andone_contain">
+					<% for(var k in items[i].goods){ %>
+					<a href="./product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+						<img src="<%=items[i].goods[k].goods_image %>" alt="" class="andone_left">
+						<span><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></span>
+					</a>
+					<% } %>
+					<% for(var j in items[i].rule[0].redemption_goods){ %>
+					<a href="./product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[i].goods_id %>">
+						<article  style="background: url(<%=items[i].rule[0].redemption_goods[j].goods_image %>)no-repeat;background-size: 2.29rem 2.4rem;">
+							<div class="word_right"><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></div>
+						</article>
+					</a>
+					<% } %>
+					<div class='gengduo'>更多>></div>
+					<div class='wenzi'>同一店铺购物满<br>￥<%=items[i].rule[0].rule_price %>即可加<br>价换购至多<%=items[i].rule[0].rule_goods_limit %>样商<br>品</div>
+				</div>
+			</section>
+		</div>
+		<% }else if(items[i].temp == 3){ %>
+
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="./product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="1">更多>></div>
+		</div>
+		<!--加一购内容部分-->
+		<% }else if(items[i].temp == 5 || items[i].temp == 6){ %>
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="./product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="1">更多>></div>
+		</div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/html" id="andThere">
+		<% if(items){ %>
+		<div style="margin:0 auto; width:1.9rem;height:.32rem">
+			<img src="../images/activity/title02@2x.png" alt="" style="width:100%;height:100%; margin:.1rem 0 .1rem 0">
+		</div>
+
+		<% for(var i in items){ %>
+		<% if(items[i].temp == 2){ %>
+		<div style="margin-top:.2rem">
+			<section class="andone_contain_wrap">
+				<div class="andone_contain">
+					<% for(var k in items[i].goods){ %>
+					<a href="./product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+						<img src="<%=items[i].goods[k].goods_image %>" alt="" class="andone_left">
+						<span><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></span>
+					</a>
+					<% } %>
+					<% for(var j in items[i].rule[0].redemption_goods){ %>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+						<article  style="background: url(<%=items[i].rule[0].redemption_goods[j].goods_image %>)no-repeat;background-size: 2.29rem 2.4rem;">
+							<div class="word_right"><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></div>
+						</article>
+					</a>
+					<% } %>
+					<div class='gengduo'>更多>></div>
+					<div class='wenzi'>同一店铺购物满<br>￥<%=items[i].rule[0].rule_price %>即可加<br>价换购至多<%=items[i].rule[0].rule_goods_limit %>样商<br>品</div>
+				</div>
+			</section>
+		</div>
+		<% }else if(items[i].temp == 3){ %>
+
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="3">更多>></div>
+		</div>
+		<!--加一购内容部分-->
+		<% }else if(items[i].temp == 5 || items[i].temp == 6){ %>
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="3">更多>></div>
+		</div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="andHot">
+		<% if(items){ %>
+		<div style="margin:0 auto; width:1.9rem;height:.32rem">
+			<img src="../images/activity/title03@3x.png" alt="" style="width:100%;height:100%; margin:.1rem 0 .1rem 0">
+		</div>
+
+		<% for(var i in items){ %>
+		<% if(items[i].temp == 2){ %>
+		<div style="margin-top:.2rem">
+			<section class="andone_contain_wrap">
+				<div class="andone_contain">
+					<% for(var k in items[i].goods){ %>
+					<a href="./product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+						<img src="<%=items[i].goods[k].goods_image %>" alt="" class="andone_left">
+						<span><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></span>
+					</a>
+					<% } %>
+					<% for(var j in items[i].rule[0].redemption_goods){ %>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+						<article  style="background: url(<%=items[i].rule[0].redemption_goods[j].goods_image %>)no-repeat;background-size: 2.29rem 2.4rem;">
+							<div class="word_right"><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></div>
+						</article>
+					</a>
+					<% } %>
+					<div class='gengduo'>更多>></div>
+					<div class='wenzi'>同一店铺购物满<br>￥<%=items[i].rule[0].rule_price %>即可加<br>价换购至多<%=items[i].rule[0].rule_goods_limit %>样商<br>品</div>
+				</div>
+			</section>
+		</div>
+		<% }else if(items[i].temp == 3){ %>
+
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="0">更多>></div>
+		</div>
+		<!--加一购内容部分-->
+		<% }else if(items[i].temp == 5 || items[i].temp == 6){ %>
+		<div class="goodgoods_contain">
+			<ul>
+				<% for(var k in items[i].goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].goods[k].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].goods[k].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].goods[k].goods_name %></u><b>￥<%=items[i].goods[k].goods_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+
+				<div class='wenzi'>同一店铺购物满￥<%=items[i].rule[0].rule_price %>即<br>可加价换购至多<%=items[i].rule[0].rule_goods_limit %>样商品</div>
+			</ul>
+
+			<ul class='goodgoods_contain_right'>
+				<% for(var j in items[i].rule[0].redemption_goods){ %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i].rule[0].redemption_goods[j].goods_id %>">
+					<div class="goodgoods_img">
+						<img src='<%=items[i].rule[0].redemption_goods[j].goods_image %>' alt="">
+					</div>
+					<i><u><%=items[i].rule[0].redemption_goods[j].goods_name %></u><del class="del">￥<%=items[i].rule[0].redemption_goods[j].goods_price %></del><b>￥<%=items[i].rule[0].redemption_goods[j].redemp_price %></b></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+			<div class='gengduo'>更多>></div>
+			<div class='gengduo2' onclick="more(this)" data-id="<%=items[i].rule[0].rule_id %>" data-type="0">更多>></div>
+		</div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/AndOne.js"></script>
+</body>
+</html>

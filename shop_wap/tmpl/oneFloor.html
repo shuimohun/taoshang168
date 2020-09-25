@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/adaptation.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="../css/surprise/common.css">
+    <link rel="stylesheet" href="../css/surprise/surprise.css">
+</head>
+<style>
+:root{
+    padding-bottom:3rem;
+}
+    .footer{
+    width:100%;
+    height:1.306667rem;
+    position:fixed;
+    bottom:0;
+    background-color: #fff;
+    z-index:200;
+}
+.footer ul{
+    font-size: 0;
+}
+.footer ul li{
+    width:20%;
+    height:100%;
+    display:inline-block;
+    text-align: center;
+    vertical-align:top;
+}
+.footer ul li img{
+    width:0.666667rem;
+    height:0.666667rem;
+    margin-top: 0.093333rem;
+}
+.footer ul li span{
+    display: block;
+    color:#333;
+    font-size: 0.293333rem;
+    margin-top: 0.066667rem;
+}
+.footer ul li:nth-child(3) img{
+    width:1.333333rem;
+    height:1.333333rem;
+    margin-top: -0.133333rem;
+}
+</style>
+<body></body>
+<script type="text/html" id="cont">
+    <div class="surprise-container">
+
+        <div class="adv-wrap">
+            <% if(wap_head_image.items){ %>
+            <a href="<%=wap_head_image.items.wap_url %>"><img src="<%=wap_head_image.items.pic_url %>" alt=""></a>
+            <% }else{ %>
+            <img src="../images/surprise/banner.png" alt="">
+            <% } %>
+        </div>
+        <!--main-->
+        <div class="surprise-main">
+            <div class="main">
+                <div class="part-1">
+                    <div class="surprise-title">
+                        <div class="title">
+                            <h2><%=main_title[0] %></h2>
+                            <p><span><%=assis_title[0] %></span></p>
+                        </div>
+                    </div>
+                    <div class="surprise-tufu"></div>
+                    <div class="surprise-panel">
+                        <ul class="surprise-list">
+                            <% if(goodslist){ %>
+                            <% for(var i=0;i<4;i++){ var items = goodslist[i]%>
+                            <li class="surprise-item lf">
+                                <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=items.common_image %>" alt="">
+                                    </div>
+                                    <div class="img-detail">
+                                        <div class="item-title">
+                                            <p class="img-title"><%=items.common_name %></p>
+                                        </div>
+                                        <div class="surprise-part">
+                                            <div class="surprise-left lf">
+                                                <p class="activity-price">活动特价：</p>
+                                                <span class="price"><i><%=items.common_shared_price %></i></span>
+                                            </div>
+                                            <div class="surprise-right rt">
+                                                <span>原价：<%=items.common_price %></span>
+                                                <p class="tobuyBtn">立即抢购</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                          <% }} %>
+                        </ul>
+                    </div>
+                </div>
+                <% if(goodslist){var items = goodslist[4]; var item = goodslist[5]; %>
+                <section class="part-2">
+                    <div class="surprise-panel">
+                        <ul class="surprise-list">
+                            <li class="surprise-item lf">
+                                <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=items.common_image %>" alt="">
+                                    </div>
+                                    <div class="img-detail">
+                                        <div class="item-title">
+                                            <p class="img-title"><%=items.common_name %></p>
+                                        </div>
+                                        <div class="surprise-part">
+                                            <div class="surprise-left lf">
+                                                <p class="activity-price">活动特价：</p>
+                                                <span class="price"><i><%=items.common_shared_price %></i></span>
+                                            </div>
+                                            <div class="surprise-right rt">
+                                                <span>原价：<%=items.common_price %></span>
+                                                <p class="tobuyBtn">立即抢购</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="surprise-item lf">
+                                <a href="./product_detail.html?goods_id=<%=item.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=item.common_image %>" alt="">
+                                    </div>
+                                    <div class="img-detail">
+                                        <div class="item-title">
+                                            <p class="img-title"><%=item.common_name %></p>
+                                        </div>
+                                        <div class="surprise-part">
+                                            <div class="surprise-left lf">
+                                                <p class="activity-price">活动特价：</p>
+                                                <span class="price"><i><%=item.common_shared_price %></i></span>
+                                            </div>
+                                            <div class="surprise-right rt">
+                                                <span>原价：<%=item.common_price %></span>
+                                                <p class="tobuyBtn">立即抢购</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <% } %>
+                <div class="part-3">
+                    <div class="surprise-title">
+                        <div class="title">
+                            <h2><%=main_title[1]%></h2>
+                            <p><span><%=assis_title[1] %></span></p>
+                        </div>
+                    </div>
+                    <div class="surprise-panel">
+                        <ul class="surprise-list">
+                            <% if(goodslist){ %>
+                            <% for(var i=6;i<(goodslist.length);i++){ var items = goodslist[i]%>
+                            <li class="surprise-item lf">
+                                <a href="./product_detail.html?goods_id=<%=items.id_goods %>">
+                                    <div class="img-wrap">
+                                        <img src="<%=items.common_image %>" alt="">
+                                    </div>
+                                    <div class="img-detail">
+                                        <div class="item-title">
+                                            <p class="img-title"><%=items.common_name %></p>
+                                        </div>
+                                        <div class="surprise-part">
+                                            <div class="surprise-left lf">
+                                                <p class="activity-price">活动特价：</p>
+                                                <span class="price"><i><%=items.common_shared_price %></i></span>
+                                            </div>
+                                            <div class="surprise-right rt">
+                                                <span>原价：<%=items.common_price %></span>
+                                                <p class="tobuyBtn">立即抢购</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                          <% }} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="surprise-bg"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <img src="../images/opening/tab_home_snormal@3x.png" alt="">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="./product_first_categroy.html">
+                    <img src="../images/opening/tab_classify_normal@2x.png" alt="">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="./newbuyer.html"><img src="../images/opening/pennygo@2x.png" alt=""></a>
+            </li>
+            <li>
+                <a href="./cart_list.html">
+                    <img src="../images/opening/tab_cart_normal@3x.png" alt="">
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="./member/member.html">
+                    <img src="../images/opening/person.png" alt="">
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</script>
+<script type="text/javascript" src='../js/tmpl/jquery-1.8.3.min.js'></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/surprise.js"></script>
+</html>

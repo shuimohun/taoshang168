@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>账户安全</title>
+  <link rel="stylesheet" href="../../css/money/safety.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <link href="../../css/money/layout.min.css" rel="stylesheet" />
+    <link href="../../css/money/scs.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!--头部-->
+  <header class="person">
+    <div class="title">
+      <a href="./money_index.html"><img src="../../images/money/icon_back.png" alt=""></a>
+      <span>账户安全</span>
+    </div>
+  </header>
+  <!--头部-->
+
+  <!--地址部分-->
+  <form action='#' class="info_add"></form>
+
+  <script type="text/html" id="list">
+    <ul>
+      <% if(user_info.user_identity_statu == '1'){ %>
+      <li>
+        <span>实名认证</span>
+        <img src="../../images/money/icon_forword.png" alt="">
+        <a style="float:right;font-size:.3rem;margin-right:5%">审核中</a>
+      </li>
+      <% }else if(user_info.user_identity_statu == '0'){ %>
+      <li><span>实名认证</span>
+        <a href="./realname.html">
+          <img src="../../images/money/icon_forword.png" alt="">
+        </a>
+        <a style="float:right;font-size:.3rem;margin-right:5%">未认证</a>
+      </li>
+      <% }else if(user_info.user_identity_statu == '2'){ %>
+      <li>
+        <span>实名认证</span>
+        <img src="../../images/money/icon_forword.png" alt="">
+        <a style="float:right;font-size:.3rem;margin-right:5%">已认证</a>
+      </li>
+      <% }else if(user_info.user_identity_statu == '3'){ %>
+      <li><span>实名认证</span>
+        <a href="./realname.html">
+          <img src="../../images/money/icon_forword.png" alt="">
+        </a>
+        <a style="float:right;font-size:.3rem;margin-right:5%">审核失败</a>
+      </li>
+      <% } %>
+
+      <% if(user_info.user_pay_passwd){ %>
+      <li><span>修改支付密码</span><a href="./editpasswd.html"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% }else{ %>
+      <li><span>设置支付密码</span><a href="./addpasswd.html"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% } %>
+      <% if(user_info.user_wechat){ %>
+      <li><span>修改微信</span><a href="#"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% }else{ %>
+      <li><span>绑定微信</span><a href="./addwechat.html"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% } %>
+      <% if(user_info.user_alipay){ %>
+      <li><span>修改支付宝</span><a href="#"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% }else{ %>
+      <li><span>绑定支付宝</span><a href="./addalipay.html"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+      <% } %>
+      <li><span>绑定银行卡</span><a href="./addcard1.html"><img src="../../images/money/icon_forword.png" alt=""></a></li>
+    </ul>
+  </script>
+  <!--地址部分-->
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src="../../js/safety.js"></script>
+</body>
+</html>

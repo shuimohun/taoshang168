@@ -1,0 +1,415 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    border-bottom:.01rem solid #eee;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:38%;
+}
+/***************头部部分结束**************************************/
+
+
+.redbag_info{
+    width:100%;
+    height:2.1rem;
+    padding-top:.3rem;
+    position:relative;
+}
+.redbag_info .redbag_info_inner{
+    width:5.89rem;
+    height:1.52rem;
+    margin:0 auto;
+    border: .01rem solid #f7c99a;
+    border-radius: .2rem;
+    background-color:#fff6e6;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_left{
+	width:1.67rem;
+	height:100%;
+	background-color:#fff;
+	border-radius: .2rem 0  0 .2rem;
+	border-right: .01rem solid #f7c99a;
+	text-align: center;
+	padding-top: .2rem;
+	display:inline-block;
+	vertical-align:top;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_left .redbag_info_inner_left_img{
+	width:.8rem;
+	height:.8rem;
+	border-radius:50%;
+	margin:0 auto;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_left .redbag_info_inner_left_img img{
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_left span{
+	display:inline-block;
+	font-size: .2rem;
+	color:#333;
+	margin-top:.06rem;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle{
+	display:inline-block;
+	width:2.92rem;
+	height:100%;
+	background-color:#fff6e6;
+	vertical-align:top;
+	border-right:.01rem dashed #f7c99a;
+	padding-top: .4rem;
+	font-size: 0;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle .div_v{
+	display:inline-block;
+	color:#e45353;
+	font-size: .18rem;
+	vertical-align:top;
+	margin-right: .1rem;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle .div_v:nth-child(1){
+	margin-left: .4rem;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle .div_v:nth-child(2){
+	margin-left: .1rem;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle .progress{
+	display:inline-block;
+	width:1.5rem;
+	height:.15rem;
+	background-color:#d2d2d2;
+	border-radius:.3rem;
+    vertical-align:top;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle .progress img{
+	height:100%;
+	border-radius:.3rem;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle u{
+	text-decoration:none;
+	color:#826759;
+	font-size: .2rem;
+	display:block;
+	text-align: center;
+	width:2.4rem;
+	margin:0 auto;
+}
+.redbag_info .redbag_info_inner .redbag_info_inner_middle u i{
+	font-style:normal;
+	color:#e45050;
+}
+.redbag_info del{
+	display:inline-block;
+	text-decoration:none;
+	color:#e45050;
+	font-size: .4rem;
+	margin-left: 6%;
+	margin-top:4%;
+}
+.redbag_info b{
+	display:inline-block;
+	font-weight: normal;
+	font-size: .2rem;
+	position:absolute;
+	right:9%;
+	top:60%;
+	text-align: center;
+}
+
+
+
+
+.title1{
+	width:100%;
+	height:.5rem;
+	font-size: 0;
+	border-bottom:.01rem solid #eee;
+}
+.title1 li{
+	display:inline-block;
+	width:21%;
+	height:100%;
+	text-align: center;
+	font-size: .22rem;
+	color:#333;
+	margin-left: 4%;
+}
+.title1 li.cur{
+	border-bottom:.03rem solid #e45050;
+}
+
+
+
+
+
+
+
+.redbag_top{
+    width:100%;
+    height:.76rem;
+    border-bottom:.01rem solid #f2f2f2;
+    font-size: 0;
+    background-color: #fff;
+}
+.redbag_top li{
+    width:25%;
+    display:inline-block;
+    font-size: .24rem;
+    text-align: center;
+    color:#333;
+    margin-top: .24rem;
+    border-right:.01rem solid #f2f2f2;
+}
+.redbag_top li:nth-child(4){
+    border:0 none;
+}
+.redbag_top li.cur{
+    color:#e76764;
+}
+
+
+
+
+
+
+
+.redbag_contain{
+    width:100%;
+    background-color: #fff;
+    padding:.18rem;
+    height:4.8rem;
+}
+.redbag_contain .redbag_item{
+    background-color: #f2f2f2;
+    margin:0 auto;
+    width:100%;
+    height:1.36rem;
+    margin-bottom: .18rem;
+    font-size: 0;
+    position:relative;
+}
+.redbag_contain .redbag_item .item_left{
+    display:inline-block;
+    width:38.5%;
+    height:100%;
+    background:url(../../images/goldegg/hongbao1.png) no-repeat left top ;
+    background-size:100% 100%;
+    vertical-align:top;
+}
+.redbag_contain .redbag_item .item_left span{
+    margin-top: 7%;
+    display:inline-block;
+    color:#fff;
+    font-size: .24rem;
+    margin-left: 51%;
+}
+.redbag_contain .redbag_item .item_left u{
+    display:inline-block;
+    color:#fff;
+    font-size: .34rem;
+    text-decoration:none;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+.redbag_contain .redbag_item .item_left i{
+    display:inline-block;
+    color:#fff;
+    font-size: .16rem;
+    margin-left: 41%;
+    font-style:normal;
+}
+.redbag_contain .redbag_item .item_right{
+    display:inline-block;
+    width:61.5%;
+    font-size: 0;
+    height:100%;
+}
+.redbag_contain .redbag_item .item_right span{
+    display:inline-block;
+    color:#666;
+    font-size: .28rem;
+    margin-left: .24rem;
+    margin-top: 3%;
+}
+.redbag_contain .redbag_item .item_right u{
+    display:inline-block;
+    color:#666;
+    font-size: .16rem;
+    text-decoration:none;
+    margin-left: .24rem;
+    margin-top: 9%;
+}
+.redbag_contain .redbag_item .item_right i{
+    display:block;
+    color:#ccc;
+    font-size: .16rem;
+    font-style:normal;
+    margin-left: .24rem;
+    margin-top: 2%;
+}
+.redbag_contain .redbag_item .logo{
+    width:.56rem;
+    height:.57rem;
+    position:absolute;
+    top:15%;
+    right:7%;
+}
+.redbag_contain .redbag_item .use{
+    width:1.22rem;
+    height:.39rem;
+    position:absolute;
+    top:60%;
+    right:2%
+}
+
+
+
+
+.redbag_contain .redbag_item2{
+    background-color: #f2f2f2;
+    margin:0 auto;
+    width:100%;
+    height:1.36rem;
+    margin-bottom: .18rem;
+    font-size: 0;
+    position:relative;
+}
+.redbag_contain .redbag_item2 .item_left{
+    display:inline-block;
+    width:38.5%;
+    height:100%;
+    background:url(../../images/goldegg/hongbao1g.png) no-repeat left top ;
+    background-size:100% 100%;
+    vertical-align:top;
+}
+.redbag_contain .redbag_item2 .item_left span{
+    margin-top: 7%;
+    display:inline-block;
+    color:#fff;
+    font-size: .24rem;
+    margin-left: 51%;
+}
+.redbag_contain .redbag_item2 .item_left u{
+    display:inline-block;
+    color:#fff;
+    font-size: .34rem;
+    text-decoration:none;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+.redbag_contain .redbag_item2 .item_left i{
+    display:inline-block;
+    color:#fff;
+    font-size: .16rem;
+    margin-left: 41%;
+    font-style:normal;
+}
+.redbag_contain .redbag_item2 .item_right{
+    display:inline-block;
+    width:61.5%;
+    font-size: 0;
+    height:100%;
+}
+.redbag_contain .redbag_item2 .item_right span{
+    display:inline-block;
+    color:#666;
+    font-size: .28rem;
+    margin-left: .24rem;
+    margin-top: 3%;
+}
+.redbag_contain .redbag_item2 .item_right u{
+    display:inline-block;
+    color:#666;
+    font-size: .16rem;
+    text-decoration:none;
+    margin-left: .24rem;
+    margin-top: 9%;
+}
+.redbag_contain .redbag_item2 .item_right i{
+    display:block;
+    color:#ccc;
+    font-size: .16rem;
+    font-style:normal;
+    margin-left: .24rem;
+    margin-top: 2%;
+}
+.redbag_contain .redbag_item2 .logo{
+    width:.56rem;
+    height:.57rem;
+    position:absolute;
+    top:15%;
+    right:7%;
+}
+.redbag_contain .redbag_item2 .use{
+    width:1.22rem;
+    height:.39rem;
+    position:absolute;
+    top:60%;
+    right:2%
+}
+
+.tanchuang{
+    width:3.5rem;
+    height:2rem;
+    background-color:#fff;
+    position:fixed;
+    top:40%;
+    left:20%;
+    border-radius:.1rem;
+    display:none;
+    z-index:102;
+}
+.tanchuang .tanchuang_top{
+    width:100%;
+    height:60%;
+    border-radius:.1rem;
+    text-align: center;
+    line-height:1.4rem;
+    font-size: .26rem;
+    border-bottom:.01rem solid #eee;
+}
+.tanchuang .tanchuang_bottom{
+    width:100%;
+    height:40%;
+    font-size: 0;
+}
+.tanchuang .tanchuang_bottom button{
+    display:inline-block;
+    width:50%;
+    height:100%;
+    font-size: .22rem;
+    text-align: center;
+    line-height:.8rem;
+    color:skyblue;
+    outline: none;
+    border:0 none;
+    background-color:#fff;
+    border-radius:.1rem;
+}
+.tanchuang .tanchuang_bottom .ensure{
+    border-right:.01rem solid #eee;
+}

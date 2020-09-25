@@ -1,0 +1,108 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+	border-bottom: .02rem solid #e7e7e7;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+/****************地址部分*****************************/
+.address{
+	width:100%;
+	height:1.7rem;
+	background-color: #fff;
+	margin-bottom: .12rem;
+}
+.address .address_text{
+	width:100%;
+	height:50%;
+	border-bottom:.01rem solid #e7e7e7;
+}
+.address .address_text .address_text_inner{
+	width:6.06rem;
+	margin-left: .17rem;
+	padding-top:.12rem;
+}
+.address .address_text b{
+	font-size: .24rem;
+	float: left;
+}
+.address .address_text i{
+	font-style:normal;
+	font-size: .24rem;
+	float: right;
+}
+.address .address_text .address_word{
+	width:6.06rem;
+	margin-left: .17rem;
+	font-size: .20rem;
+	float: left;
+	margin-top: .05rem;
+}
+.address .address_button{
+	width:100%;
+	height:50%;
+	border-top:.01rem solid #e7e7e7;
+}
+.address .address_button img{
+	width:.34rem;
+	height:.34rem;
+	margin-left: .17rem;
+	margin-top:.25rem;
+}
+.address .address_button span{
+	display:inline-block;
+	font-size: .22rem;
+	margin-top:.25rem;
+	margin-left: .05rem;
+}
+.address .address_button button{
+	width:1.14rem;
+	height:.52rem;
+	border:.01rem solid #969696;
+	outline:none;
+	background-color: #fff;
+	border-radius:.5rem;
+	font-size: .22rem;
+	text-align: center;
+}
+.address .address_button button.compile{
+	margin-left: 1.57rem;
+}
+/****************地址部分*****************************/
+
+/***********footer部分*******************/
+footer{
+	width:100%;
+	height:.75rem;
+	line-height:.75rem;
+	background-color: #cf3b3b;
+	text-align: center;
+	font-size: .28rem;
+	color:#fff;
+	position:fixed;
+	bottom: 0;
+}
+/***********footer部分*******************/

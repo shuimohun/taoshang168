@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Author" contect="U2FsdGVkX1+liZRYkVWAWC6HsmKNJKZKIr5plAJdZUSg1A==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+    <meta name="wap-font-scale" content="no">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+<title>送福免单</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+<link rel="stylesheet" href="../css/nctouch_products_list.css">
+<link rel="stylesheet" type="text/css" href="../css/sendbless/sendbless.css">
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="js/sendfu_video.js"></script>
+<script>
+    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+    function init() {
+        canvas = document.getElementById("canvas");
+        anim_container = document.getElementById("animation_container");
+        dom_overlay_container = document.getElementById("dom_overlay_container");
+        var comp=AdobeAn.getComposition("E424B4103EC0CC47B14200D6FC487DA0");
+        var lib=comp.getLibrary();
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+        loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+        var lib=comp.getLibrary();
+        loader.loadManifest(lib.properties.manifest);
+    }
+    function handleFileLoad(evt, comp) {
+        var images=comp.getImages();
+        if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+    }
+    function handleComplete(evt,comp) {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        var lib=comp.getLibrary();
+        var ss=comp.getSpriteSheet();
+        var queue = evt.target;
+        var ssMetadata = lib.ssMetadata;
+        for(i=0; i<ssMetadata.length; i++) {
+            ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+        }
+        exportRoot = new lib.FD();
+        stage = new lib.Stage(canvas);
+        //Registers the "tick" event listener.
+        fnStartAnimation = function() {
+            stage.addChild(exportRoot);
+            createjs.Ticker.setFPS(lib.properties.fps);
+            createjs.Ticker.addEventListener("tick", stage);
+        }
+        //Code to support hidpi screens and responsive scaling.
+        function makeResponsive(isResp, respDim, isScale, scaleType) {
+            var lastW, lastH, lastS=1;
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            function resizeCanvas() {
+                var w = lib.properties.width, h = lib.properties.height;
+                var iw = window.innerWidth, ih=window.innerHeight;
+                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;
+                if(isResp) {
+                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {
+                        sRatio = lastS;
+                    }
+                    else if(!isScale) {
+                        if(iw<w || ih<h)
+                            sRatio = Math.min(xRatio, yRatio);
+                    }
+                    else if(scaleType==1) {
+                        sRatio = Math.min(xRatio, yRatio);
+                    }
+                    else if(scaleType==2) {
+                        sRatio = Math.max(xRatio, yRatio);
+                    }
+                }
+                canvas.width = w*pRatio*sRatio;
+                canvas.height = h*pRatio*sRatio;
+                canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';
+                canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+                stage.scaleX = pRatio*sRatio;
+                stage.scaleY = pRatio*sRatio;
+                lastW = iw; lastH = ih; lastS = sRatio;
+                stage.tickOnUpdate = false;
+                stage.update();
+                stage.tickOnUpdate = true;
+            }
+        }
+        makeResponsive(false,'both',false,1);
+        AdobeAn.compositionLoaded(lib.properties.id);
+        fnStartAnimation();
+    }
+</script>
+</head>
+<style>
+    .information_body{ margin-top: 0.8rem!important;}
+    .open{
+        width:100%;
+        position:fixed;
+        left:0;
+        top:0rem;
+        z-index:101;
+        display:none;
+        font-size: 0;
+    }
+    @media only screen and (min-width:1024px )  {
+        .open{ height: 55px!important;}
+    }
+    .open .open_title{
+        width:70%;
+        height:100%;
+    }
+    .open .open_click{
+        width:30%;
+        /*height:40.45px;*/
+        height:1.8rem;
+    }
+    .open .open_close{
+        position:absolute;
+        left:3%;
+        top:24%;
+        width:.8rem;
+        height:.8rem;
+    }
+</style>
+<body onload="init();" style="background-color:#fff;margin-top:1.6rem" class="information_body">
+<!--头部部分-->
+<section class="open">
+    <img src="../images/main_img/open1.png" alt="" class="open_title">
+    <img src="../images/main_img/open2.png" alt="" class="open_click" id="btnOpenApp" data-type="3">
+    <img src="../images/main_img/open_close.png" alt="" class="open_close">
+</section>
+<header id="header" class="nctouch-product-header fixed">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+        <div class="head_title">送福免单</div>
+        <div class="send_rule head_gz">规则<img src="../images/user_img/more_help@2x.png" alt=""></div>
+    </div>
+</header>
+<!--送福免单注册页  start-->
+<div class="nctouch-main-layout margin2 ">
+
+
+</div>
+<div class="bless_user">
+
+</div>
+<div class="more_main">
+    <div class="more_nav">
+        <ul class="clearfix">
+            <li  class="on">新人优惠</li>
+            <li>惠抢购</li>
+            <li>限时折扣</li>
+            <li>好物包邮</li>
+        </ul>
+    </div>
+    <div class="more_wrap">
+        <ul>
+            <li  class="more_item ">
+                <div class="main_content newbuyer Fu_newBuy">
+
+
+                </div>
+            </li>
+            <li style="display: none;" class="more_item scareBuy">
+
+            </li>
+            <li style="display: none;" class="more_item">
+                <div class="discount">
+                    <div class="goods_add Discount">
+
+                    </div>
+                </div>
+            </li>
+            <li style="display: none;" class="more_item GoodsFree">
+                <div class="free_post">
+                    <div class="list">
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--送福免单注册页  end-->
+<div class="fix-block-r">
+   <!-- <a href="#" class="browse-btn"><i></i></a>-->
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<footer id="footer" class="bottom"></footer>
+<!-- 进入页面弹框-->
+<!--<div class="pop_bless">
+    <div class="mask"></div>
+    <div class="pop_bless_main">
+        <div class="pop_colse_btn"><img src="img/sendbless/pop_close_btn.png" alt=""></div>
+        <div class="pop_bless_con"><img src="img/sendbless/pop_img.png" alt=""></div>
+        <a href="#" class="pop__bless_btn"><img src="img/sendbless/pop_bless_btn.png" alt=""></a>
+    </div>
+</div>-->
+<!--页面主内容渲染s-->
+<script type="text/html" id="margin2">
+<% if(data.margin2){ %>
+    <div class="list send_bless_goods">
+        <div class="cx_title">
+            <p></p>
+        </div>
+        <ul class="goods-secrch-list">
+            <li class="goods-item">
+                    <span class="goods-pic">
+                        <a href="./product_detail.html?goods_id=<%=data.margin2.goods_id%>">
+                            <img src="<%=data.margin2.goods_image%>"/>
+                        </a>
+                    </span>
+                <dl class="goods-info">
+                    <dt class="goods-name">
+                        <a href="#"><h4><%=data.margin2.goods_name%></h4></a>
+                    </dt>
+                    <dd class="bless_goods_meter">
+                        <span><%=data.margin2.goods_spec%></span>
+                    </dd>
+                    <% if( data.bless_user.status == 1){ %>
+                    <dd class="bless_timedown">
+                            <span class="fnTimeCountDown clearfix " data-end="<% if(data.margin2.end_time){%> <%=data.margin2.end_time%>   <% }%>">
+                                <% if(data.margin2.end_time){ %>
+                                <u class="hour">00</u>
+                                    <i>:</i>
+                                <u class="mini">00</u>
+                                    <i>:</i>
+                                <u class="sec">00</u>
+                                <span class="fnTimeCountDown_text">送福免单将失效</span>
+                                <% }%>
+                            </span>
+                    </dd>
+                    <% }%>
+                    <dd class="get_bless_detail clearfix">
+                        <span class="goods_price">￥0</span>
+                        <span class="goods_price_fact">￥<%=data.margin2.goods_price%></span>
+                        <span class="free_btn"><a href="#"><i><%=data.margin2.sale_countFu%></i>人已免费领取</a></span>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+<% }%>
+</script>
+<script type="text/html" id="bless_user">
+    <% if(data.bless_user){ %>
+        <ul class="bless_user_tx">
+            <% for(var i in data.bless_user.user_info){ %>
+            <li><img src="<%=data.bless_user.user_info[i].user_logo%>" onerror="this.src='./img/robot-ss.png'" alt=""></li>
+            <% }%>
+        </ul>
+        <% if(data.bless_user.register==1){ %>
+            <p class="get_bless_num">目前有<span><%=data.bless_user['sale_countFu']%></span>人送福邀请新用户注册成功零元拿</p>
+        <%}else{%>
+            <p class="get_bless_num">目前有<span><%=data.bless_user['sale_countFu']%></span>人送福成功零元拿</p>
+        <%}%>
+        <div class="share_bless">
+            <ul class="share_ul clearfix">
+                <li>
+                    <img src="../images/share_on1.png" alt="" class="share_img" data-type="qqFriend">
+                    <p class="bless_task">任务<span style="color: red;"><%=data.bless_user.Share.total_sqq%></span>福</p>
+                    <div class="need_bless_num">
+                        <%if(data.bless_user.Share.sqq){ %>
+                            <% if(data.bless_user.status ==3 || data.bless_user.status==5 || data.bless_user.status ==0 ){ %>
+                                0
+                            <%}else{%>
+                                <%=data.bless_user.Share.sqq%>
+                            <% }%>
+                        <%}else{%>
+                            0
+                        <%}%>
+                        <img src="../images/bless.png" alt=""></div>
+                </li>
+                <li>
+                    <img src="../images/share_on2.png" alt="" class="share_img"  data-type="qZone">
+                    <p class="bless_task">任务<span style="color: red;"><%=data.bless_user.Share.total_qzone%></span>福</p>
+                    <div class="need_bless_num">
+                        <%if(data.bless_user.Share.qzone){%>
+                            <% if(data.bless_user.status ==3 ||  data.bless_user.status==5 || data.bless_user.status ==0 ){ %>
+                                0
+                            <%}else{%>
+                                <%=data.bless_user.Share.qzone%>
+                            <% }%>
+                        <%}else{%>
+                            0
+                        <%}%>
+                        <img src="../images/bless.png" alt=""></div>
+                </li>
+                <li>
+                    <img src="../images/share_on3.png" alt="" class="share_img" data-type="wechatFriend">
+                    <p class="bless_task">任务<span style="color: red;"><%=data.bless_user.Share.total_weixin%></span>福</p>
+                    <div class="need_bless_num">
+                        <%if(data.bless_user.Share.weixin){%>
+                            <% if(data.bless_user.status ==3 || data.bless_user.status==5 || data.bless_user.status ==0 ){ %>
+                                0
+                            <%}else{%>
+                                <%=data.bless_user.Share.weixin%>
+                            <% }%>
+                        <%}else{%>
+                            0
+                        <%}%>
+                        <img src="../images/bless.png" alt=""></div>
+                </li>
+                <li>
+                    <img src="../images/share_on4.png" alt="" class="share_img" data-type="wechatTimeline">
+                    <p class="bless_task">任务<span style="color: red;"><%=data.bless_user.Share.total_weixin_timeline%></span>福</p>
+                    <div class="need_bless_num">
+                        <%if(data.bless_user.Share.weixin_timeline){%>
+                            <% if(data.bless_user.status ==3 || data.bless_user.status==5 || data.bless_user.status ==0 ){ %>
+                                0
+                            <%}else{%>
+                                <%=data.bless_user.Share.weixin_timeline%>
+                            <% }%>
+
+                        <%}else{%>
+                            0
+                        <% }%>
+                        <img src="../images/bless.png" alt=""></div>
+                </li>
+                <li>
+                    <img src="../images/share_on5.png" alt="" class="share_img" data-type="weibo">
+                    <p class="bless_task">任务<span style="color: red;"><%=data.bless_user.Share.total_tsina%></span>福</p>
+                    <div class="need_bless_num">
+                        <%if(data.bless_user.Share.tsina){%>
+                            <% if(data.bless_user.status ==3 || data.bless_user.status==5 || data.bless_user.status ==0 ){ %>
+                                0
+                            <%}else{%>
+                                <%=data.bless_user.Share.tsina%>
+                            <% }%>
+                        <%}else{%>
+                            0
+                        <%}%>
+                        <img src="../images/bless.png" alt=""></div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="bless_btn">
+            <!--未注册用户按钮状态-->
+            <div class="register_status hidden">
+                <a href="#" class="bless_register_btn">送福免单注册</a>
+                <a href="#" class="more_bless_btn">更多送福免单</a>
+            </div>
+            <!--送福进行时按钮状态-->
+            <div class="bless_status">
+                <ul>
+                    <li class="clearfix">
+                        <%if(data.bless_user.status !=5){%>
+                            <% if( data.bless_user.status ==0 || data.bless_user.status ==3 ){%>
+                                <% if(data.bless_user.register==1){ %>
+                                    <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.total_fu%></i>个送福注册免单</a>
+                                <%}else{%>
+                                    <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.total_fu%></i>个福免单</a>
+                                <%}%>
+                            <% }else {%>
+                                <% if(data.bless_user.register==1){ %>
+                                <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.cha_fu%></i>个送福注册免单</a>
+                                <%}else{%>
+                                <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.cha_fu%></i>个福免单</a>
+                                <%}%>
+                            <% }%>
+
+                        <% }else{%>
+                            <% if(data.bless_user.register==1){%>
+                                <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.total_fu%></i>个送福注册免单</a>
+                            <%}else{%>
+                                <a href="#" class="collect_b_btn">还差<i><%=data.bless_user.total_fu%></i>个福免单</a>
+                            <% }%>
+                        <% }%>
+
+                        <% if( data.bless_user.status ==5 ){%>
+                            <% if(data.bless_user.buy_price){%>
+                                <a href="#" class="bless_money">送福购买￥：<%=data.bless_user.buy_price%></a>
+                            <% }else{%>
+                                <a href="#" class="bless_money">送福失败</a>
+                            <%} %>
+                        <%}else if( data.bless_user.status ==4 ){%>
+                            <a href="#" class="bless_money">免单成功</a>
+                        <% }else if( data.bless_user.status ==3 ){%>
+                            <a href="#" class="bless_money">送福购买</a>
+                        <% }else if( data.bless_user.status ==2 ){ %>
+                            <a href="./product_detail.html?goods_id=<%=data.margin2.goods_id%>" class="bless_money">成功未提交</a>
+                        <% }else if( data.bless_user.status ==1 ){%>
+                            <% if(data.bless_user.buy_price){%>
+                                <a href="./product_detail.html?goods_id=<%=data.margin2.goods_id%>" class="bless_money">送福购买￥：<%=data.bless_user.buy_price%></a>
+                            <% }else{%>
+                                <a href="./product_detail.html?goods_id=<%=data.margin2.goods_id%>" class="bless_money">送福购买￥：<%=data.bless_user.total_price%></a>
+                            <% }%>
+                        <% }else{ %>
+                            <a href="./product_detail.html?goods_id=<%=data.margin2.goods_id%>" class="bless_money">送福购买￥：<%=data.bless_user.total_price%></a>
+                        <% }%>
+                    </li>
+                    <li class="clearfix">
+                        <a href="./sendbless_list.html" class="more_bless_btn more_bless_btn_v2">更多送福免单</a>
+                        <a href="https://itunes.apple.com/us/app/id1280271411" class="ios_btn">
+                            <img src="img/ios.png" alt="">苹果App下载
+                        </a>
+                        <a href="http://imtt.dd.qq.com/16891/9763DF5EEF112628260DD9BC55C193DE.apk?fsname=com.taoshang168.apk" class="andriod_btn">
+                            <img src="img/android.png" alt="">安卓App下载
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <% }%>
+</script>
+<!--页面主内容渲染e-->
+<!--惠抢购渲染-->
+<script type="text/html" id="scareBuy">
+    <% if(data.goods.items){ %>
+        <% for(var i in data.goods.items){ %>
+            <div class="goods_list rush_buy">
+                <div class="sale">
+                    <span class="fnTimeCountDown clearfix" data-end="<%=data.goods.items[i].scarebuy_endtime%>">
+                        <span class="fnTimeCountDown_text">距离结束</span>
+                        <u class="hour">00</u>
+                            <i>:</i>
+                        <u class="mini">00</u>
+                            <i>:</i>
+                        <u class="sec">00</u>
+                    </span>
+                    <div class="sale_wrap">
+                        <div class="sale_img">
+                            <a href="./product_detail.html?goods_id=<%=data.goods.items[i].goods_id%>"><img src="<%=data.goods.items[i].goods_image%>" alt=""></a>
+                        </div>
+                        <div class="sale_info">
+                            <h2>
+                                <%=data.goods.items[i].goods_name%>
+                            </h2>
+
+                            <u>￥<%=data.goods.items[i].scare_buy%><del>￥<%=data.goods.items[i].goods_price%></del><span class="limit">限时秒杀</span></u>
+                            <div class="sale_down clearfix">
+                                <div class="sale_down_img"><img src="../images/scarebuy_img/reduce_price_btn@3x.png" alt=""></div>
+                                <span>直降<%=data.goods.items[i].reduce元%></span>
+                            </div>
+                            <div class="sale_down clearfix">
+                                <div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+                                <span>分享立省<%=data.goods.items[i].goods_share_price%>元</span>
+                            </div>
+                            <div class="sale_down clearfix">
+                                <div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+                                <span>再赚<%=data.goods.items[i].goods_promotion_price%>元</span>
+                            </div>
+                            <div class="progress"><img src="../images/scarebuy_img/rectangle@3x.png" width="90%" alt=""></div>
+                        </div>
+                        <a href="#"><input type="button" value="立即抢购"></a>
+                        <u class="qiang">已抢<%=data.goods.items[i].scarebuy_buy_quantity%>件</u>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+</script>
+<!-- 限时折扣渲染-->
+<script type="text/html" id="Discount">
+    <% if(data.items){%>
+        <% for(var i in data.items){%>
+            <div class="buy_goods">
+                <div class="goods_img">
+                    <a href="#"><img src="<%=data.items[i].goods_image%>" alt=""></a>
+                </div>
+                <div class="goods_contain">
+                    <span><%=data.items[i].goods_name%></span>
+                    <div class="bg_wrap clearfix">
+                        <div class="bg">分享省￥<%=data.items[i].share_total_price%></div>
+                        <div class="bg">分享赚￥<%=data.items[i].goods_promotion_price%></div>
+                    </div>
+                    <i>促销：<del><%=data.items[i].discount_rate%>折</del></i>
+                    <p class="clearfix">
+                        <span class="word">折扣价：￥<%=data.items[i].discount_price%></span>
+                        <span class="word">分享后：￥<%=data.items[i].share_discount_price%></span>
+                    </p>
+                    <p class="bar_wrap clearfix">
+                        <span class="bar"><img src="../images/gradient.png" style="width:<%=data.items[i].width %>%;" alt=""></span>
+                        <b class="C66">仅剩<span class="span_number"><%=data.items[i].goods_stock %>/<%=data.items[i].stock_count %></span>件</b>
+                    </p>
+                    <a href="#" class="btn_wrap"><img src="../images/btn_buy.png" alt="" class="button"></a>
+                </div>
+            </div>
+        <% }%>
+    <% }%>
+</script>
+<!--好物包邮-->
+<script type="text/html" id="GoodsFree">
+    <% if(data.items){ %>
+        <ul class="goods-secrch-list">
+            <% for(var i in data.items){ %>
+                <li class="goods-item">
+                    <span class="goods-pic">
+                        <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>">
+                            <img src="<%=data.items[i].common_image%>" alt="">
+                        </a>
+                    </span>
+                    <dl class="goods-info">
+                        <dt class="goods-name">
+                            <a href="#">
+                                <h4><%=data.items[i].common_name%></h4>
+                                <span class="bg_all">
+                                    <span class="bg" >分享省￥<%=data.items[i].common_share_price%></span>
+                                    <span class="bg">分享赚￥<%=data.items[i].common_promotion_price%></span>
+                                </span>
+                            </a>
+                        </dt>
+                        <dd class="goods_icon"></dd>
+                        <dd class="goods-assist">
+                            <a href="">
+                                <span class="goods-sold">销量<em><%=data.items[i].common_salenum%></em></span>
+                                <span class="goods-sold">评论<em><%=data.items[i].common_evaluate%></em></span>
+                                <span class="goods-price">￥<em><%=data.items[i].common_price%></em></span>
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+            <% }%>
+        </ul>
+    <% }%>
+</script>
+<!--好物包邮追加渲染-->
+<script type="text/html" id="GoodsFreeAppend">
+    <% if(data.items){ %>
+        <% for(var i in data.items){ %>
+            <li class="goods-item">
+                        <span class="goods-pic">
+                            <a href="./product_detail.html?goods_id=<%=data.items[i].goods_id%>">
+                                <img src="<%=data.items[i].common_image%>" alt="">
+                            </a>
+                        </span>
+                <dl class="goods-info">
+                    <dt class="goods-name">
+                        <a href="#">
+                            <h4><%=data.items[i].common_name%></h4>
+                            <span class="bg_all">
+                                        <span class="bg" style="font-size:.45rem;padding:0 .12rem 0 .12rem;">分享立省￥<%=data.items[i].common_share_price%></span>
+                                        <span class="bg" style="font-size:.45rem;padding:0 .12rem 0 .12rem;">立赚￥<%=data.items[i].common_promotion_price%></span>
+                                    </span>
+                        </a>
+                    </dt>
+                    <dd class="goods_icon"></dd>
+                    <dd class="goods-assist">
+                        <a href="">
+                            <span class="goods-sold">销量<em><%=data.items[i].common_salenum%></em></span>
+                            <span class="goods-sold">评论<em><%=data.items[i].common_evaluate%></em></span>
+                            <span class="goods-price">￥<em><%=data.items[i].common_price%></em></span>
+                        </a>
+                    </dd>
+                </dl>
+            </li>
+        <% }%>
+    <% }%>
+</script>
+<!--新人专享渲染-->
+<script type="text/html" id="Fu_newBuy">
+
+    <% if(data.yifen.items){ %>
+        <% for(var i in data.yifen.items){ %>
+            <div class="item">
+                <a href="./store_newbuyer.html?shop_id=<%=data.yifen.items[i].shop_id%>" >
+                    <p class="newer_shop_name"><%=data.yifen.items[i].shop_name%></p>
+                </a>
+                <a href="#"><span><%=data.yifen.items[i].goods_name%></span></a>
+                <i><%=data.yifen.items[i].newbuyer_name%></i><br>
+                <u>新人：<u>￥<%=data.yifen.items[i].shared_price%>包邮</u></u><br>
+                <b>专柜价：<del>￥<%=data.yifen.items[i].goods_price%></del></b>
+                <a href="#"><img src="../images/newbuyer_buy.png" alt="" class="buy"></a>
+                <a href="./product_detail.html?goods_id=<%=data.yifen.items[i].goods_id%>" >
+                    <img src="<%=data.yifen.items[i].goods_image%>" alt="" class="main_img">
+                </a>
+            </div>
+        <% }%>
+    <% }%>
+
+    <% if(data.yimao.items){ %>
+        <% for(var i in data.yimao.items){ %>
+            <div class="item">
+                <a href="./store_newbuyer.html?shop_id=<%=data.yimao.items[i].shop_id%>" >
+                    <p class="newer_shop_name"><%=data.yimao.items[i].shop_name%></p>
+                </a>
+                <a href="#"><span><%=data.yimao.items[i].goods_name%></span></a><br>
+                <i><%=data.yimao.items[i].newbuyer_name%></i><br>
+                <u>新人：<u>￥<%=data.yimao.items[i].shared_price%>包邮</u></u><br>
+                <b>专柜价：<del>￥<%=data.yimao.items[i].goods_price%></del></b>
+                <a href="#"><img src="../images/newbuyer_buy.png" alt="" class="buy"></a>
+                <a href="./product_detail.html?goods_id=<%=data.yimao.items[i].goods_id%>" >
+                    <img src="<%=data.yimao.items[i].goods_image%>" alt="" class="main_img">
+                </a>
+            </div>
+        <% }%>
+    <% }%>
+
+    <% if(data.yiyuan.items){ %>
+        <% for(var i in data.yiyuan.items){ %>
+            <div class="item">
+                <a href="./store_newbuyer.html?shop_id=<%=data.yiyuan.items[i].shop_id%>" >
+                    <p class="newer_shop_name"><%=data.yiyuan.items[i].shop_name%></p>
+                </a>
+                <a href="#"><span><%=data.yiyuan.items[i].goods_name%></span></a><br>
+                <i><%=data.yiyuan.items[i].newbuyer_name%></i><br>
+                <u>新人：<u>￥<%=data.yiyuan.items[i].shared_price%>包邮</u></u><br>
+                <b>专柜价：<del>￥<%=data.yiyuan.items[i].goods_price%></del></b>
+                <a href="#"><img src="../images/newbuyer_buy.png" alt="" class="buy"></a>
+                <a href="./product_detail.html?goods_id=<%=data.yiyuan.items[i].goods_id%>" >
+                    <img src="<%=data.yiyuan.items[i].goods_image%>" alt="" class="main_img">
+                </a>
+            </div>
+        <% }%>
+    <% }%>
+
+</script>
+<!--进入页面弹框动画 start-->
+<div class="pop_video" style="display: none">
+    <div class="pop_video_mask"></div>
+    <div id="animation_container">
+        <canvas id="canvas"></canvas>
+        <div id="dom_overlay_container">
+        </div>
+    </div>
+    <div class="pop_btn_close"><img src="img/sendbless/pop_close_btn.png" alt=""></div>
+    <div class="pop_bless_btn"><!--<img src="img/sendbless/pop_bless_btn.png" alt="">-->
+        <a href="javascript:;" class="inter_page_text"></a>
+    </div>
+</div>
+<!--进入页面弹框动画 end-->
+<!--规则弹框start-->
+<div class="gz_pop">
+    <div class="gz_mask"></div>
+    <div class="gz_content">
+        <div class="gz_title">
+            <ul class="clearfix">
+                <li>免单攻略</li>
+                <li>活动规则</li>
+            </ul>
+            <span class="close_btn"><img src="../images/close_window.png" alt=""></span>
+        </div>
+        <div class="gz_text">
+            <ul>
+                <li><span>1</span>选择“送福免单”商品，点击选择心目中能完成的送福任务（送福免单分两种：a.“送福”点击任务 b.“送福”注册任务）；</li>
+                <li><span>2</span>分享给自己的社交好友，让好友帮助点击或注册；</li>
+                <li><span>3</span>在未能完成点击次数，可邀请朋友注册社交平台账号来完成点击或注册次数（24小时内完成）；</li>
+                <li><span>4</span>达到“送福”任务次数，免单成功！</li>
+            </ul>
+        </div>
+        <div class="gz_text">
+            <ul>
+                <li><span>1</span>每个新用户可帮助点击或注册，每个社交平台只能记录一次；</li>
+                <li><span>2</span>若发现用户存在刷单，虚假用户等违规行为，平台有权判定“送福”失败；</li>
+                <li><span>3</span>用户完成免单后，在48小时安排发货（特殊情况会通知买家）；</li>
+                <li><span>4</span>如修改收货地址，对物流和商品有疑问可联系客服。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--规则弹框end-->
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+<script type="text/javascript" src="../js/sendbless/sendbless_register.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+<script type="text/javascript" src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    //规则弹框
+    $(".send_rule").click(function(){
+        $(".gz_pop").show();
+        var gz_pop_Height = $(".gz_content").height();
+        $(".gz_content").css({"margin-top":-gz_pop_Height/2+"px"});
+    })
+    $(".close_btn").click(function(){
+        $(".gz_pop").hide();
+    })
+    $(".gz_mask").click(function(){
+        $(".gz_pop").hide();
+    })
+    $(".gz_content .gz_title ul li").eq(1).addClass("on");
+    $(".gz_text").eq(1).show();
+    $(".gz_content .gz_title ul li").click(function () {
+        var this_num = $(this).index();
+        $(".gz_content .gz_title ul li").removeClass("on");
+        $(this).addClass("on");
+        $(".gz_text").hide();
+        $(".gz_text").eq(this_num).show();
+
+    })
+    //
+    /*var ssss = $(".inter_page_text").width();
+    alert(ssss)*/
+</script>
+<script>
+    //头部图片高度
+    var left_img_height = $(".open_title").height();
+    $(".open").css({"height":left_img_height+"px","overflow":"hidden"})
+    $(".open_click").css({"height":left_img_height+"px"})
+</script>
+</body>
+</html>

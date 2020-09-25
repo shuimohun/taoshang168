@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>满减送</title>
+	<link rel="stylesheet" href="../css/activity/moneyoff.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+</head>
+<body style="background-color:#f7f7f7;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../images/activity/icon_back.png" alt=""></a>
+			<span>满减送</span>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<div class="man"></div>
+
+	<div class="tui"></div>
+	<script type="text/html" id="man">
+		<% if(items.man.rule){ %>
+		<% var items = items.man.rule %>
+		<% for(var i in items){ %>
+		<% if(items[i].goods_id != '0' && item[i].goods_id){ %>
+		<div class="buy_goods_change">
+			<div class="goods_img">
+				<a href="product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="<%=items[i].goods_image %>" alt=""></a>
+			</div>
+			<span class='buy_title'><%=items[i].goods_name %></span><br>
+			<!--<div class='cuxiao'>颜色：蓝色；尺码：均码</div>-->
+			<del class="bar">￥<%=items[i].goods_price %></del>
+			<div class='bottom_title'><span>满￥<%=items[i].rule_price %>减￥<%=items[i].rule_discount %>有赠品</span></div>
+		</div>
+		<% }else{ %>
+		<div style="width: 100%;height: .5rem;line-height: .5rem;background-color: #fff;border-bottom:.02rem solid #f2f2f2"><span style="font-size: .2rem;color: #333;">满￥<%=items[i].rule_price %>减￥<%=items[i].rule_discount %></span></div>
+		<% } %>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/html" id="recommend">
+		<% if(items.recommend){ %>
+		<div style="width:100%;height:.6rem;line-height:.6rem;text-align:center;font-size:.22rem;color:#ccc;background-color:#f2f2f2;">为你推荐</div>
+		<% var recommend = items.recommend %>
+		<% for(var i in recommend){ %>
+		<div class="buy_goods<% if(recommend[i].is_share){ %>_over<%}%>">
+			<div class="goods_img">
+				<a href="product_detail.html?goods_id=<%=recommend[i].id_goods %>"><img src="<%=recommend[i].common_image %>" alt=""></a>
+			</div>
+			<span class='buy_title'><%=recommend[i].common_name %></span><br>
+			<div class="bg1">分享立省￥<%=recommend[i].common_share_price %></div>
+			<div class="bg2">立赚￥<%=recommend[i].common_promotion_price %></div>
+			<div class='cuxiao'>促销
+				<i>满减送</i>
+				<% if(recommend[i].common_is_jia != '0'){ %>
+				<i>加</i>
+				<% } %>
+				<% if(recommend[i].common_promotion_type == 1){ %>
+				<i>惠</i>
+				<% }else if(recommend[i].common_promotion_type == 2){ %>
+				<i>限</i>
+				<% }else if(recommend[i].common_promotion_type == 3){ %>
+				<i>手机专享</i>
+				<% }else if(recommend[i].common_promotion_type == 4){ %>
+				<i>新</i>
+				<% } %>
+			</div>
+			<span class='price'>￥<%=recommend[i].common_price %></span>
+			<span class="bar">分享后:￥<%=recommend[i].common_shared_price %></span>
+			<% if(recommend[i].is_share){ %>
+			<button>已分享</button>
+			<% }else{ %>
+			<button>分享立省</button>
+			<% } %>
+			<% if(recommend[i].is_favorite){ %>
+			<img src="../images/activity/liked@2x.png"  class='shoucang' data-id="<%=recommend[i].id_goods %>" onclick="favor(this)">
+			<% }else{ %>
+			<img src="../images/activity/like@2x.png" class="shoucang" data-id="<%=recommend[i].id_goods %>" onclick="favor(this)">
+			<% } %>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/moneyoff.js"></script>
+</body>
+
+</html>

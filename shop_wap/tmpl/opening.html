@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘尚168商城</title>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta content="modeName=750-12" name="grid" /><!--实现栅格系统-->
+	<script src="../js/tmpl/build/flexible_css.debug.js"></script>
+    <script src="../js/tmpl/build/flexible.debug.js"></script>
+    <script src="../js/tmpl/build/makegrid.debug.js"></script><!--实现栅格系统-->
+    <!--设置datadrp 1-3-->
+    <!--此页面按照淘宝flexible方法布局 在750的设计稿中，1rem = 75px-->
+	<!--内外边距、div大小用rem方案，栅格系统用grid方案，字体用datadrp方案-->
+	<!--android屏幕的手机data-drp统一设置为1-->
+	<!--ios屏幕data-drp设置为2到3-->
+	<!--初始化id 使移动端在所有设备居中-->
+	<script type="text/javascript" src='../js/tmpl/jquery-1.8.3.min.js'></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script src='../js/tmpl/opening.js'></script>
+	<script src='../js/tmpl/swiper.min.js'></script>
+	<link rel="stylesheet" href="../css/opening.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+</head>
+<body>
+	<div id="contain">
+		<div class="content_item"></div>
+	</div>
+	<div class="footer">
+		<ul>
+			<li>
+				<a href="../index.html">
+					<img src="../images/opening/tab_home_snormal@3x.png" alt="">
+					<span>首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="./product_first_categroy.html">
+					<img src="../images/opening/tab_classify_normal@2x.png" alt="">
+					<span>分类</span>
+				</a>
+			</li>
+			<li>
+				<a href="./newbuyer.html"><img src="../images/opening/pennygo@2x.png" alt=""></a>
+			</li>
+			<li>
+				<a href="./cart_list.html">
+					<img src="../images/opening/tab_cart_normal@3x.png" alt="">
+					<span>购物车</span>
+				</a>
+			</li>
+			<li>
+				<a href="./member/member.html">
+					<img src="../images/opening/person.png" alt="">
+					<span>我的</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/html" id="content_item">
+		<div class="title">
+			<a href="../index.html">
+				<img src="../images/opening/back.png" alt="" class="icon">
+			</a>
+			<span><%=opening_title%></span>
+		</div>
+		<div class="startBusinessContain">
+			<div class="startBusiness" style="background-image: url(<%=opening_img_wap%>)"></div>
+			<div class="discountCoupon grid">
+				<% for(var i in voucher){ %>
+				<div class="col-4">
+					<div class="discountCouponItem">
+						<a href="shopquan.html?shop_id=<%=voucher[i].shop_id %>">
+							<span class="priceText"><i><em>￥</em><%=voucher[i].voucher_t_price %></i>优惠券</span>
+							<p>满<%=voucher[i].voucher_t_limit %>减<%=voucher[i].voucher_t_price %>元</p>
+						</a>
+					</div>
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<div class="seckillTitle">
+			<div class="seckillIcon">
+				<img src="../images/opening/clock@2x.png" alt="" class="seckillClock">
+				<span><%=opening.xianshi.opening_name %></span>
+			</div>
+			<a href="scarebuy.html" class="seckillBtn_a"><img src="../images/opening/icon_more@2x.png" alt="" class="seckillBtn"></a>
+		</div>
+		<ul class="timeFrame">
+			<li class="cur">
+				<span>09:00-12:00</span>
+				<% if(start_xianshi == 'xianshi1'){ %>
+				<p>正在秒杀</p>
+				<% }else{ %>
+				<p>即将开始</p>
+				<% } %>
+			</li>
+			<li>
+				<span>14:00-17:00</span>
+				<% if(start_xianshi == 'xianshi2'){ %>
+				<p>正在秒杀</p>
+				<% }else{ %>
+				<p>即将开始</p>
+				<% } %>
+			</li>
+			<li>
+				<span>19:00-22:00</span>
+				<% if(start_xianshi == 'xianshi3'){ %>
+				<p>正在秒杀</p>
+				<% }else{ %>
+				<p>即将开始</p>
+				<% } %>
+			</li>
+		</ul>
+		<!--限时折扣-->
+		<div class="tab" style="display:none;">
+			<div class="seckill orseckillOne">
+				<ul>
+					<% for(var i=0;i<3;i++){ if(opening.xianshi.xianshi1.goods[i]){%>
+					<% var item = opening.xianshi.xianshi1.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="">
+							<i><%=item.common_name %></i>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+							<% if(start_xianshi == 'xianshi1'){ %>
+							<del>正在秒杀</del>
+							<% }else{ %>
+							<del>即将开始</del>
+							<% } %>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+			<div class="seckill orseckill">
+				<ul>
+					<% for(var i=3;i<6;i++){ if(opening.xianshi.xianshi1.goods[i]){%>
+					<% var item = opening.xianshi.xianshi1.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="">
+							<i><%=item.common_name %></i>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+							<% if(start_xianshi == 'xianshi1'){ %>
+							<del>正在秒杀</del>
+							<% }else{ %>
+							<del>即将开始</del>
+							<% } %>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<div class="tab" style="display:none;">
+			<div class="seckill orseckillOne">
+				<ul>
+					<% for(var i=0;i<3;i++){ if(opening.xianshi.xianshi2.goods[i]){ %>
+					<% var item = opening.xianshi.xianshi2.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="">
+							<i><%=item.common_name %></i>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+							<% if(start_xianshi == 'xianshi2'){ %>
+							<del>正在秒杀</del>
+							<% }else{ %>
+							<del>即将开始</del>
+							<% } %>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+			<div class="seckill orseckill">
+				<ul>
+					<% for(var i=3;i<6;i++){ if(opening.xianshi.xianshi2.goods[i]){ %>
+					<% var item = opening.xianshi.xianshi2.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="">
+							<i><%=item.common_name %></i>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+							<% if(start_xianshi == 'xianshi2'){ %>
+							<del>正在秒杀</del>
+							<% }else{ %>
+							<del>即将开始</del>
+							<% } %>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<div class="tab" style="display:none;">
+			<div class="seckill orseckillOne">
+				<ul>
+					<% for(var i=0;i<3;i++){ if(opening.xianshi.xianshi3.goods[i]){ %>
+					<% var item = opening.xianshi.xianshi3.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="">
+							<i><%=item.common_name %></i>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+							<% if(start_xianshi == 'xianshi3'){ %>
+							<del>正在秒杀</del>
+							<% }else{ %>
+							<del>即将开始</del>
+							<% } %>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+			<div class="seckill orseckill">
+				<ul>
+					<% for(var i=3;i<6;i++){ if(opening.xianshi.xianshi3.goods[i]){ %>
+						<% var item = opening.xianshi.xianshi3.goods[i] %>
+						<li>
+							<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+								<img src="<%=item.common_image %>" alt="">
+								<i><%=item.common_name %></i>
+								<span>分享立减￥<%=item.common_share_price %></span><br>
+								<span>立赚￥<%=item.common_promotion_price %></span><br>
+								<em>秒杀价:<u>￥<%=item.scarebuy_price %></u></em><br>
+								<% if(start_xianshi == 'xianshi3'){ %>
+								<del>正在秒杀</del>
+								<% }else{ %>
+								<del>即将开始</del>
+								<% } %>
+							</a>
+						</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<!--限时折扣-->
+
+		<!--新人专享-->
+		<div class="newUsers">
+			<a href="newbuyer.html"><div class="newUsersTitle"><%=opening.xinren.opening_name %><span>&nbsp;&nbsp;一件包邮 等你来拿</span></div></a>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<% for(var i=0;i<(opening.xinren.goods.length/3);i++){ %>
+					<div class="swiper-slide">
+						<ul class="newUsersContain">
+							<% if(opening.xinren.goods.length-(i*3)>2){ %>
+							<% for(var k=i*3;k<(i+1)*3;k++){ if(opening.xinren.goods[k]){ %>
+								<% var item=opening.xinren.goods[k] %>
+								<li>
+									<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+										<img src="<%=item.common_image %>" alt="" class="newUsersImg">
+										<i><%=item.common_name %></i><br>
+										<del>包邮<% if(item.newbuyer_price){ %><%=item.newbuyer_price %><%}else{%><%=item.common_shared_price %><% } %>元分享新人购买限购商品</del><br>
+										<span>新人：<i>￥<% if(item.newbuyer_price){ %><%=item.newbuyer_price %><%}else{%><%=item.common_shared_price %><% } %></i></span><br>
+										<span class="Q999">专柜价￥<%=item.common_price %></span><br>
+										<img src='../images/opening/icon_buy01@2x.png' class="newUsersBuy">
+									</a>
+								</li>
+							<% }} %>
+							<% }else{ %>
+								<% for(var k=i*3;k<(opening.xinren.goods.length);k++){ if(opening.xinren.goods[k]){ %>
+									<% var item=opening.xinren.goods[k] %>
+									<li>
+										<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+											<img src="<%=item.common_image %>" alt="" class="newUsersImg">
+											<i><%=item.common_name %></i><br>
+											<del>包邮<% if(item.newbuyer_price){ %><%=item.newbuyer_price %><%}else{%><%=item.common_shared_price %><% } %>元分享新人购买限购商品</del><br>
+											<span>新人：<i>￥<% if(item.newbuyer_price){ %><%=item.newbuyer_price %><%}else{%><%=item.common_shared_price %><% } %></i></span><br>
+											<span class="Q999">专柜价￥<%=item.common_price %></span><br>
+											<img src='../images/opening/icon_buy01@2x.png' class="newUsersBuy">
+										</a>
+									</li>
+								<% }} %>
+							<% } %>
+						</ul>
+					</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<!--新人专享-->
+
+		<!--9.9-->
+		<div class="cheap9-9">
+			<a href="cheap9.html"><div class="cheap9-9Main"><span><%=opening.dizhi.opening_name %></span></div></a>
+			<div class="cheap9-9Contain">
+				<ul class="cheap9-9ContainInner">
+					<% for(var i in opening.dizhi.goods){ if(opening.dizhi.goods[i]){ %>
+					<% var item = opening.dizhi.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="cheap9-9ContainImg">
+							<i><%=item.common_name %></i><br>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>￥<u><%=item.common_shared_price %></u></em>
+							<img src='../images/opening/icon_buy02@2x.png' class="cheap9-9ContainBuy">
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<!--9.9-->
+		<!--限时半价-->
+		<div class="halfFare">
+			<a href="discount.html"><div class="halfFareTitle"><span><%=opening.banjia.opening_name %></span></div></a>
+			<ul class="halfFareContain">
+				<% for(var i in opening.banjia.goods){if(opening.banjia.goods[i]){ %>
+				<% var item=opening.banjia.goods[i] %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+						<img src="<%=item.common_image %>" alt="" class="halfFareContainImg">
+						<div class="halfFareContainText">
+							<i><%=item.common_name %></i><br>
+							<span>分享立减￥<%=item.common_share_price%></span><br>
+							<span>立赚￥<%=item.common_promotion_price%></span><br>
+							<em><u>￥</u><%=item.scarebuy_price%></em><del><%=item.common_shared_price %></del>
+							<img src='../images/opening/icon_buy04@2x.png' class="halfFareContainBuy">
+						</div>
+					</a>
+				</li>
+				<% }} %>
+			</ul>
+		</div>
+		<!--限时半价-->
+
+		<!--热卖推荐-->
+		<div class="hotSale">
+			<% if(opening.remai.base_id > 0){ %>
+			<a href="<%=opening.remai.temp.wap_url %>?base_id=<%=opening.remai.base_id %>&adv_key=oldyear_wap">
+				<% }else{ %>
+				<a href="twoFloor.html?base_id=<%=opening.remai.base_id %>&adv_key=oldyear_wap">
+				<% } %>
+				<div class="hotSaleTitle"><span><%=opening.remai.opening_name %></span>
+				</div>
+			</a>
+			<div class="hotSaleInner">
+				<ul>
+					<% for(var i in opening.remai.goods){if(opening.remai.goods[i]){ %>
+					<% var item =opening.remai.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>"><img src="<%=item.common_image %>" alt="">
+						<i><%=item.common_name %></i></a><br>
+						<span>分享立减￥<%=item.common_share_price%></span><<br>
+						<span>立赚￥<%=item.common_promotion_price%></span><br>
+						<em>￥<u><%=item.common_shared_price%></u></em><br>
+						<button type="button" class="addCard" data-id="<%=item.id_goods %>">加入购物车</button>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>"><button type="button" class="buyNow">立即抢购</button></a>
+					</li>
+					<% }} %>
+
+				</ul>
+			</div>
+		</div>
+		<!--热卖推荐-->
+
+		<!--惊喜特卖-->
+		<div class="specialSale">
+			<% if(opening.jinxi.base_id>0){ %>
+			<a href="<%=opening.jinxi.temp.wap_url %>?base_id=<%=opening.jinxi.base_id %>&adv_key=onefloor_wap">
+				<% }else{ %>
+				<a href="oneFloor.html?base_id=<%=opening.jinxi.base_id %>&adv_key=onefloor_wap">
+				<% } %>
+				<div class="specialSaleMain"><span><%=opening.jinxi.opening_name %></span></div>
+			</a>
+			<div class="specialSaleMainContain topPadding">
+				<ul class="specialSaleMainContain-top">
+					<% for(var i=0;i<2;i++){if(opening.jinxi.goods[i]){ %>
+					<% var item = opening.jinxi.goods[i] %>
+					<li>
+						<a href="./product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="specialSaleImg">
+							<div class="fr_Contain">
+								<i><%=item.common_name %></i><br>
+								<span>分享立减￥<%=item.common_share_price %></span><br>
+								<span>立赚￥<%=item.common_promotion_price %></span><br>
+								<em>￥<%=item.common_shared_price %></em><br>
+								<img src="../images/opening/icon_buy04@2x.png" alt="" class="specialSaleBuy">
+							</div>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+				<ul class="specialSaleMainContain-bottom">
+					<% for(var i=2;i<6;i++){if(opening.jinxi.goods[i]){ %>
+					<% var item = opening.jinxi.goods[i] %>
+					<li>
+						<a href="./product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="specialSaleImg">
+							<div class="fr_Contain">
+								<i><%=item.common_name %></i><br>
+								<span>分享立减￥<%=item.common_share_price %></span><br>
+								<span>立赚￥<%=item.common_promotion_price %></span><br>
+								<em>￥<%=item.common_shared_price %></em><br>
+								<img src="../images/opening/icon_buy04@2x.png" alt="" class="specialSaleBuy">
+							</div>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+			<div class="specialSaleMainContain orBottom">
+				<ul class="specialSaleMainContain-top">
+					<% for(var i=6;i<8;i++){ if(opening.jinxi.goods[i]){ %>
+					<% var item = opening.jinxi.goods[i] %>
+					<li>
+						<a href="./product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="specialSaleImg">
+							<div class="fr_Contain">
+								<i><%=item.common_name %></i><br>
+								<span>分享立减￥<%=item.common_share_price %></span><br>
+								<span>立赚￥<%=item.common_promotion_price %></span><br>
+								<em>￥<%=item.common_shared_price %></em><br>
+								<img src="../images/opening/icon_buy04@2x.png" alt="" class="specialSaleBuy">
+							</div>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+				<ul class="specialSaleMainContain-bottom">
+					<% for(var i=8;i<12;i++){if(opening.jinxi.goods[i]){ %>
+					<% var item = opening.jinxi.goods[i] %>
+					<li>
+						<a href="./product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="specialSaleImg">
+							<div class="fr_Contain">
+								<i><%=item.common_name %></i><br>
+								<span>分享立减￥<%=item.common_share_price %></span><br>
+								<span>立赚￥<%=item.common_promotion_price %></span><br>
+								<em>￥<%=item.common_shared_price %></em><br>
+								<img src="../images/opening/icon_buy04@2x.png" alt="" class="specialSaleBuy">
+							</div>
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<!--惊喜特卖-->
+
+		<!--疯狂扫货-->
+		<div class="sweepGoods">
+			<% if(opening.fengkuang.base_id>0){ %>
+			<a href="<%=opening.fengkuang.temp.wap_url %>?base_id=<%=opening.fengkuang.base_id %>&adv_key=twofloor_wap">
+				<% }else{ %>
+				<a href="twoFloor.html?base_id=<%=opening.fengkuang.base_id %>&adv_key=twofloor_wap">
+				<% } %>
+				<div class="sweepGoodsTitle"><span><%=opening.fengkuang.opening_name %></span></div>
+			</a>
+			<div class="sweepGoodsContain">
+				<ul>
+					<% for(var i in opening.fengkuang.goods){if(opening.fengkuang.goods[i]){ %>
+					<% var item=opening.fengkuang.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<img src="<%=item.common_image %>" alt="" class="specialSaleImg">
+							<i><%=item.common_name %></i><br>
+							<span>分享立减￥<%=item.common_share_price%></span><br>
+							<span>立赚￥<%=item.common_promotion_price%></span><br>
+							<em>￥<%=item.common_shared_price%></em><br>
+							<img src="../images/opening/icon_buy04@2x.png" alt="" class="specialSaleBuy">
+						</a>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<!--疯狂扫货-->
+
+		<!--实用特价-->
+		<div class="practicalGoods">
+			<% if(opening.shiyong.base_id > 0){ %>
+			<a href="<%=opening.shiyong.temp.wap_url %>?base_id=<%=opening.shiyong.base_id %>&adv_key=threefloor_wap">
+				<% }else{ %>
+				<a href="threeFloor.html?base_id=<%=opening.shiyong.base_id %>&adv_key=threefloor_wap">
+					<% } %>
+				<div class="practicalGoodsTitle"><span><%=opening.shiyong.opening_name %></span></div>
+			</a>
+			<div class="practicalGoodsContain">
+				<div class="practicalGoodsContain-top">
+					<a href="product_detail.html?goods_id=<%=opening.shiyong.goods[0].id_goods %>"><img src="<%=opening.shiyong.goods[0].common_image %>" alt=""></a>
+					<div class="practicalGoodsContain-top-text">
+							<a href="product_detail.html?goods_id=<%=opening.shiyong.goods[0].id_goods %>"><i><%=opening.shiyong.goods[0].common_name %></i></a><br>
+							<span>分享立减￥<%=opening.shiyong.goods[0].common_share_price %></span><br>
+							<span>立赚￥<%=opening.shiyong.goods[0].common_promotion_price %></span><br>
+							<em>￥<%=opening.shiyong.goods[0].common_shared_price %></em><br>
+							<div class="buttonCl">
+								<button type="button" class="addCard" data-id="<%=opening.shiyong.goods[0].id_goods %>">加入购物车</button>
+								<a href="product_detail.html?goods_id=<%=opening.shiyong.goods[0].id_goods %>"><button type="button" class="buyNow">立即抢购</button></a>
+							</div>
+					</div>
+				</div>
+				<div class="practicalGoodsContain-bottom">
+					<ul>
+						<% for(var i=1;i<(opening.shiyong.goods.length-1);i++){if(opening.shiyong.goods[i]){ %>
+						<% var item=opening.shiyong.goods[i] %>
+						<li>
+							<a href="product_detail.html?goods_id=<%=item.id_goods %>"><img src="<%=item.common_image %>" alt=""></a>
+							<a href="product_detail.html?goods_id=<%=item.id_goods %>"><i><%=item.common_name %></i></a><br>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>￥<u><%=item.common_shared_price %></u></em><br>
+							<button type="button" class="addCard" data-id="<%=item.id_goods %>">加入购物车</button>
+							<a href="product_detail.html?goods_id=<%=item.id_goods %>"><button type="button" class="buyNow">立即抢购</button></a>
+						</li>
+					    <% }} %>
+					</ul>
+				</div>
+				<div class="practicalGoodsContain-top">
+					<% var num=(opening.shiyong.goods.length-1) %>
+					<% var item = opening.shiyong.goods[num] %>
+					<a href="product_detail.html?goods_id=<%=item.id_goods %>"><img src="<%=item.common_image %>" alt=""></a>
+					<div class="practicalGoodsContain-top-text">
+                        <a href="product_detail.html?goods_id=<%=item.id_goods %>"><i><%=item.common_name %></i></a><br>
+                        <span>分享立减￥<%=item.common_share_price %></span><br>
+                        <span>立赚￥<%=item.common_promotion_price %></span><br>
+                        <em>￥<%=item.common_shared_price %></em><br>
+                        <div class="buttonCl">
+                            <button type="button" class="addCard" data-id="<%=item.id_goods %>">加入购物车</button>
+                            <a href="product_detail.html?goods_id=<%=item.id_goods %>"><button type="button" class="buyNow">立即抢购</button></a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--实用特价-->
+
+		<!--满减专场-->
+		<div class="moneyOff">
+			<a href="man_floor.html"><div class="moneyOffTitle"><span><%=opening.manjian.opening_name %></span></div></a>
+			<div class="moneyOffContain">
+				<ul>
+					<% for(var i in opening.manjian.goods){ if(opening.manjian.goods[i]){ %>
+					<% var item = opening.manjian.goods[i] %>
+					<li>
+						<a href="product_detail.html?goods_id=<%=item.id_goods %>">
+							<div class="imgWrap">
+								<img src="<%=item.common_image %>" alt="">
+								<div class="fixTitle">满<%=item.rule_price %>元减<%=item.rule_discount %>元</div>
+							</div>
+						</a>
+						<div class="practicalGoodsContain-top-text">
+							<a href="product_detail.html?goods_id=<%=item.id_goods %>"><i><%=item.common_name %></i></a><br>
+							<span>分享立减￥<%=item.common_share_price %></span><br>
+							<span>立赚￥<%=item.common_promotion_price %></span><br>
+							<em>￥<%=item.common_shared_price %></em><br>
+							<div class="buttonCl">
+								<button type="button" class="addCard" data-id="<%=item.id_goods %>">加入购物车</button>
+								<a href="product_detail.html?goods_id=<%=item.id_goods %>"><button type="button" class="buyNow">立即抢购</button></a>
+							</div>
+						</div>
+					</li>
+					<% }} %>
+				</ul>
+			</div>
+		</div>
+		<!--满减专场-->
+	</script>
+</body>
+</html>

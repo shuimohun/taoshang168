@@ -1,0 +1,108 @@
+/*发表说说列表 start*/
+.main{ position: relative;}
+.saylistmain .search{ width: 100%;  margin: 0 auto 0.1rem; background: #fff; position: absolute; left: 0; top: 0rem; opacity: 0; display: none; transition: 0.5s all ease-in; }
+.saylistmain .search.show{top: 0.92rem;display:block;opacity: 1}
+.saylistmain .searchwrap{ padding: 0.15rem;}
+.saylistmain .search input[type="text"]{width: 80%; margin-left: 3%; display: inline-block; height: 0.46rem; line-height: 0.46rem; border: 1px solid #d9d9d9; background: url(../tmpl/img/pageImg/search.png) no-repeat; background-size:0.24rem 0.24rem; background-position: 2% center; padding-left: 0.4rem; }
+.saylistmain .search_btn{ display: inline-block; height: 0.46rem; line-height: 0.46rem ; padding: 0 0.15rem; font-size: 0.22rem; color: #fff; background: #e45050}
+.saylistmain .search input[type="text"]{ width: 85%; border: none; background:#e8e8e8 url(../tmpl/img/pageImg/search.png) no-repeat; background-size:0.24rem 0.24rem; background-position: 2% center; border-radius: 0.2rem; }
+.saylistmain .search_btn{ display: inline-block; height: 0.46rem; line-height: 0.46rem ; padding: 0; font-size: 0.26rem; color: #333; background: none;}
+.saylistmain .main_wrap{ width: 100%; overflow-y: scroll; background: #ffffff;height: 100%;/* padding-bottom: 1rem;*/}
+.saylistmain .fl_item{ width: 100%;border-bottom: 1px solid #d9d9d9; }
+.saylistmain .fl_item_con{width:96%; margin:0 auto; padding: 0.2rem 0; position: relative; }
+.saylistmain .fl_tx{ float: left; }
+.saylistmain .fl_tx img{ width: 0.512rem;height: 0.512rem; border-radius: 50%;}
+.saylistmain .fl_infor{float: left; width: 56%; margin-left: 2%;}
+.saylistmain .fl_infor p{ width: 100%;}
+.saylistmain .fl_infor .user_name{ font-size: 0.22rem; color: #666; white-space: nowrap;overflow: hidden;  text-overflow: ellipsis; }
+.saylistmain .fl_infor .user_name span{ margin-left: 0.2rem ; color: #999; font-size: 0.2rem; }
+.saylistmain .fl_infor .user_num{ font-size: 0.18rem; color: #999; }
+.saylistmain .fl_infor .user_num .more{ color: #df2029; }
+.saylistmain .fl_infor .user_num span{ margin-right: 0.15rem;}
+.saylistmain .ad_btn{ float: right; background: #ff3300; color: #fff; font-size: 0.17rem; padding: 0.05rem 0.1rem; border-radius: 0.2rem; margin-top: 0.05rem;}
+.saylistmain .ad_btn.on{ background: #df2029;}
+.saylistmain .saymain{ width: 94%; margin: 0 auto;}
+.saylistmain .saytitle{ font-size: 0.24rem;color: #333; margin-bottom: 0.15rem; font-weight: 600;}
+.saylistmain .saylink a{ display: block; font-size: 0.22rem; color: #333; line-height: 0.28rem;}
+.saylistmain .saypic{ width: 100%; margin: 0.2rem 0;}
+.saylistmain .saypic ul li{ float: left; width: 31%; margin-right: 2%;}
+.saylistmain .saypic.onlyone ul li{ float: none; width: 80%; margin: 0 auto;}
+.saylistmain .itemwrap video{ display: block; width: 80%; margin: 0 auto;}
+.saylistmain .saypic ul li img{ width: 100%;}
+.saylistmain .userabout{ width: 100%; margin-bottom: 0.15rem;}
+.saylistmain .userabout ul li{float: left; font-size: .25rem; color: #999; text-align: center;}
+.saylistmain .u_a_icon1,.u_a_icon2,.u_a_icon3{ width: 20%}
+.saylistmain .u_a_icon1 img,.u_a_icon2 img,.u_a_icon3 img{ display: inline-block; width: 0.3rem; height: 0.3rem; margin-right: 0.05rem;}
+.u_a_icon3 img{ margin-top: -0.05rem}
+.saylistmain .u_a_icon4{ width: 40%;}
+.information_article .saylink.title{ padding-bottom: 0.25rem; overflow: hidden;}
+.information_article .saylink.title video{ width: 80%;}
+/*发表说说列表 end*/
+
+/*   说说tab、start  */
+.find_nav {
+    border-bottom:1px solid #e6e6e6;
+    width: 100%;
+    height:.77rem;
+    margin-top:.1rem;
+    background-color:#fff;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+}
+.find_nav_left {
+    height: .77rem;
+    position: relative;
+    overflow: hidden;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.find_nav_list {
+    position: absolute;
+    left: 0;
+    background: #fff;
+}
+.find_nav_list.fixed{
+    position: fixed; left: 0; top: 0; z-index: 10;
+}
+.find_nav_list ul {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+}
+.find_nav_list ul li {
+    display: inline-block;
+    width:1.1rem;
+    margin-left:.215rem;
+}
+.find_nav_list ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: .77rem;
+    text-align: center;
+    font-size:.24rem;
+    color:#030303;
+}
+.find_nav_cur a {
+    color:#e45050 !important;
+}
+.sideline {
+    display: block;
+    position: absolute;
+    border: 0;
+    height: .02rem;
+    background-color: #e45050;
+    left: 0;
+    top:95%;
+    pointer-events: none;
+}
+/********说说tab、start*********/
+
+
+
+
+
+
+

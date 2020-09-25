@@ -1,0 +1,148 @@
+body{padding-bottom:1.5625rem;} 
+body,html{width:100%;}
+
+
+.no-data,.loading{background-color:#eee;color:#777;font-size:0.1875rem;width:100%;text-align: center;padding:0.20rem 0;display:none;}
+
+
+/*.main{height:100%;overflow: auto;-webkit-overflow-scrolling: touch;}  /*position:absolute;top:0;left:0;*/
+.main{overflow:auto;}
+/*.fixed{position:fixed;top:0;left:0;z-index: 400; -webkit-transform: translateZ(0);}*/
+.nav .curr a{color:#E45050 !important;}
+.page.swiper-container,.page .swiper-wrapper{width:100%;height:auto;}
+
+
+/*  header  start*/
+.header-wrap{position: fixed;top:0;left:0;z-index: 400;height:2.359375rem;width:100%;-webkit-transform: translateZ(0);}
+.header-wrap-container{height:2.359375rem;width:100%;}
+.header-10rem{width:10rem;}
+.header{width:100%;background-color:#fe3d4e;padding:0.15625rem 0.46875rem;}
+.header .icon-wrap{position:relative;height:0.796875rem;width:0.796875rem;line-height:0.796875rem;}
+.header .icon{background:url(../images/back@3x.png) no-repeat;width:0.625rem;height:0.625rem;background-size: cover;}
+.header .header-name{height:0.796875rem;line-height:0.796875rem;width:7.28125rem;text-align: center;font-size:0.375rem;text-align: center;color:#fff;padding-top:0.078125rem;}  /*font-size:28px;*/
+/*.header .search{width:8.28125rem;text-align: center;}
+.header .search input{background-color:#fe3d4e;height:0.796875rem;width:8.28125rem;font-size:0.375rem;text-align: center;}   
+.header .search input::-webkit-input-placeholder{color:#fff;}
+.header .search input[placeholder]{color:#fff;}*/
+/*  header  end*/
+
+/*小导航   start*/
+.nav{width:100%;height:1.25rem;background-color:#fff;border-bottom:1px solid #f5f5f5;}   /*position:absolute;top:0;left:0;z-index:400;*/
+/*.nav.fixed{position:fixed;top:1.109375rem;left:0;z-index: 400; -webkit-transform: translateZ(0);}*/
+.nav .nav-wrap{width:10rem;height:1.25rem;margin: 0 auto;}
+.nav .nav-bar{position:relative;width:8.90625rem;height:1.25rem;overflow-x: scroll;overflow-y:auto;-webkit-overflow-scrolling: touch;}  /*width:10rem;margin:0 auto;  -webkit-overflow-scrolling: touch;*/
+.nav .nav-bar .nav-bar-inner{width:8.90625rem;height:1.25rem;}
+.nav .nav-scroll-wrap{position:absolute;left:0;top:0;z-index:400;height:1.25rem;}  /*460px  width:8.90625rem;*/
+.nav .nav-scroll-wrap ul{height:1.25rem;white-space: nowrap;}  /*width:8.90625rem;*/
+.nav .nav-scroll-wrap ul li{display:inline-block;}
+.nav .nav-scroll-wrap .sideline{position:absolute;z-index:400;border:none;height:0.03125rem;background-color:#E45050;top:1.171875rem;}
+.nav a{height:1.25rem;line-height: 1.25rem;display:inline-block;margin:0 0.2rem;padding:0 0.1125rem;color:#333;font-size:0.4375rem;}
+.nav a span{color:#333;}
+.nav .nav-right-icon{width:1.09375rem;height:1.25rem;text-align: center;border-left:1px solid #eee;}
+.nav .nav-right-icon .icon{background:url(../images/all-icon@3x.png) no-repeat;background-size:cover;width:0.625rem;height:0.625rem;margin-top:0.3125rem;}
+/*小导航   end*/
+
+
+
+/*大轮播    start*/
+.banner.swiper-container,.banner.swiper-container .swiper-slide img{width:10rem;height:4.6875rem;}
+/*大轮播  end*/
+
+
+/*商品 列表   start*/
+/*商品列表   start*/
+.new-icon{background:url(../images/new@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.tiket-icon{background:url(../images/ticket@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.sheath-icon{background:url(../images/sheath@3x.png) no-repeat;width:0.34475rem;height:0.34375rem;background-size: contain;}
+.solid-icon{background:url(../images/solid@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.add-icon{background:url(../images/add@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.sale-icon{background:url(../images/sale@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.give_full_cut-icon{background:url(../images/give_full_cut@3x.png) no-repeat;width:0.90625rem;height:0.34375rem;background-size: contain;}
+.postage_free-icon{background:url(../images/postage_free@3x.png) no-repeat;width:0.59375rem;height:0.34375rem;background-size: contain;}
+.sale_app-icon{background:url(../images/sale_app@3x.png) no-repeat;width:1.46875rem;height:0.34375rem;background-size: contain;}
+.goods-wrap{position:relative;}
+.goods-wrap .goods-ul{position:relative;background-color:#f5f5f5;margin-left:-0.15625rem;}  /*padding-bottom:1.71875rem;*/
+.goods-wrap .goods-ul .goods{display:inline-block;width:4.921875rem;height:auto;margin-left:0.15625rem;margin-top:0.15625rem;background-color:#fff;}  /*height:9.203125rem;*/
+.goods-wrap .goods-ul .goods .img-center,.goods-wrap .goods-ul .goods .img-center img{width:4.921875rem;height:4.921875rem;}
+/*.goods-wrap .goods-ul .goods .img-center img{max-width:4.921875rem;max-height: 4.921875rem;}*/
+.goods-wrap .goods-ul .goods .goods-detail{padding:0 0.234375rem;}
+.goods-wrap .goods-ul .goods .goods-price,.goods-wrap .goods-ul .goods .goods-price .share-price div{color:#999;}
+.goods-wrap .goods-ul .goods .goods-price{margin:0.34375rem 0;font-size:0.34375rem;}
+.goods-wrap .goods-ul .goods .goods-price .share-price span{color: #333;}
+.goods-wrap .goods-ul .goods .goods-text{color:#343434;font-size:0.40625rem;height:0.546875rem;line-height: 0.546875rem;}
+.goods-wrap .goods-ul .goods .goods-text a{color:#343434;}
+.goods-wrap .goods-ul .goods .goods-share .share{margin:0.15625rem 0;padding:0 0.03125rem;margin-right:0.0625rem;font-size:0.3rem;background:url(../images/share_bg@3x.png) no-repeat;/*width:2.1599rem;*/width:auto;height:0.40625rem;line-height:0.4199999999rem;background-size: cover;color:#fff;}
+.goods-wrap .goods-ul .goods .goods-sale{position:relative;height:0.5rem;}
+.goods-wrap .goods-ul .goods .goods-sale span{color:#e45050;font-size:0.34375rem;}
+.goods-wrap .goods-ul .goods .goods-sale .icons{position: absolute;top:0.058118888rem;left:0.75rem;}
+
+.goods-wrap .goods-ul .goods .goods-sale .icon{margin:0 0.078125rem;}
+.goods-wrap .goods-ul .goods .goods-sale .icons{overflow: hidden;-webkit-overflow-scrolling: touch;height: 0.5rem;}
+.goods-wrap .goods-ul .goods .goods-like{margin-top:0.1875rem;padding-bottom:0.3125rem;}
+.goods-wrap .goods-ul .goods .goods-like .like .icon{margin-top:0.09375rem;background:url(../images/like@3x.png) no-repeat;width:0.6875rem;height:0.6875rem;background-size:cover;}
+.goods-wrap .goods-ul .goods .goods-like .like.curr .icon{background:url(../images/liked@3x.png) no-repeat;background-size:cover;}
+.goods-wrap .goods-ul .goods .goods-like .share-border{color:#E45050;font-size:0.40625rem;border:1px solid #E45050;padding:0.09375rem 0.15625rem;border-radius:0.46875rem;-webkit-border-radius:0.46875rem;-o-border-radius:0.46875rem;-ms-border-radius:0.46875rem;}
+/*商品列表   end*/
+
+/*右侧 弹出框   start*/
+/*.tap-cover{position:fixed;width:10rem;height:100%;top:0;left:0;z-index:800;}*/
+.pop-up{display:none;position:fixed;-webkit-transform: translateZ(0);z-index:998;top:2.35rem;bottom:0;left:50%;margin-left:5rem;background-color:#f2f2f2;width:10rem;height:auto;overflow:hidden;-webkit-overflow-scrolling: touch;font-size:0.40625rem;padding:0.46875rem;padding-bottom:0;margin-bottom:1.5625rem;transition:height 0.3s ease;-webkit-transition:height 0.3s ease;}  /*  */
+.pop-up .hot-search{color:#555;height:1.96875rem;}
+.pop-up .pop-up-content{position:absolute;top:2.4375rem;bottom:0;width:10rem;-webkit-overflow-scrolling: touch;}  /*overflow:auto;*/
+.pop-up .search{position: relative;height:0.859375rem;width:100%;}
+.pop-up input{position:absolute;width:100%;height:0.859375rem;top: -0.3125rem;left: 0;z-index:5;background:transparent;font-size:0.40625rem;color:#555;}
+.pop-up .search,.pop-up input{margin:0.3125rem 0 0.25rem;}
+.pop-up .search .keyW span{display:inline-block;background-color:#e6e6e6;padding:0.15625rem 0.234375rem;margin-right:0.46875rem;border-radius:0.59375rem;-webkit-border-radius:0.59375rem;-o-border-radius:0.59375rem;-moz-border-radius:0.59375rem;-ms-border-radius:0.59375rem;}
+.pop-up .search-results-list{overflow:auto;-webkit-overflow-scrolling: touch;height:100%;border-top:1px solid #E6E6E6;}
+.pop-up .search-results-list .result-item a{display:inline-block;height:1.25rem;line-height:1.25rem;padding-left:0.234375rem;width:100%;color:#333;font-size:0.40625rem;}
+.pop-up .search-results-list .result-item a span{color:#333;}
+.pop-up .search-results-list .result-item{border-bottom:1px solid #e6e6e6;}
+/*右侧 弹出框   end*/
+
+
+/*商品 列表 end*/
+
+
+/*footer   start*/
+.home-icon .icon{background:url(../images/home-icon_snormal@3x.png) no-repeat;width:0.78125rem;height:0.78125rem;background-size:cover;}
+.icon-9 .icon{background:url(../images/icon9@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.more-icon .icon{background:url(../images/more@3x.png) no-repeat;width:1.5625rem;height:1.5625rem;background-size:cover;}
+.icon-20 .icon{background:url(../images/icon20@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-50 .icon{background:url(../images/icon50@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+
+.home-icon.curr .icon{background:url(../images/home-icon_snormal-red@3x.png) no-repeat;width:0.78125rem;height:0.78125rem;background-size:cover;}
+.icon-9.curr .icon{background:url(../images/icon9-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-20.curr .icon{background:url(../images/icon20-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-50.curr .icon{background:url(../images/icon50-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+
+.nav-fixed{position:fixed;bottom:0;left:0;z-index:1000;width:100%;background-color:#fff;width:100%;border-top:1px solid #eee;height:1.5625rem;}
+.nav-fixed ul{max-width:10rem;margin:0 auto;height:1.5625rem;width:10rem;}
+.nav-fixed li.more-icon .icon{position:absolute;top:-0.234375rem;left:50%;margin-left:-0.78125rem;}
+.nav-fixed li.home-icon{padding-top:0.15625rem;}
+.nav-fixed li.s-icon{padding-top:0.4rem;}
+.nav-fixed li.s-icon div{margin-top:0.076125rem;}
+.nav-fixed li{width:2rem;height:1.5625rem;text-align: center;font-size:0;}
+.nav-fixed li div{color:#666;font-size: 0.28125rem;}
+/*footer   end*/
+
+
+/*更多活动   弹框    start*/
+.more-activties-wrap{position:fixed;bottom:-3.078125rem;left:50%;margin-left:-5rem;z-index:500;background:url(../images/bg@2x.png) no-repeat;width:10rem;height:4.65625rem;background-color:#fff;background-size:cover;}
+.more-activties-wrap .more-activity{margin-top:0.625rem;margin-left:0.375rem;width:2.8125rem;height:0.71875rem;}
+.more-activties-wrap .activity-icon1{background:url(../images/activities_1@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon2{background:url(../images/activities_2@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon3{background:url(../images/activities_3@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon4{background:url(../images/activities_4@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon5{background:url(../images/activities_5@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon6{background:url(../images/activities_6@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon7{background:url(../images/activities_7@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon8{background:url(../images/activities_8@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon9{background:url(../images/activities_9_1@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon10{background:url(../images/activities_9_2@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon11{background:url(../images/activities_9_3@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon12{background:url(../images/activities_9_4@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon13{background:url(../images/activities_9_5@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon14{background:url(../images/activities_9_6@3x.png) no-repeat;background-size:cover;}
+}
+/*更多活动   弹框    end*/
+

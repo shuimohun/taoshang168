@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>金蛋明细</title>
+	<link rel="stylesheet" href="../css/goldegg/detail.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+</head>
+<body style="margin-top:.8rem; ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../images/goldegg/back.png" alt=""></a>
+			<span>金蛋明细</span>
+			<a href="./member/chat_list.html"><img src="../images/goldegg/dialogbox.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--有背景图-->
+	<div class="egg_bg">
+		<div class="egg_bg_img">
+			<img src=" " alt=""><br>
+			<span> </span>
+		</div>
+		<span class="eggs">拥有金蛋<b> </b>枚</span>
+		<button class="sign">签到领<span class="cur">5</span>金蛋</button>
+		<button class="exchange">去兑换商品</button>
+	</div>
+	<!--有背景图-->
+	<img src="../images/goldegg/liushui@3x.png" alt="" class="liushui">
+	<div class="water"></div>
+
+		<script type="text/html" id="runwater">
+			<% if(items) { %>
+			<% for(var i in items) { %>
+			<% if(items[i].classid == 7 || items[i].classid == 8 ) { %>
+			<div class="running">
+				<span>-<%=items[i].points_log_points %>枚金蛋</span><br>
+				<b><%=items[i].points_log_desc %></b><br>
+				<% if(items[i].classid == 7) { %>
+				<div class="running_img"><img src="../images/goldegg/flow_gift@2x.png" alt=""></div>
+				<% }else if(items[i].classid == 8) {%>
+				<div class="running_img"><img src="../images/goldegg/flow_voucher@2x.png" alt=""></div>
+				<% } %>
+				<u><%=items[i].points_log_time %></u>
+			</div>
+			<% }else if(items[i].classid = 1 || items[i].classid == 2 || items[i].classid == 3 || items[i].classid == 4 ) { %>
+			<div class="running">
+				<span>+<%=items[i].points_log_points %>枚金蛋</span><br>
+				<b><%=items[i].points_log_desc %></b><br>
+				<% if(items[i].classid = 1 || items[i].classid == 2 || items[i].classid == 3) { %>
+				<div class="running_img"><img src="../images/goldegg/flow_evaluate@2x.png" alt=""></div>
+				<% }else{ %>
+				<div class="running_img"><img src="../images/goldegg/flow_cart@2x.png" alt=""></div>
+				<% } %>
+				<u><%=items[i].points_log_time %></u>
+			</div>
+			<% }else{ %>
+			<div class="running">
+				<span>+<%=items[i].points_log_points %>枚金蛋</span><br>
+				<b><%=items[i].points_log_desc %></b><br>
+				<div class="running_img"><img src="../images/goldegg/flow_evaluate@2x.png" alt=""></div>
+				<u><%=items[i].points_log_time %></u>
+			</div>
+			<% } %>
+			<% } %>
+			<% } %>
+		</script>
+
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/swipe.js"></script>
+		<script type="text/javascript" src="../js/detail_gold.js"></script>
+</body>
+</html>

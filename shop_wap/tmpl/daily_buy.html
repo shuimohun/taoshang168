@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>每日必buy</title>
+	<link rel="stylesheet" href="../css/daily_buy.css">
+	<link rel="stylesheet" href="../css/andone/base.css">
+	<!--右上角弹框css引用-->
+	<link rel="stylesheet" href="../css/common_alert.css">
+	<script src="../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/daily_buy.js'></script>
+	<script src="../js/angular.js"></script>
+	<script type="text/javascript" src="../js/swipe.js"></script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<!--右上角弹框js引用-->
+	<script type="text/javascript" src="../js/common_alert.js"></script>
+</head>
+<style>
+    .footer_div_wrap {
+        width: 100%;
+       height: auto !important;
+    }
+</style>
+<body style="margin-top:1.55rem;" ng-app="myApp" ng-controller="dailyBuyCtl">
+<!--头部部分-->
+<header class="person">
+	<div class="title">
+		<a href="javascript:void(0);" onclick="javascript:history.go(-1);"><img src="../images/daily_buy_img/back.png" alt=""></a>
+		<span>每日必buy</span>
+		<a><img src="../images/daily_buy_img/info.png" alt="" onclick="common_index_alert(this)"  class="info"></a>
+	</div>
+	<!--滚动导航栏部分-->
+	<div class="find_nav">
+		<div class="find_nav_left">
+			<div class="find_nav_list">
+				<ul>
+					<li><a href="javascript:void(0)">精选</a></li>
+					<li ng-repeat="item in navList" on-finish-render-filters><a href="javascript:void(0);" ng-bind="item.nav_name" ng-click="reloadBy(item.cat_id)"></a></li>
+					<li class="sideline"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="nav_header_img an">
+			<img src="../images/daily_buy_img/icon_an.png" alt="">
+		</div>
+	</div>
+	<!--滚动导航栏部分-->
+</header>
+<div class="info_alert">
+
+	<img src="../images/user_img/choose_gray@3x.png" alt="">
+
+</div>
+<!--头部部分-->
+
+<!--主图轮播图-->
+<div class="slider_list" >
+	<div class="swipe-wrap" >
+		<div class="item" ng-repeat="item in advList">
+			<a href="{{item.url}}">
+				<img src="{{item.pic_url}}" alt="">
+			</a>
+		</div>
+	</div>
+</div>
+<!--主图轮播图-->
+
+<!--今日爆款title-->
+<div class="hotgoods_title">
+	<img src="../images/daily_buy_img/hotgoods.png" alt="">
+</div>
+<!--今日爆款title-->
+
+<!--今日爆款contain-->
+<!--1-->
+
+<div class="hotgoods_contain" ng-repeat="item in hotList">
+	<a href="">
+        <img ng-src="{{item.common_image}}" ng-click="pageTo(item.common_id)" alt="" ng-show="{{$index%2==0}}">
+    </a>
+	<div class="sale">
+		<img src="img/{{$index+1}}.png" alt="" class="rank">
+		<img src="../images/daily_buy_img/fire.png" alt="" class="fire">
+		<span>已售<i ng-bind="item.common_salenum"></i>件!</span>
+		<div class="recommend">
+			<b ng-bind="item.common_name | limitTo:16"></b>
+		</div>
+
+		<div class="hotgoods_price">
+			<i ng-bind="item.common_shared_price | currency:'￥'"> </i><br>
+
+			<del ng-bind="item.common_price | currency:'￥'" style="margin-left:4px;"></del>
+
+			<img src="../images/daily_buy_img/like.png" ng-show="{{item.is_liked==0}}" ng-click="doLike($event,item.common_goods_id,item.is_liked)" alt="" style="width: .28rem;height: .26rem;vertical-align: bottom;margin-left: .22rem;">
+			<img src="../images/daily_buy_img/like_click.png" ng-show="{{item.is_liked==1}}" ng-click="doLike($event,item.common_goods_id,item.is_liked)" alt="" style="width: .28rem;height: .26rem;vertical-align: bottom;margin-left: .22rem;">
+		</div>
+
+		<a href="javascript:void(0);" ng-click="pageTo(hotList[0].common_id)"><button class="shoppingcart">立即购买</button></a>
+	</div>
+	<a href=""><img ng-src="{{item.common_image}}" ng-click="pageTo(item.common_id)" alt="" ng-show="{{$index%2==1}}"></a>
+     <div class="bg1">分享立省￥{{item.common_share_price}}</div>
+    <div class="bg2">立赚￥{{item.common_promotion_price}}</div>
+</div>
+<!--1-->
+
+<!--今日爆款contain-->
+
+<!--页中轮播图-->
+<div class="lunbo">
+	<div class="slider_list" >
+		<div class="swipe-wrap" >
+			<div class="item" ng-repeat="item in advListT">
+				<a href="{{item.url}}">
+					<img src="{{item.pic_url}}" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--页中轮播图-->
+
+<!--收藏最多title-->
+<div class="collcet_title">
+	<div>
+		<img src="../images/daily_buy_img/title_heart.png" alt="">
+		<b>收藏最多</b>
+	</div>
+</div>
+<!--收藏最多title-->
+
+<!--收藏最多内容-->
+<div class="collcet_contain" style="height:900px;overflow: auto">
+	<div class="collcet_contain_child"  style="height:900px;">
+		<div class="collcet_item" ng-repeat="item in collectList">
+			<img ng-src="{{item.common_image}}" alt="" ng-click="pageTo(item.common_id)">
+			<div class="collcet_word">
+				<a style="color:#5f5f5f;" ng-click="pageTo(item.common_id)"><i ng-bind="item.common_name"></i></a>
+			</div>
+			<div class="bg1">分享立省￥{{item.common_share_price}}</div>
+			<div class="bg2">立赚￥{{item.common_promotion_price}}</div>
+			<div class="collcet_price">
+				<i ng-bind="item.common_shared_price | currency:'￥'">   </i>
+				<del ng-bind="item.common_price | currency:'￥'" style="margin-left:4px;"></del>
+
+				<img src="{{like_img}}" ng-show="{{item.is_liked==0}}" ng-click="doLike($event,item.common_goods_id,item.is_liked)" alt="" style="width: .28rem;height: .26rem;vertical-align: bottom;margin-left: .22rem;">
+				<img src="{{like_click_img}}" ng-show="{{item.is_liked==1}}" ng-click="doLike($event,item.common_goods_id,item.is_liked)" alt="" style="width: .28rem;height: .26rem;vertical-align: bottom;margin-left: .22rem;">
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--收藏最多内容-->
+
+<!--滚动导航栏弹窗-->
+<div class="head-bottom"></div>
+<div class="head-top">
+	<div class="empty"></div>
+	<div class="nav_contain">
+		<span>热门搜索:</span>
+		<button ng-repeat="item in searchList | limitTo:3">{{item}}</button>
+	</div>
+	<div class="nav_icon">
+		<ul>
+			<li ng-repeat="item in navList">
+				<a href="javascript:void(0);" ng-click="reloadBy(item.cat_id)">
+					<img src="../images/andone_img/an_{{$index+1}}.png" alt="">
+					<span>{{item.nav_name}}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!--滚动导航栏弹窗-->
+<div class='fix_footer' style="margin-top:.98rem;"></div>
+
+</body>
+<script>
+    var app = angular.module('myApp',[]);
+
+    /**
+     * 为动态添加的DOM元素添加此事件，当加载完成后，即可调用方法 $scope.on()
+     * 此方法可以解决 jquery 未来元素 无法绑定方法(如：each()方法)的问题
+     */
+    app.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function() {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+
+    app.controller('dailyBuyCtl',function($scope,$http){
+        /**
+         * 获取热销商品数据
+         * @param cat	商品分类  默认为全部商品分类
+         * @param nums	显示数量 默认为3
+         */
+        $scope.catId = 0;
+        $scope.page = 1;
+        getCommonSalenum = function(nums){
+            var nums = arguments[1] ? arguments[1] : 3;
+            $http({
+                method:'GET',
+                url:ApiUrl + '/index.php?ctl=Goods_Goods&met=getGoodsHotList&typ=json&dataType=common_salenum&page='+$scope.page+'&nums='+nums+'&catId='+$scope.catId,
+            }).then(function successCallback(res){
+                $scope.hotList = res.data.data;
+            },function errorCallback(res){
+//				alert('数据加载失败！');
+            });
+        };
+        getCommonSalenum();
+
+        /**
+         * 获取收藏排行数据
+         * @param cat	商品分类  默认为全部商品分类
+         * @param nums 显示数量 默认为9
+         */
+        $scope.collectNums = 10;
+        getCommonCollect = function(nums){
+            $http({
+                method:'GET',
+                url:ApiUrl + '/index.php?ctl=Goods_Goods&met=getGoodsHotList&typ=json&dataType=common_collect&page='+$scope.page+'&nums='+$scope.collectNums+'&catId='+$scope.catId,
+            }).then(function successCallback(res){
+                $scope.collectList = res.data.data;
+            },function errorCallback(res){
+//				alert('数据加载失败！');
+            });
+        };
+        getCommonCollect();
+
+        getSearchKey = function(){
+            $http({
+                method:'GET',
+                url:ApiUrl + '/index.php?ctl=Index&met=getSearchKeyList&typ=json',
+            }).then(function successCallback(res){
+                $scope.searchList = res.data.data.list;
+            },function errorCallback(res){
+//				alert('数据加载失败!');
+            })
+        };
+        getSearchKey();
+
+        /**
+         * 获取一级分类
+         */
+        getNavCat = function(){
+            $http({
+                method:'GET',
+                url:ApiUrl + '/index.php?ctl=Goods_Cat&met=getOneCat&typ=json'
+            }).then(function successCallback(res){
+                $scope.navList = res.data.data;
+            },function errorCallback(res){
+//				alert('数据加载失败!');
+            })
+        }
+        getNavCat();
+
+
+        getAdv = function () {
+            $http({
+                method:'GET',
+                url:ApiUrl + "?ctl=Adv_Adv&met=index&typ=json&type=dailybuy"
+            }).then(function successCallback(res){
+                $scope.advList = res.data.data;
+                getSlide();
+            },function errorCallback(res){
+            })
+
+            $http({
+                method:'GET',
+                url:ApiUrl + "?ctl=Adv_Adv&met=index&typ=json&type=dailybuy2"
+            }).then(function successCallback(res){
+                $scope.advListT = res.data.data;
+                getSlide();
+            },function errorCallback(res){
+            })
+
+
+        };
+        getAdv();
+        
+        getSlide = function () {
+            $('.slider_list').each(function() {
+                if ($(this).find('.item').length < 2) {
+                    return;
+                }
+                Swipe(this, {
+                    startSlide: 2,
+                    speed: 400,
+                    auto: 3000,
+                    continuous: true,
+                    disableScroll: false,
+                    stopPropagation: false,
+                    callback: function(index, elem) {},
+                    transitionEnd: function(index, elem) {}
+                });
+            });
+        }
+
+        /**
+         * 分类导航条的滑动，点击等效果
+         * 当导航条分类数据加载成功，并且ng-repeat数据渲染完成后，调用
+         */
+        $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+            //导航条的滑动、点击样式
+            initNavList = function(){
+                $(".find_nav_list li").each(function(){
+                    $(".sideline").css({left:0});
+                    $(".find_nav_list li").eq(0).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+                });
+                var nav_w=$(".find_nav_list li").first().width();
+                $(".sideline").width(nav_w);
+
+                $('.find_nav_list li').on('click',function(){
+                    nav_w = $(this).width();
+                    $(".sideline").stop(true);
+                    $('.sideline').animate({left:$(this).position().left},300);
+                    $('.sideline').animate({width:nav_w});
+                    $(this).addClass('find_nav_cur').siblings().removeClass('find_nav_cur');
+                    var fn_w = ($('.find_nav').width() - nav_w) / 2;
+                    var fnl_l;
+                    var fnl_x = parseInt($(this).position().left);
+                    if(fnl_x <= fn_w){
+                        fnl_l = 0;
+                    }else if(fn_w - fnl_x < flb_w - fl_w){
+                        fnl_l = flb_w - fl_w;
+                    }else{
+                        fnl_l = fn_w - fnl_x;
+                    }
+                    $('.find_nav_list').animate({
+                        'left':fnl_l
+                    },300)
+
+                })
+                var fl_w = $('.find_nav_list').width();
+                var flb_w = $('.find_nav_left').width();
+                $(".find_nav_list").on('touchstart', function (e) {
+                    var touch1 = e.originalEvent.targetTouches[0];
+                    x1 = touch1.pageX;
+                    y1 = touch1.pageY;
+                    ty_left = parseInt($(this).css("left"));
+                });
+                $(".find_nav_list").on('touchmove', function (e) {
+                    var touch2 = e.originalEvent.targetTouches[0];
+                    var x2 = touch2.pageX;
+                    var y2 = touch2.pageY;
+                    if(ty_left + x2 - x1>=0){
+                        $(this).css("left", 0);
+                    }else if(ty_left + x2 - x1<=flb_w-fl_w){
+                        $(this).css("left", flb_w-fl_w);
+                    }else{
+                        $(this).css("left", ty_left + x2 - x1);
+                    }
+                    if(Math.abs(y2-y1)>0){
+                        e.preventDefault();
+                    }
+                });
+            }
+            initNavList();
+        });
+
+        /**
+         * 根据获得分类id（catId）重新获取数据
+         * @param item
+         */
+        $scope.reloadBy = function(catId){
+            $scope.catId = catId;
+            getCommonSalenum();
+            getCommonCollect();
+        }
+
+        /**
+         * 页面跳转
+         * @param common_id
+         */
+        $scope.pageTo = function(common_id){
+            window.location = 'product_detail.html?cid='+common_id;
+        }
+
+        /**
+         * 收藏、取消收藏
+         * @param $event
+         * @param common_goods_id
+         * @param is_liked
+         */
+        $scope.like_img = WapSiteUrl+'/images/daily_buy_img/like.png';				//未收藏图片
+        $scope.like_click_img = WapSiteUrl+'/images/daily_buy_img/like_click.png';	//已收藏图片
+        $scope.doLike = function($event,common_goods_id,is_liked){
+            var thisDom =$($event.target);
+            //图片切换
+            if(thisDom[0].src == WapSiteUrl+'/images/daily_buy_img/like.png'){
+                thisDom.attr('src',WapSiteUrl+'/images/daily_buy_img/like_click.png');
+            }else{
+                thisDom.attr('src',WapSiteUrl+'/images/daily_buy_img/like.png')
+            }
+/**/
+            //收藏 取消
+            if(is_liked == 0){
+                $scope.flag = true;
+            }else{
+                $scope.flag = false;
+            }
+            if($scope.flag){
+                var url = ApiUrl + '/index.php?ctl=Goods_Goods&met=collectGoods&typ=json';
+                $http({
+                    method: 'POST',
+                    url: url,
+                    params: {goods_id: common_goods_id}
+                }).then(function successCallback(res) {
+                    $scope.flag = !$scope.flag;
+
+                }, function errorCallback(msg) {
+
+                })
+            }else{
+                var url = ApiUrl + '/index.php?ctl=Goods_Goods&met=canleCollectGoods&typ=json';
+                $http({
+                    method:'POST',
+                    url:url,
+                    params:{goods_id:common_goods_id}
+                }).then(function successCallback(res){
+                    $scope.flag = !$scope.flag;
+                },function errorCallback(msg){
+
+                })
+            }
+
+
+
+        }
+
+        /**
+         * 下拉更新商品数据
+         * @刘贵龙  20170721
+         */
+        scrollLoad = function(){
+            $('.collcet_contain').unbind('scroll').bind('scroll',function(){
+                var sh = this.scrollHeight;
+                var h = this.clientHeight;
+                var st = $(this).scrollTop();
+
+                if(h + st >= sh-80){
+
+                    $scope.page++;	//判断滚到条到底后让 page + 1，加载下一页数据
+                    $http({
+                        method:'GET',
+                        url:ApiUrl + '/index.php?ctl=Goods_Goods&met=getGoodsHotList&typ=json&dataType=common_collect&page='+$scope.page+'&nums='+$scope.collectNums+'&catId='+$scope.catId,
+                    }).then(function successCallback(res){
+                        var a = $scope.collectListNew = res.data.data;
+                        var b = $scope.collectList;
+                        $scope.collectList = b.concat(a);	//加载的分页数据与原数据合并
+                    },function errorCallback(res){
+//						alert('数据加载失败！');
+                    });
+                }
+            })
+        }
+        scrollLoad();
+
+
+    })
+
+
+
+</script>
+
+
+<script>
+    $(function(){
+        $('.fix_footer').load('./common_footer.html');
+    });
+</script>
+
+</html>
+
+
+
+

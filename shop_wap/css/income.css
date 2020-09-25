@@ -1,0 +1,142 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+body,html{
+	background-color: #f2f2f2;
+}
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+	border-bottom: .02rem solid #eee;
+	position:fixed;
+	top:0;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+/***************头部部分结束**************************************/
+.income_title{
+	width:100%;
+	height:.64rem;
+	border-bottom:.02rem solid #eee;
+	font-size: 0;
+	background-color: #fff;
+	margin-top:.8rem;
+}
+.income_title li{
+	display:inline-block;
+	color:#666;
+	text-align: center;
+	line-height:.64rem;
+	font-size: .24rem;
+}
+.income_title li.cur{
+	color:#e45050;
+}
+.income_title li:nth-child(1),
+.income_title li:nth-child(2){
+	width:15%;
+	height:100%;
+}
+.income_title li:nth-child(3),
+.income_title li:nth-child(4){
+	width:35%;
+	height:100%;
+}
+
+.survey_title{
+	width:100%;
+	height:.4rem;
+	padding-left: .4rem;
+	font-size: .24rem;
+	color:#333;
+	line-height:.4rem;
+}
+.survey{
+	width:100%;
+	height:2.6rem;
+	background-color: #fff;
+	font-size: 0;
+}
+.survey li{
+	display:inline-block;
+	width:50%;
+	height:50%;
+	text-align: center;
+}
+.survey li:nth-child(1){
+	border-right: .02rem solid #eee;
+	border-bottom: .02rem solid #eee;
+}
+.survey li:nth-child(2){
+	border-bottom: .02rem solid #eee;
+}
+.survey li:nth-child(3){
+	border-right: .02rem solid #eee;
+}
+.survey li span{
+	font-size: .24rem;
+	color:#333;
+	display:inline-block;
+	font-weight: bold;
+	margin-top:.4rem;
+}
+.survey li p{
+	font-size: .24rem;
+	color:#999;
+	margin-top:.1rem;
+}
+.other{
+	width:100%;
+	height:auto;
+	text-align: center;
+	color：#333;
+}
+.other .balance{
+	margin-top:.4rem;
+	font-size: .26rem;
+}
+.other .mybalance{
+	margin-top:.15rem;
+	font-size: .22rem;
+	color:#999;
+}
+.other .cash{
+	margin-top:.15rem;
+	font-size: .22rem;
+	color:#999;
+	margin-top:.57rem;
+}
+.other button{
+	display:inline-block;
+	margin-top:.3rem;
+	outline: none;
+	border:0 none;
+	border: .02rem solid #999;
+	color:#666;
+	width:3.26rem;
+	height:.52rem;
+	font-size: .24rem;
+	border-radius:.27rem;
+}
+.other button.cur{
+	border-color: #e45050;
+	color:#e45050;
+}

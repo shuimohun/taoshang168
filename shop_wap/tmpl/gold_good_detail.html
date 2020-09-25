@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>礼品兑换</title>
+	<link rel="stylesheet" href="../css/goldegg/goods.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+	<script src='../js/tmpl/goldegg/goods.js'></script>
+</head>
+<body style="margin-top:.8rem; background-color: #ededed ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href=""><img src="../images/goldegg/back.png" alt=""></a>
+			<span>礼品兑换</span>
+			<a href="javascript:;"><img src="../images/goldegg/help@2x.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+	<!--商品部分-->
+	<div class="goods">
+		<div class="goods_img">
+			<img src="../images/goldegg/logo07.png" alt="">
+		</div>
+
+		<div class="goods_txt"></div>
+
+		<div class="goods_eggs">
+			<span></span>
+			<del></del>
+			<img src="../images/goldegg/decrease@2x.png" alt="" class="sub">
+			<input type="text" value="1" class="number">
+			<img src="../images/goldegg/increase@2x.png" alt="" class="add">
+		</div>
+
+		<select class="input_wrap"></select>
+
+		<a href="member/address_opera.html">新增收货地址</a>
+	</div>
+	<!--商品部分-->
+
+	<!--详情部分-->
+	<div class="info_wrap">
+		<h3>商品简介:</h3>
+		<div class="wrap"></div>
+	</div>
+
+	<div style="background-color:#fff;width:100%;height:1rem;"></div>
+	<!--详情部分-->
+		<input type="button" class="duihuan" value='兑换'>
+		<script type="text/html" id="address">
+			<% if(address_list){ %>
+			<% for(var i in address_list){ %>
+			<option value="<%=address_list[i].user_address_contact %>,<%=address_list[i].user_address_area %><%=address_list[i].user_address_address %>,<%=address_list[i].user_address_phone %>">配送至：<%=address_list[i].user_address_area %><%=address_list[i].user_address_address %></option>
+			<% } %>
+			<% } %>
+		</script>
+		<script type="text/javascript" src="../js/zepto.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/gold_good_detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+request body = {"pushType":1,"appId":"8a48b55152114d54015215890cb907d5","sender":"System","receiver":["[\"admin123\"","\"8733517\"]"],"msgType":"1","msgContent":"1111","msgDomain":"yuntongxun","msgFileName":"","msgFileUrl":""}
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8a48b55152114d54015214f89963065a/IM/PushMsg?sig=35656621016DBC3D16CC71202B313306
+request body = {"pushType":1,"appId":"8a48b55152114d54015215890cb907d5","sender":"System","receiver":["[\"admin123\"","\"8733517\"]"],"msgType":"1","msgContent":"1111","msgDomain":"yuntongxun","msgFileName":"","msgFileUrl":""}
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8a48b55152114d54015214f89963065a/IM/PushMsg?sig=3FF194DAA76DF4CC30AE3C0FBDADF9CF
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><statusMsg>success</statusMsg></Response>
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><statusMsg>success</statusMsg></Response>
+request body = {"pushType":1,"appId":"8a48b55152114d54015215890cb907d5","sender":"System","receiver":["\u5b98\u65b9\u81ea\u8425"],"msgType":"1","msgContent":"\u7684\u65b9\u5f0f\u611f\u53d7\u5230\u4e86\u5f00\u53d1\u5de5\u5177\u6492\u5730\u65b9","msgDomain":"yuntongxun","msgFileName":"","msgFileUrl":""}
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8a48b55152114d54015214f89963065a/IM/PushMsg?sig=B4D3BEE5849126A30B6B504DE5F6102F
+request body = {"pushType":1,"appId":"8a48b55152114d54015215890cb907d5","sender":"System","receiver":["\u5b98\u65b9\u81ea\u8425"],"msgType":"1","msgContent":"\u7684\u65b9\u5f0f\u611f\u53d7\u5230\u4e86\u5f00\u53d1\u5de5\u5177\u6492\u5730\u65b9","msgDomain":"yuntongxun","msgFileName":"","msgFileUrl":""}
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8a48b55152114d54015214f89963065a/IM/PushMsg?sig=E2F4E2ED7228C8D45A8A1CAD2B67636A
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><statusMsg>success</statusMsg></Response>
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><statusMsg>success</statusMsg></Response>

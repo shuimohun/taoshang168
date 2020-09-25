@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>劲爆折扣</title>
+	<link rel="stylesheet" href="../css/activity/discount.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+    <link rel="stylesheet" href="../css/activity/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/activity/swipe.js"></script>
+	<script type="text/javascript" src='../js/activity/swiper.min.js'></script>
+	<script type="text/javascript" src='../js/activity/discount.js'></script>
+	<style>
+		.footer_div_wrap {
+		    width: 100%;
+		    height: auto !important;
+		}
+	</style>
+</head>
+<body style="margin-top:1.55rem;background-color:#eeeeee;">
+<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/andone_img/back.png" alt=""></a>
+			<span>劲爆折扣</span>
+			<a href="#"><img src="../images/activity/andone_img/info.png" alt=""  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list"></div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/activity/andone_img/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list" ></div>
+	<!--主图轮播图-->
+	<div class='lb'>
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="javascript:void(0);" class='cur' data-id='0' onclick="zhek(this)">限时折扣</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='1' onclick="zhek(this)">1折</a></div>
+			<div class="swiper-slide"><a href="javascript:void(0);" data-id='2' onclick="zhek(this)">2折</a></div>
+			<div class="swiper-slide"><a href="javascript:void(0);" data-id='3' onclick="zhek(this)">3折</a></div>
+			<div class="swiper-slide"><a href="javascript:void(0);" data-id='4' onclick="zhek(this)">4折</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='5' onclick="zhek(this)">5折</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='6' onclick="zhek(this)">6折</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='7' onclick="zhek(this)">7折</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='8' onclick="zhek(this)">8折</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0);" data-id='9' onclick="zhek(this)">9折</a></div>
+        </div>
+    </div>
+	</div>
+
+	<!--优选好货contain-->
+	<div class="lb2"><div class="swiper-container n" style="margin-bottom:.1rem"></div>
+
+    </div>
+	
+	<ul class='zonghe'>
+		<li class='cur' data-type="select">
+			<select name=""  onchange="se_rule(this)" id="se_s">
+				<option value="null" id="se">综合排序</option>
+				<option value="null">上架时间</option>
+				<option value="priceT">价格从高到底</option>
+				<option value="priceL">价格从低到高</option>
+				<option value="point">综合评分排序</option>
+			</select>
+		</li>
+		<li data-type="save" onclick="rule(this)">立省价格</li>
+		<li data-type="salenum" onclick="rule(this)">销量</li>
+		
+	</ul>
+
+	<div class='peisong'>
+		<span>配送至：</span>
+		<i class="location"></i>
+		<a href="#" id="adr"><span></span></a>
+		<img src="../images/activity/icon_address.png" alt="" class="select n self_support" data-id="1" ><u>自营</u>
+		<img src="../images/activity/icon_address.png" alt="" class="select n" data-id="0" ><u>商家</u>
+	</div>
+
+
+
+	<!--商品-->
+	<div class="goods_add"></div>
+
+	<div class='fix_footer' style="margin-top:.98rem"></div>
+
+<script type="text/html" id="nav">
+	<ul>
+		<li class="find_nav_cur" data-id="0"><a href="javascript:void(0)">精选</a></li>
+		<% if(items.cat){ %>
+		<% var items = items.cat %>
+		<% for(var i in items){ %>
+		<li data-id="<%=items[i].goods_cat_id %>"><a href="javascript:void(0)" ><%=items[i].goods_cat_nav_name %></a></li>
+		<% } %>
+		<% } %>
+		<li class="sideline"></li>
+	</ul>
+</script>
+<script type="text/html" id="slider">
+	<div class="swipe-wrap" >
+		<% if(items.nav.items){ %>
+		<% var items = items.nav.items %>
+		<% for(var i in items){ %>
+		<div class="item" >
+			<a href="<%=items[i].wap_url %>">
+				<img src="<%=items[i].pic_url %>" alt="">
+			</a>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+</script>
+<script type="text/html" id="excellent">
+
+	<div class="swiper-wrapper" >
+		<% if(goods_excellent){ %>
+		<% var items = goods_excellent %>
+		<% for(var i in items){ %>
+		<div class="swiper-slide" ><a href="./product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="<%=items[i].goods_image %>"  alt=""></a></div>
+		<% } %>
+		<% } %>
+	</div>
+</script>
+<script type="text/html" id="goods">
+	<% if(items){ %>
+	<% for(var i in items){ %>
+	<div class="buy_goods">
+		<div class="goods_img">
+			<a href="./product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="<%=items[i].goods_image %>" alt=""></a>
+			<% if(items[i].goods_stock == 0){ %>
+			<img src="../images/activity/seckill_img/sellout.png" alt="" class="sellout">
+			<% } %>
+		</div>
+		<div class="goods_contain">
+			<span><%=items[i].goods_name %></span><br>
+			<div class="bg">立省￥<%=items[i].share_total_price %></div>
+			<% if(items[i].goods_is_promotion){ %>
+			<div class="bg">立赚￥<%=items[i].goods_promotion_price %></div><br>
+			<% } %>
+			<i>促销：</i>
+			<del><%=items[i].discount_rate %>折</del><br>
+			<span class="word">折扣价：￥<%=items[i].discount_price %></span> <span class="word1">分享后：￥<%=items[i].share_discount_price %></span>
+			<span class="bar">
+				<img src="../images/activity/seckill_img/gradient.png" alt="" style="width:<%=items[i].width %>%;">
+			</span>C66
+			<% if(items[i].goods_stock == 0){ %>
+			<b><%=items[i].goods_salenum %>件抢光</b>
+			<img src="../images/activity/seckill_img/btn_sellout.png" alt="" class="button">
+			<% } else { %>
+			<b class="C66">仅剩<span class="span_number"><%=items[i].goods_stock %>/<%=items[i].stock_count %></span>件</b>
+			<a href="./product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="../images/activity/seckill_img/btn_buy.png" alt="" class="button"></a>
+			<% } %>
+		</div>
+	</div>
+	<% } %>
+	<% } %>
+	
+</script>
+
+
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/discount.js"></script>
+</body>
+</html>

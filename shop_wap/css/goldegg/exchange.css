@@ -1,0 +1,133 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #1a1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:28%;
+}
+.person .title a img.info{
+    margin-left:25%;
+}
+/***************头部部分结束**************************************/
+.contain_wrap{
+    width:100%;
+    background-color: #fff;
+    margin-bottom: .1rem;
+}
+.contain{
+    width:96%;
+    height:2.85rem;
+    margin:0 auto;
+    background-color: #fff;
+}
+.contain_wrap .contain .cur{
+    color:#d84242;
+}
+.contain .contain_top{
+    height:.44rem;
+    width:100%;
+    text-align:right;
+    font-size: .2rem;
+    border-bottom: .2rem;
+    line-height: .44rem;
+    color: #999;
+    border-bottom:.01rem solid #eee;
+}
+.contain .contain_contain{
+    width:100%;
+    height:1.8rem;
+    border-bottom:.01rem solid #eee;
+    position:relative;
+}
+.contain .contain_contain .contain_img{
+    width:1.3rem;
+    height:1.5rem;
+}
+.contain .contain_contain .contain_img img{
+    width:100%;
+    height:100%;
+    margin-left: .3rem;
+    margin-top: .2rem;
+}
+.contain .contain_contain span{
+    display: inline-block;
+    width:3.8rem;
+    height:.55rem;
+    position:absolute;
+    top:10%;
+    left:30%;
+    font-size: .22rem;
+    overflow: hidden;
+    color:#1a1a1a;
+}
+.contain .contain_contain u{
+    color:#a7a7a7;
+    font-size: .18rem;
+    text-decoration: none;
+    position:absolute;
+    top:47%;
+    left:30%;
+}
+.contain .contain_contain i{
+    font-size: .22rem;
+    color:#e35151;
+    position:absolute;
+    top:67%;
+    left:30%;
+    font-style:normal;
+}
+.contain .contain_contain del{
+    font-size: .22rem;
+    color:#a7a7a7;
+    position:absolute;
+    top:68%;
+    left:47%;
+}
+.contain .contain_contain b{
+    font-size: .16rem;
+    color:#a7a7a7;
+    position:absolute;
+    top:77%;
+    left:95%;
+}
+.contain button{
+    height:.45rem;
+    width:1.2rem;
+    border-radius: .2rem;
+    background-color: #fff;
+    outline: 0 none;
+    border:.01rem solid #999;
+    font-size: .2rem;
+    color:#999;
+}
+.contain button.btn1{
+    float: right;
+    margin-top:.1rem;
+    margin-right:.1rem;
+}
+.contain button.btn2{
+    color:#d84242;
+    border-color: #d84242;
+    float: right;
+    margin-top:.1rem;
+}

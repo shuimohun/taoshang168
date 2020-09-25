@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>商品推荐</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/addfriend.css">
+</head>
+<body>
+	<!--头部 start-->
+	<header class="person black_bg">
+		<a href="javascript:history.go(-1);" class="back"></a>
+		<div class="search_box"><input class="input_search_fans" type="text" placeholder="查询粉丝"></div>
+	</header>
+	<!--头部 end-->
+
+	<!--用户信息s-->
+	<div class="tj_people clearfix user_info">
+		<!--<div class="tj_tx"><img src="../img/tx.png" alt=""></div>-->
+		<!--<div class="tj_name">Lucy<span>推荐的商品</span></div>-->
+	</div>
+	<!--用户信息e-->
+
+	<!---商品列表区  start-->
+	<div class="nctouch-main-layout">
+		<div id="product_list" class="list">
+			<ul class="goods-secrch-list goods_list">
+
+			</ul>
+		</div>
+	</div>
+	<!---商品列表区  end-->
+
+
+
+	<!--插入脚部 start-->
+	<div id="foot"></div>
+	<!--插入脚部 end-->
+
+	<!--用户信息渲染-->
+	<script type="text/html" id="user_info">
+		<% if( data.user_info ){ %>
+			<div class="tj_tx">
+				<a href="../fans_user_face.html?uid=<%=data.user_info.user_id%>">
+					<img src="<%=data.user_info.user_logo%>" onerror="this.src='../img/robot-ss.png'" alt="">
+				</a>
+			</div>
+			<div class="tj_name">
+				<%=data.user_info.user_name%>
+				<span>推荐的商品</span>
+			</div>
+		<% }%>
+	</script>
+
+	<!--推荐商品渲染-->
+	<script type="text/html" id="goods_list">
+		<% if( goods_info ){ %>
+			<% for( var i in goods_info ){ %>
+				<li class="goods-item">
+					<span class="goods-pic">
+						<a href="../product_detail.html?goods_id=<%=goods_info[i].goods_id%>">
+							<img src="<%=goods_info[i].goods_image%>">
+						</a>
+					</span>
+					<dl class="goods-info">
+						<dt class="goods-name">
+							<a href="../product_detail.html?goods_id=<%=goods_info[i].goods_id%>">
+								<h4><%=goods_info[i].goods_name%></h4>
+								<span class="bg_all">
+									<span class="bg" style="">分享立省￥<%=goods_info[i].goods_share_price%></span>
+									<% if( goods_info[i].goods_is_promotion == 1){ %>
+									<span class="bg" style="">立赚￥<%=goods_info[i].goods_promotion_price%></span>
+									<%}%>
+								</span>
+							</a>
+						</dt>
+						<dd class="goods_activity">
+
+							<% if( goods_info[i].common_promotion_type ==1 ){%>
+								<span>惠</span>
+							<% }%>
+							<% if( goods_info[i].common_promotion_type == 2){%>
+								<span>限时</span>
+							<% }%>
+							<%if( goods_info[i].common_promotion_type == 3){%>
+								<span>手</span>
+							<% }%>
+							<%if( goods_info[i].common_promotion_type ==4){ %>
+								<span>新</span>
+							<% }%>
+							<% if( goods_info[i].common_promotion_type ==5){%>
+								<span>市</span>
+							<% }%>
+
+							<% if(goods_info[i].common_is_jia == 1){ %>
+								<span class='tit'>加</span>
+							<% } %>
+							<% if( goods_info[i].fu_flag == 1 ){%>
+							<span class='tit'>福</span>
+							<% }%>
+							<% if(goods_info[i].mansong_id){ %>
+								<span class='tit'>满</span>
+							<% } %>
+						</dd>
+						<dd class="goods-sale">
+							<a href="#">
+								<span class="goods-price">￥<em><%=goods_info[i].goods_shared_price%></em></span>
+							</a>
+						</dd>
+						<dd class="goods-assist">
+							<a href="#" class="clearfix">
+								<span class="goods-sold">销量<em><%=goods_info[i].goods_salenum%></em></span>
+								<span class="goods-sold">评论<em><%=goods_info[i].goods_evaluation_count%></em></span>
+							</a>
+						</dd>
+					</dl>
+				</li>
+			<% }%>
+		<% }%>
+	</script>
+	<!--推荐商品分页加载-->
+	<script type="text/html" id="goods_list_append">
+		<% if( goods_info ){ %>
+		<% for( var i in goods_info ){ %>
+		<li class="goods-item">
+					<span class="goods-pic">
+						<a href="../product_detail.html?goods_id=<%=goods_info[i].goods_id%>">
+							<img src="<%=goods_info[i].goods_image%>">
+						</a>
+					</span>
+			<dl class="goods-info">
+				<dt class="goods-name">
+					<a href="../product_detail.html?goods_id=<%=goods_info[i].goods_id%>">
+						<h4><%=goods_info[i].goods_name%></h4>
+						<span class="bg_all">
+									<span class="bg" style="">分享立省￥<%=goods_info[i].goods_share_price%></span>
+									<% if( goods_info[i].goods_is_promotion == 1){ %>
+									<span class="bg" style="">立赚￥<%=goods_info[i].goods_promotion_price%></span>
+									<%}%>
+								</span>
+					</a>
+				</dt>
+				<dd class="goods_activity">
+
+					<% if( goods_info[i].common_promotion_type ==1 ){%>
+					<span>惠</span>
+					<% }%>
+					<% if( goods_info[i].common_promotion_type == 2){%>
+					<span>限时</span>
+					<% }%>
+					<%if( goods_info[i].common_promotion_type == 3){%>
+					<span>手</span>
+					<% }%>
+					<%if( goods_info[i].common_promotion_type ==4){ %>
+					<span>新</span>
+					<% }%>
+					<% if( goods_info[i].common_promotion_type ==5){%>
+					<span>市</span>
+					<% }%>
+
+					<% if(goods_info[i].common_is_jia == 1){ %>
+					<span class='tit'>加</span>
+					<% } %>
+					<% if( goods_info[i].fu_flag == 1 ){%>
+					<span class='tit'>福</span>
+					<% }%>
+					<% if(goods_info[i].mansong_id){ %>
+					<span class='tit'>满</span>
+					<% } %>
+				</dd>
+				<dd class="goods-sale">
+					<a href="#">
+						<span class="goods-price">￥<em><%=goods_info[i].goods_shared_price%></em></span>
+					</a>
+				</dd>
+				<dd class="goods-assist">
+					<a href="#" class="clearfix">
+						<span class="goods-sold">销量<em><%=goods_info[i].goods_salenum%></em></span>
+						<span class="goods-sold">评论<em><%=goods_info[i].goods_evaluation_count%></em></span>
+					</a>
+				</dd>
+			</dl>
+		</li>
+		<% }%>
+		<% }%>
+	</script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script src="../../js/friendletter/zepto.min.js"></script>
+<script src="../../js/friendletter/video_to_goods.js"></script>
+
+</body>
+</html>

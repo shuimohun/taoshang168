@@ -1,0 +1,34 @@
+#sharecover{position:fixed;top:0;left:0;z-index:999;width:100%;height:100%}
+.mask{position:absolute;top:0;left:0;z-index:3;display:block;overflow:hidden;width:100%;height:100%;background:rgba(0,0,0,.5)}
+#code{position:absolute;top:45%;left:45%;z-index:999;display:none;width:580px;height:350px;border-radius:10px;background-color:#fff}
+#code .close{width:580px;height:50px;border-radius:10px 10px 0 0;background-color:#ed5565;text-align:center}
+#code .close span{margin:0 auto;margin-left:30px;color:#fff;font-weight:700;font-size:20px;line-height:50px}
+#code #closebt{float:right;padding:10px}
+#code #closebt img{width:20px}
+#code .sharetxt{padding:18px 35px 18px 35px;color:#666;text-align:left;font-size:12px}
+
+
+.add_card{text-align: center;border: none !important;}
+.add_card a{display:inline-block;width:100px;margin:0 auto;background-color:#0a97f0;color:#fff;border-radius:5px;font-size:14px;padding:5px;}
+.dialog_add_card a{margin-right: 20px;}
+.alipay_wechat .card{display: none;}
+input[type='text']{height: 32px;line-height: 32px;}
+.send{height: 32px;line-height: 32px;background-color: #0a97f0;color: #fff;}
+input[type='submit']{background-color: #0a97f0;color: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

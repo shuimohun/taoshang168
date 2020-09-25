@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>兴趣标签</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/interestlabel.css">
+	<link rel="stylesheet" type="text/css" href="../../css/friendletter/foot_base.css">
+</head>
+<body>
+	<!--头部 start-->
+	<header class="person">
+		兴趣标签
+		<a href="javascript:history.go(-1);" class="back"></a>
+	</header>
+	<!--头部 end-->
+	<!--兴趣标签列表 start-->
+	<div class="main interest">
+	</div>
+	<!--兴趣标签列表 end-->
+	<!--插入脚部 start-->
+	<div id="foot"></div>
+	<!--插入脚部 end-->
+<!--内容渲染-->
+<script type="text/html" id="interest">
+	<% if(data.items){ %>
+	<% for(var i in data.items){ %>
+	<div class="fl_item">
+		<div class="fl_item_con clearfix">
+			<div class="fl_tx"><img src="<%=data.items[i].user_tag_image%>" /> </div>
+			<div class="fl_infor">
+				<a href="#">
+					<p class="user_name"><%=data.items[i].user_tag_name%></p>
+					<% if(data.items[i]['user']['items']){%>
+					<p class="chat">这里有<%=data.items[i]['user']['items'].length%>个同样兴趣的用户</p>
+					<% }else{ %>
+					<p class="chat">暂时没有发现贴上该标签的用户</p>
+					<% }%>
+				</a>
+			</div>
+			<% if(data.items[i].is_focus ==1){ %>
+			<div class="ad_btn on" data-id="<%=data.items[i].user_tag_id%>">去看看</div>
+			<% }else{ %>
+			<div class="ad_btn" data-id="<%=data.items[i].user_tag_id%>" >贴上标签</div>
+			<% }%>
+		</div>
+	</div>
+	<% }%>
+	<% }%>
+</script>
+
+<script src="../../js/friendletter/zepto.min.js"></script>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script src="../../js/friendletter/interestlabel.js"></script>
+	<script>
+        //引入脚部内容
+        $(document).ready(function () {
+            $('#foot').load('foot_.html');
+            setTimeout(function(){
+                foot_alt = $(".footer").outerHeight(true);//获取脚部高度
+                $(".foot_bg").css({"height":foot_alt+"px"});
+                $("#foot .foot_item .index").parents(".foot_item").addClass("on");//对应位置标红
+                //导航跳转
+                $("#foot .foot_item .index").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/fans-circle.html';
+                })
+                $("#foot .foot_item .hot_tv").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/videoplay.html';
+                })
+                $("#foot .foot_item .fabu").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/information_message.html';
+                })
+                $("#foot .foot_item .message").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/friend_list.html';
+                })
+                $("#foot .icon_interest").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/interestlabel.html';
+                })
+                $("#foot .icon_addressbook").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/addressbook.html';
+                })
+                $("#foot .icon_system_infor").click(function () {
+                    // window.location.href = WapSiteUrl+'/tmpl/friendletter/addressbook.html';
+                })
+                $("#foot .icon_my_on").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/systeminfor.html';
+                })
+                //end
+                $("#foot .more").click(function(){
+                    $(".more_win").css({"bottom":(foot_alt)+"px"});
+                    $(".mask").css({"display":"block","opacity":"0.4"})
+                });
+                $(".mask").click(function(){
+                    $(".more_win").css({"bottom":"-5rem"});
+                    $(this).css({"display":"none","opacity":"0"})
+                })
+                $(".more_win .close_btn").click(function(){
+                    $(".more_win").css({"bottom":"-5rem"});
+                    $(".mask").css({"display":"none","opacity":"0"})
+                })
+            },200)
+        });
+	</script>
+</body>
+</html>

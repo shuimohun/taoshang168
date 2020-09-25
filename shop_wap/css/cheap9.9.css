@@ -1,0 +1,123 @@
+*{margin:0 auto;padding:0;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+html{background-color:#fff;color:#000;overflow-y: scroll;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-overflow-scrolling: touch;}
+html,body,input,select,textarea{font-family: "microsoft yahei", Arial, Helvetica, sans-serif;}
+*,*:after,*:before{box-sizing: border-box;}
+ul,li,ol{list-style: none;border:none;}
+a{text-decoration: none;color: #fff;}
+img{border:none;}
+input,button{border:none;outline:none;}
+.rt{float: right;}
+.lf{float: left;}
+.clear{clear: both;}
+.orflow{overflow: hidden;-webkit-overflow-scrolling: touch;}
+.after:after{content:'';height:0;visibility: hidden;display: block;clear: both;}
+
+body{max-width:10rem;}
+
+::-webkit-scrollbar{display:none;}
+.icon{display: inline-block;}
+.mt_top_16{margin-top:0.2133333rem;}
+.txt{overflow: hidden;text-overflow: ellipsis;-o-text-overflow:ellipsis;white-space: nowrap;}
+.txt-2{overflow: hidden;text-overflow: ellipsis;-o-text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp: 2;}
+.img-center{position:relative;display:table-cell;vertical-align: middle;text-align: center;}
+
+/*以下代码  为 补充  common css*/
+.block{display: block !important;}
+.middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);}
+.ui-mask{display:none;opacity:0;position:fixed;top:0;left:0;z-index:499;width:100%;background:#000;height:100%;}
+
+
+html,body{width:100%;height:100%;overflow:hidden;}
+body{position:relative;}
+
+/*.main-wrap{position:relative;height:100%;margin-top:2.359375rem;margin-bottom:1.5625rem;overflow: scroll;-webkit-overflow-scrolling: touch;}*/
+.main{height:100%;margin-top:2.359375rem;margin-bottom:1.5625rem;overflow: auto;-webkit-overflow-scrolling: touch;}  /*position:absolute;top:0;left:0;*/
+
+.fixed{position:fixed;top:0;left:0;z-index: 400; -webkit-transform: translateZ(0);}
+.nav .curr a{color:#E45050 !important;}
+.page.swiper-container,.page .swiper-wrapper{width:100%;height:auto;}
+
+/*大轮播    start*/
+.banner.swiper-container,.banner.swiper-container .swiper-slide img{width:10rem;height:4.6875rem;}
+/*大轮播  end*/
+
+
+/*商品 列表   start*/
+/*商品列表   start*/
+.new-icon{background:url(../images/new@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.tiket-icon{background:url(../images/ticket@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.sheath-icon{background:url(../images/sheath@3x.png) no-repeat;width:0.34475rem;height:0.34375rem;background-size: contain;}
+.solid-icon{background:url(../images/solid@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.add-icon{background:url(../images/add@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.sale-icon{background:url(../images/sale@3x.png) no-repeat;width:0.34375rem;height:0.34375rem;background-size: contain;}
+.give_full_cut-icon{background:url(../images/give_full_cut@3x.png) no-repeat;width:0.90625rem;height:0.34375rem;background-size: contain;}
+.postage_free-icon{background:url(../images/postage_free@3x.png) no-repeat;width:0.59375rem;height:0.34375rem;background-size: contain;}
+.sale_app-icon{background:url(../images/sale_app@3x.png) no-repeat;width:1.46875rem;height:0.34375rem;background-size: contain;}
+.goods-wrap{position:relative;}
+.goods-wrap .goods-ul{position:relative;background-color:#f5f5f5;margin-left:-0.15625rem;}  /*padding-bottom:1.71875rem;*/
+.goods-wrap .goods-ul .goods{display:inline-block;width:4.921875rem;margin-left:0.15625rem;margin-top:0.15625rem;background-color:#fff;}
+.goods-wrap .goods-ul .goods .img-center,.goods-wrap .goods-ul .goods .img-center img{width:4.921875rem;height:4.921875rem;}
+/*.goods-wrap .goods-ul .goods .img-center img{max-width:4.921875rem;max-height: 4.921875rem;}*/
+.goods-wrap .goods-ul .goods .goods-detail{padding:0 0.234375rem;}
+.goods-wrap .goods-ul .goods .goods-price,.goods-wrap .goods-ul .goods .goods-price .share-price div{color:#999;}
+.goods-wrap .goods-ul .goods .goods-price{margin:0.34375rem 0;font-size:0.34375rem;}
+.goods-wrap .goods-ul .goods .goods-price .share-price span{color: #333;}
+.goods-wrap .goods-ul .goods .goods-text{color:#343434;font-size:0.40625rem;}
+.goods-wrap .goods-ul .goods .goods-text a{color:#343434;}
+.goods-wrap .goods-ul .goods .goods-share .share{margin:0.15625rem 0;padding:0 0.03125rem;margin-right:0.0625rem;font-size:0.3rem;background:url(../images/share_bg@3x.png) no-repeat;width:2.1599rem;height:0.40625rem;line-height:0.4199999999rem;background-size: cover;color:#fff;}
+.goods-wrap .goods-ul .goods .goods-sale{position:relative;height:0.5rem;}
+.goods-wrap .goods-ul .goods .goods-sale span{color:#e45050;font-size:0.34375rem;}
+.goods-wrap .goods-ul .goods .goods-sale .icons{position: absolute;top:0.058118888rem;left:0.75rem;}
+.goods-wrap .goods-ul .goods .goods-sale .icon{margin:0 0.078125rem;}
+.goods-wrap .goods-ul .goods .goods-sale .icons{overflow: hidden;-webkit-overflow-scrolling: touch;height: 0.5rem;}
+.goods-wrap .goods-ul .goods .goods-like{margin-top:0.1875rem;padding-bottom:0.3125rem;}
+.goods-wrap .goods-ul .goods .goods-like .like .icon{margin-top:0.09375rem;background:url(../images/like@3x.png) no-repeat;width:0.6875rem;height:0.6875rem;background-size:cover;}
+.goods-wrap .goods-ul .goods .goods-like .like.curr .icon{background:url(../images/liked@3x.png) no-repeat;background-size:cover;}
+.goods-wrap .goods-ul .goods .goods-like .share-border{color:#E45050;font-size:0.40625rem;border:1px solid #E45050;padding:0.09375rem 0.15625rem;border-radius:0.46875rem;-webkit-border-radius:0.46875rem;-o-border-radius:0.46875rem;-ms-border-radius:0.46875rem;}
+/*商品列表   end*/
+/*商品 列表 end*/
+
+
+/*footer   start*/
+.home-icon .icon{background:url(../images/home-icon_snormal@3x.png) no-repeat;width:0.78125rem;height:0.78125rem;background-size:cover;}
+.icon-9 .icon{background:url(../images/icon9@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.more-icon .icon{background:url(../images/more@3x.png) no-repeat;width:1.5625rem;height:1.5625rem;background-size:cover;}
+.icon-20 .icon{background:url(../images/icon20@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-50 .icon{background:url(../images/icon50@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+
+.home-icon.curr .icon{background:url(../images/home-icon_snormal-red@3x.png) no-repeat;width:0.78125rem;height:0.78125rem;background-size:cover;}
+.icon-9.curr .icon{background:url(../images/icon9-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-20.curr .icon{background:url(../images/icon20-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+.icon-50.curr .icon{background:url(../images/icon50-red@3x.png) no-repeat;width:0.65625rem;height:0.4375rem;background-size:cover;}
+
+.nav-fixed{position:fixed;bottom:0;left:0;z-index:1000;width:100%;background-color:#fff;width:100%;border-top:1px solid #eee;height:1.5625rem;}
+.nav-fixed ul{max-width:10rem;margin:0 auto;height:1.5625rem;width:10rem;}
+.nav-fixed li.more-icon .icon{position:absolute;top:-0.234375rem;left:50%;margin-left:-0.78125rem;}
+.nav-fixed li.home-icon{padding-top:0.15625rem;}
+.nav-fixed li.s-icon{padding-top:0.4rem;}
+.nav-fixed li.s-icon div{margin-top:0.076125rem;}
+.nav-fixed li{width:2rem;height:1.5625rem;text-align: center;font-size:0;}
+.nav-fixed li div{color:#666;font-size: 0.28125rem;}
+/*footer   end*/
+
+
+/*更多活动   弹框    start*/
+.more-activties-wrap{position:fixed;bottom:-3.078125rem;left:50%;margin-left:-5rem;z-index:500;background:url(../images/bg@2x.png) no-repeat;width:10rem;height:4.65625rem;background-color:#fff;background-size:cover;}
+.more-activties-wrap .more-activity{margin-top:0.625rem;margin-left:0.375rem;width:2.8125rem;height:0.71875rem;}
+.more-activties-wrap .activity-icon1{background:url(../images/activities_1@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon2{background:url(../images/activities_2@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon3{background:url(../images/activities_3@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon4{background:url(../images/activities_4@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon5{background:url(../images/activities_5@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon6{background:url(../images/activities_6@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon7{background:url(../images/activities_7@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon8{background:url(../images/activities_8@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon9{background:url(../images/activities_9_1@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon10{background:url(../images/activities_9_2@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon11{background:url(../images/activities_9_3@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon12{background:url(../images/activities_9_4@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon13{background:url(../images/activities_9_5@3x.png) no-repeat;background-size:cover;}
+.more-activties-wrap .activity-icon14{background:url(../images/activities_9_6@3x.png) no-repeat;background-size:cover;}
+
+/*更多活动   弹框    end*/
+

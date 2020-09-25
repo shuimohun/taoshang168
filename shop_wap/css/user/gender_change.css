@@ -1,0 +1,73 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:26%;
+}
+.person .title .save
+{
+	font-size:.2rem;
+	color: #888888;
+	vertical-align: top;
+	font-weight: bold;
+	margin-left:35%;
+}
+/***************头部部分结束**************************************/
+
+/******************修改性别部分**********************/
+.gender{
+	width:100%;
+	height:2.25rem;
+}
+.gender ul{
+	width:100%;
+	height:2.2rem;
+}
+.gender ul li{
+	width:100%;
+	height:.75rem;
+	border-top: .01rem solid transparent;
+	border-bottom: .01rem solid transparent;
+}
+.gender ul li.cur{
+	border-top: .01rem solid #999999;
+	border-bottom:.01rem solid #999999;
+}
+.gender ul li span{
+	font-size:.26rem;
+	color:303030;
+	line-height:.75rem;
+	margin-left: .18rem;
+	float: left;
+}
+.gender ul li img{
+	width:.3rem;
+	height:.3rem;
+	float: right;
+	margin:.25rem .18rem 0 0;
+}
+.gender ul li img#man{
+	display: none;
+}
+.gender ul li img#secret{
+	display: none;
+}
+/******************修改性别部分**********************/

@@ -1,0 +1,310 @@
+@charset "utf-8";
+body{
+	background-color:#f2f2f2;
+}
+.tg_list{
+	width:100%;
+	height:100%;
+}
+.tg_list li{
+	width:50%;
+	height:30px;
+	float: left;
+	text-align: center;
+	font-size: 14px;
+}
+.title{
+	margin-top: 20px;
+	width:1200px;
+	height:44px;
+	/*background:url("<?=$this->view->img?>img/title_bg.png") no-repeat left top;*/
+	line-height: 44px;
+}
+.title img{
+	margin-left: 10px;
+}
+.title span{
+	color: #fffefe;
+	font-size: 18px;
+	margin-left: 10px;
+}
+.title a{
+	float: right;
+	margin-right: 20px;
+}
+
+
+.discountimg{
+	height:170px;
+	background-color:#fff;
+	font-size: 0;
+}
+.discountimg a{
+	display: inline-block;
+	width:150px;
+	height:150px;
+	margin-top: 10px;
+	margin-right: 20px;
+	border-radius:.7rem;
+}
+.discountimg a:nth-child(1){
+	margin-left: 10px;
+}
+.discountimg a img{
+	width:100%;
+	height:100%;
+	border-radius:.7rem;
+}
+.discount{
+	background-color:#fff;
+	width:1200px;
+	height:83px;
+	margin-top: 15px;
+}
+
+.discount .discount_top{
+	font-size: 0;
+	width:100%;
+	height:50%;
+	line-height:41.5px;
+}
+.discount .discount_top li{
+	font-size: 14px;
+	float: left;
+	margin-left: 30px;
+	/*与折扣点击变换样式有冲突 暂时屏蔽 @liuguilong 20170713*/
+	/*color:#333;*/
+}
+
+.discount .discount_bottom{
+	font-size: 0;
+	width:100%;
+	height:50%;
+	line-height:41.5px;
+}
+.discount .discount_bottom li{
+	float: left;
+	font-size: 14px;
+	margin-right: 20px;
+	color:#333;
+	margin-left: 15px;
+}
+.discount .discount_bottom li img{
+	margin-left: 10px;
+}
+.discount .discount_bottom span{
+	font-size: 14px;
+	color:#999;
+	float: right;
+	margin-right: 10px;
+}
+.discount .discount_bottom span img{
+	margin-right: 10px;
+}
+.seckill{
+	font-size: 0;
+	background-color: #f2f2f2;
+	width:1200px;
+	height:auto;
+	overflow:hidden;
+	margin-top: 5px;
+}
+.seckill li{
+	width:592px;
+	height:285px;
+	background-color: #fff;
+	float: left;
+	margin-bottom: 20px;
+}
+.seckill li:nth-child(even){
+	float: right;
+
+} 
+.seckill li .seckill_img{
+	display:inline-block;
+	width:244px;
+	height:244px;
+	margin:20px 20px 20px 20px;
+	position:relative;
+}
+.seckill li .seckill_img img{
+	width:100%;
+	height:100%;
+}
+.seckill li .seckill_img .tit{
+	width:106px;
+	height:40px;
+	background-color:black;
+	opacity:.7;
+	position:absolute;
+	left:0;
+	top:70%;
+	border-radius:0 20px 20px 0;
+	text-align: center;
+	line-height:40px;
+	font-size: 18px;
+}
+.seckill li .seckill_img .tit i{
+	opacity:1;
+	color:#fff;
+}
+.seckill li .seckill_info{
+	display:inline-block;
+	width:285px;
+	height:244px;
+	vertical-align: top;
+	margin-top: 20px;
+	position:relative;
+}
+.seckill li .seckill_info span{
+	display:inline-block;
+	width:100%;
+	height:47px;
+	font-size:18px;
+	overflow:hidden;
+	color: #343434;
+	letter-spacing: 1px;
+}
+.seckill li .seckill_info .share_wrap .share{
+	display:inline-block;
+	margin-top: 10px;
+}
+.seckill li .seckill_info p{
+	float: left;
+	margin-right: 10px;	
+}
+.seckill li .seckill_info p .share{
+	display:inline-block;
+	height:18px;
+	border:1px solid #c51e1e;
+	font-size: 12px;
+	line-height:18px;
+	color:#c51e1e;
+	padding-left: 5px;
+}
+.seckill li .seckill_info .share u{
+	text-decoration:none;
+	background-color: #c51e1e;
+	color:#fff;
+	float: right;
+	height:100%;
+	padding:0 2px;
+}
+
+.seckill li .seckill_info .cuxiao{
+	color:#e45050;
+	font-size: 12px;
+	display:inline-block;
+	position:absolute;
+	left: 0%;
+    top: 37%;
+}
+.seckill li .seckill_info .zhekou1{
+	color:#e45050;
+	font-size: 12px;
+	display:inline-block;
+	position:absolute;
+	left:13%;
+	top:36%;
+	border:1px solid #e45050;
+	border-radius:2px;
+	padding:0 2px;
+}
+.seckill li .seckill_info .zhekou2{
+	font-size: 14px;
+	color:#999;
+	position:absolute;
+	left:0%;
+	top:50%;
+}
+.seckill li .seckill_info .share_hou{
+	font-size: 14px;
+	color:#999;
+	position:absolute;
+	left:33%;
+	top:50%;
+	margin-left: 5px;
+}
+.seckill li .seckill_info .progress{
+	width:175px;
+	height:20px;
+	background-color:pink;
+	position:absolute;
+	left:0%;
+	top:60%;
+	background-color:#e6e6e6;
+}
+.seckill li .seckill_info .progress img{
+	height:100%;
+}
+.seckill li .seckill_info .sheng{
+	font-size: 14px;
+	color:#666;
+	position:absolute;
+	left:0%;
+	top:70%;
+}
+.seckill li .seckill_info .book_n{
+	position:absolute;
+	left:0%;
+	top:83%;
+}
+.seckill li .seckill_info button{
+	width: auto;
+	background-color: #e45050;
+	text-align: center;
+	border-radius: 30px;
+	position: absolute;
+	left: 35%;
+	top: 84%;
+	outline: none;
+	border: 0 none;
+	height: auto;
+	min-height: 40px;
+	min-width: 200px;
+	color: #fff;
+	font-size: 18px;
+}
+.seckill li .seckill_info button.saleover_button{
+	background-color:#fff;
+	border:1px solid #999;
+	color: #999;
+}
+
+/*.er{
+	width:120px;
+	height:120px;
+	margin-left: 30px;
+}
+.list{
+	width:130px;
+	border:1px solid #eee;
+	font-size: 0;
+	position:absolute;
+	top:35%;
+	left:-23%;
+	background-color:#fff;
+	text-align: center;
+}
+.list span{
+	display:inline-block;
+	font-size: 16px;
+	margin-bottom: 10px;
+	color:#666;
+}
+.list .er{
+	width:98px;
+	height:98px;
+	margin:10px 15px 10px 15px;
+}
+.list li{
+	width:100%;
+	height:30px;
+	display:block;
+	font-size: 14px;
+	text-align: center;
+	color:#333;
+}*/
+.er{margin-left:5px;width:90pt;height:90pt;}
+.list{position:fixed;top:20%;z-index:2;width:130px;border:1px solid #e1e1e1;background-color:#fff;font-size:0;display: none;}
+.list li{display:block;width:100%;height:30px;text-align:center;font-size:1pc;}

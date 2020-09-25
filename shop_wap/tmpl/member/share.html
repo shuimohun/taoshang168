@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>分享立赚</title>
+	<link rel="stylesheet" href="../../css/money/share.css">
+	<link rel="stylesheet" href="../../css/money/base.css">
+	<script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/money/share.js'></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.js"></script>
+	<script type="text/javascript" src="../../js/template.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/plugins/jquery.timeCountDown.js"></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../../images/money/back.png" alt=""></a>
+			<span>分享立赚</span>
+			<a href="#"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--信息-->
+	<div class="share_info">
+		<span>目前为止赚了</span><i>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</i><span id="start_date"></span><br>
+		<b id="share_total_money"></b><br>
+		<del>已到账:</del><em id="share_money"></em> &nbsp;&nbsp;<del>冻结:</del><em id="share_freeze"></em><br>
+		<u>今天|最近:</u>
+		<ul>
+			<li data-time=" ">全部</li>
+			<li data-time="oneMonth">一个月</li>
+			<li data-time="thereMonth">三个月</li>
+			<li data-time="oneYear">一年</li>
+		</ul>
+	</div>	
+	<!--信息-->	
+
+	<!--内容-->
+	<div class="goods"></div>
+	<!--内容-->
+	<script type="text/html" id="goods">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="contain_wrap">
+			<div class="contain">
+				<div class="contain_top">
+					<span>分享编号:<%=items[i].share_num %></span>
+					<a href="share_item.html?share_num=<%=items[i].share_num %>">查看详情</a>
+				</div>
+				<div class="contain_middle">
+					<div class="contain_img"><a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="<%=items[i].goods_image %>" alt=""></a></div>
+					<div class="contain_middle_right">
+						<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><span><%=items[i].goods_name %></span></a>
+						<em><b><%=items[i].promotion_click_count %></b>/<%=items[i].click_count_total %></em>
+						<% if(items[i].share_end_date || items[i].order_status == '已取消' ){ %>
+						<em class="xiaoji"><b>小计：</b><%=items[i].share_click_price %>元</em>
+						<% } %>
+						<br>
+						<div>分享立赚￥<%=items[i].promotion_total_price %></div><br>
+						<u>￥<%=items[i].promotion_price %></u> <del>￥<%=items[i].goods_price %></del><br>
+						<% if(items[i].share_end_date){ %>
+						<span class="time" data-end="<%=items[i].share_end_date %>">距离结束&nbsp;&nbsp;
+							<u class="hour">00</u>
+							<i>&nbsp;:&nbsp;</i>
+							<u class="mini">00</u>
+							<i>&nbsp;:&nbsp;</i>
+							<u class="sec">00</u>
+						</span>
+						<% }else if(items[i].order_status != '已取消'){ %>
+						<a href="../product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="../../images/money/btn.png" alt=""></a>
+						<% } %>
+					</div>
+				</div>
+				<% if(items[i].share_order_id == '0'){ %>
+				<div class="contain_bottom">
+					<span>交易号:没有订单号</span>
+					<a href=""><%=items[i].order_status %></a>
+				</div>
+				<% }else{ %>
+				<div class="contain_bottom">
+					<span>交易号:<%=items[i].share_order_id %></span>
+					<a href=""><%=items[i].order_status %></a>
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../../js/share.js"></script>
+</body>
+</html>

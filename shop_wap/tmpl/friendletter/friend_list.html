@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>好友列表</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/addfriend.css">
+</head>
+<body style="background: #fff;">
+	<!--头部 start-->
+	<header class="person black_bg">
+		<a href="javascript:history.go(-1);" class="back"></a>
+		<a href="javascript:void (0);" class="addicon add_friend"></a>
+	</header>
+	<!--头部 end-->
+	<!--关注列表 start-->
+	<div class="main gz_fans_visited msgList">
+
+	</div>
+	<!--关注列表 end-->
+	<!--脚部 start-->
+	<footer class="footer clearfix">
+		<a href="#" class="foot_item on">
+			<i class="foot_icon message"></i>
+			<span>友信</span>
+		</a>
+		<a href="./addressbook.html" class="foot_item">
+			<i class="foot_icon a_book"></i>
+			<span>通讯录</span>
+		</a>
+		<a href="../fans-circle.html" class="foot_item">
+			<i class="foot_icon fans"></i>
+			<span>粉丝圈</span>
+		</a>
+		<a href="./links_to.html" class="foot_item">
+			<i class="foot_icon faxian"></i>
+			<span>发现</span>
+		</a>
+		<a href="./systeminfor.html" class="foot_item">
+			<i class="foot_icon my"></i>
+			<span>我的</span>
+		</a>
+	</footer>
+	<!--脚部 end-->
+
+<script type="text/html" id="msgList">
+	<% if( data.length>0 ){ %>
+		<% for( var i in data ){ %>
+
+			<div class="fl_item friend_list">
+				<div class="fl_item_con clearfix">
+					<div class="fl_tx"><img src="<%=data[i].user_info.user_logo%>" onerror="this.src='../img/robot-ss.png'" /> </div>
+					<div class="fl_infor">
+						<a href="#">
+							<p class="user_name"><%=data[i].user_info.user_name%><span class="fans_num margin_L15"><%=data[i].countFans%>粉丝</span></p>
+							<p class="chat chat_2"><%=data[i].user_message_content%></p>
+						</a>
+					</div>
+					<div class="publish_time"><%=data[i].message_time_con%></div>
+					<a href="../member/chat_info.html?t_id=<%=data[i].user_info.id%>&t_name=<%=data[i].user_info.user_name%>">
+						<div class="fl_time"><p class="arrow_ico"></p></div>
+					</a>
+				</div>
+			</div>
+
+		<% }%>
+	<% }%>
+</script>
+<!--<script src="../../js/jquery-1.8.3.min.js"></script>-->
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script src="../../js/friendletter/friend_list.js"></script>
+<script>
+//粉丝模块  关注按钮切换样式
+/*$(".main.gz_fans_visited .gz_btn").click(function(){
+	if($(this).hasClass("on")){
+		$(this).removeClass("on");
+	}else{
+		$(this).addClass("on");
+	}
+
+})*/
+</script>
+</body>
+</html>

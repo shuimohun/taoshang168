@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>红包</title>
+	<link rel="stylesheet" href="../css/goldegg/redbag.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+
+</head>
+<body style="margin-top:.8rem; background-color: #fff ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../images/goldegg/back11.png" alt=""></a>
+			<span>红包</span>
+			<a href="strategy.html"><img src="../images/goldegg/msg@2x.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<div class="redbag_info">
+		<div class="redbag_info_inner">
+			<div class="redbag_info_inner_left">
+				<div class="redbag_info_inner_left_img"><img src=" " alt=""></div>
+				<span></span>
+			</div>
+			<div class="redbag_info_inner_middle">
+				<span class="div_v"> </span>
+				<span class="progress"><img src="../images/goldegg/line.png" alt="" width=" "></span>
+				<span class="div_v u"> </span>
+				<u class="div_right">还差<i></i>经验值即可升级为V<span></span>等级会员</u>
+			</div>
+			<del> </del><b>平台红包</b>
+		</div>
+	</div>
+
+
+
+	<ul class="title1">
+		<li class="cur" nctype="unclaimed">未领取</li>
+		<li nctype="unused">未使用</li>
+		<li nctype="record">使用记录</li>
+		<li nctype="overdue">已过期</li>
+	</ul>
+
+
+
+	<ul class="redbag_top">
+		<li class="cur" nctype="default">默认排序</li>
+		<li nctype="count">领取量</li>
+		<li nctype="much">领取面额</li>
+		<li nctype="can">我能领取</li>
+	</ul>
+
+
+		<div class="tanchuang">
+			<div class="tanchuang_top">每个用户限领一张</div>
+			<div class="tanchuang_bottom">
+				<button class="ensure">确定</button>
+				<button class="delete">取消</button>
+			</div>
+		</div>
+		<div class="bg_tanchuang"></div>
+
+	<div class="redbag_contain"></div>
+
+		<script type="text/html" id="redPack">
+			<% if(redpacket.item) { %>
+			<% var items = redpacket.item %>
+			<% for(var i in items) { %>
+			<% if(items[i].state == 1) { %>
+			<div class="redbag_item">
+				<div class="item_left">
+					<span>平台红包</span><br>
+					<u>￥<%=items[i].redpacket_t_price %></u><br>
+					<i>够满<%=items[i].redpacket_t_orderlimit %>元使用</i>
+				</div>
+				<div class="item_right">
+					<span>全平台通用</span><br>
+					<u>使用期限:</u><br>
+					<i><%=items[i].redpacket_t_start_date %>-<%=items[i].redpacket_t_end_date %></i>
+				</div>
+				<img src="../images/goldegg/logo.png" alt="" class="logo">
+				<a href="../index.html"><img src="../images/goldegg/lijishiyong.png" alt="" class="use"></a>
+			</div>
+			<% }else if(items[i].state == 2 || items[i].state == 3){ %>
+			<div class="redbag_item2">
+				<div class="item_left">
+					<span>平台红包</span><br>
+					<u>￥<%=items[i].redpacket_t_price %></u><br>
+					<i>够满<%=items[i].redpacket_t_orderlimit %>元使用</i>
+				</div>
+				<div class="item_right">
+					<span>全平台通用</span><br>
+					<u>使用期限:</u><br>
+					<i><%=items[i].redpacket_t_start_date %>-<%=items[i].redpacket_t_end_date %></i>
+				</div>
+				<img src="../images/goldegg/logo.png" alt="" class="logo">
+				<% if(items[i].state == 2) { %>
+				<img src="../images/goldegg/yishiyong@3x.png" alt="" class="use">
+				<% }else{ %>
+				<img src="../images/goldegg/yiguoqi@3x.png" alt="" class="use">
+				<% } %>
+			</div>
+			<% }else if(items[i].state == 0) { %>
+			<div class="redbag_item">
+				<div class="item_left">
+					<span>平台红包</span><br>
+					<u>￥<%=items[i].redpacket_t_price %></u><br>
+					<i>够满<%=items[i].redpacket_t_orderlimit %>元使用</i>
+				</div>
+				<div class="item_right">
+					<span>全平台通用</span><br>
+					<u>使用期限:</u><br>
+					<i><%=items[i].redpacket_t_start_date %>-<%=items[i].redpacket_t_end_date %></i>
+				</div>
+				<img src="../images/goldegg/logo.png" alt="" class="logo">
+				<a href="javascript:void(0)" nctype="shuihuan" data-rtid="<%=items[i].redpacket_t_id %>"><img src="../images/goldegg/liji.png" alt="" class="use"></a>
+			</div>
+
+			<% } %>
+			<% } %>
+			<% } %>
+		</script>
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/swipe.js"></script>
+		<script type="text/javascript" src='../js/tmpl/goldegg/redbag.js'></script>
+		<script type="text/javascript" src="../js/redbag.js"></script>
+</body>
+</html>

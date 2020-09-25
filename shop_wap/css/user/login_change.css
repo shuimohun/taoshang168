@@ -1,0 +1,69 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:25%;
+}
+/***************头部部分结束**************************************/
+
+/**************修改登陆部分*******************/
+.login_change{
+	width:100%;
+	height:2.28rem;
+	border-top: .01rem solid #eeeeee;
+	margin-top: .2rem;
+}
+.login_change ul{
+	width:100%;
+	height:2.28rem;
+}
+.login_change ul li{
+	width:100%;
+	height:.76rem;
+	border-bottom: .01rem solid #eeeeee;
+}
+.login_change ul li span{
+	font-size: .26rem;
+	color:282828;
+	margin-left: .18rem;
+	line-height:.76rem;
+}
+.login_change ul li input{
+	font-size: .26rem;
+	color:#999;
+	margin-left:.1rem;
+	border:0 none;
+	height:.4rem;
+	width:4.2rem;
+	outline:none;
+}
+button{
+	width:5.8rem;
+	height:.7rem;
+	background-color: #cf3b3b;
+	color:#fff;
+	border-radius: .5rem;
+	border:0 none;
+	outline: none;
+	font-size: .28rem;
+	margin:2.26rem 0 0 .3rem;
+}
+/**************修改登陆部分*******************/

@@ -1,0 +1,343 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+	border-bottom: .01rem solid #e7e7e7;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:38%;
+}
+/***************头部部分结束**************************************/
+
+/***********************头像部分*******************************/
+.head{
+	width:100%;
+	height:.88rem;
+	background-color: #fff;
+	border-bottom: .01rem solid #e7e7e7;
+}
+.head span{
+	line-height: .88rem;
+	font-size:.26rem;
+	margin-left: .18rem;
+	color:#343434;
+	float: left;
+}
+/*.head img{*/
+	/*float: right;*/
+	/*margin-right:.18rem;*/
+	/*width:.7rem;*/
+	/*height:.7rem;*/
+	/*margin-top:.1rem;*/
+/*}*/
+.head img.forword{
+	width:.17rem;
+	height:.17rem;
+	margin-top:.35rem;
+	float: right;
+	margin-right:.45rem;
+}
+/***********************头像部分*******************************/
+
+/*******************设置部分***********************/
+.setup{
+	width:6.23rem;
+	height:4.5rem;
+	margin-left: .17rem;
+}
+.setup ul{
+	width:100%;
+	height:100%;
+	background-color: #fff;
+	font-size: 0;/*清除默认边距*/
+}
+.setup ul li{
+	width:100%;
+	height:.75rem;
+	border-bottom: .01rem solid #e7e7e7;
+}
+.setup ul li label{
+	font-size:.26rem;
+	line-height:.75rem;
+}
+.setup ul li div{
+	width:5.2rem;
+	height:100%;
+	display: inline-block;
+	font-size: .22rem;
+	text-align: right;
+	vertical-align:top;
+	color:#a9a9a9;
+	padding-top:.25rem;
+}
+.setup ul li img{
+	width:.17rem;
+	height:.17rem;
+	margin-top:.33rem;
+	margin-right:.18rem;
+	float: right;
+}
+/*******************设置部分***********************/
+
+/******************更新部分************************/
+.update{
+	width:6.23rem;
+	height:1.56rem;
+	margin-left: .17rem;
+	margin-top: .45rem;
+	background-color: #fff;
+	border-top: .01rem solid #e7e7e7;	
+}
+.update div{
+	width:100%;
+	height:.78rem;
+	border-bottom: .01rem solid #e7e7e7;
+}
+.update div span{
+	font-size:.26rem;
+	line-height:.78rem;
+}
+.update img{
+	float: right;
+	margin-right:.18rem;
+	margin-top: .3rem;
+	width:.17rem;
+	height:.17rem;
+}
+.update i{
+	font-style:normal;
+	font-size: .22rem;
+	color:#a9a9a9;
+	float: right;
+	margin-top: .24rem;
+	margin-right: .15rem;
+}
+/******************更新部分************************/
+
+/***********footer部分*******************/
+footer{
+	width:100%;
+	height:.75rem;
+	line-height:.75rem;
+	background-color: #cf3b3b;
+	text-align: center;
+	font-size: .28rem;
+	color:#fff;
+	position:fixed;
+	bottom: 0;
+}
+/***********footer部分*******************/
+/****************清除缓存弹窗部分*********************/
+*{
+	margin:0;
+	padding:0;
+}
+.win-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.win-top{
+	width:5rem;
+	height:2.5rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-2.85rem;  */
+	left:50%;
+	margin-left:-2.5rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.win-top b{
+	text-align: center;
+	display:block;
+	font-size: .28rem;
+	margin-top: .3rem;
+}
+.win-top u{
+	text-align: center;
+	text-decoration:none;
+	font-size: .26rem;
+	color:#666;
+	display:block;
+	margin-top: .23rem;
+}
+.win-top #cache_cancel{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:.01rem solid #666;
+	background-color: #fff;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#505050;
+	margin:.42rem 0 0 7%;
+}
+.win-top #cache_confirm{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:0 none;
+	background-color: #e45050;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#fff;
+	margin:.42rem 0 0 8%;
+}
+
+/****************清除缓存弹窗部分*********************/
+
+/*******************注销登陆弹窗部分**************************/
+*{
+	margin:0;
+	padding:0;
+}
+.login-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.login-top{
+	width:5rem;
+	height:2.5rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-2.85rem;  */
+	left:50%;
+	margin-left:-2.5rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.login-top b{
+	text-align: center;
+	display:block;
+	font-size: .28rem;
+	margin-top: .3rem;
+}
+.login-top u{
+	text-align: center;
+	text-decoration:none;
+	font-size: .26rem;
+	color:#666;
+	display:block;
+	margin-top: .23rem;
+}
+.login-top button#login_cancel{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:.01rem solid #666;
+	background-color: #fff;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#505050;
+	margin:.42rem 0 0 7%;
+}
+.login-top button#login_confirm{
+	display:inline-block;
+	width:1.9rem;
+	height:.52rem;
+	border:0 none;
+	background-color: #e45050;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#fff;
+	margin:.42rem 0 0 8%;
+}
+/*******************注销登陆弹窗部分**************************/
+
+/***************更改头像弹窗部分************************/
+*{
+	margin:0;
+	padding:0;
+}
+.head-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.head-top{
+	width:5.8rem;
+	height:2.75rem;
+	position:fixed;
+	bottom:0;
+	/* margin-top:-2.85rem;  */
+	left:35.5%;
+	margin-left:-2rem;
+	display:none;
+	z-index:101;
+	border-radius:.1rem .01rem 0 0;
+}
+.head-top .upload{
+	width:100%;
+	height:1.72rem;
+	background-color: #fff;
+	border-radius:.1rem;
+}
+.head-top .upload div{
+	width:100%;
+	height:50%;
+	font-size:.28rem;
+	text-align: center;
+	line-height:.86rem;
+}
+.head-top .upload div.photo{
+	border-bottom:.01rem solid #e8e8e8;
+}
+.head-top .photo_cancel{
+	width:100%;
+	height:.86rem;
+	background-color: #fff;
+	margin-top:.1rem;
+	font-size:.28rem;
+	text-align: center;
+	line-height:.86rem;
+	border-radius:.1rem;
+}
+/***************更改头像弹窗部分************************/

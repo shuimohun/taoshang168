@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>惠抢购</title>
+    <link rel="stylesheet" href="../css/andone/base.css">
+    <link rel="stylesheet" href="../css/scarebuy.css">
+    <!--右上角弹框css引用-->
+    <link rel="stylesheet" href="../css/common_alert.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/swipe.js'></script>
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+    <!--右上角弹框js引用-->
+    <script type="text/javascript" src="../js/common_alert.js"></script>
+</head>
+<body style="background-color:#f2f2f2;margin-top:1.55rem;">
+<!--头部部分-->
+<header class="person">
+    <div class="title">
+        <a href="javascript:history.go(-1)"><img src="../images/scarebuy_img/back.png" alt=""></a>
+        <span>惠抢购</span>
+        <a><img src="../images/scarebuy_img/share.png" alt="" onclick="common_index_alert(this)"  class="info" style="margin-left:30%"></a>
+    </div>
+    <!--滚动导航栏部分-->
+    <div class="find_nav">
+        <div class="find_nav_left">
+            <style>
+                #topNav {
+                    width: 100%;
+                    overflow: hidden;
+                    font-size: 0.4375rem;
+                    border-bottom:1px solid #f8f8f8;
+                    height:.77rem;
+                }
+                #topNav .swiper-slide {
+                    padding: 0;
+                    width:1.2rem;
+                    text-align:center;
+                    line-height: .77rem;
+                    height:.77rem;
+                }
+                #topNav .swiper-slide span{
+                    transition:all .3s ease;
+                    display:block;
+                    line-height: .77rem;
+                    height:.77rem;
+                    font-size: .26rem;
+                }
+                #topNav .active span{
+                    transform:scale(1.1);
+                    color:#FF2D2D;
+                    line-height: .77rem;
+                    width:1.2rem;
+                    height:.77rem;
+                    font-size: .26rem;
+                }
+            </style>
+            <div id="topNav" class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+            </div>
+        </div>
+        <div class="nav_header_img an">
+            <img src="../images/andone_img/icon_an.png" alt="">
+        </div>
+    </div>
+    <!--滚动导航栏部分-->
+</header>
+<!--头部部分-->
+<div class="info_alert">
+
+    <img src="../images/user_img/choose_gray@3x.png" alt="">
+
+</div>
+<div class="slider_list" >
+    <div class="swipe-wrap" >
+    </div>
+</div>
+<!--主图轮播图-->
+
+<!--title-->
+<div class="sale_title">
+    <img src="../images/scarebuy_img/img_flash@3x.png" alt="">
+    <span>限时限量</span>
+    <span>疯狂抢购</span>
+</div>
+<!--title-->
+
+<div class="recommend">
+</div>
+
+<div class="goods_list"></div>
+
+<ul class="footer">
+    <li>
+        <img src="../images/scarebuy_img/limit_tab_btn1@3x.png" alt=""><br>
+        <span>抢购中</span>
+    </li>
+    <li>
+        <img src="../images/scarebuy_img/limit_tab_btn2@3x.png" alt=""><br>
+        <span>即将售罄</span>
+    </li>
+    <li>
+        <img src="../images/scarebuy_img/limit_tab_btn3@3x.png" alt=""><br>
+        <span>已抢光</span>
+    </li>
+</ul>
+
+<div style="background-color:#f2f2f2;width:100%;height:1rem"></div>
+
+<!--导航栏-->
+<script type="text/html" id="nav">
+    <div class="swiper-slide active" data-id="0"><span>精选</span></div>
+    <% for (var i in physical) { %>
+    <div class="swiper-slide" data-id="<%=physical[i].scarebuy_cat_id%>"><span><%=physical[i].scarebuy_cat_name%></span></div>
+    <% } %>
+</script>
+<!--轮播图-->
+<script type="text/html" id="banner">
+    <% for (var i in banner.items) { %>
+    <div class="item" >
+        <a href="<%=banner.items[i].wap_url%>">
+            <img src="<%=banner.items[i].pic_url%>" alt="">
+        </a>
+    </div>
+    <% } %>
+</script>
+<!--推荐商品-->
+<script type="text/html" id="recommend">
+    <%if(items.length > 0){%>
+    <div class="lb_title">
+        <span class="fnTimeCountDown" data-end="<%=time_over %>">距离结束&nbsp;&nbsp;<u id="timeh" class="hour">00</u><i>&nbsp;:&nbsp;</i><u id="timei" class="mini">00</u><i>&nbsp;:&nbsp;</i><u id="times" class="sec">00</u></span>
+    </div>
+    <div class="lb2">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <% for(var i in items){%>
+                <div class="swiper-slide">
+                    <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><img src="<%=items[i].goods_image%>" alt="" class="main_img"></a>
+                    <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><span class="text"><%=items[i].goods_name%></span></a>
+                    <span class="oldprice">￥<%=items[i].scarebuy_price%><span class="newprice">￥<%=items[i].goods_price%></span></span><br>
+                    <div class="sale_down">
+                        <div class="sale_down_img"><img src="../images/scarebuy_img/reduce_price_btn@3x.png" alt=""></div>
+                        <span>直降<%=items[i].reduce%>元</span>
+                    </div>
+                    <div class="sale_down sheng">
+                        <div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+                        <span>分享立省<%=items[i].goods_share_price%>元</span>
+                    </div>
+                    <%if(items[i].goods_is_promotion){%>
+                    <div class="sale_down zhuan">
+                        <div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+                        <span>再赚<%=items[i].goods_promotion_price%>元</span>
+                    </div>
+                    <%}%>
+                    <div class="timebox">
+                        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><div class="timebox_txt">立即去抢</div></a>
+                        <div class="timebox_date">
+                            <div class="timebox_date_countdown">
+                                <span class="fnTimeCountDown" data-end="<%=items[i].scarebuy_endtime %>"><i class="hour">00</i><i>&nbsp;:&nbsp;</i><i class="mini">00</i><i>&nbsp;:&nbsp;</i><i class="sec">00</i></span>
+                            </div>
+                            <div class="timebox_progress"><img src="../images/scarebuy_img/rectangle@3x.png" width="<%=items[i].sale_rate%>"><i><%=items[i].sale_rate%></i></div>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</script>
+<!--商品列表-->
+<script type="text/html" id="goods_list">
+    <% for (var i in items) { %>
+    <div class="sale <%if(items[i].scarebuy_percent == 100){%>over<%}%>">
+        <span class="fnTimeCountDown" data-end="<%=items[i].scarebuy_endtime %>">
+            距离结束&nbsp;&nbsp;
+            <u class="hour">00</u><i>&nbsp;:</i>
+            <u class="mini">00</u><i>&nbsp;:</i>
+            <u class="sec">00</u>
+        </span>
+        <div class="sale_img">
+            <a href="product_detail.html?goods_id=<%=items[i].goods_id%>">
+                <img src="<%=items[i].goods_image%>" alt="">
+            </a>
+            <%if(items[i].scarebuy_percent == 100){%>
+            <div class="saleover_cur">抢光了</div>
+            <%}%>
+        </div>
+        <div class="sale_info">
+            <h2><%=items[i].goods_name%></h2>
+            <span class="limit"><%=items[i].scarebuy_remark%></span><br>
+            <u>￥<%=items[i].scarebuy_price%></u><del>￥<%=items[i].goods_price%></del>
+            <div class="sale_down">
+                <div class="sale_down_img"><img src="../images/scarebuy_img/reduce_price_btn@3x.png" alt=""></div>
+                <span>直降<%=items[i].reduce%>元</span>
+            </div>
+            <div class="sale_down">
+                <div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+                <span>分享立省<%=items[i].goods_share_price%>元</span>
+            </div>
+            <%if(items[i].goods_is_promotion){%>
+            <div class="sale_down">
+                <div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+                <span>再赚<%=items[i].goods_promotion_price%>元</span>
+            </div>
+            <%}%>
+            <div class="progress">
+                <%if(items[i].scarebuy_percent != 100){%>
+                <img src="../images/scarebuy_img/rectangle@3x.png" alt="" width = '<%=items[i].sale_rate%>'>
+                <%}%>
+            </div>
+        </div>
+
+        <%if(items[i].scarebuy_percent == 100){%>
+        <input type="button" value="全部售罄">
+        <%}else{%>
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><input type="button" value="立即抢购"></a>
+        <u class="qiang">已抢<%=items[i].scarebuy_buy_quantity%>件</u>
+        <%}%>
+    </div>
+    <% } %>
+</script>
+
+<script type="text/javascript" src='../js/scarebuy.js'></script>
+</body>
+</html>

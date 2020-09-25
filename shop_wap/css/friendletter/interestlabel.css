@@ -1,0 +1,26 @@
+/*兴趣标签主内容区 start*/
+body{ background: #fff;}
+.main{ width: 100%; margin-bottom: 1.5rem; margin-top: 0.75rem;}
+.fl_item{ width: 100%; }
+.fl_item:first-child{border-top: 1px solid #ededed; }
+.fl_item_con{width:96%; margin:0 auto; padding: 0.2rem 0; border-bottom: 1px solid #ededed;}
+.fl_tx{ float: left; }
+.fl_tx img{ width:1.2rem;height: 1.2rem; border-radius: 0.1rem;}
+.fl_infor{float: left; width: 56%; margin-left: 2%; margin-top: 0.1rem;}
+.fl_infor p{ width: 100%;}
+.fl_infor .user_name{ font-size: 0.15rem; color: #333; white-space: nowrap;overflow: hidden;  text-overflow: ellipsis; }
+.fl_infor .chat{ font-size: 0.17rem; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ad_btn{ float: right; background: #ff3300; color: #fff; font-size: 0.17rem; padding: 0.05rem 0.1rem; border-radius: 0.2rem; margin-top: 0.4rem;}
+.ad_btn.on{ background: #df2029;}
+
+/*兴趣标签主内容区 end*/
+
+
+
+
+
+
+
+
+
+

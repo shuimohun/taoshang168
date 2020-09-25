@@ -1,0 +1,106 @@
+/*通用样式*/
+body {
+    font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;
+    color:#333;
+    padding:0px;
+    margin:0 auto;
+    -webkit-font-smoothing:antialiased;          /*为了使safari 浏览器中的字体 和 chrome 表现一致*/
+
+}
+
+img{vertical-align:middle;}
+a{
+    text-decoration: none;
+    color:#333333;
+    outline: none;
+    
+}
+
+input {border:none;}
+.lf   {float:left;}
+.rt  {float:right;}
+.clear  {clear:both;}
+.orflow{overflow:hidden;}
+.icon{display:inline-block;}
+.text1{overflow:hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;white-space: nowrap;}
+.text2{overflow:hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2}
+/*.container{width:1200px;margin:0 auto;}*/
+
+/*排行榜  样式 start*/
+    .ratings-result{position:absolute;left:0;top:15px;z-index: 2;}
+    .ratings-result .flag-left{position: absolute;left:-6px;top:0;width:36px;height:22px;line-height: 22px;border:1px solid #98a6b8;border-width:1px 0;font-size: 14px;color:#fff;background:#98a6b8;text-align: center;}
+    .ratings-result .flag-left i{color:#fff;font-weight: 500;}
+    .ratings-result .flag-left:after{position: absolute;content: "";left:0;top:23px;width:0;height:0;border:3px solid;border-color:#505c6b #505c6b transparent transparent; }
+    .ratings-result .flag-dec{font-size:12px;background-color:#fff;height:22px;line-height: 22px;background:#fff;padding:0 5px;margin-left:30px;border:1px solid #98a6b8;border-width:1px 1px 1px 0;border-radius: 0 24px 24px 0;-webkit-border-radius: 0 24px 24px 0;-o-border-radius: 0 24px 24px 0;-ms-border-radius: 0 24px 24px 0;}
+
+    .ratings-result.flag-1 .flag-left{background-color:#c51e1e;border-color:#c51e1e;}
+    .ratings-result.flag-1 .flag-left:after{border-color:#c51e1e #c51e1e transparent transparent;}
+    .ratings-result.flag-1 .flag-dec{color:#c51e1e;border-color:#c51e1e;}
+    .ratings-result.flag-2 .flag-left{background-color:#fe6c3d;border-color:#fe6c3d;}
+    .ratings-result.flag-2 .flag-left:after{border-color:#fe6c3d #fe6c3d transparent transparent;}
+    .ratings-result.flag-2 .flag-dec{color:#fe6c3d;border-color:#fe6c3d;}
+    .ratings-result.flag-3 .flag-left{background-color:#feb33d;border-color:#feb33d;}
+    .ratings-result.flag-3 .flag-left:after{border-color:#feb33d #feb33d transparent transparent;}
+    .ratings-result.flag-3 .flag-dec{color:#feb33d;border-color:#feb33d;}
+/*排行榜  样式 end*/
+.toolbar-wrap{transform: translateZ(0) !important;}
+.bg-container{min-width:1200px;background:url("https://static.360buyimg.com/mtd/pc/o2_pc_top/2.0.0/index2.0/images/bg.png") no-repeat #f6f6f6;}
+.main .sign{margin-top:6px;height:auto;line-height: 8px;}
+
+
+.share-wrap{margin:6px 0;}
+.share-wrap .share-sub{background-color:#fff;border:1px solid #c51e1e;font-size: 12px;color:#c51e1e;}
+.share-wrap .share-sub .price{background-color:#c51e1e;color:#fff !important;}
+/*主体   start*/
+.main{width:1200px;margin:0 auto;}
+.main .sign span{display: inline-block;padding:5px;border:1px solid #c51e1e;color:#c51e1e;}   /*自营*/
+.main .sign span.sign2{border:1px solid #000;color:#000;}      /* 90天最低  &&  赠  && 上新*/
+.main .sign-sale{color:#fff !important;background-color:#c51e1e;}    /*促销*/
+.main .sign3{color:#3e960f !important;border:1px solid #3e960f !important;}  /*包邮*/
+.img-show img{width:100%;height:100%;}
+
+
+
+
+/*此处    */
+    .container{width:1200px;margin: 0 auto;}
+    /*面包屑    */
+        .crumb{font-size: 12px;height:32px;line-height: 32px;}
+    /*面包屑    end*/
+
+        .main .titl{position:relative;text-align: center;margin-bottom:28px;}
+        .main .titl h1{display:inline-block;font-size: 28px;font-weight: 500;color:#fff;border-radius: 20px;-webkit-border-radius: 20px;-o-border-radius: 20px;-ms-border-radius: 20px;padding:5px 20px;background-color:#c51e1e;}
+        .main .titl .freshen{position:absolute;bottom:-25px;right:12px;font-size: 12px;color: #666;}        
+
+    /*热搜榜   start*/
+    .search-type{position:absolute;top:0;left:0;width:185px;height:266px;background:url(../images/hot-search-bg4.png) no-repeat;}
+    .search-type.search-2{background:url(../images/hot-search-bg2.png) no-repeat;}
+    .search-type.search-3{background:url(../images/hot-search-bg3.png) no-repeat;}
+    .search-type.search-1{background:url(../images/hot-search-bg1.png) no-repeat;}
+
+     /*.part-tab-content{background-color:#fff;}*/
+     .bg-container{padding-bottom:20px;}
+     .share-wrap .share-sub span{float: left;}
+
+      .part-tab-content .part-tab-list .shadow:after{content:"";height:0;visibility: hidden;display: block;clear: both;}
+     .part-tab-content .part-tab-list .shadow{padding:20px 0px;position: relative;padding-left: 185px;background-color:#fff;margin:15px 0;}
+     .search-type .search-type-img-robot{position:relative;top:70px;margin:0 auto;width:149px;height:119px;background: url(../images/robot.png) no-repeat;}
+     .search-type .search-pepole{position:relative;bottom:-74px;text-align:center;margin: 0 auto;height:34px;line-height: 34px;width:110px;}
+     .part-tab-content .part-tab-list .shadow p.search-th{position:absolute;top:83px;left:20px;width:110px;height:36px;line-height:36px;color:#fff;font-size: 16px;text-align: center;}
+     .part-tab-content .part-tab-list .img-show-wrap .img-show-sub{position:relative;text-align:center;width:200px;padding:0 16px;border-right:1px solid #eee;}
+      .part-tab-content .part-tab-list .img-show-wrap .img-show-sub .img-show{width:160px;height:160px;position: absolute;left:50%;margin-left:-80px;top:0;transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
+     .part-tab-content .part-tab-list .img-show-wrap .img-show-sub:hover .img-show{top:-6px;}
+     .part-tab-content .part-tab-list .img-show-wrap .img-show-sub .img-else{margin-top:160px;}
+     .part-tab-content .part-tab-list .img-show-wrap .img-show-sub .img-else .text-description p{height:20px;line-height: 20px;color:#666;font-size:12px;}
+     .part-tab-content .part-tab-list .img-show-wrap .img-show-sub .img-else .price{color:#c51e1e;font-size:12px;}
+     .part-tab-content .part-tab-list .look-more{position:relative;right:19px;top:30px;width:30px;word-wrap:break-word;padding:18px 5px;color:#fff;font-size:20px;text-align:center;background-color:#c51e1e;border-radius: 12px;-webkit-border-radius: 12px;-ms-border-radius: 12px;-o-border-radius: 12px;-moz-border-radius: 12px;}
+    /*热搜榜   end*/
+
+
+
+
+
+/*主体   end*/
+
+
+

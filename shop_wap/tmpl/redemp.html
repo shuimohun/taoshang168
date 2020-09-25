@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>加购商品</title>
+	<link rel="stylesheet" href="../css/activity/redemp.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+</head>
+<body style="background-color:#f5f5f5;margin-top:.8rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="andone.html"><img src="../images/activity/back.png" alt=""></a>
+			<span>加购商品</span>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--内容-->
+	<div class="goods"></div>
+	<!--内容-->
+	<script type="text/html" id="redemp_goods">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="contain_wrap">
+			<div class="contain">
+				<a href="product_detail.html?goods_id=<%=items[i].goods_id %>">
+				<div class="contain_middle">
+
+					<div class="contain_img"><img src="<%=items[i].goods_image %>" alt=""></div>
+					<div class="contain_middle_right">
+						<span><%=items[i].goods_name %></span><br>
+						<del>￥<%=items[i].goods_price %></del><i>￥<%=items[i].redemp_price %></i>
+					</div>
+
+				</div>
+			</a>
+			</div>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/redemp.js"></script>
+</body>
+</html>

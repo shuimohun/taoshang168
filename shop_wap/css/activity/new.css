@@ -1,0 +1,129 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#333;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:26%;
+}
+.person .title a img.info{
+	margin-left:24%;
+}
+/***************头部部分结束**************************************/
+.main{
+	width:100%;
+	height:2.6rem;
+}
+.main img{
+	width:100%;
+	height:100%;
+}
+
+.three{
+    width:100%;
+    height:2.2rem;
+    font-size: 0;
+    background-color:#fff;
+    border-bottom: .03rem solid #c60000;
+}
+.three li{
+    width:33.33333%;
+    height:100%;
+    display:inline-block;
+    text-align: center;
+    line-height: 2.2rem;
+    position:relative;
+}
+.three li .li_inner{
+ 	width:1.07rem;
+ 	height:1.07rem;
+ 	border-radius: 50%; 
+ 	margin-left: 25%;
+ 	margin-top: .35rem;           
+}
+.three li .li_inner img{
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.three li span{
+	font-size: .2rem;
+	color:#333;
+	position:absolute;
+	top:30%;		
+	left:32%;
+}
+
+.item{
+	width:5.9rem;
+	height:3.8rem;
+	margin:0 auto;
+	background-color:#fff;
+	margin-top: .44rem;
+	position:relative;
+}
+.item span{
+	display:inline-block;
+	font-size: .24rem;
+	color:#333;
+	margin-top: .63rem;
+	margin-left: .34rem;
+}
+.item i{
+	font-size: .34rem;
+	font-style:normal;
+	color:#bf0000;
+	margin-left: .34rem;
+	display:inline-block;
+	margin-top: .16rem;
+}
+.item u{
+	text-decoration: none;
+	font-size: .22rem;
+	color:#999;
+	display:inline-block;
+	margin-left: .34rem;
+	margin-top: .5rem;
+}
+.item u u{
+	color:#bf0000;
+	margin-left: 0;
+}
+.item b{
+	font-weight: normal;
+	color:#999;
+	font-size: .22rem;
+	display:inline-block;
+	margin-left: .34rem;
+	margin-top: .2rem;
+}
+.item .buy{
+	width:1.12rem;
+	height:.38rem;
+	position:absolute;
+	left:36%;
+	bottom: 13%;
+}
+.item .main_img{
+	width:2.2rem;
+	height:2.2rem;
+	position:absolute;
+	top:20%;
+	right: 5%;
+}

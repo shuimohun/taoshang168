@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>分享立赚</title>
+	<link rel="stylesheet" href="../../css/money/share_item.css">
+	<link rel="stylesheet" href="../../css/money/base.css">
+	<script type="text/javascript" src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+</head>
+<body style="background-color:#fff;margin-top:.8rem;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/money/back.png" alt=""></a>
+			<span>分享立赚</span>
+			<a href="#"><img src="../../images/money/dialogbox.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<div class="content"></div>
+	<script type="text/html" id="content">
+        <div class="contain_wrap">
+            <div class="contain">
+            <div class="contain_top">
+            <span>分享时间:<%=share_date_str %></span>
+        <a href="">还可减免：<%=is_share_limit %>件</a>
+        </div>
+        <div class="contain_middle">
+            <div class="contain_img"><img src="<%=goods_base.goods_image %>" alt=""></div>
+            <div class="contain_middle_right">
+            <span><%=goods_base.goods_name %></span>
+            <p>商品评分：
+				<% for(var i=0;i<goods_base.goods_evaluation_good_star;i++){ %>
+				<img src="../../images/money/star.jpg" alt="">
+				<% } %>
+			</p><br>
+            <div class="share">分享立赚￥<%=price %></div><br>
+            <u>减免价:<i>￥<%=true_money %></i> <em>￥<%=goods_base.goods_price %></em></u><br><button onclick="buy(this)" data-id="<%=goods_base.goods_id %>">立即购买</button>
+        </div>
+        </div>
+        <div class="contain_bottom">
+			<% if(share_end_date){ %>
+            <span class="time" data-end="<%=share_end_date %>">下轮分享购买&nbsp;&nbsp;
+				<u class="hour">00</u>
+				<i>&nbsp;:&nbsp;</i>
+				<u class="mini">00</u>
+				<i>&nbsp;:&nbsp;</i>
+				<u class="sec">00</u>
+			</span>
+			<% } %>
+            </div>
+            </div>
+            </div>
+            <table>
+            <tr class="table_title">
+             	<td><font color="#333">社交类型</font></td>
+            	<td align="center"><font color="#333">分享金/点击</font></td>
+            	<td align="center"><font color="#333">被点击次数</font></td>
+            	<td align="center"><font color="#333">分享金合计</font></td>
+            </tr>
+            <tr>
+            	<td>微信好友<img src="../../images/money/nav_share@2x.png" alt=""></td>
+            	<td align="center">￥<%=promotion_unit_price %></td>
+        		<td align="center"><%=weixin_count.totalsize %>次</td>
+        		<td align="center">￥<%=weixin_count.totalsize * promotion_unit_price %></td>
+        	</tr>
+        	<tr>
+        		<td>微信朋友圈<img src="../../images/money/nav_share@2x.png" alt=""></td>
+           	 	<td align="center">￥<%=promotion_unit_price %></td>
+        		<td align="center"><%=weixin_timeline_count.totalsize %>次</td>
+        		<td align="center">￥<%=weixin_timeline_count.totalsize * promotion_unit_price %></td>
+        	</tr>
+       	    <tr>
+        		<td>QQ好友<img src="../../images/money/nav_share@2x.png" alt=""></td>
+            	<td align="center">￥<%=promotion_unit_price %></td>
+        		<td align="center"><%=sqq_count.totalsize %>次</td>
+        		<td align="center">￥<%=sqq_count.totalsize * promotion_unit_price %></td>
+        	</tr>
+        <tr>
+        	<td>QQ空间<img src="../../images/money/nav_share@2x.png" alt=""></td>
+            <td align="center">￥<%=promotion_unit_price %></td>
+        	<td align="center"><%=qzone_count.totalsize %>次</td>
+        	<td align="center">￥<%=qzone_count.totalsize * promotion_unit_price %></td>
+        </tr>
+        <tr>
+        	<td>新浪微博<img src="../../images/money/nav_share@2x.png" alt=""></td>
+            <td align="center">￥<%=promotion_unit_price %></td>
+        	<td align="center"><%=tsina_count.totalsize %>次</td>
+        	<td align="center">￥<%=tsina_count.totalsize * promotion_unit_price %></td>
+        </tr>
+        <tr>
+        	<td>合计</td>
+        	<td></td>
+        	<td align="center"><%=promotion_click_count %>次</td>
+        	<td align="center"><%=total_price %>元</td>
+        </tr>
+        </table>
+
+			<% if(order_status_str){ %>
+            <span class="status"><%=order_status_str %></span><span class="xiaoji">
+			<% }else{ %>
+			<span class="status">订单状态：没有订单号</span><span class="xiaoji">
+			<% } %>
+			<span style="color:#999;">小计：</span><%=total_price %>元</span><br>
+
+        <span class="status" style="margin-top:.2rem;color:#999;margin-bottom:.2rem;">分享编号:<%=share_num %></span>
+
+	</script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.js"></script>
+	<script type="text/javascript" src="../../js/template.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/plugins/jquery.timeCountDown.js"></script>
+	<script type="text/javascript" src="../../js/share_item.js"></script>
+</body>
+</html>

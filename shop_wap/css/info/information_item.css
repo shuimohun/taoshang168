@@ -1,0 +1,73 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #fff;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#333;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+.list{
+    width:100%;
+    height:.57rem;
+    background-color:#f2f2f2;
+    padding-left: .2rem;
+}
+.list a{
+    display:inline-block;
+    width:1rem;
+    height:100%;
+    line-height:.57rem;
+    color:#808080;
+    font-size: .2rem;
+}
+.item{
+    width:100%;
+    height:1.4rem;
+    border-bottom:.01rem solid #eee;
+    background-color:#fff;
+}
+.item .contain_top{
+    width:100%;
+    height:1.4rem;
+    border-bottom: .01rem solid #eee;
+    position:relative;
+    padding-top: .3rem;
+}
+.item .contain_top .img{
+    display:inline-block;
+    font-size: .2rem;
+    color:#333;
+    margin-left: .15rem;
+}
+.item .contain_top .img img{
+    width:.03rem;
+    height:.2rem;
+    vertical-align:bottom;
+}
+.item .contain_top div{
+    display:inline-block;
+}

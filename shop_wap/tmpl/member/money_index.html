@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="telephone=no" name="format-detection" />
+  <title>财付宝</title>
+  <link rel="stylesheet" href="../../css/money/money_index.css">
+  <link rel="stylesheet" href="../../css/money/base.css">
+  <script src="../../js/tmpl/money/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../../js/tmpl/money/Chart.js'></script>
+</head>
+<body>
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="./member.html"><img src="../../images/money/back.png" alt=""></a>
+      <span>财付宝</span>
+      <a href="#"><img src="../../images/money/info.png" alt=""  class="info"></a>
+    </div>
+  </header>
+  <!--头部部分-->
+
+  <div class='bg'>
+    <div class='head'><img src="../../images/money/avatar2.png" alt=""></div><br>
+    <span class='welcome'>欢迎您，<span></span></span>
+    <u>今日立赚： <span id="today_total"></span></u>
+    <!--<i>今日私房钱： <span>1000</span></i>-->
+    <b>汇省钱： <span id="share_money"></span></b>
+  </div>
+
+  <div class='statistical'>
+
+    <div class='login'>
+      <p><img src="../../images/money/cellphone@2x.png" alt="">手机号码</p>
+      <span id="phone"></span>
+    </div>
+    <div class='login'>
+      <p><img src="../../images/money/day@2x.png" alt="">上次登陆时间</p>
+      <span id="times"></span>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <p class='zichan'>账户总资产：</p>
+    <h1></h1><br>
+    <u id="btn"><img src="../../images/money/eye_1@3x.png" alt=""> 余额可见</u>
+
+
+    <del class='yue'><span></span> &nbsp;&nbsp;账户余额：￥<m id='M_yue'></m></del>
+    <del class='ka'><span></span> &nbsp;&nbsp;卡余额：￥<m id='M_ka'></m></del>
+    <del class='dongjie'><span></span> &nbsp;&nbsp;冻结资金：￥<m id='M_dongjie'></m></del>
+    <del class='fenxiang'><span></span> &nbsp;&nbsp;冻结分享金：￥<m id='M_fenxiang'></m></del>
+    <!--<del class='taojin'><span></span> &nbsp;&nbsp;冻结淘金：￥<m id='M_taojin'>0.00</m></del>-->
+  </div>
+
+  <ul class='pay'>
+    <a href="./money_index.html">
+    <li>
+      <img src="../../images/money/home_home_pay@2x.png" alt=""><br>
+      <span>支付首页</span>
+    </li>
+    </a>
+
+    <a href="./recharge.html">
+    <li>
+      <img src="../../images/money/home_recharge@2x.png" alt=""><br>
+      <span>账户充值</span>
+    </li>
+    </a>
+
+    <a href="share.html">
+    <li>
+      <img src="../../images/money/home_share_earn@2x.png" alt=""><br>
+      <span>分享立赚</span>
+    </li>
+    </a>
+
+    <a href="./safety.html">
+    <li>
+      <img src="../../images/money/home_account_sec@2x.png" alt=""><br>
+      <span>账户安全</span>
+    </li>
+    </a>
+
+
+    <li id="transfer">
+      <img src="../../images/money/home_transfer@2x.png" alt=""><br>
+      <span>提现转账</span>
+    </li>
+
+
+    <a href="#">
+    <li>
+      <img src="../../images/money/home_tabbar@2x.png" alt=""><br>
+      <span>私房钱明细</span>
+    </li>
+    </a>
+
+    <a href="./deal.html">
+    <li>
+      <img src="../../images/money/home_transaction@2x.png" alt=""><br>
+      <span>交易查询</span>
+    </li>
+    </a>
+
+
+    <li id="withdraw">
+      <img src="../../images/money/home_cash@2x.png" alt=""><br>
+      <span>送福免单</span>
+    </li>
+
+    
+    <a href="pay_savemoney.html">
+    <li>
+      <img src="../../images/money/home_save_money@2x.png" alt=""><br>
+      <span>汇省钱</span>
+    </li>
+    </a>
+  </ul>
+
+  <script type="text/javascript" src="../../js/zepto.js"></script>
+  <script type="text/javascript" src="../../js/config.php"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/swipe.js"></script>
+  <script type="text/javascript" src="../../js/money_index.js"></script>
+</body>
+</html>

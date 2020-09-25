@@ -1,0 +1,131 @@
+/* 视频播放页面*/
+.foot,.footer,.more_win,.mask{ z-index: 1000;}
+html,body{ margin: 0; width: 100%; height: 100%;}
+.footer{ border-top: 0; background: none; }
+.foot_bg{width: 100%; background: rgba(0,0,0,0.6); position: absolute; left: 0; top: 0; z-index: -1}
+.footer a.foot_item span{ color: #fff;}
+.footer a.foot_item .foot_icon.index{ background: url("../../tmpl/img/icon/index2.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item .foot_icon.hot_tv{ background: url("../../tmpl/img/icon/hottv2.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.fabu{ background: url("../../tmpl/img/icon/fabu2.png") no-repeat; background-size: 100% ; }
+.footer a.foot_item .foot_icon.message{ background: url("../../tmpl/img/icon/youxin2.png") no-repeat; background-size: 100% ;  }
+.footer a.foot_item .foot_icon.more{ background: url("../../tmpl/img/icon/more2.png") no-repeat; background-size: 100% ; }
+.video_wrapper{
+    width: 100%; height: 100%!important;
+    overflow: hidden;
+}
+.video_box{
+    width: 100% ;height: 100%!important;
+}
+.video_box .is_video{
+   width: 100% ;height: 100%!important;
+    background: #000;
+    object-position: center center;
+}
+.video_mask{
+    width: 100% ;height: 100%;position: absolute;top: 0; z-index: 100;
+}
+.right_icon{
+    position: absolute; right: 4%; bottom: 1.5rem; z-index: 100;
+}
+.player_btn{ width:1.15rem; height:1.15rem; position:absolute; left:50%; top:50%; margin-top:-0.575rem; margin-left: -0.575rem; z-index: 500; background: url("../../tmpl/img/fans-circle/video-play.png") no-repeat; background-size: 100% 100%;}
+.player_btn.hidden{ display: none;}
+.r_v_item{
+    width:0.95rem; height:0.95rem; overflow: hidden; margin-top: 0.2rem; margin-bottom: 0.25rem; text-align: center;
+}
+.icon_gift{
+    width:0.95rem; height:0.95rem;
+}
+.icon_tx{ width:0.95rem; height:0.95rem; border-radius: 50%;}
+.icon_p{ width: 0.7rem; height: 0.7rem;}
+.icon_text{ width: 100%; height: 0.25rem; line-height: 0.25rem; font-size: 0.23rem; color: #fff;}
+/* 分享 */
+.share_box{
+    width: 100%; background: rgba(0,0,0,0.7);
+    position: fixed; left: 0; bottom: -5rem; z-index: 1002; transition: 0.5s all ease;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+.share_title{
+    width: 100%; margin: 0 auto; padding: 0.25rem 0; font-size: 0.26rem; color: #fff; border-bottom: 0.01rem solid #e1e1e1; text-indent: 5%;
+}
+.close_share_box{ position: absolute; right: 4%; top: 4%; color: #fff; font-size: 0.28rem;}
+.share_icon_wrap{
+    width: 94%; margin: 0 auto; padding: 0.65rem 0 1rem;
+}
+.share_icon_wrap ul li{
+    float: left; width:12.5% ; margin:0 2%;
+}
+.share_icon_wrap ul li img{
+   width: 100%;
+}
+.qx_share{
+    display: block;
+    width: 1.7rem;
+    height: 0.55rem; line-height: 0.58rem;
+    text-align:center;
+    margin: 0 auto 0.35rem;
+    border-radius: 0.5rem;
+    font-size: 0.26rem; color: #fff;
+    background: rgba(0,0,0,0.5);
+     box-shadow: inset 0 0 0.2rem #fff;
+}
+/* 评论样式*/
+.pl_style{
+    width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+    position: fixed; left: 0; top:100%; z-index: 1001; transition: 0.5s all ease;
+}
+.pl_style .discuss_top{
+    width: 100%; height:0.7rem; line-height: 0.7rem; border-bottom: 1px solid #838383; font-size: 0.26rem; color: #fff; text-indent: 0.26rem;
+}
+.pl_style .discuss_close{
+    width: 0.43rem; height:0.43rem; position:absolute; right: 1%; top:0.2rem; font-size: 0.3rem; color: #fff; text-align: center;
+}
+.discuss_list{ width: 100%; margin: 0 auto; height: 100%; padding-bottom: 2.5rem;overflow-y: scroll;}
+.discuss_item{ margin-top: 0.15rem; width: 100%; padding: 0 3%; position: relative; margin-bottom: 0.25rem;}
+.pl_style .left_tx{
+    width:0.86rem;height:0.86rem; overflow: hidden; border-radius: 50%; border: 1px solid #fff; position: absolute; left: 3%; top: 0;
+}
+.pl_style .left_tx img{
+    width:0.86rem;height:0.86rem;  border-radius: 50%;
+}
+.pl_style .right_main{
+    margin-left:0.9rem;
+}
+.right_main_top{
+    margin-left:0.29rem;
+}
+.right_main_top .user_name{
+    font-size: 0.26rem; color: #fff; width: 70%; overflow: hidden; white-space: nowrap;text-overflow: ellipsis;
+}
+.right_main_top .d_zan{
+    font-size: 0.22rem; color: #999;
+}
+.right_main_top .d_zan img{
+    width:0.36rem; height:0.36rem; vertical-align: bottom;
+}
+.pl_style .right_main_text{ margin-left:0.29rem ; margin-top: 0.1rem;margin-right: 0.45rem;}
+.pl_style .right_main_text .pl_text{ font-size: 0.24rem; color: #999;}
+.pl_style .bottom_time{margin-left:0.29rem; margin-top: 0.1rem;margin-right: 0.45rem;}
+.pl_style .bottom_time .pl_time{display: inline-block; font-size: 0.22rem; color: #999; vertical-align: middle; }
+.pl_style .bottom_time .reply_btn{ display: inline-block; font-size: 0.22rem; color: #fff; background: #766d70; vertical-align: middle; padding: 0 0.15rem; border-radius: 0.1rem; margin-left: 0.2rem; padding-top: 0.03rem; margin-top: -0.03rem;}
+.pl_style .delete_btn{ font-size: 0.22rem; color: #fff;}
+.pl_style .pl_input_wrap{position:absolute; left:0; bottom: 0; width: 100%; padding: 0.2rem 0; background: rgba(0,0,0,0.9)}
+.pl_style .pl_input{  width: 85%; padding-left: 0.25rem; background: #fff; font-size: 0.24rem; margin-left: 3%; border-radius: 0.5rem; height: 0.45rem; line-height: 0.45rem;}
+.pl_style .pl_fb_btn{ font-size: 0.24rem; color: #80abe2; }
+/*回复弹框*/
+.relay_box{
+    width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+    position: fixed; left: 0; top:100%; display: none; z-index: 1005; transition: 0.5s all ease;
+}
+.discuss_item_top{ background: rgba(255,255,255,0.2); padding: 0.15rem 3%; }
+.discuss_item_top .left_tx{ top: 0.15rem;}
+.swiper-container{ width: 100%; height: 100%;}
+.swiper-slide{ height: 100% !important; position: relative;}
+
+/*视频上的文字和音乐2018-08-27*/
+.video_text{ width: 50%; color: #fff; position: absolute; bottom: 1.6rem; left: 7%;}
+.video_text_title{ font-size: 0.35rem;}
+.video_text_con{font-size: 0.25rem; margin-top: 0.15rem; max-height: 0.8rem;line-height: 0.4rem; overflow: hidden;}
+.video_text_music{ background: url("../../tmpl/img/fans-circle/music.png") no-repeat; background-size: 0.6rem 0.6rem; background-position: left center; padding-left: 0.65rem;  margin-top: 0.18rem; margin-left: -0.2rem;}
+.video_text_music span{ display: block; font-size: 0.28rem; overflow-x: scroll; white-space: nowrap;}
+.gz_friend{display: inline-block; font-size: 0.18rem; color: #fff; background: #e45045; padding: 0.02rem 0.12rem; margin-left: 0.15rem; border-radius: 0.1rem; padding-top: 0.05rem;}
+.gz_friend.active{ color: #e45045; background: #fff;}

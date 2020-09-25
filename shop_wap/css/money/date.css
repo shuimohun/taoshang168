@@ -1,0 +1,21 @@
+*{padding:0;margin:0}
+.calender{ width:2.55rem;margin:.5rem auto;top:0;left:0;border:.04rem #D6D6D6 solid;background:#EBEBEB;position:absolute;display:none;z-index:999;}
+.calendertb{width:100%;}
+.calendertb td{width:.35rem;height:.35rem;border:.01rem #CCCCCC solid;text-align:center;vertical-align:middle;cursor:pointer;font-size:.14rem;font-weight:bold;}
+.calendertb td.hover,.calendertb td.weekendhover{background:#D6D6D6;}
+.calendertb th{width:.35rem;height:.3rem;border:.01rem #CCCCCC solid;text-align:center;vertical-align:middle;cursor:pointer;color:#979797; font-size: .2rem;}
+.tdtoday{ background:#0080FF;color:#fff;width:.35rem;height:.35rem;border:.01rem #CCCCCC solid;text-align:center;vertical-align:middle;cursor:pointer;font-size:.14rem;font-weight:bold;}
+.getyear{ height:.35rem;line-height:.35rem;width:100%;}
+.preMonth{ font-size:.14rem;font-weight:bold;cursor:pointer;color:#0080FF;}
+.nextMonth{ font-size:.14rem;font-weight:bold;cursor:pointer;color:#0080FF;}
+.mh_date{width:2.49rem;height:.2rem;line-height:.2rem;padding:.05rem;border:.02rem #AA9FFF solid;cursor:pointer;}
+.zhezhao{width:100%;height:100%;position:fixed;z-index:998;background:#fff;filter:alpha(opacity=10);opacity:0.1;display:none;}
+#year{
+	font-size: .16rem;
+}
+#month{
+	font-size: .16rem;
+}
+.select{
+	width:.4rem;
+}

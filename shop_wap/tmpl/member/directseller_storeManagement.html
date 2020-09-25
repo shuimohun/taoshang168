@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="telephone=no" name="format-detection" />
+  <title>店铺管理</title>
+  <link rel="stylesheet" href="../../css/directseller_storeManagement.css">
+  <link rel="stylesheet" href="../../css/directseller_base.css">
+  <style>
+    .share_tanchuang{
+      width: 90%;
+      height: 2.25rem;
+      background-color: #ccc;
+      /*position: fixed;*/
+      bottom: 0;
+      display: none;
+      position: fixed;
+      top:60%;
+      left: 4%;
+      border-radius: .2rem;
+      z-index: 101;
+    }
+    .erweima_tanchuang{
+      width: 44%;
+      height: 2.85rem;
+      /*background:url("../../images/icon_back.png");*/
+      /*position: fixed;*/
+      bottom: 0;
+      display: none;
+      position: fixed;
+      top:60%;
+      left: 30%;
+      border-radius: .2rem;
+      z-index: 101;
+    }
+    .share_title_img{
+      width: 100%;
+      height: 15%;
+    }
+    .share_tanchuang .share_channel{
+      width: 100%;
+      height: 40%;
+      font-size: 0;
+    }
+    .share_tanchuang .share_channel li{
+      display: inline-block;
+      font-size:.24rem;
+      text-align: center;
+      width: 20%;
+      height: 100%;
+      vertical-align: top;
+    }
+    .share_tanchuang .share_channel li img{
+      width: 1rem;
+      height: 1rem;
+      margin-top: .2rem;
+    }
+    .share_tanchuang .share_channel li span{
+      display: inline-block;
+      color: #333;
+      line-height: 1rem;
+    }
+    .share_tanchuang .share_channel li i{
+      display: inline-block;
+      color: #999;
+    }
+    .share_tanchuang .share_channel li i i{
+      color: #e45050;
+    }
+    .share_tanchuang p{
+      font-size: .6rem;
+      color: #999;
+      padding:0 5% 0 5%;
+      margin-top: .1rem;
+    }
+    .share_tanchuang p span{
+      font-size: .7rem;
+      color: #666;
+    }
+    .nctouch-bottom-mask-top.share{padding:0 !important;}
+    .shared i{color: #e45050 !important;}
+
+    .sharewechat_contain .sharewechat{
+      position: absolute;
+      right: 7%;
+      bottom: 140%;
+    }
+    .sharewechat_contain .sharewechat img{
+      width: 5rem;
+      height: 3rem;
+      margin-left:2rem;
+    }
+    .sharewechat_contain .sharewechat span{
+      color: #fff;
+      font-size: 1rem;
+    }
+    .bg_contain{
+      background-color: black;
+      display: inline-block;
+      opacity: .3;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top:0;
+      left: 0;
+      z-index: 100;
+      display: none;
+    }
+
+    /*20180623 / by,Ji Zihe  样式修改*/
+    .clearfix { zoom: 1 }
+    .clearfix:after { display: block; clear: both; content: " "; }
+    .information_comment{ height: auto;}
+    .comment.information_comment .comment_img{ width: 94%; margin: 0 auto; height: auto; border-radius: inherit;}
+    .comment.information_comment .comment_img img{ width: 0.5rem; height: 0.5rem ; border-radius: 50%; display: inline-block; margin: 0; vertical-align: bottom;}
+    .comment.information_comment span{ position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem;}
+    .comment.information_comment em {position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem; float: right;}
+
+    .comment.information_comment i.comment_text{ display: block; width: 86%; margin-left: 10%; font-size: 0.22rem; color: #999;word-wrap: break-word; word-break: normal; position: inherit; left: inherit;top: inherit; height: auto; overflow:hidden;  font-style:normal;}
+
+    .main u{ right: 23%;}
+  </style>
+
+</head>
+<body style="margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href=""><img src="../../images/icon_back.png" alt=""></a>
+      <span>店铺管理</span>
+    </div>
+  </header>
+
+  <div class="titleContain">
+  </div>
+
+  <ul class="shop">
+    <li>
+      <a href="./directseller_shop.html"> <img src="../../images/setshop_1@2x.png" alt=""><br>
+        <span>店铺设置</span></a>
+    </li>
+    <li class="erweimashare" data-param='{"common_name":"<%=items[i].common_name%>"}'>
+      <img src="../../images/setshop_2@3x.png" alt=""><br>
+      <span>店铺二维码</span>
+    </li>
+    <li class="tcdata">
+      <img src="../../images/setshop_3@2x.png" alt=""><br>
+      <span>店铺分享</span>
+    </li>
+  </ul>
+
+  <ul class="btn">
+    <li>
+      <a href="./directseller_market.html"> <img src="../../images/setshop_4@2x.png" alt="">
+        <span>添加商品</span></a>
+    </li>
+    <li>
+      <a href="./directseller_apply.html"> <img src="../../images/setshop_4@2x.png" alt="">
+        <span>淘金申请</span></a>
+    </li>
+  </ul>
+  <div class="erweima_tanchuang">
+
+  </div>
+  <div class='share_tanchuang'>
+    <ul class='share_channel'>
+      <li class="share_sqq">
+        <a class="share" data-type="qqFriend" href="javascript:;">
+          <img src="../../images/share_g_1@3x.png" alt="">
+        </a><br>
+        <span>QQ</span>
+      </li>
+      <li class="share_qzone">
+        <a class="share" data-type="qZone" href="javascript:;">
+          <img src="../../images/share_g_2@3x.png" alt="">
+        </a><br>
+        <span>QQ空间</span>
+      </li>
+      <li class="share_weixin">
+        <a class="share" data-type="wechatFriend" href="javascript:;">
+          <img src="../../images/share_g_3@3x.png" alt="">
+        </a><br>
+        <span>微信</span>
+      </li>
+      <li class="share_weixin_timeline">
+        <a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../../images/share_g_4@3x.png" alt=""></a><br>
+        <span>朋友圈</span></li>
+      <li class="share_tsina">
+        <a class="share" data-type="weibo" href="javascript:;"><img src="../../images/share_g_5@3x.png" alt=""></a><br>
+        <span>新浪微博</span>
+      </li>
+    </ul>
+  </div>
+  <div class="bg_contain"></div>
+ </body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='../../js/shopController.js'></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/NativeShare.js"></script>
+<script>
+  function getuser() {
+    $.post(ApiUrl + "?ctl=Distribution_Buyer_Index&met=storeManagement&typ=json",function (e) {
+        if(e.status == 200) {
+            y = ' <img src="'+e.data.user_logo+'" alt=""><span>'+e.data.user_name+'</span><a href="./directseller_shopself.html"><button type="button">进入店铺</button></a>';
+            $('.titleContain').html(y);
+            //二维码弹框
+            url = WapSiteUrl+"/tmpl/member/directseller_store.html?uid="+e.data.user_id;
+            $('.erweima_tanchuang').html('');
+            $('.erweima_tanchuang').qrcode({
+                width:200,
+                height:200,
+                text:url
+            });
+//              分享
+            $('.tcdata').click(function () {
+                $('.share_tanchuang').show();
+                $('.bg_contain').show();
+                param = $(this).data('param');
+                p_shop_id = e.data.user_id;
+                p_common_image = e.data.common_image;
+                p_shop_name = e.data.user_directseller_shop;
+                var desc = p_shop_name +'的淘金店铺';
+                var share_img = p_common_image;
+
+//                var id = getCookie('id'); //登录标记
+
+                var title = '淘尚168商城---'+p_shop_name;
+                var link = WapSiteUrl + '/tmpl/member/directseller_store.html?uid='+p_shop_id;
+
+
+                var nativeShare = new NativeShare();
+                var shareData = {
+                    title: title,
+                    desc: desc,
+                    // 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+                    link: link,
+                    icon: share_img,
+                    // 不要过于依赖以下两个回调，很多浏览器是不支持的
+                    success: function() {
+                        //alert('success')
+                    },
+                    fail: function() {
+                        //alert('fail')
+                    }
+                };
+
+                function call(command) {
+                    try {
+                        nativeShare.call(command)
+                    } catch (err) {
+                        // 如果不支持，你可以在这里做降级处理
+                        if (err.message) {
+                            alert(err.message)
+                        } else {
+                            alert('当前浏览器不支持此功能。')
+                        }
+                    }
+                }
+                $('.share').on('click', function() {
+                    var type = $(this).data('type');
+                    if (type) {
+                        shareData.link = shareData.link + type;
+                        nativeShare.setShareData(shareData);
+                        call(type);
+                    }
+                });
+            });
+            $('.erweimashare').on('click',function () {
+                $('.erweima_tanchuang').show();
+                $('.bg_contain').show();
+            })
+            $('.bg_contain').on('click',function () {
+                $('.share_tanchuang').hide();
+                $('.bg_contain').hide();
+                $('.erweima_tanchuang').hide();
+            })
+        }
+    })
+  }
+  getuser();
+</script>
+</html>

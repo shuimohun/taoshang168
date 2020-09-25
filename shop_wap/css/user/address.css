@@ -1,0 +1,253 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:25%;
+}
+/***************头部部分结束**************************************/
+
+/*************地址部分**********************/
+.info{
+	width:100%;
+	height:5.31rem;
+	border-top:.01rem solid #cccccc;
+	margin-top: .3rem;
+}
+.info ul{
+	width:100%;
+	height:5.31rem;
+	background-color: #fff;
+}
+.info ul li{
+	width:100%;
+	height:.885rem;
+	line-height:.885rem;
+	border-bottom:.01rem solid #cccccc;
+	color: #333333;
+	padding-left: .2rem;
+	font-size:.32rem;
+}
+.info ul li input{
+	display:inline-block;
+	border:0 none;
+	font-size:.32rem;
+	color: #333333;
+	width:100%;
+	outline:none;
+}
+.info ul li div{
+	color: #333333;
+	font-size: .32rem;
+	display:inline-block;
+	width:92.5%;
+}
+.info ul li img{
+	width:.25rem;
+	height:.25rem;
+	float: right;
+	margin:.34rem .2rem 0 0;
+}
+.info button{
+	width:5.8rem;
+	height:.7rem;
+	background-color: #cf3b3b;
+	color:#fff;
+	border-radius: .5rem;
+	border:0 none;
+	outline: none;
+	font-size: .28rem;
+	margin:.52rem 0 0 .3rem;
+}
+/*************地址部分**********************/
+
+/***************地址弹窗***********************/
+*{
+	margin:0;
+	padding:0;
+}
+.win-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.win-top{
+	width:5.8rem;
+	height:3.45rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-.85rem; */
+	left:50%;
+	margin-left:-2.9rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.win-top ul{
+	width:5.8rem;
+	height:3.45rem;
+}
+.win-top ul li{
+	width:100%;
+	height:20%;
+	border-top:.01rem solid #919191;
+}
+.win-top ul li.flip_title{
+	border:0 none;
+}
+.win-top ul li.flip_title span{
+	display:inline-block;
+	color:#272727;
+	font-size: .3rem;
+	margin:.16rem 0 0 .32rem;
+}
+.win-top ul li div{
+	width:4.35rem;
+	height:100%;
+	margin:0 auto;
+}
+.win-top ul li div b{
+	font-weight:normal;
+	color:#919191;
+	font-size: .26rem;
+	float: left;
+	margin-top: .15rem;
+}
+.win-top ul li div i{
+	font-style:normal;
+	font-size: .26rem;
+	color:#919191;
+	float: right;
+	margin-top: .15rem;
+}
+.win-top ul li div span{
+	display:inline-block;
+	text-decoration: none;
+	color:#919191;
+	font-size: .26rem;
+	margin-top: .15rem;
+	margin-left: 1.2rem;
+}
+.win-top ul li del{
+	display:inline-block;
+	text-decoration: none;
+	font-size: .24rem;
+	color:#919191;
+	margin-top: .15rem;
+	margin-left: 1.5rem;
+}
+.win-top ul li button{
+	width:1.1rem;
+	height:.52rem;
+	border:0 none;
+	outline:none;
+	background-color: #e45050;
+	color:#fff;
+	border-radius:.5rem;
+	font-size: .26rem;
+	margin:.07rem 0 0 1.7rem;
+}
+/***************地址弹窗***********************/
+
+
+/**************街道弹窗*********************/
+*{
+	margin:0;
+	padding:0;
+}
+.street-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.street-top{
+	width:5.8rem;
+	height:3.45rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-.85rem; */
+	left:50%;
+	margin-left:-2.9rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.street-top ul{
+	width:5.8rem;
+	height:3.45rem;
+}
+.street-top ul li{
+	width:100%;
+	height:20%;
+	border-top:.01rem solid #919191;
+	text-align: center;
+}
+.street-top ul li.flip_title{
+	border:0 none;
+}
+.street-top ul li.flip_title span{
+	display:inline-block;
+	color:#272727;
+	font-size: .3rem;
+	margin:.16rem 0 0 .32rem;
+}
+.street-top ul li b{
+	display:inline-block;
+	font-weight:normal;
+	font-size: .28rem;
+	color:#919191;
+	margin-top:.15rem;
+}
+.street-top ul li del{
+	display:inline-block;
+	text-decoration: none;
+	font-size: .24rem;
+	color:#919191;
+	margin-top: .15rem;
+	margin-left: .3rem;
+}
+.street-top ul li button{
+	width:1.1rem;
+	height:.52rem;
+	border:0 none;
+	outline:none;
+	background-color: #e45050;
+	color:#fff;
+	border-radius:.5rem;
+	font-size: .26rem;
+	margin:.07rem 0 0 1.7rem;
+}
+/**************街道弹窗*********************/

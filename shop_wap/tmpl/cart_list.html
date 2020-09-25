@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_cart.css">
+
+    <style>
+        .add_share{
+            color: #333;
+            font-size: .6rem;
+            margin-left: 1rem;
+            margin-top: .3rem;
+        }
+        .add_share a{
+            color: #e45050;
+            font-size: .6rem;
+        }
+        .title_guess{
+            width: 100%;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            background-color: #fff;
+            text-align: center;
+            font-size: .8rem;
+            color: #666;
+        }
+
+        .guess-like{
+            width:100%;
+            background-color:#eeeeee;
+            overflow: hidden;
+            font-size: 0;
+        }
+        .guess-like div{
+            display: inline-block;
+            width: 49%;
+            height: 14rem;
+            border-bottom: .01rem solid #e4e4e4;
+            background-color: #fff;
+            color: #111111;
+            font-size: 0;
+            margin-bottom: .4rem;
+            float: left;
+            position: relative;
+        }
+        .guess-like div:nth-child(even){
+            float: left;
+        }
+        .guess-like div:nth-child(odd){
+            float: right;
+        }
+        .guess-like div a{
+            color:#111111;
+        }
+        .guess-like div img{
+            display:inline-block;
+            width:100%;
+            height:9rem;
+        }
+        .guess-like div h3{
+            font-size: .6rem;
+            letter-spacing: .12rem;
+            margin-left: .12rem;
+            width: 100%;
+            height: 1.69rem;
+            overflow: hidden;
+        }
+        .guess-like div .bg{
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background:url(./img/share_bg@2x.png);
+            background-size: 100% 100%;
+            font-size: .45rem;
+            color: #fff;
+            text-align: center;
+            float: left;
+            margin-left: .2rem;
+            padding:0 .12rem 0 .12rem;
+            margin-top:0.2rem;
+        }
+        .guess-like div b{
+            color: #e54e4e;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 1%;
+            left: 0;
+        }
+        .guess-like div button{
+            width: 2.8rem;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            outline: 0 none;
+            border: 0 none;
+            background-color: #e45050;
+            font-size: .7rem;
+            border-radius: 2rem;
+            color: #fff;
+            position: absolute;
+            bottom: 1%;
+            right: 2%;
+        }
+        .nctouch-norecord {
+            z-index: -1;
+            width: 10rem;
+            height: 8.2rem;
+            margin: 2rem 0 0 -5rem;
+            text-align: center;
+            font-size: 0;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+            margin-top: 5rem;
+            position: static;
+        }
+        .no-data,.loading{background-color:#eee;color:#777;font-size:0.1875rem;width:100%;text-align: center;padding:0.20rem 0;display:none;}
+
+    </style>
+</head>
+<body ng-app="app" ng-controller="cartListCtl">
+<header id="header" class="fixed">
+    <div class="header-wrap">
+        <div class="header-l">
+            <a href="javascript:history.go(-1)">
+                <i class="back"></i>
+            </a>
+        </div>
+        <div class="header-title">
+            <h1>购物车</h1>
+        </div>
+        <div class="header-r">
+            <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a>
+        </div>
+    </div>
+    <div class="nctouch-nav-layout">
+        <div class="nctouch-nav-menu">
+            <span class="arrow"></span>
+            <ul>
+                <li><a href="../index.html"><i class="home"></i>首页</a></li>
+                <li><a href="../tmpl/search.html"><i class="search"></i>搜索</a></li>
+                <li><a href="../tmpl/member/member.html"><i class="member"></i>我的商城</a></li>
+                <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="nctouch-main-layout">
+    <div id="cart-list-wp"></div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<div class="pre-loading hide">
+    <div class="pre-block">
+        <div class="spinner"><i></i></div>购物车数据读取中...
+    </div>
+</div>
+
+<script id="cart-list" type="text/html">
+    <% if(count >0){%>
+        <% for(var i in cart_list){%>
+            <div class="nctouch-cart-container">
+                <dl class="nctouch-cart-store">
+                    <dt>
+                        <span class="store-check">
+                            <input class="store_checkbox" type="checkbox" checked>
+                        </span>
+                        <i class="icon-store"></i>
+                        <%=cart_list[i].shop_name%>
+                        <% if (cart_list[i].voucher_base != '') { %>
+                            <span class="handle">
+                                <a href="javascript:void(0);" class="voucher animation-up animation-up<%=i%>"><i></i>领券</a>
+                            </span>
+                        <% } %>
+                    </dt>
+                    <% if (cart_list[i].free_freight) { %>
+                        <dd class="store-activity">
+                            <em>免运费</em>
+                            <span><%=cart_list[i].free_freight%></span>
+                        </dd>
+                    <% } %>
+                    <% if (cart_list[i].mansong_info && !isEmpty(cart_list[i].mansong_info)) { %>
+                        <dd class="store-activity">
+                            <em>满即送</em>
+                            <%var mansong = cart_list[i].mansong_info%>
+                            <span><%if(mansong.rule_discount){%>店铺优惠<%=mansong.rule_discount%>。<%}%> <%if(mansong.goods_name){%>赠品：<%=mansong.goods_name%><%if(!isEmpty(mansong.goods_image)){%><img src="<%=mansong.goods_image%>" /><%}%><%}%></span>
+                            <i class="arrow-down"></i>
+                        </dd>
+                    <% } %>
+                </dl>
+                <ul class="nctouch-cart-item">
+                    <% if (cart_list[i].goods) { %>
+                        <% for (var j=0; j < cart_list[i].goods.length; j++) { var goods = cart_list[i].goods[j];%>
+                            <% if(isEmpty(goods.bl_id)){%>
+                                <li cart_id="<%=goods.cart_id%>" class="cart-litemw-cnt" >
+                                    <div class="goods-check">
+                                        <input type="checkbox" checked name="cart_id" value="<%=goods.cart_id%>" />
+                                    </div>
+                                    <div class="goods-pic">
+                                        <a href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=goods.goods_id%>">
+                                            <img src="<%=goods.goods_base.goods_image%>"/>
+                                        </a>
+                                    </div>
+                                    <dl class="goods-info">
+                                        <dt class="goods-name"> <a href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=goods.goods_id%>"> <%=goods.goods_base.goods_name%> </a></dt>
+                                        <dd class="goods-type"><%=goods.goods_base.spec_str%></dd>
+                                    </dl>
+                                    <div class="goods-del" cart_id="<%=goods.cart_id%>"><a href="javascript:void(0);"></a></div>
+                                    <div class="goods-subtotal">
+                                        <span class="goods-price">￥<em><%=goods.now_price%></em></span>
+                                        <span class="goods-sale">
+                                            <% if (!isEmpty(goods.goods_base.promotion)){ %>
+                                                <em><%=goods.goods_base.promotion.promotion_type_con%></em>
+                                            <% } %>
+                                        </span>
+                                        <div class="value-box">
+                                            <span class="minus">
+                                                <a href="javascript:void(0);">&nbsp;</a>
+                                            </span>
+                                            <span>
+                                                <input type="text" pattern="[0-9]*" readonly class="buy-num buynum" value="<%=goods.goods_num%>"/>
+                                            </span>
+                                            <span class="add">
+                                                <a href="javascript:void(0);">&nbsp;</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            <% }else{ %>
+                                <div class="cart-group-wrap cart-litemw-cnt" cart_id="<%=goods.cart_id%>" data-type="bl" >
+                                    <li class="cart-group">
+                                        <div class="goods-check">
+                                            <input type="checkbox" checked name="cart_id" value="<%=goods.cart_id%>" />
+                                        </div>
+                                        <span class="package">【优惠套餐】</span>
+                                        <span class="package_item"><%=goods.bundling_info.bundling_name%>
+                                            <%if(goods.share_price){%>
+                                                <span>分享立减：￥<%=goods.share_price%>,最多<%=goods.share_limit%>件</span>
+                                            <%}%>
+                                        </span>
+                                        <div class="goods-del" cart_id="<%=goods.cart_id%>"><a href="javascript:void(0);"></a></div>
+                                    </li>
+
+                                    <% for(var n in goods.bundling_info.goods_list){ var g = goods.bundling_info.goods_list[n]; %>
+                                        <li >
+                                            <div class="goods-pic">
+                                                <a href="./product_detail.html?goods_id=<%=g.goods_id%>">
+                                                    <img src="<%=g.goods_image%>"/>
+                                                </a>
+                                            </div>
+                                            <dl class="goods-info">
+                                                <dt class="goods-name"> <a href="./product_detail.html?goods_id=<%=g.goods_id%>"><%=g.goods_name%> </a></dt>
+                                                <!--<dd class="goods-type"><%=g.spec_str%></dd>-->
+                                            </dl>
+                                            <div class="goods-subtotal">
+                                                <span class="goods-price">￥<em><%=g.bundling_goods_price%></em></span>&nbsp;&nbsp;
+                                                <del class="goods-price" style="color:#999;">￥<em><%=g.goods_price%></em></del>
+                                                </span>
+                                            </div>
+                                            <b><%=goods.goods_num%></b>
+                                        </li>
+                                    <% } %>
+
+                                    <li class="cart-group">
+                                        <span class="package_price">套餐价</span>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="package_item_price">
+                                            <%=goods.bundling_info.bundling_discount_price%>
+                                        </span>
+                                        <div class="value-box value_li">
+                                            <span class="minus">
+                                                <a href="javascript:void(0);">&nbsp;</a>
+                                            </span>
+                                            <span>
+                                                <input type="text" pattern="[0-9]*" readonly class="buy-num buynum" value="<%=goods.goods_num%>"/>
+                                            </span>
+                                            <span class="add">
+                                                <a href="javascript:void(0);">&nbsp;</a>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </ul>
+
+                <% if (cart_list[i].voucher_base) { %>
+                    <div class="nctouch-bottom-mask nctouch-bottom-mask<%=i%>">
+                        <div class="nctouch-bottom-mask-bg"></div>
+                        <div class="nctouch-bottom-mask-block">
+                            <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+                            <div class="nctouch-bottom-mask-top store-voucher">
+                                <i class="icon-store"></i>
+                                <%=cart_list[i].shop_name%>&nbsp;&nbsp;领取店铺代金券
+                                <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+                            </div>
+                            <div class="nctouch-bottom-mask-rolling nctouch-bottom-mask-rolling<%=i%>">
+                                <div class="nctouch-bottom-mask-con">
+                                    <ul class="nctouch-voucher-list">
+                                        <% for (var j in cart_list[i].voucher_base) { var voucher = cart_list[i].voucher_base[j];%>
+                                            <li>
+                                                <dl>
+                                                    <dt class="money">面额<em><%=voucher.voucher_price%></em>元</dt>
+                                                    <dd class="need">需消费<%=voucher.voucher_limit%>使用</dd>
+                                                    <% if(voucher.voucher_type == 1){%>
+                                                    <dd class="need">兑换需<%=voucher.voucher_points%>个金蛋</dd>
+                                                    <% } %>
+                                                    <dd class="time">至<%=voucher.voucher_end_date%>前使用</dd>
+                                                </dl>
+                                                <% if(voucher.taken){%>
+                                                    <a href="javascript:void(0);" class="btn taken" data-tid='<%=voucher.voucher_t_id%>'>
+                                                        <%=voucher.voucher_type_con%>
+                                                    </a>
+                                                <% }else{ %>
+                                                <a href="javascript:void(0);" class="btn" data-tid='<%=voucher.voucher_t_id%>' data-type="<%=voucher.voucher_type%>">
+                                                    <%=voucher.voucher_type_con%>
+                                                </a>
+                                                <% } %>
+                                            </li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        <%}%>
+
+        <% if (check_out === true) {%>
+            <div class="nctouch-cart-bottom">
+                <div class="all-check"><input class="all_checkbox" type="checkbox" checked></div>
+                <div class="total">
+                    <dl class="total-money"><dt>合计总金额：</dt><dd>￥<em><%=sum%></em></dd></dl>
+                </div>
+                <div class="check-out ok">
+                    <a href="javascript:void(0)">确认信息</a>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="nctouch-cart-bottom no-login">
+                <div class="cart-nologin-tip">结算购物车中的商品，需先登录商城</div>
+                <div class="cart-nologin-btn"><a href="../tmpl/member/login.html" class="btn">登录</a>
+                    <a href="../tmpl/member/register.html" class="btn">注册</a>
+                </div>
+            </div>
+        <% } %>
+    <% }else{ %>
+        <div class="nctouch-norecord cart">
+            <div class="norecord-ico"><i></i></div>
+            <dl>
+                <dt>您的购物车还是空的</dt>
+                <dd>去挑一些中意的商品吧</dd>
+            </dl>
+            <a href="<%=WapSiteUrl%>" class="btn">随便逛逛</a>
+        </div>
+    <%}%>
+
+    <!-- 猜你喜欢 start -->
+    <div  class='title_guess'></div>
+    <section class="guess-like" >
+    </section>
+    <!-- 猜你喜欢 end -->
+    <div class="no-data">没有更多了</div>
+    <div class="loading">正在加载中...</div>
+</script>
+
+<script id="cart-list1" type="text/html">
+    <% if(cart_list.length >0){%>
+    <% for (var i = 0;i< cart_list.length;i++){%>
+    <div class="nctouch-cart-container">
+        <dl class="nctouch-cart-store">
+            <dt><span class="store-check">
+							<input class="store_checkbox" type="checkbox" checked>
+						</span>
+                <i class="icon-store"></i>
+                <%=cart_list[i].store_name%>
+
+            </dt>
+        </dl>
+        <ul class="nctouch-cart-item">
+            <% if (cart_list[i].goods) { %>
+            <% for (var j=0; j < cart_list[i].goods.length; j++) {var goods = cart_list[i].goods[j];%>
+            <li cart_id="<%=goods.cart_id%>" class="cart-litemw-cnt" >
+                <div class="goods-check">
+                    <input type="checkbox" checked name="cart_id" value="<%=goods.cart_id%>" />
+                </div>
+                <div class="goods-pic">
+                    <a href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=goods.goods_id%>">
+                        <img src="<%=goods.goods_image_url%>"/>
+                    </a>
+                </div>
+                <dl class="goods-info">
+                    <dt class="goods-name"> <a href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=goods.goods_id%>"> <%=goods.goods_name%> </a></dt>
+                    <dd class="goods-type"><%=goods.goods_spec%></dd>
+                </dl>
+                <div class="goods-del" cart_id="<%=goods.cart_id%>"><a href="javascript:void(0);"></a></div>
+                <div class="goods-subtotal"> <span class="goods-price">￥<em><%=goods.goods_price%></em></span>
+                    <div class="value-box">
+                        <span class="minus">
+                            <a href="javascript:void(0);">&nbsp;</a>
+                        </span>
+                        <span>
+                            <input type="text" pattern="[0-9]*" readonly class="buy-num buynum" value="<%=goods.goods_num%>"/>
+                        </span>
+                        <span class="add">
+                            <a href="javascript:void(0);">&nbsp;</a>
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+            <% } %>
+        </ul>
+    </div>
+    <%}%>
+    <% if (check_out === true) {%>
+    <div class="nctouch-cart-bottom">
+        <div class="all-check"><input class="all_checkbox" type="checkbox" checked></div>
+        <div class="total">
+            <dl class="total-money"><dt>合计总金额：</dt><dd>￥<em><%=sum%></em></dd></dl>
+        </div>
+        <div class="check-out ok">
+            <a href="javascript:void(0)">确认信息</a>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="nctouch-cart-bottom no-login">
+        <div class="cart-nologin-tip">结算购物车中的商品，需先登录商城</div>
+        <div class="cart-nologin-btn"><a href="../tmpl/member/login.html" class="btn">登录</a>
+            <a href="../tmpl/member/register.html" class="btn">注册</a>
+        </div>
+    </div>
+    <% } %>
+    <%}else{%>
+    <div class="nctouch-norecord cart">
+        <div class="norecord-ico"><i></i></div>
+        <dl>
+            <dt>您的购物车还是空的</dt>
+            <dd>去挑一些中意的商品吧</dd>
+        </dl>
+        <a href="<%=WapSiteUrl%>" class="btn">随便逛逛</a>
+    </div>
+    <%}%>
+</script>
+
+<script type="text/html" id="like_g">
+    <% for(var i in data){ %>
+    <div>
+        <a href="./product_detail.html?cid=<%=data[i].common_id%>">
+            <img src="<%=data[i].common_image;%>"  alt="">
+            <h3><%=data[i].common_name;%></h3>
+        </a>
+        <div class="bg">分享立省￥<%=data[i].common_share_price;%></div>
+        <div class="bg">立赚￥<%=data[i].common_promotion_price;%></div>
+        <b>￥<%=data[i].common_shared_price;%></b>
+        <a href="./product_detail.html?cid=<%=data[i].common_id%>"><button>购买</button></a>
+    </div>
+    <% } %>
+</script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/cart-list.js"></script>
+<!--<script type="text/javascript" src="../js/angular.js"></script>-->
+
+</body>
+</html>

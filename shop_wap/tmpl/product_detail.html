@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="sharecontent" data-msg-img="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2927678406,1546747626&fm=58"/>
+    <title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_products_detail.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+
+    <style>
+        .share_tanchuang{width:100%;/*height:13rem;*/background-color:#fff;bottom:0;z-index:1000}
+        .share_title_img{width:100%;height:15%}
+        .share_tanchuang .share_channel{width:100%;/*height:40%;*/font-size:0; margin-bottom: 0.8rem;}
+        .share_tanchuang .share_channel li{display:inline-block;font-size:.6rem;text-align:center;width:20%;height:100%;vertical-align:top}
+        .share_tanchuang .share_channel li img{width:2.0rem;height:2.0rem;margin-top:.3rem}
+        .share_tanchuang .share_channel li span{display:block;color:#999;width: 100%; margin: 0.2rem auto; text-align: center; font-size: 0.5rem;}
+        .share_tanchuang .share_channel li i{/*display:inline-block;*/color:#999; width: 100%; font-size: 0.5rem;}
+        .share_tanchuang .share_channel li i i{color:#e45050}
+        .share_tanchuang p{font-size:.6rem;color:#999;padding:0 5% 0 5%;margin-top:.1rem}
+        .share_tanchuang p span{font-size:.7rem;color:#666}
+        .nctouch-bottom-mask-top.shares{padding:0!important}
+        .shared i{color:#e45050!important}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        .open{width:100%;height:2rem;z-index:1000000000;display:none;font-size:0;position:relative}
+        .open .open_title{width:70%;height:100%}
+        .open .open_click{width:30%;height:100%}
+        .open .open_close{position:absolute;left:3%;top:24%;width:1.1rem;height:1.1rem}
+        .transparent{margin-top:2rem}
+        .after_add{margin-top:1.2rem;position:relative; width: 100%;}
+        .after_add:after{content:'';display:table;clear:both}
+       /* .after_add:before{content:'';background-color:#eee;width:88%;height:.05rem;position:absolute;top:0;left:1rem}*/
+        .after_add span{float:left; text-align:center;font-size:.65rem;width:50%; display: block;}
+        .after_add span a{display:inline-block;width:100%;height:1.6rem;line-height:1.6rem}
+        .after_add span.cancel{color:#ED5564}
+        .after_add span.cancel a{color:#ED5564; border-top: 1px solid #eee; box-sizing: border-box;}
+        .after_add span.to_buy a{color:#fff;background-color:#ED5564;/*border-radius:.2rem*/}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        /*20180503增加开始*/
+        .nctouch-bottom-mask-rolling-share{ height: auto;}
+        .share_describe{ font-size: 0.5rem;}
+        .share_describe span{ font-size: 0.6rem;}
+        /*20180503增加结束*/
+    </style>
+
+</head>
+<body>
+<header id="header" class="transparent">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+        <ul class="header-nav">
+            <li class="cur"><a href="javascript:void(0);">商品</a></li>
+            <li><a href="javascript:void(0);" id="goodsBody">详情</a></li>
+            <li><a href="javascript:void(0);" id="goodsEvaluation">评价</a></li>
+        </ul>
+        <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+    </div>
+    <div class="nctouch-nav-layout">
+        <div class="nctouch-nav-menu"> <span class="arrow"></span>
+            <ul>
+                <li><a href="../index.html"><i class="home"></i>首页</a></li>
+                <li><a href="../tmpl/search.html"><i class="search"></i>搜索</a></li>
+                <li><a href="../tmpl/cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+                <li><a href="../tmpl/member/member.html"><i class="member"></i>我的商城</a></li>
+                <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div>
+    <section class="open">
+            <img src="../images/main_img/open1.png" alt="" class="open_title">
+            <img src="../images/main_img/open2.png" alt="" class="open_click" id="btnOpenApp" data-type="1">
+        <img src="../images/main_img/open_close.png" alt="" class="open_close">
+    </section>
+    <div id="product_detail_html" style="position: relative; z-index: 1;">
+
+    </div>
+</div>
+
+<div id="product_detail_spec_html" class="nctouch-bottom-mask"></div>
+<div id="voucher_html" class="nctouch-bottom-mask"></div>
+<div id="promotion_html" class="nctouch-bottom-mask"></div>
+<div id="shuxing_html" class="nctouch-bottom-mask"></div>
+<div id="share_html" class="nctouch-bottom-mask">
+
+</div>
+
+
+
+<script type="text/html" id="product_detail">
+    <div class="goods-detail-top">
+        <div class="goods-detail-pic" id="mySwipe">
+            <ul>
+                <% for (var i =0;i<goods_image.length;i++){ %>
+                <li><img src="<%=goods_image[i]%>"/></li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="goods-detail-turn">
+            <ul><% for (var i =0;i<goods_image.length;i++){ %>
+                <li class="<% if(i == 0) { %>cur<%}%>"></li>
+                <% } %>
+            </ul>
+        </div>
+        <!--<div class="round pd-share"><i></i></div>-->
+        <div class="<% if (is_favorate) { %>favorate<% } %> round pd-collect"><i></i></div>
+        <!--送福免单logo start、-->
+        <% if(goods_info.common_promotion_type ==6){ %>
+            <% if(goods_info.fu_flag ==1 ){ %>
+            <div class="bless bless_icon"><img src="img/sendbless/fu.png" alt=""></div>
+            <% }%>
+        <% }%>
+        <!--送福免单logo end、-->
+    </div>
+    <div class="goods-detail-cnt">
+        <%if(goods_info.promotion_type == '1'){%>
+        <div class="goods-detail-item scarebuy">
+            <img src="../images/huiaQiangGou@2x.png" alt="" class="scarebuy_img">
+            <span class="huiqianggou">惠抢购</span>
+            <span class="fnTimeCountDown" data-end="<%=goods_info.scarebuy_endtime%>">
+                距活动结束&nbsp;&nbsp;
+                <u class="hour">00</u><i>&nbsp;:</i>
+                <u class="mini">00</u><i>&nbsp;:</i>
+                <u class="sec">00</u>
+            </span>
+        </div>
+        <% } %>
+        <!--2018-07-09送福免单标题 start-->
+
+        <% if(goods_info.common_promotion_type ==6){ %>
+            <% if( goods_info.promotion ){%>
+                <div class="bless send_bless_title">
+                    <a href="#"><%=goods_info.promotion.title%></a>
+                </div>
+            <% }%>
+        <% }%>
+        <!--2018-07-09送福免单标题 end-->
+        <!--送福购买价格和倒计时 start-->
+        <% if(goods_info.fu_flag){ %>
+        <div class="bless bless_timeout clearfix">
+            <div class="bless_goods_price">价格:<%=goods_info.goods_price%></div>
+
+            <div class="bless_time">
+                <% if(goods_info.fu_info){ %>
+                <% if(goods_info.fu_info.status){ %>
+                <div class="bless_timedown">
+                    <span class="fnTimeCountDown" data-end="<%=goods_info.fu_info.fu_end_time%>">
+                        距活动结束&nbsp;&nbsp;
+                        <u class="hour">00</u><i>&nbsp;:</i>
+                        <u class="mini">00</u><i>&nbsp;:</i>
+                        <u class="sec">00</u>
+                    </span>
+                </div>
+                <% } %>
+                <% }%>
+            </div>
+        </div>
+        <% }%>
+        <!--送福购买价格和倒计时 end-->
+        <div class="goods-detail-name">
+            <dl>
+                <dt><%if(goods_info.common_is_virtual && goods_info.common_is_virtual == '1'){%><span>虚拟</span><%}%><% if (goods_info.is_presell && goods_info.is_presell == '1') { %><span>预售</span><% } %><% if (goods_info.is_fcode == '1') { %><span>F码</span><% } %><%=goods_info.goods_name%></dt>
+                <dd>
+                    <% if(goods_info.common_promotion_type && goods_info.common_promotion_type == 4 && goods_info.promotion){%>
+                    新人优惠:<%=goods_info.promotion.title%>
+                    <%}%>
+                    <%=goods_info.goods_promotion_tips%>
+                </dd>
+            </dl>
+        </div>
+        <div class="goods-detail-price">
+            <dl>
+                <dt>￥
+                    <em>
+                        <% if (goods_info.shared_total_price) { %>
+                        <%=goods_info.shared_total_price%>
+                        <% } else { %>
+                        <%=goods_info.goods_price%>
+                        <% } %>
+                    </em>
+                </dt>
+            </dl>
+            <% if(goods_info.share_info){ %>
+            <span class="sold">限优惠：<%=goods_info.share_info.share_limit%>件</span>
+            <% } %>
+        </div>
+        <!--原促销活动-->
+
+        <% if (voucher && voucher.length > 0) { %>
+        <div class="goods-detail-voucher"><a href="javascript:void(0);" id="getVoucher"><i>券</i>点击领取店铺代金券</a></div>
+        <%}%>
+
+
+
+
+        <!--价格优惠-->
+        <div class="goods-detail-item">
+            <span class='price_del <% if(goods_info.fu_flag ==1){ %> hide <% }%>'>价格：<del><%=goods_info.goods_price%></del></span>
+
+            <% if(goods_info.share_info && goods_info.share_info.share_limit){ %>
+            <i class='subfree'>销量：<%=goods_info.common_salenum%>件</i>
+            <% } %>
+
+        </div>
+        <!--价格优惠-->
+
+
+        <!--分享立减分享立赚-->
+        <div class="goods-detail-item <% if(goods_info.fu_flag){ %> hide <% }%>">
+            <% if(goods_info.common_share_price){ %>
+            <div class='share_sub'>分享立减 ￥<%=goods_info.common_share_price%></div>
+            <% } %>
+            <% if(goods_info.common_is_promotion){ %>
+            <div class='share_sub'>立赚 ￥<%=goods_info.common_promotion_price%></div>
+            <% } %>
+            <% if(goods_info.share_info && goods_info.share_info.time_down){ %>
+            <div style="position: absolute;right: 0.75rem;top: 0.45rem;">
+                <span class="fnTimeCountDown time" data-end="<%=goods_info.share_info.time_down%>">
+                    下轮购买时间&nbsp;&nbsp;
+                    <u class="hour">00</u><i>&nbsp;:</i>
+                    <u class="mini">00</u><i>&nbsp;:</i>
+                    <u class="sec">00</u>
+                </span>
+            </div>
+            <% } %>
+        </div>
+        <!--分享立减分享立赚-->
+        <!--送福免费拿用户头像 start-->
+       <!-- <div class="bless bless_tx_wrap">
+            <p class="get_bless_num">目前有<span>200</span>人成功送福零元拿</p>
+            <ul class="bless_user_tx">
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+                <li><img src="img/robot-ss.png"  alt=""></li>
+            </ul>
+
+        </div>-->
+        <!--送福免费拿用户头像 end-->
+        <!--促销类型-->
+        <% if(goods_info.common_promotion_type > 0 || goods_info.common_is_jia == 1 || mansong_info.mansong_id){ %>
+        <div class="goods-detail-item" id="getPromotion">
+            <div class="itme-name">促销</div>
+            <div class="item-con">
+                <dl class="goods-detail-sale">
+                    <dt>
+                        <% if(goods_info.common_promotion_type == 1){ %>
+                        <span class='tit'>惠</span>
+                        <% }else if(goods_info.common_promotion_type == 2){ %>
+                        <span class='tit'>限时</span>
+                        <% }else if(goods_info.common_promotion_type == 3){ %>
+                        <span class='tit'>手机</span>
+                        <% }else if(goods_info.common_promotion_type == 4){ %>
+                        <span class='tit'>新</span>
+                        <% }else if(goods_info.common_promotion_type == 6){ %>
+                        <span class='tit'>送福</span>
+                        <% }%>
+
+                        <% if(goods_info.common_is_jia == 1){ %>
+                        <span class='tit'>加</span>
+                        <% } %>
+
+                        <% if(mansong_info.mansong_id){ %>
+                        <span class='tit'>满</span>
+                        <% } %>
+                    </dt>
+                </dl>
+            </div>
+            <div class="item-more"></div>
+        </div>
+        <% } %>
+        <!--促销类型-->
+
+        <!--属性-->
+        <div class="goods-detail-item" id="getShuxing">
+            <div class="itme-name">属性</div>
+            <div class="item-con">
+                <dl class="goods-detail-spec">
+                    <dt>
+                        <span>点击查看</span>
+                    </dt>
+                </dl>
+            </div>
+            <div class="item-more"></div>
+        </div>
+        <!--属性-->
+
+        <div class="goods-detail-item goods-detail-o2o mt5 mb5">
+            <div class="tit">
+                <h3>商家信息</h3>
+            </div>
+            <div class="default" id="goods-detail-o2o">
+            </div>
+            <div class="more-location"><a href="javascript:void(0);" id="store_addr_list"></a><i class="arrow-r"></i></div>
+        </div>
+        <div class="goods-detail-item" id="goods_spec_selected">
+            <div class="itme-name">已选</div>
+            <div class="item-con">
+                <dl class="goods-detail-sel">
+                    <dt>
+                        <% if (!isEmpty(goods_info.common_spec_name)) { %>
+                        <% if(goods_map_spec && goods_map_spec.length>0){%>
+                        <% for(var i =0;i<goods_map_spec.length;i++){%>
+                        <span>
+							<%=goods_map_spec[i].goods_spec_name%>
+							<%for(var j = 0;j<goods_map_spec[i].goods_spec_value.length;j++){%>
+								<%if (goods_info.goods_spec[goods_map_spec[i].goods_spec_value[j].specs_value_id]){%>
+									<em><%=goods_map_spec[i].goods_spec_value[j].specs_value_name%></em>
+								<%}%>
+							<%}%>
+							</span>
+                        <%}%>
+                        <%}} else { %>
+                        <span>默认</span>
+                        <% } %>
+                    </dt>
+                </dl>
+            </div>
+            <div class="item-more"></div>
+        </div>
+
+
+        <div class="goods-detail-item">
+            <div class="itme-name">送至</div>
+            <div class="item-con">
+                <a href="javascript:void(0);" id="get_area_selected">
+                    <dl class="goods-detail-freight">
+                        <dt><span id="get_area_selected_name"><%=goods_hair_info.area_name%></span><strong id="get_area_selected_whether"><%=goods_hair_info.if_store_cn%></strong></dt>
+                        <dd id="get_area_selected_content"><%=goods_hair_info.content%></dd>
+                    </dl>
+                </a>
+            </div>
+            <div class="item-more location"></div>
+        </div>
+        <% if (!isEmpty(goods_info.contractlist)) { %>
+        <div class="goods-detail-item">
+            <div class="itme-name">服务</div>
+            <div class="item-con">
+                <dl class="goods-detail-contract">
+                    <dt>由“<%= store_info.store_name %>”销售和发货，并享受售后服务</dt>
+                    <dd>
+                        <% for (var k in goods_info.contractlist) { var v = goods_info.contractlist[k]; %>
+                        <span><i><img src="<%=v.cti_icon_url_60%>"></i><%=v.cti_name%></span>
+                        <% } %>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <% } %>
+
+        <div class="goods-detail-comment" id="goodsEvaluation1">
+            <div class="title">
+                <a id="goodsEvaluation2" href="javascript:void(0);">商品评价<span class="rate">好评率<em><%=good_pre%>%</em></span><span class="rate-num">（<%=goods_info.common_evaluate%>人评价）</span><div class="item-more"></div></a>
+            </div>
+            <div class="comment-info">
+                <% if (goods_eval_list && goods_eval_list.length > 0) { %>
+                <% for (var i=0; i<goods_eval_list.length; i++) { %>
+                <dl>
+                    <dt>
+                    <div class="goods-raty"><i class="star<%=goods_eval_list[i].geval_scores%>"></i></div>
+                    <time><%=goods_eval_list[i].geval_addtime_date%></time>
+                    <span class="user-name"><%=goods_eval_list[i].geval_frommembername%></span>
+                    </dt>
+                    <dd><%=goods_eval_list[i].geval_content%></dd>
+                </dl>
+                <% }} %>
+            </div>
+        </div>
+        <% if (store_info.shop_self_support != "true") {%>
+        <div class="goods-detail-store">
+            <a href="store.html?shop_id=<%= store_info.store_id %>">
+                <div class="store-name">
+                    <i class="icon-store"></i>
+                    <%= store_info.store_name %>
+                    <span class="in_store">进入店铺</span>
+                </div>
+            </a>
+            <div class="store-rate">
+                <a href="store.html?shop_id=<%= store_info.store_id %>">
+                    <div class="shop_goods">
+                        <span><%= store_info.goods_state_normal_num %></span><br>
+                        <u>全部宝贝</u>
+                    </div>
+                </a>
+                <div class="shop_goods">
+                    <span><%= store_info.store_collect %></span><br>
+                    <u>收藏店铺</u>
+                </div>
+                <div class="shop_count">
+                    <i><%= store_info.store_credit.store_desccredit.text %>：</i><span><%= store_info.store_credit.store_desccredit.credit %></span><br>
+                    <i><%= store_info.store_credit.store_servicecredit.text %>：</i><span><%= store_info.store_credit.store_servicecredit.credit %></span><br>
+                    <i><%= store_info.store_credit.store_deliverycredit.text %>：</i><span><%= store_info.store_credit.store_deliverycredit.credit %></span>
+                </div>
+            </div>
+            <div class="item-more"></div>
+
+        </div>
+        <% } %>
+
+        <% if(store_info.contract){%>
+        <div class="goods-detail-item shop_fwzc">
+            <div class="itme-name">服务支持</div>
+            <div class="item-con">
+                <dl class="goods-detail-sel">
+                    <dt>
+                        <% for(var i in store_info.contract){%>
+                        <span>
+							<em><img src="<%=store_info.contract[i].contract_type_logo%>!22x22.jpg"></em><%=store_info.contract[i].contract_type_name%>
+                        </span>
+                        <%}%>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        <%}%>
+
+        <div class="goods-detail-recom bundling"></div>
+
+        <div class="goods-detail-recom recommend">
+            <h4>
+                <span class="recom_recommend curr" data-type="tuijian">为你推荐</span>
+                <span class="recom_recommend" data-type="rexiao">店铺热销</span>
+            </h4>
+            <ul class="recommend_ul tuijian curr">
+                <% if(goods_commend_list){for (var i = 0;i<goods_commend_list.length;i++){%>
+                <li>
+                    <a href="product_detail.html?goods_id=<%=goods_commend_list[i].goods_id%>">
+                        <div class="pic"><img src="<%=goods_commend_list[i].common_image%>"></div>
+                        <dl>
+                            <dt><%=goods_commend_list[i].common_name%></dt>
+                            <dd>￥<em><%=goods_commend_list[i].common_shared_price%></em></dd>
+                        </dl>
+                    </a>
+                </li>
+                <%}}%>
+            </ul>
+            <ul class="recommend_ul rexiao">
+                <%if(goods_sale_list){for (var i = 0;i<goods_sale_list.length;i++){%>
+                <li>
+                    <a href="product_detail.html?goods_id=<%=goods_sale_list[i].goods_id%>">
+                        <div class="pic"><img src="<%=goods_sale_list[i].common_image%>"></div>
+                        <dl>
+                            <dt><%=goods_sale_list[i].common_name%></dt>
+                            <dd>￥<em><%=goods_sale_list[i].common_shared_price%></em></dd>
+                        </dl>
+                    </a>
+                </li>
+                <%}}%>
+            </ul>
+        </div>
+
+        <div class="goods-detail-bottom"><a href="javascript:void(0);" id="goodsBody1">点击查看商品详情</a></div>
+        <div class="goods-detail-foot <%if(goods_info.fu_flag){%> bless-goods-detail-foot <%}%>">
+            <div class="otreh-handle">
+                <a href="javascript:void(0);" class="kefu"><i></i><p>客服</p></a>
+                <a href="../tmpl/cart_list.html" class="cart"><i></i><p>购物车</p><span id="cart_count"></span></a>
+            </div>
+            <div class="buy-handle <%if(!goods_hair_info.if_store || goods_info.goods_stock == 0){%>no-buy<%}%>">
+                <% if (goods_info.cart == '1') { %>
+                <a href="javascript:void(0);" class="<%if(goods_hair_info.if_store){%>animation-up<%}%> add-cart">加入购物车</a>
+                <% } %>
+                <a href="javascript:void(0);" class="<%if(goods_hair_info.if_store){%>animation-up<%}%> buy-now">
+                    <span class="fenxiang_price">￥
+                    <% if(goods_info.now_buy_price){%><%=goods_info.now_buy_price %><% }else{ %> goods_info.goods_price<% } %>
+                    </span><br>
+                    <span class="fenxiang"><% if(goods_info.fu_flag ==1 ){%>送福购买<%}else{%>立即购买<%}%></span></a>
+
+                    <% if(goods_info.fu_flag){ %>
+                         <a href="javascript:void(0);" class="share_button" style="">
+                            <span class="fenxiang">送福免单</span>
+                         </a>
+                    <% }else{%>
+                        <a href="javascript:void(0);" class="share_button" style="">
+                            <span class="fenxiang_price">￥<% if (goods_info.shared_total_price) { %>
+                                <%=goods_info.shared_total_price%>
+                                <% } else { %>
+                                <%=goods_info.goods_price%>
+                                <% } %>
+                            </span>
+                            <br>
+                            <span class="fenxiang">分享购买</span>
+                        </a>
+                    <% }%>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html" id="product_detail_sepc">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top goods-options-info">
+            <div class="goods-pic">
+                <img src="<%=goods_image[0]%>"/>
+            </div>
+            <dl>
+                <dt><%=goods_info.goods_name%></dt>
+                <dd class="goods-price">
+                    <% if (goods_info.promotion_type) {
+                        var promo;
+                        switch (goods_info.promotion_type) {
+                        case '1': promo = '惠抢购'; break;
+                        case '2': promo = '限时折扣'; break;
+                        case '3': promo = '手机专享'; break;
+                        case '4': promo = '新人优惠'; break;}
+                        %>
+                        ￥<em><%=goods_info.promotion_price%></em>
+                        <span class="activity">
+                        <% if (promo) { %>
+                        <%= promo %>
+                        <% } %>
+                        </span>
+                    <% } else { %>
+                        ￥<em><% if(goods_info.now_buy_price){%><%=goods_info.now_buy_price %><% }else{ %> goods_info.goods_price<% } %></em>
+                    <% } %>
+                    <span class="goods-storage">库存：<%=goods_info.goods_stock%>件</span>
+                </dd>
+            </dl>
+            <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling" id="product_roll">
+            <div class="goods-options-stock">
+                <% if(goods_map_spec.length>0){%>
+                <% for(var i =0;i<goods_map_spec.length;i++){%>
+                <dl class="spec">
+                    <dt spec_id="<%=goods_map_spec[i].id%>">
+                        <%=goods_map_spec[i].goods_spec_name%>：
+                    </dt>
+                    <dd>
+                        <%for(var j = 0;j<goods_map_spec[i].goods_spec_value.length;j++){%>
+                        <a href="javascript:void(0);" <%if (goods_info.goods_spec[goods_map_spec[i].goods_spec_value[j].specs_value_id]){%> class="current" <%}%>specs_value_id = "<%=goods_map_spec[i].goods_spec_value[j].specs_value_id%>">
+                        <%=goods_map_spec[i].goods_spec_value[j].specs_value_name%>
+                        </a>
+                        <%}%>
+                    </dd>
+                </dl>
+                <%}%>
+                <%}%>
+                <% if (goods_info.is_virtual == '1') { %>
+                <dl class="spec-promotion">
+                    <dt>提货方式：</dt>
+                    <dd><a href="javascript:void(0);" class="current">电子兑换券</a></dd>
+                </dl>
+                <dl class="spec-promotion">
+                    <dt>有效期：</dt>
+                    <dd><a href="javascript:void(0);" class="current">即日起 到 <%= goods_info.virtual_indate_str %></a>
+                        <% if (goods_info.buyLimitation && goods_info.buyLimitation > 0) { %>
+                        （每人次限购 <%= goods_info.buyLimitation %> 件）
+                        <% } %>
+                    </dd>
+                </dl>
+                <% } else { %>
+                <% if (goods_info.is_presell == '1') { %>
+                <dl class="spec-promotion">
+                    <dt>预售：</dt>
+                    <dd><a href="javascript:void(0);" class="current"><%= goods_info.presell_deliverdate_str %> 日发货</a></dd>
+                </dl>
+                <% } %>
+                <% if (goods_info.is_fcode == '1') { %>
+                <dl class="spec-promotion">
+                    <dt>购买类型：</dt>
+                    <dd><a href="javascript:void(0);" class="current">F码优先购买</a>（每个F码优先购买一件商品）</dd>
+                </dl>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="goods-option-value">购买数量
+            <div class="value-box">
+		<span class="minus">
+			<a href="javascript:void(0);">&nbsp;</a>
+		</span>
+                <span>
+			<input type="text" pattern="[0-9]*" class="buy-num" id="buynum" value="1"/>
+		</span>
+        <span class="add">
+			<a href="javascript:void(0);">&nbsp;</a>
+		</span>
+            </div>
+        </div>
+        <div class="goods-option-foot">
+            <div class="otreh-handle hide">
+                <a href="javascript:void(0);" class="kefu">
+                    <i></i>
+                    <p>客服</p>
+                </a>
+                <a href="../tmpl/cart_list.html" class="cart">
+                    <i></i>
+                    <p>购物车</p>
+                    <span id="cart_count1"></span>
+                </a>
+            </div>
+            <!--<div class="buy-handle <%if(!goods_hair_info.if_store || goods_info.goods_stock == 0){%>no-buy<%}%>" >
+                <% if (goods_info.cart == '1') { %>
+                <a href="javascript:void(0);" class="add-cart" >加入购物车</a>
+                <% } %>
+                <a href="javascript:void(0);" class="<%if(goods_hair_info.if_store){%>animation-up<%}%> buy-now" >
+                    <span class="fenxiang_price">￥<% if(goods_info.now_buy_price){%><%=goods_info.now_buy_price %><% }else{ %> goods_info.goods_price<% } %></span><br>
+                    <span class="fenxiang">立即购买</span>
+                </a>
+                <a href="javascript:void(0);" class="share_button" style="">
+                    <span class="fenxiang_price">￥<% if (goods_info.shared_total_price) { %>
+                        <%=goods_info.shared_total_price%>
+                        <% } else { %>
+                        <%=goods_info.goods_price%>
+                        <% } %></span><br>
+                    <span class="fenxiang">分享购买</span>
+                </a>
+            </div>-->
+            <a href="javascript:void(0);" class="two_bottom queding" onclick="submit()">确定</a>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="voucher_script">
+    <% if (voucher && voucher.length > 0) { %>
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top store-voucher">
+            <i class="icon-store"></i>
+            <%=store_info.store_name%>&nbsp;&nbsp;领取店铺代金券
+            <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling" id="voucher_roll">
+            <div class="nctouch-bottom-mask-con">
+                <ul class="nctouch-voucher-list">
+                    <% for (var i=0; i<voucher.length; i++) { %>
+                    <li>
+                        <dl>
+                            <dt class="money">面额<em><%=voucher[i].voucher_price%></em>元</dt>
+                            <dd class="need">需消费<%=voucher[i].voucher_limit%>使用</dd>
+                            <% if(voucher[i].voucher_points > 0){ %>
+                            <dd class="need">需<%=voucher[i].voucher_points%>金蛋兑换</dd>
+                            <% } %>
+                            <dd class="time">至<%=voucher[i].voucher_end_date%>前使用</dd>
+                            <dl>
+                                <% if(voucher[i].taken){ %>
+                                <% if(voucher[i].voucher_points > 0){ %>
+                                <a href="javascript:void(0);" class="btn taken" data-tid=<%=voucher[i].voucher_t_id%>>已兑</a>
+                                <% }else{ %>
+                                <a href="javascript:void(0);" class="btn taken" data-tid=<%=voucher[i].voucher_t_id%>>已领</a>
+                                <% } %>
+                                <% }else{ %>
+                                <% if(voucher[i].voucher_t_points > 0){ %>
+                                <a href="javascript:void(0);" class="btn get" data-tid=<%=voucher[i].voucher_t_id%>>兑换</a>
+                                <% }else{ %>
+                                <a href="javascript:void(0);" class="btn get" data-tid=<%=voucher[i].voucher_t_id%>>领取</a>
+                                <% } %>
+                                <% } %>
+                            </dl>
+                        </dl>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</script>
+<script type="text/html" id="promotion_script">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top store-voucher">
+            <i class="icon-store"></i>
+            <%=store_info.store_name%>&nbsp;&nbsp;活动说明
+            <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling" id="promotion_roll">
+            <div class="nctouch-bottom-mask-con">
+                <ul class="nctouch-voucher-list promotion">
+                    <% if(mansong_info.mansong_id){ %>
+                    <li>
+                        <dl>
+                            <dd class="need">满即送</dd>
+                            <% for(var m in mansong_info.rule){ %>
+                            <dd class="time">
+                                购买此商品消费满<%=mansong_info.rule[m].rule_price%>
+                                <% if(mansong_info.rule[m].rule_discount){ %>
+                                ，立减现金<%=mansong_info.rule[m].rule_discount%>
+                                <% } %>
+                                <% if(mansong_info.rule[m].goods_id){ %>
+                                ，送<a href="product_detail.html?goods_id=<%=mansong_info.rule[m].goods_id%>"><img src="<%=mansong_info.rule[m].goods_image%>" width="50" href="50"/></a>
+                                <% } %>
+                            </dd>
+                            <% } %>
+                        </dl>
+                    </li>
+                    <% } %>
+
+                    <% if(goods_info.increase_info && goods_info.increase_info.increase_id){ %>
+                    <li>
+                        <dl>
+                            <dd class="need">加价购</dd>
+                            <% var increase_rule = goods_info.increase_info.rule; for(var i in increase_rule){ %>
+                            <dd class="time">
+                                购买此商品消费满<%=increase_rule[i].rule_price%>
+                                即可加价换购至多<%=increase_rule[i].rule_goods_limit%>样商品
+                            </dd>
+                            <% var increase_goods = increase_rule[i].redemption_goods;  for(var j in increase_goods){ %>
+                            <dd class="time">
+                                <a href="product_detail.html?goods_id=<%=increase_goods[j].goods_id%>" ><img src="<%=increase_goods[j].goods_image%>" width="50" href="50"/></a>
+                            </dd>
+                            <% } %>
+                            <% } %>
+                        </dl>
+                    </li>
+                    <% } %>
+
+                    <% if(goods_info.promotion_type == 'xianshi'){ %>
+                    <li>
+                        <dl>
+                            <dd class="need">限时折扣</dd>
+                            <dd class="time">
+                                直降<%=goods_info.down_price%>
+                                <% if(goods_info.lower_limit){ %>
+                                最低<%=goods_info.lower_limit%>件起
+                                <% } %>
+                            </dd>
+                        </dl>
+                    </li>
+                    <% } %>
+
+                    <% if(goods_info.promotion_type == 'scarebuy'){ %>
+                    <li>
+                        <dl>
+                            <dd class="need">惠抢购</dd>
+                            <dd class="time">
+                                直降<%=goods_info.down_price%>
+                                <% if(goods_info.lower_limit){ %>
+                                最多限购<%=goods_info.upper_limit%>件
+                                <% } %>
+                            </dd>
+                        </dl>
+                    </li>
+                    <% } %>
+                    <!--<li>
+                        <dl>
+                            <dd class="need">加价购</dd>
+                            <dd class="time">购买此商品消费满400，即可换购1件</dd>
+                        </dl>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="shuxing_script">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top store-voucher">
+            <i class="icon-store"></i>
+            属性说明
+            <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling" id="shuxing_roll">
+            <div class="nctouch-bottom-mask-con">
+                <ul class="nctouch-voucher-list promotion">
+                    <% if(goods_info.common_property_row){ for(var i in goods_info.common_property_row){ %>
+                    <li>
+                        <span><%=i%>：</span>
+                        <span>
+                                <%=goods_info.common_property_row[i]%>
+                            </span>
+                    </li>
+                    <% }} %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="list-address-script">
+    <% for (var i=0;i<addr_list.length;i++) {%>
+    <li>
+        <dl>
+            <a href="javascript:void(0)" index_id="<%=i%>">
+                <dt><%=addr_list[i].name_info%><span><i></i>查看地图</span></dt>
+                <dd><%=addr_list[i].address_info%></dd>
+            </a>
+        </dl>
+        <span class="tel"><a href="tel:<%=addr_list[i].phone_info%>"></a></span>
+    </li>
+    <% } %>
+</script>
+<script type="text/html" id="share_script">
+    <div class="nctouch-bottom-mask-bg">
+
+    </div>
+    <div class="nctouch-bottom-mask-block sharewechat_contain">
+        <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+        <div class="nctouch-bottom-mask-top shares">
+            <i class="icon-store"></i>
+            <% if(goods_info.fu_flag){ %>
+                <img src="../images/fu_pop_title.png" alt="" class='share_title_img'>
+            <% }else{%>
+                <img src="../images/share_title_img.jpg" alt="" class='share_title_img'>
+            <% }%>
+            <a class="nctouch-bottom-mask-close"><i></i></a>
+        </div>
+        <div class="nctouch-bottom-mask-rolling nctouch-bottom-mask-rolling-share" id="share_roll">
+            <div class="nctouch-bottom-mask-con">
+                <div class='share_tanchuang fu_tanchuang'>
+                    <% if( goods_info.fu_flag ==1 ){ %>
+                    <div class="fu_time clearfix">
+                        <div class="fu_time_title">我要送福到</div>
+                        <% if(goods_info.fu_info){ %>
+                            <% if(goods_info.fu_info.status==1){ %>
+                                <div class="fu_time_wrap">
+                                     <span class="fnTimeCountDown clearfix " data-end="<%=goods_info.fu_info.fu_end_time%>">
+                                         <u class="hour">00</u><i>&nbsp;:</i>
+                                         <u class="mini">00</u><i>&nbsp;:</i>
+                                         <u class="sec">00</u>
+                                         <span class="fnTimeCountDown_text">送福免单将失效</span>
+                                    </span>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <ul class='share_channel'>
+                        <li class="share_sqq">
+                            <a class="share" data-type="qqFriend" href="javascript:;">
+                                <img src="../images/share_on1.png" alt="">
+                            </a>
+                            <span class="fu_task_num">任务<span><%=goods_info.promotion.fu_base.sqq%></span>福</span>
+                            <span class="fu_pop_num">
+                                <% if(goods_info.fu_info){%>
+                                    <%=goods_info.fu_info.fu_base.sqq%>
+                                <% } %>
+                            <img src="img/sendbless/fu.png" alt=""></span>
+                        </li>
+                        <li class="share_qzone">
+                            <a class="share" data-type="qZone" href="javascript:;">
+                                <img src="../images/share_on2.png" alt="">
+                            </a>
+                            <span>任务<%=goods_info.promotion.fu_base.qzone%>福</span>
+                            <span class="fu_pop_num">
+                                <% if(goods_info.fu_info){%>
+                                     <%=goods_info.fu_info.fu_base.qzone%>
+                                <% } %>
+                            <img src="img/sendbless/fu.png" alt=""></span>
+                        </li>
+                        <li class="share_weixin">
+                            <a class="share" data-type="wechatFriend" href="javascript:;">
+                                <img src="../images/share_on3.png" alt="">
+                            </a>
+                            <span>任务<%=goods_info.promotion.fu_base.weixin%>福</span>
+                            <span class="fu_pop_num">
+                                <% if(goods_info.fu_info){%>
+                                    <%=goods_info.fu_info.fu_base.weixin%>
+                                <% } %>
+                            <img src="img/sendbless/fu.png" alt=""></span>
+                        </li>
+                        <li class="share_weixin_timeline">
+                            <a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../images/share_on4.png" alt=""></a>
+                            <span>任务<%=goods_info.promotion.fu_base.weixin_timeline%>福</span>
+                            <span class="fu_pop_num">
+                                 <% if(goods_info.fu_info){%>
+                                    <%=goods_info.fu_info.fu_base.weixin_timeline%>
+                                 <% } %>
+                            <img src="img/sendbless/fu.png" alt=""></span>
+                        <li class="share_tsina">
+                            <a class="share" data-type="weibo" href="javascript:;"><img src="../images/share_on5.png" alt=""></a>
+                            <span>任务<%=goods_info.promotion.fu_base.tsina%>福</span>
+                            <span class="fu_pop_num">
+                                <% if(goods_info.fu_info){%>
+                                    <%=goods_info.fu_info.fu_base.tsina%>
+                                <% } %>
+                            <img src="img/sendbless/fu.png" alt=""></span>
+                        </li>
+
+                    </ul>
+                    <div class="fu_pop_explain">
+                        <p class="explain_title">送福零元拿说明</p>
+                        <p class="share_describe">参加“送福免单”时，在送福开始倒计时24小时内，完成送福人的点击次数即可免费拿到您选择的商品。</p>
+                        <p class="share_describe">参加“送福免单”时，选定商品，在送福开始倒计时24小时内，没有完成所要求的点击次数时，按点击次数每次<i><%=goods_info.promotion.fu_t_price%></i>元减少活动商品购买价格,计算出商品的购买价格，您可以选择购买或放弃。</p>
+                    </div>
+                    <% }else{ %>
+                    <ul class='share_channel'>
+                        <% if(goods_info.share_info){ %>
+                        <li class="share_sqq">
+                            <a class="share" data-type="qqFriend" href="javascript:;">
+                                <img src="../images/share_g_1@3x.png" alt="">
+                            </a>
+                            <span>QQ</span><i>立省<i><%=goods_info.share_info.sqq%></i>元</i>
+                        </li>
+                        <li class="share_qzone">
+                            <a class="share" data-type="qZone" href="javascript:;">
+                                <img src="../images/share_g_2@3x.png" alt="">
+                            </a>
+                            <span>QQ空间</span><i>立省<i><%=goods_info.share_info.qzone%></i>元</i>
+                        </li>
+                        <li class="share_weixin">
+                            <a class="share" data-type="wechatFriend" href="javascript:;">
+                                <img src="../images/share_g_3@3x.png" alt="">
+                            </a>
+                            <span>微信</span><i>立省<i><%=goods_info.share_info.weixin%></i>元</i>
+                        </li>
+                        <li class="share_weixin_timeline">
+                            <a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../images/share_g_4@3x.png" alt=""></a>
+                            <span>朋友圈</span><i>立省<i><%=goods_info.share_info.weixin_timeline%></i>元</i></li>
+                        <li class="share_tsina">
+                            <a class="share" data-type="weibo" href="javascript:;"><img src="../images/share_g_5@3x.png" alt=""></a>
+                            <span>新浪微博</span><i>立省<i><%=goods_info.share_info.tsina%></i>元</i>
+                        </li>
+                        <% } %>
+
+                    </ul>
+                    <p class="share_describe"><span>1.分享立减:</span>将此商品分享到对应平台，购买此商品将获得相应减免购买。</p>
+                    <p class="share_describe"><span>2.分享立赚:</span>如果分享并完成购买，最高可获得由此分享带来的10元点击分享金。</p>
+                    <% } %>
+                    <div class="after_add">
+                        <% if(goods_info.fu_flag){ %>
+                            <%if(goods_info.fu_info){%>
+                                <span class="cancel"><a href="#">还差<%=goods_info.promotion.fu_total_times-goods_info.fu_info.click_count%>个福免单</a></span>
+                            <%}else{%>
+                                <span class="cancel"><a href="#">还差<%=goods_info.promotion.fu_total_times%>个福免单</a></span>
+                            <%}%>
+                            <span class="to_buy"><a href="" >送福购买</a></span>
+                        <%}else{%>
+                            <span class="cancel"><a href="">取消</a></span>
+                            <span class="to_buy"><a href="">分享购买</a></span>
+                        <% }%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% if(isWx){ %>
+        <div class="sharewechat">
+            <img src="../images/____.png" alt=""><br>
+            <span>点击分享到微信</span>
+        </div>
+        <% } %>
+    </div>
+</script>
+<script type="text/html" id="bundling">
+    <% for(var i in data){ %>
+    <div class="goods-detail-recom package_div" data-id="<%=data[i].bundling_id%>">
+        <h4 class="package"><%=data[i].bundling_name%></h4>
+        <h4 class="package_save">节省￥<%=data[i].total_save_price%> > </h4>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <% var goods_list = data[i].goods_list; for(var j in goods_list){ %>
+            <div class="swiper-slide">
+                <a href="product_detail.html?goods_id=<%=goods_list[j].goods_id%>">
+                    <img src='<%=goods_list[j].goods_image%>' alt="">
+                </a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+</script>
+
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/swipe.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/tmpl/footer.js"></script>
+<script type="text/javascript" src="../js/fly/requestAnimationFrame.js"></script>
+<script type="text/javascript" src="../js/fly/zepto.fly.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+<script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
+<script type="text/javascript" src="../js/product_detail.js"></script>
+<!--<script type="text/javascript" src='../js/open_app.js'></script>-->
+<!--o2o分店地址Begin-->
+<div id="list-address-wrapper" class="nctouch-full-mask hide">
+    <div class="nctouch-full-mask-bg"></div>
+    <div class="nctouch-full-mask-block">
+        <div class="header">
+            <div class="header-wrap">
+                <div class="header-l"> <a href="javascript:void(0);"> <i class="back"></i> </a> </div>
+                <div class="header-title">
+                    <h1>商家信息</h1>
+                </div>
+            </div>
+        </div>
+        <div class="nctouch-main-layout">
+            <div class="nctouch-o2o-tip"><a href="javascript:void(0);" id="map_all"><i></i>全部实体分店共<em></em>家<span></span></a></div>
+            <div class="nctouch-main-layout-a" id="list-address-scroll">
+                <ul class="nctouch-o2o-list" id="list-address-ul">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--o2o分店地址End-->
+<!--o2o分店地图Begin-->
+<div id="map-wrappers" class="nctouch-full-mask hide">
+    <div class="nctouch-full-mask-bg"></div>
+    <div class="nctouch-full-mask-block">
+        <div class="header transparent">
+            <div class="header-wrap">
+                <div class="header-l"> <a href="javascript:void(0);"> <i class="back"></i> </a> </div>
+            </div>
+        </div>
+        <div class="nctouch-map-layout">
+            <div id="baidu_map" class="nctouch-map"></div>
+        </div>
+    </div>
+</div>
+<!--o2o分店地图End-->
+
+<!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+
+</body>
+</html>

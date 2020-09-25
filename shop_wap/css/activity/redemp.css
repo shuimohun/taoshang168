@@ -1,0 +1,195 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #e45050;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+/********************信息*********************/
+.share_info{
+    width:100%;
+    height:1.95rem;
+    background-color: #5d9cec;
+    color:#fff;
+    text-align: center;
+    font-size: 0;
+}
+.share_info span{
+    display:inline-block;
+    margin-top: .25rem;
+    font-size: .28rem;
+}
+.share_info b{
+    display:inline-block;
+    font-size: .42rem;
+    font-weight: normal;
+}
+.share_info del{
+    font-size: .2rem;
+    text-decoration: none;
+}
+.share_info em{
+    font-style:normal;
+    font-size: .2rem;
+}
+.share_info u{
+    text-decoration: none;
+    font-size: .2rem;
+    margin-top: .1rem;
+}
+.share_info ul{
+    margin-top: .1rem;
+    font-size: 0;
+    display:inline-block;
+}
+.share_info ul li{
+    font-size: .2rem;
+    display:inline-block;
+    width:.8rem;
+    height:.29rem;
+    text-align: center;
+    margin-left: .1rem;
+}
+.share_info ul li.cur{
+    background-color: #4a89dc;
+}
+/********************信息*********************/
+
+/***********内容***************/
+.contain_wrap{
+    width:100%;
+    height:auto;
+    background-color: #fff;
+    margin-bottom:.1rem;
+}
+.contain_wrap .contain{
+    width:96%;
+    height:auto;
+    margin:0 auto;
+    font-size: 0;
+    position:relative;
+    padding-top: .1rem;
+}
+.contain_wrap .contain .contain_middle{
+    width:100%;
+    height:65%;
+    position:relative;
+    padding-bottom: .3rem;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right{
+    width:76%;
+    height:100%;
+    position:absolute;
+    top:-11%;
+    left:24%;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right span{
+    font-size:.2rem;
+    display:inline-block;
+    margin-top: .17rem;
+    width:4.5rem;
+    height:.3rem;
+    overflow:hidden;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right em{
+    font-size: .24rem;
+    font-style:normal;
+    position:absolute;
+    top:12%;
+    right:10%;
+}
+
+.contain_wrap .contain .contain_middle .contain_middle_right u{
+    display:inline-block;
+    font-size: .2rem;
+    color:#df3434;
+    text-decoration: none;
+    margin-top:3%;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right b{
+    display:inline-block;
+    font-size: .2rem;
+    color:#df3434;
+    font-style:normal;
+    margin-left:.2rem;
+    font-weight: normal;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right del{
+    display:inline-block;
+    font-size: .2rem;
+    color:#999;
+    font-style:normal;
+    margin-top: 4%;
+    font-weight: normal;
+}
+.contain_wrap .contain .contain_middle .contain_middle_right i{
+    display:inline-block;
+    font-size: .2rem;
+    color:#df3434;
+    font-style:normal;
+    margin-top: 4%;
+    margin-left:.2rem;
+    font-weight: normal;
+}
+
+.contain_wrap .contain .contain_middle .contain_middle_right img{
+    width:1.25rem;
+    height:.56rem;
+    position:absolute;
+    right:6%;
+    top:50%;
+}
+.contain_wrap .contain .contain_middle .contain_img{
+    width:1.23rem;
+    height:1.23rem;
+    margin-top: 3%;
+}
+.contain_wrap .contain .contain_middle .contain_img img{
+    width:100%;
+    height:100%;
+}
+.contain_wrap .contain .contain_bottom{
+    width:100%;
+    height:.44rem;
+    border-top: .01rem solid #eee;
+    position:absolute;
+    bottom: 0;
+}
+.contain_wrap .contain .contain_bottom span{
+    font-size: .18rem;
+    color:#999;
+    line-height:.44rem;
+}
+.contain_wrap .contain .contain_bottom a{
+    position:absolute;
+    right: 0;
+    font-size: .2rem;
+    line-height:.44rem;
+    color:#999;
+}
+/***********内容***************/

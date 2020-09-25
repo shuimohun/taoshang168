@@ -1,0 +1,66 @@
+/*@charset "utf-8";*/
+.lf{float:left;}
+.rt{float: right;}
+.icon{display: inline-block;}
+/*.block{opacity:1; !important;}*/
+.orflow{overflow: hidden;}
+.text-2{ overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2; }
+
+.no-block{display: none;}
+
+
+
+/*早晚 特供  start*/
+/*.wrap .all-day-content .all-day-content-item-wrap{opacity: 0;filter:Alpha(opacity=0);}*/
+.wrap .all-day-content.curr{display: block !important;}
+.no-block{display: none;}
+
+.wrap .all-day{margin-top: 40px;}
+.wrap .all-day-title .half-day{position:relative;width:558px;height:60px;line-height: 60px;padding:0 20px;border:1px solid #eee;cursor: pointer;}
+
+.wrap .all-day-title .white-day.curr{background-color: #de4b39 !important;border:1px solid #de4b39;}
+.wrap .all-day-title .black-day.curr{background-color: #34465e !important;border:1px solid #34465e;}
+
+.wrap .all-day-title .half-day.curr .text-wrap{color:#fff;}
+.wrap .all-day-title .half-day.curr .time-out-wrap{display:block;color:#fff;height: 60px;font-size:16px;}
+.wrap .all-day-title .half-day.curr .time-out-wrap span{display:inline-block;font-size:22px;background-color:#fff;color:#de4b39;font-weight:600;height:34px;line-height:33px;padding:0 8px;margin:0 6px;border-radius: 10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;-ms-border-radius: 10px;display: inline-block;margin-top: 12px;}
+.wrap .all-day-title .black-day.curr .time-out-wrap span{color:#34465e !important;}
+.wrap .all-day-title .half-day.curr .center-wrap .text-wrap span{position: absolute;top:21px;left:0;font-size:12px;color:#fff;}
+.wrap .all-day-title .half-day.no-curr .center-wrap{top:0;left:50%;margin-left:-68px;}
+.wrap .all-day-title .half-day.no-curr .time-out-wrap{display:none;}
+
+.wrap .all-day-title .half-day .center-wrap{color:#000;position: absolute;width:136px;height: 60px;}
+.wrap .all-day-title .half-day .center-wrap .icon{width:30px;height:30px;margin-top:15px;}
+.wrap .all-day-title .white-day.curr .center-wrap .icon{width:30px;height:30px;margin-top:15px;background:url(../images/sun-white.png) no-repeat;}
+.wrap .all-day-title .white-day.no-curr .center-wrap .icon{width:30px;height:30px;margin-top:15px;background:url(../images/sun-brown.png) no-repeat;}
+.wrap .all-day-title .black-day.no-curr .center-wrap .icon{background:url(../images/moon-brown.png) no-repeat;}
+.wrap .all-day-title .black-day.curr .center-wrap .icon{background:url(../images/moon-white.png) no-repeat;}
+.wrap .all-day-title .half-day .center-wrap .text-wrap{position: absolute;left: 40px;top:-10px;font-size: 24px;}
+.wrap .all-day-title .half-day .center-wrap .text-wrap span{position: absolute;top:23px;left:0;font-size:12px;width: 100px;}
+
+.wrap .all-day-content{overflow: hidden;display: none;}  /*height:363px;*/
+.wrap .all-day-content .all-day-content-item-wrap{overflow: hidden;margin-bottom:20px;}
+.wrap .all-day-content .all-day-content-item{width:179px;padding:0 10px;margin-top:14px;border-right:1px solid #eee;}
+.wrap .all-day-content .all-day-content-item .img-center{width:180px;height:180px;}
+.wrap .all-day-content .all-day-content-item .img-center img{width:100%;height:100%;}
+.wrap .all-day-content .all-day-content-item .text-content{width:180px;height:40px;margin:0 auto;padding-top:5px;text-align: left;line-height: 20px;font-size:14px;}
+.wrap .all-day-content .all-day-content-item .text-content a{height: 40px;width:180px;}
+.wrap .all-day-content .all-day-content-item .text-content div{width:180px;height:40px;}
+.wrap .all-day-content .all-day-content-item .price-content{text-align: left;margin-top: 4px;}
+.wrap .all-day-content .all-day-content-item .now-price{color:#c51e1e;}
+.wrap .all-day-content .all-day-content-item .now-price span{color:#c51e1e;}
+.wrap .all-day-content .all-day-content-item .now-price span.coin-sign{font-size: 12px;color:#ff371e;}
+.wrap .all-day-content .all-day-content-item .now-price span.coin-much{font-size:18px;font-weight: 600;color:#ff371e;}
+.wrap .all-day-content .all-day-content-item .old-price{text-decoration: line-through;color:#a3a3a3;font-size: 12px;}
+/*.wrap .all-day-content .all-day-content-item .old-price{margin-top:6px;}*/
+.wrap .all-day-content .all-day-content-item .buy-once-button{position:relative;margin-top:8px;background-color:#ff371e;height: 32px;line-height: 32px;}
+.wrap .all-day-content .all-day-content-item .buy-once-button .buy-once{position:absolute;top:0;left:0;color:#fff;font-size:16px;width:180px;height: 32px;line-height: 32px;text-align: center;}
+/*早晚 特供  end*/
+
+/*分享处*/
+.wrap  .share-wrap{position:relative;margin: 4px auto;padding:0 3px;height:16px;line-height: 16px;text-align: left;margin-bottom:3px;}
+.wrap  .share-wrap .share{overflow:hidden;display:inline-block;border:1px solid #ff371e;}
+.wrap  .share-wrap .share span{float:left;color:#ff371e;font-size: 12px;display: inline-block;line-height:16px;padding:0 2px;text-align: center;}
+.wrap  .share-wrap .share .save{background-color:#ff371e;color: #fff;}
+.activity-wrap{position: absolute;right:10px;bottom:0;}
+.activity-wrap span{border:1px solid #ff371e;color:#ff371e;font-size: 12px;padding:0 3px;border-radius: 8px;-webkit-border-radius: 8px;-ms-border-radius: 8px;-moz-border-radius: 8px;}

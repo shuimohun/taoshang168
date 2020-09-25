@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商城信息</title>
+  <link rel="stylesheet" href="../css/information.css">
+  <link rel="stylesheet" href="../css/andone/base.css">
+  <link rel="stylesheet" href="../css/information_item.css">
+  <script src="../js/tmpl/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../js/information.js'></script>
+  <script type="text/javascript" src="../js/tmpl/swipe.js"></script>
+  <script type="text/javascript" src='../js/tmpl/swiper.min.js'></script>
+  <script src="../js/config.js"></script>
+  <style>
+    .share_tanchuang{
+      width: 90%;
+      height: 2.25rem;
+      background-color: #ccc;
+      /*position: fixed;*/
+      bottom: 0;
+      display: none;
+      position: fixed;
+      top:60%;
+      left: 4%;
+      border-radius: .2rem;
+      z-index: 101;
+    }
+    .share_title_img{
+      width: 100%;
+      height: 15%;
+    }
+    .share_tanchuang .share_channel{
+      width: 100%;
+      height: 40%;
+      font-size: 0;
+    }
+    .share_tanchuang .share_channel li{
+      display: inline-block;
+      font-size:.24rem;
+      text-align: center;
+      width: 20%;
+      height: 100%;
+      vertical-align: top; 
+    }
+    .share_tanchuang .share_channel li img{
+      width: 1rem;
+      height: 1rem;
+      margin-top: .2rem;
+    }
+    .share_tanchuang .share_channel li span{
+      display: inline-block;
+      color: #333;
+      line-height: 1rem;
+    }
+    .share_tanchuang .share_channel li i{
+      display: inline-block;
+      color: #999;
+    }
+    .share_tanchuang .share_channel li i i{
+      color: #e45050;
+    }
+    .share_tanchuang p{
+      font-size: .6rem;
+      color: #999;
+      padding:0 5% 0 5%;
+      margin-top: .1rem;
+    }
+    .share_tanchuang p span{
+      font-size: .7rem;
+      color: #666;
+    }
+    .nctouch-bottom-mask-top.share{padding:0 !important;}
+    .shared i{color: #e45050 !important;}
+
+    .sharewechat_contain .sharewechat{
+      position: absolute;
+      right: 7%;
+      bottom: 140%;
+    }
+    .sharewechat_contain .sharewechat img{
+      width: 5rem;
+      height: 3rem;
+      margin-left:2rem;
+    }
+    .sharewechat_contain .sharewechat span{
+      color: #fff;
+      font-size: 1rem;
+    }
+    .bg_contain{
+      background-color: black;
+      display: inline-block;
+      opacity: .3;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top:0;
+      left: 0;
+      z-index: 100;
+      display: none;
+    }
+
+    /*20180623 / by,Ji Zihe  样式修改*/
+    .clearfix { zoom: 1 }
+    .clearfix:after { display: block; clear: both; content: " "; }
+    .information_comment{ height: auto;}
+    .comment.information_comment .comment_img{ width: 94%; margin: 0 auto; height: auto; border-radius: inherit;}
+    .comment.information_comment .comment_img img{ width: 0.5rem; height: 0.5rem ; border-radius: 50%; display: inline-block; margin: 0; vertical-align: bottom;}
+    .comment.information_comment span{ position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem;}
+    .comment.information_comment em {position: inherit; display: inline-block; height: 0.5rem; line-height: 0.5rem; float: right;}
+
+    .comment.information_comment i.comment_text{ display: block; width: 86%; margin-left: 10%; font-size: 0.22rem; color: #999;word-wrap: break-word; word-break: normal; position: inherit; left: inherit;top: inherit; height: auto; overflow:hidden;  font-style:normal;}
+
+    .main u{ right: 23%;}
+  </style>
+</head>
+<body style="background-color:#fff;margin-top:1.6rem" class="information_body">
+  <!--头部部分-->
+  <section class="open">
+        <img src="../images/main_img/open1.png" alt="" class="open_title">
+        <img src="../images/main_img/open2.png" alt="" class="open_click" id="btnOpenApp" data-type="3">
+        <img src="../images/main_img/open_close.png" alt="" class="open_close">
+  </section>
+  <header class="person">
+    <div class="title">
+      <a href="javascript:history.go(-1)"><img src="../images/icon_back.png" alt=""></a>
+      <span>商城资讯</span>
+      <a><img src="../images/icon_share.png" alt=""  onclick="common_alert(this)"  class="info"></a>
+    </div>
+  </header>
+  <div class="info_alert">
+
+    <img src="../images/user_img/choose_gray@3x.png" alt="">
+
+    <!-- <a href="../index.html">
+        <span>
+            <img src="../images/user_img/more_home@2x.png" alt="">
+            <u>商城首页</u>
+        </span>
+    </a>
+
+    <a href="../cart_list.html">
+        <span>
+            <img src="../images/user_img/more_cart@2x.png" alt="">
+            <u>购物车</u>
+        </span>
+    </a>
+
+    <a href="order_list.html">
+        <span>
+            <img src="../images/user_img/more_form@2x.png" alt="">
+            <u>我的订单</u>
+        </span>
+    </a>
+
+    <a href="chat_list.html">
+        <span>
+            <img src="../images/bbc-bg36.png" alt="">
+            <u>消息</u>
+        </span>
+    </a> -->
+
+  </div>
+  <!--头部部分-->
+  <div class="find_nav">
+    <div class="find_nav_left">
+    </div>
+  </div>
+  <div class="contain"></div>
+  <div style="background-color:#f2f2f2;width:100%;height:.1rem;"></div>
+  <!-- 2018-07-12 推荐商品 start-->
+  <div class="zx_goods">
+  </div>
+  <!-- 2018-07-12 推荐商品 end-->
+  <div style="background-color:#f2f2f2;width:100%;height:.1rem;"></div>
+  <div class="recommend"></div>
+  <div style="background-color:#f2f2f2;width:100%;height:.1rem;"></div>
+  <div class="comm"></div>
+  <div class='share_tanchuang'>
+      <ul class='share_channel'>
+        <li class="share_sqq">
+          <a class="share" data-type="qqFriend" href="javascript:;">
+            <img src="../images/share_g_1@3x.png" alt="">
+          </a><br>
+          <span>QQ</span>
+        </li>
+        <li class="share_qzone">
+          <a class="share" data-type="qZone" href="javascript:;">
+            <img src="../images/share_g_2@3x.png" alt="">
+          </a><br>
+          <span>QQ空间</span>
+        </li>
+        <li class="share_weixin">
+          <a class="share" data-type="wechatFriend" href="javascript:;">
+            <img src="../images/share_g_3@3x.png" alt="">
+          </a><br>
+          <span>微信</span>
+        </li>
+        <li class="share_weixin_timeline">
+          <a class="share" data-type="wechatTimeline" href="javascript:;"><img src="../images/share_g_4@3x.png" alt=""></a><br>
+          <span>朋友圈</span></li>
+        <li class="share_tsina">
+          <a class="share" data-type="weibo" href="javascript:;"><img src="../images/share_g_5@3x.png" alt=""></a><br>
+          <span>新浪微博</span>
+        </li>
+      </ul>
+    </div>
+    <div class="bg_contain"></div>
+
+  <div style="background-color:#fff;width:100%;height:1.2rem;"></div>
+  <div id="share_html" class="nctouch-bottom-mask">
+
+  </div>
+  <div class="comment_input">
+      <input type="text" name="information_reply_content" id="review">
+      <a href="#returnThis"><button class="but">发送</button></a>
+  </div>
+  <script type="text/html" id="list_l">
+    <div class="find_nav_list">
+      <ul>
+        <% if(items){ %>
+        <% for(var i in items){  %>
+        <li ><a href="./information_item.html?type=<%=items[i].id %>" data-id="<%=items[i].information_group_id%>"><%=items[i].information_group_title %></a></li>
+        <% } %>
+        <% } %>
+      </ul>
+    </div>
+  </script>
+  <script type="text/html" id="comm_s">
+    <% if(items){ %>
+    <% for(var i in items){  %>
+    <div class="comment information_comment" name='returnThis' id="returnThis">
+      <div class="comment_img clearfix">
+        <img src="<%=items[i].user_logo %>" alt="">
+        <span><%=items[i].user_name %></span>
+        <em><%=items[i].article_reply_time %></em>
+      </div>
+      <i class="comment_text"><%=items[i].article_reply_content %></i>
+    </div>
+    <% } %>
+    <% } %>
+</script>
+  <script type="text/html" id="recommend">
+    <% if(items){ %>
+      <% for(var i in items){ %>
+      <div class="main">
+              <a href="./information.html?information_id=<%=items[i].information_id %>&type=<%=items[i].information_group_id %>"><img src="<%=items[i].information_pic %>" alt=""></a>
+              <a href="./information.html?information_id=<%=items[i].information_id %>&type=<%=items[i].information_group_id %>"> <span><%=items[i].information_title %></span></a>
+          <u><%=items[i].information_add_time %></u>
+              <i>浏览
+          <%=items[i].information_fake_read_count%>次
+
+
+       </div>
+          <% } %>
+          <% } %>
+  </script>
+<!--商品推荐  Start-->
+<script type="text/html" id="goods_recommend">
+    <% if( data.goods && data.goods.length >0 ){%>
+        <div class="zx_goods_title">为您优选</div>
+        <div class="zx_goods_list">
+            <ul>
+                <% for(var g in data.goods){%>
+                    <li>
+                        <a href="./product_detail.html?goods_id=<%= data.goods[g].goods_id%>">
+                            <div class="pic"><img src="<%= data.goods[g].goods_image%>" alt=""></div>
+                            <dl>
+                                <dt><%= data.goods[g].goods_name%></dt>
+                                <dd>￥<em><%= data.goods[g].goods_price%></em></dd>
+                            </dl>
+                        </a>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    <% }%>
+</script>
+  <!--商品推荐 End-->
+  <script type="text/html" id="share_script"></script>
+  <script type="text/javascript" src="../js/zepto.min.js"></script>
+  <script type="text/javascript" src="../js/config.php"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript" src="../js/template.js"></script>
+  <script type="text/javascript" src="../js/simple-plugin.js"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript" src="../js/plugins/NativeShare.js"></script>
+  <script type="text/javascript" src="../js/information_row.js"></script>
+  <!--<script type="text/javascript" src='../js/open_app.js'></script>-->
+  <script src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
+<script>
+  var id = getQueryString('id');
+    new Mlink({
+        mlink:'https://a0ncmk.mlinks.cc/Ab5y?name=news_id&id='+id,
+        button:document.querySelector('img#btnOpenApp')
+    });
+</script>
+</body>
+
+</html>

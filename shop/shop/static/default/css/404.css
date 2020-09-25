@@ -1,0 +1,27 @@
+div#da-wrapper{height:auto;min-height:100%;position:relative;min-width:320px;background-image: url(../images/blueprint.png);background-color:#f2f2f2;color:#444;font:12px/1.5 'Helvetica Neue',Arial,Helvetica,sans-serif}
+div#da-wrapper,div#da-wrapper.fluid{width:100%}
+div#da-wrapper .da-container,div#da-wrapper.fluid .da-container{width:96%;margin:auto}
+div#da-wrapper.fixed{min-width:960px}
+div#da-wrapper.fixed .da-container{width:960px}
+div#da-wrapper.fixed #da-sidebar-separator{left:50%;margin-left:-300px}
+div#da-content{clear:both;padding-bottom:58px}
+div#da-content #da-sidebar{position:relative;float:left;z-index:150}
+div#da-content #da-sidebar .da-button-container{padding:2px;margin-bottom:6px;border:1px solid #cacaca;-webkit-border-radius:4px;-o-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,1);-o-box-shadow:inset 0 1px 0 rgba(255,255,255,1);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,1);box-shadow:inset 0 1px 0 rgba(255,255,255,1);background-color:#fff;background-image:linear-gradient(bottom,#fff 0,#f1f1f1 100%);background-image:-o-linear-gradient(bottom,#fff 0,#f1f1f1 100%);background-image:-moz-linear-gradient(bottom,#fff 0,#f1f1f1 100%);background-image:-webkit-linear-gradient(bottom,#fff 0,#f1f1f1 100%);background-image:-ms-linear-gradient(bottom,#fff 0,#f1f1f1 100%);background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#fff),color-stop(1,#f1f1f1))}
+div#da-content #da-content-wrap{margin-left:230px;padding-bottom:20px;margin-top:20px}
+div#da-content #da-content-wrap #da-content-area{float:left;width:100%;display:block}
+div#da-error-wrapper{width:500px;padding:30px 0;margin:auto;position:relative}
+div#da-error-wrapper .da-error-heading{color:#e15656;text-align:center;font-size:24px}
+div#da-error-wrapper #da-error-code{width:285px;height:170px;padding:127px 16px 0 16px;position:relative;margin:auto;margin-bottom:20px;z-index:5;line-height:1;font-size:32px;text-align:center;background:url(../images/error-hanger.png) no-repeat center center;-webkit-transform-origin:center top;-moz-transform-origin:center top;transform-origin:center top;-webkit-animation:error-swing infinite 2s ease-in-out alternate;-moz-animation:error-swing infinite 2s ease-in-out alternate;animation:error-swing infinite 2s ease-in-out alternate}
+div#da-error-wrapper #da-error-code span{font-size:96px;display:block}
+div#da-error-wrapper #da-error-pin{width:38px;height:38px;display:block;margin:auto;margin-bottom:-27px;z-index:10;position:relative;background:url(../images/error-pin.png) no-repeat center center}
+div#da-error-wrapper p{text-align:center;font-size:14px}
+div#da-error-wrapper p a{margin:5px;color:#fff;background:#a6d037;text-decoration:none;padding:1px 6px;display:inline-block;-webkit-border-radius:4px;-o-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
+@-webkit-keyframes error-swing{0%{-webkit-transform:rotate(4deg)}
+    100%{-webkit-transform:rotate(-4deg)}
+}
+@-moz-keyframes error-swing{0%{-moz-transform:rotate(4deg)}
+    100%{-moz-transform:rotate(-4deg)}
+}
+@keyframes error-swing{0%{transform:rotate(4deg)}
+    100%{transform:rotate(-4deg)}
+}

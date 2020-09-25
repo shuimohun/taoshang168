@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>通讯录</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/addressbook.css">
+	<link rel="stylesheet" type="text/css" href="../../css/friendletter/foot_base.css">
+
+</head>
+<body>
+	<!--头部 start-->
+	<header class="person blackbg">
+		通讯录
+		<a href="#" class="back"></a>
+		<span class="addicon addicon_tx"></span>
+		<div class="add_tips">
+			<i></i>
+			<ul>
+				<li><a href="./groupchat.html">发起群聊</a></li>
+				<li><a href="./addfriend.html">添加好友</a></li>
+			</ul>
+		</div>
+	</header>
+	<!--头部 end-->
+	<!--搜索框 start-->
+	<div class="search">
+		<div class="searchwrap">
+			<input type="text" placeholder="搜索联系人">
+			<a href="#" class="search_btn">搜索</a>
+		</div>
+	</div>
+	<!--搜索框 end-->
+	<!--友信列表 start-->
+	<div class="main">
+		<div class="main_wrap friend_List">
+		</div>
+		<!--右侧字母检索start-->
+		<div class="indexes_list">
+			<ul>
+				<li><a href="#link_A"  >A</a></li>
+				<li><a href="#link_B" >B</a></li>
+				<li><a href="#link_C" >C</a></li>
+				<li><a href="#link_D" >D</a></li>
+				<li><a href="#link_E" >E</a></li>
+				<li><a href="#link_F" >F</a></li>
+				<li><a href="#link_G" >G</a></li>
+				<li><a href="#link_H" >H</a></li>
+				<li><a href="#link_I" >I</a></li>
+				<li><a href="#link_J" >J</a></li>
+				<li><a href="#link_K" >K</a></li>
+				<li><a href="#link_L" >L</a></li>
+				<li><a href="#link_M" >M</a></li>
+				<li><a href="#link_N" >N</a></li>
+				<li><a href="#link_O" >O</a></li>
+				<li><a href="#link_P" >P</a></li>
+				<li><a href="#link_Q" >Q</a></li>
+				<li><a href="#link_R" >R</a></li>
+				<li><a href="#link_S" >S</a></li>
+				<li><a href="#link_T" >T</a></li>
+				<li><a href="#link_U" >U</a></li>
+				<li><a href="#link_V" >V</a></li>
+				<li><a href="#link_W" >W</a></li>
+				<li><a href="#link_X" >X</a></li>
+				<li><a href="#link_Y" >Y</a></li>
+				<li><a href="#link_Z" >Z</a></li>
+				<li><a href="#link_#" >#</a></li>
+			</ul>
+		</div>
+		<!--右侧字母检索end-->
+	</div>
+	<!--友信列表 end-->
+	<!--插入脚部 start-->
+	<div id="foot"></div>
+	<!--插入脚部 end-->
+<script type="text/html" id="friend_List">
+
+	<div class="namewrap">
+		<ul>
+			<li class="addfriend"><img src="../img/friendletter/ab_icon1.png" alt=""><a href="./addfriend.html">添加好友</a></li>
+			<li class="groupchat"><img src="../img/friendletter/ab_icon2.png" alt=""><a href="./groupchat.html">发起群聊</a></li>
+		</ul>
+	</div>
+	<% if(data){ %>
+		<% for(var i in data){ %>
+			<div class="namewrap">
+				<a class="name_indexes" name="link_<%=data[i][0]['initials']%>"><%=data[i][0]['initials']%></a>
+				<ul>
+					<% for(var j in data[i]){ %>
+					<li class="namelist" data-id="<%=data[i][j]['friend_id']%>">
+						<a href="../member/chat_info.html?t_id=<%=data[i][j]['friend_id']%>&t_name=<%=data[i][j]['friend_name']%>">
+							<img src="<%=data[i][j]['friend_image']%>" alt="" onerror="this.src='../img/robot-ss.png'" />
+							<%=data[i][j]['friend_name']%>
+						</a>
+						<% if(data[i][j]['mutual'] ==1){ %>
+						<div class="fllowwrap">
+							<span><img class="fllow_btn1" src="../img/friendletter/fllow1.png" alt="">互相关注</span>
+							<input class="fllow_btn" data-id="<%=data[i][j]['user_friend_id']%>" type="button" value="取消关注" />
+						</div>
+						<% }else{%>
+						<div class="fllowwrap">
+							<span><img class="fllow_btn1" src="../img/friendletter/fllow2.png" alt="">我关注的</span>
+							<input class="fllow_btn" data-id="<%=data[i][j]['user_friend_id']%>" type="button" value="取消关注" />
+						</div>
+						<% } %>
+					</li>
+					<% }%>
+				</ul>
+			</div>
+		<% }%>
+	<% }%>
+</script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script src="../../js/friendletter/zepto.min.js"></script>
+<script src="../../js/friendletter/addressbook.js"></script>
+	<script>
+        //引入脚部内容
+        $(document).ready(function () {
+            $('#foot').load('foot_.html');
+            setTimeout(function(){
+                foot_alt = $(".footer").height();//获取脚部高度
+                $(".foot_bg").css({"height":foot_alt+"px"});
+                $("#foot .foot_item .more").parents(".foot_item").addClass("on");//对应位置标红
+                //导航跳转
+                $("#foot .foot_item .index").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/fans-circle.html';
+                })
+                $("#foot .foot_item .hot_tv").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/videoplay.html';
+                })
+                $("#foot .foot_item .fabu").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/information_message.html';
+                })
+                $("#foot .foot_item .message").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/friend_list.html';
+                })
+                $("#foot .icon_interest").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/interestlabel.html';
+                })
+                $("#foot .icon_addressbook").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/addressbook.html';
+                })
+                $("#foot .icon_system_infor").click(function () {
+                    // window.location.href = WapSiteUrl+'/tmpl/friendletter/addressbook.html';
+                })
+                $("#foot .icon_my_on").click(function () {
+                    window.location.href = WapSiteUrl+'/tmpl/friendletter/systeminfor.html';
+                })
+                //end
+                $("#foot .more").click(function(){
+                    $(".more_win").css({"bottom":(foot_alt)+"px"});
+                    $(".mask").css({"display":"block","opacity":"0.4"})
+                });
+                $(".mask").click(function(){
+                    $(".more_win").css({"bottom":"-5rem"});
+                    $(this).css({"display":"none","opacity":"0"})
+                })
+                $(".more_win .close_btn").click(function(){
+                    $(".more_win").css({"bottom":"-5rem"});
+                    $(".mask").css({"display":"none","opacity":"0"})
+                })
+            },200)
+        });
+	</script>
+</body>
+</html>

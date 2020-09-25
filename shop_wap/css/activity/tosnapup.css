@@ -1,0 +1,349 @@
+@charset "utf-8";
+
+/***********************头部部分***************************/
+.title{
+	width: 100%;
+	height:.9rem;
+	background-color: #fff;
+}
+.title ul{
+	font-size: 0;
+	width:100%;
+	position:relative;
+}
+.title ul li{
+	display: inline-block; 
+	width:.8rem;
+	height:.8rem;
+	margin:.1rem 0 0 .1rem;
+}
+.title ul li.dialogbox{
+	margin-left:5.6rem;
+}
+.title ul li.search{
+	position:absolute;
+	top:20%;
+}
+.title ul li img{
+	display:block;
+	width:.4rem;
+	height:.4rem;
+	margin:0 auto;
+}
+.title ul li a{
+	font-size: .22rem;
+	margin-left: 0 auto;
+	color:#393939;
+}
+.title ul li a.search-a{
+	margin-left:.15rem;
+}
+.title ul li.span{
+	position: absolute;
+	top:20%;
+	left:37%;
+}
+.title ul li span{
+	display:inline-block;
+	color:#393939;
+	vertical-align:center;
+	width:1.4rem;
+	height:.35rem;
+}
+.title ul li span img{
+	width:100%;
+	height:100%;
+}
+/***********************头部部分***************************/
+/**************主图轮播图*************************/
+  .slider_list { position: relative; z-index: 1; overflow: hidden;clear:both;height:3.02rem;}
+  .swipe { position: relative; overflow: hidden; visibility: hidden; }
+  .swipe-wrap { overflow: hidden; position: relative; height:3.02rem;}
+  .swipe-wrap > div { float: left; width: 100%; height:100%;position: relative; }
+  .swipe-wrap img { width: 100%;height:100%;}
+/**************主图轮播图*************************/
+
+/*********title********/
+.sale_title{
+    width:100%;
+    height:.57rem;
+    line-height:.57rem;
+    background-color: #f2f2f2;
+    line-height:.57rem;
+}
+.sale_title span{
+    display:inline-block;
+    font-size: .22rem;
+    color:#f02b2b;
+    margin-left: .1rem;
+}
+.sale_title .time{
+    display:inline-block;
+    font-size: .18rem;
+    margin-left: .2rem;
+    margin-top: .05rem;
+    color:#999;
+    float: right;
+    margin-right: .1rem;
+}
+.sale_title .time u{
+    display:inline-block;
+    width:.3rem;
+    height:.28rem;
+    font-size: .2rem;
+    color:#999;
+    text-decoration:none;
+    line-height:.28rem;
+    text-align: center;
+    border-radius:.05rem;
+}
+.sale_title .time i{
+    font-size: .18rem;
+    font-style:normal;
+}
+/*********title*******/
+
+.buy_goods{
+    width:100%;
+    height:2rem;
+    border-bottom:.01rem solid #f2f2f2;
+    background-color: #fff;
+    position:relative;
+}
+.buy_goods .goods_img{
+    width:2rem;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods .goods_img img{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods .buy_title{
+	display:inline-block;
+	width:3.7rem;
+	height:.3rem;
+	color:#333;
+	font-size: .24rem;
+	overflow:hidden;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
+
+.buy_goods .bg1{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../money/img/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:35%;
+
+}
+.buy_goods .bg2{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../money/img/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:55%;
+}
+.buy_goods .zhijiang{
+	font-size: .24rem;
+	color:#333;
+	position:absolute;
+	 top:30%;
+	left:74%;
+}
+.buy_goods .price{
+	color:#e11222;
+	font-size: .26rem;
+	position:absolute;
+    bottom:20%;
+	left:35%;
+}
+.buy_goods .bar{
+	display:inline-block;
+	width:1.85rem;
+	height:.3rem;
+	background-color:#ffc0cb;
+	border-radius:.2rem;
+	position:absolute;
+	bottom:6%;
+	left:35%;
+}
+.buy_goods .bar img{
+	height:100%;
+	border-radius:.2rem;
+}
+.buy_goods button{
+	width:1.2rem;
+	height:.46rem;
+	display:inline-block;
+	border-radius:.3rem;
+	border: .01rem solid #e11222;
+	background-color:#fff;
+	text-align: center;
+	line-height:.46rem;
+	font-size: .2rem;
+	color:#e11222;
+	position:absolute;
+	bottom:10%;
+	right:5%;
+	outline:0 none;
+}
+.buy_goods .qiang{
+	font-size: .18rem;
+	color:#e11222;
+	position:absolute;
+	bottom:36%;
+	right:9%;
+}
+
+.title_tomorrow{
+	width:100%;
+	height:.6rem;
+	line-height:.6rem;
+	text-align: center;
+	background-color:#fff;
+}
+.title_tomorrow img{
+	width:1rem;
+	height:.27rem;
+	margin-top:.2rem ;
+}
+
+
+.buy_goods_over{
+    width:100%;
+    height:2rem;
+    border-bottom:.01rem solid #f2f2f2;
+    background-color: #fff;
+    position:relative;
+}
+.buy_goods_over .goods_img{
+    width:2rem;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_over .goods_img img{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
+.buy_goods_over .buy_title{
+	display:inline-block;
+	width:3.7rem;
+	height:.3rem;
+	color:#333;
+	font-size: .24rem;
+	overflow:hidden;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
+
+.buy_goods_over .bg1{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../money/img/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:35%;
+
+}
+.buy_goods_over .bg2{
+    display:inline-block;
+    width:1.18rem;
+    height:.25rem;
+    background:url(../money/img/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .16rem;
+    color:#fff;
+    text-align: center;
+    line-height:.25rem;
+    position:absolute;
+    top:33%;
+	left:55%;
+}
+.buy_goods_over .zhijiang{
+	font-size: .24rem;
+	color:#333;
+	position:absolute;
+	 top:30%;
+	left:74%;
+}
+.buy_goods_over .price{
+	color:#e11222;
+	font-size: .26rem;
+	position:absolute;
+    bottom:10%;
+	left:35%;
+}
+.buy_goods_over .bar{
+	display:inline-block;
+	width:1.85rem;
+	height:.3rem;
+	background-color:#ffc0cb;
+	border-radius:.2rem;
+	position:absolute;
+	bottom:6%;
+	left:35%;
+}
+.buy_goods_over .bar img{
+	height:100%;
+	border-radius:.2rem;
+}
+.buy_goods_over button{
+	width:1.2rem;
+	height:.46rem;
+	display:inline-block;
+	border-radius:.3rem;
+	border: .01rem solid #999;
+	background-color:#fff;
+	text-align: center;
+	line-height:.46rem;
+	font-size: .2rem;
+	color:#999;
+	position:absolute;
+	bottom:10%;
+	right:5%;
+	outline:0 none;
+}
+.buy_goods_over .qiang{
+	font-size: .2rem;
+	color:#2f94f2;
+	position:absolute;
+	top:50%;
+	left:35%;
+}
+
+.title2{
+	width:100%;
+	height:.8rem;
+	background-color:#fff;
+	text-align: center;
+}
+.title2 img{
+	width:5.6rem;
+	height:.8rem;
+}

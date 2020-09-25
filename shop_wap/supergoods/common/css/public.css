@@ -1,0 +1,27 @@
+*{margin:0 auto;padding:0;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+html{background-color:#fff;color:#000;overflow-y: scroll;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-overflow-scrolling: touch;}
+html,body,input,select,textarea{font-family: "microsoft yahei", Arial, Helvetica, sans-serif;}
+*,*:after,*:before{box-sizing: border-box;}
+ul,li,ol{list-style: none;border:none;}
+a{text-decoration: none;color: #fff;}
+img{border:none;}
+input,button{border:none;outline:none;}
+.rt{float: right;}
+.lf{float: left;}
+.clear{clear: both;}
+.orflow{overflow: hidden;-webkit-overflow-scrolling: touch;}
+.after:after{content:'';height:0;visibility: hidden;display: block;clear: both;}
+
+body{max-width:10rem;}
+
+::-webkit-scrollbar{display:none;}
+.icon{display: inline-block;}
+.mt_top_16{margin-top:0.2133333rem;}
+.txt{overflow: hidden;text-overflow: ellipsis;-o-text-overflow:ellipsis;white-space: nowrap;}
+.txt-2{overflow: hidden;text-overflow: ellipsis;-o-text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp: 2;}
+.img-center{position:relative;display:table-cell;vertical-align: middle;text-align: center;}
+
+/*以下代码  为 补充  common css*/
+.block{display: block !important;}
+.middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);}
+.ui-mask{display:none;opacity:0;position:fixed;top:0;left:0;z-index:499;width:100%;background:#000;height:100%;}

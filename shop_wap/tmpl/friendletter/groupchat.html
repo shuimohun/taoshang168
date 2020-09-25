@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>发起群聊</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/groupchat.css">
+</head>
+<body>
+	<!--头部 start-->
+	<header class="person blackbg">
+		发起群聊
+		<a href="#" class="back"></a>
+		<span class="sure_btn"></span>
+	</header>
+	<!--头部 end-->
+	<!--友信列表 start-->
+	<div class="main">
+		<div class="group_imgbox">
+		</div>
+		<div class="main_wrap friend_list">
+		</div>
+		<!--右侧字母检索start-->
+		<div class="indexes_list">
+			<ul>
+				<li><a href="#link_A" >A</a></li>
+				<li><a href="#link_B" >B</a></li>
+				<li><a href="#link_C" >C</a></li>
+				<li><a href="#link_D" >D</a></li>
+				<li><a href="#link_E" >E</a></li>
+				<li><a href="#link_F" >F</a></li>
+				<li><a href="#link_G" >G</a></li>
+				<li><a href="#link_H" >H</a></li>
+				<li><a href="#link_I" >I</a></li>
+				<li><a href="#link_J" >J</a></li>
+				<li><a href="#link_K" >K</a></li>
+				<li><a href="#link_L" >L</a></li>
+				<li><a href="#link_M" >M</a></li>
+				<li><a href="#link_N" >N</a></li>
+				<li><a href="#link_O" >O</a></li>
+				<li><a href="#link_P" >P</a></li>
+				<li><a href="#link_Q" >Q</a></li>
+				<li><a href="#link_R" >R</a></li>
+				<li><a href="#link_S" >S</a></li>
+				<li><a href="#link_T" >T</a></li>
+				<li><a href="#link_U" >U</a></li>
+				<li><a href="#link_V" >V</a></li>
+				<li><a href="#link_W" >W</a></li>
+				<li><a href="#link_X" >X</a></li>
+				<li><a href="#link_Y" >Y</a></li>
+				<li><a href="#link_Z" >Z</a></li>
+				<li><a href="#link_#" >#</a></li>
+			</ul>
+		</div>
+		<!--右侧字母检索end-->
+	</div>
+	<!--友信列表 end-->
+	<!--脚部 start-->
+	<div id="foot"></div>
+	<!--脚部 end-->
+<script type="text/html" id="friend_list">
+
+	<% if(data){ %>
+	<% for(var i in data){ %>
+	<div class="namewrap">
+		<a class="name_indexes" name="link_<%=data[i][0]['initials']%>"><%=data[i][0]['initials']%></a>
+		<ul>
+			<% for(var j in data[i]){ %>
+			<li class="namelist" data-id="<%=data[i][j]['friend_id']%>">
+				<img src="<%=data[i][j]['friend_image']%>" alt="" onerror="this.src='../img/robot-ss.png'" />
+				<a  onclick="chatGroup(this,<%=data[i][j].friend_id%>)"  ><%=data[i][j]['friend_name']%></a>
+				<% if(data[i][j]['mutual'] ==1){ %>
+				<div class="fllowwrap">
+					<span><img class="fllow_btn1" src="../img/friendletter/fllow1.png" alt="">互相关注</span>
+					<input class="fllow_btn" data-id="<%=data[i][j]['user_friend_id']%>" type="button" value="取消关注" />
+				</div>
+				<% }else{%>
+				<div class="fllowwrap">
+					<span><img class="fllow_btn1" src="../img/friendletter/fllow2.png" alt="">我关注的</span>
+					<input class="fllow_btn" data-id="<%=data[i][j]['user_friend_id']%>" type="button" value="取消关注" />
+				</div>
+				<% } %>
+			</li>
+			<% }%>
+		</ul>
+	</div>
+	<% }%>
+	<% }%>
+</script>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script src="../../js/friendletter/zepto.min.js"></script>
+<script src="../../js/friendletter/groupchat.js"></script>
+
+</body>
+</html>

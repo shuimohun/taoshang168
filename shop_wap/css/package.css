@@ -1,0 +1,28 @@
+@charset "utf-8";.person{width:100%;height:.8rem;background-color:#fff;position:fixed;top:0;left:0;z-index:100;border-bottom:.01rem solid #eee}
+.person .title{height:.7rem;padding:.3rem 0 0 4%}
+.person .title a img{width:.34rem;height:.34rem}
+.person .title span{margin-left:26%;width:5rem;display:inline-block;position:absolute;left:-16%;height:.42rem;overflow:hidden;font-size:.26rem; white-space: nowrap;}
+.person .title a img.info{float:right;margin-right:.2rem}
+.package_item{width:100%;height:1.75rem;background-color:#fff;border-bottom:.01rem solid #eee;position:relative;font-size:0}
+.package_item .package_img{width:1.36rem;height:1.36rem}
+.package_item .package_img img{width:100%;height:100%;margin-top:.15rem;margin-left:.15rem}
+.package_item .package_info{width:3.8rem;height:1.75rem;position:absolute;left:28%;top:0;font-size:0}
+.package_item .package_info i{width:3.8rem;height:.55rem;display:inline-block;color:#343434;overflow:hidden;font-size:.22rem;font-style:normal;margin-top:.15rem}
+.package_item .package_info .bg{display:inline-block;height:.25rem;background:url(../images/share_bg@2x.png);background-size:100% 100%;font-size:.16rem;color:#fff;text-align:center;line-height:.25rem;margin-top:.1rem;margin-right:.1rem;padding:0 .1rem}
+.package_item .package_info .select{display:block;color:#e45050;font-size:.18rem;margin-top:.1rem}
+.package_item .package_info .select img{width:.17rem;height:.17rem;margin-left:.05rem;margin-top:.05rem}
+.package_item .package_info del{color:#999;font-size:.18rem}
+.package_item .package_info u{text-decoration:none;color:#e45050;font-size:.18rem}
+.daijinquan{width:100%;height:.7rem;border-bottom:.01rem solid #eee;line-height:.7rem;font-size:.24rem;font-size:#999;position:relative;margin-top:.1rem;background-color:#fff}
+.daijinquan em{color:#999;font-style:normal;margin-left:.2rem}
+.daijinquan .more{width:.15rem;height:.3rem;position:absolute;top:30%;right:5%}
+.share{width:100%;height:2.4rem;border-bottom:.01rem solid #eee;background-color:#fff}
+.share_top{width:100%;height:.5rem;font-size:.28rem;color:#999;line-height:.5rem;margin-left:.2rem}
+.share_top ul{font-size:0;width:100%;height:1.9rem}
+.share_top ul li{width:25%;text-align:center;line-height:1.9rem}
+footer{width:100%;height:.8rem;background-color:#fff;border-top:.02rem solid #eee;position:fixed;bottom:0;font-size:0}
+footer span{font-size:.22rem;display:inline-block;color:#333;margin-top:.1rem;margin-left:.2rem}
+footer span i{font-style:normal;color:#e45050}
+footer b{font-weight:400;font-size:.2rem;display:inline-block;color:#999;margin-left:.2rem}
+footer .buynow button{width:1.3rem;height:.43rem;background-color:#e45050;color:#fff;border:0 none;outline:0;border-radius:.3rem;font-size:.2rem;position:absolute;right:5%;top:30%}
+footer .buynow_share button{width:1.3rem;height:.43rem;background-color:#e45050;color:#fff;border:0 none;outline:0;border-radius:.3rem;font-size:.2rem;position:absolute;right:33%;top:30%}

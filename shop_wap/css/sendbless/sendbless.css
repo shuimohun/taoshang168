@@ -1,0 +1,415 @@
+/*
+	2018-07-05  送福免单
+*/
+/*送福免单公共头部样式*/
+header.fixed{ background: #dc143b}
+.header-wrap .head_title{ color: #fff;}
+.header-l a i.back{ background-image:url(../../images/bbc-bg43.png);}
+.header-wrap .head_title{font-size:.75rem;height:1.95rem;line-height:1.95rem; }
+.margin2{ margin-top: 2rem!important; }
+.hidden{ display: none;}
+.border_bottom{  border-bottom: 1px solid #eee!important;}
+.font_red{ color: #e45050!important; font-weight: 600}
+
+/*送福免单  列表页 start*/
+.bless_main{ width: 100%; background-color: #fefaef; padding: 0.4rem 0; margin-top: 1.95rem;}
+.belss_rule{ width: 94%; margin: 0 auto; }
+.send_method,.send_rule{ width: 50%; display: block; float: left; font-size: 0.65rem;}
+.send_method{ color: #333; font-weight: 600;}
+.send_rule{ text-align: right; color: #666;}
+.send_method img{ margin-left: 0.2rem; width: 0.75rem; height: 0.75rem; vertical-align:middle;}
+.bless_con { margin-top: 0.8rem; margin-bottom: 0.4rem;}
+.bless_con ul{ width: 96%; margin: 0 auto;}
+.bless_con ul li{ float: left; text-align: center; width: 33.33%;}
+.bless_con ul li p{ font-size: 0.55rem; color: #666; font-weight: 600; margin-top: 0.3rem;}
+.bless_con ul li img{ width: 3rem; height: 3rem}
+.nctouch-main-layout{ margin-top: 0;}
+.list .goods-secrch-list .goods-name{ height: auto; padding-top: 0.38rem;}
+.list .goods-secrch-list .goods-sale{ height: auto; padding-top: 0; padding-bottom: 0; margin-top: 0.15rem;}
+.list .goods-secrch-list .goods-info{ padding-bottom: 0.38rem}
+.bless_num,.free_num{display: inline-block; width: 48%; font-size: 0.65rem}
+.bless_num{ color: #dc143b; width: 100%;}
+.free_num{ text-align: right; color: #999; margin-left: 0.4rem;}
+.free_num em{ color: #333;}
+.goods_price,.free_btn,.free_num{ float: left; width: auto;  display: block; font-size: 0.58rem;}
+.goods_price{ color: #dc143b; font-size: 0.65rem;}
+.free_btn{ text-align: right; float: right;}
+.free_btn a{ padding: 0.1rem 0.35rem; color: #fff!important; background: #dc143b; border-radius:0.5rem; display: inline!important; }
+.list.fuGoods .price_wrap{ position: absolute; right: 0.38rem; bottom: 0.38rem;}
+
+/*2018-07-11  列表图片增大样式start*/
+.list .goods-item{ height: 5.5rem; overflow: hidden;}
+.list .goods-item .goods-pic{ width: 5.5rem; height: 5.5rem;}
+.list .goods-item .goods-info{ border:0; margin-left: 5.7rem ; position: relative; padding: 0 0.38rem; height: 100%; overflow: hidden;}
+.list .goods-item .goods-info .price_wrap{ margin-top: 0.65rem; width: 94%;}
+.list .goods-item{ height: 5.5rem; overflow: hidden;}
+.list .goods-item .goods-pic{ width: 5.5rem!important; height: 5.5rem!important; margin-left: 0.3rem;}
+.list .goods-item .goods-info{ border:0; margin-left: 6rem}
+.list .goods-item .goods-info .price_wrap{ margin-top: 0.65rem}
+/*2018-07-11  列表图片增大样式end*/
+        /*规则弹框*/
+.gz_pop{ width: 100%;height: 100%; display: none;}
+.gz_mask{ width: 100%; height: 100%; background: #000; opacity: 0.6;position: fixed; left: 0; bottom: 0; z-index: 101}
+.gz_content{ width: 80%;margin-left:-40%; background: #fff; border-radius: 0.5rem; position: fixed; left: 50%; top:50%;  z-index: 105; max-height: 70%;overflow-y: scroll;}
+.gz_title{ width: 100%; text-align: center; padding: 0.5rem 0; position: relative;}
+.gz_title ul li{ float: left;width: 50%; text-align: center; padding: 0.25rem 0; border-bottom: 1px solid #eee; font-size: 0.7rem; color: #999;}
+.gz_title ul li:first-child{ border-right: 1px solid #eee; box-sizing: border-box;}
+.gz_title ul li.on{color: #e45045;}
+.gz_title .close_btn{ display: block; width: 1.0rem; height: 1.0rem; margin-top: -0.5rem; border-radius: 50%; position: absolute; right: 3%; top:30%;}
+.gz_title .close_btn img{ width: 100%; height: 100%;}
+.gz_content .gz_text{ display: none;}
+.gz_content .gz_text ul{ padding: 0 0.5rem 0.5rem;}
+.gz_content .gz_text ul li{ font-size: 0.65rem; color: #999; margin-bottom: 0.3rem}
+.gz_content .gz_text ul li span{ padding: 0 0.25rem; margin-right: 0.15rem; background: #c3c3c3; color: #fff; border-radius: 50%;}
+/*送福免单 列表页 end*/
+
+/*送福免单 注册页 start*/
+
+.head_gz{ position: absolute; right: 0.47rem; top: 0; height: 1.95rem; line-height: 1.95rem; font-size: 0.6rem; color: #fff;}
+.head_gz img{ width: 0.7rem; height: 0.7rem; margin-top: 0.625rem; margin-left: 0.2rem;}
+
+.send_bless_goods.list .goods-secrch-list .goods-pic{ height: 5.2rem;}
+.send_bless_goods.list .goods-secrch-list .goods-info{ padding-top: 0; /*height: 4.82rem; */overflow: hidden; position: relative;}
+.send_bless_goods.list .bless_goods_meter{font-size: 0.45rem; margin: 0.3rem 0;}
+.send_bless_goods.list .bless_goods_meter span{ margin-right: 0.3rem ; color: #999;}
+
+.get_bless_detail{ width: 100%; overflow: hidden; position: absolute; right: 0; bottom: 0.18rem;}
+.get_bless_detail .goods_price,.get_bless_detail .goods_price_fact,.get_bless_detail .free_btn{ display: block; width: auto; float: left;}
+.get_bless_detail .goods_price_fact{ font-size: 0.45rem; color: #999; width: 35%; text-align: center; margin-top: 0.1rem;}
+.get_bless_detail .free_btn{ float: right;}
+.get_bless_detail .free_btn a{ background: none; color: #999!important;}
+.get_bless_detail .free_btn i{ color: #333;}
+
+        /*倒计时*/
+.bless_timedown{ margin: 0.3rem 0; height: 0.65rem; line-height: 0.55rem;}
+.fnTimeCountDown{font-size:.6rem;color:#333}
+.fnTimeCountDown_text{ float: left; margin: 0 0.2rem; display: block; height: 0.65rem; line-height: 0.65rem; font-size: 0.65rem;}
+.fnTimeCountDown u{display:block;height:.65rem;background-color:#333;font-size:.45rem;color:#fff;text-decoration:none;line-height:.75rem;text-align:center;border-radius:.05rem; float: left; padding: 0 0.08rem;}
+.fnTimeCountDown i{ display: block; float: left; font-size:.6rem;font-style:normal; margin: 0 0.1rem; height: 0.65rem; line-height: 0.65rem}
+.bless_timedown .fnTimeCountDown u{ background: #dc143b; color: #fff;}
+.bless_user{ width: 100%; background: #fff; padding: 0.7rem 0 0; margin-top: 0.2rem;}
+ul.bless_user_tx{ width: 94%; /*height: 1.6rem;*/ margin: 0 auto; overflow: hidden;}
+ul.bless_user_tx li{ float: left;}
+ul.bless_user_tx li img{  width: 1.6rem;height: 1.6rem; border-radius: 50%;}
+.get_bless_num{ width: 100%;text-align: center; font-size: 0.65rem; color: #999; margin: 0.4rem 0;}
+.get_bless_num span{ color: #dc143b; font-weight: 600;  }
+.share_bless{ width: 100%;}
+.share_ul{ width: 96%; margin: 0 auto;}
+.share_ul li{ width: 20%; float: left; text-align: center;}
+.share_ul li img.share_img{ width: 2.2rem; height: 2.2rem; }
+.share_ul li .bless_task{ width: 100%; font-size: 0.5rem; color: #999;margin: 0.4rem 0;}
+.need_bless_num{ width: 100%;color: #dc143b; font-size: 0.65rem;line-height: 0.88rem; margin-bottom: 0.4rem;}
+.need_bless_num img{ width: 0.7rem; height: 0.6rem; vertical-align: middle;}
+.bless_btn{ width: 100%; border-top: 1px solid #e6e6e6;border-bottom: 1px solid #e6e6e6; padding: 0.8rem 0 0.4rem;  }
+.bless_register_btn,.more_bless_btn{ display: block; width: 50%; margin: 0 auto 0.4rem;color:#fff; font-size: 0.65rem; text-align: center; border-radius: 0.8rem;/* padding: 0.2rem 0;*/}
+.bless_register_btn{ background: #e45050;}
+.more_bless_btn{ background: #1da2ff;}
+.bless_status{ width: 100%;}
+.bless_status ul li{ width: 90%; margin: 0 auto 0.4rem;font-size: 0.65rem; color: #999; text-align: center;}
+.bless_status ul li a{ font-size: 0.56rem; text-align: center; /*padding: 0.2rem 0;*/ height: 1.1rem; line-height: 1.1rem;}
+.bless_status ul li .collect_b_btn{ float: left; width: 50%; display:block; border:1px solid #b4b4b4; border-right: 0; color: #b4b4b4; box-sizing: border-box; border-bottom-left-radius: 0.5rem; border-top-left-radius: 0.5rem;}
+.bless_status ul li .bless_money{float: left; width: 50%; display: block; color: #fff; background: #e55151; border:1px solid #e55151; border-left: 0;  box-sizing: border-box; border-bottom-right-radius: 0.5rem; border-top-right-radius: 0.5rem;}
+.bless_status ul li .more_bless_btn{ width: 100%;}
+
+
+.more_main{ width: 100%;}
+.more_main .more_nav{ background: #fff; width: 100%; z-index: 10;}
+.more_main .more_nav ul li{ float: left; width: 25%; height: 1.4rem; line-height: 1.4rem; text-align: center; font-size: 0.65rem}
+.more_main .more_nav ul li.on{color: #dc143b; border-bottom: 2px solid #dc143b; }
+.more_main .more_wrap{}
+.more_main .more_wrap ul li.more_item{}
+
+/*送福免单 注册页   新人优享模块*/
+.newbuyer{ background:url("../../images/newbuyer_bg.png"); padding-top: 0.4rem; padding-bottom: 2rem; width: 100%;}
+.newbuyer .item{
+    width:92%;
+    margin:0 auto;
+    background-color:#fff;
+    margin-top: .44rem;
+    position:relative;
+}
+.newbuyer .item .newer_shop_name{ padding-top: 0.45rem; margin-left: 0.34rem; font-size: 0.65rem; color: #333; font-weight: 600;}
+.newbuyer .item span{
+    display:block;
+    font-size: .62rem;
+    color:#333;
+    margin-top: .43rem;
+    margin-left: .34rem;
+    margin-right: 6.2rem;
+    height: 1.6rem;
+    overflow: hidden;
+    line-height:.85rem;
+}
+.newbuyer .item i{
+    font-size: .6rem;
+    font-style:normal;
+    color:#bf0000;
+    margin-left: .34rem;
+    display:inline-block;
+    margin-top: .5rem;
+    margin-right: 6.2rem;
+    height: 1.3rem;
+    overflow: hidden;
+    line-height:.65rem;
+}
+.newbuyer .item u{
+    text-decoration: none;
+    font-size: .65rem;
+    color:#999;
+    display:inline-block;
+    margin-left: .34rem;
+    margin-top: .2rem;
+}
+.newbuyer .item u u{
+    color:#bf0000;
+    margin-left: 0;
+}
+.newbuyer .item b{
+    font-weight: normal;
+    color:#999;
+    font-size: .65rem;
+    display:inline-block;
+    margin-left: .34rem;
+    margin-top: .5rem;
+    margin-bottom: 0.5rem;
+}
+.newbuyer .item .buy{
+    width:2.4rem;
+    height:0.75rem;
+    position:absolute;
+    right:2.8rem;
+    bottom: 6%;
+}
+.newbuyer .item .main_img{
+    width:5.2rem;
+    height:5.2rem;
+    position:absolute;
+    top:10%;
+    right: 1rem;
+}
+/*送福免单 注册页   惠抢购  模块*/
+.goods_list.rush_buy{ border-bottom: 1px solid #f2f2f2;}
+.rush_buy .sale{width:100%;margin-bottom:.5rem;position:relative;background-color:#fff}
+.rush_buy .sale .fnTimeCountDown{ display: block; line-height: 0.65rem;}
+.sale_wrap{ width: 100%; position: relative;}
+.rush_buy .sale{ padding-top: 0.4rem;}
+.rush_buy .sale span{display:inline-block;font-size:.6rem;margin-left:.2rem;color:#333}
+.rush_buy .sale span u{display:inline-block;height:.65rem;background-color:#333;font-size:.45rem;color:#fff;text-decoration:none;vertical-align:bottom;line-height:.75rem;text-align:center;border-radius:.05rem ;padding: 0 0.08rem;}
+.rush_buy .sale span i{font-size:.6rem;font-style:normal}
+.rush_buy .sale .sale_img{width:5.2rem;height:5.2rem; position: absolute; left:.3rem;top:.5rem;}
+.rush_buy .sale .sale_img img{width:100%;height:100%}
+.rush_buy .sale .sale_info{width:auto;margin-left:6rem;font-size:6.5rem; padding: 0.5rem 0;}
+.rush_buy .sale .sale_info h2{font-size:.65rem;color:#394766;height:1.3rem; line-height:0.65rem;overflow:hidden}
+.rush_buy .sale .sale_info span{display:block;margin-left:0.32rem;font-size:.65rem;color:#ff5e5d;overflow:hidden;}
+.rush_buy .sale .sale_info .limit{display:inline;margin-left:0.5rem;font-size:.45rem;color:#ff5e5d;overflow:hidden;}
+.rush_buy .sale .sale_info u{display:block;color:#e11222;font-size:.65rem;text-decoration:none;/*margin-top:.25rem; margin-bottom:0.25rem;*/margin-left:-.04rem}
+.rush_buy .sale .sale_info del{display:inline-block;font-size:.45rem;vertical-align:center;color:#9aa1b0;margin-left:.1rem}
+.rush_buy .sale .sale_info .sale_down{height:.83rem;width:auto;border-radius:.1rem;position:relative;}
+.rush_buy .sale .sale_info .sale_down .sale_down_img{ float: left;  width:1rem;height:0.65rem;background-color:#fe575f;border-radius:.5rem 0 0 .5rem;text-align:center;}
+.rush_buy .sale .sale_info .sale_down .sale_down_img img{width:0.6rem;height:.6rem;}
+.rush_buy .sale .sale_info .sale_down span{display:block; float:left; padding-right: .5rem; font-size:.45rem;margin:0;height:0.55rem; line-height: 0.55rem; overflow:hidden;color:#582524;border:0.05rem solid #fe575f;border-left: 0;border-top-right-radius:.5rem;border-bottom-right-radius:.5rem;}
+.rush_buy .progress{width:3rem;height:0.5rem;border-radius:.5rem;background-color:pink}
+.rush_buy .progress img{ width: 1.5rem;  height:0.5rem;border-radius:.5rem}
+.rush_buy .sale input{ display: block; padding: 0 0.5rem; height: 0.65rem; line-height: 0.65rem; background-color:#e11222;border-radius:.2rem;color:#fff;text-align:center;font-size:.5rem;position:absolute;bottom:6%;right:5%;border:0 none;outline:0}
+.rush_buy .sale .qiang{font-size:.65rem;color:#e11222;text-decoration:none;position:absolute;bottom: 20%;right:5%}
+/*送福免单 注册页   限时折扣  模块*/
+.discount{ padding-bottom: 2.5rem;}
+.discount .buy_goods{
+    width:94%;
+    margin: 0 auto;
+    padding: 0.5rem 3% 0.5rem;
+    border-bottom:.02rem solid #f2f2f2;
+    background-color: #fff;
+    overflow:hidden;
+    position: relative;
+}
+.discount .buy_goods .goods_img{
+    width:5.2rem;
+    height:5.2rem;
+    position: absolute; left: 0.5rem; top:0.5rem;
+}
+.discount .buy_goods .goods_img img{
+    width:100%;
+    height:100%;
+}
+.discount .buy_goods .goods_contain{
+    margin-left:5.5rem;
+    position:relative;
+}
+.discount .buy_goods .goods_contain span{
+    display:block;
+    font-size: .65rem;
+    color:#394766;
+    line-height: 0.65rem;
+    height:0.65rem;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.discount .buy_goods .goods_contain u{
+    font-size:.45rem;
+    color:#9aa1b0;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:.08rem;
+}
+.discount .buy_goods .bar_wrap{
+    position: relative; margin: 0.15rem 0;
+}
+.discount .buy_goods .goods_contain .bar{
+    display:block;
+    width:50%;
+    height:.3rem;
+    background-color: #e6e6e6;
+    float: left;
+    margin-top: 0.2rem;
+}
+.discount .buy_goods .goods_contain .bar img{
+    width: 5%;
+    height:100%;
+}
+.discount .buy_goods .goods_contain b{
+    font-weight: normal;
+    font-size: .45rem;
+    color:#999999;
+    vertical-align: top;
+}
+.discount .buy_goods .goods_contain .C66{ float: right;}
+.discount .buy_goods .goods_contain .C66 .span_number{
+    display: inline;
+    color:#ff1c59;
+    font-size: .45rem;
+}
+.discount .buy_goods .btn_wrap{ display: block; width: 100%; text-align: right;}
+.discount .buy_goods .goods_contain .button{
+    width:3rem;
+    height:0.85rem;
+}
+.discount .buy_goods .goods_contain .bg_wrap{ margin: 0.2rem 0;}
+.discount .buy_goods .goods_contain .bg{
+    float: left;
+    height:.65rem;
+    background:url(../../images/money/share_bg@2x.png);
+    background-size:100% 100%;
+    font-size: .5rem;
+    color:#fff;
+    text-align: center;
+    line-height:.75rem;
+    padding: 0 0.3rem;
+    margin-right: 0.2rem;
+}
+.discount .buy_goods .goods_contain i{
+    display:block;
+    font-size: .65rem;
+    color:#e45050;
+    font-style:normal;
+    margin-left: .1rem;
+}
+.discount .buy_goods .goods_contain del{
+    font-size: .45rem;
+    color:#e45050;
+    font-style:normal;
+    margin:0;
+    border:1px solid #e45050;
+    border-radius:.05rem;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.discount .buy_goods .goods_contain .word{
+    display:block;
+    float: left;
+    font-size: .45rem;
+    color:#383838;
+    margin-top:.1rem;
+    height:.65rem;
+    line-height: 0.65rem;
+    overflow:hidden;
+    margin-left: .1rem;
+}
+/*送福免单 注册页   好物包邮  模块*/
+.free_post{ padding-bottom:2.5rem;}
+.free_post .bg_all,.free_post .goods-price,.free_post .goods-sold{ position: static!important;}
+.free_post .list .goods-secrch-list .goods-sold{ width: 33.33%;}
+.free_post .list .goods-secrch-list .goods-assist{ margin-top: 0; padding-bottom: 0; position: absolute; width: 96%; bottom: 0.15rem;}
+.free_post .goods-item{ border-bottom: 1px solid #f2f2f2;}
+.free_post .list .goods-secrch-list .goods-name .bg_all .bg{
+    height:.65rem; font-size: .5rem;line-height:.75rem;
+    padding: 0 0.3rem;
+}
+            /*送福免单 注册页  送福弹框 */
+.pop_bless{ width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 100;}
+.mask{ width: 100%; height: 100%; background: #000; opacity: 0.8;}
+.pop_bless_main{ width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2;}
+.pop_colse_btn{ width: 1.25rem; height: 1.25rem; position:absolute; right:10%; top:30%; }
+.pop_colse_btn img{ width: 100%;}
+.pop_bless_con{ width: 100%; height: auto;}
+.pop_bless_con img{ width: 100%; top: 50%;}
+.pop__bless_btn{ display: block; width: 6rem; height: 1.65rem; position:absolute; left:50%; bottom:25%; margin-left: -3rem;}
+.pop__bless_btn img{ width:100%; }
+/*送福免单 注册页 end*/
+
+
+/*送福商品详情页 start*/
+.fu_main{ margin-top:2rem;}
+.fu_main .send_fu_main{ margin:0.3rem 0;}
+
+.bless_detail_timedown{ width: 100%; background: #fff; height: 1.25rem; line-height: 1.25rem; border-bottom: 1px solid #eee; padding: 0.2rem 0;}
+.bless_detail_timedown .fnTimeCountDown{ float: left; margin-left: 3%; height: 0.65rem; overflow: hidden; margin-top: 0.35rem;}
+.bless_detail_timedown .fnTimeCountDown u{ background: #e44f51;}
+.b_d_title{ display: block; float: right; font-size: 0.65rem; margin-right: 3%; font-weight: bold;}
+.bless_detail_main{ width: 100%; background: #fff;}
+.b_detail_title{ width: 94%; margin: 0 auto;}
+.b_detail_title ul li{ float: left; font-size: 0.6rem;height: 1.5rem; line-height: 1.5rem; text-align: center;color: #a1a1a1; }
+.b_detail_title ul li img{ width: 0.9rem; height: 0.9rem; margin-right: 0.3rem; margin-top: 0.175rem }
+.b_detail_title ul li:first-child{ width: 28%; text-align: left;}
+.b_detail_title ul li:not(:first-child){ width: 18%; }
+.b_title_ul{border-bottom: 1px solid #eee;}
+.b_detail_title .b_title_ul li{ font-weight: 600;height: 1.8rem; line-height: 1.8rem;color: #333;}
+.list .goods-secrch-list{ display: block;}
+.send_share_time{ width: 100%; overflow: hidden; padding: 0.4rem 0; background: #fff;}
+.send_share_time .s_time,.send_share_time .s_num{ display: inline-block; font-size: 0.6rem ; color: #999;}
+.send_share_time .s_time{ float: left; margin-left: 0.3rem;}
+.send_share_time .s_num{ float: right;margin-right: 0.3rem;}
+.fu_main .list ul li.goods-item{ margin-top: 0;}
+.fu_main .send_fu_main{ margin-top: 0.2rem;}
+
+/*送福商品详情页 end*/
+
+/* 送福页面  进入页面福袋动画 start*/
+.pop_video{width:100%!important; height:100%!important; position: fixed; left: 0;top:0;z-index: 10;}
+.pop_video_mask{width:100%!important; height:100%!important; background: #000; opacity: 0.6;position: fixed; left: 0;z-index: 20;}
+#animation_container{background-color:rgba(0, 0, 0, 0.00); width:100%!important; height:auto!important;}
+#canvas{width: 100%!important; height: auto!important; position: fixed;top: 50%; z-index: 1000; display: block; background-color:rgba(0, 0, 0, 0.00); }
+#dom_overlay_container{pointer-events:none; overflow:hidden; width:100%!important; height:auto!important; position: absolute; left: 0px; top: 0px; display: block;}
+/*.pop_bless_btn{ width: 6rem; height: 1.67rem; position: absolute; left: 50%; margin-left: -3rem; bottom: 15%; z-index: 10001}
+.pop_bless_btn img{ width: 100%;}*/
+.pop_btn_close{ width: 1.25rem; height: 1.25rem; position: absolute; right: 10%;  top: 15%; z-index: 10001}
+.pop_btn_close img{ width: 100%;}
+/* 送福页面  进入页面福袋动画 end*/
+
+
+/**/
+.more_bless_btn_v2,.ios_btn,.andriod_btn{ display: block; float: left; width: 31%!important; margin: 0 1%; white-space: nowrap;text-overflow: ellipsis;}
+.ios_btn,.andriod_btn{ color: #fff; background: #42d818; border-radius: 0.8rem; }
+.ios_btn img,.andriod_btn img{ width: 0.8rem; height: 0.8rem; display: inline-block; vertical-align: middle}
+.andriod_btn img{ margin-top: -0.1rem!important;}
+.free_btn.gaoqing_btn{position: absolute; right:3%; bottom:0; }
+.free_btn.gaoqing_btn img{ width: 2.5rem; height: 2.5rem;}
+
+/*送福免单详情页  右上角增加免单按钮*/
+.header-wrap .mian_btn{ display: block; position: absolute; right: 3%; font-size: 0.65rem; color: #fff; top: 50%; margin-top: -0.975rem; height: 1.95rem ; line-height: 1.95rem; }
+
+/*送福列表页 回到顶部按钮  改为 我的免单跳转按钮*/
+.my_free_order{ width: auto!important;;}
+.my_free_order a{ width: auto!important; height: auto!important; padding: 0.4rem; color:#e45045; font-size: 0.65rem; line-height: 0.65rem;}
+
+/*送福注册页增加商品促销标题*/
+.cx_title{ width: 100% ;background: #fff; }
+.cx_title p{ width: 94%; margin: 0 auto; font-size: 0.65rem; color: #e45045;padding: 0.3rem 0;}
+
+/*  2018-08-09  送福免单注册页 动画 位置增加文字说明*/
+.pop_bless_btn{position: absolute; left: 50%;bottom: 15%; z-index: 10001;padding: 0.45rem 0.35rem; background: linear-gradient(to bottom,#fff480,#fdbc00);width: 80%; margin-left:-40%;overflow: hidden; box-sizing: border-box;  border-radius: 0.3rem;   }
+.inter_page_text{ display: block; color: #c5301b; font-size: 0.65rem; text-align: center; }
+.inter_page_text a{ display: block; color: #c5301b; font-size: 0.65rem; text-align: center; }
+
+

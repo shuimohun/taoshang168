@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../js/adaptation.js"></script>    <!--此处为了尽早适配-->
+    <title>开业满减</title>
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/cheap9.css" />
+    <!--右上角弹框css引用-->
+    <link rel="stylesheet" href="../css/common_alert.css">
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <!--右上角弹框js引用-->
+    <script type="text/javascript" src="../js/common_alert.js"></script>
+</head>
+<body>
+<style>
+    .info{
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-top: 1%;
+    }
+    .info_alert{
+        width: 2.5rem;
+        height: 4rem;
+        position: fixed;
+        top: 43%;
+        right: 9%;
+        z-index: 1000;
+    }
+    .info_alert u{
+        margin-top: .15rem;
+        vertical-align: top;
+    }
+    .info_alert span{
+        font-size: .34rem;
+    }
+    .info_alert span img{
+        width: .6rem;
+        height: .6rem;
+    }
+
+    /*更改 footer start*/
+    .nav-fixed{height: 1.25rem;}
+    footer li div.curr{color:#fe3d4e;}
+   /* .nav-fixed a{width:100%;height: 100%;display: block;}
+    .nav-fixed a:visited, .nav-fixed a:active{background-color: #aecbea;}
+    .nav-fixed a:active div{color:#fff;}*/
+    .nav-fixed .home-icon{height:1.25rem;width:1.6rem;text-align:center;font-size: 0;line-height: 1.25rem;}
+    .nav-fixed .home-icon div{color:#666;/*margin-top:0.076125rem;*/font-size: 0.4rem;}
+    .nav-fixed .items-right{position:relative;width:8.2rem;/*overflow-x: scroll;*/height: 100%;overflow-y: auto;overflow-x: scroll;-webkit-overflow-scrolling:touch;}
+    .nav-fixed .item-right-wrap{height: 100%;}
+    .nav-fixed .items-right ol{position: relative;width: auto;white-space: nowrap;height: 100%;font-size: 0;}
+    .nav-fixed .items-right ol li{display: inline-block;height: 100%;width:auto;padding:0 0.12rem;line-height: 1.25rem;}
+    .nav-fixed .items-right ol li div{font-size: .4rem;}
+    .nav-fixed .items-right .items-right-wrap{position: absolute;top:0;left: 0;width: 100%;height: 100%;}
+    .nav-fixed .navFloor-10{width: 10rem;height: 100%;}
+    /*更改 footer end*/
+
+</style>
+<div class="header-wrap-container">
+    <div class="header-wrap">
+        <header class="header orflow">
+            <div class="header-10rem">
+                <div class="icon-wrap lf">
+                    <a href="javascript:history.go(-1);"><i class="icon middle"></i></a>
+                </div>
+                <div class="header-name lf">开业满减</div>
+                <div>
+                    <a><img src="../images/daily_buy_img/info.png" alt="" onclick="common_index_alert(this)"  class="info"></a>
+                </div>
+            </div>
+            <div class="info_alert">
+                <img src="../images/user_img/choose_gray@3x.png" alt="">
+            </div>
+        </header>
+
+        <!--小导航    start-->
+        <div class="nav orflow">
+            <div class="nav-wrap">
+                <div class="nav-bar-outer lf">
+                    <div class="nav-bar">
+                        <div class="nav-scroll-wrap">
+                            <ul class="lf"></ul>
+                            <span class="sideline"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-right-icon rt">
+                    <span class="icon pop-up-icon"></span>
+                </div>
+            </div>
+        </div>
+        <!--小导航    end-->
+    </div>
+</div>
+
+
+
+<!--主内容  start-->
+<div class="swiper-container page">
+    <div class="swiper-wrapper">
+
+    </div>
+</div>
+<!--主内容  end-->
+
+
+
+<!--  页尾固定 导航  start-->
+<footer class="nav-fixed "></footer>
+<!--  页尾固定 导航  end-->
+
+<!--  ui-mask  start-->
+<div class="ui-mask"></div>
+<!--  ui-mask  end-->
+<div class="no-data">没有更多了</div>
+<div class="loading">正在加载中...</div>
+
+
+<script type="text/html" id="nav">
+    <li data-id="0"><a href="javascript:;">全部</a></li>
+    <% for(var i in goods_cat){%>
+    <li data-id="<%=goods_cat[i]['cat_id']%>"><a href="javascript:;"><span><%=goods_cat[i]['nav_name']%></span></a></li>
+    <%}%>
+</script>
+
+<script type="text/html" id="man_nav">
+    <div class="navFloor-10">
+        <div class="home-icon side-icon lf">
+            <a href="../index.html"><div>首页</div></a>
+        </div>
+        <div class="items-right lf">
+            <div class="item-right-wrap">
+                <ol>
+                    <% for(var i in rule_cat){ %>
+                    <li class="icon-9 side-icon">
+                        <div onclick="man_navSlider(this)"  data-id="<%=i %>">满<%=rule_cat[i].rule_price %>减<%=rule_cat[i].rule_discount %></div>
+                    </li>
+                  <% } %>
+                </ol>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="main">
+    <div class="swiper-container banner">
+        <div class="swiper-wrapper">
+            <% for(var i in adv_list){ %>
+            <div class="swiper-slide">
+                <a href="<%=adv_list[i].wap_url%>"><img src="<%=adv_list[i].pic_url%>" alt="" /></a>
+            </div>
+            <% } %>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="goods-wrap">
+        <ul class="goods-ul orflow">
+            <% var data = data_goods.items %>
+            <% for(var i in data){ %>
+            <li class="goods lf">
+                <div class="img-center">
+                    <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><img class="middle" src="<%=data[i].common_image%>" alt="" /></a>
+                </div>
+                <div class="goods-detail">
+                    <div class="goods-price orflow">
+                        <div class="price lf">
+                            ￥<span><%=data[i].common_price%></span>
+                        </div>
+                        <div class="share-price rt">
+                            <div class="lf">分享后：</div>
+                            <div class="rt">
+                                ￥<span><%=data[i].common_shared_price%></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-text txt"><a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><%=data[i].common_name%></a></div>
+                    <div class="goods-share orflow">
+                        <div class="share lf orflow">
+                            <span class="lf">分享立省</span>
+                            <div class="rt">
+                                <span>￥<%=data[i].common_share_price%></span>
+                            </div>
+                        </div>
+                        <div class="share lf orflow">
+                            <span class="lf">立赚</span>
+                            <div class="rt"><span>￥<%=data[i].common_promotion_price%></span></div>
+                        </div>
+                    </div>
+                    <div class="goods-sale orflow">
+                        <% if(data[i].common_promotion_type != '0'){ %>
+                        <span class="lf">促销:</span>
+                        <div class="icons lf">
+                            <% if(data[i].common_promotion_type == '4'){ %>
+                            <i class="icon lf new-icon"></i>
+                            <% } %>
+                            <% if(data[i].common_promotion_type == '1'){ %>
+                            <i class="icon lf solid-icon"></i>
+                            <% } %>
+                            <% if(data[i].common_promotion_type == '2'){ %>
+                            <i class="icon lf sale-icon"></i>
+                            <% } %>
+                            <i class="icon lf give_full_cut-icon"></i>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="goods-like orflow">
+                        <div class="like <% if(data[i].is_favorite){ %>curr<% }else{ %>lf<% } %>">
+                            <i class="icon" onclick="favorite(this,<%=data[i].is_favorite%>,<%=data[i].goods_id %>)"></i>
+                        </div>
+                        <a href="product_detail.html?goods_id=<%=data[i].goods_id%>">
+                            <div class="share-border rt">
+                                分享立省
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</script>
+
+<script type="text/html" id="more_goods">
+    <% var data = data_goods.items%>
+    <% for(var i in data){%>
+    <li class="goods lf">
+        <div class="img-center">
+            <img class="middle" src="<%=data[i].common_image%>" alt="" />
+        </div>
+        <div class="goods-detail">
+            <div class="goods-price orflow">
+                <div class="price lf">
+                    ￥<span><%=data[i].common_price%></span>
+                </div>
+                <div class="share-price rt">
+                    <div class="lf">分享后：</div>
+                    <div class="rt">
+                        ￥<span><%=data[i].common_shared_price%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="goods-text txt"><%=data[i].common_name%></div>
+            <div class="goods-share orflow">
+                <div class="share lf orflow">
+                    <span class="lf">分享立省</span>
+                    <div class="rt">
+                        ￥<span><%=data[i].common_share_price%></span>
+                    </div>
+                </div>
+                <div class="share lf orflow">
+                    <span class="lf">分享立赚</span>
+                    <div class="rt">￥<span><%=data[i].common_promotion_price%></span></div>
+                </div>
+            </div>
+            <div class="goods-sale orflow">
+                <% if(data[i].common_promotion_type != '0'){ %>
+                <span class="lf">促销:</span>
+                <div class="icons lf">
+                    <% if(data[i].common_promotion_type == '4'){ %>
+                    <i class="icon lf new-icon"></i>
+                    <% } %>
+                    <!--<i class="icon lf sheath-icon"></i>-->
+                    <!--<i class="icon lf tiket-icon"></i>-->
+                    <% if(data[i].common_promotion_type == '1'){ %>
+                    <i class="icon lf solid-icon"></i>
+                    <% } %>
+                    <% if(data[i].common_promotion_type == '2'){ %>
+                    <i class="icon lf sale-icon"></i>
+                    <% } %>
+                    <i class="icon lf give_full_cut-icon"></i>
+                </div>
+                <% } %>
+            </div>
+            <div class="goods-like orflow">
+                <div class="like <% if(data[i].is_favorite){ %>curr<% }else{ %>lf<% } %>">
+                    <i class="icon" onclick="favorite(this,<%=data[i].is_favorite%>,<%=data[i].goods_id %>);"></i>
+                </div>
+                <a href="product_detail.html?goods_id=<%=data[i].goods_id%>">
+                    <div class="share-border rt">
+                        分享立省
+                    </div>
+                </a>
+            </div>
+        </div>
+    </li>
+    <% } %>
+</script>
+
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/tmpl/man_floor.js"></script>
+</body>
+</html>
+
+

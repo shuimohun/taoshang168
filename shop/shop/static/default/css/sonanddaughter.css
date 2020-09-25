@@ -1,0 +1,333 @@
+.sonanddaughter_title{
+	width:100%;
+	height:58px;
+	background-color: #c61e1e;
+	margin-bottom: 20px;
+}
+.sonanddaughter_title .clock{
+	margin-left: 10px;
+	margin-bottom: 6px;
+}
+.sonanddaughter_title i{
+	font-size: 16px;
+	color:#fff;
+	margin-left:18px;
+}
+.sonanddaughter_title span{
+	font-size: 24px;
+	color:#fff;
+	line-height:58px;
+	margin-left:420px;
+}
+.sonanddaughter_title b{
+	font-size: 16px;
+	color:#fff;
+	font-weight:normal;
+	margin-left:470px;
+}
+.sonanddaughter_title .sad_more{
+	margin-bottom: 5px;
+	margin-left:8px;
+}
+
+.sonanddaughter_swiper .swiper-container {
+    width: 100%;
+    height: 300px;
+}
+.sonanddaughter_swiper .swiper-slide{
+	display:-webkit-box;
+	-webkit-box-pack: start;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item{
+	width:200px !important;
+	height:300px !important;
+    background: #fff;   
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-right: 0 !important;
+    border-right:1px solid #e6e6e6;
+    position:relative;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item img{
+	width:180px;
+	height:180px;
+	margin:0 auto !important;
+	position:absolute;
+	top:0;
+	left:10px;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item span{
+	position:absolute;
+	width:180px;
+	height:32px;
+	overflow:hidden;
+	font-size: 12px;
+	color:#888;
+	top:63%;
+	left:10px;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item u{
+	position:absolute;
+	top:76%;
+	left:4%;
+	font-size: 18px;
+	color:#c61e1e;
+	text-decoration: none;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item u del{
+	font-size: 12px;
+	color:#888;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item i{
+	width:180px;
+	height:32px;
+	border:1px solid #c61e1e;
+	position:absolute;
+	left:4%;
+	top:85%;
+	font-size: 0;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item i b{
+	display:inline-block;
+	font-weight:normal;
+	width:78px;
+	height:100%;
+	background-color: #c61e1e;
+	line-height:31px;
+	font-size: 14px;
+	color:#fff;
+	float:left;
+}
+.sonanddaughter_swiper .swiper-slide .swiper-slide_item i em{
+	font-size: 14px;
+	color:#111;
+	display:inline-block;
+	width:100px;
+	height:100%;
+	line-height:32px;
+}
+
+.title{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.prefer{
+	width:1200px;
+	height:auto;
+	border-left:1px solid #eee;
+	border-top:1px solid #eee;
+	font-size: 0;
+}
+.prefer li{
+	display:inline-block;
+	width:299px;
+	height:470px;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.prefer li img{
+	margin-left:5px;
+	margin-top: 5px;
+	width:290px;
+	height:290px;
+}
+.prefer li .word{
+	display:inline-block;
+	width:290px;
+	height:37px;
+	overflow:hidden;
+	font-size:14px;
+	color:#666;
+	margin-top: 10px;
+	margin-left:5px;
+}
+.prefer li i{
+	display:inline-block;
+	font-size: 14px;
+	color:#c61e1e;
+	margin-top: 10px;
+	margin-left:5px;
+}
+.prefer li i u{
+	margin-left:5px;
+	color:#c61e1e;
+	text-decoration:none;
+	border:1px solid #c61e1e;
+	padding:2px;
+	border-radius:7px;
+}
+.prefer li .share{
+	display:inline-block;
+	margin-top: 10px;
+	font-size: 12px;
+	color:#c61e1e;
+	border:1px solid #c61e1e;
+	margin-left:5px;
+}
+.prefer li .share em{
+	height:100%;
+	display:inline-block;
+	color:#c61e1e;
+	background-color: #fff;
+	padding:5px 2px 5px 2px;
+}
+.prefer li .share b{
+	display:inline-block;
+	height:100%;
+	font-weight:normal;
+	background-color: #c61e1e;
+	color:#fff;
+	padding:5px 2px 5px 2px;
+	
+}
+.prefer li .price{
+	display:inline-block;
+	margin-top: 10px;
+	margin-left:5px;
+	color:#c61e1e;
+	font-size: 20px;
+}
+.prefer li .low_price{
+	display:inline-block;
+	margin-top: 10px;
+	margin-left:5px;
+	color:#666;
+	font-size: 12px;
+	text-decoration: line-through;
+}
+.prefer li .tit{
+	width:20px;
+	height:20px;
+}
+.prefer li .tit_word{
+	color:#666;
+	font-size: 12px;
+	display:inline-block;
+	margin-top: 8px;
+	vertical-align: bottom;
+	margin-left:5px;
+}
+.prefer li .month-word{
+	color:#666;
+	font-size: 12px;
+	display:inline-block;
+	margin-top: 8px;
+	vertical-align: bottom;
+	float: right;
+	margin-right: 10px;
+}
+
+.goodcollect{
+	width:1200px;
+	height:auto;
+	border-left:1px solid #eee;
+	border-top:1px solid #eee;
+	font-size: 0;
+}
+.goodcollect li{
+	display:inline-block;
+	width:239px;
+	height:405px;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.goodcollect li img{
+	margin-left:4px;
+	margin-top: 4px;
+	width:232px;
+	height:232px;
+}
+.goodcollect li .word{
+	display:inline-block;
+	width:232px;
+	height:35px;
+	overflow:hidden;
+	font-size:14px;
+	color:#666;
+	margin-top: 8px;
+	margin-left:4px;
+	margin-bottom:3px;
+}
+.goodcollect li i{
+	display:inline-block;
+	color:#c61e1e;
+	margin-left:4px;
+}
+.goodcollect li i u{
+	margin-left:4px;
+	color:#c61e1e;
+	text-decoration:none;
+	border:1px solid #c61e1e;
+	padding:1px;
+	border-radius:4px;
+}
+.goodcollect li .share{
+	display:inline-block;
+	margin-top: 8px;
+	font-size: 12px;
+	color:#c61e1e;
+	border:1px solid #c61e1e;
+	margin-left:4px;
+}
+.goodcollect li .share em{
+	height:100%;
+	display:inline-block;
+	color:#c61e1e;
+	background-color: #fff;
+	padding:5px 2px 5px 2px;
+}
+.goodcollect li .share b{
+	display:inline-block;
+	height:100%;
+	font-weight:normal;
+	background-color: #c61e1e;
+	color:#fff;
+	padding:5px 2px 5px 2px;	
+}
+.goodcollect li .price{
+	display:inline-block;
+	margin-top: 8px;
+	margin-left:4px;
+	color:#c61e1e;
+	font-size: 20px;
+}
+.goodcollect li .low_price{
+	display:inline-block;
+	margin-top: 8px;
+	margin-left:4px;
+	color:#666;
+	font-size: 12px;
+	text-decoration: line-through;
+}
+.goodcollect li .tit{
+	width:20px;
+	height:20px;
+}
+.goodcollect li .tit_word{
+	color:#666;
+	font-size: 12px;
+	display:inline-block;
+	margin-top: 8px;
+	vertical-align: bottom;
+	margin-left:5px;
+}
+.goodcollect li .month-word{
+	color:#666;
+	font-size: 12px;
+	display:inline-block;
+	margin-top: 8px;
+	vertical-align: bottom;
+	float: right;
+	margin-right: 10px;
+}

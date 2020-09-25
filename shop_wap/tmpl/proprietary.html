@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>自营超市</title>
+	<link rel="stylesheet" href="../css/proprietary/proprietary.css">
+	<link rel="stylesheet" href="../css/proprietary/base.css">
+	<link rel="stylesheet" href="../css/proprietary/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/tmpl/proprietary/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/swipe.js'></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/swiper.min.js'></script>
+</head>
+<body>
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../images/proprietary_img/back.png" alt=""></a>
+			<span>自营超市</span>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list" id="carou">
+
+	</div>
+	<!--主图轮播图-->
+
+	<!--翻页图标-->
+	<div class="swiper-container" id="class"></div>
+	<!--翻页图标-->
+
+	<!--不可错过系列-->
+	<div class="notmiss" id="ess"></div>
+	<!--不可错过系列-->
+
+	<!--淘尚生活家-->
+	<div class="lifehome" id="lif"></div>
+	<!--淘尚生活家-->
+	
+	<!--商品导航栏-->
+	<div class="nav">
+		<ul>
+			<li class="cur" id="count">畅销商品</li>
+			<li id="evaluate">点评如云</li>
+			<li id="collect">全民收藏</li>
+		</ul>
+	</div>
+	<!--商品导航栏-->
+
+	<!--商品-->
+	<div class="proprietary_goods" id="cuts"></div>
+	<!--商品-->
+
+	<!--弹窗-->
+	<div class="win-bottom"></div>
+	<div class="win-top">
+		<b>已收藏</b>
+	</div>
+	<!--弹窗-->
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true
+    });
+    </script>
+
+	<script type="text/html" id="slide">
+        <div class="swipe-wrap" >
+			<% for(var i in item) { %>
+            <div class="item" >
+            	<a href="javascript:void(0);">
+            		<img src="<%=item[i] %>" alt="">
+            	</a>
+            </div>
+			<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="nav">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<ul>
+					<% for(var i in item) {%>
+					<li>
+						<a href="">
+							<img src=../images/proprietary_img/1dress.png alt="">
+							<span><%=item[i].cat_name %></span>
+						</a>
+					</li>
+					<% } %>
+				</ul>
+			</div>
+
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</script>
+
+	<script type="text/html" id="essen">
+		<div class="notmiss_title">
+			<img src=../images/proprietary_img/title1.png alt="">
+		</div>
+		<div class="notmiss_icon">
+			<span><img src=../images/proprietary_img/arrow1.png alt=""><%=essential.count.click   %>人看过</span>
+			<span><img src=../images/proprietary_img/arrow2.png alt=""><%=essential.count.salenum %>人购买</span>
+			<span><img src=../images/proprietary_img/arrow3.png alt=""><%=essential.count.collect %>人收藏</span>
+		</div>
+		<div class="notmiss_contain">
+			<ul>
+				<% for(var i in essential.item) { %>
+				<li>
+					<a href="product_detail.html?goods_id=<%=essential.item[i].goods_id %>"><img src="<%=essential.item[i].goods_image %>" alt=""></a>
+					<a href="product_detail.html?goods_id=<%=essential.item[i].goods_id %>"><span> <%=essential.item[i].goods_name %> </span></a>
+					<img src=../images/proprietary_img/button.png alt="" class="button" onclick="cart('<%=essential.item[i].goods_id %>')" >
+ 				</li>
+				<% } %>
+			</ul>
+		</div>
+	</script>
+
+	<script type="text/html" id="life">
+		<div class="lifehome_title">
+			<img src=../images/proprietary_img/title2.png alt="">
+		</div>
+		<div class="lifehome_contain">
+			<% for(var i in goods.item) { %>
+			<a href="product_detail.html?goods_id=<%=goods.item[i].goods_id %>"><img src=<%=goods.item[i].goods_image %> alt=""></a>
+			<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="cut">
+		<ul>
+			<% for(var i in content.item ) { %>
+			<li>
+				<div class="goods_img">
+					<a href="product_detail.html?goods_id=<%=content.item[i].goods_id %>"><img src=<%=content.item[i].goods_image %> alt=""></a>
+					<a href="product_detail.html?goods_id=<%=content.item[i].goods_id %>"><span><%=content.item[i].goods_name %></span></a>
+					<i>￥<%=content.item[i].goods_price %></i>
+					<del>￥<%=content.item[i].goods_market_price %></del>
+					<img src=../images/proprietary_img/addtocart.png alt="" class="addtocart"  onclick="cart('<%=content.item[i].goods_id %>')">
+				</div>
+			</li>
+			<% } %>
+		</ul>
+	</script>
+	<script type="text/javascript"  src="../js/zepto.min.js"></script>
+	<script type="text/javascript"  src="../js/template.js"></script>
+	<script type="text/javascript"  src="../js/common.js"></script>
+	<script type="text/javascript"  src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/su_proprietary.js"></script>
+</body>
+</html>

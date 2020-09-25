@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>礼品兑换</title>
+	<link rel="stylesheet" href="../css/goldegg/exchange.css">
+	<link rel="stylesheet" href="../css/goldegg/base.css">
+	<script src="../js/tmpl/goldegg/jquery-1.8.3.min.js"></script>
+</head>
+<body style="margin-top:.8rem; background-color: #ededed ">
+		<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../images/goldegg/back.png" alt=""></a>
+			<span>已兑换的礼品</span>
+			<a href="strategy.html"><img src="../images/goldegg/help@2x.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--内容-->
+		<div class="point_goods"></div>
+
+	<!--内容-->
+		<script type="text/html" id="point_goods">
+			<% if(items){ %>
+			<% for(var i in items){ %>
+			<div class="contain_wrap">
+				<div class="contain">
+					<div class="contain_top"><%=items[i].points_orderstate_str %></div>
+					<div class="contain_contain">
+						<div class="contain_img"><img src="<%=items[i].points_ordergoods_list[0].points_goodsimage %>" alt=""></div>
+						<span><%=items[i].points_ordergoods_list[0].points_goodsname %></span>
+
+						<i><%=items[i].points_ordergoods_list[0].points_goodspoints %>&nbsp;金蛋</i><del>￥&nbsp;<%=items[i].points_ordergoods_list[0].points_goods_price %></del>
+						<b>X<%=items[i].points_ordergoods_list[0].points_goodsnum %></b>
+					</div>
+
+					<% if(items[i].points_orderstate == '1' || items[i].points_orderstate == '2'){ %>
+					<button class="btn2" onclick="huo(this)" data-id ='<%=items[i].points_order_id %>'>确认收货</button>
+					<% } %>
+
+					<% if(items[i].points_orderstate == '2'){ %>
+					<button class="btn1" onclick="wu(this)"  order_id="<%=items[i].points_order_rid %>" express_id = '<%=items[i].express_id %>' express_name="<%=items[i].points_logistics %>" shipping_code="<%=items[i].points_shippingcode %>">查看物流</button>
+					<% } %>
+				</div>
+			</div>
+			<% } %>
+			<% } %>
+		</script>
+		<script type="text/javascript" src="../js/zepto.js"></script>
+		<script type="text/javascript" src="../js/config.php"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/gold_goods_exchange.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>修改手机号</title>
+	<link rel="stylesheet" href="../../css/user/number_change.css">
+	<link rel="stylesheet" href="../../css/user/base.css">
+</head>
+<body>
+	<!--头部-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/user_img/icon_back.png" alt=""></a>
+			<span>修改手机号</span>
+		</div>
+	</header>
+	<!--头部-->
+	<!--修改登陆部分-->
+	<form action='http://www.baidu.com' class="login_number_change">
+		<ul>
+			<li>
+				<label>原 手 机 号</label>
+				<input type="number" value=" " id="number_primary" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" disabled = 'true'>
+			</li>
+			<li>
+				<label style="letter-spacing:.09rem">验 证 码</label>
+				<input type="number" value="请输入短信验证码" id="check1" style="width:2.5rem" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+				<input type="button" class="verification" value="点击获取" id="yzmone" >
+			</li>
+			<li>
+				<label>新 手 机 号</label>
+				<input type="number" value=" 请输入新的手机号码" id="number_new" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+			</li>
+			<li>
+				<label style="letter-spacing:.09rem">验 证 码</label>
+				<input type="number" value="请输入短信验证码" id="check2" style="width:2.5rem" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+				<input type="button" class="verification" value="点击获取" id="yzmtwo" >
+			</li>
+		</ul>
+		<input type="button"  class="complete" value="完成">
+	</form>
+	<!--修改登陆部分-->
+	
+</body>
+	<script src="../../js/tmpl/user/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src='../../js/tmpl/user/number_change.js'></script>
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/tmpl/user_number_change.js"></script>
+</html>

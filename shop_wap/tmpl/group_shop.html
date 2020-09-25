@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>组合套装</title>
+	<link rel="stylesheet" href="../css/activity/group.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<link rel="stylesheet" href="../css/activity/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/activity/swipe.js"></script>
+	<script type="text/javascript" src='../js/activity/swiper.min.js'></script>
+</head>
+<body style="background-color:#f7f7f7;">
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1);"><img src="../images/activity/icon_back.png" alt=""></a>
+			<span>组合套装</span>
+		</div>
+	</header>
+	<!--头部部分-->
+
+<div class="good_list"></div>
+
+	<script type="text/html" id="goods">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="shop_title">
+			<span style="margin-left:4%"><%=items[i].bundling_name %></span>
+			<a href="#">
+				<span style="float:right; margin-right:10%">节省￥<%=items[i].spare %></span>
+				<img src="../images/activity/more@3x.png" alt="" class="more">
+			</a>
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<% for(var k in items[i].bundling_good){ %>
+				<div class="swiper-slide"><a href="product_detail.html?goods_id=<%=items[i].bundling_good[k].goods_id %>"><img src="<%=items[i].bundling_good[k].goods_base.goods_image %>" alt=""></a></div>
+				<% } %>
+			</div>
+		</div>
+		<div class='buy_group'>
+			<p>套餐价：￥<%=items[i].bundling_discount_price %></p>
+			<button>购买套装</button>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/group_shop.js"></script>
+</body>
+
+	<script>
+
+	</script>
+
+</html>

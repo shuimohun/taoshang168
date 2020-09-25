@@ -1,0 +1,124 @@
+.nav_head img{width:28px;height:28px;border-bottom:1px solid #666;vertical-align:top}
+.tbar-tab-news,.tbar-tab-online-contact{position:absolute;top:5%;right:0;width:30px;height:35px;margin-bottom:1px;cursor:pointer;border-radius:3px 0 0 3px;display:inline-block}
+.tbar-tab-online-contact{top:12%;display:none}
+.close_p{font-size:12px;line-height:26px}
+.tbar-panel-news .close_p{margin-bottom:12px}
+.news_contents ul{padding-left:10px}
+.news_contents ul h4 span{font-size:15px;color:#c62222;float:left}
+.news_contents ul h4 a{font-size:12px;color:#666;line-height:30px;float:right;position:relative;right:6px;font-weight:200}
+.news_contents ul h4{margin-bottom:8px}
+.news_contents ul li a{font-size:14px;line-height:30px;color:#333}
+.news_contents ul{margin-bottom:30px}
+.select_all{line-height:14px;margin-bottom:10px;font-size:12px}
+.select_all span{margin-left:5px}
+.select_all input,.select_all span{float:left;margin-right:4px}
+.select_all a{float:right;font-size:12px;line-height:14px}
+.tbar-panel-cart .close_p{margin-bottom:8px;display:inline-block}
+.cart_list_ordersize{width:50px;overflow:hidden;height:19px;font-size:12px}
+.cart_contents_head{height:29px;line-height:16px;overflow:hidden;background:#fff;border-bottom:1px solid #e1e1e1}
+.cart_contents_head .cart_shop_icon{float:left;height:30px;line-height: 30px;}
+.cart_contents_inp{padding-top:10px;width:23px;float:left}
+.cart_contents_title{float:left;width:150px;color:#333;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.cart_contents_cost,.cart_contents_title,.cart_shop_icon{line-height: 30px;height:30px;}
+.cart_contents_cost{width:48px;position:relative;text-align:right;float: right;  margin-right: 5px;}
+.cart_contents_head .cart_shop_icon i{color: red!important; font-size: 20px;}
+.padd{padding-left:10px;height:100%}
+.padd_p{position:relative;text-align:center;height:28px;margin-bottom:10px}
+.padd_p a:nth-child(2){display:inline-block;line-height:27px}
+.padd_p .close_p{position:absolute;left:0}
+.padd2{line-height:26px}
+.cart_contents{background:#fff;padding:0 10px;margin-bottom:16px;overflow:hidden}
+.cart_list_orderinp{width:23px;padding-top:20px;float:left}
+.cart_list_orderimg{width:50px;padding-right:5px;float:left}
+.cart_list_orderimg a{display:inline-block;padding:6px 0!important}
+.cart_list_orderimg a img{width:100%}
+.cart_contents .cart_lists .cart_list{border-bottom: 1px dashed #e1e1e1;}
+.cart_contents .cart_lists .bl_cart_list,.cart_contents .cart_lists .cart_list:last-child{border:none;}
+.cart_contents .cart_bl_title{height: 28px; line-height: 28px; overflow: hidden;}
+.cart_contents .cart_bl_title .ti{color: rgb(255, 255, 255);background-color: #e45050;padding: 0 5px;}
+.cart_list .cart_list_order .cart_list_content{float:left;width: 190px;padding-top: 4px;}
+.cart_list .cart_list_order .cart_list_content .cart_goods_name{height: 35px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;}
+.cart_pay{height:30px;line-height:30px;color:#333}
+.have_sel{float:left;font-size:12px}
+.have_sel i{font-style:normal}
+.cartall{float:right;color:#ca0000}
+.topay a{width:248px;height:40px;line-height:40px;display:block;text-align:center;font-size:16px}
+.view_all{float:right;display:inline-block;line-height:26px;margin-right:10px!important}
+.history_goods li img,.sav_goods li img{width:116px;height:116px;border:none;margin-bottom:8px}
+.brand_name,.history_goods li a h5,.sav_goods li a h5{width:100%;height:35px;overflow:hidden;font-size:12px;margin-bottom:4px}
+.history_goods h6,.sav_goods li a h6{line-height:24px;height:24px;font-size:13px}
+.history_goods li,.sav_goods li{float:left;text-align:center;margin-right:9px;margin-top:8px;width:116px}
+.over{height:100%;overflow:hidden}
+.nav_icon{font-weight:400;font-size:26px!important;color:#fff!important;top:11px}
+.last_time .iconfont{position:relative;top:2px;margin-right:4px}
+.salesimg,.salestext{position:absolute}
+.salesimg{right:10px;top:0}
+.salestext{right:30px;color:#fff;top:10px}
+.salesimg img{width:60px!important;height:56px!important}
+.sole_out{width:72px;height:72px;display:inline-block;position:absolute;left:40%;top:30%;border-radius:50%;color:#fff;text-align:center;line-height:72px;background:url(../../common/css/img/salebg.png) no-repeat}
+.follow_brands a{font-size:14px;height:35px;line-height:35px;width:100%;text-align:center;display:inline-block}
+.follow_brands{position:relative}
+.follow_brands span{position:absolute;left:0;top:9px;cursor:pointer}
+.item{width:250px;background-color:#fff;margin-bottom:30px;padding-top:14px}
+.brand_logo{width:90px;height:45px;margin:5px auto 0;display:block}
+.barnd_shop{font-size:12px!important;line-height:25px;padding:0 20px!important;color:#000!important;display:inline-block;margin:5px 0 10px 81px!important;background-color:#eee;border-radius:20px;text-align:center}
+.brand_goodsList{width:100%;border-top:2px solid #000}
+.brand_goodsList a{width:120px;padding-bottom:10px!important;display:inline-block;position:relative}
+.brand_goodsList a img{width:120px;height:120px;border:none;vertical-align:top}
+.brand_price{color:#eb1340;text-align:center;background-color:#fff}
+.border1{border-left:2px solid #000}
+.sav_goods{height:92%}
+.history_goods{height:92%}
+.cart_con{height:75%}
+.item_cons_no{position:absolute;left:50%;top:50%;margin-left:-33px;margin-top:-20px}
+.item_cons{height:96%}
+.news_contents{height:90%}
+.toolbar-footer{position:absolute;bottom:0;left:0}
+.assets_overview li{float:left;border-right:1px solid #f1f1f1;background-color:rgba(0,0,0,.2);width:84px;height:68px;text-align:center;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)}
+.assets_overview li a{display:inline-block;padding:10px 0!important;width:100%}
+.assets_overview li a h6{font-size:12px}
+.assets_overview li a span{color:#fff!important;padding:4px 0;display:block}
+.other_voucher{width:100%;height:80%;margin-top:10px}
+.contrast_goods{margin-top:20px;height:80%}
+.contrast_goods li{width:200px;margin:0 auto;text-align:center;background:#fff;padding:0 10px}
+.contrast_goods li a{display:inline-block}
+.contrast_goods li h5 a{line-height:18px;display:inline-block;font-size:12px;color:#999;overflow:hidden;height:18px}
+.contrast_goods li h6{color:#c00;text-align:left}
+.contrast_btnp{text-align:center;margin-top:40px}
+.contrast_btn,.empty_btn{width:60px;height:40px;display:inline-block;line-height:40px;margin:0 auto}
+.contrast_btn{color:#fff!important;margin-right:6px!important}
+.empty_btn{color:#a8a8a8!important;background:#4a4a4a}
+.news_icon{position:relative;top:4px!important}
+.about_top{margin-top:6px}
+.code_screen{position:relative}
+.code_screen:hover .code_cont{display:block}
+.code_cont{position:absolute;width:150px;height:150px;text-align:center;left:-152px;bottom:0;background:#fff;display:none;box-shadow:2px 2px 2px #666}
+.code_cont img{margin-top:15px}
+.cart_contents_cost strong{font-size:12px;color:#e45050}
+.nav_head img{border-radius:50%}
+.cart_foot{margin-right:12px}
+
+
+/*代金券  弹框*/
+.voucher-wrap{position:absolute;top:50px;left:10px;bottom:20px;margin:0 auto;padding-right:10px;overflow-y: auto;}
+.voucher-type{position:relative;text-align: center;}
+.voucher-type:after{content:"";position: absolute;width:70px;top:10px;right:0;height:1px;background-color: #ddd;}
+.voucher-type:before{content:"";position: absolute;width:70px;top:10px;left:0;height:1px;background-color: #ddd;}
+
+.voucher-type .clapboard{font-size: 14px;}
+.voucher-type .clapboard:after{content: "";position: absolute;width:3px;height:3px;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;-o-border-radius: 50%;background-color:#999;top:9px;right:70px;}
+.voucher-type .clapboard:before{content: "";position: absolute;width:3px;height:3px;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;-o-border-radius: 50%;background-color:#999;top:9px;left:70px;}
+.voucher-wrap .voucher-list .voucher-item{position:relative;background:#fff;min-height: 101px;padding:0 10px 5px 15px;margin:20px 0 26px;}
+.voucher-item .voucher-price{color:#74d2d4;float: left;width:180px;font-size: 42px;font-weight: 700;display: inline;line-height: 28px;padding-top:12px;}
+.voucher-item .voucher-price .money-sign{position: relative;color:#74d2d4;font-size: 20px;top:-12px;left:2px;font-weight: 400;}
+.voucher-item .voucher-price .voucher-name{font-size: 12px;font-weight: 400;padding-left:8px;color:#74d2d4;}
+.voucher-item .voucher-info{float: left;display: inline;width:120px;margin:0 2px 0 0;height:18px;overflow: hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;line-height: 18px;}
+.voucher-item .voucher-limit{display: inline-block;width:118px;height:18px;color:#999;margin:0 auto;}
+.voucher-item .voucher-time{color:#999;width:190px;}
+.voucher-item .receive{display:block;width:12px;line-height:19px;color:#fff;position:absolute;right:0;top:0;bottom:0;background:url(../images/coupon-new.png) no-repeat;background-position:-239px -130px;background-color:#74d2d4;padding:16px 10px 0;}
+/*已领取 盖章*/
+.recevied{position: absolute;right:37px;bottom:5px;width:47px;height:47px;background:url(../images/coupon-new.png) no-repeat -62px -10px;}
+/*即将过期*/
+.will-overdue{position:absolute;left:0;top:0;z-index: 2;width:55px;height:55px;background:url(../images/coupon-new.png) -3px -63px;}
+/*已抢光*/
+.loot_all{position: absolute;right:37px;bottom:5px;width:48px;height:48px;background:url(../images/coupon-new.png) no-repeat -62px -124px;}

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #fff;
+	position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.2rem;
+	height:.22rem;
+	margin-top: .03rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3a0018;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:35%;
+	width:.24rem;
+	height:.06rem;
+	margin-top: .14rem;
+}
+/***************头部部分结束**************************************/
+
+/********图片部分***********/
+.header_img{
+	width:100%;
+	height:3.4rem;
+	background-color: pink;
+	font-size: 0;
+	background-color: #fffef2;
+	text-align: center;
+}
+.header_img .pic{
+	width:100%;
+	height:2.8rem;
+}
+.header_img .tit{
+	width:2.8rem;
+	height:.63rem;
+}
+/********图片部分***********/
+
+/**********中部部分***********/
+.strategy_option{
+	margin-top:.3rem;
+	width:100%;
+	height:2.8rem;
+	font-size: 0;
+}
+.strategy_option li{
+	display:inline-block;
+	background-color: #fffef2;
+	width:50%;
+	height:50%;
+	position:relative;
+}
+.strategy_option li img{
+	width:1.02rem;
+	height:1.02rem;
+	margin-left: .22rem;
+}
+.strategy_option li span{
+	font-size: .24rem;
+	color:#3a0018;
+	position:absolute;
+	left:44%;
+	top:8%;
+}
+.strategy_option li u{
+	font-size: .2rem;
+	text-decoration: none;
+	color:#999;
+	position:absolute;
+	left:44%;
+	top:37%;
+}
+/**********中部部分***********/
+.word{
+	width:6.4rem;
+	height:3.99rem;
+}

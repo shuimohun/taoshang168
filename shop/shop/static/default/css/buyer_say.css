@@ -1,0 +1,168 @@
+/*
+    2017-07-16   说说   样式
+*/
+.right_main{ overflow: hidden;}
+.say_main_list{ width: 100%;}
+.say_list_title{ width: 100%;}
+.say_list_title .user_tx{ }
+.say_list_title .user_tx img{ width: 60px; height: 60px; border-radius: 50%; }
+.say_list_title .user_name{  font-size: 24px; color: #666; font-weight: 500;}
+.say_list_title .user_gz{font-size: 18px; color: #dc143c; margin: 0 10px; }
+.say_list_title .user_wz{ font-size: 18px; color: #999;}
+.say_content{width: 100%; margin-top: 10px;}
+.say_item{ margin-left: 20px; border-bottom: 5px solid #eee;}
+.say_item:last-child{ border:0;}
+.say_item h3.say_title{font-size: 20px; color: #333; margin-bottom: 10px; padding-top: 10px;}
+.say_item .say_item_l{ float: left; /*width:164px;*/ width:16%;overflow: hidden; position: relative;}
+.say_item .say_item_l .say_item_border{ float: left; height: 100%; width:24px; background:#f1eff0; overflow: hidden;}
+.say_item .say_item_l .say_item_border .say_item_border_blue{width: 4px; height: 100%; background: #4fbce9; margin: 0 auto; position: relative; }
+.say_item .say_item_l .say_item_border .say_item_border_blue i{ display: block; width: 14px; height: 14px; background: #4fbce9; position: absolute; left: 50%; top: 50%; margin-top: -7px; margin-left: -7px; border-radius: 50%; }
+.say_item .say_item_l .say_item_l_text{ float: left; height: 100%; width:140px;}
+.say_item .say_item_l .say_item_l_text .say_item_l_text_wrap{ position: absolute; top: 50%; margin-top: -22px; left: 50%; margin-left: -33px;}
+.say_item .say_item_l .say_item_l_text .say_time{ height: 21px; overflow: hidden; text-align: center; font-size: 16px; color: #4a4a4a; margin: 0;}
+.say_item .say_item_l .say_item_l_text .delete_btn{ margin: 0 auto; display: block; width: 55px; height: 22px; line-height: 22px; text-align: center;font-size: 16px;color: #fff;  background: #4fbce9; border-radius: 10px;}
+.say_item .say_item_l .say_item_l_text .delete_btn:hover{opacity: 0.8}
+.say_item .say_item_l .say_item_l_text .bj_btn{
+    margin: 5px auto 0; display: block; width: 55px; height: 22px; line-height: 22px; text-align: center;font-size: 16px;color: #666;
+}
+.say_item_r{ float: left;/* width:864px;*/ width: 84% }
+.say_item_r .say_text{ font-size: 14px; color: #333;text-indent: 28px;}
+.say_item_r .say_pic_list ul li{ width: 266px; height: 266px; overflow: hidden; float: left; margin-right: 6px;}
+.say_item_r .say_pic_list ul li img{ width: 266px; height: 266px; border-radius: 10px;}
+.say_item_r .say_pic_list ul li video{ display: block; width: 266px!important; height: 266px!important;}
+.say_item_r .say_goods_title{ height: 48px; line-height: 48px; font-size: 18px; color: #999;}
+.say_item_r .say_goods_list{ overflow: hidden;}
+.say_item_r .say_goods_list ul li{ width: 200px; height: 200px; float: left; margin-right: 5px; overflow: hidden; position: relative; border-radius: 10px;}
+.say_item_r .say_goods_list ul li img{ width: 200px; height: 200px;/*border-radius: 10px;*/transition: 0.5s all ease-in-out;}
+.say_item_r .say_goods_list ul li .goods_text{ width: 200px; padding: 5px 0; overflow: hidden; position: absolute; bottom: 0; left: 0; background:rgba(255,255,255,0.5);}
+.say_item_r .say_goods_list ul li .goods_text p{ width: 90%; max-height: 24px; line-height: 12px; font-size:12px; color:#000;/*border-radius: 10px;*/ margin: 0 auto; overflow: hidden;}
+.say_item_r .say_goods_list ul li .goods_text span{ display: block; width: 90%;margin: 0 auto; text-align: right; font-size: 14px; color: #ff1e00; border-radius: 10px;}
+.say_item_r .say_goods_list ul li:hover img{  transform:scale(1.3); }
+.say_item_r .say_share{ margin-top: 25px; margin-bottom: 15px;}
+.say_item_r .say_share span{ margin-right: 65px;font-size: 18px;}
+.say_item_r .say_share span img{ width: 24px; height: 24px; margin-right: 10px;}
+.say_item_r .say_share .look_all{ float: right;}
+.say_item_r .say_share .look_all a{ font-size: 18px; color: #4fbce9;}
+/*.blanking{ width: 100%; height:5px; background-color: #f1eff0 ; float: left;}
+.blanking .border_blue{ width: 4px; height:5px; background-color: #4fbce9; margin-left: 10px;}*/
+
+/*
+    2017-07-16   我的关注   样式
+*/
+.follow_main .say_item_l_text_wrap{ background: #eeeeee; width: 117px; height: 336px; margin-top: -168px!important; margin-left: -48px!important; border-radius: 60px;}
+.follow_main .say_item_l_text_wrap p{ margin: 0; text-align: center; white-space: nowrap; width: 117px; overflow: hidden; }
+.follow_main .gz_user_tx{ padding-top: 20px; text-align: center;}
+.follow_main .gz_user_tx img{ width: 66px; height: 66px; border-radius: 50%;}
+.follow_main .gz_user_name{ font-size: 24px; color: #666; margin: 5px 0}
+.follow_main .gz_user_num{ font-size: 14px; margin: 5px 0}
+.follow_main .gz_user_gx{font-size: 14px;}
+.follow_main .gz_user_gx span{ display: inline-block; width: 22px; height: 22px; line-height: 22px; color: #fff; background: #e45050; border-radius: 50%;}
+.follow_main .gz_user_time{ font-size: 16px; color:#4a4a4a; margin-top: 20px!important; }
+.follow_main .gz_user_toindex{display: block; margin-top: 40px; text-align: center; color: #999;  }
+.follow_main .gz_user_toindex:hover{color: #4fbce9;  }
+.follow_main .gz_user_btn{display: block; width: 75px; height: 22px; line-height: 22px; text-align: center; margin: 5px auto 0; color: #fff; background: #4fbce9; border-radius: 10px;  }
+.follow_main .gz_user_btn:hover{opacity: 0.8  }
+.page_wrap{ width: 100%; padding: 50px 0;}
+.page{ width: 350px; margin: 0 auto; float: none; margin: 0 auto;}
+
+/*
+    2017-07-16   发帖   样式
+*/
+.post_main{ margin-top: 30px;}
+.post_item{ overflow: hidden; width: 100%; margin-top: 16px;}
+.post_l{ width: 150px; float: left; font-size: 14px; color: #636363; text-align: right; }
+.post_title .post_l{line-height: 29px;}
+.post_r{ float: left;}
+.post_r .post_input{ display: block; width: 487px; padding-left: 5px; height: 27px; border: 1px solid #dddddd;}
+.post_file{ width: 150px; height: 150px; background:url("../images/uploadpic.png") no-repeat; background-size: 150px 150px;}
+.post_file .post_file_input{ width: 150px; height: 150px; opacity: 0; cursor:pointer;}
+.post_uditor .post_r{ width: 864px;}
+.edui-editor.edui-default{width: 864px;}
+#edui1_bottombar{ display: none;}
+#edui1_iframeholder{ height: 294px;}
+.post_block ul li{ float: left; margin-right: 10px;}
+.post_block ul li input{ margin-left: 5px;}
+.post_item_share{ margin-top: 45px; margin-bottom: 88px;}
+.post_item_share .post_r ul li{ float: left; margin-right: 58px;}
+.post_item_share .post_r ul li img{ width: 60px; height: 60px;}
+.share_must{ width: 100%; font-size: 12px; color: #e45050; text-align: center; text-indent: -58px; margin-top: 30px;}
+.fb_btn,.save_btn{ display: inline-block; width: 120px; height: 35px; text-align: center; line-height: 35px; font-size: 14px; border-radius: 5px;}
+.fb_btn{ background: #e45050; color: #fff; margin-right: 10px;}
+.fb_btn:hover{ background: #e45050; color: #fff; margin-right: 10px; opacity: 0.8; filter: alpha(opacity=80);}
+.save_btn{ background: #e1e1e1;color: #636363;}
+.save_btn:hover{ background: #e1e1e1;color: #636363; opacity: 0.8; filter: alpha(opacity=80);}
+       /*发帖---*弹框*/
+.alert_goods{ width: 100%; height: 100%; position: fixed;left: 0; top: 0;z-index: 1000; display: none;}
+.alert_goods .mask{ width: 100%; height: 100%;background: rgba(0,0,0,0.5); position: fixed; left: 0; top: 0}
+.alt_main{ width: 724px;/* height: 850px;*/ background: #c51e1e; position: absolute; left: 50%; top: 10%; /*margin-top: -425px;*/ margin-left: -362px; }
+.alt_tab{ width: 100%; margin-top: 10px; margin-bottom: 5px;}
+.alt_tab ul{ width: 696px; margin: 0 auto;}
+.alt_tab ul li{ float: left; width: 77px; height: 27px; margin: 0 5px;}
+.alt_tab ul li a{ display: block; width: 77px; height: 27px; color: #fff; font-size: 14px; text-align: center; line-height: 27px;}
+.alt_tab ul li a:hover{background: #cd3e3e; border-radius: 5px;}
+.alt_tab ul li.on a{background: #fff; color:#c51e1e;  border-radius: 5px;}
+.alt_search{ margin-left: 20px;}
+.alt_search .alt_input{ display: block; float: left; margin-top: 12px; width: 303px; height: 32px; padding-left: 5px; background: #fff; border:1px solid #eee; border-radius: 5px;}
+.alt_search .alt_search_btn{display: block; float: left; margin-top: 12px; vertical-align: middle; margin-left: 5px; width: 32px; height: 32px;background: #fff url("../images/search_news.png") no-repeat; background-size: 18px 18px; background-position: center; border:1px solid #eee; border-radius: 5px;}
+.alt_search .alt_search_btn:hover{background: #fff url("../images/search_red.png") no-repeat; background-size: 18px 18px; background-position: center; }
+.alt_goods_list{ background: #fff; width: 710px; margin: 5px auto 0; display: block;}
+.alt_goods_list .ul_wrap{ width: 658px; overflow: hidden; margin: 0 auto; padding: 0 0 0;}
+.alt_goods_list ul{ width: 680px; height: 490px; overflow: hidden; margin: 0 auto;}
+.alt_goods_list ul li{ width: 148px; height: 225px; overflow: hidden; float: left; margin-top: 20px; margin-right: 22px;border:1px solid #fff; box-sizing: border-box;}
+.alt_goods_list ul li:hover{ border:1px solid #c51e1e; box-sizing: border-box;}
+.alt_goods_list ul li.on{ opacity: 0.5;border:1px solid #c51e1e;}
+.alt_goods_list ul li .pic_wrap{ width: 148px; height: 148px; overflow: hidden; }
+.alt_goods_list ul li .goods_pic{ width: 148px; height: 148px }
+.alt_goods_list ul li:hover .goods_pic{ transform:scale(1.3); transition: 0.5s all ease-in; }
+.alt_goods_list ul li .goods_tit{ width: 148px; height: 32px; margin: 0; line-height: 32px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #666; }
+.share_reduce{ display:block; width:45%; box-sizing: border-box; height: 17px; overflow: hidden; border: 1px solid #c51e1e; font-size: 12px; color: #c51e1e; text-align: center;}
+.share_reduce.fr{margin-right: 3%;}
+.share_reduce.fl{margin-left: 3%;}
+.share_reduce i{ float: right; display: inline-block;  max-width:75%;height: 17px; overflow: hidden; background: #c51e1e; margin: 0 auto; font-size: 12px; color: #fff; text-indent: 0; text-align: center;margin-left: 3px;white-space: nowrap;/*text-overflow: ellipsis;*/}
+.price_wrap{ width: 100%; overflow: hidden;}
+.goods_price{ width:50%; height: 24px; line-height: 24px; text-align: center; font-size: 16px; color: #c51e1e;margin: 0 }
+.goods_sale_num{width: 50%;  height: 24px; line-height: 24px; text-align: center; font-size: 12px; color: #666; margin: 0;}
+.alt_goods_list .page_wrap{ padding: 18px 0;}
+.alt_btns{ text-align: center; margin-top: 16px; padding-bottom: 16px;}
+.alt_btns a{ display:inline-block; margin-right: 26px; width: 136px; height: 32px; text-align: center; line-height: 32px; background: #e8e8e8; border: 1px solid #E5E5E5; border-radius: 3px; color: #767676; font-size: 16px; }
+.alt_btns a:hover{color: #800404;}
+.choose_goods{ display: block; float: left;}
+.choose_goods ul li{ float: left; margin-right: 15px;}
+.choose_goods ul{ margin-left: 32px;}
+.choose_goods ul li img{ width: 55px; height: 55px;}
+
+
+/*2018-08- 01 修改   发帖页面*/
+.aright{ overflow: hidden;}
+.member_infor_content{ /*width: 90%; float:left; padding: 0;*/}
+.tabmenu{ height: auto;}
+
+/* 2018-08-15  发帖添加商品链接页面修改样式  */
+.alt_main{ width: 50%; overflow: hidden; margin-left: -25% ;}
+.alt_goods_list .ul_wrap{ width: 96%;}
+.alt_tab ul li{ width: 12.5%; overflow: hidden; margin: 0; text-align: center;}
+.alt_tab ul li a{ width: 100%;}
+.alt_search .alt_input{ width: 40%;}
+.alt_goods_list{ width: 100%;}
+.alt_goods_list ul{ width: 100%; height: auto; min-height: 200px; }
+.alt_goods_list ul li{ width: 22%; height: auto; margin-right: 1.5%;margin-left: 1.5%; margin-top: 1%;}
+.alt_goods_list ul li .pic_wrap{ width: 100%; height: auto;}
+.alt_goods_list ul li .goods_pic{ width: 100%; height: auto;}
+.choose_goods{ padding-top: 10px;}
+.choose_goods ul li img{ width: 2.5rem; height: 2.5rem;}
+.alt_goods_list ul li .goods_tit{width: 100%}
+.alt_goods_list .page_wrap{ padding: 10px 0;}
+.alt_tab ul{ width: 96%; margin: 0 auto;}
+.alt_btns{ margin: 10px 0;}
+
+@media screen and (max-width:1600px){
+    .alt_goods_list ul li .goods_tit{ height: 25px; line-height: 24px;}
+    .alt_btns{ padding-bottom: 0; margin: 5px 0;}
+    .alt_btns a{ height: 25px; line-height: 25px;}
+    .page_front a, .page_front b{ padding: 0 8px!important;}
+    .alt_search .alt_input,.alt_search .alt_search_btn{ margin-top: 0;}
+    .choose_goods ul li img{ margin-top: 0;}
+    .alt_main{ top: 0;}
+}
+
+

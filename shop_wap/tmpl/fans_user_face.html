@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/fansBase.css">
+    <link rel="stylesheet" type="text/css" href="../css/friendletter/foot_base.css">
+    <link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <link rel="stylesheet" type="text/css" href="../css/page.css">
+    <link rel="stylesheet" type="text/css" href="../css/saylist.css">
+
+    <link rel="stylesheet" href="../css/common_alert.css">
+    <script type="text/javascript" src="../js/common_alert.js"></script>
+
+    <style>
+        .loading{background-color:#eee;color:#777;font-size:0.1875rem;width:100%;text-align: center;padding:0.20rem 0;display:block;}
+        .share_tanchuang{width:100%;/*height:13rem;*/background-color:#fff;bottom:0;z-index:1000}
+        .share_title_img{width:100%;height:15%}
+        .share_tanchuang .share_channel{width:100%;/*height:13%;*/font-size:0; margin-bottom: 0.3rem;}
+        .share_tanchuang .share_channel li{display:inline-block;font-size:.25rem;text-align:center;width:20%;vertical-align:top}
+        .share_tanchuang .share_channel li img{width:0.75rem;height:0.75rem;margin-top:.1rem}
+        .share_tanchuang .share_channel li span{display:block;color:#999;width: 100%; margin: 0.1rem auto; text-align: center; font-size: 0.2rem;}
+        .share_tanchuang .share_channel li i{color:#999; width: 100%; font-size: 0.23rem;}
+        .share_tanchuang .share_channel li i i{color:#e45050}
+        .share_tanchuang p{font-size:.22rem;color:#999;padding:0 5% 0 5%;margin-top:.1rem}
+        .share_tanchuang p span{font-size:.26rem;color:#666}
+        .nctouch-bottom-mask-top.share{padding:0!important}
+        .shared i{color:#e45050!important}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        .open{width:100%;height:2rem;z-index:1000000000;display:none;font-size:0;position:relative}
+        .open .open_title{width:70%;height:100%}
+        .open .open_click{width:30%;height:100%}
+        .open .open_close{position:absolute;left:3%;top:24%;width:1.1rem;height:1.1rem}
+        .transparent{margin-top:2rem}
+        .after_add{margin-top:0.395rem;position:relative; width: 100%;}
+        /*.after_add:after{content:'';display:table;clear:both}
+         .after_add:before{content:'';background-color:#eee;width:88%;height:.05rem;position:absolute;top:0;left:1rem}*/
+        .after_add span{float:left; text-align:center;font-size:.22rem;width:50%; display: block;}
+        .after_add span a{display:inline-block;width:100%;height:0.6rem;line-height:0.6rem}
+        .after_add span.cancel{color:#ED5564}
+        .after_add span.cancel a{color:#ED5564}
+        .after_add span.to_buy a{color:#fff;background-color:#ED5564;}
+        .sharewechat_contain .sharewechat{position:absolute;right:7%;bottom:140%}
+        .sharewechat_contain .sharewechat img{width:5rem;height:3rem;margin-left:2rem}
+        .sharewechat_contain .sharewechat span{color:#fff;font-size:1rem}
+        /*20180503增加开始*/
+        .share_describe{ font-size: 0.5rem;}
+        .share_describe span{ font-size: 0.6rem;}
+        /*20180503增加结束*/
+        /*20180608*/
+        .nctouch-bottom-mask{ width: 100%; height: 100%;}
+        .nctouch-bottom-mask.up{display: block;}
+        .nctouch-bottom-mask.up .nctouch-bottom-mask-block{bottom: 0 ; animation: optionBlockUp 0.5s ease-in-out; -webkit-animation:optionBlockUp 0.5s ease-in-out;}
+        .nctouch-bottom-mask.down{display: none; }
+        .nctouch-bottom-mask.down .nctouch-bottom-mask-block{bottom:-4rem ;animation: optionBlockUp 0.5s ease-in-out; -webkit-animation:optionBlockUp 0.5s ease-in-out;}
+        .nctouch-bottom-mask-block{ min-height: 3.2rem}
+        .nctouch-bottom-mask-tip{ top: -0.7rem; font-size: 0.20rem }
+        .nctouch-bottom-mask-tip i{ width: 0.4rem;}
+        .nctouch-bottom-mask-close{ width: 0.45rem; height: 0.45rem; padding: 0.05rem; top: -0.2rem}
+        .share_tanchuang .share_channel li img{ width: 0.75rem; height: 0.75rem;}
+        .comment-input{ width: 76%;}
+        .submit_btn{ vertical-align: middle; color: #666; display:inline-block; width: 21%; text-align: center; height: 0.6rem; line-height: 0.6rem; background: #e1e1e1; border:1px solid #e1e1e1; margin-left: -0.17rem;}
+        .comment-input{ font-size: 0.25rem}
+        /*右上角弹框*/
+        .info{width: 0.625rem; height: 0.625rem;margin-top: 1%;}
+        .info_alert{width: 1.7rem; height: 2.5rem; position:relative; top:27%; left:71%; z-index: 1000;}
+        .info_alert span{font-size: .2rem;}
+        .info_alert span img{width: .3rem;height: .3rem;}
+        .icon3{
+            right: 0;
+            background:url("../tmpl/img/fans-circle/fansicon3.png") no-repeat;
+        }
+        .icon3{width: 0.35rem; height:0.35rem; position:absolute; top:50%; margin-top:-0.1rem; margin-right: 0.9rem; background-size: 100%!important;}
+        /*粉丝圈 增加说说版块，放在 最新最热前边 2018-07-02 */
+        .fans-comment-main{ width: 33.33%;}
+        .title{font-size: 12px;}
+    </style>
+</head>
+<body style="background-color: #fff;">
+<header class="person person_v2">
+    <div class="title">
+        <a href="javascript:history.go(-1)" class="back"><img src="img/fans-circle/back.png" alt=""></a>
+        <i class="user-title"></i>
+        <a href="#"class="more_btn"><img onclick="common_index_alert(this)" src="../images/info.png" alt=""></a>
+    </div>
+    <div class="info_alert">
+        <img src="../images/user_img/choose_gray@3x.png" alt="">
+    </div>
+</header>
+<div class="banner_pic">
+    <a href="#"><img src="img/fans-circle/fans_banner.png" alt=""></a>
+</div>
+
+<!--用户信息-->
+<div class="my_infor user_info">
+
+</div>
+
+
+<!--主内容区  start-->
+<div class="main fans_user_main">
+    <!--tab切换  start-->
+    <div class="fans-comment-tab clearfix">
+        <a href="javascript:;" class="fans-comment-main cur">说说</a>
+        <a href="javascript:;" class="fans-comment-main">视频</a>
+        <a href="javascript:;" class="fans-comment-main">文章</a>
+
+    </div>
+    <!--tab切换  end-->
+    <!--说说内容 start-->
+    <div class="evalList">
+        <div class="saylistmain">
+            <div class="main_wrap information_article fans_face">
+
+            </div>
+        </div>
+    </div>
+    <div class="loading">正在加载中...</div>
+    <!--说说内容 end-->
+</div>
+<!--主内容区  end-->
+<!--插入脚部 start-->
+<div id="foot"></div>
+<!--插入脚部 end-->
+
+
+<!--主内容渲染-->
+<script type="text/html" id="fans_face">
+
+    <% if( data ){%>
+    <% for( var i in data.information){ %>
+    <div class="itemwrap">
+        <div class="fl_item">
+            <div class="fl_item_con clearfix">
+                <div class="fl_tx"><img src="<%=data.user_info.user_logo%>" onerror="this.src='./img/robot-ss.png'"> </div>
+                <div class="fl_infor">
+                    <a href="#">
+                        <p class="user_name" data-id="<%=data.information[i].user_id%>"><%=data.user_info.user_name%>
+                            <span><%=data.information[i].information_add_time%></span>
+                        </p>
+                        <p class="user_num">
+                            <span class="more"><i><%=data.Fs_count%></i>关注</span>
+                            <span><i><%=data.countArticle%></i>篇文章</span>
+                        </p>
+                    </a>
+                </div>
+                <!--<div class="more_icon"><img src="img/mores.png" alt=""></div>-->
+                <div class="more_pop">
+                    <span class="sj_btn"></span>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/jubao.png" alt="">举报文章</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/lahei.png" alt="">拉黑</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/quxiao.png" alt="">取消</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="saymain">
+                <div class="article_main <% if(data.information[i].has_video == 1 ){%> video_wrap <% }%> clearfix">
+                    <a href="./information.html?information_id=<%=data.information[i].information_id%>&type=0">
+                        <div class="l_pic">
+                            <% if( data.information[i].src_video.length <=0 ){ %>
+                                <img src='<%=data.information[i].information_pic%>' />
+                            <% }else{ %>
+                           <video class="edui-upload-video  vjs-default-skin video-js" poster="" controls="controls" preload="auto" width="420" height="280" src="<%=data.information[i].src_video[0]%>" data-setup="{}">
+                                <source src="http://taoshang168.test/shop/media/3c95e07e89ed1ac4f3e9613dd4e007d8/10012/8/video/20180801/1533110585131707.mp4" type="video/mp4"/>
+                            </video>
+                            <% }%>
+                        </div>
+                        <div class="r_text"><%=data.information[i].information_title%></div>
+                    </a>
+                </div>
+                <% if(  data.information[i].information_goods_recommend ){%>
+                    <h4 class="user_goods_title">我喜欢的商品</h4>
+                    <ul class="user_goods_list clearfix">
+                        <% for( var j in data.information[i].information_goods_recommend ){ %>
+                            <li>
+                                <a href="./product_detail.html?goods_id=<%=data.information[i].information_goods_recommend[j][0]%>">
+                                    <img src="<%=data.information[i].information_goods_recommend[j][2]%>" alt="">
+                                    <span >￥<%=data.information[i].information_goods_recommend[j][1]%></span>
+                                </a>
+                            </li>
+                        <% }%>
+                    </ul>
+                <% }%>
+                <div class="userabout">
+                    <ul class="clearfix">
+                        <li class="u_a_icon1">
+                            <img src="img/fans-circle/eye.png" alt="">
+                            <span><%= data.information[i].information_read_count %></span>
+                        </li>
+                        <li class="u_a_icon2">
+                            <img src="img/fans-circle/fansicon2.png" alt="">
+                            <span><%= data.information[i].countReply %></span>
+                        </li>
+                        <li class="u_a_icon3">
+                            <img onclick="article_like(this,<%=data.information[i].information_id%>)" src="<%if( data.information[i].is_like == 1 ){%>img/fans-circle/fansicon1-2.png<% }else if( data.information[i].is_like == 0 ){ %>img/fans-circle/fansicon1.png<% }%>" alt="">
+                            <span><%= data.information[i].countLike %></span>
+                        </li>
+                        <li class="u_a_icon4">
+                            <span style="font-size: 0.18rem">来自:<%= data.information[i].information_from %></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }%>
+    <% }%>
+
+
+</script>
+<!--主页内容追加-->
+<script type="text/html" id="fans_face_more">
+
+    <% if( data ){%>
+        <% for( var i in data.information){ %>
+            <div class="itemwrap">
+                <div class="fl_item">
+                    <div class="fl_item_con clearfix">
+                        <div class="fl_tx"><img src="<%=data.user_info.user_logo%>" onerror="this.src='./img/robot-ss.png'"> </div>
+                        <div class="fl_infor">
+                            <a href="#">
+                                <p class="user_name" data-id="<%=data.information[i].user_id%>"><%=data.user_info.user_name%>
+                                    <span><%=data.information[i].information_add_time%></span>
+                                </p>
+                                <p class="user_num">
+                                    <span class="more"><i><%=data.Fs_count%></i>关注</span>
+                                    <span><i><%=data.countArticle%></i>篇文章</span>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="more_icon"><img src="img/mores.png" alt=""></div>
+                        <div class="more_pop">
+                            <span class="sj_btn"></span>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="img/jubao.png" alt="">举报文章</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="img/lahei.png" alt="">拉黑</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="img/quxiao.png" alt="">取消</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="saymain">
+                        <div class="article_main <% if(data.information[i].has_video == 1 ){%> video_wrap <% }%> clearfix">
+                            <a href="./information.html?information_id=<%=data.information[i].information_id%>&type=0">
+                                <div class="l_pic">
+                                    <% if( data.information[i].src_video.length <=0 ){ %>
+                                    <img src='<%=data.information[i].information_pic%>' />
+                                    <% }else{ %>
+                                    <video class="edui-upload-video  vjs-default-skin video-js" controls="" preload="auto" width="420" height="280" src="<%=data.information[i].src_video[0]%>" data-setup="{}">
+                                        <source src="http://taoshang168.test/shop/media/3c95e07e89ed1ac4f3e9613dd4e007d8/10012/8/video/20180801/1533110585131707.mp4" type="video/mp4"/>
+                                    </video>
+                                    <% }%>
+                                </div>
+                                <div class="r_text"><%=data.information[i].information_title%></div>
+                            </a>
+                        </div>
+                        <% if(  data.information[i].information_goods_recommend ){%>
+                        <h4 class="user_goods_title">我喜欢的商品</h4>
+                        <ul class="user_goods_list clearfix">
+                            <% for( var j in data.information[i].information_goods_recommend ){ %>
+                            <li>
+                                <a href="./product_detail.html?goods_id=<%=data.information[i].information_goods_recommend[j][0]">
+                                    <img src="<%=data.information[i].information_goods_recommend[j][2]%>" alt="">
+                                    <span >￥<%=data.information[i].information_goods_recommend[j][1]%></span>
+                                </a>
+                            </li>
+                            <% }%>
+                        </ul>
+                        <% }%>
+                        <div class="userabout">
+                            <ul class="clearfix">
+                                <li class="u_a_icon1">
+                                    <img src="img/fans-circle/eye.png" alt="">
+                                    <span><%= data.information[i].information_read_count %></span>
+                                </li>
+                                <li class="u_a_icon2">
+                                    <img src="img/fans-circle/fansicon2.png" alt="">
+                                    <span><%= data.information[i].countReply %></span>
+                                </li>
+                                <li class="u_a_icon3">
+                                    <img onclick="article_like(this,<%=data.information[i].information_id%>)" src="<%if( data.information[i].is_like == 1 ){%>img/fans-circle/fansicon1-2.png<% }else if( data.information[i].is_like == 0 ){ %>img/fans-circle/fansicon1.png<% }%>" alt="">
+                                    <span><%= data.information[i].countLike %></span>
+                                </li>
+                                <li class="u_a_icon4">
+                                    <span style="font-size: 0.18rem">来自:<%= data.information[i].information_from %></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }%>
+    <% }%>
+
+</script>
+
+<!--用户信息渲染-->
+<script type="text/html" id="user_info">
+
+    <% if(data){ %>
+    <div class="clearfix">
+        <div class="left">
+            <a href="#"><img src="<%=data.user_info.user_logo%>" onerror="this.src='./img/robot-ss.png'" alt="" class="user_tx"></a>
+            <span class="user_name" style="font-size: 14px;"><%=data.user_info.user_name%></span>
+        </div>
+        <div class="right">
+            <% if(data.tag){ %>
+                <p class="interset_label">
+                    <a href="./friendletter/interestlabel.html">兴趣爱好</a>：
+                    <% for( var i in data.tag){%>
+                        <%=data.tag[i].user_tag_name%>
+                    <% } %>
+                </p>
+            <% }%>
+            <!--<p class="user_id">ID:45466</p>-->
+        </div>
+        <div class="gz_btn" >
+            <img onclick="check(this)" data-fid="<%=data.user_friend_id%>" src="<%if( data.is_friend == 0 ){%>img/gz_icon.png<%}else if( data.is_friend ==1 ){%>img/gz_icon_on.png<%}%>" alt="">
+        </div>
+    </div>
+    <div class="user_dt">时间停歇，我并没有察觉......</div>
+    <div class="user_gz_wrap">
+        <ul class="clearfix">
+            <li><a href="./friendletter/gz_fans_visited.html?user_id=<%=data.user_info.user_id%>&tag=Gz"><span class="user_gz_icon1"></span><%=data.focus_cont%>关注</a></li>
+            <li><a href="./friendletter/gz_fans_visited.html?user_id=<%=data.user_info.user_id%>&tag=Fs"><span class="user_gz_icon2"></span><%=data.Fs_count%>粉丝</a></li>
+            <li><a href="./sendbless_list.html"><span class="user_gz_icon3"></span>送福免单</a></li>
+        </ul>
+    </div>
+    <% }%>
+
+</script>
+
+
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/fans_user_face.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>引荐的会员</title>
+	<link rel="stylesheet" href="../../css/directseller_recommend.css">
+	<link rel="stylesheet" href="../../css/directseller_base.css">
+</head>
+<body>
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+			<span>引荐的会员</span>
+			<a href=""><img src="../../images/search.png" alt=""  class="info"></a>
+			<a href=""><img src="../../images/dialogbox.png" alt=""  class="dialogbox"></a>
+		</div>
+		<span class="number">1</span>
+	</header>
+	<!--导航栏部分-->
+	<div class="nav">
+		<ul>
+			<li class="cur">购物最多</li>
+			<li>最近注册</li>
+			<li>最近登陆</li>
+		</ul>
+	</div>
+	<!--导航栏部分-->
+
+	<!--内容部分-->
+	<div id="list_d">
+
+
+	</div>
+	<!--内容部分-->
+
+
+	<ul class="footer">
+		<li>
+			<a href="./directseller_shopself.html"> <img src="../../images/tabbar1@2x.png" alt=""><br>
+				<span>我的小店</span></a>
+		</li>
+		<li>
+			<a href="./directseller_market.html"> <img src="../../images/tabbar2@2x.png" alt=""><br>
+				<span>淘金市场</span></a>
+		</li>
+		<li>
+			<a href=""> <img src="../../images/tabbar3@2x.png" alt=""><br>
+				<span>私房钱</span></a>
+		</li>
+		<li>
+			<a href="./directseller_recommend.html"> <img src="../../images/tabbar4_s@2x.png" alt=""><br>
+				<span>我的小弟</span></a>
+		</li>
+	</ul>
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='../../js/directseller_recommend.js'></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" id="list_js">
+    <% for (var i in data) {%>
+    <div class="list">
+            <div class="list_img">
+            <img src="<%= data[i].user_logo %>" alt="">
+            </div>
+            <div class="info">
+            <span><%= data[i].user_name%></span><br>
+            <i> </i>
+        <u>注册时间：<%= data[i].user_regtime%></u>
+        </div>
+        <span class="login_date">最近登录：<%= data[i].lastlogintime%></span>
+        </div>
+
+        <% }%>
+</script>
+<script>
+    condition = 0;
+    function getList() {
+        $.post(ApiUrl + "?ctl=Distribution_Buyer_Index&met=recommend&typ=json",{condition:condition},function (e) {
+            if(e.status == 200){
+                var r = template.render("list_js", e);
+                $('#list_d').html(r);
+            }
+        })
+    }
+    getList();
+    $('.nav ul li').click(function () {
+		index = $(this).index();
+		$('#list_d').html('');
+        condition = index;
+        getList();
+    })
+</script>
+</html>

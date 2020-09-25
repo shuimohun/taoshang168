@@ -1,0 +1,143 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #2d2348;
+	position:relative;
+	/* position:fixed;
+	top:0;
+	left:0;
+	z-index:100; */
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+	position:relative;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:26%;
+}
+/***************头部部分结束**************************************/
+
+/********导航栏部分**********/
+.nav{
+	width:100%;
+	height:.58rem;
+	border-bottom: .01rem solid #e3e3e3;
+}
+.nav ul{
+	font-size: 0;
+}
+.nav ul li{
+	font-size: .2rem;
+	color:#a4a6bf;
+	height:.58rem;
+	line-height: .58rem;
+	display:inline-block;
+	margin-left: .2rem;
+}
+.nav ul li.cur{
+	color:#241a41;
+	border-bottom:.03rem solid #fd417f;
+}
+/********导航栏部分**********/
+
+/******内容********/
+.gold{
+	width:100%;
+	height:2.48rem;
+	border-bottom:.01rem solid #ebebeb;
+}
+.gold .content_gold{
+	width:100%;
+	height:2.05rem;
+	font-size: 0;
+	position:relative;
+}
+.gold .content_gold u{
+	color:#181818;
+	display:inline-block;
+	font-size: .2rem;
+	margin:.15rem 0 0 .15rem;
+	text-decoration:none;
+}
+.gold .content_gold u span{
+	display:inline-block;
+	color:red;
+}
+.gold .content_gold i{
+	display:block;
+	font-size: .18rem;
+	color:#606060;
+	font-style:normal;
+	margin:.15rem 0 0 .15rem;
+}
+.gold .content_gold b{
+	display:block;
+	font-size: .18rem;
+	color:#999999;
+	font-weight:normal;
+	margin:.07rem 0 0 .15rem;
+	width:4.5rem;
+	overflow: hidden;
+}
+.gold .content_gold del{
+	display:block;
+	font-size: .18rem;
+	color:#999999;
+	text-decoration:none;
+	margin:.07rem 0 0 .15rem;
+}
+.gold .content_gold em{
+	display:block;
+	font-size: .16rem;
+	color:#999999;
+	font-style:normal;
+	margin:.35rem 0 0 .15rem;
+}
+.gold .content_gold .goods_img{
+	width:1.12rem;
+	height:1.62rem;
+	background-color: yellow;
+	position:absolute;
+	top:12%;
+	right: 2%;
+}
+.gold .content_gold .goods_img img{
+	width:100%;
+	height:100%;
+}
+.gold .foot_gold{
+	width:100%;
+	height:.42rem;
+	background-color:#f7f7f7;
+}
+.gold .foot_gold img{
+	width:.29rem;
+	height:.25rem;
+	margin-top: .08rem;
+	margin-left: .1rem;
+}
+.gold .foot_gold span{
+	display:inline-block;
+	font-size: .18rem;
+	color:#7a7a7a;
+	margin-top:.09rem;
+}
+.gold .foot_gold u{
+	text-decoration: none;
+	font-size: .18rem;
+	color:#9d9d9d;
+	margin-left: .6rem;
+}
+/******内容********/

@@ -1,0 +1,35 @@
+.ncs-promotion{margin-bottom:20px}
+.ncs-goods-title-nav{margin-top:0}
+.ncs-goods-title-nav ul{font-size:0;background-color:#f7f7f7;border-bottom:solid #eee 1px;border-top:solid #eee 1px}
+.ncs-goods-title-nav ul li{vertical-align:top;letter-spacing:normal;word-spacing:normal;display:inline-block}
+.ncs-goods-title-nav ul li.current{margin:0 0 -1px -1px}
+.ncs-goods-title-nav ul li a{font:400 14px/36px "Microsoft Yahei ";text-decoration:none;color:#777;background-color:#f7f7f7;display:block;padding:0 15px;border-style:solid;border-color:#eee;border-width:0 1px 0 0}
+.ncs-goods-title-nav ul li.current a{color:#333;background-color:#FFF;padding:0 30px;border-style:solid;border-color:#f55 #eee transparent #eee;border-width:2px 1px 0 1px}
+.ncs-promotion .ncs-goods-info-content{padding:0;border:solid #eee;border-width:0 1px 1px;background-color:#FFF}
+.ncs-bundling-tab{display:block;height:20px;padding:10px 0;margin-left:20px;overflow:hidden}
+.ncs-bundling-tab span{border-left:solid 1px #eee;margin-left:-1px}
+.ncs-bundling-tab span a{line-height:20px;padding:0 15px}
+.ncs-bundling-tab span.selected a{font-weight:600;color:#F32613}
+.ncs-bundling-container{background:#FFF;height:230px}
+.ncs-bundling-container ul.ncs-bundling-list{font-size:0;display:block;width:980px;height:230;float:left;margin:0;overflow:hidden}
+.ncs-bundling-container ul li{font-size:12px;vertical-align:top;letter-spacing:normal;word-spacing:normal;display:inline-block;width:156px;padding:20px 20px 0 20px;margin:0;position:relative;z-index:1}
+.ncs-bundling-container .goods-thumb{background-color:#FFF;width:120px;height:120px;margin:0 auto}
+.ncs-bundling-container .goods-thumb a{line-height:0;background-color:#FFF;text-align:center;vertical-align:middle;display:table-cell;width:120px;height:120px;overflow:hidden}
+.ncs-bundling-container .goods-thumb img{max-width:120px;max-height:120px;margin-top:expression(120-this.height/2)}
+.ncs-bundling-container dl{display:block;padding:0;margin:4px 0 0 0}
+.ncs-bundling-container dl dt{line-height:18px;width:100%;height:36px;overflow:hidden}
+.ncs-bundling-container dl dt a{color:#555}
+.ncs-bundling-container dl dd{line-height:16px;color:#999;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.ncs-bundling-container dl dd .o-price{text-decoration:line-through}
+.ncs-bundling-container dl dd .b-price{font-weight:600;color:#F32613}
+.ncs-bundling-container .plus{background:url(../images/ncs_public_img.png) no-repeat 0 -130px;display:block;width:19px;height:19px;position:absolute;z-index:1;top:70px;left:-19px}
+.ncs-bundling-price{color:#777;background-color:#FAFAFA;display:block;width:177px;height:233px;float:right;padding:37px 15px 0 15px;margin-top:-40px;border-left:solid 1px #eee}
+.ncs-bundling-container ul li{font-size:12px;vertical-align:top;letter-spacing:normal;word-spacing:normal;display:inline-block;width:156px;padding:20px 20px 0 20px;margin:0;position:relative;z-index:1}
+.ncs-bundling-price ul li{line-height:28px;color:#777;text-overflow:ellipsis;width:100%;padding:0!important;}
+.ncs-bundling-price ul li strong{color:#005EA6;font-weight:600}
+.ncs-bundling-price ul li .bundling-price{font-weight:600;color:#D00}
+.ncs-bundling-price ul li .bundling-save{color:#468C00}
+a.ncbtn-grapefruit{background-color:#ED5564;    color: #fff; padding: 5px; margin-right: 5px;}
+a.ncbtn i{font-size:16px!important;vertical-align:middle;margin:0!important;color:#fff}
+.icon-th-large:before{content:"\e6d1"}
+.icon-share:before{content:"\e6c4"}

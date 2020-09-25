@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>已完成淘金行动</title>
+	<link rel="stylesheet" href="../../css/complete.css">
+	<link rel="stylesheet" href="../../css/base_index.css">
+	<script src="../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../../js/directseller_complete.js'></script>
+</head>
+<body>
+	<header class="person">
+		<div class="title">
+			<a href="javascript:history.go(-1)"><img src="../../images/back.png" alt=""></a>
+			<span>已完成淘金行动</span>
+		</div>
+	</header>
+	<!--导航栏部分-->
+	<div class="nav">
+		<ul>
+			<li class="cur">最近</li>
+			<li data-id="f">淘金最多</li>
+			<li data-id="a">金额最大</li>
+		</ul>
+	</div>
+	<!--导航栏部分-->
+
+	<!--内容-->
+	<div id="gold_list">
+
+	</div>
+
+
+	<!--内容-->
+</body>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/html" id="goods_list">
+	<%for(var i in items) {%>
+	<div class="gold">
+		<div class="content_gold">
+			<u>淘得金矿<span><%= items[i].order_commission_fee%></span>元</u>
+			<i>订单号: <%= items[i].order_id%></i>
+			<b><%= items[i].goods_list[0].goods_name%></b>
+			<del>购买账户: <%= items[i].order_receiver_contact%></del>
+			<del><%= items[i].order_settlement_time%>完成</del>
+			<div class="goods_img">
+				<img src="<%= items[i].goods_list[0].goods_image%>" alt="">
+			</div>
+		</div>
+		<div class="foot_gold">
+			<img src="../../images/money.png" alt="">
+			<span>总价: <%= items[i].order_payment_amount%></span>
+		</div>
+	</div>
+	<%}%>
+</script>
+</html>

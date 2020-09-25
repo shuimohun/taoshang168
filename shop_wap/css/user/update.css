@@ -1,0 +1,147 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #FFF;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#3D3430;
+	vertical-align: top;
+	font-weight: bold;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+/******************二维码部分**********************/
+.qr{
+	width:2.2rem;
+	height:3.4rem;
+	background-color: #fff;
+	margin:0 auto;
+	padding-top: .35rem;
+}
+.qr .logo{
+	width:2.2rem;
+	height:.55rem;
+}
+.qr .qr_img{
+	width:2.2rem;
+	height:2.2rem;
+	margin-top:.2rem;
+}
+/******************二维码部分**********************/
+
+/*****************二维码文字部分******************************/
+.word{
+	width:3.6rem;
+	height:.6rem;
+	background-color: #fff;
+	margin:0 auto;
+}
+.word span{
+	display:block;
+	font-size:.24rem;
+	color: #999999;
+	text-align: center;
+	margin-top:.02rem;
+}
+.word b{
+	display:block;
+	font-weight:normal;
+	font-style: normal;
+	text-align: center;
+	font-size: .24rem;
+	margin-left:.06rem;
+	color: #999999;
+}
+/*****************二维码文字部分******************************/
+
+/****************检查更新部分******************/
+.update{
+	width:100%;
+	height:.75rem;
+	background-color: #fff;
+	border-top:.02rem solid #eeeeee;
+	border-bottom:.02rem solid #eeeeee;
+	margin-top:.5rem;
+}
+.update i{
+	font-style: normal;
+	font-size: .26rem;
+	line-height.75rem;
+	float: left;
+	color:#999999;
+	margin:.18rem 0 0 .17rem;
+}
+.update img{
+	width:.25rem;
+	height:.25rem;
+	float: right;
+	margin:.24rem .17rem 0 0;
+}
+/****************检查更新部分******************/
+
+/****************弹窗部分css*************************/
+*{
+	margin:0;
+	padding:0;
+}
+.win-bottom{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:100;
+	background:#000;
+}
+.win-top{
+	width:4rem;
+	height:1.9rem;
+	background-color: white;
+	position:relative;
+	position:fixed;
+	top:50%;
+	/* margin-top:-2.85rem;  */
+	left:50%;
+	margin-left:-2rem;
+	display:none;
+	z-index:101;
+	border:.01rem solid transparent;
+	border-radius:.1rem;
+}
+.win-top u{
+	display:inline-block;
+	text-decoration:none;
+	font-size: .3rem;
+	margin:.4rem 0 0 .3rem;
+}
+.win-top button{
+	display:inline-block;
+	width:1.1rem;
+	height:.52rem;
+	border:0 none;
+	background-color: #e45050;
+	border-radius:.5rem;
+	outline:none;
+	font-size: .30rem;
+	color:#fff;
+	margin:.35rem 0 0 1.42rem;
+}
+/****************弹窗部分css*************************/

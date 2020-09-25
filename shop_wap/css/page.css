@@ -1,0 +1,701 @@
+@charset "utf-8";
+/*--------------公共样式开始--------------*/
+*{
+    margin: 0;padding: 0; border:0;
+}
+ul,li,ol{margin: 0;padding: 0;}
+input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select: text; -webkit-appearance: none; }
+input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+body{ background: #eeeeee;}
+.clearfix { zoom: 1 }
+.clearfix:after { display: block; clear: both; content: " "; }
+i{ font-style: normal!important;}
+/*--------------公共样式结束--------------*/
+/*--------------头部部分开始--------------*/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #1a1a1a;
+    position:relative;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+    position:relative;
+
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#fff;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.dialogbox{
+    position:absolute;
+    top:40%;
+    right:5%;
+}
+.person .number {
+    display: inline-block;
+    width: .3rem;
+    height: .3rem;
+    text-align: center;
+    line-height: .3rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.221867rem;
+    color: #1a1a1a;
+    position: absolute;
+    top: 25%;
+    right: 3%;
+}
+/*--------------头部部分结束--------------*/
+/*--------------粉丝圈样式开始--------------*/
+.fans-item{
+    background: #ffffff;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+.fans-information{
+    width: 94%;
+    margin: 0 auto;
+    height: 0.8448rem;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+}
+.fans-headpic{
+    width:0.5rem;
+    height: 0.5rem;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+}
+span.fans-name{
+    display: inline-block;
+    height: 0.8448rem;
+    line-height: 0.8448rem;
+    max-width:3.5rem ;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.221867rem;
+    color: #333333;
+}
+.fans-comment-date{
+    height: 0.529067rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.25rem;
+}
+.fans-comment-date span {
+    display: block;
+    vertical-align: middle;
+    font-size: 0.2048rem;
+    color: #666666;
+    text-align: center;
+}
+.fans-comment-result{
+    /*max-height: 1rem;*/
+    width: 94%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding:.2048rem 0;
+}
+.fans-comment-result p{
+    font-size: 0.238933rem;
+    color: #333333;
+}
+.fans-goods-detail{
+    width: 94%;
+    height: 1.194667rem;
+    background: #f5f5f5;
+    margin: 0 auto;
+    position: relative;
+}
+.fans-goods-detail img.fans-goods-pic{
+    width: 1.194667rem;
+    height: 1.194667rem;
+}
+.fans-goods-describe{
+    position: absolute;
+    right: 0.170667rem;
+    height: 0.95rem;
+    top: 0.1rem;
+    width: 4.552rem;
+}
+.fans-goods-title{
+    width: 4.552rem;
+    height: 0.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.238933rem;
+    color:#333333;
+}
+.fans-goods-save{
+    width: 100%;
+    height: 0.3rem;
+    margin-top: 0.1rem;
+    overflow: hidden;
+}
+.fans-goods-save span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0.16rem;
+    color: #ffffff;
+    margin-right:0.128rem ;
+    padding:0 0.02rem;
+    background: url("../tmpl/img/fans-circle/share_bg@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.fans-goods-price{
+    font-size:0.221867rem;
+    color: #666666;
+    position: relative;
+}
+.fans-goods-price-num{
+    position: absolute;
+    left:0;
+    color:#333333;
+}
+.fans-goods-score{
+    color: #999999;
+    position: absolute;
+    right: 0;
+}
+.fans-goods-score span{
+    color: #e45050;
+    margin-left: 0.1rem;
+}
+.fans-goods-comment-num{
+    width: 94%;
+    height:0.8704rem;
+    margin: 0 auto;
+    position: relative;
+}
+.comment-num{
+    display: inline-block;
+    font-size: 0.2048rem;
+    color: #666666;
+    margin-right: 0.1rem;
+    line-height:0.8704rem;
+}
+.comment-icon1,.comment-icon2,.comment-icon3,.comment-icon4{
+    width: 0.35rem;
+    height: 0.35rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.175rem;
+    background-size: 100%!important;
+}
+.comment-icon1.on,.comment-icon2.on,.comment-icon3.on,.comment-icon4.on{
+    background-size: 100%!important;
+}
+.comment-icon1{
+    right:1.692rem;
+    margin-top: -0.2rem;
+    background:url("../tmpl/img/fans-circle/fansicon1.png") no-repeat;
+}
+.comment-icon1.on{
+    background:url("../tmpl/img/fans-circle/fansicon1-2.png") no-repeat;
+}
+.comment-icon2{
+    right:0.8rem;
+    background:url("../tmpl/img/fans-circle/fansicon2.png") no-repeat;
+}
+.comment-icon2.on{
+    background:url("../tmpl/img/fans-circle/fansicon2-2.png") no-repeat;
+}
+.comment-icon3{
+    right: 0;
+    background:url("../tmpl/img/fans-circle/fansicon3.png") no-repeat;
+}
+.comment-icon3.on{
+    background:url("../tmpl/img/fans-circle/fansicon3-2.png") no-repeat;
+}
+.comment-icon4{
+    right: 2.45rem;
+    background:url("../tmpl/img/fans-circle/fansicon4.png") no-repeat;
+}
+.comment-icon4.on{
+    background:url("../tmpl/img/fans-circle/fansicon4-2.png") no-repeat;
+}
+.comment-input{
+    display: inline-block;
+    width:70%;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    margin-left: 5px;
+    text-indent:0.25rem ;
+    border:1px solid #e6e6e6;
+    vertical-align: middle;
+    font-size: 0.25rem;
+}
+.friend-comment{
+    padding: 0.2rem 0;
+}
+.friend-comment .fans-comment-result{
+    padding: 0.05rem 0;
+}
+.friend-comment .fans-comment-result span{
+
+    color: #e45050;
+}
+/*--------------粉丝圈样式结束--------------*/
+/*--------------粉丝圈-我的晒图  开始--------------*/
+.fans-information-no-comment{
+    border: none;
+}
+.fans-comment-btn{
+    display: block;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    border:1px solid #e45050;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.225rem;
+    padding:0 0.2rem;
+    border-radius: 0.2rem;
+    font-size: 0.221867rem;
+    color: #e45050;
+    background-color: #ffffff;
+}
+.no-comment-goods:before{
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    content: "";
+    background: #eeeeee;
+}
+.no-comment-text{
+    width: 94%;
+    height: 0.4608rem;
+    margin: 0 auto;
+    line-height: 0.4608rem;
+    font-size: 0.2048rem;
+    color: #666666;
+}
+.no-comment-pic{
+    width: 6rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.no-comment-pic ul{
+    width: 6.15rem;
+}
+.no-comment-pic ul li{
+    float: left;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-right: 0.08rem;
+    position: relative;
+}
+.no-comment-pic ul li img{
+    width: 1.15rem;
+    height: 1.15rem;
+
+}
+.no-comment-pic ul li .mask{
+    width: 1.15rem;
+    height: 1.15rem;
+    background: #000000;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+.no-comment-pic ul li span{
+    width: 1.15rem;
+    height: 1.15rem;
+    font-size: 0.2048rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.15rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.fans-comment-tab{
+    width: 88%;
+    height: 0.768rem;
+    line-height: 0.768rem;
+    margin-top: 0.1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    float: left;
+}
+.fans_search_btn{
+    float: right;
+    width: 12%;
+    height: 0.768rem;
+    line-height: 0.768rem;
+    margin-top: 0.1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    text-align: center;
+    box-sizing: border-box;
+}
+.fans_search_btn img{ width: 0.3rem; height: 0.3rem; margin-top: 0.2rem;}
+.fans-comment-main{
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 0.256rem;
+    color: #333333;
+}
+.fans-comment-main.cur{
+    height: 100%;
+    border-bottom: 0.034rem solid #e45045;
+
+}
+/*--------------粉丝圈-我的晒图 结束--------------*/
+/*--------------商家-商家管理 开始--------------*/
+.person.person-seller-goods{
+    background: #f44336;
+}
+.person.person-seller-goods .number{
+    color: #f44336;
+}
+.person .title a img.addicon{
+    position:absolute;
+    top:40%;
+    right:12%;
+}
+/*头部搜索框开始*/
+.search-goods-box{
+    width: 100%;
+    background: #f6695e;
+}
+.search-input-wrap{
+    padding: 0.119467rem 0;
+    position: relative;
+}
+.search-icon{
+    width: 0.341333rem;
+    height: 0.341333rem;
+    position: absolute;
+    left:11.5% ;
+    top:50% ;
+    margin-top: -0.170667rem;
+}
+.search-input{
+    display: block;
+    width: 81%;
+    padding-left: 8%;
+    height: 0.477867rem;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+    background: #ffffff;
+
+}
+/*头部搜索框结束*/
+.nav{
+    width: 100%;
+    height: 0.682667rem;
+    margin-bottom: .1rem;
+    background: #ffffff;
+    border-top:1px solid #d9d9d9;
+    border-bottom:1px solid #d9d9d9;
+}
+.nav-ul-wrap{
+    width: 85%;
+    padding-left:8%;
+    float: left;
+}
+.browse-mode{
+    width: 7%;
+    height:0.682667rem;
+    float: right;
+}
+.browse-mode span{
+    display: block;
+    width: 0.256rem;
+    height: 0.256rem;
+    margin-top: 0.213rem;
+    background: url(../tmpl/img/pageImg/browse-mode.png) no-repeat ;
+    background-size: 0.256rem;
+}
+.nav ul li{
+    box-sizing: content-box;
+    float: left;
+    padding: 0 3%;
+    margin:0 5%;
+    height: 0.622667rem;
+    line-height: 0.622667rem;
+    color: #333333;
+    font-size:.256rem;
+}
+
+.nav ul li.cur{
+    border-bottom: .04rem solid #f24336;
+}
+.seller-goods-list .item{
+    width:100%;
+    height: 2.48rem;
+    background-color: #fff;
+    margin-bottom: .1rem;
+    position: relative;
+}
+.item .item-pic{
+    width:1.8rem;
+    height:1.8rem;
+    margin-top: .15rem;
+    margin-left:.15rem;
+    float: left;
+}
+.item .item-pic img{
+    width:1.8rem;
+    height:1.8rem;
+}
+.item .item_contain{
+    height:1.95rem;
+    float: left;
+    margin-left:.1rem;
+    position:relative;
+}
+.item_contain p.seller-goods-title{
+    width: 4.224rem;
+    height: 0.6rem;
+    margin-top: .18rem;
+    line-height: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.2048rem;
+    color: #333333;
+}
+img.seller-write-icon{
+    width: 0.256rem;
+    height: 0.256rem;
+    margin-left: 0.1536rem;
+}
+.item_contain p.seller-goods-price{
+    height: 0.35rem;
+    line-height: 0.35rem;
+    text-overflow: ellipsis;
+    font-size:0.1536rem;
+}
+.item_contain p.seller-goods-price span{
+    font-size: 0.256rem;
+}
+.item_contain .share-icon-wrap{
+    width: 4.2rem;
+    height: 0.35rem;
+    overflow: hidden;
+}
+.item_contain .share-icon-wrap span{
+    font-size: 0.2rem;
+    color: #ffffff;
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 0.1rem;
+    background: url("../tmpl/img/share_bg@2x.png") no-repeat;
+    background-size: 100% 100%;
+    padding: 0 0.05rem;
+}
+.item_contain p.goods-stock{
+    position: absolute;
+    left: .1rem;
+    bottom: 0;
+    line-height: 0.2rem;
+}
+.item_contain p.goods-stock span{
+    font-size: 0.170667rem;
+    color: #999999;
+    margin-right:0.1rem;
+}
+.item_contain p.goods-stock span i{
+    font-style: normal;
+}
+.goods-handle{
+    width: 100%;
+    height: 0.38rem;
+    line-height:0.38rem;
+    background: #f5f5f5;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 0.2048rem;
+    color: #d9d9d9;
+    border-bottom: 0.008533rem solid #d9d9d9;
+
+}
+.goods-handle-item{
+    display: inline-block;
+    width: 31%;
+    text-align: center;
+    color: #666666;
+}
+/* 商品列表切换样式*/
+.browse-mode span.browser-grid{
+    background-image: url(../tmpl/img/pageImg/browse-grid.png) ;
+}
+.seller-goods-grid:after{
+    display: block; clear: both; content: " ";
+}
+.seller-goods-grid .item{
+   /* width:50%;*/
+    /*height: 4.48rem;*/
+    height: auto;
+    margin-bottom: .1rem;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 49.5%;
+}
+.seller-goods-grid .item:nth-of-type(even){
+    margin-left: 1%;
+}
+.seller-goods-grid .item-pic{
+    margin-right: 0.15rem;
+    width: 2.9rem;
+    height: 2.9rem;
+    float: none;
+}
+.seller-goods-grid .item .item_contain{
+    height: auto;
+    width: 3rem;
+    overflow: hidden;
+}
+.seller-goods-grid .item .item-pic img{
+    width: 2.9rem ;
+    height: 2.9rem;
+}
+.seller-goods-grid .item_contain p.seller-goods-title{
+    width: 2.9rem ;
+}
+.seller-goods-grid .item_contain .share-icon-wrap{
+    width: auto;
+   height: auto;
+}
+.seller-goods-grid .item_contain .share-icon-wrap span{
+    vertical-align: inherit;
+    display: table;
+    margin-bottom: 0.05rem;
+}
+.seller-goods-grid .item_contain p.goods-stock{
+    position: static;
+    line-height: normal;
+}
+.seller-goods-grid .goods-handle{
+    position: static;
+}
+.seller-goods-grid .item_contain p.goods-stock{
+    line-height: 0.25rem;
+}
+.seller-goods-grid .item_contain p.goods-stock span{
+    display: inline;
+}
+.seller-goods-grid .goods-handle-item{
+    width: 30.5%; height: 0.35rem; overflow: hidden;
+}
+/*--------------商家-商家管理 结束--------------*/
+
+/* 20180602 新增商品评价星星和图片*/
+.fans-goods-evaluate{
+    width: 94%;
+    /*height:0.8704rem;*/
+    margin: 0 auto;
+    position: relative;
+}
+.evaluate-star{
+    width: 100%; height: 0.25rem;
+    margin-top: -15px;
+}
+.evaluate-star img{
+    width: 0.25rem; height: 0.25rem;
+}
+.fans-evaluate-pic{
+    width: 100%; margin: 5px auto; overflow: hidden;
+}
+.fans-evaluate-pic ul{
+    width: 101%;
+}
+.fans-evaluate-pic ul li{
+     float: left; width: 32%; margin-right: 1.3%; margin-bottom: 5px;
+}
+.fans-evaluate-pic ul li img{
+    width: 100%;
+}
+
+/*粉丝圈  页面样式  版本二  start*/
+
+.version2 .fans-goods-detail{ background: none; height: auto;}
+.version2 .fans-goods-detail img.fans-goods-pic{ width: 100%; height: auto;}
+.version2 .fans-goods-describe{ position: inherit; width: 100%; height: auto;}
+.version2 .fans-comment-result{ max-height: none;}
+.version2 .fans-goods-describe .fans-goods-title{ width: 100%; height: auto;/* max-height: 0.6rem;*/ margin-top: 0.15rem; white-space: inherit;}
+.version2 .fans-goods-price{ width: 100%; }
+.version2 .fans-goods-save{ margin-top: 0.2rem; margin-bottom: 0.15rem;}
+.version2 .fans-goods-price-num{ position: inherit; float: left; width: 50%;}
+.version2 .fans-goods-score{position: inherit; float: right; width: 50%; text-align: right;}
+.version2 .fans-goods-describe{ top: 0; right: 0; }
+
+
+
+/* 208-07-18  by   jzh   粉丝圈用户界面   */
+.person_v2 .title{ width: 100%; padding: 0; height: 0.8rem; line-height: 0.8rem; text-align: center; margin: 0; font-size: 0.3rem; color: #fff; }
+.person_v2 .title .back{ display: block; position: absolute; left: 0.2rem; top:50%; margin-top: -0.17rem;}
+.person_v2 .title .more_btn{display: block; position: absolute; right: 0.2rem; top:50%; margin-top: -0.17rem;}
+.person_v2 .title .more_btn img{width: 0.34rem; height: 0.34rem;}
+.banner_pic{ width: 100%;}
+.banner_pic img{ width: 100%;}
+.my_infor{ width: 94%; margin: 0 auto; position: relative;}
+.my_infor .left{ float: left;}
+.my_infor .left .user_tx{ width: 1.4rem; height: 1.4rem; border-radius: 50%; position: absolute; left: 0; top: -0.7rem; }
+.my_infor .left .user_name{ display: block; width: 1.4rem; height: 0.4rem; overflow: hidden; line-height: 0.4rem; white-space: nowrap; text-align: center; color: #4d5a64 ; font-size: 0.34rem; margin-top: 0.7rem;}
+.my_infor .right{ margin-left: 1.6rem; margin-right: 1rem;}
+.my_infor .right .interset_label{  height: 0.7rem; overflow: hidden; line-height: 0.7rem; white-space: nowrap; font-size: 0.20rem;color: #999; text-overflow: ellipsis}
+.my_infor .right .user_id{   white-space: nowrap; font-size: 0.20rem;color: #999; height: 0.4rem; line-height: 0.45rem;}
+.gz_btn{ position: absolute; right:0%; top:0.24rem; width: 1rem; height: 0.44rem;}
+.gz_btn img{width: 1rem; height: 0.44rem;}
+.user_dt{ width: 100%; white-space: nowrap; text-overflow: ellipsis; font-size: 0.20rem;color: #999; padding: 0.1rem 0;}
+.user_gz_wrap{ width:100%; }
+.user_gz_wrap ul li{width: 33.33%; text-align: center; float: left;}
+.user_gz_wrap ul li a{font-size: 0.2rem; color: #6a7883; text-align: center;}
+.user_gz_icon1{display: inline-block; width: 0.3rem; height:0.3rem; vertical-align: middle; background: url("../tmpl/img/gz.png") no-repeat; background-size: 0.3rem 0.3rem}
+.user_gz_icon2{display: inline-block; width: 0.3rem; height:0.3rem; vertical-align: middle; background: url("../tmpl/img/fans.png") no-repeat; background-size: 0.3rem 0.3rem}
+.user_gz_icon3{display: inline-block; width: 0.3rem; height:0.3rem; vertical-align: middle; background: url("../tmpl/img/fu.png") no-repeat; background-size: 0.3rem 0.3rem}
+.user_gz_wrap ul li.on a{  color: #e45045;}
+.user_gz_wrap ul li.on .user_gz_icon1{ background: url("../tmpl/img/gz_on.png") no-repeat; background-size: 0.3rem 0.3rem}
+.user_gz_wrap ul li.on .user_gz_icon2{ background: url("../tmpl/img/fans_on.png") no-repeat; background-size: 0.3rem 0.3rem}
+/*.user_gz_wrap ul li.on .user_gz_icon3{ background: url("../tmpl/img/fu_on.png") no-repeat; background-size: 0.3rem 0.3rem}*/
+.fans_user_main{}
+.fans_user_main .fans-comment-tab{ margin-top: 0.15rem; width: 100%; border-top:1px solid #e6e6e6;}
+.fans_user_main .fans-comment-main{ width: 25%;}
+.more_icon{ width: 0.34rem; height: 0.34rem;position: absolute; right: 3%; }
+.more_icon img{ width: 0.34rem; height: 0.34rem; }
+.more_pop{ position: absolute; right: 0.2rem; top:0.8rem; padding: 0.2rem 0; background: #000; z-index: 100; display: none;}
+.sj_btn{ border-left:0.12rem solid transparent;border-right:0.05rem solid transparent;border-bottom:0.4rem solid #000; position: absolute; top: -0.4rem; right: 10%;}
+.more_pop ul li:hover{ background: #353535;}
+.more_pop ul li a{display: block; font-size: 0.24rem; color: #fff; padding: 0.15rem 0.2rem;}
+.more_pop img{ width: 0.34rem; height: 0.34rem; vertical-align: middle; margin-right: 0.05rem;}
+
+.article_main{ width: 100%;}
+.article_main .l_pic{ width: 2.15rem; height: 2.15rem; overflow:hidden; float: left;}
+.article_main .l_pic img{ width: 100%;}
+.article_main .r_text{ margin-left: 2.25rem;height: 1.42rem; padding: 0.2rem 0; overflow: hidden; color: #333 ; font-size: 0.24rem;}
+.article_main .r_text span{ color: #3399c0 ; font-size: 0.24rem;}
+.user_goods_title{ font-size: 0.2rem; color: #999; height: 0.43rem; line-height: 0.43rem;}
+ul.user_goods_list{ width: 100%;}
+.user_goods_list li{ float: left; width: 24%; margin: 0 0.5%; border-radius: 0.1rem; position: relative; overflow: hidden;}
+.user_goods_list li img{ width: 100%;}
+.user_goods_list li span{ padding: 0.1rem 0.2rem; color: #fff; background: #ff1e00; font-size: 0.2rem; position: absolute; right: -0.1rem; bottom: -0.1rem; border-radius: 0.1rem;}
+.fans_user_main .userabout{ margin-top: 0.2rem;}
+.video_wrap .l_pic { width: 3.08rem; height: 5.47rem; }
+.video_wrap .l_pic video { width: 3.08rem!important; height: 5.47rem!important; }
+.video_wrap .r_text{margin-left: 3.28rem; }
+
+
+
+

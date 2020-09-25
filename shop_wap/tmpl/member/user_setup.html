@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="telephone=no" name="format-detection"/>
+	<title>设置页</title>
+	<link rel="stylesheet" href="../../css/user/setup.css">
+	<link rel="stylesheet" href="../../css/user/base.css">
+	<script src="../../js/tmpl/user/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<header class="person">
+		<div class="title">
+			<a href="member.html"><img src="../../images/user_img/icon_back.png" alt=""></a>
+			<span>设置</span>
+			<a href="javascript:void(-1);"><img src="../../images/user_img/icon_share.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部-->
+
+	<!--设置部分-->
+	<section class="setup">
+		<ul>
+			<li>
+				<label>修改个人头像</label>
+				<a href="javascript:void(-1);" id="head"><img src="../../images/user_img/icon_forword.png" alt=""></a>
+			</li>
+			<li>
+				<label>修改个人资料</label>
+				<a href="javascript:void(-1);" id="myCont"><img src="../../images/user_img/icon_forword.png" alt=""></a>
+			</li>
+			<li>
+				<label>修改手机号码</label>
+				<a href="javascript:void(-1);" id="phone"><img src="../../images/user_img/icon_forword.png" alt=""></a>
+			</li>
+			<li>
+				<label>修改登录密码</label>
+				<a href="javascript:void(-1);" id="passwd"><img src="../../images/user_img/icon_forword.png" alt=""></a>
+			</li>
+			<li>
+				<label>修改支付密码</label>
+				<a href="javascript:void(-1);" id="payPasswd"><img src="../../images/user_img/icon_forword.png" alt=""></a>
+			</li>
+		</ul>
+	</section>
+	<!--设置部分-->
+
+	<!--底部导航栏-->
+	<footer id="login">
+		退出当前账户
+	</footer>
+	<!--底部导航栏-->
+
+	<!--注销登陆弹窗部分-->
+	<div class="login-bottom"></div>
+	<div class="login-top">
+		<b>退出登陆</b>
+		<u>亲,确定注销本次登陆吗？</u>
+		<button id="login_cancel">取消</button>
+		<button id="login_confirm">确认</button>
+	</div>
+	<!--注销登陆弹窗部分-->
+
+	<!--更改头像弹窗部分-->
+	<div class="head-bottom"></div>
+	<!--<div class="head-top">-->
+		<!--<div class="upload">-->
+			<!--<div class="photo">拍照上传</div>-->
+			<!--<div>本地上传</div>-->
+		<!--</div>-->
+		<!--<div class="photo_cancel">取消</div>-->
+	<!--</div>-->
+	<!--更改头像弹窗部分-->
+	<script type="text/javascript" src="../../js/config.php"></script>
+	<script type="text/javascript" src="../../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/tmpl/user_setup.js"></script>
+</body>
+</html>

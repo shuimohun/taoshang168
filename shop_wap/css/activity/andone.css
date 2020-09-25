@@ -1,0 +1,584 @@
+@charset "utf-8";
+.cur{
+	overflow:hidden;
+}
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #e45050;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:34%;
+}
+/***************头部部分结束**************************************/
+
+/********滚动导航栏部分*********/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-overflow-scrolling:touch;overflow-scrolling:touch;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.find_nav {
+    width: 100%;
+    height:.77rem;
+    margin-top:.1rem;
+    background-color:#fff;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+}
+.find_nav_left {
+    height: .77rem;
+    position: relative;
+    overflow: hidden;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.find_nav_list {
+    position: absolute;
+    left: 0;
+}
+.find_nav_list ul {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+}
+.find_nav_list ul li {
+    display: inline-block;
+    width:1.1rem;
+    margin-left:.215rem; 
+}
+.find_nav_list ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: .77rem;
+    text-align: center;
+	font-size:.26rem;
+	color:#030303;
+}
+.find_nav_cur a {
+    color:#e45050 !important;
+}
+.sideline {
+    display: block;
+    position: absolute;
+    border: 0;
+    height: .02rem;
+    background-color: #e45050;
+    left: 0;
+    top:95%;
+    pointer-events: none;
+}
+.nav_header_img{
+	width:.68rem;
+	height:100%;
+	border-left: .01rem solid #e7e7e7;
+	display:inline-block;
+}
+.nav_header_img img{
+	width:.36rem;
+	height:.33rem;
+	margin-left: .15rem;
+	margin-top:.18rem;
+}
+/********滚动导航栏部分*********/
+
+/**************主图轮播图*************************/
+  .slider_list { position: relative; z-index: 1; overflow: hidden;clear:both;height:2.6rem;border-bottom:.05rem solid #f1f1f1;}
+  .swipe { position: relative; overflow: hidden; visibility: hidden; }
+  .swipe-wrap { overflow: hidden; position: relative; height:2.6rem;}
+  .swipe-wrap > div { float: left; width: 100%; height:100%;position: relative; }
+  .swipe-wrap img { width: 100%;height:100%;}
+/**************主图轮播图*************************/
+
+/***************加1购nav***********/
+.andone_nav{
+	width:100%;
+	height:.55rem;
+	background-color: #fff;
+}
+.andone_nav img{
+	width:100%;
+	height:.55rem;
+}
+/***************加1购nav***********/
+
+/************加一购内容*****************/
+	.a640{
+		width:6.4rem;
+		height:3.9rem;
+		margin:0 auto;
+		background-color: #fff;
+	}
+	.andone_contain_wrap{
+		width:100%;
+		height:3.9rem;
+		background-color: #fff;
+		padding-bottom: .1rem;
+	}
+	.andone_contain{
+		height:3.9rem;
+		width:95%;
+		background-color: #fff;
+		margin:0 auto;
+		border: .01rem solid transparent;
+		border-radius: .1rem;
+		position:relative;
+	}
+	.andone_contain .andone_left{
+		width:3.6rem;
+		height:3.65rem;
+		border: .01rem solid #fff;
+		border-radius:.1rem 0  0 .1rem;
+	}
+	.andone_contain article{
+		display:inline-block;
+		width:2.29rem;
+		height:2.4rem;
+		border: .01rem solid #fff;
+		border-radius:0 .1rem 0 0;
+		/* background: url(../img/andone_img/goods_2_right.png)no-repeat; */
+		/* background-size: 2.29rem 2.4rem; */
+	}
+	.andone_contain span{
+		display: inline-block;
+		width:3.6rem;
+		height:.5rem;
+		background-color: black;
+		text-align: center;
+		position:relative;
+		background-color:#fff;/* IE6和部分IE7内核的浏览器下颜色被覆盖 */
+  		background-color:rgba(0,0,0,0.2); /* IE6和部分IE7内核的浏览器会读懂，但解析为透明 */
+  		position:absolute;
+  		top:81%;
+  		left:0%;
+  		border-radius:0 0 0 .1rem;
+
+	}
+	.andone_contain span u{
+		display:inline-block;
+		color:#2b2b2b;
+		text-decoration: none;
+		font-size: .22rem;
+		padding-top: .1rem;
+		font-style: normal;
+		position:absolute;
+		top:0%;
+		left:2%;
+		width:2.7rem;
+		height:.4rem;
+		overflow:hidden;
+}
+.andone_contain span b{
+	display:inline-block;
+	font-size: .26rem;
+	position:absolute;
+	top:15%;
+	right:1%;
+	color:#e45050;
+}
+.andone_contain .word_right{
+	background-color:yellow;
+	width:100%;
+	height:.52rem;
+	display:inline-block;
+	background-color:#fff;/* IE6和部分IE7内核的浏览器下颜色被覆盖 */
+  	background-color:rgba(0,0,0,0.2); /* IE6和部分IE7内核的浏览器会读懂，但解析为透明 */
+  	margin-top:1.87rem;
+  	position:relative;
+}
+.andone_contain .word_right u{
+	display:inline-block;
+	color:#2b2b2b;
+	text-decoration: none;
+	font-size: .20rem;
+	margin-top: .12rem;
+	margin-left: .1rem;
+	font-style: normal;
+	position:absolute;
+	left:-3%;
+	top:2%;
+	width:1.4rem;
+	height:.3rem;
+	overflow:hidden;
+}
+.andone_contain .word_right .del{
+	margin-left:.15rem;
+	font-size:.18rem;
+	color:#959595;
+	vertical-align:bottom;
+	position:absolute;
+	left:57%;
+	top:30%;
+}
+.andone_contain .word_right b{
+	display:inline-block;
+	font-size: .18rem;
+	color:#e45050;
+	position:absolute;
+	right:1%;
+	top:30%;
+}
+.andone_contain .price{
+	position:absolute;
+	top:64%;
+	left:69%;
+	position:absolute;
+	font-size: .22rem;
+}
+.andone_contain .joincart{
+	width:2.05rem;
+	height:.5rem;
+	line-height:.5rem;
+	text-align: center;
+	background-color: #e45050;
+	border:0 none;
+	position:absolute;
+	top:80%;
+	left:62%;
+	color:#fff;
+	font-size: .22rem;
+	border-bottom:.01rem solid  #e45050;
+	border-radius:.5rem;
+	outline: none;
+}
+/************加一购内容*****************/
+
+/***********页面中部轮播图*****************/
+.box .slider_list { position: relative; z-index: 1; overflow: hidden;clear:both;height:1.1rem; border:0 none;}
+.box .swipe { position: relative; overflow: hidden; visibility: hidden; }
+.box .swipe-wrap { overflow: hidden; position: relative; height:1.1rem;}
+.box .swipe-wrap > div { float: left; width: 100%; height:100%;position: relative;}
+.box .swipe-wrap img { width: 100%;height:100%;}
+/***********页面中部轮播图*****************/
+
+/**************热门加价购标题**************/
+.pricenav{
+	width:100%;
+	height:.5rem;
+	margin-top: .1rem;
+	border-top: .01rem solid #f4f4f4;
+	background-color: #fff;
+}
+.pricenav img{
+	width:100%;
+	height:100%;
+}
+/**************热门加价购标题**************/
+
+/************************/
+/*瀑布流开始*/
+.wall {
+  display: block;
+  position: relative;
+
+}
+.wall-column {
+  display: block;
+  position: relative;
+  width:50%;
+  float: left;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+}
+.wall-column:nth-child(even){
+  padding-left:.05rem;
+}
+.wall-column:nth-child(odd){
+  padding-right:.05rem;
+}
+.article {
+  display: block;
+  margin: 0 0 3% 0;
+  background: white;
+  transition: all 100;
+  overflow: hidden;
+  position: relative;
+}
+.article .addprice_img{
+	width:3.15rem;
+	height:3.16rem;
+	border-bottom: .02rem solid #eeeeee;
+}
+.article img {
+  	width:100%;
+	height:100%;
+}
+.article .addprice_word{
+	width:3.15rem;
+	height:1.24rem;
+	background-color: #fff;
+	margin-top: .02rem;
+	position:relative;
+}
+.article .addprice_word span{
+	margin-top:.1rem;
+	display:inline-block;
+	color:#434343;
+	font-size: .24rem;
+	margin-left:.1rem;
+}
+.article .addprice_word span u{
+	font-style:normal;
+	text-decoration:none;
+	border:.01rem solid #e45050;
+	font-size: .20rem;
+	border-radius:.5rem;
+	text-align: center;
+	margin:0 auto;
+	padding:.02rem;
+	color:#e45050;
+}
+.article .addprice_word span del{
+	color:#949494;
+	margin-left:.8rem;
+}
+.article .addprice_word b{
+	display:inline-block;
+	font-weight: normal;
+	font-size: .20rem;
+	color:#666666;
+	position:absolute;
+	top:65%;
+	left:3%;
+}
+.article .addprice_word b i{
+	font-style:normal;
+	color: #e45050;
+}
+	.article .addprice_comment{
+		border-top: .01rem solid #eeeeee;
+		width:100%;
+		background-color:#fff;
+	}
+	.article .addprice_comment .addprice_comment_inner{
+		width:3rem;
+		height:.9rem;
+		margin:0 auto;
+		margin-top: .1rem;
+		overflow:hidden;
+		position:relative;
+	}
+	.article .addprice_comment .addprice_comment_inner img{
+		width:.22rem;
+		height:.20rem;
+	}
+	.article .addprice_comment .addprice_comment_inner span{
+		font-size: .18rem;
+		color:#999999;
+		vertical-align:top;
+	}
+	.article .addprice_comment .addprice_comment_inner span.comment_word{
+		font-size: .2rem;
+		display:block;
+		color: #4c4c4c;
+		position:absolute;
+		top:27%;
+		left:0%;
+		/* white-space:nowrap; 
+		overflow:hidden; 
+		text-overflow:ellipsis; */
+}
+	.article .banner1{
+		width:3.15rem;
+		height:2.12rem;
+		margin-bottom:.1rem;
+	}
+	.article .banner1 img{
+		width:100%;
+		height: 100%;
+	}
+
+/*************热门加价购右边内容***************/
+/************弹窗*******************/
+		*{
+			margin:0;
+			padding:0;
+		}
+		.win-bottom{
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			display:none;
+			z-index:100;
+			background:#000;
+		}
+	.win-top{
+			width:6rem;
+			height:2.9rem;
+			background-color: white;
+			position:relative;
+			position:fixed;
+			top:50%;
+			margin-top:-1.85rem; 
+			left:50%;
+			margin-left:-3rem;
+			display:none;
+			z-index:101;
+			border:.01rem solid transparent;
+			border-radius:.1rem;
+	}
+	.win-top .top{
+			display:inline-block;
+			font-size: .26rem;
+			margin-top:.2rem;
+			margin-left:.3rem;
+			color:#484848;
+	}
+	.win-top .middle{
+			width:100%;
+			height:1.7rem;
+			border-bottom:.01rem solid #F0F0F0;
+	}
+	.win-top .middle ul{
+			width:100%;
+			height:1.7rem;
+			font-size: 0;/*清除默认边距*/ 
+	}
+	.win-top .middle ul li{
+			display:inline-block;
+			width:20%;
+			height:1.7rem;
+			margin-left:.24rem;
+			text-align: center;
+	}
+	.win-top .middle ul li img{
+			width:100%;
+			height:1.2rem;
+	}
+	.win-top .middle ul li span{
+		display:inline-block;
+		font-size: .22rem;
+		color:#484848;
+		margin-top:.1rem;
+	}
+	.win-top .bottom{
+		width:100%;
+		height:.55rem;
+		margin-top:0 auto;
+		display:inline-block;
+		color:#FE7482;
+		font-size: .28rem;
+		text-align: center;
+		vertical-align:bottom;
+	}
+/************弹窗*******************/
+
+/**************滚动导航栏弹窗****************/
+*{
+	margin:0;
+	padding:0;
+}
+.head-bottom{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:60;
+	background:#000;
+}
+.head-top{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:1.56rem;
+	/* margin-top:-2.85rem;  */
+	display:none;
+	z-index:101;
+	background-color: #f2f2f2;
+	z-index:80;
+}
+.nav_contain{
+	width:5.9rem;
+	height:1rem;
+	margin:0 auto;
+	margin-top: .25rem;
+	border-bottom:.01rem solid #e9e9e9;
+}
+.nav_contain span{
+	font-size: .26rem;
+	color:#6d6d6d;
+	display:block;
+}
+.nav_contain button{
+	width:1.38rem;
+	height:.4rem;
+	line-height:.4rem;
+	margin-top: .12rem;
+	background-color: #e6e6e6;
+	outline:none;
+	border:0 none;
+	border-radius:.5rem;
+	margin-right:.22rem;
+	font-size: .26rem;
+	color:#6d6d6d;
+}
+.nav_icon{
+	width:5.9rem;
+	height:4.4rem;
+	margin:0 auto;
+}
+.nav_icon ul{
+	font-size:0;
+	width:5.9rem;
+	height:4.4rem;
+}
+.nav_icon ul li{
+	display:inline-block;
+	width:25%;
+	height:25%;
+	font-size: .2rem;
+	text-align:center;
+}
+.nav_icon ul li a{
+	display:inline-block;
+	color: #909090;
+	font-size: .2rem;
+}
+.nav_icon ul li a img{
+	width:.5rem;
+	height:.5rem;
+	display:block;
+	margin:0 auto;
+	margin-top: .15rem;
+	margin-bottom: .05rem;
+	text-align: center;
+}
+.nav_icon ul li a span{
+	font-size: .2rem;
+	background-color: #f2f2f2;
+}
+/**************滚动导航栏弹窗****************/

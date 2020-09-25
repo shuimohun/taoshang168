@@ -1,0 +1,246 @@
+@charset "utf-8";
+/***********************头部部分***************************/
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #fff;
+    /* position:fixed;
+        top:0;
+        left:0; */
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#333;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:38%;
+}
+/***********************头部部分***************************/
+
+/*********title********/
+.sale_title{
+    width:100%;
+    height:.57rem;
+    line-height:.57rem;
+    background-color: #f2f2f2;
+    line-height:.57rem;
+}
+.sale_title img{
+    width:.3rem;
+    height:.3rem;
+    margin-left: .2rem;
+    margin-top:.15rem;
+}
+.sale_title span{
+    display:inline-block;
+    font-size: .22rem;
+    color:#666;
+    margin-left: .1rem;
+}
+/*********title*******/
+
+/*********在售*********/
+.sale{
+    width:100%;
+    height:2.9rem;
+    margin-bottom:.1rem;
+    position:relative;
+    background-color: #fff;
+}
+.sale span{
+    display:inline-block;
+    font-size: .18rem;
+    margin-left: .2rem;
+    margin-top: .15rem;
+    color:#333;
+}
+.sale span u{
+    display:inline-block;
+    width:.3rem;
+    height:.28rem;
+    background-color: #333;
+    font-size: .2rem;
+    color:#fff;
+    text-decoration:none;
+    vertical-align:bottom;
+    line-height:.28rem;
+    text-align: center;
+    border-radius:.05rem;
+}
+.sale span i{
+    font-size: .18rem;
+    font-style:normal;
+}
+.sale .sale_img{
+    width:2.2rem;
+    height:2.2rem;
+    margin-left: .2rem;
+    margin-top: .1rem;
+}
+.sale .sale_img img{
+    width:100%;
+    height:100%;
+}
+.sale .sale_info{
+    width:auto;
+    height:2.2rem;
+    position:absolute;
+    top:18.5%;
+    left:39%;
+    font-size: 0;
+}
+.sale .sale_info h2{
+    display:inline-block;
+    font-size: .22rem;
+    color:#394766;
+    width:2.9rem;
+    height:.58rem;
+    overflow:hidden;
+}
+.sale .sale_info u{
+    display:inline-block;
+    color:#e11222;
+    font-size: .32rem;
+    text-decoration:none;
+    margin-left: -.04rem;
+}
+.sale .sale_info del{
+    display:inline-block;
+    font-size: .2rem;
+    vertical-align:center;
+    color: #9aa1b0;
+    margin-left: .1rem;
+}
+.sale .sale_info .sale_down{
+    height:.25rem;
+    width:1.3rem;
+    border-radius:.1rem;
+    border:.01rem solid #fe575f;
+    position:relative;
+    margin-bottom: .1rem;
+}
+.sale .sale_info .sale_down .sale_down_img{
+    width:.32rem;
+    height:.24rem;
+    background-color: #fe575f;
+    border-radius:.1rem 0 0 .1rem;
+    text-align: center;
+    position:absolute;
+    top:-1%;
+    left:-1%;
+    display:inline-block;
+}
+.sale .sale_info .sale_down .sale_down_img img{
+    width:.21rem;
+    height:.21rem;
+    margin-top:.03rem;
+}
+.sale .sale_info .sale_down span{
+    display:inline-block;
+    font-size: .18rem;
+    margin:0;
+    margin-left: .4rem;
+    line-height:.22rem;
+    color:#582524;
+}
+.progress{
+    width:2rem;
+    height:.2rem;
+    border-radius:.1rem;
+    background-color: #ffc0cb;
+}
+.progress img{
+    height:.2rem;
+    border-radius:.1rem;
+}
+.sale input{
+    width:1.26rem;
+    height:.34rem;
+    background-color: #e11222;
+    border-radius:.2rem;
+    color:#fff;
+    line-height:.34rem;
+    text-align: center;
+    font-size: .22rem;
+    position:absolute;
+    top:83%;
+    right: 5%;
+    border:0 none;
+    outline: none;
+}
+.sale .qiang{
+    font-size: .18rem;
+    color:#e11222;
+    text-decoration:none;
+    position:absolute;
+    top:72%;
+    right:7%;
+}
+.sale 
+/*********在售*********/
+
+/**********售完******************/
+.over  span{
+	color: #999 !important;
+}
+.over .sale_info .sale_down{    
+	border: .01rem solid #999;
+}
+.over .sale_info .sale_down .sale_down_img,.over .progress,.over input{
+	background-color: #999;
+}
+.over .sale_img .saleover_cur{    
+	width: .9rem;
+    height: .9rem;
+    background-color: black;
+    border-radius: 50%;
+    opacity: .3;
+    text-align: center;
+    line-height: .9rem;
+    color: #fff;
+    font-size: .28rem;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+/**********售完******************/
+
+.footer{
+    width:100%;
+    height:.98rem;
+    font-size: 0;
+    position:fixed;
+    bottom:0;
+    border-top: .01rem solid #d9d9d9;
+    background-color: #fff;
+}
+.footer li{
+    width:33.333333333333%;
+    height:100%;
+    text-align: center;
+    display:inline-block;
+}
+.footer li img{
+    width:.38rem;
+    height:.38rem;
+    margin-top: .17rem;
+}
+.footer li span{
+    font-size: .22rem;
+    color:#333;
+    display:inline-block;
+    margin-top: .1rem;
+}

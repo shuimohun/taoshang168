@@ -1,0 +1,98 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+body img{
+    max-width: 6.08rem;
+    max-height: 3.95rem;
+}
+.person{
+    width:100%;
+    height:.8rem;
+    background-color: #fff;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.person .title{
+    height:.7rem;
+    padding: .3rem 0 0 4%;
+}
+.person .title a img{
+    width:.34rem;
+    height:.34rem;
+}
+.person .title span{
+    font-size: .3rem;
+    color:#333;
+    vertical-align: top;
+}
+.person .title span{
+    margin-left:32%;
+}
+.person .title a img.info{
+    margin-left:30%;
+}
+/***************头部部分结束**************************************/
+
+.list{
+    width:100%;
+    height:.57rem;
+    background-color:#f2f2f2;
+    padding-left: .2rem;
+}
+.list a{
+    display:inline-block;
+    height:100%;
+    line-height:.57rem;
+    color:#808080;
+    font-size: .24rem;
+}
+.list a.cur{
+    color:#e45050;
+}
+.contain{
+    width:95%;
+    height:auto;
+    margin:0 auto;
+}
+.contain .greeWith{
+    width:.4rem;
+    height:.4rem;
+    float: right;
+}
+.contain .title{
+    color:#333;
+    font-size: .3rem;
+    margin-top: .3rem;
+    width:100%;
+    height:.42rem;
+    overflow:hidden;
+}
+.contain .title_date{
+    font-size: .16rem;
+    color:#999;
+    margin-top: .14rem;
+}
+.contain .contain_img{
+    width:100%;
+    height:3.95rem;
+    margin-top: .32rem;
+
+}
+.contain .contain_img img{
+    width:100%;
+    height:100%;
+}
+.contain .contain_artical{
+    font-size: .2rem;
+    color:#333;
+    margin-top:.4rem;
+    margin-bottom: .55rem;
+}
+.contain span{
+    font-size: .2rem;
+    color:#666;
+    display:inline-block;
+    margin-bottom: .25rem;
+    margin-right: .1rem;
+}

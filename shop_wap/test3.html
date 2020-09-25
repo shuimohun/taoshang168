@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>播放器</title>
+    <style type="text/css">
+        html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
+        body {display:flex;}
+        #mse {flex:auto;}
+    </style>
+    <script type="text/javascript">
+        window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
+    </script>
+</head>
+<body>
+<div id="mse"></div>
+<div style="width: 50px;height: 40px;background-color:red;z-index: 99; position: absolute;right: 0;bottom:50px;"></div>
+<script src="xigua.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    new Player({
+        id: 'mse',
+        autoplay: true,
+        url: 'http://taoshang168.test/shop_wap/video.mp4',
+        volume: 0.3,
+        poster: "",
+        playsinline: true,
+        bullet: {
+            switch: 'on',
+            url: '//s0.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/danmu.json',
+            method: 'get',
+        },
+        width: window.innerWidth,
+        height: window.innerHeight,
+        textTrack: [],
+        textTrackStyle: {
+            "background-color": "#ff0",
+            "color": "#000",
+            "font-size": "26px",
+        },
+        whitelist: [''],
+        'x5-video-player-type': 'h5',
+        'x5-video-player-fullscreen': true,
+        'x5-video-orientation': 'portraint'
+    });
+</script>
+</body>
+</html>

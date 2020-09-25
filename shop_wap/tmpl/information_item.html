@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商城信息</title>
+  <link rel="stylesheet" href="../css/information_item.css">
+  <link rel="stylesheet" href="../css/andone/base.css">
+  <script src="../js/tmpl/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src='../js/information_item.js'></script>
+  <script type="text/javascript" src="../js/tmpl/swipe.js"></script>
+  <script type="text/javascript" src="../js/zepto.js"></script>
+  <script type="text/javascript" src='../js/tmpl/swiper.min.js'></script>
+  <script src="../js/config.js"></script>
+
+</head>
+<body>
+
+<div style="background-color:#f2f2f2;margin-top:.8rem;">
+  <!--头部部分-->
+  <header class="person">
+    <div class="title">
+      <a href="./member/member.html"><img src="../images/icon_back.png" alt=""></a>
+      <span>商城资讯</span>
+      <a><img src="../images/icon_share.png" alt="" onclick="common_alert(this)"  class="info"></a>
+    </div>
+  </header>
+  <div class="info_alert">
+
+    <img src="../images/user_img/choose_gray@3x.png" alt="">
+
+    <!-- <a href="../index.html">
+        <span>
+            <img src="../images/user_img/more_home@2x.png" alt="">
+            <u>商城首页</u>
+        </span>
+    </a>
+
+    <a href="../cart_list.html">
+        <span>
+            <img src="../images/user_img/more_cart@2x.png" alt="">
+            <u>购物车</u>
+        </span>
+    </a>
+
+    <a href="order_list.html">
+        <span>
+            <img src="../images/user_img/more_form@2x.png" alt="">
+            <u>我的订单</u>
+        </span>
+    </a>
+
+    <a href="chat_list.html">
+        <span>
+            <img src="../images/bbc-bg36.png" alt="">
+            <u>消息</u>
+        </span>
+    </a> -->
+
+  </div>
+  <!--头部部分-->
+  <div class="find_nav">
+  <div class="find_nav_left">
+
+  </div>
+  </div>
+  <div class="item_i">
+  </div>
+
+  <script type="text/html" id="list_l">
+    <div class="find_nav_list">
+      <ul>
+        <% if(items){ %>
+        <% for(var i in items){  %>
+        <% if(i!=0){ %>
+        <li ><a href="javascript:;" class="li_cat" data-id="<%=items[i].information_group_id%>"><%=items[i].information_group_title %></a></li>
+        <% }else{ %>
+        <li><a href="javascript:;" class="li_cat" data-id="<%=items[i].information_group_id%>"><%=items[i].information_group_title %></a></li>
+        <% } %>
+        <% } %>
+        <% } %>
+      </ul>
+    </div>
+   </script>
+  <script type="text/html" id="item_m" >
+    <% if(items){ %>
+    <% for(var i in items){ %>
+    <div class="main">
+      <a href="./information.html?information_id=<%=items[i].information_id %>&type=<%=items[i].information_group_id %>"><img src="<%=items[i].information_pic %>" alt=""></a>
+      <a href="./information.html?information_id=<%=items[i].information_id %>&type=<%=items[i].information_group_id %>"> <span><%=items[i].information_title %></span></a>
+      <u><%=items[i].information_add_time %></u>
+      <i>浏览<% if(items[i].information_read_count==''|| items[i].information_read_count==0 || items[i].information_read_count==null){ %>
+        <%=items[i].information_fake_read_count %>次
+      <% }else{ %>
+      <%=items[i].read_count %>次
+      <% } %>  点赞
+      <% if(items[i].infou_count==''|| items[i].infou_count==0 || items[i].infou_count==null){ %>
+      0次
+      <% }else{ %>
+      <%=items[i].infou_count %> 次
+      <% } %></i>
+  <!--<i>浏览22次 点赞22次</i>-->
+    </div>
+    <% } %>
+    <% } %>
+</script>
+   <!--<script type="text/html" id="item_m">-->
+    <!--<% if(items){ %>-->
+    <!--<% for(var i in items){ %>-->
+    <!--<div class='item'>-->
+      <!--<div class='contain_top'>-->
+        <!--<div class='img'><img src="../images/color.png" alt=""></div>-->
+          <!--<div class="item_word"><a style="color: #808080" href="./information.html?information_id=<%=items[i].information_id %>&type=<%=items[i].information_group_id %>"><%=items[i].information_title %></a></div>-->
+        <!--<i><%=items[i].information_add_time %></i>-->
+        <!--<b>浏览-->
+          <!--<% if(items[i].information_read_count==''|| items[i].information_read_count==0 || items[i].information_read_count==null){ %>-->
+          <!--0次-->
+          <!--<% }else{ %>-->
+          <!--<%=items[i].information_read_count %>次-->
+          <!--<% } %> 点赞-->
+          <!--<% if(items[i].infou_count==''|| items[i].infou_count==0 || items[i].infou_count==null){ %>-->
+          <!--0次-->
+          <!--<% }else{ %>-->
+          <!--<%=items[i].infou_count %>次-->
+          <!--<% } %></b>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<% } %>-->
+    <!--<% } %>-->
+  <!--</script>-->
+
+  <script type="text/javascript" src="../js/config.php"></script>
+  <script type="text/javascript" src="../js/zepto.js"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript"  src="../js/template.js"></script>
+  <script type="text/javascript"  src="../js/information_item_row.js"></script>
+</div>
+</body>
+</html>

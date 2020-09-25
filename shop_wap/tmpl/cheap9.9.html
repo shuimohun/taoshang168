@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../js/adaptation.js"></script>   <!--此处为了尽早适配-->
+    <title></title>
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+
+    <link rel="stylesheet" href="../css/cheap9.9.css" />
+
+</head>
+<body>
+
+<div class="header-wrap"></div>
+<script>
+    var title = '9.9疯抢';
+    var bg = '#fe3d4e';
+    $('.header-wrap').load('nav.html');
+</script>
+
+
+<!--主内容  start-->
+<div class="swiper-container page">
+    <div class="swiper-wrapper">
+
+    </div>
+</div>
+<!--主内容  end-->
+
+<!--  页尾固定 导航  start-->
+<footer class="nav-fixed">
+    <ul>
+        <li class="home-icon side-icon lf">
+            <i class="icon"></i>
+            <div>首页</div>
+        </li>
+        <li class="icon-9 s-icon curr side-icon lf">
+            <i class="icon"></i>
+            <div>9.9元封顶</div>
+        </li>
+        <li class="more-icon lf">
+            <i class="icon"></i>
+        </li>
+        <li class="icon-20 s-icon side-icon lf">
+            <i class="icon"></i>
+            <div>20元封顶</div>
+        </li>
+        <li class="icon-50 s-icon side-icon lf">
+            <i class="icon"></i>
+            <div>50元好货</div>
+        </li>
+    </ul>
+</footer>
+<!--  页尾固定 导航  end-->
+
+<!--更多活动  弹框    start-->
+<div class="more-activties-wrap">
+    <ul>
+        <li class="more-activity activity-icon1 lf"></li>
+        <li class="more-activity activity-icon2 lf"></li>
+        <li class="more-activity activity-icon3 lf"></li>
+        <li class="more-activity activity-icon4 lf"></li>
+        <li class="more-activity activity-icon5 lf"></li>
+        <li class="more-activity activity-icon6 lf"></li>
+        <li class="more-activity activity-icon7 lf"></li>
+        <li class="more-activity activity-icon8 lf"></li>
+        <li class="more-activity activity-icon9 lf"></li>
+    </ul>
+</div>
+<!--更多活动  弹框  end-->
+
+<!--  ui-mask  start-->
+<div class="ui-mask"></div>
+<!--  ui-mask  end-->
+
+
+<script type="text/html" id="main">
+
+    <div class="swiper-container banner">
+        <div class="swiper-wrapper">
+            <% for(var i in adv_list.items){%>
+                <div class="swiper-slide">
+                    <a href="<%=adv_list.items[i].wap_url%>"><img src="<%=adv_list.items[i].pic_url%>" alt="" /></a>
+                </div>
+            <%}%>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="goods-wrap">
+        <ul class="goods-ul orflow">
+            <% var data = data_goods.items%>
+            <% for(var i in data){%>
+            <li class="goods lf">
+                <div class="img-center">
+                    <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><img class="middle" src="<%=data[i].common_image%>" alt="" /></a>
+                </div>
+                <div class="goods-detail">
+                    <div class="goods-price orflow">
+                        <div class="price lf">
+                            ￥<span><%=data[i].common_price%></span>
+                        </div>
+                        <div class="share-price rt">
+                            <div class="lf">分享后：</div>
+                            <div class="rt">
+                                ￥<span><%=data[i].common_shared_price%></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-text txt"><a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><%=data[i].common_name%></a></div>
+                    <div class="goods-share orflow">
+                        <div class="share lf orflow">
+                            <span class="lf">分享立省</span>
+                            <div class="rt">
+                                ￥<span><%=data[i].common_share_price%></span>
+                            </div>
+                        </div>
+                        <div class="share lf orflow">
+                            <span class="lf">分享立赚</span>
+                            <div class="rt">￥<span><%=data[i].common_promotion_price%></span></div>
+                        </div>
+                    </div>
+                    <div class="goods-sale orflow">
+                        <span class="lf">促销:</span>
+                        <div class="icons lf">
+                            <i class="icon lf new-icon"></i>
+                            <i class="icon lf sheath-icon"></i>
+                            <i class="icon lf tiket-icon"></i>
+                            <i class="icon lf solid-icon"></i>
+                            <i class="icon lf sale-icon"></i>
+                            <i class="icon lf give_full_cut-icon"></i>
+                        </div>
+                    </div>
+                    <div class="goods-like orflow">
+                        <div class="like lf">
+                            <i class="icon"></i>
+                        </div>
+                        <div class="share-border rt">
+                            分享立省
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</script>
+
+
+<script type="text/html" id="more_goods">
+    <% var data = data_goods.items%>
+    <% for(var i in data){%>
+    <li class="goods lf">
+        <div class="img-center">
+            <img class="middle" src="<%=data[i].common_image%>" alt="" />
+        </div>
+        <div class="goods-detail">
+            <div class="goods-price orflow">
+                <div class="price lf">
+                    ￥<span><%=data[i].common_price%></span>
+                </div>
+                <div class="share-price rt">
+                    <div class="lf">分享后：</div>
+                    <div class="rt">
+                        ￥<span><%=data[i].common_shared_price%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="goods-text txt"><%=data[i].common_name%></div>
+            <div class="goods-share orflow">
+                <div class="share lf orflow">
+                    <span class="lf">分享立省</span>
+                    <div class="rt">
+                        ￥<span><%=data[i].common_share_price%></span>
+                    </div>
+                </div>
+                <div class="share lf orflow">
+                    <span class="lf">分享立赚</span>
+                    <div class="rt">￥<span><%=data[i].common_promotion_price%></span></div>
+                </div>
+            </div>
+            <div class="goods-sale orflow">
+                <span class="lf">促销:</span>
+                <div class="icons lf">
+                    <i class="icon lf new-icon"></i>
+                    <i class="icon lf sheath-icon"></i>
+                    <i class="icon lf tiket-icon"></i>
+                    <i class="icon lf solid-icon"></i>
+                    <i class="icon lf sale-icon"></i>
+                    <i class="icon lf give_full_cut-icon"></i>
+                </div>
+            </div>
+            <div class="goods-like orflow">
+                <div class="like lf">
+                    <i class="icon"></i>
+                </div>
+                <div class="share-border rt">
+                    分享立省
+                </div>
+            </div>
+        </div>
+    </li>
+    <% } %>
+</script>
+<script src="../js/cheap9.9.js"></script>
+
+</body>
+</html>
+
+

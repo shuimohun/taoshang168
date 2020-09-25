@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>自营超市</title>
+	<link rel="stylesheet" href="../css/proprietary/proprietary.css">
+	<link rel="stylesheet" href="../css/proprietary/base.css">
+	<link rel="stylesheet" href="../css/proprietary/swiper.min.css"><!-- Link Swiper's CSS -->
+	<script src="../js/tmpl/proprietary/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+	<style type="text/css">
+		.proprietary_goods .goods_img{height:4.1rem;}
+		.proprietary_goods ul li{height:6rem;}
+	</style>
+</head>
+<body>
+	<!--头部部分-->
+	<header class="person">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/andone_img/back.png" alt=""></a>
+			<span>自营超市</span>
+			<a href="search.html?own_shop=1" style="float: right;margin-right: 0.4rem;"><img src="../images/proprietary_img/search.png" alt=""  class="info"></a>
+		</div>
+	</header>
+	<!--头部部分-->
+
+	<!--滚动展示-->
+	<div class="gundong_show"></div>
+	<!--滚动展示-->
+
+
+	<!--主图轮播图-->
+	<div class="slider_list"></div>
+	<!--主图轮播图-->
+
+	<!--翻页图标-->
+	<div class='lb1'></div>
+	<!--翻页图标-->
+
+	<!--不可错过系列-->
+	<div class="notmiss"></div>
+	<!--不可错过系列-->
+
+	<!--淘尚生活家-->
+	<div class="lifehome life_home"></div>
+	<!--淘尚生活家-->
+
+	<!--今日上新-->
+	<div class="lifehome new_goods"></div>
+
+	<!--限时秒-->
+	<div class="lifehome discount_goods"></div>
+
+
+	<div class='new_title'>淘尚生活家</div>
+
+	<div id="taoshang"></div>
+
+	<!--商品导航栏-->
+	<div class="nav">
+		<ul>
+			<li class="cur" data-type="salenum">畅销商品</li>
+			<li data-type="evaluation">点评如云</li>
+			<li data-type="collect">全民收藏</li>
+		</ul>
+	</div>
+	<!--商品导航栏-->
+
+	<!--商品-->
+	<div class="proprietary_goods"></div>
+	<!--商品-->
+
+	<!--弹窗-->
+	<div class="win-bottom"></div>
+	<div class="win-top">
+		<b>已收藏</b>
+	</div>
+	<!--弹窗-->
+
+	<script type="text/html" id="sliderPic">
+		<div class="swipe-wrap" >
+			<% if(adv) { %>
+			<% var items = adv %>
+			<% for(var i in items) { %>
+			<div class="item" >
+				<% if(items[i].url){ %>
+				<a href="<%=items[i].url %>">
+					<% }else{ %>
+					<a href="<%=items[i].wap_url %>">
+					<% } %>
+					<img src="<%=items[i].pic_url %>" alt="">
+				</a>
+			</div>
+			<% } %>
+			<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="iconPic">
+		<div class="swiper-container">
+			<% if(cla){ %>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<% for(var i=0;i<8;i++){ %>
+						<li>
+							<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+								<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+								<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<% for(var i=8;i<cla.length;i++){ %>
+						<li>
+							<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+								<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+								<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+							</a>
+						</li>
+						<% } %>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="gunIcon">
+		<% if(cla){ %>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<% for(var i=0;i<4;i++){ %>
+					<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+						<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+						<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+					</a>
+					<% } %>
+				</div>
+				<div class="swiper-slide">
+					<% for(var i=4;i<8;i++){ %>
+					<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+						<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+						<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+					</a>
+					<% } %>
+				</div>
+				<div class="swiper-slide">
+					<% for(var i=8;i<12;i++){ %>
+					<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+						<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+						<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+					</a>
+					<% } %>
+				</div>
+				<div class="swiper-slide">
+					<% for(var i=12;i<16;i++){ %>
+					<% if(cla[i]){ %>
+					<a href="product_list.html?cat_id=<%=cla[i].cat_id %>&own_shop=1">
+						<img src="<%=cla[i].items[0].goods_cat_nav_pic %>" alt="">
+						<span><%=cla[i].items[0].goods_cat_nav_name %></span>
+					</a>
+					<% }else{ %>
+					<a href=""></a>
+					<% } %>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="notM">
+		<div class="notmiss_title">
+			<img src=../images/proprietary_img/title1.png alt="">
+		</div>
+		<div class="notmiss_icon">
+			<span><img src=../images/proprietary_img/arrow1.png alt=""><%=salenum  %>人购买过</span>
+			<span><img src=../images/proprietary_img/arrow2.png alt=""><%=evaluate %>人评价过</span>
+			<span><img src=../images/proprietary_img/arrow3.png alt=""><%=collect %>人收藏</span>
+		</div>
+		<div class="notmiss_contain">
+			<ul>
+				<% if(items){ %>
+				<% for(var i in items){ %>
+				<li>
+					<img src="<%=items[i].common_image %>" alt="">
+					<span><%=items[i].common_name %></span>
+					<button class="button" onclick="sheng(this)" goods_id="<%=items[i].goods_id %>">立即购买</button>
+				</li>
+				<% } %>
+				<% } %>
+			</ul>
+		</div>
+	</script>
+
+	<script type="text/html" id="rush">
+		<% if(goods_today.length>0 || goods_tomorrow.length>0){ %>
+		<div class="lifehome_title" style="position:relative;">
+			<div class="lifehome_title_item1">今日疯抢</div>
+			<span style="position: absolute; font-size: .26rem;color:#f60;right: 5%;top: 30%;" id="tomorrow" data-type="tomorrow">明日预告</span>
+		</div>
+		<div class="lifehome_contain" style="width: 100%;">
+			<div class="newlb1" style="width:100%;">
+				<div class='today' style="width:100%;">
+					<div class="swiper-container">
+						<% if(goods_today){ %>
+				        <div class="swiper-wrapper">
+							<% for(var i in goods_today){ var items = goods_today[i];%>
+				            <div class="swiper-slide">
+								<a href="product_detail.html?goods_id=<%=items.goods_id %>" style='width: auto;height: auto;'><img src="<%=items.goods_image %>" alt="" class='main_img'></a>
+								<span class='text'><%=items.goods_name %></span>
+								<span class='oldprice'>￥<%=items.scare_buy %> <span class='newprice'>￥<%=items.scarebuy_price %></span></span><br>
+								<div class="sale_down">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/reduce_price_btn@3x.png" alt=""></div>
+									<span>直降<%=items.reduce %>元</span>
+								</div>
+								<div class="sale_down sheng">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+									<span>分享立省￥<%=items.goods_share_price %>元</span>
+								</div>
+								<div class="sale_down zhuan">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+									<span>再赚￥<%=items.goods_promotion_price %>元</span>
+								</div>
+								<div class="timebox">
+									<div class="timebox_txt" goods_id="<%=items.goods_id %>" onclick="sheng(this)">立即去抢</div>
+									<div class="timebox_date">
+										<div class="timebox_date_countdown fnTimeCountDown" data-end="<%=items.scarebuy_endtime %>">
+											<u class="hour">00</u><i>&nbsp;:</i>
+											<u class="mini">00</u><i>&nbsp;:</i>
+											<u class="sec">00</u>
+										</div>
+										<div class="timebox_progress"><img src="../images/rectangle@3x.png" alt="" width='<%=items.sale_rate %>'><i><%=items.sale_rate %></i></div>
+									</div>
+								</div>
+				            </div>
+							<% } %>
+				            <!--<div class="swiper-slide"></div>
+				            <div class="swiper-slide"></div>
+				            <div class="swiper-slide"></div>-->
+			            </div>
+					<% } %>
+			        </div>
+		        </div>
+		        <div class="tomorrow visibility" style="width: 100%;">
+					<div class="swiper-container">
+						<% if(goods_tomorrow){ %>
+						<div class="swiper-wrapper">
+							<% for(var i in goods_tomorrow){ var items = goods_tomorrow[i];%>
+							<div class="swiper-slide">
+								<a href="product_detail.html?goods_id=<%=items.goods_id %>"><img src="<%=items.goods_image %>" alt="" class='main_img'></a>
+								<a href="product_detail.html?goods_id=<%=items.goods_id %>"><span class='text'><%=items.goods_name %></span></a>
+								<span class='oldprice'>￥<%=items.scare_buy %> <span class='newprice'>￥<%=items.scarebuy_price %></span></span><br>
+								<div class="sale_down">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/reduce_price_btn@3x.png" alt=""></div>
+									<span>直降<%=items.reduce %>元</span>
+								</div>
+								<div class="sale_down sheng">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+									<span>分享立省￥<%=items.goods_share_price %>元</span>
+								</div>
+								<div class="sale_down zhuan">
+									<div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+									<span>再赚￥<%=items.goods_promotion_price %>元</span>
+								</div>
+								<div class="timebox">
+									<div class="timebox_txt" goods_id="<%=items.goods_id %>" onclick="sheng(this)">立即去抢</div>
+									<div class="timebox_date">
+										<div class="timebox_date_countdown fnTimeCountDown" data-end="<%=items.scarebuy_endtime %>">
+											<u class="hour">00</u><i>&nbsp;:</i>
+											<u class="mini">00</u><i>&nbsp;:</i>
+											<u class="sec">00</u>
+										</div>
+										<div class="timebox_progress"><img src="../images/rectangle@3x.png" alt="" width='<%=items.sale_rate %>'><i><%=items.sale_rate %></i></div>
+									</div>
+								</div>
+							</div>
+							<% } %>
+							<!--<div class="swiper-slide"></div>
+							<div class="swiper-slide"></div>
+							<div class="swiper-slide"></div>-->
+						</div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+	    </div>
+	<% } %>
+	</script>
+
+	<!--今日上新 S-->
+	<script type="text/html" id="new_goods">
+		<div class="lifehome_title">
+			<div class="lifehome_title_item color-red" id="newgoods">今日上新</div>
+			<div class="lifehome_title_item" id="settime">限时秒</div>
+		</div>
+		<% if(new_goods){ %>
+		<div class="tab tab1 lb2">
+				<div class="swiper-container">
+					<div class="swiper-wrapper" style="position: relative;">
+						<% for(var i in new_goods){var items = new_goods[i]; %>
+						<div class="swiper-slide">
+							<a href="product_detail.html?goods_id=<%=items.goods_id %>"><img src="<%=items.common_image %>" alt="" class='main_img' style="margin: 0;"></a>
+							<span class='oldprice'>￥<%=items.common_price  %></span>
+							<br>
+							<span class='newprice'>分享后:<span style="color:#333;">￥<%=items.common_shared_price %></span></span>
+							<span class='text'><%=items.common_name %></span>
+							<div class='bg_all'>
+								<div class="bg1">立省￥<%=items.common_share_price %></div>
+								<div class="bg2">立赚￥<%=items.common_promotion_price %></div>
+							</div>
+							<% if(items.common_promotion_type != '0' || items.common_is_jia !='0' ){ %>
+							<span class='act'>
+						<i>促销:</i>
+							<% if(items.common_promotion_type == '1'){ %>
+							<b>惠</b>
+							<% } %>
+							<% if(items.common_promotion_type == '2'){ %>
+							<b>限</b>
+							<% } %>
+							<% if(items.common_promotion_type == '3'){ %>
+							<b>手</b>
+							<% } %>
+							<% if(items.common_promotion_type == '4'){ %>
+							<b>新</b>
+							<% } %>
+							<% if(items.common_is_jia != '0'){ %>
+							<b>加</b>
+							<% } %>
+						</span>
+							<% } %>
+							<% if(items.is_like > 0){ %>
+							<img src="../images/proprietary_img/book_s.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items.goods_id %>">
+							<img src="../images/proprietary_img/book_s.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items.goods_id %>">
+							<% }else{ %>
+							<img src="../images/proprietary_img/book_n.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items.goods_id %>">
+							<% } %>
+							<button class="sheng" onclick="sheng(this)" goods_id="<%=items.goods_id %>">分享购买</button>
+						</div>
+						<% } %>
+						<div class="swiper-slide slide-last" ><a href="proprietary_item.html" >更多</a></div>
+						<!--<div class="swiper-slide"></div>
+						<div class="swiper-slide"></div>
+						<div class="swiper-slide"></div>
+						<div class="swiper-slide"></div>-->
+					</div>
+				</div>
+		</div>
+		<% } %>
+		<% if(discount_goods){ %>
+		<div class="tab tab2 newlb1 visibility">
+			<div class="swiper-container">
+			        <div class="swiper-wrapper">
+						<% for(var i in discount_goods){var items = discount_goods[i]; %>
+			            <div class="swiper-slide" style="margin-right: .3rem">
+							<a href="product_detail.html?goods_id=<%=items.goods_id %>" style='width: auto;height: auto;'><img src="<%=items.goods_image %>" alt="" class='main_img'></a>
+							<span class='text'><%=items.goods_name %></span>
+							<span class='oldprice'>￥<%=items.discount_price %><span class='newprice'>￥<%=items.dis_price %></span></span><br>
+							<!-- <div class="sale_down">
+								<div class="sale_down_img"><img src="../images/scarebuy_img/label_reduce_price_btn@3x.png" alt=""></div>
+								<span>直降<%=items.reduce %>元</span>
+							</div> -->
+							<div class="sale_down sheng">
+								<div class="sale_down_img"><img src="../images/scarebuy_img/share_save_btn@3x.png" alt=""></div>
+
+								<span>分享立省￥<%=items.goods_share_price %>元</span>
+							</div>
+							<div class="sale_down zhuan">
+								<div class="sale_down_img"><img src="../images/scarebuy_img/make_money_btn@3x.png" alt=""></div>
+								<span>分享立省￥<%=items.goods_promotion_price %>元</span>
+							</div>
+							<div class="timebox">
+								<div class="timebox_txt" onclick="sheng(this)" goods_id="<%=items.goods_id %>">立即秒</div>
+								<div class="timebox_date">
+									<div class="timebox_date_countdown fnTimeCountDown" data-end="<%=items.goods_end_time %>">
+										<u class="hour">00</u><i>&nbsp;:</i>
+										<u class="mini">00</u><i>&nbsp;:</i>
+										<u class="sec">00</u>
+									</div>
+									<div class="timebox_progress"><img src="../images/rectangle@3x.png" alt="" width="<%=items.sale_rate %>"><i><%=items.sale_rate %></i></div>
+								</div>
+							</div>
+			            </div>
+					<% } %>
+						<div class="swiper-slide slide-last" ><a href="discount.html?type=1" >更多</a></div>
+
+					</div>
+			 </div>
+		</div>
+		<% } %>
+	</script>
+	<!--今日上新 E-->
+
+
+	<script type="text/html" id="taoLife">
+		<% if(items){ %>
+		<% for(var i =1;i<items.length;i++){ %>
+		<div class='lb2'>
+			<div class=lb2_title><%=items[i].page_name %></div>
+
+			<div class="swiper-container">
+				<% if(items[i].goods_base.items){ %>
+				<div class="swiper-wrapper">
+				<% for(var a in items[i].goods_base.items){ %>
+					<div class="swiper-slide">
+						<a href="product_detail.html?goods_id=<%=items[i].goods_base.items[a].goods_id %>"><img src="<%=items[i].goods_base.items[a].common_image %>" alt="" class='main_img'></a>
+						<span class='oldprice'>￥<%=items[i].goods_base.items[a].common_price %></span>
+						<span class='newprice'>分享后:<span style="color:#333;">￥<%=items[i].goods_base.items[a].common_shared_price %></span></span>
+						<span class='text'><%=items[i].goods_base.items[a].common_name %></span>
+						<div class='bg_all'>
+							<div class="bg1">立省￥<%=items[i].goods_base.items[a].common_share_price %></div><div class="bg2">立赚￥<%=items[i].goods_base.items[a].common_promotion_price %></div>
+						</div>
+						<% if(items[i].goods_base.items[a].is_bunding || items[i].goods_base.items[a].common_promotion_type != '0' || items[i].goods_base.items[a].is_voucher || items[i].goods_base.items[a].is_man || items[i].goods_base.items[a].common_is_jia !='0' ){ %>
+						<span class='act'>
+						<i>促销：</i>
+							<% if(items[i].goods_base.items[a].is_bunding){ %>
+							<b>套</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].common_promotion_type == '1'){ %>
+							<b>惠</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].common_promotion_type == '2'){ %>
+							<b>限</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].common_promotion_type == '3'){ %>
+							<b>手</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].common_promotion_type == '4'){ %>
+							<b>新</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].is_voucher){ %>
+							<b>券</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].is_man){ %>
+							<b>满</b>
+							<% } %>
+							<% if(items[i].goods_base.items[a].common_is_jia != '0'){ %>
+							<b>加</b>
+							<% } %>
+
+						</span>
+						<% } %>
+						<% if(items[i].goods_base.items[a].is_favorite){ %>
+						<img src="../images/proprietary_img/book_s.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items[i].goods_base.items[a].goods_id %>">
+						<% }else{ %>
+						<img src="../images/proprietary_img/book_n.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items[i].goods_base.items[a].goods_id %>">
+						<% } %>
+						<button class="sheng" goods_id="<%=items[i].goods_base.items[a].goods_id %>" onclick="sheng(this)">分享购买</button>
+					</div>
+					<% } %>
+					<div class="swiper-slide slide-last" ><a href="proprietary_item.html" >更多</a></div>
+
+					<!--<div class="swiper-slide"></div>
+					<div class="swiper-slide"></div>
+					<div class="swiper-slide"></div>
+					<div class="swiper-slide"></div>
+					<div class="swiper-slide"></div>
+					<div class="swiper-slide"></div>-->
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="cliCon">
+		<ul>
+			<% if(items){ %>
+			<% for(var i in items){ %>
+			<li>
+				<div class="goods_img">
+					<a href="product_detail.html?goods_id=<%=items[i].goods_id %>"><img src="<%=items[i].common_image %>" alt=""></a>
+					<a href="product_detail.html?goods_id=<%=items[i].goods_id %>"><span>分享后：￥<%=items[i].common_shared_price %></span></a>
+					<u><%=items[i].common_name %></u><br>
+					<div class="bg">立省￥<%=items[i].common_share_price %></div>
+					<div class="bg">立赚￥<%=items[i].common_promotion_price %></div>
+					<% if(items[i].is_bunding || items[i].common_promotion_type != '0' || items[i].is_voucher || items[i].is_man || items[i].common_is_jia !='0'){ %>
+					<i>促销：</i>
+					<% if(items[i].is_bunding){ %>
+					<del>套</del>
+					<% } %>
+					<% if(items[i].common_promotion_type == '1'){ %>
+					<del>惠</del>
+					<% } %>
+					<% if(items[i].common_promotion_type == '2'){ %>
+					<del>限</del>
+					<% } %>
+					<% if(items[i].common_promotion_type == '3'){ %>
+					<del>手</del>
+					<% } %>
+					<% if(items[i].common_promotion_type == '4'){ %>
+					<del>新</del>
+					<% } %>
+					<% if(items[i].is_voucher){ %>
+					<del>券</del>
+					<% } %>
+					<% if(items[i].is_man){ %>
+					<del>满</del>
+					<% } %>
+					<% if(items[i].common_is_jia != '0'){ %>
+					<del>加</del>
+					<% } %>
+					<% } %>
+					<br>
+					<% if(items[i].is_favorite){ %>
+					<img src="../images/proprietary_img/book_s.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items[i].goods_id %>">
+					<% }else{ %>
+					<img src="../images/proprietary_img/book_n.png" alt="" class='book_n' onclick="clle(this)" goods_id="<%=items[i].goods_id %>">
+					<% } %>
+					<button class='sheng' goods_id="<%=items[i].goods_id %>" onclick="sheng(this)">分享购买</button>
+				</div>
+			</li>
+			<% } %>
+			<% } %>
+		</ul>
+	</script>
+
+
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/swipe.js'></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/swiper.min.js'></script>
+	<script type="text/javascript" src='../js/tmpl/proprietary/proprietary.js'></script>
+	<script type="text/javascript" src="../js/su_proprietary.js"></script>
+	<script>
+
+	</script>
+	<script>
+		$(function(){
+			$('.gundong_show').css('display','none');
+			$(window).scroll(function(){
+				if($(window).scrollTop()>=350){
+					 $('.gundong_show').fadeIn(500);
+				}else{
+					$('.gundong_show').fadeOut(500);
+				}
+			 });
+
+		  $(".lifehome.new_goods").on("click", '.lifehome_title_item', function () {
+            var _this = $(this);
+            _this.addClass("color-red").siblings(".lifehome_title_item").removeClass("color-red");
+          })
+		})
+	</script>
+</body>
+</html>

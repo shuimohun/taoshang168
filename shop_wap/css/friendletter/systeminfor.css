@@ -1,0 +1,145 @@
+
+/*   个人中心主内容区 start*/
+body{ background: #fff;}
+.main{ width: 100%; margin-bottom: 1.5rem; margin-top: 0.75rem;}
+.main_top_wrap{ width: 100%; padding-top: 0.36rem; background: url("../../tmpl/img/friendletter/sn_topbg.png") no-repeat; background-size: 100%; }
+.maintop{ width: 94%; margin: 0 auto;position: relative;}
+.user_tx{ position: absolute; left: 0; top: 0; width: 1.36rem; height: 1.36rem;overflow: hidden;}
+.userimg{ width: 1.36rem; height: 1.36rem; border-radius: 50%;border:2px solid #fff;  }
+.user_infor{  margin-left: 1.5rem; padding: 0.28rem 0;}
+.user_name{ width: 100%; height: 0.5rem; line-height: 0.5rem;  font-size: 0.35rem; color: #fff; white-space: nowrap; overflow: hidden; }
+.user_des{ width: 100%;height: 0.3rem; line-height: 0.3rem;  font-size: 0.22rem; color:#fff; white-space: nowrap;  text-overflow: ellipsis; overflow: hidden;}
+.main_bot{ width: 100%; margin-top: 0.2rem;}
+.main_bot_bg{ background: rgba(255,255,255,0.2) ;}
+.main_bot ul li{ float: left; width: 50%; text-align: center; }
+.main_bot ul li p{ width: 100%; height: 0.35rem; line-height: 0.35rem;}
+.main_bot ul li .num_tit{ font-size: 0.25rem; color: #fff; margin-top: 0.18rem; }
+.main_bot ul li .num_tit img{ width: 0.3rem; height: .3rem; margin-right: 0.15rem  }
+.main_bot ul li .num_con{font-size: 0.23rem; color: #fff; margin-bottom: 0.12rem;}
+.main_bot ul li .num_con span{margin-right: 0.15rem;}
+
+.user_gz_wrap{ width:100%; border-bottom: 1px solid #999; }
+.user_gz_wrap ul li{width: 33.33%; overflow: hidden; text-align: center; float: left;}
+.user_gz_wrap ul li a{ display: block; text-align: center;}
+.user_gz_icon1,.user_gz_icon2,.user_gz_icon3{height:0.85rem; line-height: 0.85rem; font-size: 0.24rem; color: #6a7883; display: inline-block;padding-left: 0.3rem;}
+.user_gz_icon1 i,.user_gz_icon2 i,.user_gz_icon3 i{ font-size: 0.24rem; color: #6a7883; display: inline-block;}
+.user_gz_icon1{ background: url("../../tmpl/img/gz.png") no-repeat; background-size: 0.3rem 0.3rem; background-position: left center;}
+.user_gz_icon2{background: url("../../tmpl/img/fans.png") no-repeat; background-size: 0.3rem 0.3rem; background-position: left center;}
+.user_gz_icon3{background: url("../../tmpl/img/fu.png") no-repeat; background-size: 0.3rem 0.3rem; background-position: left center;}
+.user_gz_wrap ul li.on span i{ color: #e45045;}
+.user_gz_wrap ul li.on .user_gz_icon1{ background: url("../../tmpl/img/gz_on.png") no-repeat; background-size: 0.3rem 0.3rem;background-position: left center;}
+.user_gz_wrap ul li.on .user_gz_icon2{ background: url("../../tmpl/img/fans_on.png") no-repeat; background-size: 0.3rem 0.3rem;background-position: left center;}
+.user_gz_wrap ul li.on .user_gz_icon3{ background: url("../../tmpl/img/fu_on.png") no-repeat; background-size: 0.3rem 0.3rem;background-position: left center; }
+.main_jump{ width: 100%;}
+.jump_item{ width: 94%; height: 0.75rem; line-height: 0.75rem; margin: 0 auto; border-bottom: 1px solid #c6cdd2; position: relative;}
+.jump_item .icon{
+    width: 0.45rem;
+    height: 0.45rem;
+    position: absolute;
+    left: 0; top: 50%;
+    margin-top: -0.225rem;
+}
+.jump_item .title{
+    margin-left: 0.48rem;
+    margin-right: 0.45rem;
+}
+.jump_item .arrow{
+    width: 0.15rem;
+    height: 0.25rem;
+    position: absolute;
+    right: 0; top: 50%;
+    margin-top: -0.125rem;
+}
+.jump_item .icon .icon_cont.message{
+    width: 0.45rem;
+    height: 0.45rem;
+    background: url("../../tmpl/img/icon/message.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .title{
+    display: flex;
+
+}
+.jump_item .title p{
+     font-size: 0.25rem;
+     color: #6a7883;
+    position: relative;
+}
+.jump_item .title p .tishi_new{
+    font-size: 0.18rem;
+    color: #e45045;
+    position: absolute;
+    right: -0.25rem;
+    top: -0.15rem;
+}
+.jump_item .arrow .arrow_ico{
+    width: 0.15rem;
+    height: 0.25rem;
+    background: url("../../tmpl/img/more@3x.png") no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.jump_item .icon .icon_cont.caifu{
+    width: 0.45rem;
+    height: 0.45rem;
+    background: url("../../tmpl/img/icon/caifu.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.fu{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/fu.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.set_system{
+    width: 0.45rem;
+    height: 0.45rem;
+    background: url("../../tmpl/img/icon/xitong.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*  个人中心主内容区 end*/
+/*  相关链接 页面  end*/
+.head_infor.redfont a{
+    color: #dc143c;
+}
+.jump_item .icon .icon_cont.say{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/icon/say_yellow.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.article{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/icon/article.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.hottv{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/icon/hottv_pink.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.nearby{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/icon/nearby.png") no-repeat;
+    background-size: 100% 100%;
+}
+.jump_item .icon .icon_cont.fu_red{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../../tmpl/img/fu_on.png") no-repeat;
+    background-size: 100% 100%;
+}
+.user_gz_icon_ss{
+    background: url("../../tmpl/img/icon/say.png") no-repeat; background-size: 0.3rem 0.3rem; background-position: left center;
+}
+/*   相关链接 页面   end*/
+.read_time{ width: 94%; margin: 0 auto; text-align: right; font-size: 0.28rem; color: #fff;}
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每日抢购</title>
+    <link rel="stylesheet" href="../css/andone/base.css">
+    <link rel="stylesheet" href="../css/daily_snap_up.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src='../js/swipe.js'></script>
+
+    <script type="text/javascript" src="../js/config.php"></script>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/plugins/jquery.timeCountDown.js"></script>
+</head>
+<body style="background-color:#f7f7f7;">
+<!--<div id="header"></div>
+<script>
+
+    $('#header').load('nav.html');
+
+    function cat_callback(cat_id) {
+        console.log(cat_id)
+    }
+</script>-->
+
+<!--头部部分-->
+<header class="title">
+    <ul>
+        <li class="search">
+            <a href="javascript:history.go(-1);"><img src="../images/daily_snap_up_img/icon_back.png" alt=""></a>
+        </li>
+        <li class="span">
+            <span><img src="../images/daily_snap_up_img/meiriqianggou@2x.png" alt=""></span>
+        </li>
+        <li class="dialogbox">
+            <img src="../images/daily_snap_up_img/huiaQiangGou@2x.png" alt="">
+            <a href="scarebuy.html">惠抢购</a>
+        </li>
+    </ul>
+</header>
+<!--头部部分-->
+
+<!--主图轮播图-->
+<div class="slider_list" >
+</div>
+<!--主图轮播图-->
+
+<div class="sale_title">
+    <span>限时限量</span>
+    <span>疯狂抢购</span>
+
+</div>
+
+<div class="goods_list"></div>
+
+<div class='title2'>
+    <img src="../images/daily_snap_up_img/title_ReMen@3x.png" alt="">
+    <span></span>
+</div>
+
+<section class="guess-like">
+</section>
+
+<!--轮播图-->
+<script type="text/html" id="banner">
+    <div class="swipe-wrap" >
+        <% for (var i in banner) { %>
+        <div class="item" >
+            <a href="<%=banner[i].live_link%>">
+                <img src="<%=banner[i].slider_image%>" alt="">
+            </a>
+        </div>
+        <% } %>
+    </div>
+</script>
+<script type="text/html" id="time_over">
+    <span class="fnTimeCountDown" data-end="<%=time_over %>">
+            距离结束&nbsp;&nbsp;
+            <u class="hour">00</u><i>&nbsp;:</i>
+            <u class="mini">00</u><i>&nbsp;:</i>
+            <u class="sec">00</u>
+    </span>
+</script>
+<!--商品列表-->
+<script type="text/html" id="goods_list">
+    <% var data = goods_today.items; %>
+    <% for(var i in data){%>
+    <div class="buy_goods">
+        <div class="goods_img">
+            <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><img src="<%=data[i].goods_image%>" alt=""></a>
+        </div>
+        <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><span class='buy_title'><%=data[i].goods_name%></span></a><br>
+        <div class="bg1">分享立省￥<%=data[i].share_ls%></div>
+        <div class="bg2">分享立赚￥<%=data[i].share_lz%></div>
+        <span class='zhijiang'>直降￥<%=data[i].reduce%></span>
+        <span class='price'>￥<%=data[i].scarebuy_price%></span>
+        <span class="bar"><img src="../images/daily_snap_up_img/rectangle@3x.png" alt="" width = '<%=data[i].sale_rate%>'></span>
+        <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><button>立即抢</button></a>
+        <span class='qiang'>已抢<%=data[i].scarebuy_buy_quantity%>件</span>
+    </div>
+    <% } %>
+
+    <div class='title_tomorrow'>
+        <img src="../images/daily_snap_up_img/tomorrow@3x.png" alt="">
+    </div>
+
+    <% var data = goods_tomorrow.items; %>
+    <% for(var i in data){%>
+    <div class="buy_goods over">
+        <div class="goods_img">
+            <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><img src="<%=data[i].goods_image%>" alt=""></a>
+        </div>
+        <span class='buy_title'>疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购疯狂抢购</span><br>
+        <div class="bg1">分享立省￥<%=data[i].share_ls%></div>
+        <div class="bg2">分享立赚￥<%=data[i].share_lz%></div>
+        <span class='zhijiang'>直降￥<%=data[i].reduce%></span>
+        <span class='price'>￥<%=data[i].scarebuy_price%></span>
+        <a href="product_detail.html?goods_id=<%=data[i].goods_id%>"><button>去看看</button></a>
+        <span class='qiang'>明日00:00准时开抢</span>
+    </div>
+    <% } %>
+
+</script>
+<!--热卖商品-->
+<script type="text/html" id="hot_goods">
+    <% for (var i in items) { %>
+    <div class="guess-like_item">
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>">
+            <img src="<%=items[i].common_image%>" alt="">
+            <h3><%=items[i].common_name%></h3>
+        </a>
+        <div class="bg">分享立省￥<%=items[i].common_share_price%></div>
+        <% if(items[i].common_is_promotion){%>
+            <div class="bg">分享立赚￥<%=items[i].common_promotion_price%></div>
+        <%}%>
+        <b>￥<%=items[i].common_shared_price%></b>
+        <a href="product_detail.html?goods_id=<%=items[i].goods_id%>"><button>去看看</button></a>
+    </div>
+    <% } %>
+</script>
+
+<script type="text/javascript" src='../js/daily_snap_up.js'></script>
+</body>
+
+</html>

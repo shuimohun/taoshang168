@@ -1,0 +1,204 @@
+@charset "utf-8";
+/***************头部部分开始**************************************/
+.person{
+	width:100%;
+	height:.8rem;
+	background-color: #e45050;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index: 101;
+}
+.person .title{
+	height:.7rem;
+	padding: .3rem 0 0 4%;
+}
+.person .title a img{
+	width:.34rem;
+	height:.34rem;
+}
+.person .title span{
+	font-size: .3rem;
+	color:#fff;
+	vertical-align: top;
+}
+.person .title span{
+	margin-left:32%;
+}
+.person .title a img.info{
+	margin-left:34%;
+}
+/***************头部部分结束**************************************/
+
+/**********************导航栏部分开始******************************/
+.nav{
+	width:100%;
+	height:.72rem;
+	background-color: #fff;
+	border-top: .01rem solid #eeeeee;
+}
+.nav ul{
+	width:100%;
+	height:.71rem;
+	font-size: 0;/*清除默认边距*/
+}
+.nav ul li{
+	display: inline-block;
+	width:12.5%;
+	height:.71rem;
+	float: left;
+	text-align: center;
+	line-height: .71rem;
+	color:#3D3430;
+}
+.nav ul li a{
+	display:inline-block;
+	font-size: .26rem;
+	color:#3D3430;
+	width:100%;
+	height:.71rem;
+	line-height: .71rem;
+}
+.nav ul li img{
+	width:80%;
+	height:80%;
+	margin-top:.07rem;
+	margin-left:.03rem;
+	border-left: .01rem solid #eeeeee;
+}
+.cur{
+	background-color: #2080E5;
+	color:#fff !important ;
+}
+/**********************导航栏部分结束******************************/
+
+/*********************banner部分*****************************/
+.banner{
+	width:100%;
+	height:2.58rem;
+	border-top:.01rem solid #eeeeee;
+}
+.banner img{
+	width:100%;
+	height:100%;
+}
+/*********************banner部分*****************************/
+
+/****************banner推荐部分***********************/
+.brand{
+	width:100%;
+	height:1.28rem;
+	background-color: #fff;
+	margin-top:.12rem;
+}
+.brand div{
+	display:inline-block;
+	width:20%;
+	height:1.28rem;
+	border:.01rem solid #EAEAEA;
+	border-left:0 none;
+	float: left;
+}
+.brand div img{
+	width:60%;
+	height:57%;
+	margin-left:.25rem;
+	margin-top: .26rem;
+}
+.brand ul{
+	display:inline-block;
+	width:80%;
+	height:0.64rem;
+	background-color: pink;
+	float: right;
+	font-size: 0;
+}
+.brand ul li{
+	display:inline-block;
+	width:25%;
+	height:0.64rem;
+	border-top:.01rem solid #EAEAEA;
+	border-right: .01rem solid #EAEAEA;
+}
+.brand ul li:nth-child(4){
+	border-right: 0 none;
+}
+.brand ul li:nth-child(8){
+	border-right:0 none;
+}
+.brand ul li:nth-child(n+5){
+	border-bottom:.01rem solid #EAEAEA;
+}
+.brand ul li img{
+	width:100%;
+	height:100%;
+}
+/****************banner推荐部分***********************/
+
+/******title部分******/
+.headline{
+	width:100%;
+	height:.6rem;
+	background-color: #fff;
+	margin-top:.12rem; 
+}
+.headline img{
+	width:1.16rem;
+	height:.26rem;
+	margin:.18rem 0 0 2.7rem;
+}
+/******title部分******/
+
+/***********商品部分***************/
+.goods_wrap{
+	width:100%;
+	height:100%;
+	background-color: #fff;
+}
+.goods_wrap .goods{
+	width:95%;
+	height:7.7rem;
+	/* background-color: #eeeeee; */
+	margin:0 auto;
+}
+.goods_wrap ul{
+	width:100%;
+	height:3.8rem;
+	font-size: 0;/*清除默认边距*/
+}
+.goods_wrap ul li{
+	width:48.5%;
+	height:3.8rem;
+	float: left;
+}
+.goods_wrap ul li:nth-child(even){
+	float: right;
+}
+.goods_wrap .goods ul li img{
+	width:100%;
+	height:2.95rem;
+}
+.goods_wrap .goods ul li div{
+	width:100%;
+	height:.7rem;
+	background-color: #fff;
+}
+.goods_wrap .goods ul li div img{
+	width:.8rem;
+	height:.42rem;
+	border-top:.01rem solid #FCFCFC;
+	border-left: .01rem solid #E6E6E6;
+	border-right: .01rem solid #E6E6E6;
+	border-bottom: .02rem solid #E6E6E6;
+	margin-top:.16rem;
+}
+.goods_wrap .goods ul li div span{
+	display:inline-block;
+	height:.8rem;
+	font-size: .24rem;
+	white-space: nowrap;
+	margin-left: .15rem;
+	margin-top:.03rem;
+	color:#4C4441;
+}
+/***********商品部分***************/

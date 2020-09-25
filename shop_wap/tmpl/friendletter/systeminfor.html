@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>个人信息</title>
+	<link rel="stylesheet" href="../../css/friendletter/base.css">
+	<link rel="stylesheet" href="../../css/friendletter/systeminfor.css">
+    <link rel="stylesheet" href="../../css/common_alert.css">
+</head>
+<body>
+	<!--头部 start-->
+	<header class="person person_system">
+		<a href="javascript:history.go(-1);" class="back"></a>
+		<a href="#" onclick="common_alert(this)" class="dialog"></a>
+		<div class="head_infor">
+			<span class="user_name"></span>
+			<a href="javascript:void (0);" class="loginOut">退出</a>
+			<a href="../../index.html">返回商城</a>
+		</div>
+        <div class="info_alert">
+            <img src="../../images/user_img/choose_gray@3x.png" alt="">
+        </div>
+	</header>
+	<!--头部 end-->
+	<!--  个人中心内容区 start-->
+	<div class="main">
+		<div class="main_top_wrap">
+
+		</div>
+
+		<div class="user_gz_wrap">
+
+		</div>
+
+		<div class="main_jump">
+
+		</div>
+	</div>
+	<!--   个人中心内容区 end-->
+    <!--插入脚部 start-->
+    <div id="foot"></div>
+    <!--插入脚部 end-->
+<!--上部渲染-->
+<script type="text/html" id="main_top_wrap" >
+    <% if(data){ %>
+        <div class="maintop clearfix">
+            <div class="user_tx">
+                    <img  class="userimg" src="<%=data.user_Info.user_logo%>" onerror="this.src='../img/robot-ss.png'">
+            </div>
+            <div class="user_infor">
+                <p class="user_name"><%=data.user_Base.user_account%></p>
+                <p class="user_des">时间停歇，我并没有察觉</p>
+            </div>
+        </div>
+        <!--<div class="read_time">今日阅读一小时</div>-->
+        <div class="main_bot">
+            <ul class="main_bot_bg clearfix">
+                <li>
+                    <p class="num_tit"><img src="../img/friendletter/icon_iphone.png">手机号码</p>
+                    <p class="num_con">
+                        <% if( data.user_Info.user_mobile ){ %>
+                            <%=data.user_Info.user_mobile%>
+                        <% }else{ %>
+                            <a href="#">快去填写您的电话吧</a>
+                        <% }%>
+                    </p>
+                </li>
+                <li>
+                    <p class="num_tit"><img src="../img/friendletter/icon_date.png">上次登录时间</p>
+                    <p class="num_con"><span><%=data.user_Info.lastlogintime%></span></p>
+                </li>
+            </ul>
+        </div>
+    <% }%>
+</script>
+<!--中部渲染-->
+<script type="text/html" id="user_gz_wrap">
+    <ul class="clearfix">
+        <li>
+            <a href="../fans_user_face.html?uid=<%=data.user_Base.id%>">
+                <span class="user_gz_icon1 user_gz_icon_ss"><i><%=data.InformationCount%>说说</i></span>
+            </a>
+        </li>
+        <li>
+            <a href="./gz_fans_visited.html?user_id=<%=data.user_Info.user_id%>&tag=Gz">
+                <span class="user_gz_icon1"><i><%=data.G_count%>关注</i></span>
+            </a>
+        </li>
+        <li>
+            <a href="./gz_fans_visited.html?user_id=<%=data.user_Info.user_id%>&tag=Fs">
+                <span class="user_gz_icon2"><i><%=data.Fs_count%>粉丝</i></span>
+            </a>
+        </li>
+    </ul>
+
+</script>
+<!--下部渲染-->
+<script type="text/html" id="main_jump">
+    <% if(data){ %>
+        <div class="jump_item">
+            <a href="#">
+                <div class="icon"><p class="icon_cont message"></p></div>
+                <div class="title"><p>信息通知</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <div class="jump_item">
+            <a href="../member/money_index.html">
+                <div class="icon"><p class="icon_cont caifu"></p></div>
+                <div class="title"><p>财付宝</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <% if( data.fuInfo > 0 ){ %>
+        <div class="jump_item">
+            <a href="../sendbless_detail.html">
+                <div class="icon"><p class="icon_cont fu"></p></div>
+                <div class="title"><p>送福免单</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <% } %>
+        <div class="jump_item">
+            <a href="../member/user_setup.html">
+                <div class="icon"><p class="icon_cont set_system"></p></div>
+                <div class="title"><p>系统设置</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <div class="jump_item">
+            <a href="../member/order_list.html">
+                <div class="icon"><p class="icon_cont set_system"></p></div>
+                <div class="title"><p>订单</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <div class="jump_item">
+            <a href="../goldeggsbuy.html">
+                <div class="icon"><p class="icon_cont set_system"></p></div>
+                <div class="title"><p>金蛋</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+        <div class="jump_item">
+            <a href="../member/directseller_alliance.html">
+                <div class="icon"><p class="icon_cont set_system"></p></div>
+                <div class="title"><p>淘金</p></div>
+                <div class="arrow"><p class="arrow_ico"></p></div>
+            </a>
+        </div>
+    <% }%>
+</script>
+
+
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/config.php"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src='../../js/template.js'></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../../js/common_alert.js"></script>
+<script type="text/javascript" src="../../js/friendletter/systeminfor.js"></script>
+</body>
+</html>

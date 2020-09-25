@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Author" contect="U2FsdGVkX1+liZRYkVWAWC6HsmKNJKZKIr5plAJdZUSg1A==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+<title>商品列表</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/nctouch_products_list.css">
+<link rel="stylesheet" type="text/css" href="../css/nctouch_common.css">
+    <script src="../js/config.js"></script>
+</head>
+<style>
+    .list .goods-secrch-list .goods-name .bg_all{position:absolute;top: 30%;}
+    .nctouch-norecord{position: static;margin: 10% auto}
+    .guess-like div h3 {
+    font-size: .6rem;
+    letter-spacing: .12rem;
+    margin-left: .12rem;
+    width: 100%;
+    height: 1.67rem;
+    overflow: hidden;
+}
+.list .goods-secrch-list .goods-sale {
+    display: inline-block;
+    height: 0.9rem;
+    padding: 0.2rem 0;
+    overflow: hidden;
+}
+.list .goods-secrch-list .goods-price {
+    color: #EC5464;
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    display: block;
+    float: left;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+}
+.goods-search-list-nav ul li {
+    vertical-align: top;
+    display: inline-block;
+    width: 20%;
+}
+.goods-search-list-nav ul li:first-child {
+    width: 33%;
+}
+
+.grid .goods-secrch-list .goods-name {
+        display: block;
+        min-height: 4.3rem;
+        overflow: hidden;
+    }
+    .grid .goods-secrch-list .goods-name .bg_all .bg:nth-child(1) {
+        font-size: .45rem;
+        color: #fff;
+        background: url(../images/share_bg@2x.png) no-repeat left top;
+        background-size: 100% 100%;
+        padding: 0 .12rem 0 .12rem;
+        position: absolute;
+        top:23%;
+    }
+    .grid .goods-secrch-list .goods-name .bg_all .bg:nth-child(2) {
+        font-size: .45rem;
+        color: #fff;
+        background: url(../images/share_bg@2x.png) no-repeat left top;
+        background-size: 100% 100%;
+        padding: 0 .12rem 0 .12rem;
+        position: absolute;
+        top:13%;
+    }
+    .goods-info{
+        position: relative;
+    }
+    .goods-info .goods_icon{
+        position: absolute;
+        top: 54%;
+        font-size: 0.65rem;
+    }
+    .goods-info .goods_icon span{
+        color:#EC5464;
+    }
+    .goods-info .goods_icon i{
+        color:#EC5464;
+        border:0.05rem solid #EC5464;
+        border-radius: .2rem;
+    }
+</style>
+<body>
+<header id="header" class="nctouch-product-header fixed">
+    <div class="header-wrap">
+        <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+        <div class="header-inp"> <i class="icon"></i> <span class="search-input" id="keyword">请输入关键词</span> </div>
+        <div class="header-r"> <a href="../tmpl/product_first_categroy.html" class="categroy"><i></i>
+        </a> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+    </div>
+    <div class="nctouch-nav-layout">
+        <div class="nctouch-nav-menu"> <span class="arrow"></span>
+            <ul>
+                <li><a href="../index.html"><i class="home"></i>首页</a></li>
+                <li><a href="../tmpl/cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+                <li><a href="../tmpl/member/member.html"><i class="member"></i>我的商城</a></li>
+                <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="goods-search-list-nav">
+    <ul id="nav_ul">
+        <li><a href="javascript:void(0);" class="current" id="sort_default">上架时间<i></i></a></li>
+        <li><a href="javascript:void(0);" class="" onclick="init_get_list('sale','DESC')">销量</a></li>
+        <li><a href="javascript:void(0);" class="" onclick="init_get_list('share','DESC')">立省<i></i></a></li>
+        <li><a href="javascript:void(0);" id="search_adv">筛选<i></i></a></li>
+    </ul>
+    <div class="browse-mode"><a href="javascript:void(0);" id="show_style"><span class="browse-list"></span></a></div>
+</div>                                  
+<div id="sort_inner" class="goods-sort-inner hide"> <span><a href="javascript:void(0);" class="cur"  onclick="init_get_list('', '')">上架时间<i></i></a></span> <span><a href="javascript:void(0);" onclick="init_get_list('price', 'DESC')">价格从高到低<i></i></a></span> <span><a href="javascript:void(0);" onclick="init_get_list('price', 'ASC')">价格从低到高<i></i></a></span> <span><a href="javascript:void(0);" onclick="init_get_list('evaluate', 'DESC')">评价排序<i></i></a></span> </div>
+<div class="nctouch-main-layout mt40 mb20">
+    <div id="product_list" class="list">
+        <ul class="goods-secrch-list">
+        </ul>
+    </div>
+</div>          
+<!--筛选部分-->
+<div class="nctouch-full-mask hide">
+    <div class="nctouch-full-mask-bg"></div>
+    <div class="nctouch-full-mask-block">
+        <div class="header">
+            <div class="header-wrap">
+                <div class="header-l"> <a href="javascript:void(0);"><i class="back"></i></a></div>
+                <div class="header-title">
+                    <h1>商品筛选</h1>
+                </div>
+                <div class="header-r"><a href="javascript:void(0);" id="reset" class="text">重置</a> </div>
+            </div>
+        </div>
+        <div class="nctouch-main-layout-a secreen-layout" id="list-items-scroll" style="top: 2rem;"><div></div></div>
+    </div>
+</div>
+<div class="fix-block-r">
+    <a href="member/views_list.html" class="browse-btn"><i></i></a>
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<footer id="footer" class="bottom"></footer>
+
+<script type="text/html" id="search_items">
+    <div>
+        <dl>
+            <dt>价格区间</dt>
+            <dd>
+                <span class="inp-balck"><input type="text" id="price_from" nctype="price" pattern="[0-9]*" class="inp" placeholder="最低价"/></span>
+                <span class="line"></span>
+                <span class="inp-balck"><input nctype="price" type="text" id="price_to" pattern="[0-9]*" class="inp" placeholder="最高价"/></span>
+            </dd>
+        </dl>
+        <!--<dl>
+            <dt>商品所在地</dt>
+            <dd>
+                <div class="input-box">
+                <input type="text" id="invoice_area_info" class="inp" name="invoice_tax_rec_province"  placeholder="不限">
+            </div>
+					<i></i>
+			</span>
+            </dd>
+        </dl>-->
+        <dl>
+            <dt>商品类型</dt>
+            <dd>
+                <a href="javascript:void(0);" nctype="items" id="actgoods">促销</a>
+                <a href="javascript:void(0);" nctype="items" id="virtual">虚拟</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>店铺类型</dt>
+            <dd>
+                <a href="javascript:void(0);" nctype="items" id="own_shop" class="">平台自营</a>
+            </dd>
+        </dl>
+        <div class="bottom">
+            <a href="javascript:void(0);" class="btn-l" id="search_submit">筛选商品</a>
+        </div>
+    </div>
+</script>
+<!--筛选部分-->
+</body>
+<script type="text/html" id="home_body">
+    <% var common_list = data.items; %>
+    <% if(common_list.length >0){%>
+    <%for(j=0;j < common_list.length;j++){%>
+        <li class="goods-item" goods_id="<%=common_list[j].goods_id;%>">
+                    <span class="goods-pic">
+                        <a href="product_detail.html?goods_id=<%=common_list[j].goods_id;%>">
+                            <img src="<%=common_list[j].common_image;%>"/>
+                        </a>
+                    </span>
+            <dl class="goods-info">
+                <dt class="goods-name">
+                    <a href="product_detail.html?goods_id=<%=common_list[j].goods_id;%>">
+                        <h4><%=common_list[j].common_name;%></h4>
+                       <span class="bg_all">
+                           <span class="bg" style="font-size:.45rem;padding:0 .12rem 0 .12rem;">分享立省￥<%=common_list[j].common_share_price%></span>
+                           <% if(common_list[j].common_is_promotion){%>
+                                <span class="bg" style="font-size:.45rem;padding:0 .12rem 0 .12rem;">立赚￥<%=common_list[j].common_promotion_price%></span>
+                           <%}%>
+                        </span>
+                    </a>
+                </dt>
+                <dd class="goods_icon">
+                    <% if(common_list[j].is_bunding || common_list[j].common_promotion_type != '0' || common_list[j].is_voucher || common_list[j].is_man || common_list[j].common_is_jia !='0'){ %>
+                        <span>促销：</span>
+                        <% if(common_list[j].is_bunding){ %>
+                        <i>套</i>
+                        <% } %>
+                        <% if(common_list[j].common_promotion_type == '1'){ %>
+                        <i>惠</i>
+                        <% } %>
+                        <% if(common_list[j].common_promotion_type == '2'){ %>
+                        <i>限</i>
+                        <% } %>
+                        <% if(common_list[j].common_promotion_type == '3'){ %>
+                        <i>手</i>
+                        <% } %>
+                        <% if(common_list[j].common_promotion_type == '4'){ %>
+                        <i>新</i>
+                        <% } %>
+                        <% if(common_list[j].is_voucher){ %>
+                        <i>券</i>
+                        <% } %>
+                        <% if(common_list[j].is_man){ %>
+                        <i>满</i>
+                        <% } %>
+                        <% if(common_list[j].common_is_jia != '0'){ %>
+                        <i>加</i>
+                        <% } %>
+                    <% } %>
+                </dd>
+                <dd class="goods-sale">
+                    <a href="product_detail.html?goods_id=<%=common_list[j].goods_id;%>">
+                        <span class="goods-price">￥
+                            <% if (common_list[j].promotion_price){ %>
+                                <em><%=common_list[j].promotion_price%></em>
+                                <% if (common_list[j].zx_price){ %>
+                                <span class="phone-sale"><i></i>手机专享</span>
+                                <% } %>
+                            <% }else{ %>
+                                <em><%=common_list[j].common_shared_price%></em>
+                            <% } %>
+                        </span>
+                        <% if(common_list[j].group_flag || common_list[j].xianshi_flag){ %>
+                        <span class="sale-type">降</span>
+                        <% } %>
+                        <% if(common_list[j].have_gift == '1'){ %>
+                        <span class="sale-type">赠</span>
+                        <% } %>
+                    </a>
+                </dd>
+                <dd class="goods-assist">
+                    <a href="product_detail.html?goods_id=<%=common_list[j].goods_id;%>">
+                                    <span class="goods-sold">销量
+                                        <em><%=common_list[j].common_salenum;%></em>
+                                    </span>
+                                    <span class="goods-sold">评论
+                                        <em><%=common_list[j].common_evaluate;%></em>
+                                    </span>
+                    </a>
+                    <div class="goods-store">
+                        <%
+                        if (common_list[j].is_own_shop == '1') {
+                        %>
+                        <span class="mall">自营</span>
+                        <%
+                        } else {
+                        %>
+                        <a href="javascript:void(0);" data-id='<%=common_list[j].shop_id;%>'><%=common_list[j].store_name;%><i></i></a>
+                        <%
+                        }
+                        %>
+                        <div class="sotre-creidt-layout" style="display: none;"></div>
+                    </div>
+                </dd>
+            </dl>
+        </li>
+    <% } %>
+    <% if (hasmore) {%>
+    <li class="loading"><div class="spinner"><i></i></div>商品数据读取中...</li>
+    <% } %>
+    <%
+    }else {
+    %>
+    <div class="nctouch-norecord search">
+        <div class="norecord-ico"><i></i></div>
+        <dl>
+            <dt>没有找到任何相关信息</dt>
+            <dd>选择或搜索其它商品分类/名称...</dd>
+        </dl>
+        <a href="javascript:history.go(-1)" class="btn">重新选择</a>
+    </div>
+        <div  class='title_guess1'></div>
+        <section class="guess-like" >
+
+        </section>
+    <%
+    }
+    %>
+</script>
+<script type="text/html" id="like_g">
+    <% for(var i in data){ %>
+    <div>
+        <a href="./product_detail.html?cid=<%=data[i].common_id%>">
+            <img src="<%=data[i].common_image;%>"  alt="">
+            <h3><%=data[i].common_name;%></h3>
+        </a>
+        <div class="bg">分享立省￥<%=data[i].common_share_price;%></div>
+        <div class="bg">立赚￥<%=data[i].common_promotion_price;%></div>
+        <b>￥<%=data[i].common_shared_price;%></b>
+        <a href="./product_detail.html?cid=<%=data[i].common_id%>"><button>购买</button></a>
+    </div>
+    <% } %>
+</script>
+<script type="text/javascript" src="../js/config.php"></script>
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/product_list.js"></script>
+<script type="text/javascript" src="../js/tmpl/footer.js"></script>
+</body></html>

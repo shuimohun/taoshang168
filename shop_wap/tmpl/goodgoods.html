@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>遇见好货</title>
+	<link rel="stylesheet" href="../css/activity/goodgoods.css">
+	<link rel="stylesheet" href="../css/activity/base.css">
+	<!--右上角弹框css引用-->
+	<link rel="stylesheet" href="../css/common_alert.css">
+	<script src="../js/activity/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src='../js/activity/swipe.js'></script>
+	<script type="text/javascript" src='../js/activity/goodgoods.js'></script>
+	<!--右上角弹框js引用-->
+	<script type="text/javascript" src="../js/common_alert.js"></script>
+	<style type="text/css">
+		.footer_div_wrap{height:1.2rem !important;}
+	</style>
+</head>
+<body style="margin-top:1.55rem;">
+	<!--头部部分-->
+	<header class="person"  style="background-color:#e45050">
+		<div class="title">
+			<a href="../index.html"><img src="../images/activity/daily_buy_img/back.png" alt=""></a>
+			<span>遇见好货</span>
+			<a><img src="../images/activity/daily_buy_img/info.png" alt="" onclick="common_index_alert(this)"  class="info"></a>
+		</div>
+		<!--滚动导航栏部分-->
+		<div class="find_nav">
+		    <div class="find_nav_left">
+		        <div class="find_nav_list">
+
+		        </div>
+		    </div>
+		    <div class="nav_header_img an">
+				<img src="../images/activity/daily_buy_img/icon_an.png" alt="">
+			</div>
+		</div>
+		<!--滚动导航栏部分-->
+	</header>
+	<div class="info_alert">
+		<img src="../images/user_img/choose_gray@3x.png" alt="">
+	</div>
+	<!--头部部分-->
+
+	<!--主图轮播图-->
+	<div class="slider_list"></div>
+	<!--主图轮播图-->
+
+	<!--热评商品title-->
+	<div class="good_title">
+		<img src=../images/activity/goodgoods_img/goods_title.png alt="">
+	</div>
+	<!--热评商品title-->
+<div class="cont">
+	<!--热评商品contain-->
+
+	<!--热评商品contain-->
+
+	<!--热评商品contain-->
+
+	<!--热评商品contain-->
+
+</div>
+<div class='fix_footer'></div>
+	<script type="text/html" id="cat">
+		<ul>
+			<li class="find_nav_cur" id="0"><a href="javascript:void(0)">精选</a></li>
+			<% if(items.cat) { %>
+			<% var items = items.cat %>
+			<% for(var i in items) { %>
+			<li ><a href="javascript:void(0)" id="<%=items[i].cat_id %>"><%=items[i].name %></a></li>
+			<% } %>
+			<% } %>
+		</ul>
+	</script>
+	<script type="text/html" id="nav">
+		<div class="swipe-wrap" >
+			<% if(items.nav.items){ %>
+			<% var items = items.nav.items %>
+			<% for(var i in items){ %>
+			<div class="item" >
+				<a href="<%=items[i].url %>">
+					<img src="<%=items[i].pic_url %>" alt="">
+				</a>
+			</div>
+			<% } %>
+			<% } %>
+		</div>
+	</script>
+
+	<script type="text/html" id="goods">
+		<% if(items){ %>
+		<% for(var i in items){ %>
+		<div class="good_contain">
+			<ul>
+
+				<li>
+					<a href="product_detail.html?goods_id=<%=items[i][0].goods_id %>"><img src="<%=items[i][0].goods_image %>" alt=""></a>
+					<span><%=items[i][0].goods_name %></span>
+					<u>￥<%=items[i][0].goods_price %></u>
+					<a href="product_detail.html?goods_id=<%=items[i][0].goods_id %>"><img src="../images/activity/goodgoods_img/AddtoCart.png" alt="" class="icon"></a>
+				</li>
+				<% for(var k in items[i]){ %>
+				<li class="comment">
+					<div class="comment_header">
+						<img src="<%=items[i][k].user_logo  %>" alt="">
+						<span><%=items[i][k].user_name %></span>
+						<img src="<%=items[i][k].user_grade_logo %>"  alt="" class="name_title">
+					</div>
+					<div class="comment_info">
+
+					<span>综合评分: <%=items[i][k].scores %>分
+						<% var num = items[i][k].scores  %>
+						<% for(var a=0;a<num;a++){ %>
+						<img src=../images/activity/goodgoods_img/star.png alt="">
+						<% } %>
+					</span>
+						<i><b>评价：</b><%=items[i][k].content %></i>
+						<% if(items[i].length == 1){ %>
+						<% for(var j=0;j<2;j++){ %>
+						<img src="<%=items[i][k].image_row[j] %>" alt="" class="comment_img">
+						<% } %>
+						<% } %>
+					</div>
+					<a href="product_eval_list.html?goods_id=<%=items[i][k].goods_id %>"><u>查看评价 ></u></a>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+		<% } %>
+		<% } %>
+	</script>
+	<script type="text/javascript" src="../js/zepto.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/config.php"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/goodgoods.js"></script>
+
+	<script>
+		$('.fix_footer').load('./common_footer.html');
+	</script>
+
+</body>
+</html>
