@@ -2,4 +2,5 @@
 configs/
 *.log
 cache_*/
+data/upload/
 
