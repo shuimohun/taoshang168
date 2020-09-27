@@ -1,9 +1,9 @@
 <?php
 return [
-    'SiteUrl' => "http://taoshang168.test/shop/index.php",
-    'ApiUrl' => "http://taoshang168.test/im/index.php",
-    'SnsUrl' => "http://taoshang168.test/im/index.php",
-    'UCenterApiUrl' => "http://taoshang168.test/ucenter/index.php",
+    'SiteUrl' => "http://ts.zhenzihan.com/shop/index.php",
+    'ApiUrl' => "http://ts.zhenzihan.com/im/index.php",
+    'SnsUrl' => "http://ts.zhenzihan.com/im/index.php",
+    'UCenterApiUrl' => "http://ts.zhenzihan.com/ucenter/index.php",
     'pagesize' => 10,
 ];
 function remove_xss($val) {
