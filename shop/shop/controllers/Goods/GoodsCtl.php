@@ -1499,7 +1499,7 @@ class Goods_GoodsCtl extends Controller
 		$area_id = request_int('area_id');
 		$common_id = request_int('common_id');
 
-        $this->data->addBody(-140, [], 'success', 200);die;
+        $this->data->addBody(-140, []);
 
 
         $goodsBaseModel = new Goods_BaseModel();
@@ -1508,7 +1508,7 @@ class Goods_GoodsCtl extends Controller
 		$msg = $result['msg'];
 		$status = $result['status'];
 
-		$this->data->addBody(-140, $data, $msg, $status);
+		$this->data->addBody(-140, $data);
 	}
 
 	/**
