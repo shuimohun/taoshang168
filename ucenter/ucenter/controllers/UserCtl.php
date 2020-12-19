@@ -740,6 +740,7 @@ class UserCtl extends YLB_AppController
 				$type            = 'user_name:LIKE';
 				$cond_row[$type] = '%' . $user_name . '%';
 				$order_row       = array();
+                $order_row['user_id'] = 'desc';
 
 				$YLB_Page           = new YLB_Page();
 				$YLB_Page->listRows = 30;
