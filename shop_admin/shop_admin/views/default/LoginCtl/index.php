@@ -28,11 +28,11 @@
 				<form method="post" id="form" action="<?= YLB_Registry::get('index_page') ?>?ctl=Login&met=login">
                     <span>
                         <label for="user_name">帐号</label>
-                        <input type="text" name="user_account" autocomplete="off" class="input-text text" tabindex="1" value="">
+                        <input type="text" name="user_account" autocomplete="off" class="input-text text" tabindex="1" value="admin1">
                     </span>
                     <span>
                         <label for="password">密码</label>
-                        <input type="password" autocomplete="off" name="user_password" class="input-password text" tabindex="2">
+                        <input type="password" autocomplete="off" name="user_password" class="input-password text" tabindex="2" value="123456">
                     </span>
                     <span class="cf">
                         <input type="text" name="yzm" class="input-code text3" autocomplete="off" title="验证码为4个字符" maxlength="4" placeholder="输入验证码" id="captcha-input" tabindex="3">
