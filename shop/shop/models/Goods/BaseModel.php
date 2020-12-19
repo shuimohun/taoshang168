@@ -1130,29 +1130,30 @@ class Goods_BaseModel extends Goods_Base
             $transport = $Transport_ItemModel->getByWhere(array('transport_type_id'=>$common_base['transport_type_id']));
         }
 
-        fb($transport);
         $flag = false;
-        foreach($transport as $key=>$value)
-        {
-            $transport_row = explode(',',trim($value['transport_item_city'],','));
-            if(in_array($area_id,$transport_row))
+        if (isset($transport)) {
+            foreach($transport as $key=>$value)
             {
-                if($value['transport_item_default_price'] && $value['transport_item_add_price'])
+                $transport_row = explode(',',trim($value['transport_item_city'],','));
+                if(in_array($area_id,$transport_row))
                 {
-                    $transport_str = sprintf('首重%sKg,默认运费：%s',$value['transport_item_default_num'],format_money($value['transport_item_default_price']));
-
-                    if($value['transport_item_add_price'] > 0)
+                    if($value['transport_item_default_price'] && $value['transport_item_add_price'])
                     {
-                        $transport_str .= sprintf('，每续重%sKg,增加运费：%s',$value['transport_item_add_num'],format_money($value['transport_item_add_price']));
-                    }
-                }
-                else
-                {
-                    $transport_str = _('免运费');
-                }
-                $flag = true;
-            }
+                        $transport_str = sprintf('首重%sKg,默认运费：%s',$value['transport_item_default_num'],format_money($value['transport_item_default_price']));
 
+                        if($value['transport_item_add_price'] > 0)
+                        {
+                            $transport_str .= sprintf('，每续重%sKg,增加运费：%s',$value['transport_item_add_num'],format_money($value['transport_item_add_price']));
+                        }
+                    }
+                    else
+                    {
+                        $transport_str = _('免运费');
+                    }
+                    $flag = true;
+                }
+
+            }
         }
 
         if ($flag)
@@ -1166,8 +1167,8 @@ class Goods_BaseModel extends Goods_Base
             $status = 250;
         }
 
-        $data['transport_row'] = $transport_row;
-        $data['transport_str'] = $transport_str;
+        $data['transport_row'] = isset($transport_row) ? $transport_row : [];
+        $data['transport_str'] = isset($transport_str) ? $transport_str : [];
 
         $result = array();
         $result['data'] 	= $data;
