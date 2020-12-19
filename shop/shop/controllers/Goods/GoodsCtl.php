@@ -1499,7 +1499,10 @@ class Goods_GoodsCtl extends Controller
 		$area_id = request_int('area_id');
 		$common_id = request_int('common_id');
 
-		$goodsBaseModel = new Goods_BaseModel();
+        $this->data->addBody(-140, [], 'success', 200);die;
+
+
+        $goodsBaseModel = new Goods_BaseModel();
 		$result = $goodsBaseModel->getTransportInfo($area_id, $common_id);
 		$data = $result['data'];
 		$msg = $result['msg'];
