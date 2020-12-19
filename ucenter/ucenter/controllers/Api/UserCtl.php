@@ -39,7 +39,7 @@ class Api_UserCtl extends Api_Controller
 		$items = array();
 		$cond_row = array();
 		$order_row = array();
-        $order_row['user_id'] = 'desc';
+        $order_row['user_reg_time'] = 'desc';
 
 		if($skey)
 		{
